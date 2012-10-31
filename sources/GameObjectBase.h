@@ -19,6 +19,7 @@
 }
 @property (nonatomic, assign) CCSprite *gameObjectSprite;
 @property (nonatomic, assign) GameLayer *parentGameLayer; 
+@property (nonatomic) int gameObjectSpeed;
 
 // Class method.  Autorelease
 + (id) initWithGameLayer:(GameLayer *) gamelayer

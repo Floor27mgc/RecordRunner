@@ -23,7 +23,7 @@
         direction = -1;
     };
     
-    [self moveBy:ccp(direction, 0)]; 
+    [self moveBy:ccp(direction * self.gameObjectSpeed, 0)];
     
 }
 
@@ -42,6 +42,7 @@
     if( (self=[super init]) )
     {
         direction = 1;
+        self.gameObjectSpeed = 50;
     }
     return (self);
     

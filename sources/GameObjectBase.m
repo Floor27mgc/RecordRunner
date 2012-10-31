@@ -12,6 +12,7 @@
 #import <objc/runtime.h>
 
 @implementation GameObjectBase
+@synthesize gameObjectSpeed=_gameObjectSpeed;
 
 + (id) initWithGameLayer:(GameLayer *) gamelayer imageFileName:(NSString *) fileName
 {
@@ -20,6 +21,7 @@
     objCreated = [[self alloc] init];
     objCreated.parentGameLayer = gamelayer;
     objCreated.gameObjectSprite = [CCSprite spriteWithFile:fileName];
+    objCreated.gameObjectSpeed = 1;
     [objCreated moveTo:ccp(0,0)];
     return objCreated;
 }
