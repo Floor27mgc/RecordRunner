@@ -42,15 +42,17 @@
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) )
     {
+        self.isTouchEnabled = YES;
         // This is where we create ALL game objects in this game layer
         // This includes gameObjects like bombs, players, background..etc.
         CGSize size = [[CCDirector sharedDirector] winSize];
-        
         // Create background
         
         // Create player
-        _player = [GameObjectPlayer initWithGameLayer:self imageFileName:@"player.png"];
-        [_player moveTo:ccp(size.width/2, size.height/2)];
+        _player = [GameObjectPlayer initWithGameLayer:self
+                                        imageFileName:@"player.png"
+                                          objectSpeed:10];
+        [_player moveTo:ccp(100,size.height/2)];
         [self addChild:_player.gameObjectSprite];
     }
     [self schedule: @selector(update:)];
@@ -75,4 +77,11 @@
     [temp showNextFrame];
     
 }
+
+- (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	[self.player changeDirection];      
+}
+
+
 @end

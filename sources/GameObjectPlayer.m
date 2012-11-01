@@ -42,10 +42,14 @@
     if( (self=[super init]) )
     {
         direction = 1;
-        self.gameObjectSpeed = 50;
+        self.gameObjectSpeed = 5;
     }
     return (self);
     
 }
 
+- (void) changeDirection
+{
+    direction = (direction == 1) ? -1 : 1;
+}
 @end

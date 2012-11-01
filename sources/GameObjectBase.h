@@ -23,7 +23,8 @@
 
 // Class method.  Autorelease
 + (id) initWithGameLayer:(GameLayer *) gamelayer
-           imageFileName:(NSString *) fileName;
+           imageFileName:(NSString *) fileName
+             objectSpeed:(int) speed;
 
 // Methods
 - (CGRect) getObjectBound;  // Return bounds of current game object sprite

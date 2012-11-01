@@ -14,15 +14,17 @@
 @implementation GameObjectBase
 @synthesize gameObjectSpeed=_gameObjectSpeed;
 
-+ (id) initWithGameLayer:(GameLayer *) gamelayer imageFileName:(NSString *) fileName
++ (id) initWithGameLayer:(GameLayer *) gamelayer
+           imageFileName:(NSString *) fileName
+             objectSpeed:(int) speed
 {
     GameObjectBase *objCreated;
     
     objCreated = [[self alloc] init];
     objCreated.parentGameLayer = gamelayer;
     objCreated.gameObjectSprite = [CCSprite spriteWithFile:fileName];
-    objCreated.gameObjectSpeed = 1;
-    [objCreated moveTo:ccp(0,0)];
+    objCreated.gameObjectSpeed = speed;
+//    [objCreated moveTo:ccp(0,0)];
     return objCreated;
 }
 
@@ -51,13 +53,16 @@
 
 - (void) moveTo:(CGPoint) targetPoint
 {
-    _gameObjectSprite.position = targetPoint;
+    //_gameObjectSprite.position = targetPoint;
+    [_gameObjectSprite setPosition: targetPoint];
 }
 
 - (void) moveBy:(CGPoint) relativePoint
 {
-    _gameObjectSprite.position = ccp(_gameObjectSprite.position.x + relativePoint.x,
-                                    _gameObjectSprite.position.y + relativePoint.y);
+/*    _gameObjectSprite.position = ccp(_gameObjectSprite.position.x + relativePoint.x,
+                                    _gameObjectSprite.position.y + relativePoint.y); */
+    [_gameObjectSprite setPosition:ccp(_gameObjectSprite.position.x + relativePoint.x,
+                                       _gameObjectSprite.position.y + relativePoint.y)];
     
 }
 

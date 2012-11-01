@@ -12,6 +12,7 @@
 {
     int direction;
 }
+- (void) changeDirection;
 
 @property (nonatomic) int direction;
 @end
