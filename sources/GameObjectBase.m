@@ -11,21 +11,21 @@
 #import "cocos2d.h"
 #import <objc/runtime.h>
 
+
 @implementation GameObjectBase
 @synthesize gameObjectSpeed=_gameObjectSpeed;
-
+@synthesize parentGameLayer;
 + (id) initWithGameLayer:(GameLayer *) gamelayer
            imageFileName:(NSString *) fileName
              objectSpeed:(int) speed
 {
     GameObjectBase *objCreated;
-    
     objCreated = [[self alloc] init];
     objCreated.parentGameLayer = gamelayer;
     objCreated.gameObjectSprite = [CCSprite spriteWithFile:fileName];
     objCreated.gameObjectSpeed = speed;
-//    [objCreated moveTo:ccp(0,0)];
     return objCreated;
+
 }
 
 - (id) init
@@ -46,7 +46,7 @@
 
 - (BOOL) encounter
 {
-    return CGRectIntersectsRect([_parentGameLayer.player getObjectBound],
+    return CGRectIntersectsRect([parentGameLayer.player getObjectBound],
                                 [self getObjectBound]);
 }
 
@@ -55,6 +55,11 @@
 {
     //_gameObjectSprite.position = targetPoint;
     [_gameObjectSprite setPosition: targetPoint];
+}
+
+- (CGPoint) getGameObjectSpritePosition
+{
+    return _gameObjectSprite.position;
 }
 
 - (void) moveBy:(CGPoint) relativePoint

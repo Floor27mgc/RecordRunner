@@ -51,8 +51,9 @@
         // Create player
         _player = [GameObjectPlayer initWithGameLayer:self
                                         imageFileName:@"player.png"
-                                          objectSpeed:10];
+                                          objectSpeed:kPlayerSpeed];
         [_player moveTo:ccp(100,size.height/2)];
+        [self addChild:_player.playerStreak];        
         [self addChild:_player.gameObjectSprite];
     }
     [self schedule: @selector(update:)];

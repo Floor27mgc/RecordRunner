@@ -7,23 +7,26 @@
 //
 
 #import "GameObjectPlayer.h"
+#import "GameObjectBase.h"
+#import "GameLayer.h"
 
 @implementation GameObjectPlayer
 @synthesize direction;
-
+@synthesize playerStreak;
 - (void) showNextFrame
 {
+    [self moveBy:ccp(direction * self.gameObjectSpeed, 0)];
+    playerStreak.position = [self getGameObjectSpritePosition];
+
     if (self.gameObjectSprite.position.x == 100)
     {
-        direction = 1;
+        self.gameObjectSpeed = 0;
     }
     
     if (self.gameObjectSprite.position.x == 700)
     {
-        direction = -1;
-    };
-    
-    [self moveBy:ccp(direction * self.gameObjectSpeed, 0)];
+        self.gameObjectSpeed = 0;
+    }
     
 }
 
@@ -41,8 +44,14 @@
 {
     if( (self=[super init]) )
     {
+        playerStreak = [CCMotionStreak streakWithFade:0.8f
+                                               minSeg:1.0f
+                                                width:50
+                                                color:ccc3(0, 255, 0)
+                                      textureFilename:@"player.png"];
+
         direction = 1;
-        self.gameObjectSpeed = 5;
+
     }
     return (self);
     
@@ -50,6 +59,7 @@
 
 - (void) changeDirection
 {
-    direction = (direction == 1) ? -1 : 1;
+    direction = (direction == kMoveRight) ? kMoveLeft : kMoveRight;
+    self.gameObjectSpeed = kPlayerSpeed;
 }
 @end
