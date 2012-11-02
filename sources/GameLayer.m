@@ -18,7 +18,7 @@
 // GameLayer implementation
 @implementation GameLayer
 @synthesize player = _player;
-
+@synthesize background;
 // Helper class method that creates a Scene with the GameLayer as the only child.
 +(CCScene *) scene
 {
@@ -46,13 +46,17 @@
         // This is where we create ALL game objects in this game layer
         // This includes gameObjects like bombs, players, background..etc.
         CGSize size = [[CCDirector sharedDirector] winSize];
+        
         // Create background
+        background = [CCSprite spriteWithFile:@"background.png"];
+        background.anchorPoint=ccp(0,0);
         
         // Create player
         _player = [GameObjectPlayer initWithGameLayer:self
                                         imageFileName:@"player.png"
                                           objectSpeed:kPlayerSpeed];
         [_player moveTo:ccp(100,size.height/2)];
+        [self addChild:background];
         [self addChild:_player.playerStreak];        
         [self addChild:_player.gameObjectSprite];
     }

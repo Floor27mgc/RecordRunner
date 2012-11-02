@@ -19,4 +19,5 @@
 +(CCScene *) scene;
 
 @property (nonatomic, strong) GameObjectPlayer *player;
+@property (nonatomic, strong) CCSprite *background;
 @end
