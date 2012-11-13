@@ -55,7 +55,8 @@
         _player = [GameObjectPlayer initWithGameLayer:self
                                         imageFileName:@"player.png"
                                           objectSpeed:kPlayerSpeed];
-        [_player moveTo:ccp(100,size.height/2)];
+        [_player moveTo:ccp(1,
+                            _player.gameObjectSprite.quad.tr.vertices.y)];
         [self addChild:background];
         [self addChild:_player.playerStreak];        
         [self addChild:_player.gameObjectSprite];
