@@ -9,6 +9,9 @@
 // When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
 #import "GameObjectPlayer.h"
+#import "Coin.h"
+#import "Bomb.h"
+
 // GameLayer
 @interface GameLayer : CCLayer
 {
@@ -19,5 +22,7 @@
 +(CCScene *) scene;
 
 @property (nonatomic, strong) GameObjectPlayer *player;
+@property (nonatomic, strong) Bomb * bomb;
+@property (nonatomic, strong) Coin * coin;
 @property (nonatomic, strong) CCSprite *background;
 @end

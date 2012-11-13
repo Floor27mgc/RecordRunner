@@ -18,7 +18,7 @@
     if( (self=[super init]) )
     {
         [self setGameObjectSpeed: 1];
-        [self setGameObjectSprite:(@"Coin.png")];
+        gameObjectSprite = [CCSprite spriteWithFile:@"Coin.png"];
     }
     return (self);
 }

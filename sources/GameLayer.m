@@ -18,7 +18,10 @@
 // GameLayer implementation
 @implementation GameLayer
 @synthesize player = _player;
+@synthesize coin = _coin;
+@synthesize bomb = _bomb;
 @synthesize background;
+
 // Helper class method that creates a Scene with the GameLayer as the only child.
 +(CCScene *) scene
 {
@@ -60,6 +63,20 @@
         [self addChild:background];
         [self addChild:_player.playerStreak];        
         [self addChild:_player.gameObjectSprite];
+        
+        // Create bomb
+        _bomb = [Bomb initWithGameLayer: self
+                          imageFileName:@"Bomb.png"
+                            objectSpeed:1];
+        [_bomb moveTo:ccp(100, 100)];
+        [self addChild:_bomb];
+        
+        // Create coin
+        _coin = [Coin initWithGameLayer:self
+                          imageFileName:@"Coin.png"
+                             objectSpeed:1];
+        [_coin moveTo:ccp(150, 100)];
+        [self addChild:_coin];                 
     }
     [self schedule: @selector(update:)];
 	return self;
@@ -81,6 +98,12 @@
     GameObjectPlayer *temp = _player;
     
     [temp showNextFrame];
+    
+    Bomb * tempBomb = _bomb;
+    [tempBomb showNextFrame];
+    
+    Coin * tempCoin = _coin;
+    [tempCoin showNextFrame];
     
 }
 

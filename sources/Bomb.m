@@ -18,7 +18,7 @@
     if( (self=[super init]) )
     {
         [self setGameObjectSpeed: 1];
-        [self setGameObjectSprite:(@"Bomb.png")];
+        gameObjectSprite = [CCSprite spriteWithFile:@"Bomb.png"];
     }
     return (self);
 }
