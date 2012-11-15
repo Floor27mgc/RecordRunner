@@ -6,19 +6,18 @@
 //
 //
 
+#import "GameLayer.h"
 #import "Bomb.h"
 
 @implementation Bomb
 
-@synthesize gameObjectSprite;
-@synthesize gameObjectSpeed;
+//@synthesize gameObjectSprite;
+//@synthesize gameObjectSpeed;
 
 - (id) init
 {
     if( (self=[super init]) )
     {
-        [self setGameObjectSpeed: 1];
-        gameObjectSprite = [CCSprite spriteWithFile:@"Bomb.png"];
     }
     return (self);
 }
@@ -28,6 +27,11 @@
     // this is a negative movement down the Y-axis, the Bomb is falling
     // from the top of the screen
     [self moveBy:ccp(0, -self.gameObjectSpeed)];
+}
+
+- (BOOL) encounter
+{
+    return NO;
 }
 
 - (void) handleCollision

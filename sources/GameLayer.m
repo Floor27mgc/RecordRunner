@@ -53,30 +53,34 @@
         // Create background
         background = [CCSprite spriteWithFile:@"background.png"];
         background.anchorPoint=ccp(0,0);
-        
+                
         // Create player
         _player = [GameObjectPlayer initWithGameLayer:self
                                         imageFileName:@"player.png"
                                           objectSpeed:kPlayerSpeed];
-        [_player moveTo:ccp(1,
+        [_player moveTo:ccp(200,
                             _player.gameObjectSprite.quad.tr.vertices.y)];
-        [self addChild:background];
-        [self addChild:_player.playerStreak];        
-        [self addChild:_player.gameObjectSprite];
+
         
         // Create bomb
         _bomb = [Bomb initWithGameLayer: self
                           imageFileName:@"Bomb.png"
                             objectSpeed:1];
-        [_bomb moveTo:ccp(100, 100)];
-        [self addChild:_bomb];
+        [_bomb moveTo:ccp(100,
+                          size.height - _bomb.gameObjectSprite.quad.tr.vertices.y)];
         
         // Create coin
         _coin = [Coin initWithGameLayer:self
                           imageFileName:@"Coin.png"
-                             objectSpeed:1];
-        [_coin moveTo:ccp(150, 100)];
-        [self addChild:_coin];                 
+                             objectSpeed:2];
+        [_coin moveTo:ccp(300,
+                          size.height - _coin.gameObjectSprite.quad.tr.vertices.y)];
+        
+        [self addChild:background];
+        [self addChild:_player.playerStreak];
+        [self addChild:_player.gameObjectSprite];
+        [self addChild:_coin.gameObjectSprite];
+        [self addChild:_bomb.gameObjectSprite];
     }
     [self schedule: @selector(update:)];
 	return self;
@@ -95,21 +99,16 @@
 
 - (void) update:(ccTime) dt
 {
-    GameObjectPlayer *temp = _player;
+    [_player showNextFrame];
     
-    [temp showNextFrame];
+    [_bomb showNextFrame];
     
-    Bomb * tempBomb = _bomb;
-    [tempBomb showNextFrame];
-    
-    Coin * tempCoin = _coin;
-    [tempCoin showNextFrame];
-    
+    [_coin showNextFrame];
 }
 
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	[self.player changeDirection];      
+	[self.player changeDirection];
 }
 
 

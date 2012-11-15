@@ -9,5 +9,8 @@
 #import "GameObjectBase.h"
 
 @interface Bomb : GameObjectBase
+{
+    
+}
 
 @end

@@ -12,9 +12,7 @@
 @class GameLayer;
 
 @interface GameObjectBase : NSObject
-{
 
-}
 @property (nonatomic, assign) CCSprite *gameObjectSprite;
 @property (nonatomic, assign) GameLayer *parentGameLayer;
 @property (nonatomic) int gameObjectSpeed;

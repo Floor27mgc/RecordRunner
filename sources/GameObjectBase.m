@@ -25,7 +25,6 @@
     objCreated.gameObjectSprite = [CCSprite spriteWithFile:fileName];
     objCreated.gameObjectSpeed = speed;
     return objCreated;
-
 }
 
 - (id) init
@@ -35,7 +34,6 @@
         // Add init stuff here for the base class
     }
     return (self);
-    
 }
 
 
@@ -53,7 +51,6 @@
 
 - (void) moveTo:(CGPoint) targetPoint
 {
-    //_gameObjectSprite.position = targetPoint;
     [_gameObjectSprite setPosition: targetPoint];
 }
 
@@ -64,11 +61,8 @@
 
 - (void) moveBy:(CGPoint) relativePoint
 {
-/*    _gameObjectSprite.position = ccp(_gameObjectSprite.position.x + relativePoint.x,
-                                    _gameObjectSprite.position.y + relativePoint.y); */
     [_gameObjectSprite setPosition:ccp(_gameObjectSprite.position.x + relativePoint.x,
                                        _gameObjectSprite.position.y + relativePoint.y)];
-    
 }
 
 - (void) update: (ccTime) dt
