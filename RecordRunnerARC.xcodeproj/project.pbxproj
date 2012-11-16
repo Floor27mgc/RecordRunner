@@ -17,6 +17,7 @@
 		85A671441654581B00499BF7 /* Bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = 85A671431654581B00499BF7 /* Bomb.png */; };
 		85A671471654582500499BF7 /* Coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 85A671461654582500499BF7 /* Coin.png */; };
 		85A6714916546D4800499BF7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85A6714816546D4800499BF7 /* Default-568h@2x.png */; };
+		85A6714C1655A6CC00499BF7 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A6714B1655A6CB00499BF7 /* Queue.m */; };
 		DC0864B815BD8CE60044A820 /* CCNode+Debug.h in Headers */ = {isa = PBXBuildFile; fileRef = DC0864B515BD8CE60044A820 /* CCNode+Debug.h */; };
 		DC0864B915BD8CE60044A820 /* CCNode+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0864B615BD8CE60044A820 /* CCNode+Debug.m */; };
 		DC0864BA15BD8CE60044A820 /* ccCArray.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0864B715BD8CE60044A820 /* ccCArray.m */; };
@@ -285,6 +286,8 @@
 		85A671431654581B00499BF7 /* Bomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Bomb.png; path = Graphics/Bomb.png; sourceTree = SOURCE_ROOT; };
 		85A671461654582500499BF7 /* Coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Coin.png; path = Graphics/Coin.png; sourceTree = SOURCE_ROOT; };
 		85A6714816546D4800499BF7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		85A6714A1655A6CB00499BF7 /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Queue.h; path = sources/Queue.h; sourceTree = SOURCE_ROOT; };
+		85A6714B1655A6CB00499BF7 /* Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Queue.m; path = sources/Queue.m; sourceTree = SOURCE_ROOT; };
 		DC0864B515BD8CE60044A820 /* CCNode+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+Debug.h"; sourceTree = "<group>"; };
 		DC0864B615BD8CE60044A820 /* CCNode+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+Debug.m"; sourceTree = "<group>"; };
 		DC0864B715BD8CE60044A820 /* ccCArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ccCArray.m; sourceTree = "<group>"; };
@@ -617,6 +620,8 @@
 				85A671351651D14000499BF7 /* Bomb.m */,
 				85A671381651D16000499BF7 /* Coin.h */,
 				85A671391651D16000499BF7 /* Coin.m */,
+				85A6714A1655A6CB00499BF7 /* Queue.h */,
+				85A6714B1655A6CB00499BF7 /* Queue.m */,
 			);
 			name = game;
 			sourceTree = "<group>";
@@ -1268,6 +1273,7 @@
 				0840D5A3163F4C2A003D5FE6 /* GameObjectPlayer.m in Sources */,
 				85A671361651D14000499BF7 /* Bomb.m in Sources */,
 				85A6713A1651D16000499BF7 /* Coin.m in Sources */,
+				85A6714C1655A6CC00499BF7 /* Queue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
