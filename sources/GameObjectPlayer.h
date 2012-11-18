@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "GameObjectBase.h"
-#define kPlayerSpeed 10
+#define kPlayerSpeed 500
 typedef enum
 {
     kMoveLeft  = -1,

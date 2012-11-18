@@ -18,13 +18,16 @@
     [self moveBy:ccp(direction * self.gameObjectSpeed, 0)];
     playerStreak.position = [self getGameObjectSpritePosition];
 
-    if (self.gameObjectSprite.position.x == 100)
+    if (self.gameObjectSprite.position.x <= 100)
     {
+        [self moveTo:ccp(100, self.getGameObjectSpritePosition.y ) ];
         self.gameObjectSpeed = 0;
     }
     
-    if (self.gameObjectSprite.position.x == 700)
+    if (self.gameObjectSprite.position.x >= 700)
     {
+        
+        [self moveTo:ccp(700, self.getGameObjectSpritePosition.y ) ];
         self.gameObjectSpeed = 0;
     }
     

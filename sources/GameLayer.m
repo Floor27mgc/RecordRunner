@@ -65,14 +65,14 @@
         // Create bomb
         _bomb = [Bomb initWithGameLayer: self
                           imageFileName:@"Bomb.png"
-                            objectSpeed:1];
+                            objectSpeed:5];
         [_bomb moveTo:ccp(100,
                           size.height - _bomb.gameObjectSprite.quad.tr.vertices.y)];
         
         // Create coin
         _coin = [Coin initWithGameLayer:self
                           imageFileName:@"Coin.png"
-                             objectSpeed:2];
+                             objectSpeed:7];
         [_coin moveTo:ccp(300,
                           size.height - _coin.gameObjectSprite.quad.tr.vertices.y)];
         
