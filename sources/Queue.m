@@ -10,6 +10,17 @@
 
 @implementation Queue
 
+@synthesize objects = _objects;
+
++ (id)initWithSize:(NSUInteger) size
+{
+    Queue * objCreated;
+    objCreated = [[self alloc] init];
+    objCreated.objects = [[NSMutableArray alloc] initWithCapacity:(size)];
+        
+    return objCreated;
+}
+
 - (id)init
 {
     if ((self = [super init])) {

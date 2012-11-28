@@ -14,6 +14,7 @@
 
 @property (nonatomic) NSMutableArray * objects;
 
++ (id)initWithSize:(NSUInteger)size;
 - (void) addObject:(id)object;
 - (id) takeObject;
 
