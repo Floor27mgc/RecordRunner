@@ -18,25 +18,17 @@
     [self moveBy:ccp(direction * self.gameObjectSpeed, 0)];
     playerStreak.position = [self getGameObjectSpritePosition];
 
-    if (self.gameObjectSprite.position.x <= 100)
+    if (self.gameObjectSprite.position.x == PLAYER_LEFT_BOUND)
     {
-        [self moveTo:ccp(100, self.getGameObjectSpritePosition.y ) ];
         self.gameObjectSpeed = 0;
     }
     
-    if (self.gameObjectSprite.position.x >= 700)
+    if (self.gameObjectSprite.position.x == PLAYER_RIGHT_BOUND)
     {
-        
-        [self moveTo:ccp(700, self.getGameObjectSpritePosition.y ) ];
-        self.gameObjectSpeed = 0;
+         self.gameObjectSpeed = 0;
     }
     
 }
-
-/*+ (id) initWithGameLayer:(GameLayer *) gamelayer imageFileName:(NSString *) fileName
-{
-    return [super initWithGameLayer:gamelayer imageFileName:fileName];
-}*/
 
 - (void) handleCollision
 {
@@ -49,7 +41,7 @@
     {
         playerStreak = [CCMotionStreak streakWithFade:0.8f
                                                minSeg:1.0f
-                                                width:50
+                                                width:20
                                                 color:ccc3(0, 255, 0)
                                       textureFilename:@"player.png"];
 

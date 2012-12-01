@@ -25,7 +25,7 @@
 {
     // this is a negative movement down the Y-axis, the Coin is falling
     // from the top of the screen
-    [self moveBy:ccp(0, -self.gameObjectSpeed)];
+    [self moveBy:ccp(0, self.gameObjectSpeed)];
 }
 
 - (BOOL) encounter

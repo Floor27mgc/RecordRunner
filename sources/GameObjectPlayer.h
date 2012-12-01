@@ -16,6 +16,9 @@ typedef enum
     kMoveRight =  1
 } direction_t;
 
+#define PLAYER_START_POSITION ccp(50, 400)
+#define PLAYER_LEFT_BOUND  50
+#define PLAYER_RIGHT_BOUND 270
 
 @interface GameObjectPlayer : GameObjectBase
 {
