@@ -55,6 +55,7 @@
         // This includes gameObjects like bombs, players, background..etc.
         CGSize size = [[CCDirector sharedDirector] winSize];
         NSLog(@"height = %f width = %f", size.height, size.width);
+        
         // Create background
         background = [CCSprite spriteWithFile:@"background.png"];
         background.anchorPoint=ccp(0,0);
@@ -107,9 +108,7 @@
             [self addChild: _coin.gameObjectSprite];
         }
     }
-/*    NSLog(@"there are %d bombs", [_bombFreePool.objects count]);
-    NSLog(@"there are %d coins", [_coinFreePool.objects count]);*/
-    
+   
     [self schedule: @selector(update:)];
 	return self;
 }
@@ -129,21 +128,25 @@
 {
     GameObjectBase * newObject = nil;
     
+    // generate x location for new object
+    CGSize size = [[CCDirector sharedDirector] winSize];
+    int random_x = arc4random() % (int)size.width;
+    
     switch (type) {
         case BOMB_TYPE:
-            //NSLog(@"creating a bomb");
             if ([_bombUsedPool.objects count] < MAX_NUM_BOMBS) {
                 newObject = [_bombFreePool takeObject];
                 if (newObject != nil) {
+                    [newObject moveTo:ccp(random_x, 0)];
                     [_bombUsedPool addObject:newObject];
                 }
             }
             break;
         case COIN_TYPE:
-            //NSLog(@"creating a coin");
             if ([_coinUsedPool.objects count] < MAX_NUM_COINS) {
                 newObject = [_coinFreePool takeObject];
                 if (newObject != nil) {
+                    [newObject moveTo:ccp(random_x, 0)];
                     [_coinUsedPool addObject:newObject];
                 }
             }
@@ -167,14 +170,31 @@
         [self generateGameObject:(COIN_TYPE)];
     }
 
+    CGSize windowSize = [[CCDirector sharedDirector] winSize];
+    
     // render all bombs
     for (int i = 0; i < [_bombUsedPool.objects count]; ++i) {
-        [_bombUsedPool.objects[i] showNextFrame];
+        Bomb * renderBomb = _bombUsedPool.objects[i];
+        [renderBomb showNextFrame];
+
+        // recycle the bomb if it's off the screen
+        CGPoint curPoint = [renderBomb.gameObjectSprite position];
+        if (curPoint.y > windowSize.height) {
+            [_bombFreePool addObject:[_bombUsedPool takeObjectFromIndex:(i)]];
+        }
     }
 
     // render all coins
     for (int i = 0; i < [_coinUsedPool.objects count]; ++i) {
-        [_coinUsedPool.objects[i] showNextFrame];
+        Coin * renderCoin = _coinUsedPool.objects[i];
+        [renderCoin showNextFrame];
+        
+        // recycle the coin if it's off the screen
+        CGPoint curPoint = [renderCoin.gameObjectSprite position];
+        if (curPoint.y > windowSize.height) {
+            [_coinFreePool addObject:[_coinUsedPool takeObjectFromIndex:(i)]];
+        }
+
     }
 }
 

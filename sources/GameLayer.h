@@ -13,13 +13,13 @@
 #import "Bomb.h"
 #import "Queue.h"
 
-#define NUM_OBSTACLES            10
-#define NUM_REWARDS              10
+#define NUM_OBSTACLES            20
+#define NUM_REWARDS              20
 #define RANDOM_MAX              100
-#define BOMB_CREATION_THRESHOLD  95
-#define COIN_CREATION_THRESHOLD  80
-#define MAX_NUM_BOMBS             7
-#define MAX_NUM_COINS             8
+#define BOMB_CREATION_THRESHOLD  97
+#define COIN_CREATION_THRESHOLD  90
+#define MAX_NUM_BOMBS           100
+#define MAX_NUM_COINS           100
 
 typedef enum {
     BOMB_TYPE,

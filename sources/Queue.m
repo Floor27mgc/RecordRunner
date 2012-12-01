@@ -40,6 +40,17 @@
     [_objects addObject:object];
 }
 
+- (id)takeObjectFromIndex:(int) index
+{
+    if (index > [_objects count] || index < 0) {
+        return nil;
+    }
+
+    id object = [_objects objectAtIndex:(index)];
+    [_objects removeObjectAtIndex:(index)];
+    return object;
+}
+
 - (id)takeObject
 {
     id object = nil;

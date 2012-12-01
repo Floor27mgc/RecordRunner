@@ -16,6 +16,7 @@
 
 + (id)initWithSize:(NSUInteger)size;
 - (void) addObject:(id)object;
+- (id) takeObjectFromIndex:(int) index;
 - (id) takeObject;
 
 @end

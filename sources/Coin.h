@@ -8,6 +8,7 @@
 
 #import "GameObjectBase.h"
 #define COIN_START_POSITION ccp(200,0)
+
 @interface Coin : GameObjectBase
 {
     
