@@ -7,7 +7,7 @@
 //
 
 #import "GameObjectBase.h"
-
+#define BOMB_START_POSITION ccp(100,0)
 @interface Bomb : GameObjectBase
 {
     

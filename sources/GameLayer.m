@@ -54,7 +54,7 @@
         // This is where we create ALL game objects in this game layer
         // This includes gameObjects like bombs, players, background..etc.
         CGSize size = [[CCDirector sharedDirector] winSize];
-        
+        NSLog(@"height = %f width = %f", size.height, size.width);
         // Create background
         background = [CCSprite spriteWithFile:@"background.png"];
         background.anchorPoint=ccp(0,0);
@@ -63,9 +63,12 @@
         _player = [GameObjectPlayer initWithGameLayer:self
                                         imageFileName:@"player.png"
                                           objectSpeed:kPlayerSpeed];
-        [_player moveTo:ccp(200,
-                            _player.gameObjectSprite.quad.tr.vertices.y)];
+        [_player moveTo:PLAYER_START_POSITION];
 
+        [self addChild:background];
+        [self addChild:_player.playerStreak];
+        [self addChild:_player.gameObjectSprite];
+        
         // Create bomb free pool (queue)
         _bombFreePool = [Queue initWithSize:MAX_NUM_BOMBS];
         
@@ -77,8 +80,7 @@
             Bomb * _bomb = [Bomb initWithGameLayer: self
                               imageFileName:@"Bomb.png"
                                 objectSpeed:1];
-            [_bomb moveTo:ccp(100,
-                              size.height - _bomb.gameObjectSprite.quad.tr.vertices.y)];
+            [_bomb moveTo:BOMB_START_POSITION];
             
             [_bombFreePool addObject:_bomb];
             
@@ -97,21 +99,16 @@
             Coin * _coin = [Coin initWithGameLayer:self
                               imageFileName:@"Coin.png"
                                 objectSpeed:2];
-            [_coin moveTo:ccp(300,
-                              size.height - _coin.gameObjectSprite.quad.tr.vertices.y)];
+            [_coin moveTo:COIN_START_POSITION];
             
             [_coinFreePool addObject:_coin];
             
             // add coin to GameLayer
             [self addChild: _coin.gameObjectSprite];
         }
-        
-        [self addChild:background];
-        [self addChild:_player.playerStreak];
-        [self addChild:_player.gameObjectSprite];
     }
-    NSLog(@"there are %d bombs", [_bombFreePool.objects count]);
-    NSLog(@"there are %d coins", [_coinFreePool.objects count]);
+/*    NSLog(@"there are %d bombs", [_bombFreePool.objects count]);
+    NSLog(@"there are %d coins", [_coinFreePool.objects count]);*/
     
     [self schedule: @selector(update:)];
 	return self;
@@ -138,7 +135,7 @@
             if ([_bombUsedPool.objects count] < MAX_NUM_BOMBS) {
                 newObject = [_bombFreePool takeObject];
                 if (newObject != nil) {
-                    NSLog(@"ADDING the bomb");
+//                    NSLog(@"ADDING the bomb");
                     [_bombUsedPool addObject:newObject];
                 }
             }
@@ -148,7 +145,7 @@
             if ([_coinUsedPool.objects count] < MAX_NUM_COINS) {
                 newObject = [_coinFreePool takeObject];
                 if (newObject != nil) {
-                    NSLog(@"ADDING the coin");
+//                    NSLog(@"ADDING the coin");
                     [_coinUsedPool addObject:newObject];
                 }
             }
@@ -173,13 +170,13 @@
     }
 
     // render all bombs
-    NSLog(@"there are %d bombs", [_bombUsedPool.objects count]);
+//    NSLog(@"there are %d bombs", [_bombUsedPool.objects count]);
     for (int i = 0; i < [_bombUsedPool.objects count]; ++i) {
         [_bombUsedPool.objects[i] showNextFrame];
     }
 
     // render all coins
-    NSLog(@"there are %d coins", [_coinUsedPool.objects count]);
+//    NSLog(@"there are %d coins", [_coinUsedPool.objects count]);
     for (int i = 0; i < [_coinUsedPool.objects count]; ++i) {
         [_coinUsedPool.objects[i] showNextFrame];
     }

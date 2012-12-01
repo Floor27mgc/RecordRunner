@@ -1438,11 +1438,13 @@
 				GCC_PREFIX_HEADER = "cocos2d-2.x-ARC-iOS/Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"cocos2d-2.x-ARC-iOS/libs/kazmath/include\"";
 				INFOPLIST_FILE = "cocos2d-2.x-ARC-iOS/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
 				);
 				PRODUCT_NAME = RecordRunnerARC;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1457,11 +1459,13 @@
 				GCC_PREFIX_HEADER = "cocos2d-2.x-ARC-iOS/Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"cocos2d-2.x-ARC-iOS/libs/kazmath/include\"";
 				INFOPLIST_FILE = "cocos2d-2.x-ARC-iOS/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
 				);
 				PRODUCT_NAME = RecordRunnerARC;
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
