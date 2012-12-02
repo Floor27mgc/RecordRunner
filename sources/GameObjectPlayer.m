@@ -18,12 +18,12 @@
     [self moveBy:ccp(direction * self.gameObjectSpeed, 0)];
     playerStreak.position = [self getGameObjectSpritePosition];
 
-    if (self.gameObjectSprite.position.x == PLAYER_LEFT_BOUND)
+    if (self.gameObjectSprite.position.x <= PLAYER_LEFT_BOUND)
     {
         self.gameObjectSpeed = 0;
     }
     
-    if (self.gameObjectSprite.position.x == PLAYER_RIGHT_BOUND)
+    if (self.gameObjectSprite.position.x >= PLAYER_RIGHT_BOUND)
     {
          self.gameObjectSpeed = 0;
     }

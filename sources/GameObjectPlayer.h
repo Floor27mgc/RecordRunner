@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "GameObjectBase.h"
-#define kPlayerSpeed 500
+#define kPlayerSpeed ((PLAYER_RIGHT_BOUND - PLAYER_LEFT_BOUND)/10)
 typedef enum
 {
     kMoveLeft  = -1,
@@ -16,7 +16,7 @@ typedef enum
     kMoveRight =  1
 } direction_t;
 
-#define PLAYER_START_POSITION ccp(50, 400)
+#define PLAYER_START_POSITION ccp(PLAYER_LEFT_BOUND, 400)
 #define PLAYER_LEFT_BOUND  50
 #define PLAYER_RIGHT_BOUND 270
 
