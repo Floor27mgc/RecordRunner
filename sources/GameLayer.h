@@ -45,5 +45,6 @@ typedef enum {
 @property (nonatomic, strong) Queue * coinFreePool;
 @property (nonatomic, strong) Queue * coinUsedPool;
 @property (nonatomic, strong) CCSprite *background;
+@property (nonatomic) bool playerIsMoving;
 
 @end

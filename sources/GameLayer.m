@@ -27,6 +27,9 @@
 @synthesize coinFreePool = _coinFreePool;
 @synthesize coinUsedPool = _coinUsedPool;
 
+@synthesize playerIsMoving;
+
+// -----------------------------------------------------------------------------------
 // Helper class method that creates a Scene with the GameLayer as the only child.
 +(CCScene *) scene
 {
@@ -43,6 +46,7 @@
 	return scene;
 }
 
+// -----------------------------------------------------------------------------------
 // on "init" you need to initialize your instance
 -(id) init
 {
@@ -108,11 +112,15 @@
             [self addChild: _coin.gameObjectSprite];
         }
     }
-   
+    
+    //initialize motion detection
+    playerIsMoving = NO;
+    
     [self schedule: @selector(update:)];
 	return self;
 }
 
+// -----------------------------------------------------------------------------------
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
 {
@@ -124,6 +132,7 @@
 
 }
 
+// -----------------------------------------------------------------------------------
 - (void) generateGameObject:(game_object_t) type
 {
     GameObjectBase * newObject = nil;
@@ -156,6 +165,7 @@
     }
 }
 
+// -----------------------------------------------------------------------------------
 - (void) update:(ccTime) dt
 {
     [_player showNextFrame];
@@ -170,37 +180,74 @@
         [self generateGameObject:(COIN_TYPE)];
     }
 
-    CGSize windowSize = [[CCDirector sharedDirector] winSize];
+    CGSize windowSize      = [[CCDirector sharedDirector] winSize];
+    //CGPoint playerLocation = [_player.gameObjectSprite position];
+    CCSprite * pSprite     = [_player gameObjectSprite];
+    //int playerHeight       = [pSprite boundingBox].size.height;
+    bool recycleMe         = NO;
+    
+    //pSprite.anchorPoint = ccp(0, 0);
+    CGRect playerBox = CGRectMake(0,
+                                  pSprite.position.y,
+                                  windowSize.width,
+                                  [pSprite boundingBox].size.height);
     
     // render all bombs
     for (int i = 0; i < [_bombUsedPool.objects count]; ++i) {
         Bomb * renderBomb = _bombUsedPool.objects[i];
-        [renderBomb showNextFrame];
+        
+        // collide with player, if applicable
+        if (playerIsMoving) {
+            if ([renderBomb encounter:playerBox]) {
+                NSLog(@"Bomb encountered the player!");
+                recycleMe = YES;
+            }
+        } else {
+            [renderBomb showNextFrame];
+        }
 
         // recycle the bomb if it's off the screen
         CGPoint curPoint = [renderBomb.gameObjectSprite position];
-        if (curPoint.y > windowSize.height) {
+        if (curPoint.y > windowSize.height || recycleMe) {
+            [renderBomb moveTo:BOMB_START_POSITION];
             [_bombFreePool addObject:[_bombUsedPool takeObjectFromIndex:(i)]];
+            recycleMe = NO;
         }
     }
-
+    
     // render all coins
     for (int i = 0; i < [_coinUsedPool.objects count]; ++i) {
         Coin * renderCoin = _coinUsedPool.objects[i];
-        [renderCoin showNextFrame];
+        
+        // collide with player, if applicable
+        if (playerIsMoving) {
+            if ([renderCoin encounter:playerBox]) {
+                NSLog(@"Coin encountered the player!");
+                recycleMe = YES;
+            }
+         } else {
+            [renderCoin showNextFrame];
+        }
         
         // recycle the coin if it's off the screen
         CGPoint curPoint = [renderCoin.gameObjectSprite position];
-        if (curPoint.y > windowSize.height) {
+        if (curPoint.y > windowSize.height || recycleMe) {
+            [renderCoin moveTo:COIN_START_POSITION];
             [_coinFreePool addObject:[_coinUsedPool takeObjectFromIndex:(i)]];
+            recycleMe = NO;
         }
-
+    }
+    
+    if (playerIsMoving) {
+        playerIsMoving = NO;
     }
 }
 
+// -----------------------------------------------------------------------------------
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	[self.player changeDirection];
+    playerIsMoving = YES;
 }
 
 @end

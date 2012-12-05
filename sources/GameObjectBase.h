@@ -24,8 +24,13 @@
 
 // Methods
 - (CGRect) getObjectBound;  // Return bounds of current game object sprite
-- (BOOL) encounter;         // Determines if the current game object has
+
+// Determines if the current game object has
 // collided with the player
+- (BOOL) encounter:(int) y
+        withHeight:(int) height;
+
+- (BOOL) encounter:(CGRect) box;
 
 - (void) moveTo:(CGPoint) targetPoint;      // Move to absolute position within layer
 - (void) moveBy:(CGPoint) relativePoint;    // Move by relative position compared to its

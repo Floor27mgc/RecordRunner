@@ -11,9 +11,7 @@
 
 @implementation Bomb
 
-//@synthesize gameObjectSprite;
-//@synthesize gameObjectSpeed;
-
+// -----------------------------------------------------------------------------------
 - (id) init
 {
     if( (self=[super init]) )
@@ -22,6 +20,7 @@
     return (self);
 }
 
+// -----------------------------------------------------------------------------------
 - (void) showNextFrame
 {
     // this is a negative movement down the Y-axis, the Bomb is falling
@@ -29,11 +28,32 @@
     [self moveBy:ccp(0, self.gameObjectSpeed)];
 }
 
-- (BOOL) encounter
+
+/*- (BOOL) encounter:(CGRect) box
 {
-    return NO;
+    CCSprite * mySprite  = self.gameObjectSprite;
+    mySprite.anchorPoint = ccp(0, 0);
+    CGRect myBox   =
+        CGRectMake(mySprite.position.x,
+                   mySprite.position.y,
+                   [mySprite boundingBox].size.width,
+                   [mySprite boundingBox].size.height);
+    
+    return (CGRectIntersectsRect(box, myBox));
 }
 
+
+- (BOOL) encounter: withY:(int) y
+        withHeight:(int) height
+{
+    CGPoint curLocation = [self.gameObjectSprite position];
+    int myHeight = [self.gameObjectSprite boundingBox].size.height;
+    
+    return ((curLocation.y + myHeight) >=
+            (y + height));
+}*/
+
+// -----------------------------------------------------------------------------------
 - (void) handleCollision
 {
     
