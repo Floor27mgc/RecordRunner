@@ -147,6 +147,7 @@
                 newObject = [_bombFreePool takeObject];
                 if (newObject != nil) {
                     [newObject moveTo:ccp(random_x, 0)];
+                    newObject.gameObjectSprite.visible = 1;
                     [_bombUsedPool addObject:newObject];
                 }
             }
@@ -156,6 +157,7 @@
                 newObject = [_coinFreePool takeObject];
                 if (newObject != nil) {
                     [newObject moveTo:ccp(random_x, 0)];
+                    newObject.gameObjectSprite.visible = 1;
                     [_coinUsedPool addObject:newObject];
                 }
             }
@@ -180,6 +182,26 @@
         [self generateGameObject:(COIN_TYPE)];
     }
 
+    // Trigger each bomb objects and coin object proceed to
+    // show the next frame.  Each object will be responsible
+    // for the following task:
+    //   1. rendering the next frame
+    //   2. detect if there is an encounter with the player
+    //      a. If yes, call handle_collision() method
+    //      b. If no, check if the object is off screen
+    //         1. If yes, hide the object and recycle the
+    //            object.
+    //         2. If no, no op
+    for (int i = 0; i < [_bombUsedPool.objects count]; ++i) {
+        [_bombUsedPool.objects[i] showNextFrame];
+    }
+    
+    for (int i = 0; i < [_coinUsedPool.objects count]; ++i) {
+        [_coinUsedPool.objects[i] showNextFrame];
+    }
+
+
+/*
     CGSize windowSize      = [[CCDirector sharedDirector] winSize];
     //CGPoint playerLocation = [_player.gameObjectSprite position];
     CCSprite * pSprite     = [_player gameObjectSprite];
@@ -241,6 +263,7 @@
     if (playerIsMoving) {
         playerIsMoving = NO;
     }
+*/
 }
 
 // -----------------------------------------------------------------------------------

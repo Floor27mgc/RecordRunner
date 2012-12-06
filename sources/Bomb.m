@@ -23,39 +23,53 @@
 // -----------------------------------------------------------------------------------
 - (void) showNextFrame
 {
-    // this is a negative movement down the Y-axis, the Bomb is falling
-    // from the top of the screen
+    // this is a negative movement down the Y-axis, the Bomb is rising
+    // from the bottom of the screen
     [self moveBy:ccp(0, self.gameObjectSpeed)];
-}
-
-
-/*- (BOOL) encounter:(CGRect) box
-{
-    CCSprite * mySprite  = self.gameObjectSprite;
-    mySprite.anchorPoint = ccp(0, 0);
-    CGRect myBox   =
-        CGRectMake(mySprite.position.x,
-                   mySprite.position.y,
-                   [mySprite boundingBox].size.width,
-                   [mySprite boundingBox].size.height);
     
-    return (CGRectIntersectsRect(box, myBox));
-}
-
-
-- (BOOL) encounter: withY:(int) y
-        withHeight:(int) height
-{
-    CGPoint curLocation = [self.gameObjectSprite position];
-    int myHeight = [self.gameObjectSprite boundingBox].size.height;
+    CCSprite * pSprite = self.parentGameLayer.player.gameObjectSprite;
+    pSprite.anchorPoint = ccp(0,0);
     
-    return ((curLocation.y + myHeight) >=
-            (y + height));
-}*/
+    if ((pSprite.position.x > PLAYER_LEFT_BOUND) &&
+        (self.parentGameLayer.player.direction == kMoveRight) &&
+        (self.parentGameLayer.player.gameObjectSpeed != 0))
+    {
+        CGRect playerHitBox = CGRectMake(pSprite.position.x,
+                                         pSprite.position.y,
+                                         -kPlayerHitBoxSegmentWidth,
+                                         [pSprite boundingBox].size.height);
+        if ([self encounter:playerHitBox])
+        {
+            [self handleCollision];
+        }
+    }
+    
+    if ((pSprite.position.x < PLAYER_RIGHT_BOUND) &&
+        (self.parentGameLayer.player.direction == kMoveLeft) &&
+        (self.parentGameLayer.player.gameObjectSpeed != 0))
+    {
+        CGRect playerHitBox = CGRectMake(pSprite.position.x,
+                                         pSprite.position.y,
+                                         kPlayerHitBoxSegmentWidth,
+                                         [pSprite boundingBox].size.height);
+        if ([self encounter:playerHitBox])
+        {
+            [self handleCollision];
+        }
+    }
+
+    
+}
 
 // -----------------------------------------------------------------------------------
 - (void) handleCollision
 {
+    NSUInteger i;
     
+    i = [self.parentGameLayer.bombUsedPool.objects indexOfObjectIdenticalTo:self];
+    [[self.parentGameLayer.bombUsedPool.objects objectAtIndex:i] resetObject];
+    
+    [self.parentGameLayer.bombFreePool addObject:[self.parentGameLayer.bombUsedPool.objects objectAtIndex:i]];
+    [self.parentGameLayer.bombUsedPool.objects removeObjectAtIndex:i];
 }
 @end

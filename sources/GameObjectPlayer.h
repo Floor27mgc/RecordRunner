@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "GameObjectBase.h"
 #define kPlayerSpeed ((PLAYER_RIGHT_BOUND - PLAYER_LEFT_BOUND)/10)
+#define kPlayerHitBoxSegmentWidth kPlayerSpeed
+
 typedef enum
 {
     kMoveLeft  = -1,

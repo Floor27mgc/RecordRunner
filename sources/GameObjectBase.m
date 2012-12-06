@@ -47,7 +47,7 @@
 
 // -----------------------------------------------------------------------------------
 - (BOOL) encounter:(int) y
-    withHeight:(int)height
+        withHeight:(int)height
 {
     CGPoint curLocation = [self.gameObjectSprite position];
     int myHeight = [self.gameObjectSprite boundingBox].size.height;
@@ -88,6 +88,12 @@
                                        _gameObjectSprite.position.y + relativePoint.y)];
 }
 
+// -----------------------------------------------------------------------------------
+- (void) resetObject
+{
+    self.gameObjectSprite.position = ccp(0,0);
+    self.gameObjectSprite.visible = 0;
+}
 // -----------------------------------------------------------------------------------
 - (void) update: (ccTime) dt
 {

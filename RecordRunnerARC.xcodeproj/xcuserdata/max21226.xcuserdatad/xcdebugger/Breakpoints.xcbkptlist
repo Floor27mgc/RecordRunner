@@ -91,7 +91,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "30"
          endingLineNumber = "30"
-         landmarkName = "-init"
+         landmarkName = "+initWithGameLayer:imageFileName:objectSpeed:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -156,8 +156,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "32"
          endingLineNumber = "32"
-         landmarkName = "+scene"
-         landmarkType = "5">
+         landmarkName = "@implementation GameLayer"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"

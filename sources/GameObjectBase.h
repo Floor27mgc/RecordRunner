@@ -24,7 +24,10 @@
 
 // Methods
 - (CGRect) getObjectBound;  // Return bounds of current game object sprite
-
+- (void) resetObject;   // Reset base game object property.  Derived
+                        // class could call this using [super resetObject]
+                        // in their own resetObject method to make sure the
+                        // all base properties are reset in one scoop
 // Determines if the current game object has
 // collided with the player
 - (BOOL) encounter:(int) y
