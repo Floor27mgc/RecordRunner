@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "Queue.h"
 //#import "GameLayer.h"
 @class GameLayer;
 
@@ -28,11 +29,15 @@
                         // class could call this using [super resetObject]
                         // in their own resetObject method to make sure the
                         // all base properties are reset in one scoop
+- (void) recycleOffScreenObjWithUsedPool:(Queue *)_usedObjPool
+                                freePool:(Queue *)_freeObjPool;
+- (void) recycleObjectWithUsedPool:(Queue *)_usedObjPool
+                          freePool:(Queue *)_freeObjPool;
 // Determines if the current game object has
 // collided with the player
 - (BOOL) encounter:(int) y
         withHeight:(int) height;
-
+- (BOOL) encounterWithPlayer;
 - (BOOL) encounter:(CGRect) box;
 
 - (void) moveTo:(CGPoint) targetPoint;      // Move to absolute position within layer

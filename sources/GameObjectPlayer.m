@@ -46,7 +46,6 @@
                                       textureFilename:@"player.png"];
 
         direction = 1;
-
     }
     return (self);
     

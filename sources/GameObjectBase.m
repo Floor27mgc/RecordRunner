@@ -26,6 +26,7 @@
     objCreated.parentGameLayer = gamelayer;
     objCreated.gameObjectSprite = [CCSprite spriteWithFile:fileName];
     objCreated.gameObjectSpeed = speed;
+    objCreated.gameObjectSprite.anchorPoint = ccp(0,0);
     return objCreated;
 }
 
@@ -70,6 +71,43 @@
 }
 
 // -----------------------------------------------------------------------------------
+- (BOOL) encounterWithPlayer
+{
+    CCSprite * pSprite = self.parentGameLayer.player.gameObjectSprite;
+    pSprite.anchorPoint = ccp(0,0);
+    
+    if ((pSprite.position.x > PLAYER_LEFT_BOUND) &&
+        (self.parentGameLayer.player.direction == kMoveRight) &&
+        (self.parentGameLayer.player.gameObjectSpeed != 0))
+    {
+        CGRect playerHitBox = CGRectMake(pSprite.position.x,
+                                         pSprite.position.y,
+                                         -kPlayerHitBoxSegmentWidth,
+                                         [pSprite boundingBox].size.height);
+        if ([self encounter:playerHitBox])
+        {
+            return YES;
+        }
+    }
+    
+    if ((pSprite.position.x < PLAYER_RIGHT_BOUND) &&
+        (self.parentGameLayer.player.direction == kMoveLeft) &&
+        (self.parentGameLayer.player.gameObjectSpeed != 0))
+    {
+        CGRect playerHitBox = CGRectMake(pSprite.position.x,
+                                         pSprite.position.y,
+                                         kPlayerHitBoxSegmentWidth,
+                                         [pSprite boundingBox].size.height);
+        if ([self encounter:playerHitBox])
+        {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+// -----------------------------------------------------------------------------------
 - (void) moveTo:(CGPoint) targetPoint
 {
     [_gameObjectSprite setPosition: targetPoint];
@@ -86,6 +124,32 @@
 {
     [_gameObjectSprite setPosition:ccp(_gameObjectSprite.position.x + relativePoint.x,
                                        _gameObjectSprite.position.y + relativePoint.y)];
+}
+
+// -----------------------------------------------------------------------------------
+- (void) recycleOffScreenObjWithUsedPool:(Queue *)_usedObjPool
+                                freePool:(Queue *)_freeObjPool
+{
+    CGSize windowSize      = [[CCDirector sharedDirector] winSize];
+
+    CGPoint curPoint = [self.gameObjectSprite position];
+    if (curPoint.y > windowSize.height) {
+        [self recycleObjectWithUsedPool:_usedObjPool freePool:_freeObjPool];
+    }
+}
+
+// -----------------------------------------------------------------------------------
+- (void) recycleObjectWithUsedPool:(Queue *)_usedObjPool
+                          freePool:(Queue *)_freeObjPool
+{
+    NSUInteger i;
+    
+    i = [_usedObjPool.objects indexOfObjectIdenticalTo:self];
+    [[_usedObjPool.objects objectAtIndex:i] resetObject];
+    
+    [_freeObjPool addObject:[_usedObjPool.objects objectAtIndex:i]];
+    [_usedObjPool.objects removeObjectAtIndex:i];
+
 }
 
 // -----------------------------------------------------------------------------------

@@ -16,6 +16,7 @@
 {
     if( (self=[super init]) )
     {
+        
     }
     return (self);
 }
@@ -27,49 +28,22 @@
     // from the bottom of the screen
     [self moveBy:ccp(0, self.gameObjectSpeed)];
     
-    CCSprite * pSprite = self.parentGameLayer.player.gameObjectSprite;
-    pSprite.anchorPoint = ccp(0,0);
-    
-    if ((pSprite.position.x > PLAYER_LEFT_BOUND) &&
-        (self.parentGameLayer.player.direction == kMoveRight) &&
-        (self.parentGameLayer.player.gameObjectSpeed != 0))
+    if ([self encounterWithPlayer])
     {
-        CGRect playerHitBox = CGRectMake(pSprite.position.x,
-                                         pSprite.position.y,
-                                         -kPlayerHitBoxSegmentWidth,
-                                         [pSprite boundingBox].size.height);
-        if ([self encounter:playerHitBox])
-        {
-            [self handleCollision];
-        }
+        [self handleCollision];
     }
-    
-    if ((pSprite.position.x < PLAYER_RIGHT_BOUND) &&
-        (self.parentGameLayer.player.direction == kMoveLeft) &&
-        (self.parentGameLayer.player.gameObjectSpeed != 0))
+    else
     {
-        CGRect playerHitBox = CGRectMake(pSprite.position.x,
-                                         pSprite.position.y,
-                                         kPlayerHitBoxSegmentWidth,
-                                         [pSprite boundingBox].size.height);
-        if ([self encounter:playerHitBox])
-        {
-            [self handleCollision];
-        }
+        [self recycleOffScreenObjWithUsedPool:self.parentGameLayer.bombUsedPool
+                                     freePool:self.parentGameLayer.bombFreePool];
     }
-
     
 }
 
 // -----------------------------------------------------------------------------------
 - (void) handleCollision
 {
-    NSUInteger i;
-    
-    i = [self.parentGameLayer.bombUsedPool.objects indexOfObjectIdenticalTo:self];
-    [[self.parentGameLayer.bombUsedPool.objects objectAtIndex:i] resetObject];
-    
-    [self.parentGameLayer.bombFreePool addObject:[self.parentGameLayer.bombUsedPool.objects objectAtIndex:i]];
-    [self.parentGameLayer.bombUsedPool.objects removeObjectAtIndex:i];
+    [self recycleObjectWithUsedPool:self.parentGameLayer.bombUsedPool
+                           freePool:self.parentGameLayer.bombFreePool];
 }
 @end
