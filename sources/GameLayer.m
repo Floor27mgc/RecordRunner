@@ -116,8 +116,8 @@
         _score = [Score initWithGameLayer:self
                             imageFileName:@""
                               objectSpeed:0];
-        [_score moveTo:ccp(0, 0)];
-        [_score resetObject];
+        //[_score resetObject];
+        [_score moveTo:ccp(100, 100)];
         [self addChild:_score.score];
     }
     
@@ -205,7 +205,7 @@
         [_coinUsedPool.objects[i] showNextFrame];
     }
 
-
+    [_score showNextFrame];
 }
 
 // -----------------------------------------------------------------------------------

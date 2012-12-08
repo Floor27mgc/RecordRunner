@@ -33,8 +33,7 @@
 // -----------------------------------------------------------------------------------
 - (id) init
 {
-    if( (self=[super init]) )
-    {
+    if (self=[super init]) {
         // Add init stuff here for the base class
     }
     return (self);

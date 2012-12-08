@@ -12,6 +12,7 @@
 		0840D5A3163F4C2A003D5FE6 /* GameObjectPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0840D5A2163F4C2A003D5FE6 /* GameObjectPlayer.m */; };
 		0840D5A9163F4D67003D5FE6 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 0840D5A8163F4D67003D5FE6 /* player.png */; };
 		08E5B161164387A400E4AAA4 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 08E5B160164387A400E4AAA4 /* background.png */; };
+		8592EC101673EE3B0008B1B2 /* gorbNormal16.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 8592EC0F1673EE3B0008B1B2 /* gorbNormal16.fnt */; };
 		85A671361651D14000499BF7 /* Bomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671351651D14000499BF7 /* Bomb.m */; };
 		85A6713A1651D16000499BF7 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671391651D16000499BF7 /* Coin.m */; };
 		85A671441654581B00499BF7 /* Bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = 85A671431654581B00499BF7 /* Bomb.png */; };
@@ -280,6 +281,7 @@
 		0840D5A2163F4C2A003D5FE6 /* GameObjectPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectPlayer.m; path = sources/GameObjectPlayer.m; sourceTree = SOURCE_ROOT; };
 		0840D5A8163F4D67003D5FE6 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = player.png; path = Graphics/player.png; sourceTree = SOURCE_ROOT; };
 		08E5B160164387A400E4AAA4 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Graphics/background.png; sourceTree = SOURCE_ROOT; };
+		8592EC0F1673EE3B0008B1B2 /* gorbNormal16.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = gorbNormal16.fnt; path = Graphics/gorbNormal16.fnt; sourceTree = SOURCE_ROOT; };
 		85A671341651D13F00499BF7 /* Bomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bomb.h; path = sources/Bomb.h; sourceTree = SOURCE_ROOT; };
 		85A671351651D14000499BF7 /* Bomb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bomb.m; path = sources/Bomb.m; sourceTree = SOURCE_ROOT; };
 		85A671381651D16000499BF7 /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Coin.h; path = sources/Coin.h; sourceTree = SOURCE_ROOT; };
@@ -584,8 +586,10 @@
 		0840D593163F435E003D5FE6 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				8592EC001673ED6D0008B1B2 /* Graphics */,
 				85B53BAF1673CBF7001163F7 /* fixed.fnt */,
 				08E5B160164387A400E4AAA4 /* background.png */,
+				8592EC0F1673EE3B0008B1B2 /* gorbNormal16.fnt */,
 				85A671461654582500499BF7 /* Coin.png */,
 				0840D5A8163F4D67003D5FE6 /* player.png */,
 				85A671431654581B00499BF7 /* Bomb.png */,
@@ -632,6 +636,13 @@
 			);
 			name = game;
 			sourceTree = "<group>";
+		};
+		8592EC001673ED6D0008B1B2 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Graphics;
+			sourceTree = SOURCE_ROOT;
 		};
 		DC0C49E6154AB4DD00B4B727 = {
 			isa = PBXGroup;
@@ -1263,6 +1274,7 @@
 				85A671441654581B00499BF7 /* Bomb.png in Resources */,
 				85A671471654582500499BF7 /* Coin.png in Resources */,
 				85A6714916546D4800499BF7 /* Default-568h@2x.png in Resources */,
+				8592EC101673EE3B0008B1B2 /* gorbNormal16.fnt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

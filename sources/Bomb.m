@@ -32,11 +32,11 @@
     {
         [self handleCollision];
     }
-    else
-    {
+   //else
+    //{
         [self recycleOffScreenObjWithUsedPool:self.parentGameLayer.bombUsedPool
                                      freePool:self.parentGameLayer.bombFreePool];
-    }
+    //}
     
 }
 
@@ -45,6 +45,9 @@
 {
     [self recycleObjectWithUsedPool:self.parentGameLayer.bombUsedPool
                            freePool:self.parentGameLayer.bombFreePool];
+    
+    // increment score
+    [[self parentGameLayer] decrementScore:100];
 }
 
 // -----------------------------------------------------------------------------------

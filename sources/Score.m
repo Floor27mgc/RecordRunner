@@ -14,6 +14,19 @@
 @synthesize scoreValue = _scoreValue;
 
 // -----------------------------------------------------------------------------------
+- (id) init
+{
+    _scoreValue = 0;
+    
+    if(self = [super init]) {
+        _score = [CCLabelBMFont labelWithString:@"0" fntFile:@"gorbNormal16.fnt"];
+        NSString * scoreString = [NSString stringWithFormat:@"Score %d", _scoreValue];
+        [_score setString:scoreString];
+    }
+
+    return (self);
+}
+// -----------------------------------------------------------------------------------
 - (void) increment:(int)amount
 {
     _scoreValue += amount;
@@ -32,9 +45,9 @@
 // -----------------------------------------------------------------------------------
 - (void) showNextFrame
 {
-    _score = [CCLabelBMFont labelWithString:@"0" fntFile:@"fixed.fnt"];
-    NSString * scoreString = [NSString stringWithFormat:@"%d", _scoreValue];
+    NSString * scoreString = [NSString stringWithFormat:@"Score %d", _scoreValue];
     [_score setString:scoreString];
+    NSLog(@"Score is %d", _scoreValue);
 }
 
 // -----------------------------------------------------------------------------------
