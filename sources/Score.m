@@ -32,7 +32,7 @@
 // -----------------------------------------------------------------------------------
 - (void) showNextFrame
 {
-    _score = [CCLabelBMFont labelWithString:@"0" fntFile:@"16-GNU-Unifont.fnt"];
+    _score = [CCLabelBMFont labelWithString:@"0" fntFile:@"fixed.fnt"];
     NSString * scoreString = [NSString stringWithFormat:@"%d", _scoreValue];
     [_score setString:scoreString];
 }
