@@ -19,6 +19,8 @@
 @implementation GameLayer
 @synthesize player = _player;
 
+@synthesize score = _score;
+
 @synthesize background;
 
 @synthesize bombFreePool = _bombFreePool;
@@ -109,6 +111,14 @@
             // add coin to GameLayer
             [self addChild: _coin.gameObjectSprite];
         }
+        
+        // Create score
+        _score = [Score initWithGameLayer:self
+                            imageFileName:@""
+                              objectSpeed:0];
+        [_score moveTo:ccp(0, 0)];
+        [_score resetObject];
+        [self addChild:_score.score];
     }
     
     [self schedule: @selector(update:)];
@@ -202,6 +212,18 @@
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	[self.player changeDirection];
+}
+
+// -----------------------------------------------------------------------------------
+- (void) incrementScore:(int)value
+{
+    [_score increment:value];
+}
+
+// -----------------------------------------------------------------------------------
+- (void) decrementScore:(int)value
+{
+    [_score decrement:value];
 }
 
 @end

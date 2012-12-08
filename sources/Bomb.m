@@ -46,4 +46,11 @@
     [self recycleObjectWithUsedPool:self.parentGameLayer.bombUsedPool
                            freePool:self.parentGameLayer.bombFreePool];
 }
+
+// -----------------------------------------------------------------------------------
+- (void) resetObject
+{
+    
+}
+
 @end

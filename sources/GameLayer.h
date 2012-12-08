@@ -12,6 +12,7 @@
 #import "Coin.h"
 #import "Bomb.h"
 #import "Queue.h"
+#import "Score.h"
 
 #define NUM_OBSTACLES            20
 #define NUM_REWARDS              20
@@ -35,8 +36,13 @@ typedef enum {
 // returns a CCScene that contains the GameLayer as the only child
 +(CCScene *) scene;
 
-//
+// randomly create coins and bombs
 - (void) generateGameObject:(game_object_t) type;
+
+// accessor to increment score
+- (void) incrementScore:(int) value;
+// accessor to decrement score
+- (void) decrementScore:(int) value;
 
 @property (nonatomic, strong) GameObjectPlayer *player;
 
@@ -45,5 +51,6 @@ typedef enum {
 @property (nonatomic, strong) Queue * coinFreePool;
 @property (nonatomic, strong) Queue * coinUsedPool;
 @property (nonatomic, strong) CCSprite *background;
+@property (nonatomic, strong) Score * score;
 
 @end

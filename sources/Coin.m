@@ -42,5 +42,15 @@
 {
     [self recycleObjectWithUsedPool:self.parentGameLayer.coinUsedPool
                            freePool:self.parentGameLayer.coinFreePool];
+    
+    // increment score
+    [[self parentGameLayer] incrementScore:1];
 }
+
+// -----------------------------------------------------------------------------------
+- (void) resetObject
+{
+    
+}
+
 @end
