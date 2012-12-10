@@ -40,9 +40,9 @@ typedef enum {
 - (void) generateGameObject:(game_object_t) type;
 
 // accessor to increment score
-- (void) incrementScore:(int) value;
+//- (void) incrementScore:(int) value;
 // accessor to decrement score
-- (void) decrementScore:(int) value;
+//- (void) decrementScore:(int) value;
 
 @property (nonatomic, strong) GameObjectPlayer *player;
 

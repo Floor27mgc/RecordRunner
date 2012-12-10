@@ -143,8 +143,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "30"
          endingLineNumber = "30"
-         landmarkName = "@implementation GameLayer"
-         landmarkType = "3">
+         landmarkName = "coinUsedPool"
+         landmarkType = "19">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"

@@ -11,6 +11,60 @@
 		0840D5A0163F4BF5003D5FE6 /* GameObjectBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0840D59F163F4BF5003D5FE6 /* GameObjectBase.m */; };
 		0840D5A3163F4C2A003D5FE6 /* GameObjectPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0840D5A2163F4C2A003D5FE6 /* GameObjectPlayer.m */; };
 		0840D5A9163F4D67003D5FE6 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 0840D5A8163F4D67003D5FE6 /* player.png */; };
+		085E9710167596E000A50284 /* bitmapFontTest.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E001674EA540082DBE5 /* bitmapFontTest.fnt */; };
+		085E9711167596E500A50284 /* bitmapFontTest.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E011674EA540082DBE5 /* bitmapFontTest.png */; };
+		085E9712167597A800A50284 /* A Damn Mess.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DF81674EA540082DBE5 /* A Damn Mess.ttf */; };
+		085E9713167597A800A50284 /* Abberancy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DF91674EA540082DBE5 /* Abberancy.ttf */; };
+		085E9714167597A800A50284 /* Abduction.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DFA1674EA540082DBE5 /* Abduction.ttf */; };
+		085E9715167597A800A50284 /* arial-unicode-26.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DFB1674EA540082DBE5 /* arial-unicode-26.fnt */; };
+		085E9716167597A800A50284 /* arial-unicode-26.GlyphProject in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DFC1674EA540082DBE5 /* arial-unicode-26.GlyphProject */; };
+		085E9717167597A800A50284 /* arial-unicode-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DFD1674EA540082DBE5 /* arial-unicode-26.png */; };
+		085E9718167597A800A50284 /* arial16.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DFE1674EA540082DBE5 /* arial16.fnt */; };
+		085E9719167597A800A50284 /* arial16.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DFF1674EA540082DBE5 /* arial16.png */; };
+		085E971A167597A800A50284 /* bitmapFontTest2.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E021674EA540082DBE5 /* bitmapFontTest2.bmp */; };
+		085E971B167597A800A50284 /* bitmapFontTest2.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E031674EA540082DBE5 /* bitmapFontTest2.fnt */; };
+		085E971C167597A800A50284 /* bitmapFontTest3.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E041674EA540082DBE5 /* bitmapFontTest3.fnt */; };
+		085E971D167597A800A50284 /* bitmapFontTest3.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E051674EA540082DBE5 /* bitmapFontTest3.png */; };
+		085E971E167597A800A50284 /* bitmapFontTest4.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E061674EA540082DBE5 /* bitmapFontTest4.fnt */; };
+		085E971F167597A800A50284 /* bitmapFontTest4.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E071674EA540082DBE5 /* bitmapFontTest4.png */; };
+		085E9720167597A800A50284 /* bitmapFontTest5.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E081674EA540082DBE5 /* bitmapFontTest5.fnt */; };
+		085E9721167597A800A50284 /* bitmapFontTest5.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E091674EA540082DBE5 /* bitmapFontTest5.png */; };
+		085E9722167597A800A50284 /* font-issue1343-hd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E0A1674EA540082DBE5 /* font-issue1343-hd.fnt */; };
+		085E9723167597A800A50284 /* font-issue1343-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E0B1674EA540082DBE5 /* font-issue1343-hd.png */; };
+		085E9724167597A800A50284 /* font-issue1343.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E0C1674EA540082DBE5 /* font-issue1343.fnt */; };
+		085E9725167597A800A50284 /* font-issue1343.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E0D1674EA540082DBE5 /* font-issue1343.png */; };
+		085E9726167597A800A50284 /* fps_images-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E0E1674EA540082DBE5 /* fps_images-hd.png */; };
+		085E9727167597A800A50284 /* fps_images-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E0F1674EA540082DBE5 /* fps_images-ipadhd.png */; };
+		085E9728167597A800A50284 /* fps_images.GlyphProject in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E101674EA540082DBE5 /* fps_images.GlyphProject */; };
+		085E9729167597A800A50284 /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E111674EA540082DBE5 /* fps_images.png */; };
+		085E972A167597A800A50284 /* futura-48.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E121674EA540082DBE5 /* futura-48.fnt */; };
+		085E972B167597A800A50284 /* futura-48.GlyphProject in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E131674EA540082DBE5 /* futura-48.GlyphProject */; };
+		085E972C167597A800A50284 /* futura-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E141674EA540082DBE5 /* futura-48.png */; };
+		085E972D167597A800A50284 /* geneva-32.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E151674EA540082DBE5 /* geneva-32.fnt */; };
+		085E972E167597A800A50284 /* helvetica-32.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E161674EA540082DBE5 /* helvetica-32.fnt */; };
+		085E972F167597A800A50284 /* helvetica-geneva-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E171674EA540082DBE5 /* helvetica-geneva-32.png */; };
+		085E9730167597A800A50284 /* konqa32-hd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E181674EA540082DBE5 /* konqa32-hd.fnt */; };
+		085E9731167597A800A50284 /* konqa32-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E191674EA540082DBE5 /* konqa32-hd.png */; };
+		085E9732167597A800A50284 /* konqa32.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E1A1674EA540082DBE5 /* konqa32.fnt */; };
+		085E9733167597A800A50284 /* konqa32.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E1B1674EA540082DBE5 /* konqa32.png */; };
+		085E9734167597A800A50284 /* larabie-16-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E1C1674EA540082DBE5 /* larabie-16-hd.plist */; };
+		085E9735167597A800A50284 /* larabie-16-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E1D1674EA540082DBE5 /* larabie-16-hd.png */; };
+		085E9736167597A800A50284 /* larabie-16.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E1E1674EA540082DBE5 /* larabie-16.plist */; };
+		085E9737167597A800A50284 /* larabie-16.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E1F1674EA540082DBE5 /* larabie-16.png */; };
+		085E9738167597A800A50284 /* markerFelt-hd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E201674EA540082DBE5 /* markerFelt-hd.fnt */; };
+		085E9739167597A800A50284 /* markerFelt-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E211674EA550082DBE5 /* markerFelt-hd.png */; };
+		085E973A167597A800A50284 /* markerFelt.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E221674EA550082DBE5 /* markerFelt.fnt */; };
+		085E973B167597A800A50284 /* markerFelt.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E231674EA550082DBE5 /* markerFelt.png */; };
+		085E973C167597A800A50284 /* Paint Boy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E241674EA550082DBE5 /* Paint Boy.ttf */; };
+		085E973D167597A800A50284 /* Schwarzwald Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E251674EA550082DBE5 /* Schwarzwald Regular.ttf */; };
+		085E973E167597A800A50284 /* Scissor Cuts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E261674EA550082DBE5 /* Scissor Cuts.ttf */; };
+		085E973F167597A800A50284 /* tuffy_bold_italic-charmap-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E271674EA550082DBE5 /* tuffy_bold_italic-charmap-hd.plist */; };
+		085E9740167597A800A50284 /* tuffy_bold_italic-charmap-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E281674EA550082DBE5 /* tuffy_bold_italic-charmap-hd.png */; };
+		085E9741167597A800A50284 /* tuffy_bold_italic-charmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E2A1674EA550082DBE5 /* tuffy_bold_italic-charmap.png */; };
+		085E9742167597A800A50284 /* west_england-64.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E2B1674EA550082DBE5 /* west_england-64.fnt */; };
+		085E9743167597A800A50284 /* west_england-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E2C1674EA550082DBE5 /* west_england-64.png */; };
+		08C86DC11674552F0082DBE5 /* tuffy_bold_italic-charmap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DC01674552F0082DBE5 /* tuffy_bold_italic-charmap.plist */; };
+		08C86DF716745C3F0082DBE5 /* tuffy_bold_italic-charmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DF616745C3F0082DBE5 /* tuffy_bold_italic-charmap.png */; };
 		08E5B161164387A400E4AAA4 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 08E5B160164387A400E4AAA4 /* background.png */; };
 		8592EC101673EE3B0008B1B2 /* gorbNormal16.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 8592EC0F1673EE3B0008B1B2 /* gorbNormal16.fnt */; };
 		85A671361651D14000499BF7 /* Bomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671351651D14000499BF7 /* Bomb.m */; };
@@ -280,6 +334,61 @@
 		0840D5A1163F4C2A003D5FE6 /* GameObjectPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjectPlayer.h; path = sources/GameObjectPlayer.h; sourceTree = SOURCE_ROOT; };
 		0840D5A2163F4C2A003D5FE6 /* GameObjectPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectPlayer.m; path = sources/GameObjectPlayer.m; sourceTree = SOURCE_ROOT; };
 		0840D5A8163F4D67003D5FE6 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = player.png; path = Graphics/player.png; sourceTree = SOURCE_ROOT; };
+		08C86DC01674552F0082DBE5 /* tuffy_bold_italic-charmap.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "tuffy_bold_italic-charmap.plist"; path = "Fonts/tuffy_bold_italic-charmap.plist"; sourceTree = SOURCE_ROOT; };
+		08C86DF616745C3F0082DBE5 /* tuffy_bold_italic-charmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tuffy_bold_italic-charmap.png"; path = "../../../../Stickman Design Works/cocos2d-iphone-2.0 2/Resources/Fonts/tuffy_bold_italic-charmap.png"; sourceTree = "<group>"; };
+		08C86DF81674EA540082DBE5 /* A Damn Mess.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "A Damn Mess.ttf"; path = "Fonts/A Damn Mess.ttf"; sourceTree = SOURCE_ROOT; };
+		08C86DF91674EA540082DBE5 /* Abberancy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Abberancy.ttf; path = Fonts/Abberancy.ttf; sourceTree = SOURCE_ROOT; };
+		08C86DFA1674EA540082DBE5 /* Abduction.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Abduction.ttf; path = Fonts/Abduction.ttf; sourceTree = SOURCE_ROOT; };
+		08C86DFB1674EA540082DBE5 /* arial-unicode-26.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "arial-unicode-26.fnt"; path = "Fonts/arial-unicode-26.fnt"; sourceTree = SOURCE_ROOT; };
+		08C86DFC1674EA540082DBE5 /* arial-unicode-26.GlyphProject */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = "arial-unicode-26.GlyphProject"; path = "Fonts/arial-unicode-26.GlyphProject"; sourceTree = SOURCE_ROOT; };
+		08C86DFD1674EA540082DBE5 /* arial-unicode-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arial-unicode-26.png"; path = "Fonts/arial-unicode-26.png"; sourceTree = SOURCE_ROOT; };
+		08C86DFE1674EA540082DBE5 /* arial16.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = arial16.fnt; path = Fonts/arial16.fnt; sourceTree = SOURCE_ROOT; };
+		08C86DFF1674EA540082DBE5 /* arial16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arial16.png; path = Fonts/arial16.png; sourceTree = SOURCE_ROOT; };
+		08C86E001674EA540082DBE5 /* bitmapFontTest.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = bitmapFontTest.fnt; path = Fonts/bitmapFontTest.fnt; sourceTree = SOURCE_ROOT; };
+		08C86E011674EA540082DBE5 /* bitmapFontTest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bitmapFontTest.png; path = Fonts/bitmapFontTest.png; sourceTree = SOURCE_ROOT; };
+		08C86E021674EA540082DBE5 /* bitmapFontTest2.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = bitmapFontTest2.bmp; path = Fonts/bitmapFontTest2.bmp; sourceTree = SOURCE_ROOT; };
+		08C86E031674EA540082DBE5 /* bitmapFontTest2.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = bitmapFontTest2.fnt; path = Fonts/bitmapFontTest2.fnt; sourceTree = SOURCE_ROOT; };
+		08C86E041674EA540082DBE5 /* bitmapFontTest3.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = bitmapFontTest3.fnt; path = Fonts/bitmapFontTest3.fnt; sourceTree = SOURCE_ROOT; };
+		08C86E051674EA540082DBE5 /* bitmapFontTest3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bitmapFontTest3.png; path = Fonts/bitmapFontTest3.png; sourceTree = SOURCE_ROOT; };
+		08C86E061674EA540082DBE5 /* bitmapFontTest4.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = bitmapFontTest4.fnt; path = Fonts/bitmapFontTest4.fnt; sourceTree = SOURCE_ROOT; };
+		08C86E071674EA540082DBE5 /* bitmapFontTest4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bitmapFontTest4.png; path = Fonts/bitmapFontTest4.png; sourceTree = SOURCE_ROOT; };
+		08C86E081674EA540082DBE5 /* bitmapFontTest5.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = bitmapFontTest5.fnt; path = Fonts/bitmapFontTest5.fnt; sourceTree = SOURCE_ROOT; };
+		08C86E091674EA540082DBE5 /* bitmapFontTest5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bitmapFontTest5.png; path = Fonts/bitmapFontTest5.png; sourceTree = SOURCE_ROOT; };
+		08C86E0A1674EA540082DBE5 /* font-issue1343-hd.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "font-issue1343-hd.fnt"; path = "Fonts/font-issue1343-hd.fnt"; sourceTree = SOURCE_ROOT; };
+		08C86E0B1674EA540082DBE5 /* font-issue1343-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "font-issue1343-hd.png"; path = "Fonts/font-issue1343-hd.png"; sourceTree = SOURCE_ROOT; };
+		08C86E0C1674EA540082DBE5 /* font-issue1343.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "font-issue1343.fnt"; path = "Fonts/font-issue1343.fnt"; sourceTree = SOURCE_ROOT; };
+		08C86E0D1674EA540082DBE5 /* font-issue1343.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "font-issue1343.png"; path = "Fonts/font-issue1343.png"; sourceTree = SOURCE_ROOT; };
+		08C86E0E1674EA540082DBE5 /* fps_images-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fps_images-hd.png"; path = "Fonts/fps_images-hd.png"; sourceTree = SOURCE_ROOT; };
+		08C86E0F1674EA540082DBE5 /* fps_images-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fps_images-ipadhd.png"; path = "Fonts/fps_images-ipadhd.png"; sourceTree = SOURCE_ROOT; };
+		08C86E101674EA540082DBE5 /* fps_images.GlyphProject */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = fps_images.GlyphProject; path = Fonts/fps_images.GlyphProject; sourceTree = SOURCE_ROOT; };
+		08C86E111674EA540082DBE5 /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fps_images.png; path = Fonts/fps_images.png; sourceTree = SOURCE_ROOT; };
+		08C86E121674EA540082DBE5 /* futura-48.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "futura-48.fnt"; path = "Fonts/futura-48.fnt"; sourceTree = SOURCE_ROOT; };
+		08C86E131674EA540082DBE5 /* futura-48.GlyphProject */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = "futura-48.GlyphProject"; path = "Fonts/futura-48.GlyphProject"; sourceTree = SOURCE_ROOT; };
+		08C86E141674EA540082DBE5 /* futura-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "futura-48.png"; path = "Fonts/futura-48.png"; sourceTree = SOURCE_ROOT; };
+		08C86E151674EA540082DBE5 /* geneva-32.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "geneva-32.fnt"; path = "Fonts/geneva-32.fnt"; sourceTree = SOURCE_ROOT; };
+		08C86E161674EA540082DBE5 /* helvetica-32.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "helvetica-32.fnt"; path = "Fonts/helvetica-32.fnt"; sourceTree = SOURCE_ROOT; };
+		08C86E171674EA540082DBE5 /* helvetica-geneva-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "helvetica-geneva-32.png"; path = "Fonts/helvetica-geneva-32.png"; sourceTree = SOURCE_ROOT; };
+		08C86E181674EA540082DBE5 /* konqa32-hd.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "konqa32-hd.fnt"; path = "Fonts/konqa32-hd.fnt"; sourceTree = SOURCE_ROOT; };
+		08C86E191674EA540082DBE5 /* konqa32-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "konqa32-hd.png"; path = "Fonts/konqa32-hd.png"; sourceTree = SOURCE_ROOT; };
+		08C86E1A1674EA540082DBE5 /* konqa32.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = konqa32.fnt; path = Fonts/konqa32.fnt; sourceTree = SOURCE_ROOT; };
+		08C86E1B1674EA540082DBE5 /* konqa32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = konqa32.png; path = Fonts/konqa32.png; sourceTree = SOURCE_ROOT; };
+		08C86E1C1674EA540082DBE5 /* larabie-16-hd.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "larabie-16-hd.plist"; path = "Fonts/larabie-16-hd.plist"; sourceTree = SOURCE_ROOT; };
+		08C86E1D1674EA540082DBE5 /* larabie-16-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "larabie-16-hd.png"; path = "Fonts/larabie-16-hd.png"; sourceTree = SOURCE_ROOT; };
+		08C86E1E1674EA540082DBE5 /* larabie-16.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "larabie-16.plist"; path = "Fonts/larabie-16.plist"; sourceTree = SOURCE_ROOT; };
+		08C86E1F1674EA540082DBE5 /* larabie-16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "larabie-16.png"; path = "Fonts/larabie-16.png"; sourceTree = SOURCE_ROOT; };
+		08C86E201674EA540082DBE5 /* markerFelt-hd.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "markerFelt-hd.fnt"; path = "Fonts/markerFelt-hd.fnt"; sourceTree = SOURCE_ROOT; };
+		08C86E211674EA550082DBE5 /* markerFelt-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "markerFelt-hd.png"; path = "Fonts/markerFelt-hd.png"; sourceTree = SOURCE_ROOT; };
+		08C86E221674EA550082DBE5 /* markerFelt.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = markerFelt.fnt; path = Fonts/markerFelt.fnt; sourceTree = SOURCE_ROOT; };
+		08C86E231674EA550082DBE5 /* markerFelt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = markerFelt.png; path = Fonts/markerFelt.png; sourceTree = SOURCE_ROOT; };
+		08C86E241674EA550082DBE5 /* Paint Boy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Paint Boy.ttf"; path = "Fonts/Paint Boy.ttf"; sourceTree = SOURCE_ROOT; };
+		08C86E251674EA550082DBE5 /* Schwarzwald Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Schwarzwald Regular.ttf"; path = "Fonts/Schwarzwald Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		08C86E261674EA550082DBE5 /* Scissor Cuts.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Scissor Cuts.ttf"; path = "Fonts/Scissor Cuts.ttf"; sourceTree = SOURCE_ROOT; };
+		08C86E271674EA550082DBE5 /* tuffy_bold_italic-charmap-hd.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "tuffy_bold_italic-charmap-hd.plist"; path = "Fonts/tuffy_bold_italic-charmap-hd.plist"; sourceTree = SOURCE_ROOT; };
+		08C86E281674EA550082DBE5 /* tuffy_bold_italic-charmap-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tuffy_bold_italic-charmap-hd.png"; path = "Fonts/tuffy_bold_italic-charmap-hd.png"; sourceTree = SOURCE_ROOT; };
+		08C86E291674EA550082DBE5 /* tuffy_bold_italic-charmap.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "tuffy_bold_italic-charmap.plist"; path = "Fonts/tuffy_bold_italic-charmap.plist"; sourceTree = SOURCE_ROOT; };
+		08C86E2A1674EA550082DBE5 /* tuffy_bold_italic-charmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tuffy_bold_italic-charmap.png"; path = "Fonts/tuffy_bold_italic-charmap.png"; sourceTree = SOURCE_ROOT; };
+		08C86E2B1674EA550082DBE5 /* west_england-64.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "west_england-64.fnt"; path = "Fonts/west_england-64.fnt"; sourceTree = SOURCE_ROOT; };
+		08C86E2C1674EA550082DBE5 /* west_england-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "west_england-64.png"; path = "Fonts/west_england-64.png"; sourceTree = SOURCE_ROOT; };
 		08E5B160164387A400E4AAA4 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Graphics/background.png; sourceTree = SOURCE_ROOT; };
 		8592EC0F1673EE3B0008B1B2 /* gorbNormal16.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = gorbNormal16.fnt; path = Graphics/gorbNormal16.fnt; sourceTree = SOURCE_ROOT; };
 		85A671341651D13F00499BF7 /* Bomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bomb.h; path = sources/Bomb.h; sourceTree = SOURCE_ROOT; };
@@ -586,7 +695,6 @@
 		0840D593163F435E003D5FE6 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
-				8592EC001673ED6D0008B1B2 /* Graphics */,
 				85B53BAF1673CBF7001163F7 /* fixed.fnt */,
 				08E5B160164387A400E4AAA4 /* background.png */,
 				8592EC0F1673EE3B0008B1B2 /* gorbNormal16.fnt */,
@@ -637,12 +745,67 @@
 			name = game;
 			sourceTree = "<group>";
 		};
-		8592EC001673ED6D0008B1B2 /* Graphics */ = {
+		08C86DBE167454C10082DBE5 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				08C86DF81674EA540082DBE5 /* A Damn Mess.ttf */,
+				08C86DF91674EA540082DBE5 /* Abberancy.ttf */,
+				08C86DFA1674EA540082DBE5 /* Abduction.ttf */,
+				08C86DFB1674EA540082DBE5 /* arial-unicode-26.fnt */,
+				08C86DFC1674EA540082DBE5 /* arial-unicode-26.GlyphProject */,
+				08C86DFD1674EA540082DBE5 /* arial-unicode-26.png */,
+				08C86DFE1674EA540082DBE5 /* arial16.fnt */,
+				08C86DFF1674EA540082DBE5 /* arial16.png */,
+				08C86E001674EA540082DBE5 /* bitmapFontTest.fnt */,
+				08C86E011674EA540082DBE5 /* bitmapFontTest.png */,
+				08C86E021674EA540082DBE5 /* bitmapFontTest2.bmp */,
+				08C86E031674EA540082DBE5 /* bitmapFontTest2.fnt */,
+				08C86E041674EA540082DBE5 /* bitmapFontTest3.fnt */,
+				08C86E051674EA540082DBE5 /* bitmapFontTest3.png */,
+				08C86E061674EA540082DBE5 /* bitmapFontTest4.fnt */,
+				08C86E071674EA540082DBE5 /* bitmapFontTest4.png */,
+				08C86E081674EA540082DBE5 /* bitmapFontTest5.fnt */,
+				08C86E091674EA540082DBE5 /* bitmapFontTest5.png */,
+				08C86E0A1674EA540082DBE5 /* font-issue1343-hd.fnt */,
+				08C86E0B1674EA540082DBE5 /* font-issue1343-hd.png */,
+				08C86E0C1674EA540082DBE5 /* font-issue1343.fnt */,
+				08C86E0D1674EA540082DBE5 /* font-issue1343.png */,
+				08C86E0E1674EA540082DBE5 /* fps_images-hd.png */,
+				08C86E0F1674EA540082DBE5 /* fps_images-ipadhd.png */,
+				08C86E101674EA540082DBE5 /* fps_images.GlyphProject */,
+				08C86E111674EA540082DBE5 /* fps_images.png */,
+				08C86E121674EA540082DBE5 /* futura-48.fnt */,
+				08C86E131674EA540082DBE5 /* futura-48.GlyphProject */,
+				08C86E141674EA540082DBE5 /* futura-48.png */,
+				08C86E151674EA540082DBE5 /* geneva-32.fnt */,
+				08C86E161674EA540082DBE5 /* helvetica-32.fnt */,
+				08C86E171674EA540082DBE5 /* helvetica-geneva-32.png */,
+				08C86E181674EA540082DBE5 /* konqa32-hd.fnt */,
+				08C86E191674EA540082DBE5 /* konqa32-hd.png */,
+				08C86E1A1674EA540082DBE5 /* konqa32.fnt */,
+				08C86E1B1674EA540082DBE5 /* konqa32.png */,
+				08C86E1C1674EA540082DBE5 /* larabie-16-hd.plist */,
+				08C86E1D1674EA540082DBE5 /* larabie-16-hd.png */,
+				08C86E1E1674EA540082DBE5 /* larabie-16.plist */,
+				08C86E1F1674EA540082DBE5 /* larabie-16.png */,
+				08C86E201674EA540082DBE5 /* markerFelt-hd.fnt */,
+				08C86E211674EA550082DBE5 /* markerFelt-hd.png */,
+				08C86E221674EA550082DBE5 /* markerFelt.fnt */,
+				08C86E231674EA550082DBE5 /* markerFelt.png */,
+				08C86E241674EA550082DBE5 /* Paint Boy.ttf */,
+				08C86E251674EA550082DBE5 /* Schwarzwald Regular.ttf */,
+				08C86E261674EA550082DBE5 /* Scissor Cuts.ttf */,
+				08C86E271674EA550082DBE5 /* tuffy_bold_italic-charmap-hd.plist */,
+				08C86E281674EA550082DBE5 /* tuffy_bold_italic-charmap-hd.png */,
+				08C86E291674EA550082DBE5 /* tuffy_bold_italic-charmap.plist */,
+				08C86E2A1674EA550082DBE5 /* tuffy_bold_italic-charmap.png */,
+				08C86E2B1674EA550082DBE5 /* west_england-64.fnt */,
+				08C86E2C1674EA550082DBE5 /* west_england-64.png */,
+				08C86DF616745C3F0082DBE5 /* tuffy_bold_italic-charmap.png */,
+				08C86DC01674552F0082DBE5 /* tuffy_bold_italic-charmap.plist */,
 			);
-			path = Graphics;
-			sourceTree = SOURCE_ROOT;
+			name = fonts;
+			sourceTree = "<group>";
 		};
 		DC0C49E6154AB4DD00B4B727 = {
 			isa = PBXGroup;
@@ -682,6 +845,7 @@
 		DC0C4A07154AB4DD00B4B727 /* RecordRunnerARC */ = {
 			isa = PBXGroup;
 			children = (
+				08C86DBE167454C10082DBE5 /* fonts */,
 				0840D5AA163F5078003D5FE6 /* sources */,
 				0840D593163F435E003D5FE6 /* Graphics */,
 				DC0C4A08154AB4DD00B4B727 /* Resources */,
@@ -1275,6 +1439,60 @@
 				85A671471654582500499BF7 /* Coin.png in Resources */,
 				85A6714916546D4800499BF7 /* Default-568h@2x.png in Resources */,
 				8592EC101673EE3B0008B1B2 /* gorbNormal16.fnt in Resources */,
+				08C86DC11674552F0082DBE5 /* tuffy_bold_italic-charmap.plist in Resources */,
+				08C86DF716745C3F0082DBE5 /* tuffy_bold_italic-charmap.png in Resources */,
+				085E9710167596E000A50284 /* bitmapFontTest.fnt in Resources */,
+				085E9711167596E500A50284 /* bitmapFontTest.png in Resources */,
+				085E9712167597A800A50284 /* A Damn Mess.ttf in Resources */,
+				085E9713167597A800A50284 /* Abberancy.ttf in Resources */,
+				085E9714167597A800A50284 /* Abduction.ttf in Resources */,
+				085E9715167597A800A50284 /* arial-unicode-26.fnt in Resources */,
+				085E9716167597A800A50284 /* arial-unicode-26.GlyphProject in Resources */,
+				085E9717167597A800A50284 /* arial-unicode-26.png in Resources */,
+				085E9718167597A800A50284 /* arial16.fnt in Resources */,
+				085E9719167597A800A50284 /* arial16.png in Resources */,
+				085E971A167597A800A50284 /* bitmapFontTest2.bmp in Resources */,
+				085E971B167597A800A50284 /* bitmapFontTest2.fnt in Resources */,
+				085E971C167597A800A50284 /* bitmapFontTest3.fnt in Resources */,
+				085E971D167597A800A50284 /* bitmapFontTest3.png in Resources */,
+				085E971E167597A800A50284 /* bitmapFontTest4.fnt in Resources */,
+				085E971F167597A800A50284 /* bitmapFontTest4.png in Resources */,
+				085E9720167597A800A50284 /* bitmapFontTest5.fnt in Resources */,
+				085E9721167597A800A50284 /* bitmapFontTest5.png in Resources */,
+				085E9722167597A800A50284 /* font-issue1343-hd.fnt in Resources */,
+				085E9723167597A800A50284 /* font-issue1343-hd.png in Resources */,
+				085E9724167597A800A50284 /* font-issue1343.fnt in Resources */,
+				085E9725167597A800A50284 /* font-issue1343.png in Resources */,
+				085E9726167597A800A50284 /* fps_images-hd.png in Resources */,
+				085E9727167597A800A50284 /* fps_images-ipadhd.png in Resources */,
+				085E9728167597A800A50284 /* fps_images.GlyphProject in Resources */,
+				085E9729167597A800A50284 /* fps_images.png in Resources */,
+				085E972A167597A800A50284 /* futura-48.fnt in Resources */,
+				085E972B167597A800A50284 /* futura-48.GlyphProject in Resources */,
+				085E972C167597A800A50284 /* futura-48.png in Resources */,
+				085E972D167597A800A50284 /* geneva-32.fnt in Resources */,
+				085E972E167597A800A50284 /* helvetica-32.fnt in Resources */,
+				085E972F167597A800A50284 /* helvetica-geneva-32.png in Resources */,
+				085E9730167597A800A50284 /* konqa32-hd.fnt in Resources */,
+				085E9731167597A800A50284 /* konqa32-hd.png in Resources */,
+				085E9732167597A800A50284 /* konqa32.fnt in Resources */,
+				085E9733167597A800A50284 /* konqa32.png in Resources */,
+				085E9734167597A800A50284 /* larabie-16-hd.plist in Resources */,
+				085E9735167597A800A50284 /* larabie-16-hd.png in Resources */,
+				085E9736167597A800A50284 /* larabie-16.plist in Resources */,
+				085E9737167597A800A50284 /* larabie-16.png in Resources */,
+				085E9738167597A800A50284 /* markerFelt-hd.fnt in Resources */,
+				085E9739167597A800A50284 /* markerFelt-hd.png in Resources */,
+				085E973A167597A800A50284 /* markerFelt.fnt in Resources */,
+				085E973B167597A800A50284 /* markerFelt.png in Resources */,
+				085E973C167597A800A50284 /* Paint Boy.ttf in Resources */,
+				085E973D167597A800A50284 /* Schwarzwald Regular.ttf in Resources */,
+				085E973E167597A800A50284 /* Scissor Cuts.ttf in Resources */,
+				085E973F167597A800A50284 /* tuffy_bold_italic-charmap-hd.plist in Resources */,
+				085E9740167597A800A50284 /* tuffy_bold_italic-charmap-hd.png in Resources */,
+				085E9741167597A800A50284 /* tuffy_bold_italic-charmap.png in Resources */,
+				085E9742167597A800A50284 /* west_england-64.fnt in Resources */,
+				085E9743167597A800A50284 /* west_england-64.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -44,13 +44,13 @@
                            freePool:self.parentGameLayer.coinFreePool];
     
     // increment score
-    [[self parentGameLayer] incrementScore:1];
+    [self.parentGameLayer.score incrementScore:1];
 }
 
 // -----------------------------------------------------------------------------------
 - (void) resetObject
 {
-    
+    [super resetObject];
 }
 
 @end

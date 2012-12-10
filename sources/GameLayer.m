@@ -116,9 +116,8 @@
         _score = [Score initWithGameLayer:self
                             imageFileName:@""
                               objectSpeed:0];
-        //[_score resetObject];
-        [_score moveTo:ccp(100, 100)];
         [self addChild:_score.score];
+        
     }
     
     [self schedule: @selector(update:)];
@@ -215,7 +214,7 @@
 }
 
 // -----------------------------------------------------------------------------------
-- (void) incrementScore:(int)value
+/*- (void) incrementScore:(int)value
 {
     [_score increment:value];
 }
@@ -225,5 +224,5 @@
 {
     [_score decrement:value];
 }
-
+*/
 @end
