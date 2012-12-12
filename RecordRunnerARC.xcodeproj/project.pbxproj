@@ -63,6 +63,7 @@
 		085E9741167597A800A50284 /* tuffy_bold_italic-charmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E2A1674EA550082DBE5 /* tuffy_bold_italic-charmap.png */; };
 		085E9742167597A800A50284 /* west_england-64.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E2B1674EA550082DBE5 /* west_england-64.fnt */; };
 		085E9743167597A800A50284 /* west_england-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E2C1674EA550082DBE5 /* west_england-64.png */; };
+		085E97451675B94C00A50284 /* background_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 085E97441675B94C00A50284 /* background_small.png */; };
 		08C86DC11674552F0082DBE5 /* tuffy_bold_italic-charmap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DC01674552F0082DBE5 /* tuffy_bold_italic-charmap.plist */; };
 		08C86DF716745C3F0082DBE5 /* tuffy_bold_italic-charmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DF616745C3F0082DBE5 /* tuffy_bold_italic-charmap.png */; };
 		08E5B161164387A400E4AAA4 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 08E5B160164387A400E4AAA4 /* background.png */; };
@@ -334,6 +335,7 @@
 		0840D5A1163F4C2A003D5FE6 /* GameObjectPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjectPlayer.h; path = sources/GameObjectPlayer.h; sourceTree = SOURCE_ROOT; };
 		0840D5A2163F4C2A003D5FE6 /* GameObjectPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectPlayer.m; path = sources/GameObjectPlayer.m; sourceTree = SOURCE_ROOT; };
 		0840D5A8163F4D67003D5FE6 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = player.png; path = Graphics/player.png; sourceTree = SOURCE_ROOT; };
+		085E97441675B94C00A50284 /* background_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_small.png; sourceTree = "<group>"; };
 		08C86DC01674552F0082DBE5 /* tuffy_bold_italic-charmap.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "tuffy_bold_italic-charmap.plist"; path = "Fonts/tuffy_bold_italic-charmap.plist"; sourceTree = SOURCE_ROOT; };
 		08C86DF616745C3F0082DBE5 /* tuffy_bold_italic-charmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tuffy_bold_italic-charmap.png"; path = "../../../../Stickman Design Works/cocos2d-iphone-2.0 2/Resources/Fonts/tuffy_bold_italic-charmap.png"; sourceTree = "<group>"; };
 		08C86DF81674EA540082DBE5 /* A Damn Mess.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "A Damn Mess.ttf"; path = "Fonts/A Damn Mess.ttf"; sourceTree = SOURCE_ROOT; };
@@ -695,6 +697,7 @@
 		0840D593163F435E003D5FE6 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				085E97441675B94C00A50284 /* background_small.png */,
 				85B53BAF1673CBF7001163F7 /* fixed.fnt */,
 				08E5B160164387A400E4AAA4 /* background.png */,
 				8592EC0F1673EE3B0008B1B2 /* gorbNormal16.fnt */,
@@ -1493,6 +1496,7 @@
 				085E9741167597A800A50284 /* tuffy_bold_italic-charmap.png in Resources */,
 				085E9742167597A800A50284 /* west_england-64.fnt in Resources */,
 				085E9743167597A800A50284 /* west_england-64.png in Resources */,
+				085E97451675B94C00A50284 /* background_small.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

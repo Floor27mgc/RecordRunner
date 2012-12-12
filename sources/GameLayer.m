@@ -61,7 +61,7 @@
         NSLog(@"height = %f width = %f", size.height, size.width);
         
         // Create background
-        background = [CCSprite spriteWithFile:@"background.png"];
+        background = [CCSprite spriteWithFile:@"background_small.png"];
         background.anchorPoint=ccp(0,0);
                 
         // Create player
@@ -119,7 +119,7 @@
         [self addChild:_score.score];
         
     }
-    
+
     [self schedule: @selector(update:)];
 	return self;
 }
@@ -213,16 +213,4 @@
 	[self.player changeDirection];
 }
 
-// -----------------------------------------------------------------------------------
-/*- (void) incrementScore:(int)value
-{
-    [_score increment:value];
-}
-
-// -----------------------------------------------------------------------------------
-- (void) decrementScore:(int)value
-{
-    [_score decrement:value];
-}
-*/
 @end
