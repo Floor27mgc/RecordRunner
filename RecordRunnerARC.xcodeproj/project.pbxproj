@@ -341,7 +341,7 @@
 		0840D5A1163F4C2A003D5FE6 /* GameObjectPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjectPlayer.h; path = sources/GameObjectPlayer.h; sourceTree = SOURCE_ROOT; };
 		0840D5A2163F4C2A003D5FE6 /* GameObjectPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectPlayer.m; path = sources/GameObjectPlayer.m; sourceTree = SOURCE_ROOT; };
 		0840D5A8163F4D67003D5FE6 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = player.png; path = Graphics/player.png; sourceTree = SOURCE_ROOT; };
-		085E97441675B94C00A50284 /* background_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_small.png; sourceTree = "<group>"; };
+		085E97441675B94C00A50284 /* background_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background_small.png; path = ../../../../build/master.matt.injector/RecordRunner/Graphics/background_small.png; sourceTree = "<group>"; };
 		08C86DC01674552F0082DBE5 /* tuffy_bold_italic-charmap.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "tuffy_bold_italic-charmap.plist"; path = "Fonts/tuffy_bold_italic-charmap.plist"; sourceTree = SOURCE_ROOT; };
 		08C86DF616745C3F0082DBE5 /* tuffy_bold_italic-charmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tuffy_bold_italic-charmap.png"; path = "../../../../Stickman Design Works/cocos2d-iphone-2.0 2/Resources/Fonts/tuffy_bold_italic-charmap.png"; sourceTree = "<group>"; };
 		08C86DF81674EA540082DBE5 /* A Damn Mess.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "A Damn Mess.ttf"; path = "Fonts/A Damn Mess.ttf"; sourceTree = SOURCE_ROOT; };
@@ -410,7 +410,6 @@
 		85A6714B1655A6CB00499BF7 /* Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Queue.m; path = sources/Queue.m; sourceTree = SOURCE_ROOT; };
 		85B53BAB1673C5CC001163F7 /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Score.h; path = sources/Score.h; sourceTree = SOURCE_ROOT; };
 		85B53BAC1673C5CC001163F7 /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Score.m; path = sources/Score.m; sourceTree = SOURCE_ROOT; };
-		85B53BAF1673CBF7001163F7 /* fixed.fnt */ = {isa = PBXFileReference; lastKnownFileType = file; name = fixed.fnt; path = Graphics/fixed.fnt; sourceTree = SOURCE_ROOT; };
 		DC0864B515BD8CE60044A820 /* CCNode+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+Debug.h"; sourceTree = "<group>"; };
 		DC0864B615BD8CE60044A820 /* CCNode+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+Debug.m"; sourceTree = "<group>"; };
 		DC0864B715BD8CE60044A820 /* ccCArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ccCArray.m; sourceTree = "<group>"; };
@@ -704,7 +703,6 @@
 			isa = PBXGroup;
 			children = (
 				085E97441675B94C00A50284 /* background_small.png */,
-				85B53BAF1673CBF7001163F7 /* fixed.fnt */,
 				08E5B160164387A400E4AAA4 /* background.png */,
 				8592EC0F1673EE3B0008B1B2 /* gorbNormal16.fnt */,
 				85A671461654582500499BF7 /* Coin.png */,
