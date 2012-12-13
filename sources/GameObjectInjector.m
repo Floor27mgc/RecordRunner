@@ -62,9 +62,12 @@
     if ([usedPool.objects count] < maxlimit) {
         newObject = [freePool takeObject];
         if (newObject != nil) {
+            newObject.gameObjectSprite.anchorPoint = ccp(0,0);
             [newObject moveTo:preferredLocation];
             newObject.gameObjectSprite.visible = 1;
             [usedPool addObject:newObject];
+        } else {
+            NSLog(@"out of object");
         }
     }
 }
@@ -86,7 +89,8 @@
                       effectType:kHeartPumping];
             currentLocation.x = currentLocation.x + INJECTOR_GRID_WIDTH;
         }
-        currentLocation.y = currentLocation.y + INJECTOR_GRID_HEIGHT;
+        currentLocation.x = _initialXPosition.x;
+        currentLocation.y = currentLocation.y - INJECTOR_GRID_HEIGHT;
     }
 }
 @end

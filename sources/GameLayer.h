@@ -14,6 +14,7 @@
 #import "Queue.h"
 #import "Score.h"
 
+
 #define NUM_OBSTACLES            20
 #define NUM_REWARDS              20
 #define RANDOM_MAX              100
@@ -33,6 +34,7 @@ typedef enum {
     kHeartPumping
 } effect_type_t;
 
+@class GameObjectInjector;
 // GameLayer
 @interface GameLayer : CCLayer
 {
@@ -53,5 +55,5 @@ typedef enum {
 @property (nonatomic, strong) Queue * coinUsedPool;
 @property (nonatomic, strong) CCSprite *background;
 @property (nonatomic, strong) Score * score;
-
+@property (nonatomic, strong) GameObjectInjector *gameObjectInjector;
 @end

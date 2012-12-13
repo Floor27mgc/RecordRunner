@@ -12,7 +12,7 @@
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
-
+#import "GameObjectInjector.h"
 #pragma mark - GameLayer
 
 // GameLayer implementation
@@ -29,6 +29,7 @@
 @synthesize coinFreePool = _coinFreePool;
 @synthesize coinUsedPool = _coinUsedPool;
 
+@synthesize gameObjectInjector;
 // -----------------------------------------------------------------------------------
 // Helper class method that creates a Scene with the GameLayer as the only child.
 +(CCScene *) scene
@@ -81,12 +82,11 @@
         _bombUsedPool = [Queue initWithSize:MAX_NUM_BOMBS];
        
         // Create NUM_OBSTACLES bombs and add them to the free pool
-        for (int i = 0; i < NUM_OBSTACLES; ++i) {
+        for (int i = 0; i < MAX_NUM_BOMBS; ++i) {
             Bomb * _bomb = [Bomb initWithGameLayer: self
                               imageFileName:@"Bomb.png"
                                 objectSpeed:1];
-            [_bomb moveTo:BOMB_START_POSITION];
-            
+            _bomb.gameObjectSprite.visible = 0;
             [_bombFreePool addObject:_bomb];
             
             // add bomb to GameLayer
@@ -100,12 +100,11 @@
         _coinUsedPool = [Queue initWithSize:MAX_NUM_COINS];
         
         // Create NUM_REWARDS coins and add them to the free pool
-        for (int i = 0; i < NUM_REWARDS; ++i) {
+        for (int i = 0; i < MAX_NUM_COINS; ++i) {
             Coin * _coin = [Coin initWithGameLayer:self
                               imageFileName:@"Coin.png"
                                 objectSpeed:2];
-            [_coin moveTo:COIN_START_POSITION];
-            
+            _coin.gameObjectSprite.visible = 0;
             [_coinFreePool addObject:_coin];
             
             // add coin to GameLayer
@@ -118,6 +117,11 @@
                               objectSpeed:0];
         [self addChild:_score.score];
         
+        // Create Game Object injector to inject Bomb, coins, etc
+        gameObjectInjector = [GameObjectInjector initWithGameLayer:self];
+        
+        [gameObjectInjector injectObjectWithPattern:kPatternDiamond
+                                   initialXPosition:CGPointMake(20, 0)];
     }
 
     [self schedule: @selector(update:)];
@@ -177,14 +181,17 @@
     [_player showNextFrame];
     
     // generate Bomb objects randomly
-    if (arc4random() % RANDOM_MAX > BOMB_CREATION_THRESHOLD) {
+/*    [gameObjectInjector injectObjectWithPattern:kPatternDiamond
+                               initialXPosition:CGPointMake(20, 0)]; */
+/*    if (arc4random() % RANDOM_MAX > BOMB_CREATION_THRESHOLD) {
         [self generateGameObject:(BOMB_TYPE)];
-    }
+
+    }*/
     
     // generate Coin objects randomly
-    if (arc4random() % RANDOM_MAX > COIN_CREATION_THRESHOLD) {
+/*    if (arc4random() % RANDOM_MAX > COIN_CREATION_THRESHOLD) {
         [self generateGameObject:(COIN_TYPE)];
-    }
+    } */
 
     // Trigger each bomb objects and coin object proceed to
     // show the next frame.  Each object will be responsible

@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "GameLayer.h"
-
+@class GameLayer;
 typedef enum {
+    kPatternDiamond,
+    kPatternRectangle,    
     kPatternTriangle,
-    kPatternRectangle,
     kPatternSquare,
     kPatternCircle,
-    kPatternHeart,
-    kPatternDiamond
+    kPatternHeart
 } pattern_type;
 
 #define INJECTOR_GRID_WIDTH  32
@@ -24,8 +24,8 @@ typedef enum {
 #define INJECTOR_RIGHT_BOUND PLAYER_RIGHT_BOUND
 
 #define PATTERN_ALIGN_TO_GRID(_location) do { \
-    _location.x = ((_location.x / INJECTOR_GRID_WIDTH)  * INJECTOR_GRID_WIDTH); \
-    _location.y = ((_location.y / INJECTOR_GRID_HEIGHT) * INJECTOR_GRID_WIDTH); \
+    _location.x = ((int) (_location.x / INJECTOR_GRID_WIDTH) * INJECTOR_GRID_WIDTH); \
+    _location.y = ((int) (_location.y / INJECTOR_GRID_HEIGHT) * INJECTOR_GRID_HEIGHT); \
 } while (0)
 
 
@@ -34,7 +34,7 @@ typedef enum {
 @property (nonatomic,assign) GameLayer *mainGameLayer;
 
 + (id) initWithGameLayer:(GameLayer *) gamelayer;
-- (void) injectObjectAt:(CGPoint)preferredLocation
+- (void) injectObjectAt: (CGPoint)preferredLocation
          gameObjectType: (game_object_t)_gameObjectType
              effectType: (effect_type_t) _effectType;
 - (void) injectObjectWithPattern:(pattern_type)_pattern_type
