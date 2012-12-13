@@ -23,9 +23,15 @@
 #define MAX_NUM_COINS           100
 
 typedef enum {
+    SPACE_TYPE,
     BOMB_TYPE,
     COIN_TYPE
 } game_object_t;
+
+typedef enum {
+    kRotation,
+    kHeartPumping
+} effect_type_t;
 
 // GameLayer
 @interface GameLayer : CCLayer

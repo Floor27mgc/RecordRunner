@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		082018321678479B000A3F8D /* GameObjectInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 082018311678479B000A3F8D /* GameObjectInjector.m */; };
+		082018351679577D000A3F8D /* pattern.c in Sources */ = {isa = PBXBuildFile; fileRef = 082018341679577D000A3F8D /* pattern.c */; };
 		0840D59D163F4BCC003D5FE6 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0840D59C163F4BCC003D5FE6 /* GameLayer.m */; };
 		0840D5A0163F4BF5003D5FE6 /* GameObjectBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0840D59F163F4BF5003D5FE6 /* GameObjectBase.m */; };
 		0840D5A3163F4C2A003D5FE6 /* GameObjectPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0840D5A2163F4C2A003D5FE6 /* GameObjectPlayer.m */; };
@@ -328,6 +330,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		082018301678479B000A3F8D /* GameObjectInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjectInjector.h; path = sources/GameObjectInjector.h; sourceTree = SOURCE_ROOT; };
+		082018311678479B000A3F8D /* GameObjectInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectInjector.m; path = sources/GameObjectInjector.m; sourceTree = SOURCE_ROOT; };
+		082018341679577D000A3F8D /* pattern.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pattern.c; path = ../sources/pattern.c; sourceTree = "<group>"; };
+		0820183616795ADE000A3F8D /* pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pattern.h; path = sources/pattern.h; sourceTree = SOURCE_ROOT; };
 		0840D59B163F4BCC003D5FE6 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLayer.h; path = sources/GameLayer.h; sourceTree = SOURCE_ROOT; };
 		0840D59C163F4BCC003D5FE6 /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLayer.m; path = sources/GameLayer.m; sourceTree = SOURCE_ROOT; };
 		0840D59E163F4BF5003D5FE6 /* GameObjectBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjectBase.h; path = sources/GameObjectBase.h; sourceTree = SOURCE_ROOT; };
@@ -733,6 +739,10 @@
 				0840D59B163F4BCC003D5FE6 /* GameLayer.h */,
 				0840D59C163F4BCC003D5FE6 /* GameLayer.m */,
 				0840D59E163F4BF5003D5FE6 /* GameObjectBase.h */,
+				082018301678479B000A3F8D /* GameObjectInjector.h */,
+				082018341679577D000A3F8D /* pattern.c */,
+				0820183616795ADE000A3F8D /* pattern.h */,
+				082018311678479B000A3F8D /* GameObjectInjector.m */,
 				0840D59F163F4BF5003D5FE6 /* GameObjectBase.m */,
 				0840D5A1163F4C2A003D5FE6 /* GameObjectPlayer.h */,
 				0840D5A2163F4C2A003D5FE6 /* GameObjectPlayer.m */,
@@ -1516,6 +1526,8 @@
 				85A6713A1651D16000499BF7 /* Coin.m in Sources */,
 				85A6714C1655A6CC00499BF7 /* Queue.m in Sources */,
 				85B53BAD1673C5CC001163F7 /* Score.m in Sources */,
+				082018321678479B000A3F8D /* GameObjectInjector.m in Sources */,
+				082018351679577D000A3F8D /* pattern.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
