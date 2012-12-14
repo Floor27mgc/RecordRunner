@@ -19,8 +19,6 @@
     _scoreValue = 0;
     
     if(self = [super init]) {
-        //_score= [CCLabelAtlas labelWithString:@"" charMapFile:@"tuffy_bold_italic-charmap.png" itemWidth:48 itemHeight:64 startCharMap:' '];
-        //_score = [CCLabelAtlas labelWithString:@"" fntFile:@"tuffy_bold_italic-charmap.plist"];
         _score = [CCLabelBMFont labelWithString:@"0" fntFile:@"bitmapFontTest.fnt"];
         NSString * scoreString = [NSString stringWithFormat:@"Score %d", _scoreValue];
         [_score setString:scoreString];
