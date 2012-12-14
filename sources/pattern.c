@@ -32,3 +32,8 @@ char injectorPatternArray[][7][7] =
     }
     
 };
+
+int patternNumPattern(void)
+{
+    return (sizeof(injectorPatternArray)/(PATTERN_NUM_ROWS * PATTERN_NUM_COLS));
+}

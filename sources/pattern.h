@@ -11,7 +11,8 @@
 
 #define PATTERN_NUM_ROWS 7
 #define PATTERN_NUM_COLS 7
-#define PATTERN_NUM_PATTERNS sizeof(injectorPatternArray)/(PATTERN_NUM_ROWS * PATTERN_NUM_COLS)
-extern char injectorPatternArray[][7][7];
+
+int patternNumPattern(void);
+extern char injectorPatternArray[][PATTERN_NUM_ROWS][PATTERN_NUM_COLS];
 
 #endif

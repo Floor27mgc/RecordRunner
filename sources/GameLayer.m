@@ -13,6 +13,7 @@
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
 #import "GameObjectInjector.h"
+#import "pattern.h"
 #pragma mark - GameLayer
 
 // GameLayer implementation
@@ -120,8 +121,8 @@
         // Create Game Object injector to inject Bomb, coins, etc
         gameObjectInjector = [GameObjectInjector initWithGameLayer:self];
         
-        [gameObjectInjector injectObjectWithPattern:kPatternDiamond
-                                   initialXPosition:CGPointMake(20, 0)];
+/*        [gameObjectInjector injectObjectWithPattern:kPatternDiamond
+                                   initialXPosition:CGPointMake(20, 0)];*/
     }
 
     [self schedule: @selector(update:)];
@@ -180,20 +181,13 @@
 {
     [_player showNextFrame];
     
-    // generate Bomb objects randomly
-/*    [gameObjectInjector injectObjectWithPattern:kPatternDiamond
-                               initialXPosition:CGPointMake(20, 0)]; */
-/*    if (arc4random() % RANDOM_MAX > BOMB_CREATION_THRESHOLD) {
-        //[self generateGameObject:(BOMB_TYPE)];
-        [gameObjectInjector injectObjectWithPattern:kPatternDiamond
-                                   initialXPosition:CGPointMake(20, 0)];
+    // generate Game Objectsrandomly
 
-    } */
-    
-    // generate Coin objects randomly
-/*    if (arc4random() % RANDOM_MAX > COIN_CREATION_THRESHOLD) {
-        [self generateGameObject:(COIN_TYPE)];
-    } */
+    if (arc4random() % RANDOM_MAX == 1) {
+        
+        [gameObjectInjector injectObjectWithPattern:(arc4random() % patternNumPattern())
+                                   initialXPosition:CGPointMake((arc4random() % 320), 0)];
+    } 
 
     // Trigger each bomb objects and coin object proceed to
     // show the next frame.  Each object will be responsible

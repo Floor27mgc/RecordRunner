@@ -57,7 +57,7 @@
             maxlimit = MAX_NUM_COINS;
             break;
         case SPACE_TYPE:
-            return lastObject;
+            return nil;
     }
     
     
@@ -101,11 +101,16 @@
                   gameObjectType:injectorPatternArray[_pattern_type][y][x]
                       effectType:kHeartPumping];
             currentLocation.x = currentLocation.x + INJECTOR_GRID_WIDTH;
+            
+            if (objCreated != nil)
+            {
+                lastObject = objCreated;
+            }
         }
         currentLocation.x = _initialXPosition.x;
         currentLocation.y = currentLocation.y - INJECTOR_GRID_HEIGHT;
     }
-    lastObject = objCreated;
+//    lastObject = objCreated;
 }
 
 // -----------------------------------------------------------------------------------
