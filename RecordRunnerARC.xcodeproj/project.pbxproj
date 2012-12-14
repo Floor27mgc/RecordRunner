@@ -68,6 +68,7 @@
 		08C86DC11674552F0082DBE5 /* tuffy_bold_italic-charmap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DC01674552F0082DBE5 /* tuffy_bold_italic-charmap.plist */; };
 		08C86DF716745C3F0082DBE5 /* tuffy_bold_italic-charmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DF616745C3F0082DBE5 /* tuffy_bold_italic-charmap.png */; };
 		08E5B161164387A400E4AAA4 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 08E5B160164387A400E4AAA4 /* background.png */; };
+		08FF6C56167B867400E8ABF6 /* background_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 08FF6C55167B867400E8ABF6 /* background_small.png */; };
 		8592EC101673EE3B0008B1B2 /* gorbNormal16.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 8592EC0F1673EE3B0008B1B2 /* gorbNormal16.fnt */; };
 		85A671361651D14000499BF7 /* Bomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671351651D14000499BF7 /* Bomb.m */; };
 		85A6713A1651D16000499BF7 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671391651D16000499BF7 /* Coin.m */; };
@@ -396,6 +397,7 @@
 		08C86E2B1674EA550082DBE5 /* west_england-64.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "west_england-64.fnt"; path = "Fonts/west_england-64.fnt"; sourceTree = SOURCE_ROOT; };
 		08C86E2C1674EA550082DBE5 /* west_england-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "west_england-64.png"; path = "Fonts/west_england-64.png"; sourceTree = SOURCE_ROOT; };
 		08E5B160164387A400E4AAA4 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Graphics/background.png; sourceTree = SOURCE_ROOT; };
+		08FF6C55167B867400E8ABF6 /* background_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background_small.png; path = Graphics/background_small.png; sourceTree = SOURCE_ROOT; };
 		8592EC0F1673EE3B0008B1B2 /* gorbNormal16.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = gorbNormal16.fnt; path = Graphics/gorbNormal16.fnt; sourceTree = SOURCE_ROOT; };
 		85A671341651D13F00499BF7 /* Bomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bomb.h; path = sources/Bomb.h; sourceTree = SOURCE_ROOT; };
 		85A671351651D14000499BF7 /* Bomb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bomb.m; path = sources/Bomb.m; sourceTree = SOURCE_ROOT; };
@@ -701,6 +703,7 @@
 			isa = PBXGroup;
 			children = (
 				08E5B160164387A400E4AAA4 /* background.png */,
+				08FF6C55167B867400E8ABF6 /* background_small.png */,
 				8592EC0F1673EE3B0008B1B2 /* gorbNormal16.fnt */,
 				85A671461654582500499BF7 /* Coin.png */,
 				0840D5A8163F4D67003D5FE6 /* player.png */,
@@ -1501,6 +1504,7 @@
 				085E9741167597A800A50284 /* tuffy_bold_italic-charmap.png in Resources */,
 				085E9742167597A800A50284 /* west_england-64.fnt in Resources */,
 				085E9743167597A800A50284 /* west_england-64.png in Resources */,
+				08FF6C56167B867400E8ABF6 /* background_small.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
