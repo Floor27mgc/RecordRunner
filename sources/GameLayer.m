@@ -184,9 +184,11 @@
 /*    [gameObjectInjector injectObjectWithPattern:kPatternDiamond
                                initialXPosition:CGPointMake(20, 0)]; */
 /*    if (arc4random() % RANDOM_MAX > BOMB_CREATION_THRESHOLD) {
-        [self generateGameObject:(BOMB_TYPE)];
+        //[self generateGameObject:(BOMB_TYPE)];
+        [gameObjectInjector injectObjectWithPattern:kPatternDiamond
+                                   initialXPosition:CGPointMake(20, 0)];
 
-    }*/
+    } */
     
     // generate Coin objects randomly
 /*    if (arc4random() % RANDOM_MAX > COIN_CREATION_THRESHOLD) {

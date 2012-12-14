@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "GameLayer.h"
-@class GameLayer;
+//@class GameLayer;
 typedef enum {
     kPatternDiamond,
     kPatternRectangle,    
@@ -32,11 +32,13 @@ typedef enum {
 @interface GameObjectInjector : NSObject
 
 @property (nonatomic,assign) GameLayer *mainGameLayer;
-
+@property (nonatomic,assign) GameObjectBase *lastObject;
 + (id) initWithGameLayer:(GameLayer *) gamelayer;
-- (void) injectObjectAt: (CGPoint)preferredLocation
+- (GameObjectBase *) injectObjectAt: (CGPoint)preferredLocation
          gameObjectType: (game_object_t)_gameObjectType
              effectType: (effect_type_t) _effectType;
 - (void) injectObjectWithPattern:(pattern_type)_pattern_type
                 initialXPosition: (CGPoint) _initialXPosition;
+- (bool) isLastObjectOnScreen;
+
 @end
