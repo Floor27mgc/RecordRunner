@@ -68,6 +68,15 @@
             [newObject moveTo:preferredLocation];
             newObject.gameObjectSprite.visible = 1;
             [usedPool addObject:newObject];
+/*            CGPoint oldanchor = newObject.gameObjectSprite.anchorPoint;
+            newObject.gameObjectSprite.anchorPoint=ccp(0.5,0.5);
+            id actionToSmall = [CCScaleTo actionWithDuration: 1 scale:0.5f];
+            id actionToNormal = [CCScaleTo actionWithDuration: 1 scale:1.5f];
+            id action = [CCSequence actions:
+                          actionToSmall,
+                          actionToNormal,
+                          nil ];
+            [newObject.gameObjectSprite runAction:[CCRepeatForever actionWithAction:action]]; */
         } else {
             NSLog(@"out of object");
         }
@@ -118,9 +127,5 @@
 {
     return (((self.lastObject.gameObjectSprite.position.y > 0) ||
             (self.lastObject.gameObjectSprite.visible   == 0))?YES:NO);
-
-/*    return (((self.lastObject != nil) &&
-             (self.lastObject.gameObjectSprite.position.y > 0))?
-            YES:NO);*/
 }
 @end
