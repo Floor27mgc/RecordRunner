@@ -64,8 +64,8 @@
     CGRect myBox   =
     CGRectMake(mySprite.position.x,
                 mySprite.position.y,
-                [mySprite boundingBox].size.width,
-                [mySprite boundingBox].size.height);
+                [mySprite boundingBox].size.width *1.2,
+                [mySprite boundingBox].size.height*1.2);
     return (CGRectIntersectsRect(box, myBox));
 }
 
@@ -74,32 +74,44 @@
 {
     CCSprite * pSprite = self.parentGameLayer.player.gameObjectSprite;
     pSprite.anchorPoint = ccp(0,0);
-    
-    if ((pSprite.position.x > PLAYER_LEFT_BOUND) &&
-        (self.parentGameLayer.player.direction == kMoveRight) &&
-        (self.parentGameLayer.player.gameObjectSpeed != 0))
+
+    if (self.parentGameLayer.player.gameObjectSpeed == 0)
     {
         CGRect playerHitBox = CGRectMake(pSprite.position.x,
                                          pSprite.position.y,
-                                         -kPlayerHitBoxSegmentWidth,
-                                         [pSprite boundingBox].size.height);
+                                         pSprite.boundingBox.size.width,
+                                         pSprite.boundingBox.size.height);
         if ([self encounter:playerHitBox])
         {
             return YES;
         }
     }
-    
-    if ((pSprite.position.x < PLAYER_RIGHT_BOUND) &&
-        (self.parentGameLayer.player.direction == kMoveLeft) &&
-        (self.parentGameLayer.player.gameObjectSpeed != 0))
+    else
     {
-        CGRect playerHitBox = CGRectMake(pSprite.position.x,
-                                         pSprite.position.y,
-                                         kPlayerHitBoxSegmentWidth,
-                                         [pSprite boundingBox].size.height);
-        if ([self encounter:playerHitBox])
+        if ((pSprite.position.x > PLAYER_LEFT_BOUND) &&
+            (self.parentGameLayer.player.direction == kMoveRight))
         {
-            return YES;
+            CGRect playerHitBox = CGRectMake(pSprite.position.x + kPlayerHitBoxSegmentWidth,
+                                             pSprite.position.y,
+                                             -kPlayerHitBoxSegmentWidth * 2,
+                                             [pSprite boundingBox].size.height);
+            if ([self encounter:playerHitBox])
+            {
+                return YES;
+            }
+        }
+        
+        if ((pSprite.position.x < PLAYER_RIGHT_BOUND) &&
+            (self.parentGameLayer.player.direction == kMoveLeft))
+        {
+            CGRect playerHitBox = CGRectMake(pSprite.position.x,
+                                             pSprite.position.y,
+                                             2 * kPlayerHitBoxSegmentWidth,
+                                             [pSprite boundingBox].size.height);
+            if ([self encounter:playerHitBox])
+            {
+                return YES;
+            }
         }
     }
     

@@ -33,7 +33,7 @@
         [self handleCollision];
     }
     else
-    {
+    { 
         [self recycleOffScreenObjWithUsedPool:self.parentGameLayer.bombUsedPool
                                      freePool:self.parentGameLayer.bombFreePool];
     }

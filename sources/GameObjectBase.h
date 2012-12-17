@@ -10,6 +10,9 @@
 #import "cocos2d.h"
 #import "Queue.h"
 //#import "GameLayer.h"
+
+#define kDefaultGameObjectSpeed 1
+
 @class GameLayer;
 
 @interface GameObjectBase : NSObject

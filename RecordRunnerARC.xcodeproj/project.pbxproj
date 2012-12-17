@@ -62,7 +62,6 @@
 		085E973E167597A800A50284 /* Scissor Cuts.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E261674EA550082DBE5 /* Scissor Cuts.ttf */; };
 		085E973F167597A800A50284 /* tuffy_bold_italic-charmap-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E271674EA550082DBE5 /* tuffy_bold_italic-charmap-hd.plist */; };
 		085E9740167597A800A50284 /* tuffy_bold_italic-charmap-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E281674EA550082DBE5 /* tuffy_bold_italic-charmap-hd.png */; };
-		085E9741167597A800A50284 /* tuffy_bold_italic-charmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E2A1674EA550082DBE5 /* tuffy_bold_italic-charmap.png */; };
 		085E9742167597A800A50284 /* west_england-64.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E2B1674EA550082DBE5 /* west_england-64.fnt */; };
 		085E9743167597A800A50284 /* west_england-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E2C1674EA550082DBE5 /* west_england-64.png */; };
 		08C86DC11674552F0082DBE5 /* tuffy_bold_italic-charmap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DC01674552F0082DBE5 /* tuffy_bold_italic-charmap.plist */; };
@@ -737,11 +736,11 @@
 				0840D59B163F4BCC003D5FE6 /* GameLayer.h */,
 				0840D59C163F4BCC003D5FE6 /* GameLayer.m */,
 				0840D59E163F4BF5003D5FE6 /* GameObjectBase.h */,
+				0840D59F163F4BF5003D5FE6 /* GameObjectBase.m */,
 				082018301678479B000A3F8D /* GameObjectInjector.h */,
 				082018311678479B000A3F8D /* GameObjectInjector.m */,
 				082018341679577D000A3F8D /* pattern.c */,
 				0820183616795ADE000A3F8D /* pattern.h */,
-				0840D59F163F4BF5003D5FE6 /* GameObjectBase.m */,
 				0840D5A1163F4C2A003D5FE6 /* GameObjectPlayer.h */,
 				0840D5A2163F4C2A003D5FE6 /* GameObjectPlayer.m */,
 				85A671341651D13F00499BF7 /* Bomb.h */,
@@ -1408,7 +1407,7 @@
 		DC0C49E8154AB4DD00B4B727 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = DC0C49EB154AB4DD00B4B727 /* Build configuration list for PBXProject "RecordRunnerARC" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1501,7 +1500,6 @@
 				085E973E167597A800A50284 /* Scissor Cuts.ttf in Resources */,
 				085E973F167597A800A50284 /* tuffy_bold_italic-charmap-hd.plist in Resources */,
 				085E9740167597A800A50284 /* tuffy_bold_italic-charmap-hd.png in Resources */,
-				085E9741167597A800A50284 /* tuffy_bold_italic-charmap.png in Resources */,
 				085E9742167597A800A50284 /* west_england-64.fnt in Resources */,
 				085E9743167597A800A50284 /* west_england-64.png in Resources */,
 				08FF6C56167B867400E8ABF6 /* background_small.png in Resources */,
@@ -1643,7 +1641,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Hin Lam";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (NS2DXUE59G)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1656,7 +1654,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				PROVISIONING_PROFILE = "D5B4413F-2D51-4689-98E4-2D2FB5AA50A2";
+				PROVISIONING_PROFILE = "15C17ED7-9982-48EC-948D-1990A0FC4F5D";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

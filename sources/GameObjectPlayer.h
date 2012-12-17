@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "GameObjectBase.h"
-#define kPlayerSpeed ((PLAYER_RIGHT_BOUND - PLAYER_LEFT_BOUND)/10)
+#define kPlayerSpeed 32
 #define kPlayerHitBoxSegmentWidth kPlayerSpeed
 
 typedef enum
@@ -18,9 +18,9 @@ typedef enum
     kMoveRight =  1
 } direction_t;
 
-#define PLAYER_START_POSITION ccp(PLAYER_LEFT_BOUND, 400)
-#define PLAYER_LEFT_BOUND  50
-#define PLAYER_RIGHT_BOUND 270
+#define PLAYER_START_POSITION ccp(PLAYER_LEFT_BOUND, 380)
+#define PLAYER_LEFT_BOUND  32
+#define PLAYER_RIGHT_BOUND 256
 
 @interface GameObjectPlayer : GameObjectBase
 {

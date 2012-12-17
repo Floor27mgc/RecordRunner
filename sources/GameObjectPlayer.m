@@ -16,18 +16,16 @@
 - (void) showNextFrame
 {
     [self moveBy:ccp(direction * self.gameObjectSpeed, 0)];
-    playerStreak.position = [self getGameObjectSpritePosition];
 
     if (self.gameObjectSprite.position.x <= PLAYER_LEFT_BOUND)
     {
         self.gameObjectSpeed = 0;
-    }
+    } 
     
     if (self.gameObjectSprite.position.x >= PLAYER_RIGHT_BOUND)
     {
          self.gameObjectSpeed = 0;
     }
-    
 }
 
 - (void) handleCollision
@@ -45,7 +43,7 @@
                                                 color:ccc3(0, 255, 0)
                                       textureFilename:@"player.png"];
 
-        direction = 1;
+        direction = kMoveLeft;
     }
     return (self);
     

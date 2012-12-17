@@ -69,7 +69,8 @@
         // Create player
         _player = [GameObjectPlayer initWithGameLayer:self
                                         imageFileName:@"player.png"
-                                          objectSpeed:kPlayerSpeed];
+                                          objectSpeed:0];
+        _player.gameObjectSprite.anchorPoint = ccp(0,0);
         [_player moveTo:PLAYER_START_POSITION];
 
         [self addChild:background];
@@ -86,7 +87,7 @@
         for (int i = 0; i < MAX_NUM_BOMBS; ++i) {
             Bomb * _bomb = [Bomb initWithGameLayer: self
                               imageFileName:@"Bomb.png"
-                                objectSpeed:1];
+                                objectSpeed:kDefaultGameObjectSpeed];
             _bomb.gameObjectSprite.visible = 0;
             [_bombFreePool addObject:_bomb];
             
@@ -104,7 +105,7 @@
         for (int i = 0; i < MAX_NUM_COINS; ++i) {
             Coin * _coin = [Coin initWithGameLayer:self
                               imageFileName:@"Coin.png"
-                                objectSpeed:2];
+                                objectSpeed:kDefaultGameObjectSpeed];
             _coin.gameObjectSprite.visible = 0;
             [_coinFreePool addObject:_coin];
             
@@ -119,10 +120,8 @@
         [self addChild:_score.score];
         
         // Create Game Object injector to inject Bomb, coins, etc
-        gameObjectInjector = [GameObjectInjector initWithGameLayer:self];
-        
-/*        [gameObjectInjector injectObjectWithPattern:kPatternDiamond
-                                   initialXPosition:CGPointMake(20, 0)];*/
+        gameObjectInjector = [GameObjectInjector initWithGameLayer:self];        
+
     }
 
     [self schedule: @selector(update:)];
@@ -179,6 +178,7 @@
 // -----------------------------------------------------------------------------------
 - (void) update:(ccTime) dt
 {
+//    NSLog(@"%f",dt);
     [_player showNextFrame];
     
     // generate Game Objectsrandomly
@@ -186,7 +186,7 @@
     if (arc4random() % RANDOM_MAX == 1) {
         
         [gameObjectInjector injectObjectWithPattern:(arc4random() % patternNumPattern())
-                                   initialXPosition:CGPointMake((arc4random() % 320), 0)];
+                                   initialXPosition:CGPointMake((arc4random() % 160), 0)];
     } 
 
     // Trigger each bomb objects and coin object proceed to

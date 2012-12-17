@@ -110,14 +110,17 @@
         currentLocation.x = _initialXPosition.x;
         currentLocation.y = currentLocation.y - INJECTOR_GRID_HEIGHT;
     }
-//    lastObject = objCreated;
+
 }
 
 // -----------------------------------------------------------------------------------
 - (bool) isLastObjectOnScreen
 {
-    return (((self.lastObject != nil) &&
+    return (((self.lastObject.gameObjectSprite.position.y > 0) ||
+            (self.lastObject.gameObjectSprite.visible   == 0))?YES:NO);
+
+/*    return (((self.lastObject != nil) &&
              (self.lastObject.gameObjectSprite.position.y > 0))?
-            YES:NO);
+            YES:NO);*/
 }
 @end
