@@ -47,6 +47,9 @@ typedef enum {
 // randomly create coins and bombs
 - (void) generateGameObject:(game_object_t) type;
 
+// handle "game over" scenario
+- (void) gameOver;
+
 @property (nonatomic, strong) GameObjectPlayer *player;
 
 @property (nonatomic, strong) Queue * bombFreePool;
