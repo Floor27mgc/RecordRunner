@@ -45,8 +45,9 @@
     [self recycleObjectWithUsedPool:self.parentGameLayer.bombUsedPool
                            freePool:self.parentGameLayer.bombFreePool];
     
-    // increment score
-    [self.parentGameLayer.score decrementScore:100];
+    [self.parentGameLayer gameOver];
+    
+    [self.parentGameLayer.score decrementScore:1000];
 }
 
 // -----------------------------------------------------------------------------------

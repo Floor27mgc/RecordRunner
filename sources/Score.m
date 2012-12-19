@@ -12,15 +12,17 @@
 
 @synthesize score = _score;
 @synthesize scoreValue = _scoreValue;
+@synthesize prevScore = _prevScore;
 
 // -----------------------------------------------------------------------------------
 - (id) init
 {
     _scoreValue = 0;
+    _prevScore  = 0;
     
     if(self = [super init]) {
         _score = [CCLabelBMFont labelWithString:@"0" fntFile:@"bitmapFontTest.fnt"];
-        NSString * scoreString = [NSString stringWithFormat:@"Score %d", _scoreValue];
+        NSString * scoreString = [self generateScoreString];
         [_score setString:scoreString];
         CGSize size = [[CCDirector sharedDirector] winSize];
         _score.position = ccp(kScorePositionX,kScorePositionY);
@@ -29,6 +31,14 @@
 
     return (self);
 }
+
+// -----------------------------------------------------------------------------------
+- (NSString *) generateScoreString
+{
+    NSString * scoreString = [NSString stringWithFormat:@"Score %d", _scoreValue];
+    return scoreString;
+}
+
 // -----------------------------------------------------------------------------------
 - (void) incrementScore:(int)amount
 {
@@ -48,8 +58,11 @@
 // -----------------------------------------------------------------------------------
 - (void) showNextFrame
 {
-    NSString * scoreString = [NSString stringWithFormat:@"Score %d", _scoreValue];
-    [_score setString:scoreString];
+    if (_prevScore != _scoreValue) {
+        NSString * scoreString = [self generateScoreString];
+        [_score setString:scoreString];
+        _prevScore = _scoreValue;
+    }
 }
 
 // -----------------------------------------------------------------------------------

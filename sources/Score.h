@@ -15,8 +15,10 @@
 
 @property (nonatomic) CCLabelBMFont * score;
 @property (nonatomic) int scoreValue;
+@property (nonatomic) int prevScore;
 
 - (void) incrementScore:(int) amount;
 - (void) decrementScore:(int) amount;
+- (NSString *) generateScoreString;
 
 @end
