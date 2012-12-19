@@ -73,7 +73,7 @@
         _player.gameObjectSprite.anchorPoint = ccp(0,0);
         [_player moveTo:PLAYER_START_POSITION];
 
-        [self addChild:background];
+//        [self addChild:background];
         [self addChild:_player.playerStreak];
         [self addChild:_player.gameObjectSprite];
         

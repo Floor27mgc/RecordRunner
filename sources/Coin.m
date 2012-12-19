@@ -9,7 +9,7 @@
 #import "Coin.h"
 #import "GameLayer.h"
 @implementation Coin
-
+@synthesize emitter=emitter_;
 // -----------------------------------------------------------------------------------
 - (id) init
 {
@@ -28,6 +28,11 @@
     
     if ([self encounterWithPlayer])
     {
+//        id actionBy = [CCMoveBy actionWithDuration:1  position: ccp(0,10)];
+/*        id FadeAction = [CCFadeOut actionWithDuration:1];
+        id callHandler = [CCCallFunc actionWithTarget:self selector:@selector(handleCollision)];
+        [self.gameObjectSprite runAction:[CCSequence actions:FadeAction,callHandler, nil]];*/
+        //[self.gameObjectSprite runAction:FadeAction];
         [self handleCollision];
     }
     else
@@ -40,9 +45,17 @@
 // -----------------------------------------------------------------------------------
 - (void) handleCollision
 {
+//    id FadeAction = [CCFadeOut actionWithDuration:1];
+//    id callHandler = [CCCallFunc actionWithTarget:self selector:@selector(handleCollision)];
+//    [self.gameObjectSprite runAction:[CCSequence actions:FadeAction, nil]];
+    self.emitter = [CCParticleSystemQuad particleWithFile:@"ExplodingRing.plist"];
+
+    self.emitter.sourcePosition = self.gameObjectSprite.position;
+
+	[self.parentGameLayer addChild:emitter_ z:10];
+    
     [self recycleObjectWithUsedPool:self.parentGameLayer.coinUsedPool
                            freePool:self.parentGameLayer.coinFreePool];
-    
     // increment score
     [self.parentGameLayer.score incrementScore:1];
 }

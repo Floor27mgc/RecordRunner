@@ -13,5 +13,5 @@
 {
     
 }
-
+@property (nonatomic, assign) CCParticleSystemQuad *emitter;
 @end
