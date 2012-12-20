@@ -11,8 +11,12 @@
 
 @interface GameOverLayer : CCLayerColor
 
-+ (id)initWithScoreString:(NSString *) score
-                  winSize:(CGSize) winSize;
-- (id) init;
+@property (nonatomic, assign) GameLayer * parentGameLayer;
 
++ (id)initWithScoreString:(NSString *) score
+                  winSize:(CGSize) winSize
+                gameLayer:(GameLayer *) gamelayer;
+- (id) init;
+- (void) yesTapped:(id) sender;
+- (void) noTapped:(id) sender;
 @end

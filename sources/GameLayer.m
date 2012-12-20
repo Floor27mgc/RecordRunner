@@ -217,49 +217,29 @@
     NSString * score = [_score generateScoreString];
     CGSize mainSize = [[CCDirector sharedDirector] winSize];
     
-    CCLayer * gameOverLayer = [GameOverLayer initWithScoreString:score winSize:mainSize];
+    CCLayer * gameOverLayer = [GameOverLayer initWithScoreString:score
+                                                    winSize:mainSize
+                                                       gameLayer:self];
 
-    //[[CCDirector sharedDirector] replaceScene:gameOverScene];
-    
-    /*
-    // create the game over layer and set its properties
-    CCLayer * gameOverLayer = [[CCLayer alloc] init];
-    gameOverLayer.isTouchEnabled = YES;
-    
-    // set gameOverLayer size
-    CGSize mainSize = [[CCDirector sharedDirector] winSize];
-    CGSize gameOverLayerSize;
-    gameOverLayerSize.height = mainSize.height - (mainSize.height * .25);
-    gameOverLayerSize.width  = mainSize.width - (mainSize.width * .25);
-    [gameOverLayer setContentSize:gameOverLayerSize];
-    
-    // set gameOverLayer position
-    CGPoint gameOverLayerPosition;
-    gameOverLayerPosition.x = mainSize.width * .125;
-    gameOverLayerPosition.y = mainSize.height * .125;
-    [gameOverLayer setPosition:gameOverLayerPosition];
-    */
     // set game over layer's display actions
     id zoomIn  = [CCScaleTo actionWithDuration:0.5 scale:1.25];
     id zoomOut = [CCScaleTo actionWithDuration:0.5 scale:1.0];
-    id actionTime = [CCDelayTime actionWithDuration:3];
-    /*
-    // add score label to the gameOverLayer
-    NSString * scoreString  = [_score generateScoreString];
-    CCLabelBMFont * myLabel = [CCLabelBMFont labelWithString:scoreString fntFile:@"bitmapFontTest.fnt"];
-    CGPoint scorePosition;
-    scorePosition.x = gameOverLayerPosition.x + (gameOverLayerSize.width * .125);
-    scorePosition.y = gameOverLayerPosition.y + (gameOverLayerSize.height * .125);
-    [myLabel setPosition:scorePosition];
-    [gameOverLayer addChild:myLabel];
-    
-     */
+       
     // execute the game over layer
     [self addChild:gameOverLayer z:1];
-    [gameOverLayer runAction:[CCSequence actions:zoomIn, zoomOut, actionTime, nil]];
- 
+    [self pauseSchedulerAndActions];
     
-    //[self removeChild:gameOverLayer cleanup:YES];
+    [gameOverLayer runAction:[CCSequence actions:zoomIn, zoomOut, nil]];
+    
+    //id zoomWayOut = [CCScaleTo actionWithDuration:0.5 scale:0.0];
+    //[gameOverLayer runAction:[CCSequence actions:zoomWayOut, nil]];
+}
+
+
+// -----------------------------------------------------------------------------------
+- (void) startOver
+{
+    [self resumeSchedulerAndActions];
 }
 
 // -----------------------------------------------------------------------------------

@@ -50,6 +50,9 @@ typedef enum {
 // handle "game over" scenario
 - (void) gameOver;
 
+// restart the game
+- (void) startOver;
+
 @property (nonatomic, strong) GameObjectPlayer *player;
 
 @property (nonatomic, strong) Queue * bombFreePool;
