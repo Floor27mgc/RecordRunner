@@ -12,6 +12,8 @@
 @interface GameOverLayer : CCLayerColor
 
 @property (nonatomic, assign) GameLayer * parentGameLayer;
+@property (nonatomic, assign) CCMenuItem * noButton;
+@property (nonatomic, assign) CCMenuItem * yesButton;
 
 + (id)initWithScoreString:(NSString *) score
                   winSize:(CGSize) winSize

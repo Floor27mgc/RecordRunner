@@ -31,6 +31,8 @@
 @synthesize coinFreePool = _coinFreePool;
 @synthesize coinUsedPool = _coinUsedPool;
 
+@synthesize gameOverLayer = _gameOverLayer;
+
 @synthesize gameObjectInjector;
 // -----------------------------------------------------------------------------------
 // Helper class method that creates a Scene with the GameLayer as the only child.
@@ -74,7 +76,6 @@
         _player.gameObjectSprite.anchorPoint = ccp(0,0);
         [_player moveTo:PLAYER_START_POSITION];
 
-//        [self addChild:background];
         [self addChild:_player.playerStreak];
         [self addChild:_player.gameObjectSprite];
         
@@ -179,11 +180,9 @@
 // -----------------------------------------------------------------------------------
 - (void) update:(ccTime) dt
 {
-//    NSLog(@"%f",dt);
     [_player showNextFrame];
     
     // generate Game Objectsrandomly
-
     if (arc4random() % RANDOM_MAX == 1) {
         
         [gameObjectInjector injectObjectWithPattern:(arc4random() % patternNumPattern())
@@ -217,29 +216,50 @@
     NSString * score = [_score generateScoreString];
     CGSize mainSize = [[CCDirector sharedDirector] winSize];
     
-    CCLayer * gameOverLayer = [GameOverLayer initWithScoreString:score
-                                                    winSize:mainSize
-                                                       gameLayer:self];
+    _gameOverLayer = [GameOverLayer initWithScoreString:score
+                                                winSize:mainSize
+                                                    gameLayer:self];
 
     // set game over layer's display actions
     id zoomIn  = [CCScaleTo actionWithDuration:0.5 scale:1.25];
     id zoomOut = [CCScaleTo actionWithDuration:0.5 scale:1.0];
        
     // execute the game over layer
-    [self addChild:gameOverLayer z:1];
+    [self addChild:_gameOverLayer z:1];
     [self pauseSchedulerAndActions];
     
-    [gameOverLayer runAction:[CCSequence actions:zoomIn, zoomOut, nil]];
-    
-    //id zoomWayOut = [CCScaleTo actionWithDuration:0.5 scale:0.0];
-    //[gameOverLayer runAction:[CCSequence actions:zoomWayOut, nil]];
+    [_gameOverLayer runAction:[CCSequence actions:zoomIn, zoomOut, nil]];
 }
-
 
 // -----------------------------------------------------------------------------------
 - (void) startOver
 {
+    // reset bomb pools
+    [self resetPoolsWithUsedPool:_bombUsedPool freePool:_bombFreePool];
+    
+    // reset coin pools
+    [self resetPoolsWithUsedPool:_coinUsedPool freePool:_coinFreePool];
+    
+    // remove gameOverLayer
+    id zoomWayOut = [CCScaleTo actionWithDuration:1 scale:0.1];
+    [_gameOverLayer runAction:[CCSequence actions: zoomWayOut, nil]];
+    
     [self resumeSchedulerAndActions];
+}
+
+// -----------------------------------------------------------------------------------
+- (void) resetPoolsWithUsedPool:(Queue *)usedPool freePool:(Queue *)freePool
+{
+    for (int i = 0; i < [usedPool.objects count]; ++i) {
+        GameObjectBase * newObject = nil;
+        if ([usedPool.objects count] < MAX_NUM_BOMBS) {
+            newObject = [freePool takeObject];
+            if (newObject != nil) {
+                [freePool addObject:newObject];
+                [newObject resetObject];
+            }
+        }
+    }
 }
 
 // -----------------------------------------------------------------------------------

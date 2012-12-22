@@ -13,7 +13,7 @@
 #import "Bomb.h"
 #import "Queue.h"
 #import "Score.h"
-
+#import "GameOverLayer.h"
 
 #define NUM_OBSTACLES            20
 #define NUM_REWARDS              20
@@ -38,7 +38,7 @@ typedef enum {
 // GameLayer
 @interface GameLayer : CCLayer
 {
-//    GameObjectPlayer *player;
+
 }
 
 // returns a CCScene that contains the GameLayer as the only child
@@ -53,6 +53,10 @@ typedef enum {
 // restart the game
 - (void) startOver;
 
+// reset Used and Free pools
+- (void) resetPoolsWithUsedPool:(Queue *)usedPool
+                       freePool:(Queue *)freePool;
+
 @property (nonatomic, strong) GameObjectPlayer *player;
 
 @property (nonatomic, strong) Queue * bombFreePool;
@@ -61,5 +65,6 @@ typedef enum {
 @property (nonatomic, strong) Queue * coinUsedPool;
 @property (nonatomic, strong) CCSprite *background;
 @property (nonatomic, strong) Score * score;
-@property (nonatomic, strong) GameObjectInjector *gameObjectInjector;
+@property (nonatomic, strong) GameObjectInjector * gameObjectInjector;
+@property (nonatomic, strong) GameOverLayer * gameOverLayer;
 @end
