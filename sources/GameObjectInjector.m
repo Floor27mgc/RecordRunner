@@ -64,7 +64,7 @@
     if ([usedPool.objects count] < maxlimit) {
         newObject = [freePool takeObject];
         if (newObject != nil) {
-            newObject.gameObjectSprite.anchorPoint = ccp(0,0);
+            newObject.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
             [newObject moveTo:preferredLocation];
             newObject.gameObjectSprite.visible = 1;
             [usedPool addObject:newObject];
@@ -109,7 +109,7 @@
             [self injectObjectAt:currentLocation
                   gameObjectType:injectorPatternArray[_pattern_type][y][x]
                       effectType:kHeartPumping];
-            currentLocation.x = currentLocation.x + INJECTOR_GRID_WIDTH;
+            currentLocation.x = currentLocation.x + COMMON_GRID_WIDTH;
             
             if (objCreated != nil)
             {
@@ -117,7 +117,7 @@
             }
         }
         currentLocation.x = _initialXPosition.x;
-        currentLocation.y = currentLocation.y - INJECTOR_GRID_HEIGHT;
+        currentLocation.y = currentLocation.y - COMMON_GRID_WIDTH;
     }
 
 }

@@ -16,7 +16,8 @@
 - (void) showNextFrame
 {
     [self moveBy:ccp(direction * self.gameObjectSpeed, 0)];
-
+    self.parentGameLayer.playerOnFireEmitter.anchorPoint = ccp(0.5,0.5);
+    self.parentGameLayer.playerOnFireEmitter.sourcePosition = self.gameObjectSprite.position;
     if (self.gameObjectSprite.position.x <= PLAYER_LEFT_BOUND)
     {
         self.gameObjectSpeed = 0;
@@ -37,11 +38,11 @@
 {
     if( (self=[super init]) )
     {
-        playerStreak = [CCMotionStreak streakWithFade:0.8f
+/*        playerStreak = [CCMotionStreak streakWithFade:0.8f
                                                minSeg:1.0f
                                                 width:20
                                                 color:ccc3(0, 255, 0)
-                                      textureFilename:@"player.png"];
+                                      textureFilename:@"player.png"]; */
 
         direction = kMoveLeft;
     }

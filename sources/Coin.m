@@ -8,6 +8,7 @@
 
 #import "Coin.h"
 #import "GameLayer.h"
+#import "SimpleAudioEngine.h"
 @implementation Coin
 @synthesize emitter=emitter_;
 // -----------------------------------------------------------------------------------
@@ -58,6 +59,7 @@
                            freePool:self.parentGameLayer.coinFreePool];
     // increment score
     [self.parentGameLayer.score incrementScore:1];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"coin-pick-up.wav"]; 
 }
 
 // -----------------------------------------------------------------------------------

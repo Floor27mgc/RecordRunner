@@ -15,6 +15,7 @@
 #import "GameObjectInjector.h"
 #import "pattern.h"
 #import "GameOverLayer.h"
+#import "SimpleAudioEngine.h"
 #pragma mark - GameLayer
 
 // GameLayer implementation
@@ -34,6 +35,7 @@
 @synthesize gameOverLayer = _gameOverLayer;
 
 @synthesize gameObjectInjector;
+@synthesize playerOnFireEmitter;
 // -----------------------------------------------------------------------------------
 // Helper class method that creates a Scene with the GameLayer as the only child.
 +(CCScene *) scene
@@ -68,15 +70,22 @@
         // Create background
         background = [CCSprite spriteWithFile:@"background_small.png"];
         background.anchorPoint=ccp(0,0);
-                
+
+        // Create background music
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"JewelBeat - Follow The Beat.wav"];
+
         // Create player
         _player = [GameObjectPlayer initWithGameLayer:self
                                         imageFileName:@"player.png"
                                           objectSpeed:0];
-        _player.gameObjectSprite.anchorPoint = ccp(0,0);
+        _player.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
         [_player moveTo:PLAYER_START_POSITION];
 
-        [self addChild:_player.playerStreak];
+//        [self addChild:_player.playerStreak];
+        self.playerOnFireEmitter = [CCParticleSystemQuad particleWithFile:@"PlayerOnFire.plist"];
+        
+        [self addChild:playerOnFireEmitter z:10];
+        
         [self addChild:_player.gameObjectSprite];
         
         // Create bomb free pool (queue)
@@ -221,8 +230,8 @@
                                                     gameLayer:self];
 
     // set game over layer's display actions
-    id zoomIn  = [CCScaleTo actionWithDuration:0.5 scale:1.25];
-    id zoomOut = [CCScaleTo actionWithDuration:0.5 scale:1.0];
+    id zoomIn  = [CCScaleTo actionWithDuration:0.2 scale:1.25];
+    id zoomOut = [CCScaleTo actionWithDuration:0.1 scale:1.0];
        
     // execute the game over layer
     [self addChild:_gameOverLayer z:1];

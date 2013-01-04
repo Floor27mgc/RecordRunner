@@ -67,6 +67,7 @@
 		08C86DC11674552F0082DBE5 /* tuffy_bold_italic-charmap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DC01674552F0082DBE5 /* tuffy_bold_italic-charmap.plist */; };
 		08C86DF716745C3F0082DBE5 /* tuffy_bold_italic-charmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DF616745C3F0082DBE5 /* tuffy_bold_italic-charmap.png */; };
 		08D7E75F16803CCC00826AAB /* ExplodingRing.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08D7E75E16803CCC00826AAB /* ExplodingRing.plist */; };
+		08E38C8416882A8000115F22 /* PlayerOnFire.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08E38C8316882A8000115F22 /* PlayerOnFire.plist */; };
 		08E5B161164387A400E4AAA4 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 08E5B160164387A400E4AAA4 /* background.png */; };
 		08FF6C56167B867400E8ABF6 /* background_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 08FF6C55167B867400E8ABF6 /* background_small.png */; };
 		8583C66A16802C9C003A3213 /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8583C66916802C9C003A3213 /* GameOverLayer.m */; };
@@ -344,6 +345,7 @@
 		0840D5A1163F4C2A003D5FE6 /* GameObjectPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjectPlayer.h; path = sources/GameObjectPlayer.h; sourceTree = SOURCE_ROOT; };
 		0840D5A2163F4C2A003D5FE6 /* GameObjectPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectPlayer.m; path = sources/GameObjectPlayer.m; sourceTree = SOURCE_ROOT; };
 		0840D5A8163F4D67003D5FE6 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = player.png; path = Graphics/player.png; sourceTree = SOURCE_ROOT; };
+		08B6D63A169548B000608ACF /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = common.h; path = sources/common.h; sourceTree = SOURCE_ROOT; };
 		08C86DC01674552F0082DBE5 /* tuffy_bold_italic-charmap.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "tuffy_bold_italic-charmap.plist"; path = "Fonts/tuffy_bold_italic-charmap.plist"; sourceTree = SOURCE_ROOT; };
 		08C86DF616745C3F0082DBE5 /* tuffy_bold_italic-charmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tuffy_bold_italic-charmap.png"; path = "../Fonts/tuffy_bold_italic-charmap.png"; sourceTree = "<group>"; };
 		08C86DF81674EA540082DBE5 /* A Damn Mess.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "A Damn Mess.ttf"; path = "Fonts/A Damn Mess.ttf"; sourceTree = SOURCE_ROOT; };
@@ -400,6 +402,7 @@
 		08C86E2B1674EA550082DBE5 /* west_england-64.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "west_england-64.fnt"; path = "Fonts/west_england-64.fnt"; sourceTree = SOURCE_ROOT; };
 		08C86E2C1674EA550082DBE5 /* west_england-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "west_england-64.png"; path = "Fonts/west_england-64.png"; sourceTree = SOURCE_ROOT; };
 		08D7E75E16803CCC00826AAB /* ExplodingRing.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ExplodingRing.plist; path = Particles/ExplodingRing.plist; sourceTree = SOURCE_ROOT; };
+		08E38C8316882A8000115F22 /* PlayerOnFire.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlayerOnFire.plist; sourceTree = "<group>"; };
 		08E5B160164387A400E4AAA4 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Graphics/background.png; sourceTree = SOURCE_ROOT; };
 		08FF6C55167B867400E8ABF6 /* background_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background_small.png; path = Graphics/background_small.png; sourceTree = SOURCE_ROOT; };
 		8583C66816802C9C003A3213 /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverLayer.h; path = sources/GameOverLayer.h; sourceTree = SOURCE_ROOT; };
@@ -744,6 +747,7 @@
 		0840D5AC163F50FF003D5FE6 /* game */ = {
 			isa = PBXGroup;
 			children = (
+				08B6D63A169548B000608ACF /* common.h */,
 				0840D59B163F4BCC003D5FE6 /* GameLayer.h */,
 				0840D59C163F4BCC003D5FE6 /* GameLayer.m */,
 				8583C66816802C9C003A3213 /* GameOverLayer.h */,
@@ -834,6 +838,7 @@
 			isa = PBXGroup;
 			children = (
 				08D7E75E16803CCC00826AAB /* ExplodingRing.plist */,
+				08E38C8316882A8000115F22 /* PlayerOnFire.plist */,
 			);
 			name = Particles;
 			sourceTree = "<group>";
@@ -1528,6 +1533,7 @@
 				08D7E75F16803CCC00826AAB /* ExplodingRing.plist in Resources */,
 				8583C67916828098003A3213 /* yes.jpg in Resources */,
 				8583C67C1682809E003A3213 /* no.png in Resources */,
+				08E38C8416882A8000115F22 /* PlayerOnFire.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

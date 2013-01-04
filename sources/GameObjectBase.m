@@ -26,7 +26,7 @@
     objCreated.parentGameLayer = gamelayer;
     objCreated.gameObjectSprite = [CCSprite spriteWithFile:fileName];
     objCreated.gameObjectSpeed = speed;
-    objCreated.gameObjectSprite.anchorPoint = ccp(0,0);
+    objCreated.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
     return objCreated;
 }
 
@@ -60,7 +60,7 @@
 - (BOOL) encounter:(CGRect) box
 {
     CCSprite * mySprite  = self.gameObjectSprite;
-    mySprite.anchorPoint = ccp(0, 0);
+    mySprite.anchorPoint = ccp(0.5, 0.5);
     CGRect myBox   =
     CGRectMake(mySprite.position.x,
                 mySprite.position.y,
@@ -73,7 +73,7 @@
 - (BOOL) encounterWithPlayer
 {
     CCSprite * pSprite = self.parentGameLayer.player.gameObjectSprite;
-    pSprite.anchorPoint = ccp(0,0);
+    pSprite.anchorPoint = ccp(0.5,0.5);
 
     if (self.parentGameLayer.player.gameObjectSpeed == 0)
     {

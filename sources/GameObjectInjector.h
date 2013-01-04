@@ -18,14 +18,9 @@ typedef enum {
     kPatternHeart
 } pattern_type;
 
-#define INJECTOR_GRID_WIDTH  32
-#define INJECTOR_GRID_HEIGHT 32
-#define INJECTOR_LEFT_BOUND PLAYER_LEFT_BOUND
-#define INJECTOR_RIGHT_BOUND PLAYER_RIGHT_BOUND
-
 #define PATTERN_ALIGN_TO_GRID(_location) do { \
-    _location.x = ((int) (_location.x / INJECTOR_GRID_WIDTH) * INJECTOR_GRID_WIDTH); \
-    _location.y = ((int) (_location.y / INJECTOR_GRID_HEIGHT) * INJECTOR_GRID_HEIGHT); \
+    _location.x = ((int) (_location.x / COMMON_GRID_WIDTH)  * COMMON_GRID_WIDTH)  + (COMMON_GRID_WIDTH/2);    \
+    _location.y = ((int) (_location.y / COMMON_GRID_HEIGHT) * COMMON_GRID_HEIGHT) + (COMMON_GRID_HEIGHT/2); \
 } while (0)
 
 
