@@ -13,6 +13,7 @@
 @synthesize score = _score;
 @synthesize scoreValue = _scoreValue;
 @synthesize prevScore = _prevScore;
+@synthesize label = _label;
 
 // -----------------------------------------------------------------------------------
 - (id) init
@@ -21,21 +22,28 @@
     _prevScore  = 0;
     
     if(self = [super init]) {
-        _score = [CCLabelBMFont labelWithString:@"0" fntFile:@"bitmapFontTest.fnt"];
-        NSString * scoreString = [self generateScoreString];
-        [_score setString:scoreString];
-        CGSize size = [[CCDirector sharedDirector] winSize];
-        _score.position = ccp(kScorePositionX,kScorePositionY);
-        
+
     }
 
     return (self);
 }
 
 // -----------------------------------------------------------------------------------
+- (void) prepareScore:(NSString *) myLabel
+{
+    _label = myLabel;
+    _score = [CCLabelBMFont labelWithString:@"0" fntFile:@"bitmapFontTest.fnt"];
+    NSString * scoreString = [self generateScoreString];
+    [_score setString:scoreString];
+    CGSize size = [[CCDirector sharedDirector] winSize];
+    _score.position = ccp(kScorePositionX,kScorePositionY);
+}
+
+// -----------------------------------------------------------------------------------
 - (NSString *) generateScoreString
 {
-    NSString * scoreString = [NSString stringWithFormat:@"Score %d", _scoreValue];
+    NSString * scoreString = [NSString stringWithFormat:@"%@ %d",
+                              _label, _scoreValue];
     return scoreString;
 }
 
@@ -53,6 +61,34 @@
     } else {
         _scoreValue -= amount;
     }
+}
+
+// -----------------------------------------------------------------------------------
+- (void) moveBy:(CGPoint)relativePoint
+{
+    int newX = _score.position.x + relativePoint.x;
+    int newY = _score.position.y + relativePoint.y;
+    _score.position = ccp(newX, newY);
+}
+
+// -----------------------------------------------------------------------------------
+- (int) getScore
+{
+    return _scoreValue;
+}
+
+// -----------------------------------------------------------------------------------
+- (void) setScoreValue:(int)newScore
+{
+    _scoreValue = newScore;
+}
+
+// -----------------------------------------------------------------------------------
+- (void) setHighScore
+{
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    [standardUserDefaults setInteger:_scoreValue forKey:@"highScore"];
+    [standardUserDefaults synchronize];
 }
 
 // -----------------------------------------------------------------------------------

@@ -53,6 +53,9 @@ typedef enum {
 // restart the game
 - (void) startOver;
 
+// check and update the high score
+- (bool) updateHighScore;
+
 // reset Used and Free pools
 - (void) resetPoolsWithUsedPool:(Queue *)usedPool
                        freePool:(Queue *)freePool;
@@ -65,6 +68,7 @@ typedef enum {
 @property (nonatomic, strong) Queue * coinUsedPool;
 @property (nonatomic, strong) CCSprite *background;
 @property (nonatomic, strong) Score * score;
+@property (nonatomic, strong) Score * highScore;
 @property (nonatomic, strong) GameObjectInjector * gameObjectInjector;
 @property (nonatomic, strong) GameOverLayer * gameOverLayer;
 @property (nonatomic, strong) CCParticleSystemQuad *playerOnFireEmitter;

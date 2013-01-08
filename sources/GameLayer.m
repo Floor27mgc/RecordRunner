@@ -23,6 +23,7 @@
 @synthesize player = _player;
 
 @synthesize score = _score;
+@synthesize highScore = _highScore;
 
 @synthesize background;
 
@@ -81,7 +82,6 @@
         _player.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
         [_player moveTo:PLAYER_START_POSITION];
 
-//        [self addChild:_player.playerStreak];
         self.playerOnFireEmitter = [CCParticleSystemQuad particleWithFile:@"PlayerOnFire.plist"];
         
         [self addChild:playerOnFireEmitter z:10];
@@ -123,16 +123,25 @@
             // add coin to GameLayer
             [self addChild: _coin.gameObjectSprite];
         }
+      
+        // Create and load high score
+        _highScore = [Score initWithGameLayer:self imageFileName:@"" objectSpeed:0];
+        int tempHighScore =
+            [[NSUserDefaults standardUserDefaults] integerForKey:@"highScore"];
+        [_highScore setScoreValue:tempHighScore];
+        [_highScore prepareScore:@"High Score"];
+        [self addChild:_highScore.score];
         
         // Create score
         _score = [Score initWithGameLayer:self
                             imageFileName:@""
                               objectSpeed:0];
+        [_score prepareScore:@"Score"];
+        [_score moveBy:ccp(0, -20)];
         [self addChild:_score.score];
         
         // Create Game Object injector to inject Bomb, coins, etc
         gameObjectInjector = [GameObjectInjector initWithGameLayer:self];        
-
     }
 
     [self schedule: @selector(update:)];
@@ -208,20 +217,38 @@
     //         1. If yes, hide the object and recycle the
     //            object.
     //         2. If no, no op
+    for (int i = 0; i < [_coinUsedPool.objects count]; ++i) {
+        [_coinUsedPool.objects[i] showNextFrame];
+    }
+    
     for (int i = 0; i < [_bombUsedPool.objects count]; ++i) {
         [_bombUsedPool.objects[i] showNextFrame];
     }
     
-    for (int i = 0; i < [_coinUsedPool.objects count]; ++i) {
-        [_coinUsedPool.objects[i] showNextFrame];
-    }
-
+    // update high score, if needed
+    [self updateHighScore];
     [_score showNextFrame];
+    [_highScore showNextFrame];
+}
+
+// -----------------------------------------------------------------------------------
+- (bool) updateHighScore
+{
+    if ([_score getScore] >= [_highScore getScore]) {
+        [_highScore setScoreValue:([_score getScore])];
+        [_highScore setHighScore];
+        return YES;
+    }
+    
+    return NO;
 }
 
 // -----------------------------------------------------------------------------------
 - (void) gameOver
 {
+    // update high score, if necessary
+    [self updateHighScore];
+    
     NSString * score = [_score generateScoreString];
     CGSize mainSize = [[CCDirector sharedDirector] winSize];
     

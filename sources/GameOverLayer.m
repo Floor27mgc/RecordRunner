@@ -96,13 +96,11 @@
 -(void) ccTouchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
 	// prevent touches from going to parent layers
-    NSLog(@"i'm hereeeee!");
 }
 
 // -----------------------------------------------------------------------------------
 - (void) yesTapped:(id)sender
 {
-    NSLog(@"Yes clicked");
     [self.parentGameLayer startOver];
     self.visible = NO;
 }
@@ -110,7 +108,6 @@
 // -----------------------------------------------------------------------------------
 - (void) noTapped:(id)sender
 {
-    NSLog(@"No clicked");
     exit(0);
 }
 
