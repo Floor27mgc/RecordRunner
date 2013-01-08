@@ -10,7 +10,7 @@
 #import "cocos2d.h"
 
 @interface GameMainMenuLayer : CCLayer {
-    
+    CCMenu *introductionMenu;
 }
 +(CCScene *) scene;
 @property (nonatomic,strong) CCSprite *background;

@@ -83,7 +83,6 @@
 		85A6713A1651D16000499BF7 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671391651D16000499BF7 /* Coin.m */; };
 		85A671441654581B00499BF7 /* Bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = 85A671431654581B00499BF7 /* Bomb.png */; };
 		85A671471654582500499BF7 /* Coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 85A671461654582500499BF7 /* Coin.png */; };
-		85A6714916546D4800499BF7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85A6714816546D4800499BF7 /* Default-568h@2x.png */; };
 		85A6714C1655A6CC00499BF7 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A6714B1655A6CB00499BF7 /* Queue.m */; };
 		85B53BAD1673C5CC001163F7 /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B53BAC1673C5CC001163F7 /* Score.m */; };
 		DC0864B815BD8CE60044A820 /* CCNode+Debug.h in Headers */ = {isa = PBXBuildFile; fileRef = DC0864B515BD8CE60044A820 /* CCNode+Debug.h */; };
@@ -98,7 +97,6 @@
 		DC0C4A02154AB4DD00B4B727 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0C4A01154AB4DD00B4B727 /* Foundation.framework */; };
 		DC0C4A04154AB4DD00B4B727 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0C4A03154AB4DD00B4B727 /* CoreGraphics.framework */; };
 		DC0C4A06154AB4DD00B4B727 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0C4A05154AB4DD00B4B727 /* GameKit.framework */; };
-		DC0C4A0A154AB4DD00B4B727 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0C4A09154AB4DD00B4B727 /* Default.png */; };
 		DC0C4A0C154AB4DD00B4B727 /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0C4A0B154AB4DD00B4B727 /* fps_images.png */; };
 		DC0C4A0E154AB4DD00B4B727 /* fps_images-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0C4A0D154AB4DD00B4B727 /* fps_images-hd.png */; };
 		DC0C4A10154AB4DD00B4B727 /* fps_images-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0C4A0F154AB4DD00B4B727 /* fps_images-ipadhd.png */; };
@@ -1476,7 +1474,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC0C4A0A154AB4DD00B4B727 /* Default.png in Resources */,
 				DC0C4A0C154AB4DD00B4B727 /* fps_images.png in Resources */,
 				DC0C4A0E154AB4DD00B4B727 /* fps_images-hd.png in Resources */,
 				DC0C4A10154AB4DD00B4B727 /* fps_images-ipadhd.png in Resources */,
@@ -1491,7 +1488,6 @@
 				08E5B161164387A400E4AAA4 /* background.png in Resources */,
 				85A671441654581B00499BF7 /* Bomb.png in Resources */,
 				85A671471654582500499BF7 /* Coin.png in Resources */,
-				85A6714916546D4800499BF7 /* Default-568h@2x.png in Resources */,
 				8592EC101673EE3B0008B1B2 /* gorbNormal16.fnt in Resources */,
 				08C86DC11674552F0082DBE5 /* tuffy_bold_italic-charmap.plist in Resources */,
 				08C86DF716745C3F0082DBE5 /* tuffy_bold_italic-charmap.png in Resources */,

@@ -53,8 +53,14 @@
 {
     // Image Item
     CCMenuItem *item1 = [CCMenuItemImage itemWithNormalImage:@"playButton.png" selectedImage:@"playButton.png" block:^(id sender) {
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0f scene:[GameLayer scene]]];
-//        [[CCDirector sharedDirector] replaceScene:[GameLayer scene]];
+        int periodAdjustment = 0;
+        for( CCNode *child in [introductionMenu children] ) {
+
+            [child runAction:[CCEaseElasticOut actionWithAction:[CCMoveBy actionWithDuration:4 position:ccp(400,0)] period:0.35f + (periodAdjustment*0.1)]];
+            periodAdjustment++;
+        }
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:4.0f scene:[GameLayer scene]]];
+
     }];
     
     CCMenuItem *item2 = [CCMenuItemImage itemWithNormalImage:@"modeButton.png" selectedImage:@"modeButton.png" block:^(id sender) {
@@ -72,14 +78,14 @@
     for( CCNode *child in [menu children] ) {
         
         //child.position = ccp(160,child.position.y - 120);
-        child.position = ccp(160,-120 -(periodAdjustment*30));
-        child.scaleX = 1.4;
-        child.scaleY = 1.4;
-        [child runAction:[CCEaseElasticOut actionWithAction:[CCMoveBy actionWithDuration:4 position:ccp(-260,0)] period:0.35f + (periodAdjustment*0.1)]];
+        child.position = ccp(160,-80 -(periodAdjustment*50));
+        child.scaleX = 2;
+        child.scaleY = 2;
+        [child runAction:[CCEaseElasticOut actionWithAction:[CCMoveBy actionWithDuration:6 position:ccp(-260,0)] period:0.37f + (periodAdjustment*0.1)]];
         [child runAction:[CCFadeIn actionWithDuration:2]];
         periodAdjustment++;
     }
-    
+    introductionMenu = menu;
     [self addChild:menu];
 }
 
