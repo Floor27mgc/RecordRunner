@@ -10,7 +10,7 @@
 
 #import "AppDelegate.h"
 #import "GameLayer.h"
-
+#import "GameMainMenuLayer.h"
 @implementation AppController
 
 @synthesize window=window_, navController=navController_, director=director_;
@@ -84,7 +84,7 @@
 	[CCTexture2D PVRImagesHavePremultipliedAlpha:YES];
 
 	// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
-	[director_ pushScene: [GameLayer scene]];
+	[director_ pushScene: [GameMainMenuLayer scene]];
 
 	return YES;
 }

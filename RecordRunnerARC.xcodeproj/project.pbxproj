@@ -67,6 +67,11 @@
 		08C86DC11674552F0082DBE5 /* tuffy_bold_italic-charmap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DC01674552F0082DBE5 /* tuffy_bold_italic-charmap.plist */; };
 		08C86DF716745C3F0082DBE5 /* tuffy_bold_italic-charmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DF616745C3F0082DBE5 /* tuffy_bold_italic-charmap.png */; };
 		08D7E75F16803CCC00826AAB /* ExplodingRing.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08D7E75E16803CCC00826AAB /* ExplodingRing.plist */; };
+		08DA1F861698BD240059439D /* GameMainMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 08DA1F851698BD240059439D /* GameMainMenuLayer.m */; };
+		08DA1F891699503B0059439D /* MainMenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08DA1F881699503B0059439D /* MainMenu.jpg */; };
+		08DA1F8C169A426F0059439D /* modeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 08DA1F8A169A426F0059439D /* modeButton.png */; };
+		08DA1F8D169A426F0059439D /* newsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 08DA1F8B169A426F0059439D /* newsButton.png */; };
+		08DA1F8F169A42DA0059439D /* playButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 08DA1F8E169A42DA0059439D /* playButton.png */; };
 		08E38C8416882A8000115F22 /* PlayerOnFire.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08E38C8316882A8000115F22 /* PlayerOnFire.plist */; };
 		08E5B161164387A400E4AAA4 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 08E5B160164387A400E4AAA4 /* background.png */; };
 		08FF6C56167B867400E8ABF6 /* background_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 08FF6C55167B867400E8ABF6 /* background_small.png */; };
@@ -402,6 +407,12 @@
 		08C86E2B1674EA550082DBE5 /* west_england-64.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "west_england-64.fnt"; path = "Fonts/west_england-64.fnt"; sourceTree = SOURCE_ROOT; };
 		08C86E2C1674EA550082DBE5 /* west_england-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "west_england-64.png"; path = "Fonts/west_england-64.png"; sourceTree = SOURCE_ROOT; };
 		08D7E75E16803CCC00826AAB /* ExplodingRing.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ExplodingRing.plist; path = Particles/ExplodingRing.plist; sourceTree = SOURCE_ROOT; };
+		08DA1F841698BD240059439D /* GameMainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMainMenuLayer.h; sourceTree = "<group>"; };
+		08DA1F851698BD240059439D /* GameMainMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMainMenuLayer.m; sourceTree = "<group>"; };
+		08DA1F881699503B0059439D /* MainMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MainMenu.jpg; sourceTree = "<group>"; };
+		08DA1F8A169A426F0059439D /* modeButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modeButton.png; sourceTree = "<group>"; };
+		08DA1F8B169A426F0059439D /* newsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newsButton.png; sourceTree = "<group>"; };
+		08DA1F8E169A42DA0059439D /* playButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playButton.png; sourceTree = "<group>"; };
 		08E38C8316882A8000115F22 /* PlayerOnFire.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlayerOnFire.plist; sourceTree = "<group>"; };
 		08E5B160164387A400E4AAA4 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Graphics/background.png; sourceTree = SOURCE_ROOT; };
 		08FF6C55167B867400E8ABF6 /* background_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background_small.png; path = Graphics/background_small.png; sourceTree = SOURCE_ROOT; };
@@ -713,6 +724,9 @@
 		0840D593163F435E003D5FE6 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				08DA1F8E169A42DA0059439D /* playButton.png */,
+				08DA1F8A169A426F0059439D /* modeButton.png */,
+				08DA1F8B169A426F0059439D /* newsButton.png */,
 				08E5B160164387A400E4AAA4 /* background.png */,
 				8583C67816828098003A3213 /* yes.jpg */,
 				8583C67B1682809E003A3213 /* no.png */,
@@ -721,6 +735,7 @@
 				85A671461654582500499BF7 /* Coin.png */,
 				0840D5A8163F4D67003D5FE6 /* player.png */,
 				85A671431654581B00499BF7 /* Bomb.png */,
+				08DA1F881699503B0059439D /* MainMenu.jpg */,
 			);
 			name = Graphics;
 			path = ../Graphics;
@@ -750,6 +765,8 @@
 				08B6D63A169548B000608ACF /* common.h */,
 				0840D59B163F4BCC003D5FE6 /* GameLayer.h */,
 				0840D59C163F4BCC003D5FE6 /* GameLayer.m */,
+				08DA1F841698BD240059439D /* GameMainMenuLayer.h */,
+				08DA1F851698BD240059439D /* GameMainMenuLayer.m */,
 				8583C66816802C9C003A3213 /* GameOverLayer.h */,
 				8583C66916802C9C003A3213 /* GameOverLayer.m */,
 				0840D59E163F4BF5003D5FE6 /* GameObjectBase.h */,
@@ -1534,6 +1551,10 @@
 				8583C67916828098003A3213 /* yes.jpg in Resources */,
 				8583C67C1682809E003A3213 /* no.png in Resources */,
 				08E38C8416882A8000115F22 /* PlayerOnFire.plist in Resources */,
+				08DA1F891699503B0059439D /* MainMenu.jpg in Resources */,
+				08DA1F8C169A426F0059439D /* modeButton.png in Resources */,
+				08DA1F8D169A426F0059439D /* newsButton.png in Resources */,
+				08DA1F8F169A42DA0059439D /* playButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1556,6 +1577,7 @@
 				082018321678479B000A3F8D /* GameObjectInjector.m in Sources */,
 				082018351679577D000A3F8D /* pattern.c in Sources */,
 				8583C66A16802C9C003A3213 /* GameOverLayer.m in Sources */,
+				08DA1F861698BD240059439D /* GameMainMenuLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
