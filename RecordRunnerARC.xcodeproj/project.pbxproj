@@ -75,6 +75,7 @@
 		08E38C8416882A8000115F22 /* PlayerOnFire.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08E38C8316882A8000115F22 /* PlayerOnFire.plist */; };
 		08E5B161164387A400E4AAA4 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 08E5B160164387A400E4AAA4 /* background.png */; };
 		08FF6C56167B867400E8ABF6 /* background_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 08FF6C55167B867400E8ABF6 /* background_small.png */; };
+		850300DD169D2E660035D7C1 /* reset.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 850300DC169D2E660035D7C1 /* reset.jpg */; };
 		8583C66A16802C9C003A3213 /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8583C66916802C9C003A3213 /* GameOverLayer.m */; };
 		8583C67916828098003A3213 /* yes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8583C67816828098003A3213 /* yes.jpg */; };
 		8583C67C1682809E003A3213 /* no.png in Resources */ = {isa = PBXBuildFile; fileRef = 8583C67B1682809E003A3213 /* no.png */; };
@@ -414,6 +415,7 @@
 		08E38C8316882A8000115F22 /* PlayerOnFire.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlayerOnFire.plist; sourceTree = "<group>"; };
 		08E5B160164387A400E4AAA4 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Graphics/background.png; sourceTree = SOURCE_ROOT; };
 		08FF6C55167B867400E8ABF6 /* background_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background_small.png; path = Graphics/background_small.png; sourceTree = SOURCE_ROOT; };
+		850300DC169D2E660035D7C1 /* reset.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = reset.jpg; sourceTree = "<group>"; };
 		8583C66816802C9C003A3213 /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverLayer.h; path = sources/GameOverLayer.h; sourceTree = SOURCE_ROOT; };
 		8583C66916802C9C003A3213 /* GameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverLayer.m; path = sources/GameOverLayer.m; sourceTree = SOURCE_ROOT; };
 		8583C67816828098003A3213 /* yes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yes.jpg; sourceTree = "<group>"; };
@@ -722,6 +724,7 @@
 		0840D593163F435E003D5FE6 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				850300DC169D2E660035D7C1 /* reset.jpg */,
 				08DA1F8E169A42DA0059439D /* playButton.png */,
 				08DA1F8A169A426F0059439D /* modeButton.png */,
 				08DA1F8B169A426F0059439D /* newsButton.png */,
@@ -1551,6 +1554,7 @@
 				08DA1F8C169A426F0059439D /* modeButton.png in Resources */,
 				08DA1F8D169A426F0059439D /* newsButton.png in Resources */,
 				08DA1F8F169A42DA0059439D /* playButton.png in Resources */,
+				850300DD169D2E660035D7C1 /* reset.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

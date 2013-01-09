@@ -19,6 +19,7 @@
 + (id)initWithScoreString:(NSString *)score
                     winSize:(CGSize)winSize
                     gameLayer:(GameLayer *) gamelayer
+                    highScore:(bool)won
 {
     GameOverLayer * objCreated;
     objCreated = [[self alloc] init];
@@ -37,6 +38,23 @@
     gameOverLayerPosition.x = winSize.width * .25;
     gameOverLayerPosition.y = winSize.height * .25;
     [objCreated setPosition:gameOverLayerPosition];
+    
+    // congratulations label
+    NSString * congrats = nil;
+    if (won) {
+        congrats = @"You got the high score!";
+    } else {
+        congrats = @"Failed to get the high score.";
+    }
+    
+    CCLabelBMFont * congratsLabel = [CCLabelBMFont labelWithString:congrats
+                                                           fntFile:@"bitmapFontTest.fnt"
+                                                             width:(gameOverLayerSize.width * .75) alignment:kCCTextAlignmentCenter];
+    CGPoint congratPosition;
+    congratPosition.x = gameOverLayerPosition.x + (gameOverLayerSize.width * .06125);
+    congratPosition.y = (gameOverLayerSize.height / 1.25);
+    [congratsLabel setPosition:congratPosition];
+    [objCreated addChild:congratsLabel];
     
     // add score label to the gameOverLayer
     CCLabelBMFont * label = [CCLabelBMFont labelWithString:score fntFile:@"bitmapFontTest.fnt"
@@ -72,7 +90,14 @@
                                                         selector:@selector(noTapped:)];
     [noButton setIsEnabled:YES];
     
-    CCMenu * menu = [CCMenu menuWithItems:yesButton, noButton, nil];
+    CCMenuItem * resetButton = [CCMenuItemImage itemWithNormalImage:@"reset.jpg"
+                                                   selectedImage:@"reset.jpg"
+                                                          target:objCreated
+                                                        selector:@selector(resetTapped:)];
+    [resetButton setIsEnabled:YES];
+
+    
+    CCMenu * menu = [CCMenu menuWithItems:yesButton, noButton, resetButton, nil];
     [menu alignItemsHorizontally];
     CGPoint menuPosition;
     menuPosition.x = scorePosition.x;
@@ -109,6 +134,12 @@
 - (void) noTapped:(id)sender
 {
     exit(0);
+}
+
+// -----------------------------------------------------------------------------------
+- (void) resetTapped:(id)sender
+{
+    [self.parentGameLayer resetHighScore];
 }
 
 @end

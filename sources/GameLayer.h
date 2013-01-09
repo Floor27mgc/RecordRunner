@@ -56,6 +56,9 @@ typedef enum {
 // check and update the high score
 - (bool) updateHighScore;
 
+// reset high score to zero
+- (void) resetHighScore;
+
 // reset Used and Free pools
 - (void) resetPoolsWithUsedPool:(Queue *)usedPool
                        freePool:(Queue *)freePool;

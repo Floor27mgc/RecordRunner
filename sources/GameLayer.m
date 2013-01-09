@@ -244,6 +244,14 @@
 }
 
 // -----------------------------------------------------------------------------------
+- (void) resetHighScore
+{
+    [_highScore setScoreValue:0];
+    [_highScore setHighScore];
+    [_highScore showNextFrame];
+}
+
+// -----------------------------------------------------------------------------------
 - (void) gameOver
 {
     // update high score, if necessary
@@ -252,9 +260,12 @@
     NSString * score = [_score generateScoreString];
     CGSize mainSize = [[CCDirector sharedDirector] winSize];
     
+    bool didWin = ([_score getScore] >= [_highScore getScore]);
+    
     _gameOverLayer = [GameOverLayer initWithScoreString:score
                                                 winSize:mainSize
-                                                    gameLayer:self];
+                                                    gameLayer:self
+                                                    highScore:didWin];
 
     // set game over layer's display actions
     id zoomIn  = [CCScaleTo actionWithDuration:0.2 scale:1.25];
