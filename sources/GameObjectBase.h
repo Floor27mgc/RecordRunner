@@ -11,7 +11,7 @@
 #import "Queue.h"
 //#import "GameLayer.h"
 
-#define kDefaultGameObjectSpeed 1
+#define kDefaultGameObjectSpeed 2
 
 @class GameLayer;
 
