@@ -41,41 +41,46 @@
 
     GameObjectBase * newObject = nil;
     int maxlimit;
+    int trackNum = 0;
     
     PATTERN_ALIGN_TO_GRID(preferredLocation);
+    trackNum = (preferredLocation.x - COMMON_SCREEN_CENTER_X) / COMMON_GRID_WIDTH;
     
     switch (_gameObjectType)
     {
         case BOMB_TYPE:
             usedPool = self.mainGameLayer.bombUsedPool;
             freePool = self.mainGameLayer.bombFreePool;
-            maxlimit = MAX_NUM_BOMBS;
+            maxlimit = (MIN_NUM_BOMBS_PER_TRACK * (trackNum + 1));
             break;
         case COIN_TYPE:
             usedPool = self.mainGameLayer.coinUsedPool;
             freePool = self.mainGameLayer.coinFreePool;
-            maxlimit = MAX_NUM_COINS;
+            maxlimit = (MIN_NUM_COINS_PER_TRACK * (trackNum + 1));
             break;
         case SPACE_TYPE:
             return nil;
     }
     
+
+    if (POOL_OBJ_COUNT_ON_TRACK(usedPool, trackNum) < maxlimit) {
     
-    if ([usedPool.objects count] < maxlimit) {
-        newObject = [freePool takeObject];
+        newObject = [freePool takeObjectFromTrack:trackNum];
         if (newObject != nil) {
             newObject.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
+            newObject.angleRotated = 0;
+            newObject.radius = preferredLocation.x - COMMON_SCREEN_CENTER.x;
             [newObject moveTo:preferredLocation];
             newObject.gameObjectSprite.visible = 1;
-            [usedPool addObject:newObject];
-            newObject.gameObjectSprite.anchorPoint=ccp(0.5,0.5);
-            id actionToSmall = [CCScaleTo actionWithDuration: 1 scaleX:0.1f scaleY:1.0f];
+            [usedPool addObject:newObject toTrack:trackNum];
+            
+/*            id actionToSmall = [CCScaleTo actionWithDuration: 1 scaleX:0.1f scaleY:1.0f];
             id actionToNormal = [CCScaleTo actionWithDuration: 1 scaleX:1.0f scaleY:1.0f];
             id action = [CCSequence actions:
                           actionToSmall,
                           actionToNormal,
                           nil ];
-            [newObject.gameObjectSprite runAction:[CCRepeatForever actionWithAction:action]]; 
+            [newObject.gameObjectSprite runAction:[CCRepeatForever actionWithAction:action]]; */
         } else {
             NSLog(@"out of object");
         }

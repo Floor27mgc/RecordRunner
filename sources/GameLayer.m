@@ -16,6 +16,7 @@
 #import "pattern.h"
 #import "GameOverLayer.h"
 #import "SimpleAudioEngine.h"
+#import "common.h"
 #pragma mark - GameLayer
 
 // GameLayer implementation
@@ -69,59 +70,64 @@
         NSLog(@"height = %f width = %f", size.height, size.width);
         
         // Create background
-        background = [CCSprite spriteWithFile:@"background_small.png"];
+        background = [CCSprite spriteWithFile:@"background-white.jpg"];
         background.anchorPoint=ccp(0,0);
-
+        background.position = ccp(0,0);
+        [self addChild:background];
         // Create background music
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"JewelBeat - Follow The Beat.wav"];
 
         // Create player
         _player = [GameObjectPlayer initWithGameLayer:self
-                                        imageFileName:@"player.png"
+                                        imageFileName:@"player-hd.png"
                                           objectSpeed:0];
         _player.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
         [_player moveTo:PLAYER_START_POSITION];
 
-        self.playerOnFireEmitter = [CCParticleSystemQuad particleWithFile:@"PlayerOnFire.plist"];
+//        self.playerOnFireEmitter = [CCParticleSystemQuad particleWithFile:@"PlayerOnFire.plist"];
         
-        [self addChild:playerOnFireEmitter z:10];
+//        [self addChild:playerOnFireEmitter z:10];
         
         [self addChild:_player.gameObjectSprite];
         
         // Create bomb free pool (queue)
-        _bombFreePool = [Queue initWithSize:MAX_NUM_BOMBS];
+        _bombFreePool = [Queue initWithMinSize:MIN_NUM_BOMBS_PER_TRACK];
         
         // Create bomb used pool (queue)
-        _bombUsedPool = [Queue initWithSize:MAX_NUM_BOMBS];
+        _bombUsedPool = [Queue initWithMinSize:MIN_NUM_BOMBS_PER_TRACK];
        
         // Create NUM_OBSTACLES bombs and add them to the free pool
-        for (int i = 0; i < MAX_NUM_BOMBS; ++i) {
-            Bomb * _bomb = [Bomb initWithGameLayer: self
-                              imageFileName:@"Bomb.png"
-                                objectSpeed:kDefaultGameObjectSpeed];
-            _bomb.gameObjectSprite.visible = 0;
-            [_bombFreePool addObject:_bomb];
-            
-            // add bomb to GameLayer
-            [self addChild: _bomb.gameObjectSprite];
+        for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
+            for (int i=0; i<trackNum * MAX_NUM_TRACK; i++) {
+                Bomb * _bomb = [Bomb initWithGameLayer: self
+                                         imageFileName:@"bomb-hd.png"
+                                           objectSpeed:kDefaultGameObjectSpeed];
+                _bomb.gameObjectSprite.visible = 0;
+                [_bombFreePool addObject:_bomb toTrack:trackNum];
+                
+                // add bomb to GameLayer
+                [self addChild: _bomb.gameObjectSprite];
+            }
         }
         
         // Create coin free pool (queue)
-        _coinFreePool = [Queue initWithSize:MAX_NUM_COINS];
+        _coinFreePool = [Queue initWithMinSize:MIN_NUM_COINS_PER_TRACK];
         
         // Create coin used pool (queue)
-        _coinUsedPool = [Queue initWithSize:MAX_NUM_COINS];
+        _coinUsedPool = [Queue initWithMinSize:MIN_NUM_COINS_PER_TRACK];
         
         // Create NUM_REWARDS coins and add them to the free pool
-        for (int i = 0; i < MAX_NUM_COINS; ++i) {
-            Coin * _coin = [Coin initWithGameLayer:self
-                              imageFileName:@"Coin.png"
-                                objectSpeed:kDefaultGameObjectSpeed];
-            _coin.gameObjectSprite.visible = 0;
-            [_coinFreePool addObject:_coin];
-            
-            // add coin to GameLayer
-            [self addChild: _coin.gameObjectSprite];
+        for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
+            for (int i=0; i<trackNum * MAX_NUM_TRACK; i++) {
+                Coin * _coin = [Coin initWithGameLayer:self
+                                         imageFileName:@"coin-hd.png"
+                                           objectSpeed:kDefaultGameObjectSpeed];
+                _coin.gameObjectSprite.visible = 0;
+                [_coinFreePool addObject:_coin toTrack:trackNum];
+                
+                // add coin to GameLayer
+                [self addChild: _coin.gameObjectSprite];
+            }
         }
       
         // Create and load high score
@@ -160,52 +166,23 @@
 
 }
 
-// -----------------------------------------------------------------------------------
-- (void) generateGameObject:(game_object_t) type
-{
-    GameObjectBase * newObject = nil;
-    
-    // generate x location for new object
-    CGSize size = [[CCDirector sharedDirector] winSize];
-    int random_x = arc4random() % (int)size.width;
-    
-    switch (type) {
-        case BOMB_TYPE:
-            if ([_bombUsedPool.objects count] < MAX_NUM_BOMBS) {
-                newObject = [_bombFreePool takeObject];
-                if (newObject != nil) {
-                    [newObject moveTo:ccp(random_x, 0)];
-                    newObject.gameObjectSprite.visible = 1;
-                    [_bombUsedPool addObject:newObject];
-                }
-            }
-            break;
-        case COIN_TYPE:
-            if ([_coinUsedPool.objects count] < MAX_NUM_COINS) {
-                newObject = [_coinFreePool takeObject];
-                if (newObject != nil) {
-                    [newObject moveTo:ccp(random_x, 0)];
-                    newObject.gameObjectSprite.visible = 1;
-                    [_coinUsedPool addObject:newObject];
-                }
-            }
-            break;
-        default:
-            break;
-    }
-}
 
 // -----------------------------------------------------------------------------------
 - (void) update:(ccTime) dt
 {
-    [_player showNextFrame];
+//    [_player showNextFrame];
     
     // generate Game Objectsrandomly
     if (arc4random() % RANDOM_MAX == 1) {
         
-        [gameObjectInjector injectObjectWithPattern:(arc4random() % patternNumPattern())
-                                   initialXPosition:CGPointMake((arc4random() % 160), 0)];
-    } 
+//        [gameObjectInjector injectObjectWithPattern:(arc4random() % patternNumPattern())
+//                                   initialXPosition:COMMON_SCREEN_CENTER];
+//        [gameObjectInjector injectObjectWithPattern:1
+//                                   initialXPosition:COMMON_SCREEN_CENTER];
+        int offsetX = COMMON_SCREEN_CENTER_X + (COMMON_GRID_WIDTH * (arc4random()%4));
+        [gameObjectInjector injectObjectAt:ccp(offsetX,COMMON_SCREEN_CENTER_Y) gameObjectType:2 effectType:kRotation];
+
+    }
 
     // Trigger each bomb objects and coin object proceed to
     // show the next frame.  Each object will be responsible
@@ -217,12 +194,17 @@
     //         1. If yes, hide the object and recycle the
     //            object.
     //         2. If no, no op
-    for (int i = 0; i < [_coinUsedPool.objects count]; ++i) {
-        [_coinUsedPool.objects[i] showNextFrame];
-    }
-    
-    for (int i = 0; i < [_bombUsedPool.objects count]; ++i) {
-        [_bombUsedPool.objects[i] showNextFrame];
+    for (int trackNum=0; trackNum < MAX_NUM_TRACK; trackNum++)
+    {
+        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_coinUsedPool, trackNum); ++i) {
+            [POOL_OBJS_ON_TRACK(_coinUsedPool, trackNum)[i] showNextFrame];
+//            [_coinUsedPool getObjectArray:_TRACKNUM];
+//            [_coinFreePool getObjectArray:trackNum];
+        }
+        
+        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_bombUsedPool, trackNum); ++i) {
+            [POOL_OBJS_ON_TRACK(_bombUsedPool, trackNum)[i] showNextFrame];
+        }
     }
     
     // update high score, if needed
@@ -297,13 +279,16 @@
 // -----------------------------------------------------------------------------------
 - (void) resetPoolsWithUsedPool:(Queue *)usedPool freePool:(Queue *)freePool
 {
-    for (int i = 0; i < [usedPool.objects count]; ++i) {
-        GameObjectBase * newObject = nil;
-        if ([usedPool.objects count] < MAX_NUM_BOMBS) {
-            newObject = [freePool takeObject];
-            if (newObject != nil) {
-                [freePool addObject:newObject];
-                [newObject resetObject];
+    for (int trackNum = 0; trackNum < MAX_NUM_TRACK; trackNum++)
+    {
+        for (int i = 0; i <  POOL_OBJ_COUNT_ON_TRACK(usedPool, trackNum); ++i) {
+            GameObjectBase * newObject = nil;
+            if (POOL_OBJ_COUNT_ON_TRACK(usedPool, trackNum) < MIN_NUM_BOMBS_PER_TRACK) {
+                newObject = [freePool takeObjectFromTrack:trackNum];
+                if (newObject != nil) {
+                    [freePool addObject:newObject toTrack:trackNum];
+                    [newObject resetObject];
+                }
             }
         }
     }

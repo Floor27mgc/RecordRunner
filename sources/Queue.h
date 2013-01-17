@@ -8,15 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-
-
+// _TRACKNUM are 0 based
+#define POOL_OBJ_COUNT_ON_TRACK(_POOL,_TRACKNUM) [POOL_OBJS_ON_TRACK(_POOL,_TRACKNUM) count]
+#define POOL_OBJS_ON_TRACK(_POOL,_TRACKNUM) [_POOL getObjectArray:_TRACKNUM]
 @interface Queue : NSObject
 
-@property (nonatomic) NSMutableArray * objects;
+@property (nonatomic) NSMutableArray * objectsOnTrack0;
+@property (nonatomic) NSMutableArray * objectsOnTrack1;
+@property (nonatomic) NSMutableArray * objectsOnTrack2;
+@property (nonatomic) NSMutableArray * objectsOnTrack3;
 
-+ (id)initWithSize:(NSUInteger)size;
-- (void) addObject:(id)object;
-- (id) takeObjectFromIndex:(int) index;
-- (id) takeObject;
-
++ (id)initWithMinSize:(NSUInteger)size;
+- (void)addObject:(id)object toTrack:(int)trackNum;
+- (id)takeObjectFromIndex:(int) index fromTrack:(int) trackNum;
+- (id)takeObjectFromTrack:(int) trackNum;
+- (id)getObjectArray:(int) trackNum;
 @end

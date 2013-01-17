@@ -15,6 +15,8 @@
 @implementation GameObjectBase
 @synthesize gameObjectSpeed=_gameObjectSpeed;
 @synthesize parentGameLayer;
+@synthesize radius;
+@synthesize angleRotated;
 
 // -----------------------------------------------------------------------------------
 + (id) initWithGameLayer:(GameLayer *) gamelayer
@@ -27,6 +29,7 @@
     objCreated.gameObjectSprite = [CCSprite spriteWithFile:fileName];
     objCreated.gameObjectSpeed = speed;
     objCreated.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
+    objCreated.angleRotated = 0;
     return objCreated;
 }
 
@@ -155,11 +158,12 @@
 {
     NSUInteger i;
     
-    i = [_usedObjPool.objects indexOfObjectIdenticalTo:self];
-    [[_usedObjPool.objects objectAtIndex:i] resetObject];
+    i = [POOL_OBJS_ON_TRACK(_usedObjPool, TRACKNUM_FROM_RADIUS) indexOfObjectIdenticalTo:self];
     
-    [_freeObjPool addObject:[_usedObjPool.objects objectAtIndex:i]];
-    [_usedObjPool.objects removeObjectAtIndex:i];
+    [[POOL_OBJS_ON_TRACK(_usedObjPool, TRACKNUM_FROM_RADIUS) objectAtIndex:i] resetObject];
+    
+    [POOL_OBJS_ON_TRACK(_freeObjPool, TRACKNUM_FROM_RADIUS) addObject:[POOL_OBJS_ON_TRACK(_usedObjPool,TRACKNUM_FROM_RADIUS) objectAtIndex:i]];
+    [POOL_OBJS_ON_TRACK(_usedObjPool, TRACKNUM_FROM_RADIUS) removeObjectAtIndex:i];
 
 }
 

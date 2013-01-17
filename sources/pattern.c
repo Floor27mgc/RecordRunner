@@ -6,8 +6,8 @@
 //
 //
 #include "pattern.h"
-
-char injectorPatternArray[][7][7] =
+/* 7 x 7 Patterns
+char injectorPatternArray[][PATTERN_NUM_ROWS][PATTERN_NUM_COLS] =
 {
     {
         // kPatternDiamond
@@ -74,6 +74,57 @@ char injectorPatternArray[][7][7] =
         { 0, 0, 2, 2, 2, 0, 0 },
         { 0, 0, 0, 2, 0, 0, 0 },
         { 0, 0, 0, 2, 0, 0, 0 }
+    }
+};
+*/
+char injectorPatternArray[][PATTERN_NUM_ROWS][PATTERN_NUM_COLS] =
+{
+    {
+        // kPatternDiamond
+        { 0, 0, 2, 2 },
+        { 0, 2, 2, 2 },
+        { 0, 0, 2, 0 },
+        { 0, 0, 2, 0 }
+    },
+    
+    {
+        // kPatternSquare
+        { 2, 2, 2, 2 },
+        { 2, 0, 0, 2 },
+        { 2, 0, 0, 2 },
+        { 2, 2, 2, 2 }
+    },
+    
+    {
+        // kPatternRectangle,
+        { 2, 2, 2, 0 },
+        { 2, 2, 2, 0 },
+        { 2, 2, 2, 0 },
+        { 2, 2, 2, 0 }
+    },
+    
+    {
+        // kPatternTriangle,
+        { 0, 0, 0, 2 },
+        { 0, 0, 2, 2 },
+        { 0, 2, 2, 2 },
+        { 2, 2, 2, 2 }        
+    },
+    
+    {
+        // kPatternCircle,
+        { 0, 2, 2, 0 },
+        { 2, 2, 2, 2 },
+        { 2, 2, 2, 2 },
+        { 0, 2, 2, 0 }
+    },
+    
+    {
+        // kPatternHeart
+        { 0, 2, 0, 0 },
+        { 2, 2, 2, 0 },
+        { 0, 2, 0, 0 },
+        { 0, 2, 2, 0 }
     }
 };
 

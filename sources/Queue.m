@@ -10,15 +10,19 @@
 
 @implementation Queue
 
-@synthesize objects = _objects;
-
+@synthesize objectsOnTrack0;
+@synthesize objectsOnTrack1;
+@synthesize objectsOnTrack2;
+@synthesize objectsOnTrack3;
 // -----------------------------------------------------------------------------------
-+ (id)initWithSize:(NSUInteger) size
++ (id)initWithMinSize:(NSUInteger) size
 {
     Queue * objCreated;
     objCreated = [[self alloc] init];
-    objCreated.objects = [[NSMutableArray alloc] initWithCapacity:(size)];
-        
+    objCreated.objectsOnTrack0 = [[NSMutableArray alloc] initWithCapacity:(size)];
+    objCreated.objectsOnTrack1 = [[NSMutableArray alloc] initWithCapacity:(size * 2)];
+    objCreated.objectsOnTrack2 = [[NSMutableArray alloc] initWithCapacity:(size * 3)];
+    objCreated.objectsOnTrack3 = [[NSMutableArray alloc] initWithCapacity:(size * 4)];
     return objCreated;
 }
 
@@ -26,7 +30,10 @@
 - (id)init
 {
     if ((self = [super init])) {
-        _objects = [[NSMutableArray alloc] init];
+/*        objectsOnTrack1 = [[NSMutableArray alloc] init];
+        objectsOnTrack2 = [[NSMutableArray alloc] init];
+        objectsOnTrack3 = [[NSMutableArray alloc] init];
+        objectsOnTrack4 = [[NSMutableArray alloc] init]; */
     }
     return self;
 }
@@ -39,35 +46,72 @@
 }
 
 // -----------------------------------------------------------------------------------
-- (void)addObject:(id)object
+- (void)addObject:(id)object toTrack:(int)trackNum
 {
-    [_objects addObject:object];
+    id objectArray = [self getObjectArray:trackNum];    
+    if (objectArray != nil) {
+        [objectArray addObject:object];
+    }
 }
 
 // -----------------------------------------------------------------------------------
-- (id)takeObjectFromIndex:(int) index
+- (id)takeObjectFromIndex:(int) index fromTrack:(int) trackNum
 {
-    if (index > [_objects count] || index < 0) {
-        return nil;
-    }
+    id objectArray = [self getObjectArray:trackNum];
 
-    id object = [_objects objectAtIndex:(index)];
-    [_objects removeObjectAtIndex:(index)];
-    return object;
+    if (objectArray != nil) {
+        if (index > [objectArray count] || index < 0) {
+            return nil;
+        }
+        
+        id object = [objectArray objectAtIndex:(index)];
+        [objectArray removeObjectAtIndex:(index)];
+        return object;
+    }
+    return nil;
 }
 
 // -----------------------------------------------------------------------------------
-- (id)takeObject
+- (id)takeObjectFromTrack:(int) trackNum
 {
-    id object = nil;
     
-    if ([_objects count] > 0) {
-        //object = [[objects objectAtIndex:0] autorelease];
-        object = [_objects objectAtIndex:0];
-        [_objects removeObjectAtIndex:0];
+    id objectArray = [self getObjectArray:trackNum];
+
+    
+    if (objectArray != nil) {
+        id object = nil;
+        
+        if ([objectArray count] > 0) {
+            //object = [[objects objectAtIndex:0] autorelease];
+            object = [objectArray objectAtIndex:0];
+            [objectArray removeObjectAtIndex:0];
+        }
+        return object;
     }
-    
-    return object;
+    return nil;
 }
 
+- (id)getObjectArray:(int) trackNum
+{
+    id objectArray = nil;
+    
+    switch (trackNum) {
+        case 0:
+            objectArray = objectsOnTrack0;
+            break;
+        case 1:
+            objectArray = objectsOnTrack1;
+            break;
+        case 2:
+            objectArray = objectsOnTrack2;
+            break;
+        case 3:
+            objectArray = objectsOnTrack3;
+            break;
+        default:
+            NSLog(@"Invalid trackNum to add to object %@", [self description]);
+            break;
+    }
+    return objectArray;
+}
 @end

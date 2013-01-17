@@ -12,7 +12,7 @@
 //#import "GameLayer.h"
 
 #define kDefaultGameObjectSpeed 2
-
+#define TRACKNUM_FROM_RADIUS (self.radius/COMMON_GRID_WIDTH)
 @class GameLayer;
 
 @interface GameObjectBase : NSObject
@@ -20,6 +20,8 @@
 @property (nonatomic, assign) CCSprite *gameObjectSprite;
 @property (nonatomic, assign) GameLayer *parentGameLayer;
 @property (nonatomic) int gameObjectSpeed;
+@property (nonatomic) int radius;
+@property (nonatomic) int angleRotated;
 
 // Class method.  Autorelease
 + (id) initWithGameLayer:(GameLayer *) gamelayer
@@ -36,6 +38,7 @@
                                 freePool:(Queue *)_freeObjPool;
 - (void) recycleObjectWithUsedPool:(Queue *)_usedObjPool
                           freePool:(Queue *)_freeObjPool;
+
 // Determines if the current game object has
 // collided with the player
 - (BOOL) encounter:(int) y

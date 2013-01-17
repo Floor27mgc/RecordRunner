@@ -20,9 +20,9 @@
 #define RANDOM_MAX              100
 #define BOMB_CREATION_THRESHOLD  97
 #define COIN_CREATION_THRESHOLD  90
-#define MAX_NUM_BOMBS           100
-#define MAX_NUM_COINS           100
-
+#define MIN_NUM_BOMBS_PER_TRACK   5
+#define MIN_NUM_COINS_PER_TRACK   5
+#define MAX_NUM_TRACK             4
 typedef enum {
     SPACE_TYPE,
     BOMB_TYPE,
@@ -43,9 +43,6 @@ typedef enum {
 
 // returns a CCScene that contains the GameLayer as the only child
 +(CCScene *) scene;
-
-// randomly create coins and bombs
-- (void) generateGameObject:(game_object_t) type;
 
 // handle "game over" scenario
 - (void) gameOver;
