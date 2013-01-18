@@ -169,6 +169,7 @@
     self.gameObjectSprite.position = ccp(0,0);
     self.gameObjectSprite.visible = 0;
 }
+
 // -----------------------------------------------------------------------------------
 - (void) update: (ccTime) dt
 {

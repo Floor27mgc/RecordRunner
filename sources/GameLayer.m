@@ -16,6 +16,9 @@
 #import "pattern.h"
 #import "GameOverLayer.h"
 #import "SimpleAudioEngine.h"
+#import "Power.h"
+#import "PowerIcon.h"
+
 #pragma mark - GameLayer
 
 // GameLayer implementation
@@ -32,6 +35,9 @@
 
 @synthesize coinFreePool = _coinFreePool;
 @synthesize coinUsedPool = _coinUsedPool;
+
+@synthesize powerPool = _powerPool;
+@synthesize powerIconPool = _powerIconPool;
 
 @synthesize gameOverLayer = _gameOverLayer;
 
@@ -124,6 +130,12 @@
             [self addChild: _coin.gameObjectSprite];
         }
       
+        // Create Power Pool
+        _powerPool = [Queue initWithSize:0];
+        
+        // Create PowerIcon Pool
+        _powerIconPool = [Queue initWithSize:0];
+        
         // Create and load high score
         _highScore = [Score initWithGameLayer:self imageFileName:@"" objectSpeed:0];
         int tempHighScore =
@@ -229,6 +241,19 @@
     [self updateHighScore];
     [_score showNextFrame];
     [_highScore showNextFrame];
+    
+    // check if new Power up has been triggered
+    [self triggerPowerIcons];
+    
+    // update all PowerIcons
+    for (int i = 0; i < [_powerIconPool.objects count]; ++i) {
+        [_powerIconPool.objects[i] showNextFrame];
+    }
+    
+    // update all Powers
+    for (int i = 0; i < [_powerPool.objects count]; ++i) {
+        [_powerPool.objects[i] runPower];
+    }
 }
 
 // -----------------------------------------------------------------------------------
@@ -249,6 +274,27 @@
     [_highScore setScoreValue:0];
     [_highScore setHighScore];
     [_highScore showNextFrame];
+}
+
+// -----------------------------------------------------------------------------------
+- (void) addPower:(id)newPower
+{
+    [_powerPool addObject:newPower];
+}
+
+// -----------------------------------------------------------------------------------
+- (void) triggerPowerIcons
+{
+    // trigger Power for every Nth coin collected
+    if ([_score getScore] == 10) {
+        PowerIcon * newPower = [PowerIcon initWithGameLayer:self
+                                              imageFileName:@"missle_icon.png" objectSpeed:2
+                                                  powerType:fire_missle];
+
+        [newPower moveTo:BOMB_START_POSITION];
+        [self addChild:newPower.gameObjectSprite];
+        [_powerIconPool addObject:newPower];
+    }
 }
 
 // -----------------------------------------------------------------------------------

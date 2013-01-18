@@ -15,4 +15,7 @@
 
 #define COMMON_SCREEN_MARGIN_LEFT COMMON_GRID_WIDTH
 #define COMMON_SCREEN_MARGIN_RIGHT (([[CCDirector sharedDirector] winSize]).width - COMMON_GRID_WIDTH)
+
+#define COIN_POWER_FREQUENCY 11
+
 #endif
