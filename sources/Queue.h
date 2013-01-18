@@ -18,5 +18,6 @@
 - (void) addObject:(id)object;
 - (id) takeObjectFromIndex:(int) index;
 - (id) takeObject;
+- (BOOL) contains:(id)object;
 
 @end

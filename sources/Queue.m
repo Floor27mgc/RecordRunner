@@ -70,4 +70,10 @@
     return object;
 }
 
+// -----------------------------------------------------------------------------------
+- (BOOL) contains:(id)object
+{
+    return ([_objects containsObject:object]);
+}
+
 @end

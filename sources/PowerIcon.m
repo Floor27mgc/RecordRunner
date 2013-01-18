@@ -40,7 +40,11 @@
         CGPoint curPoint = [self.gameObjectSprite position];
         
         if (curPoint.y > windowSize.height) {
-            [self removeMeFromIconPool];
+            NSLog(@"removing icon from pool, size is %i",
+                  [self.parentGameLayer.powerIconPool.objects count]);
+            [self removeFromGamePool:self.parentGameLayer.powerIconPool];
+            NSLog(@"icon removed from pool, size is %i",
+                  [self.parentGameLayer.powerIconPool.objects count]);
         }
     }
 }
@@ -65,7 +69,7 @@
     }
     
     // remove PowerIcon from the parent game layer
-    
+    [self removeFromGamePool:self.parentGameLayer.powerIconPool];
     
     // add Power object to parentGameLayer
     [newPower addPower];
@@ -75,15 +79,6 @@
 - (void) resetObject
 {
     [super resetObject];
-}
-
-// -----------------------------------------------------------------------------------
-- (void) removeMeFromIconPool
-{
-    NSInteger i =
-        [self.parentGameLayer.powerIconPool.objects indexOfObjectIdenticalTo:self];
-    [[self.parentGameLayer.powerIconPool.objects objectAtIndex:i] resetObject];
-    [self.parentGameLayer.powerIconPool.objects removeObjectAtIndex:i];
 }
 
 @end

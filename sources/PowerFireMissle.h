@@ -8,9 +8,10 @@
 
 #import "Power.h"
 #import "GameObjectBase.h"
+#import "Missile.h"
 
 @interface PowerFireMissle : Power
 
-@property (nonatomic) Bomb * missle;
+@property (nonatomic) Missile * missle;
 
 @end

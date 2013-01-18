@@ -15,20 +15,32 @@
 // -----------------------------------------------------------------------------------
 - (void) addPower
 {
-    _missle = [Bomb initWithGameLayer:self.parentGameLayer
+    _missle = [Missile initWithGameLayer:self.parentGameLayer
                         imageFileName:@"missile.gif"
                           objectSpeed:4];
     
-    [_missle moveTo:BOMB_START_POSITION];
+    // missile will start pointing at the player
+    CGPoint startLoc;
+    startLoc.x = self.parentGameLayer.player.gameObjectSprite.position.x;
+    startLoc.y = 0;
+    [_missle moveTo:startLoc];
     
     [self.parentGameLayer addChild:_missle.gameObjectSprite];
     [self.parentGameLayer.powerPool.objects addObject:self];
+    [self.parentGameLayer.bombUsedPool.objects addObject:_missle];
 }
 
 // -----------------------------------------------------------------------------------
 - (void) runPower
 {
     [_missle showNextFrame];
+    
+    // if the missle has been hit, remove this power from the PowerPool
+    if (![self.parentGameLayer.bombUsedPool contains:_missle]) {
+        NSInteger i =
+            [self.parentGameLayer.powerPool.objects indexOfObjectIdenticalTo:self];
+        [self.parentGameLayer.powerPool.objects removeObjectAtIndex:i];
+    }
 }
 
 @end

@@ -286,12 +286,16 @@
 - (void) triggerPowerIcons
 {
     // trigger Power for every Nth coin collected
-    if ([_score getScore] == 10) {
+    if ([_score getScore] % 10 == 0 &&
+        [_powerIconPool.objects count] == 0) {
         PowerIcon * newPower = [PowerIcon initWithGameLayer:self
                                               imageFileName:@"missle_icon.png" objectSpeed:2
                                                   powerType:fire_missle];
 
-        [newPower moveTo:BOMB_START_POSITION];
+        CGPoint iconLoc;
+        iconLoc.x = arc4random_uniform([[CCDirector sharedDirector] winSize].width);
+        iconLoc.y = 0;
+        [newPower moveTo:iconLoc];
         [self addChild:newPower.gameObjectSprite];
         [_powerIconPool addObject:newPower];
     }

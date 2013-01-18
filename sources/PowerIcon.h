@@ -17,8 +17,6 @@
              objectSpeed:(int) speed
                powerType:(power_type_t) pType;
 
-- (void) removeMeFromIconPool;
-
 @property (nonatomic) power_type_t type;
 
 @end

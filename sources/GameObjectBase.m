@@ -164,6 +164,14 @@
 }
 
 // -----------------------------------------------------------------------------------
+- (void) removeFromGamePool:(Queue *)pool
+{
+    NSInteger i = [pool.objects indexOfObjectIdenticalTo:self];
+    [[pool.objects objectAtIndex:i] resetObject];
+    [pool.objects removeObjectAtIndex:i];
+}
+
+// -----------------------------------------------------------------------------------
 - (void) resetObject
 {
     self.gameObjectSprite.position = ccp(0,0);
@@ -181,12 +189,9 @@
 }
 
 // -----------------------------------------------------------------------------------
-// "Virtual methods" that the derived class should implement.
-// If not implemented, this method will be called and Assert game
 - (void) showNextFrame
 {
-    //    NSAssert(YES, @"Update method is missing in implementation of class %s",
-    //             class_getName([self class]));
+    
 }
 
 // -----------------------------------------------------------------------------------
