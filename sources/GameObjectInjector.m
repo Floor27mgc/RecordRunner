@@ -61,32 +61,37 @@
         case SPACE_TYPE:
             return nil;
     }
-    
 
-    if (POOL_OBJ_COUNT_ON_TRACK(usedPool, trackNum) < maxlimit) {
-    
-        newObject = [freePool takeObjectFromTrack:trackNum];
-        if (newObject != nil) {
-            newObject.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
-            newObject.angleRotated = 0;
-            newObject.radius = preferredLocation.x - COMMON_SCREEN_CENTER.x;
-            [newObject moveTo:preferredLocation];
-            newObject.gameObjectSprite.visible = 1;
-            [usedPool addObject:newObject toTrack:trackNum];
-            
-/*            id actionToSmall = [CCScaleTo actionWithDuration: 1 scaleX:0.1f scaleY:1.0f];
-            id actionToNormal = [CCScaleTo actionWithDuration: 1 scaleX:1.0f scaleY:1.0f];
-            id action = [CCSequence actions:
-                          actionToSmall,
-                          actionToNormal,
-                          nil ];
-            [newObject.gameObjectSprite runAction:[CCRepeatForever actionWithAction:action]]; */
-        } else {
-            NSLog(@"out of object");
+    // Since we want to push all objects into more outer circle, we force it here.
+    preferredLocation.x = preferredLocation.x + COMMON_GRID_WIDTH;
+
+    // Check to see if we can insert this one without overlapping
+    for (int i=0; i<POOL_OBJ_COUNT_ON_TRACK(usedPool, trackNum); i++)
+    {
+        NSMutableArray *currentObjectArray = POOL_OBJS_ON_TRACK(usedPool, trackNum);
+        CGRect currentObjectBoundingBox = ((GameObjectBase *)currentObjectArray[i]).gameObjectSprite.boundingBox;
+        if (CGRectIntersectsRect(currentObjectBoundingBox,
+                                 CGRectMake(preferredLocation.x - (currentObjectBoundingBox.size.width/2),
+                                            preferredLocation.y - (currentObjectBoundingBox.size.height/2) ,
+                                            currentObjectBoundingBox.size.width,
+                                            currentObjectBoundingBox.size.height)))
+        {
+            return nil;
         }
-        return newObject;
     }
-    return nil;
+    newObject = [freePool takeObjectFromTrack:trackNum];
+    if (newObject != nil) {
+        newObject.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
+        newObject.angleRotated = 0;
+        newObject.radius = preferredLocation.x - COMMON_SCREEN_CENTER.x;
+        [newObject moveTo:preferredLocation];
+        newObject.gameObjectSprite.visible = 1;
+        [usedPool addObject:newObject toTrack:trackNum];
+    } else {
+        NSLog(@"out of object");
+    }
+    
+    return newObject;
 }
 
 // -----------------------------------------------------------------------------------

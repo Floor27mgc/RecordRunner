@@ -16,6 +16,7 @@
 #import "pattern.h"
 #import "GameOverLayer.h"
 #import "SimpleAudioEngine.h"
+#import "ccDrawGameLayer.h"
 #import "common.h"
 #pragma mark - GameLayer
 
@@ -74,13 +75,17 @@
         background.anchorPoint=ccp(0,0);
         background.position = ccp(0,0);
         [self addChild:background];
+        
+        ccDrawGameLayer *ccDrawLayer = [[ccDrawGameLayer alloc] init];
+        [self addChild:ccDrawLayer];
+ 
         // Create background music
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"JewelBeat - Follow The Beat.wav"];
 
         // Create player
         _player = [GameObjectPlayer initWithGameLayer:self
                                         imageFileName:@"player-hd.png"
-                                          objectSpeed:0];
+                                          objectSpeed:kDefaultGameObjectAngularVelocityInDegree];
         _player.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
         [_player moveTo:PLAYER_START_POSITION];
 
@@ -98,10 +103,10 @@
        
         // Create NUM_OBSTACLES bombs and add them to the free pool
         for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
-            for (int i=0; i<trackNum * MAX_NUM_TRACK; i++) {
+            for (int i=0; i<(trackNum+1) * MIN_NUM_BOMBS_PER_TRACK; i++) {
                 Bomb * _bomb = [Bomb initWithGameLayer: self
                                          imageFileName:@"bomb-hd.png"
-                                           objectSpeed:kDefaultGameObjectSpeed];
+                                           objectSpeed:kDefaultGameObjectAngularVelocityInDegree];
                 _bomb.gameObjectSprite.visible = 0;
                 [_bombFreePool addObject:_bomb toTrack:trackNum];
                 
@@ -118,10 +123,10 @@
         
         // Create NUM_REWARDS coins and add them to the free pool
         for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
-            for (int i=0; i<trackNum * MAX_NUM_TRACK; i++) {
+            for (int i=0; i<(trackNum+1) * MIN_NUM_COINS_PER_TRACK; i++) {
                 Coin * _coin = [Coin initWithGameLayer:self
                                          imageFileName:@"coin-hd.png"
-                                           objectSpeed:kDefaultGameObjectSpeed];
+                                           objectSpeed:kDefaultGameObjectAngularVelocityInDegree];
                 _coin.gameObjectSprite.visible = 0;
                 [_coinFreePool addObject:_coin toTrack:trackNum];
                 
@@ -154,6 +159,16 @@
 	return self;
 }
 
+- (void) draw
+{
+    glLineWidth(2);
+    ccDrawColor4B(255, 0, 0, 255);
+    
+    for (int trackNum = 0; trackNum < MAX_NUM_TRACK; trackNum++)
+    {
+        ccDrawCircle(COMMON_SCREEN_CENTER, (trackNum+1)*COMMON_GRID_WIDTH, 0, 50, NO);
+    }
+}
 // -----------------------------------------------------------------------------------
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
@@ -170,7 +185,7 @@
 // -----------------------------------------------------------------------------------
 - (void) update:(ccTime) dt
 {
-//    [_player showNextFrame];
+    [_player showNextFrame];
     
     // generate Game Objectsrandomly
     if (arc4random() % RANDOM_MAX == 1) {

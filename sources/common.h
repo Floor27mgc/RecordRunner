@@ -22,6 +22,6 @@
 #define COMMON_SCREEN_MARGIN_RIGHT (([[CCDirector sharedDirector] winSize]).width - COMMON_GRID_WIDTH)
 
 #define COMMON_GET_NEW_RADIAL_POINT(_originPoint) \
-    CGPointMake((self.radius * cos((double) CC_DEGREES_TO_RADIANS(self.angleRotated)) + _originPoint.x), \
-                (self.radius * sin((double) CC_DEGREES_TO_RADIANS(self.angleRotated)) + _originPoint.y))
+    CGPointMake(floor(self.radius * cos((double) CC_DEGREES_TO_RADIANS(self.angleRotated)) + _originPoint.x), \
+                floor(self.radius * sin((double) CC_DEGREES_TO_RADIANS(self.angleRotated)) + _originPoint.y))
 #endif

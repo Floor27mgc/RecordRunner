@@ -11,7 +11,7 @@
 #import "Queue.h"
 //#import "GameLayer.h"
 
-#define kDefaultGameObjectSpeed 2
+#define kDefaultGameObjectAngularVelocityInDegree 1
 #define TRACKNUM_FROM_RADIUS (self.radius/COMMON_GRID_WIDTH)
 @class GameLayer;
 
@@ -19,7 +19,7 @@
 
 @property (nonatomic, assign) CCSprite *gameObjectSprite;
 @property (nonatomic, assign) GameLayer *parentGameLayer;
-@property (nonatomic) int gameObjectSpeed;
+@property (nonatomic) int gameObjectAngularVelocity;
 @property (nonatomic) int radius;
 @property (nonatomic) int angleRotated;
 

@@ -13,7 +13,7 @@
 
 
 @implementation GameObjectBase
-@synthesize gameObjectSpeed=_gameObjectSpeed;
+@synthesize gameObjectAngularVelocity=_gameObjectAngularVelocity;
 @synthesize parentGameLayer;
 @synthesize radius;
 @synthesize angleRotated;
@@ -27,7 +27,7 @@
     objCreated = [[self alloc] init];
     objCreated.parentGameLayer = gamelayer;
     objCreated.gameObjectSprite = [CCSprite spriteWithFile:fileName];
-    objCreated.gameObjectSpeed = speed;
+    objCreated.gameObjectAngularVelocity = speed;
     objCreated.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
     objCreated.angleRotated = 0;
     return objCreated;
@@ -78,7 +78,7 @@
     CCSprite * pSprite = self.parentGameLayer.player.gameObjectSprite;
     pSprite.anchorPoint = ccp(0.5,0.5);
 
-    if (self.parentGameLayer.player.gameObjectSpeed == 0)
+    if (self.parentGameLayer.player.gameObjectAngularVelocity == 0)
     {
         CGRect playerHitBox = CGRectMake(pSprite.position.x,
                                          pSprite.position.y,

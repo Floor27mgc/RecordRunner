@@ -26,7 +26,7 @@
 {
     // this is a negative movement down the Y-axis, the Bomb is rising
     // from the bottom of the screen
-    [self moveBy:ccp(0, self.gameObjectSpeed)];
+//    [self moveBy:ccp(0, self.gameObjectAngularVelocity)];
     
     if ([self encounterWithPlayer])
     {

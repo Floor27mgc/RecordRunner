@@ -83,6 +83,7 @@
 		08DA1FB916A22A0B0059439D /* playfield-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 08DA1FAF16A22A0B0059439D /* playfield-hd.png */; };
 		08DA1FBA16A22A0B0059439D /* playField.png in Resources */ = {isa = PBXBuildFile; fileRef = 08DA1FB016A22A0B0059439D /* playField.png */; };
 		08DA1FBC16A238F10059439D /* background-white.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08DA1FBB16A238F10059439D /* background-white.jpg */; };
+		08DA1FFF16AAF46E0059439D /* ccDrawGameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 08DA1FFE16AAF46C0059439D /* ccDrawGameLayer.m */; };
 		08E38C8416882A8000115F22 /* PlayerOnFire.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08E38C8316882A8000115F22 /* PlayerOnFire.plist */; };
 		08E5B161164387A400E4AAA4 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 08E5B160164387A400E4AAA4 /* background.png */; };
 		08FF6C56167B867400E8ABF6 /* background_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 08FF6C55167B867400E8ABF6 /* background_small.png */; };
@@ -434,6 +435,8 @@
 		08DA1FAF16A22A0B0059439D /* playfield-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playfield-hd.png"; sourceTree = "<group>"; };
 		08DA1FB016A22A0B0059439D /* playField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playField.png; sourceTree = "<group>"; };
 		08DA1FBB16A238F10059439D /* background-white.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background-white.jpg"; sourceTree = "<group>"; };
+		08DA1FFD16AAF46B0059439D /* ccDrawGameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccDrawGameLayer.h; sourceTree = "<group>"; };
+		08DA1FFE16AAF46C0059439D /* ccDrawGameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ccDrawGameLayer.m; sourceTree = "<group>"; };
 		08E38C8316882A8000115F22 /* PlayerOnFire.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlayerOnFire.plist; sourceTree = "<group>"; };
 		08E5B160164387A400E4AAA4 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Graphics/background.png; sourceTree = SOURCE_ROOT; };
 		08FF6C55167B867400E8ABF6 /* background_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background_small.png; path = Graphics/background_small.png; sourceTree = SOURCE_ROOT; };
@@ -787,6 +790,8 @@
 			isa = PBXGroup;
 			children = (
 				08B6D63A169548B000608ACF /* common.h */,
+				08DA1FFD16AAF46B0059439D /* ccDrawGameLayer.h */,
+				08DA1FFE16AAF46C0059439D /* ccDrawGameLayer.m */,
 				0840D59B163F4BCC003D5FE6 /* GameLayer.h */,
 				0840D59C163F4BCC003D5FE6 /* GameLayer.m */,
 				08DA1F841698BD240059439D /* GameMainMenuLayer.h */,
@@ -1630,6 +1635,7 @@
 				082018351679577D000A3F8D /* pattern.c in Sources */,
 				8583C66A16802C9C003A3213 /* GameOverLayer.m in Sources */,
 				08DA1F861698BD240059439D /* GameMainMenuLayer.m in Sources */,
+				08DA1FFF16AAF46E0059439D /* ccDrawGameLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

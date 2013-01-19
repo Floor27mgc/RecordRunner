@@ -30,12 +30,7 @@
     self.angleRotated++;
     if ([self encounterWithPlayer])
     {
-//        id actionBy = [CCMoveBy actionWithDuration:1  position: ccp(0,10)];
-/*        id FadeAction = [CCFadeOut actionWithDuration:1];
-        id callHandler = [CCCallFunc actionWithTarget:self selector:@selector(handleCollision)];
-        [self.gameObjectSprite runAction:[CCSequence actions:FadeAction,callHandler, nil]];*/
-        //[self.gameObjectSprite runAction:FadeAction];
-        [self handleCollision];
+//        [self handleCollision];
     }
     else
     {

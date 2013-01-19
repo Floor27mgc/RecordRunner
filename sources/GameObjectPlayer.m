@@ -15,7 +15,9 @@
 @synthesize playerStreak;
 - (void) showNextFrame
 {
-    [self moveBy:ccp(direction * self.gameObjectSpeed, 0)];
+    self.angleRotated = self.angleRotated + 1;
+    self.gameObjectSprite.rotation = self.angleRotated;
+/*    [self moveBy:ccp(direction * self.gameObjectSpeed, 0)];
     self.parentGameLayer.playerOnFireEmitter.anchorPoint = ccp(0.5,0.5);
     self.parentGameLayer.playerOnFireEmitter.sourcePosition = self.gameObjectSprite.position;
     if (self.gameObjectSprite.position.x <= PLAYER_LEFT_BOUND)
@@ -26,7 +28,7 @@
     if (self.gameObjectSprite.position.x >= PLAYER_RIGHT_BOUND)
     {
          self.gameObjectSpeed = 0;
-    }
+    }*/
 }
 
 - (void) handleCollision
@@ -53,6 +55,6 @@
 - (void) changeDirection
 {
     direction = (direction == kMoveRight) ? kMoveLeft : kMoveRight;
-    self.gameObjectSpeed = kPlayerSpeed;
+//    self.gameObjectAngularVelocity = kPlayerSpeed;
 }
 @end
