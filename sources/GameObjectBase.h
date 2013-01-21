@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "Queue.h"
-//#import "GameLayer.h"
 
 #define kDefaultGameObjectAngularVelocityInDegree 1
 #define TRACKNUM_FROM_RADIUS (self.radius/COMMON_GRID_WIDTH)
@@ -39,6 +38,9 @@
 - (void) recycleObjectWithUsedPool:(Queue *)_usedObjPool
                           freePool:(Queue *)_freeObjPool;
 
+// reset object and remove it from "pool"
+- (void) removeFromGamePool:(Queue *)pool;
+
 // Determines if the current game object has
 // collided with the player
 - (BOOL) encounter:(int) y
@@ -50,9 +52,13 @@
 - (void) moveBy:(CGPoint) relativePoint;    // Move by relative position compared to its
                                             // current position
 - (CGPoint) getGameObjectSpritePosition;
+
 // "Virtual methods" that the derived class should implement.
 // If not implemented, this method will be called and Assert game
 - (void) update: (ccTime) dt;
+
+// "Virtual methods" that the derived class should implement.
+// If not implemented, this method will be called and Assert game
 - (void) showNextFrame;
 - (void) handleCollision;
 

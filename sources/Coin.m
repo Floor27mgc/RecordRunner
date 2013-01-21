@@ -55,7 +55,7 @@
                            freePool:self.parentGameLayer.coinFreePool];
     // increment score
     [self.parentGameLayer.score incrementScore:1];
-    [[SimpleAudioEngine sharedEngine] playEffect:@"coin-pick-up.wav"]; 
+    [[SimpleAudioEngine sharedEngine] playEffect:@"coin-pick-up.wav"];
 }
 
 // -----------------------------------------------------------------------------------

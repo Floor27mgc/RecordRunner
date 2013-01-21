@@ -7,12 +7,13 @@
 //
 
 #import "GameObjectPlayer.h"
-#import "GameObjectBase.h"
 #import "GameLayer.h"
 
 @implementation GameObjectPlayer
 @synthesize direction;
 @synthesize playerStreak;
+
+// -----------------------------------------------------------------------------------
 - (void) showNextFrame
 {
     self.angleRotated = self.angleRotated + 1;
@@ -31,27 +32,23 @@
     }*/
 }
 
+// -----------------------------------------------------------------------------------
 - (void) handleCollision
 {
     
 }
 
+// -----------------------------------------------------------------------------------
 - (id) init
 {
     if( (self=[super init]) )
     {
-/*        playerStreak = [CCMotionStreak streakWithFade:0.8f
-                                               minSeg:1.0f
-                                                width:20
-                                                color:ccc3(0, 255, 0)
-                                      textureFilename:@"player.png"]; */
-
         direction = kMoveLeft;
     }
     return (self);
-    
 }
 
+// -----------------------------------------------------------------------------------
 - (void) changeDirection
 {
     direction = (direction == kMoveRight) ? kMoveLeft : kMoveRight;

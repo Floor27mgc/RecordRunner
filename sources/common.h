@@ -21,7 +21,10 @@
 #define COMMON_SCREEN_MARGIN_LEFT COMMON_GRID_WIDTH
 #define COMMON_SCREEN_MARGIN_RIGHT (([[CCDirector sharedDirector] winSize]).width - COMMON_GRID_WIDTH)
 
+#define COIN_POWER_FREQUENCY 11
+
 #define COMMON_GET_NEW_RADIAL_POINT(_originPoint) \
     CGPointMake(floor(self.radius * cos((double) CC_DEGREES_TO_RADIANS(self.angleRotated)) + _originPoint.x), \
                 floor(self.radius * sin((double) CC_DEGREES_TO_RADIANS(self.angleRotated)) + _originPoint.y))
+
 #endif

@@ -56,6 +56,12 @@ typedef enum {
 // reset high score to zero
 - (void) resetHighScore;
 
+// add Power to the layer
+- (void) addPower:(id) newPower;
+
+// add PowerIcon to layer, if condition has occurred
+- (void) triggerPowerIcons;
+
 // reset Used and Free pools
 - (void) resetPoolsWithUsedPool:(Queue *)usedPool
                        freePool:(Queue *)freePool;
@@ -66,6 +72,8 @@ typedef enum {
 @property (nonatomic, strong) Queue * bombUsedPool;
 @property (nonatomic, strong) Queue * coinFreePool;
 @property (nonatomic, strong) Queue * coinUsedPool;
+@property (nonatomic, strong) Queue * powerPool;
+@property (nonatomic, strong) Queue * powerIconPool;
 @property (nonatomic, strong) CCSprite *background;
 @property (nonatomic, strong) Score * score;
 @property (nonatomic, strong) Score * highScore;
