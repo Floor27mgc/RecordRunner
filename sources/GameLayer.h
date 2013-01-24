@@ -62,6 +62,9 @@ typedef enum {
 // add PowerIcon to layer, if condition has occurred
 - (void) triggerPowerIcons;
 
+// generate start coordinates for a random track
+- (CGPoint) generateRandomTrackCoords;
+
 // reset Used and Free pools
 - (void) resetPoolsWithUsedPool:(Queue *)usedPool
                        freePool:(Queue *)freePool;

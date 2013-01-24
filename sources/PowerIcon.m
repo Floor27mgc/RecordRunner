@@ -31,7 +31,8 @@
 {
     // this is a negative movement down the Y-axis, the Coin is falling
     // from the top of the screen
-    [self moveBy:ccp(0, self.gameObjectAngularVelocity)];
+    [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER)];
+    self.angleRotated++;
     
     if ([self encounterWithPlayer]) {
         [self handleCollision];

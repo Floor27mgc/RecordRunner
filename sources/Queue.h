@@ -19,16 +19,13 @@
 @property (nonatomic) NSMutableArray * objectsOnTrack3;
 @property (nonatomic) NSMutableArray * objects;
 
-+ (id)initWithSize:(NSUInteger)size;
-- (void) addObject:(id)object;
-- (id) takeObjectFromIndex:(int) index;
-- (id) takeObject;
-- (BOOL) contains:(id)object;
-
 + (id)initWithMinSize:(NSUInteger)size;
 - (void)addObject:(id)object toTrack:(int)trackNum;
+- (void) addObject:(id)object;
 - (id)takeObjectFromIndex:(int) index fromTrack:(int) trackNum;
 - (id)takeObjectFromTrack:(int) trackNum;
 - (id)getObjectArray:(int) trackNum;
+- (BOOL) contains:(id)object;
+- (int) getObjectCount;
 
 @end

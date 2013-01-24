@@ -142,10 +142,10 @@
         }
       
         // Create Power Pool
-        _powerPool = [Queue initWithSize:0];
+        _powerPool = [Queue initWithMinSize:1];
         
         // Create PowerIcon Pool
-        _powerIconPool = [Queue initWithSize:0];
+        _powerIconPool = [Queue initWithMinSize:1];
         
         // Create and load high score
         _highScore = [Score initWithGameLayer:self imageFileName:@"" objectSpeed:0];
@@ -243,8 +243,11 @@
     [self triggerPowerIcons];
     
     // update all PowerIcons
-    for (int i = 0; i < [_powerIconPool.objects count]; ++i) {
-        [_powerIconPool.objects[i] showNextFrame];
+    for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
+        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_powerIconPool, trackNum); ++i) {
+            [POOL_OBJS_ON_TRACK(_powerIconPool, trackNum)[i] showNextFrame];
+        //[_powerIconPool.objects[i] showNextFrame];
+        }
     }
     
     // update all Powers
@@ -280,21 +283,44 @@
 }
 
 // -----------------------------------------------------------------------------------
+- (CGPoint) generateRandomTrackCoords
+{
+    CGPoint randomTrackCoords;
+    
+    randomTrackCoords.x = COMMON_SCREEN_CENTER_X +
+        (COMMON_GRID_WIDTH * (arc4random()%4));
+    randomTrackCoords.y = COMMON_SCREEN_CENTER_Y;
+    PATTERN_ALIGN_TO_GRID(randomTrackCoords);
+    
+    randomTrackCoords.x += COMMON_GRID_WIDTH;
+
+    return randomTrackCoords;
+}
+
+// -----------------------------------------------------------------------------------
 - (void) triggerPowerIcons
 {
     // trigger Power for every Nth coin collected
     if ([_score getScore] % 10 == 0 &&
-        [_powerIconPool.objects count] == 0) {
+        [_powerIconPool getObjectCount] == 0) {
         PowerIcon * newPower = [PowerIcon initWithGameLayer:self
                                               imageFileName:@"missle_icon.png" objectSpeed:2
                                                   powerType:fire_missle];
 
-        CGPoint iconLoc;
-        iconLoc.x = arc4random_uniform([[CCDirector sharedDirector] winSize].width);
-        iconLoc.y = 0;
-        [newPower moveTo:iconLoc];
+        newPower.gameObjectSprite.visible = NO;
+        newPower.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
+        newPower.angleRotated = 0;
+        CGPoint preferredLocation = [self generateRandomTrackCoords];
+        
+        newPower.radius = preferredLocation.x - COMMON_SCREEN_CENTER.x;
+        [newPower moveTo:preferredLocation];
+        
+        int trackNum = (preferredLocation.x - COMMON_SCREEN_CENTER_X) / COMMON_GRID_WIDTH;
+                
+        //[newPower moveTo:iconLoc];
+        newPower.gameObjectSprite.visible = YES;
         [self addChild:newPower.gameObjectSprite];
-        [_powerIconPool addObject:newPower];
+        [_powerIconPool addObject:newPower toTrack:(trackNum)];
     }
 }
 

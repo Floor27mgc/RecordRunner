@@ -26,8 +26,9 @@
 - (void) showNextFrame
 {
     // this is a negative movement down the Y-axis, the Bomb is rising
-    // from the bottom of the screen
-    [self moveBy:ccp(0, self.gameObjectAngularVelocity)];
+    // from the bottom of the screen    
+    [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER)];
+    self.angleRotated++;
     
     if ([self encounterWithPlayer]) {
         [self handleCollision];

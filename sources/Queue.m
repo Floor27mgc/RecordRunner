@@ -28,23 +28,9 @@
 }
 
 // -----------------------------------------------------------------------------------
-+ (id)initWithSize:(NSUInteger) size
-{
-    Queue * objCreated;
-    objCreated = [[self alloc] init];
-    objCreated.objects = [[NSMutableArray alloc] initWithCapacity:(size)];
-    
-    return objCreated;
-}
-
-// -----------------------------------------------------------------------------------
 - (id)init
 {
     if ((self = [super init])) {
-/*        objectsOnTrack1 = [[NSMutableArray alloc] init];
-        objectsOnTrack2 = [[NSMutableArray alloc] init];
-        objectsOnTrack3 = [[NSMutableArray alloc] init];
-        objectsOnTrack4 = [[NSMutableArray alloc] init]; */
     }
     return self;
 }
@@ -52,8 +38,7 @@
 // -----------------------------------------------------------------------------------
 - (void)dealloc
 {
-    //[objects release];
-    //[super dealloc];
+
 }
 
 // -----------------------------------------------------------------------------------
@@ -130,7 +115,10 @@
 // -----------------------------------------------------------------------------------
 - (BOOL) contains:(id)object
 {
-    return ([_objects containsObject:object]);
+    return ([objectsOnTrack0 containsObject:object] ||
+            [objectsOnTrack1 containsObject:object] ||
+            [objectsOnTrack2 containsObject:object] ||
+            [objectsOnTrack3 containsObject:object]);
 }
 
 // -----------------------------------------------------------------------------------
@@ -140,29 +128,10 @@
 }
 
 // -----------------------------------------------------------------------------------
-- (id)takeObjectFromIndex:(int) index
+- (int) getObjectCount
 {
-    if (index > [_objects count] || index < 0) {
-        return nil;
-    }
-    
-    id object = [_objects objectAtIndex:(index)];
-    [_objects removeObjectAtIndex:(index)];
-    return object;
-}
-
-// -----------------------------------------------------------------------------------
-- (id)takeObject
-{
-    id object = nil;
-    
-    if ([_objects count] > 0) {
-        //object = [[objects objectAtIndex:0] autorelease];
-        object = [_objects objectAtIndex:0];
-        [_objects removeObjectAtIndex:0];
-    }
-    
-    return object;
+    return ([objectsOnTrack0 count] + [objectsOnTrack1 count] +
+            [objectsOnTrack2 count] + [objectsOnTrack3 count]);
 }
 
 @end

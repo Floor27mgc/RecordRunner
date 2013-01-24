@@ -20,9 +20,7 @@
                           objectSpeed:4];
     
     // missile will start pointing at the player
-    CGPoint startLoc;
-    startLoc.x = self.parentGameLayer.player.gameObjectSprite.position.x;
-    startLoc.y = 0;
+    CGPoint startLoc = [self.parentGameLayer generateRandomTrackCoords];
     [_missle moveTo:startLoc];
     
     [self.parentGameLayer addChild:_missle.gameObjectSprite];
