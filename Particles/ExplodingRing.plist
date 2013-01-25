@@ -17,11 +17,11 @@
 	<key>finishColorAlpha</key>
 	<integer>0</integer>
 	<key>finishColorBlue</key>
-	<real>0</real>
+	<integer>1</integer>
 	<key>finishColorGreen</key>
-	<real>0.6</real>
+	<integer>0</integer>
 	<key>finishColorRed</key>
-	<real>0.8</real>
+	<integer>0</integer>
 	<key>finishColorVarianceAlpha</key>
 	<real>0</real>
 	<key>finishColorVarianceBlue</key>

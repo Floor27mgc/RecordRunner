@@ -23,6 +23,7 @@
 #define MIN_NUM_BOMBS_PER_TRACK   5
 #define MIN_NUM_COINS_PER_TRACK   5
 #define MAX_NUM_TRACK             4
+
 typedef enum {
     SPACE_TYPE,
     BOMB_TYPE,

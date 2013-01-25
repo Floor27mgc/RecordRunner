@@ -20,8 +20,9 @@
 
 #define COMMON_SCREEN_MARGIN_LEFT COMMON_GRID_WIDTH
 #define COMMON_SCREEN_MARGIN_RIGHT (([[CCDirector sharedDirector] winSize]).width - COMMON_GRID_WIDTH)
+#define PLAYER_RADIUS_OUTER_MOST (COMMON_GRID_WIDTH * (MAX_NUM_TRACK+1)-(COMMON_GRID_WIDTH/2))
 
-#define COMMON_GET_NEW_RADIAL_POINT(_originPoint) \
-    CGPointMake(floor(self.radius * cos((double) CC_DEGREES_TO_RADIANS(self.angleRotated)) + _originPoint.x), \
-                floor(self.radius * sin((double) CC_DEGREES_TO_RADIANS(self.angleRotated)) + _originPoint.y))
+#define COMMON_GET_NEW_RADIAL_POINT(_originPoint,_radius,_angle) \
+    CGPointMake(floor(_radius * cos((double) CC_DEGREES_TO_RADIANS(-_angle)) + _originPoint.x), \
+                floor(_radius * sin((double) CC_DEGREES_TO_RADIANS(-_angle)) + _originPoint.y))
 #endif

@@ -75,49 +75,56 @@
 // -----------------------------------------------------------------------------------
 - (BOOL) encounterWithPlayer
 {
-    CCSprite * pSprite = self.parentGameLayer.player.gameObjectSprite;
-    pSprite.anchorPoint = ccp(0.5,0.5);
 
-    if (self.parentGameLayer.player.gameObjectAngularVelocity == 0)
+    // Check each corner of this game object (4 corners) to see if it intersect
+    // with the player's bounding path now.  Return YES, if it does.
+    
+    if (CGPointEqualToPoint(COMMON_SCREEN_CENTER,self.parentGameLayer.player.gameObjectSprite.position))
     {
-        CGRect playerHitBox = CGRectMake(pSprite.position.x,
-                                         pSprite.position.y,
-                                         pSprite.boundingBox.size.width,
-                                         pSprite.boundingBox.size.height);
-        if ([self encounter:playerHitBox])
-        {
-            return YES;
-        }
-    }
-    else
-    {
-        if ((pSprite.position.x > PLAYER_LEFT_BOUND) &&
-            (self.parentGameLayer.player.direction == kMoveRight))
-        {
-            CGRect playerHitBox = CGRectMake(pSprite.position.x + kPlayerHitBoxSegmentWidth,
-                                             pSprite.position.y,
-                                             -kPlayerHitBoxSegmentWidth * 2,
-                                             [pSprite boundingBox].size.height);
-            if ([self encounter:playerHitBox])
-            {
-                return YES;
-            }
-        }
-        
-        if ((pSprite.position.x < PLAYER_RIGHT_BOUND) &&
-            (self.parentGameLayer.player.direction == kMoveLeft))
-        {
-            CGRect playerHitBox = CGRectMake(pSprite.position.x,
-                                             pSprite.position.y,
-                                             2 * kPlayerHitBoxSegmentWidth,
-                                             [pSprite boundingBox].size.height);
-            if ([self encounter:playerHitBox])
-            {
-                return YES;
-            }
-        }
+        return NO;
     }
     
+/*    if (abs(self.angleRotated - self.parentGameLayer.player.angleRotated) > 90)
+    {
+        return NO;
+    }*/
+    
+    if (CGPathContainsPoint(self.parentGameLayer.player.playerBoundingPath,
+                            NULL,
+                            ccp(self.gameObjectSprite.position.x + (COMMON_GRID_WIDTH/2),
+                                self.gameObjectSprite.position.y + (COMMON_GRID_HEIGHT/2)),
+                            true))
+    {
+        return YES;
+    }
+    
+    if (CGPathContainsPoint(self.parentGameLayer.player.playerBoundingPath,
+                            NULL,
+                            ccp(self.gameObjectSprite.position.x + (COMMON_GRID_WIDTH/2),
+                                self.gameObjectSprite.position.y - (COMMON_GRID_HEIGHT/2)),
+                            true))
+    {
+        return YES;
+    }
+    
+    if (CGPathContainsPoint(self.parentGameLayer.player.playerBoundingPath,
+                            NULL,
+                            ccp(self.gameObjectSprite.position.x - (COMMON_GRID_WIDTH/2),
+                                self.gameObjectSprite.position.y - (COMMON_GRID_HEIGHT/2)),
+                            true))
+    {
+        return YES;
+    }
+    
+    if (CGPathContainsPoint(self.parentGameLayer.player.playerBoundingPath,
+                            NULL,
+                            ccp(self.gameObjectSprite.position.x - (COMMON_GRID_WIDTH/2),
+                                self.gameObjectSprite.position.y + (COMMON_GRID_HEIGHT/2)),
+                            true))
+    {
+        return YES;
+    }
+
     return NO;
 }
 

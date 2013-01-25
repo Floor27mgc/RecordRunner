@@ -159,7 +159,7 @@
 	return self;
 }
 
-- (void) draw
+/*- (void) draw
 {
     glLineWidth(2);
     ccDrawColor4B(255, 0, 0, 255);
@@ -168,7 +168,7 @@
     {
         ccDrawCircle(COMMON_SCREEN_CENTER, (trackNum+1)*COMMON_GRID_WIDTH, 0, 50, NO);
     }
-}
+}*/
 // -----------------------------------------------------------------------------------
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
@@ -189,11 +189,6 @@
     
     // generate Game Objectsrandomly
     if (arc4random() % RANDOM_MAX == 1) {
-        
-//        [gameObjectInjector injectObjectWithPattern:(arc4random() % patternNumPattern())
-//                                   initialXPosition:COMMON_SCREEN_CENTER];
-//        [gameObjectInjector injectObjectWithPattern:1
-//                                   initialXPosition:COMMON_SCREEN_CENTER];
         int offsetX = COMMON_SCREEN_CENTER_X + (COMMON_GRID_WIDTH * (arc4random()%4));
         [gameObjectInjector injectObjectAt:ccp(offsetX,COMMON_SCREEN_CENTER_Y) gameObjectType:2 effectType:kRotation];
 
@@ -213,8 +208,6 @@
     {
         for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_coinUsedPool, trackNum); ++i) {
             [POOL_OBJS_ON_TRACK(_coinUsedPool, trackNum)[i] showNextFrame];
-//            [_coinUsedPool getObjectArray:_TRACKNUM];
-//            [_coinFreePool getObjectArray:trackNum];
         }
         
         for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_bombUsedPool, trackNum); ++i) {
