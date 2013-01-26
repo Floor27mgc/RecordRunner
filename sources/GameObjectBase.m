@@ -76,56 +76,25 @@
 - (BOOL) encounterWithPlayer
 {
 
-    // Check each corner of this game object (4 corners) to see if it intersect
-    // with the player's bounding path now.  Return YES, if it does.
+    // Convere the game object itself (bomb, coins..etc) to player's
+    // node space for collision detection
+    // Once converted, we will CGPathContainsPoint this node space coordinate with
+    // the path to do a match.
     
-    if (CGPointEqualToPoint(COMMON_SCREEN_CENTER,self.parentGameLayer.player.gameObjectSprite.position))
+    CGPoint gameObjectPoint = [self.parentGameLayer.player.gameObjectSprite convertToNodeSpace: self.gameObjectSprite.position];
+    
+    if (CGPathContainsPoint(self.parentGameLayer.player.playerBoundingPath,
+                            NULL,
+                            gameObjectPoint,
+                            true))
+    {
+        return YES;
+    }
+    else
     {
         return NO;
-    }
-    
-/*    if (abs(self.angleRotated - self.parentGameLayer.player.angleRotated) > 90)
-    {
-        return NO;
-    }*/
-    
-    if (CGPathContainsPoint(self.parentGameLayer.player.playerBoundingPath,
-                            NULL,
-                            ccp(self.gameObjectSprite.position.x + (COMMON_GRID_WIDTH/2),
-                                self.gameObjectSprite.position.y + (COMMON_GRID_HEIGHT/2)),
-                            true))
-    {
-        return YES;
-    }
-    
-    if (CGPathContainsPoint(self.parentGameLayer.player.playerBoundingPath,
-                            NULL,
-                            ccp(self.gameObjectSprite.position.x + (COMMON_GRID_WIDTH/2),
-                                self.gameObjectSprite.position.y - (COMMON_GRID_HEIGHT/2)),
-                            true))
-    {
-        return YES;
-    }
-    
-    if (CGPathContainsPoint(self.parentGameLayer.player.playerBoundingPath,
-                            NULL,
-                            ccp(self.gameObjectSprite.position.x - (COMMON_GRID_WIDTH/2),
-                                self.gameObjectSprite.position.y - (COMMON_GRID_HEIGHT/2)),
-                            true))
-    {
-        return YES;
-    }
-    
-    if (CGPathContainsPoint(self.parentGameLayer.player.playerBoundingPath,
-                            NULL,
-                            ccp(self.gameObjectSprite.position.x - (COMMON_GRID_WIDTH/2),
-                                self.gameObjectSprite.position.y + (COMMON_GRID_HEIGHT/2)),
-                            true))
-    {
-        return YES;
     }
 
-    return NO;
 }
 
 // -----------------------------------------------------------------------------------

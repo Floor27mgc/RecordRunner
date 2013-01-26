@@ -38,4 +38,7 @@ typedef enum
 @property (nonatomic) int playerFacingAngle; // What angle is the player facing
 @property (nonatomic,strong) CCMotionStreak *playerStreak;
 @property CGMutablePathRef playerBoundingPath;
+@property CGMutablePathRef PlayerBoundingPathCrossing;
+@property CGMutablePathRef PlayerBoundingPathStill;
+
 @end

@@ -17,6 +17,8 @@
 @synthesize radialTravelAngle;
 @synthesize playerFacingAngle;
 @synthesize playerBoundingPath;
+@synthesize PlayerBoundingPathCrossing;
+@synthesize PlayerBoundingPathStill;
 
 - (void) showNextFrame
 {
@@ -34,7 +36,10 @@
             self.angleRotated = self.angleRotated - self.gameObjectAngularVelocity;
             [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER,self.radius,self.angleRotated)];
             self.playerFacingAngle = self.angleRotated - 180;
-            [self updatePlayerSpritePath];
+//            CGPathRelease(playerBoundingPath);
+            playerBoundingPath = nil;
+            playerBoundingPath = PlayerBoundingPathStill;
+//            [self updatePlayerSpritePath];
         }
         
         self.gameObjectSprite.rotation = self.playerFacingAngle;
@@ -67,11 +72,8 @@
         if ((self.radius >=PLAYER_RADIUS_OUTER_MOST) || (self.radius <=0))
         {
             self.playerRadialSpeed = 0;
-            [self updatePlayerSpritePath];
-/*            CGContextRef ctx = UIGraphicsGetCurrentContext();
-            CGContextAddPath(ctx, playerBoundingPath);
-            CGContextSetStrokeColorWithColor(ctx,[UIColor blackColor].CGColor);
-            CGContextStrokePath(ctx); */
+            playerBoundingPath = nil;
+            playerBoundingPath = PlayerBoundingPathStill;
         }
         
     }
@@ -86,20 +88,20 @@
     
     CGPathMoveToPoint(playerBoundingPath,
                       NULL,
-                      self.gameObjectSprite.position.x + (COMMON_GRID_WIDTH/2),
-                      self.gameObjectSprite.position.y + (COMMON_GRID_HEIGHT/2));
+                      (COMMON_GRID_WIDTH/2),
+                      (COMMON_GRID_HEIGHT/2));
     CGPathAddLineToPoint(playerBoundingPath,
                          NULL,
-                         self.gameObjectSprite.position.x + (COMMON_GRID_WIDTH/2),
-                         self.gameObjectSprite.position.y - (COMMON_GRID_HEIGHT/2));
+                         (COMMON_GRID_WIDTH/2),
+                         -(COMMON_GRID_HEIGHT/2));
     CGPathAddLineToPoint(playerBoundingPath,
                          NULL,
-                         self.gameObjectSprite.position.x - (COMMON_GRID_WIDTH/2),
-                         self.gameObjectSprite.position.y - (COMMON_GRID_HEIGHT/2));
+                         -(COMMON_GRID_WIDTH/2),
+                         -(COMMON_GRID_HEIGHT/2));
     CGPathAddLineToPoint(playerBoundingPath,
                          NULL,
-                         self.gameObjectSprite.position.x - (COMMON_GRID_WIDTH/2),
-                         self.gameObjectSprite.position.y + (COMMON_GRID_HEIGHT/2));
+                         -(COMMON_GRID_WIDTH/2),
+                         (COMMON_GRID_HEIGHT/2));
     
     CGPathCloseSubpath(playerBoundingPath);
 }
@@ -119,7 +121,47 @@
                                       textureFilename:@"player.png"]; */
 
         direction = kMoveStill;
-        playerBoundingPath = NULL;
+
+        PlayerBoundingPathCrossing = CGPathCreateMutable();
+        
+        CGPathMoveToPoint(PlayerBoundingPathCrossing,
+                          NULL,
+                          0,
+                          (COMMON_GRID_HEIGHT/2));
+        CGPathAddLineToPoint(PlayerBoundingPathCrossing,
+                             NULL,
+                             PLAYER_RADIUS_OUTER_MOST,
+                             (COMMON_GRID_HEIGHT/2));
+        CGPathAddLineToPoint(PlayerBoundingPathCrossing,
+                             NULL,
+                             PLAYER_RADIUS_OUTER_MOST,
+                             -(COMMON_GRID_HEIGHT/2));
+        CGPathAddLineToPoint(PlayerBoundingPathCrossing,
+                             NULL,
+                             0,
+                             -(COMMON_GRID_HEIGHT/2));
+        CGPathCloseSubpath(PlayerBoundingPathCrossing);
+        
+        PlayerBoundingPathStill = CGPathCreateMutable();
+        
+        CGPathMoveToPoint(PlayerBoundingPathStill,
+                          NULL,
+                          (COMMON_GRID_WIDTH/2),
+                          (COMMON_GRID_HEIGHT/2));
+        CGPathAddLineToPoint(PlayerBoundingPathStill,
+                             NULL,
+                             (COMMON_GRID_WIDTH/2),
+                             -(COMMON_GRID_HEIGHT/2));
+        CGPathAddLineToPoint(PlayerBoundingPathStill,
+                             NULL,
+                             -(COMMON_GRID_WIDTH/2),
+                             -(COMMON_GRID_HEIGHT/2));
+        CGPathAddLineToPoint(PlayerBoundingPathStill,
+                             NULL,
+                             -(COMMON_GRID_WIDTH/2),
+                             (COMMON_GRID_HEIGHT/2));
+        
+        CGPathCloseSubpath(PlayerBoundingPathStill);
     }
     return (self);
     
@@ -129,56 +171,9 @@
 {
     direction = (direction == kMoveInToOut) ? kMoveOutToIn : kMoveInToOut;
     self.playerRadialSpeed = kPlayerRadialSpeed;
-//    self.radialTravelAngle = self.angleRotated;
-    if (self.parentGameLayer.player.direction == kMoveInToOut)
-    {
-        playerBoundingPath=CGPathCreateMutable();
-        CGPathMoveToPoint(playerBoundingPath,
-                          NULL,
-                          self.gameObjectSprite.position.x + (COMMON_GRID_WIDTH/2),
-                          self.gameObjectSprite.position.y + (COMMON_GRID_HEIGHT/2));
-        CGPathAddLineToPoint(playerBoundingPath,
-                             NULL,
-                             COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER,
-                                                         PLAYER_RADIUS_OUTER_MOST,
-                                                         self.parentGameLayer.player.angleRotated).x+(COMMON_GRID_WIDTH/2),
-                             COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER,
-                                                         PLAYER_RADIUS_OUTER_MOST,
-                                                         self.parentGameLayer.player.angleRotated).y+(COMMON_GRID_HEIGHT/2));
-        CGPathAddLineToPoint(playerBoundingPath,
-                             NULL,
-                             COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER,
-                                                         PLAYER_RADIUS_OUTER_MOST,
-                                                         self.parentGameLayer.player.angleRotated).x-(COMMON_GRID_WIDTH/2),
-                             COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER,
-                                                         PLAYER_RADIUS_OUTER_MOST,
-                                                         self.parentGameLayer.player.angleRotated).y-(COMMON_GRID_HEIGHT/2));
-        CGPathAddLineToPoint(playerBoundingPath,
-                             NULL,
-                             self.parentGameLayer.player.gameObjectSprite.position.x - (COMMON_GRID_WIDTH/2),
-                             self.parentGameLayer.player.gameObjectSprite.position.x - (COMMON_GRID_HEIGHT/2));
-        CGPathCloseSubpath(playerBoundingPath);
-    }
-    else
-    {
-        playerBoundingPath=CGPathCreateMutable();
-        CGPathMoveToPoint(playerBoundingPath,
-                          NULL,
-                          self.gameObjectSprite.position.x + (COMMON_GRID_WIDTH/2),
-                          self.gameObjectSprite.position.y + (COMMON_GRID_HEIGHT/2));
-        CGPathAddLineToPoint(playerBoundingPath,
-                             NULL,
-                             COMMON_SCREEN_CENTER_X+(COMMON_GRID_WIDTH/2),
-                             COMMON_SCREEN_CENTER_Y+(COMMON_GRID_HEIGHT/2));
-        CGPathAddLineToPoint(playerBoundingPath,
-                             NULL,
-                             COMMON_SCREEN_CENTER_X-(COMMON_GRID_WIDTH/2),
-                             COMMON_SCREEN_CENTER_Y-(COMMON_GRID_HEIGHT/2));
-        CGPathMoveToPoint(playerBoundingPath,
-                          NULL,
-                          self.gameObjectSprite.position.x - (COMMON_GRID_WIDTH/2),
-                          self.gameObjectSprite.position.y - (COMMON_GRID_HEIGHT/2));
-        CGPathCloseSubpath(playerBoundingPath);
-    }
+//    CGPathRelease(playerBoundingPath);
+    playerBoundingPath = nil;
+    playerBoundingPath = self.PlayerBoundingPathCrossing;
+    
 }
 @end
