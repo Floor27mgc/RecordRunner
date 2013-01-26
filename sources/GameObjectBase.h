@@ -11,7 +11,7 @@
 #import "Queue.h"
 
 #define kDefaultGameObjectAngularVelocityInDegree 1
-#define TRACKNUM_FROM_RADIUS (self.radius/COMMON_GRID_WIDTH)
+#define TRACKNUM_FROM_RADIUS (self.radius/COMMON_GRID_WIDTH - 1)
 @class GameLayer;
 
 @interface GameObjectBase : NSObject

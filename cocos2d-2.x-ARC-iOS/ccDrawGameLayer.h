@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-
+#import "GameLayer.h"
 @interface ccDrawGameLayer : CCLayer {
     
 }
+- (id) initWithGameLayer:(GameLayer *) gamelayer;
 
+@property (nonatomic,strong) GameLayer *parentGameLayer;
 @end

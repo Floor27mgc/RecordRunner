@@ -75,50 +75,26 @@
 // -----------------------------------------------------------------------------------
 - (BOOL) encounterWithPlayer
 {
-    CCSprite * pSprite = self.parentGameLayer.player.gameObjectSprite;
-    pSprite.anchorPoint = ccp(0.5,0.5);
 
-    if (self.parentGameLayer.player.gameObjectAngularVelocity == 0)
+    // Convere the game object itself (bomb, coins..etc) to player's
+    // node space for collision detection
+    // Once converted, we will CGPathContainsPoint this node space coordinate with
+    // the path to do a match.
+    
+    CGPoint gameObjectPoint = [self.parentGameLayer.player.gameObjectSprite convertToNodeSpace: self.gameObjectSprite.position];
+    
+    if (CGPathContainsPoint(self.parentGameLayer.player.playerBoundingPath,
+                            NULL,
+                            gameObjectPoint,
+                            true))
     {
-        CGRect playerHitBox = CGRectMake(pSprite.position.x,
-                                         pSprite.position.y,
-                                         pSprite.boundingBox.size.width,
-                                         pSprite.boundingBox.size.height);
-        if ([self encounter:playerHitBox])
-        {
-            return YES;
-        }
+        return YES;
     }
     else
     {
-        if ((pSprite.position.x > PLAYER_LEFT_BOUND) &&
-            (self.parentGameLayer.player.direction == kMoveRight))
-        {
-            CGRect playerHitBox = CGRectMake(pSprite.position.x + kPlayerHitBoxSegmentWidth,
-                                             pSprite.position.y,
-                                             -kPlayerHitBoxSegmentWidth * 2,
-                                             [pSprite boundingBox].size.height);
-            if ([self encounter:playerHitBox])
-            {
-                return YES;
-            }
-        }
-        
-        if ((pSprite.position.x < PLAYER_RIGHT_BOUND) &&
-            (self.parentGameLayer.player.direction == kMoveLeft))
-        {
-            CGRect playerHitBox = CGRectMake(pSprite.position.x,
-                                             pSprite.position.y,
-                                             2 * kPlayerHitBoxSegmentWidth,
-                                             [pSprite boundingBox].size.height);
-            if ([self encounter:playerHitBox])
-            {
-                return YES;
-            }
-        }
+        return NO;
     }
-    
-    return NO;
+
 }
 
 // -----------------------------------------------------------------------------------
