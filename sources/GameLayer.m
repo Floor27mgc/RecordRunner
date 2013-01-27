@@ -47,19 +47,39 @@
 @synthesize playerOnFireEmitter;
 // -----------------------------------------------------------------------------------
 // Helper class method that creates a Scene with the GameLayer as the only child.
-+(CCScene *) scene
++(CCScene *) sceneWithMode:(int) gameMode
 {
+    
 	// 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
 	
 	// 'layer' is an autorelease object.
-	GameLayer *layer = [GameLayer node];
+	GameLayer *layer = [GameLayer nodeWithGameMode:gameMode];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
 	
 	// return the scene
 	return scene;
+}
+
+// -----------------------------------------------------------------------------------
+// on Create the node with game mode.
++(id) nodeWithGameMode:(int) gameMode
+{
+    GameLayer *layer = [GameLayer node];
+    switch (gameMode)
+    {
+        case kGameModeNoRotation:
+            layer.player.gameObjectAngularVelocity = 0;
+            break;
+        case kGameModeRotation:
+            layer.player.gameObjectAngularVelocity = kDefaultGameObjectAngularVelocityInDegree;
+            break;
+        default:
+            NSLog(@"Invalid game mode being passed in");
+    }
+    return layer;
 }
 
 // -----------------------------------------------------------------------------------
@@ -91,7 +111,7 @@
         // Create player
         _player = [GameObjectPlayer initWithGameLayer:self
                                         imageFileName:@"player-hd.png"
-                                          objectSpeed:kDefaultGameObjectAngularVelocityInDegree];
+                                          objectSpeed:0];
         _player.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
         [_player moveTo:PLAYER_START_POSITION];
 

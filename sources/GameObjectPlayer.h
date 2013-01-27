@@ -30,7 +30,7 @@ typedef enum
     CCMotionStreak *playerStreak;
 }
 - (void) changeDirection;
-- (void) updatePlayerSpritePath;
+
 @property (nonatomic) direction_t direction;
 @property (nonatomic) int playerRadialSpeed; // How fast the player zips between center and
                                              // outer most circle
@@ -40,5 +40,5 @@ typedef enum
 @property CGMutablePathRef playerBoundingPath;
 @property CGMutablePathRef PlayerBoundingPathCrossing;
 @property CGMutablePathRef PlayerBoundingPathStill;
-
+@property (nonatomic, strong) CCNode *dummyPlayer;
 @end
