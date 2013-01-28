@@ -18,36 +18,44 @@
 @synthesize playerBoundingPath;
 @synthesize PlayerBoundingPathCrossing;
 @synthesize PlayerBoundingPathStill;
+@synthesize dummyPlayer;
 
 // -----------------------------------------------------------------------------------
 - (void) showNextFrame
 {
     if (self.playerRadialSpeed == 0)
     {
+        // The player is in the center
         if (CGPointEqualToPoint(self.gameObjectSprite.position, COMMON_SCREEN_CENTER))
         {
             self.angleRotated = self.angleRotated - self.gameObjectAngularVelocity;
             self.playerFacingAngle = self.angleRotated;
         }
-
-        
+     
+        // The player is on the outer track
         if (self.radius == PLAYER_RADIUS_OUTER_MOST)
         {
+            // Rotate and move the player around the outer track
             self.angleRotated = self.angleRotated - self.gameObjectAngularVelocity;
             [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER,self.radius,self.angleRotated)];
+            
+            // Update the dummy player.  This dummy player is for collision handling.
+            // It is not displayed in anyway.  This will be used to perform convertToNodeSpace method
+            // so that it can compare node space with cgpath bounding box.
+            self.dummyPlayer.position = COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER,self.radius,self.angleRotated);
             self.playerFacingAngle = self.angleRotated - 180;
-//            CGPathRelease(playerBoundingPath);
             playerBoundingPath = nil;
             playerBoundingPath = PlayerBoundingPathStill;
-//            [self updatePlayerSpritePath];
         }
         
         self.gameObjectSprite.rotation = self.playerFacingAngle;
+        self.dummyPlayer.rotation = self.gameObjectSprite.rotation;
 //        NSLog(@"self.angleRotated = %d",self.angleRotated);
         
     }
     else
     {
+        // Move the player along the radial direction
         self.radius = self.radius + (self.playerRadialSpeed * self.direction);
         
         if (self.radius > PLAYER_RADIUS_OUTER_MOST)
@@ -64,47 +72,29 @@
         [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER,
                                                  self.radius,
                                                  self.angleRotated)];
-    
+ 
+
 /*        NSLog(@"radius = %d outerradius=%d x=%f, y=%f angleRotated=%d",self.radius,
               PLAYER_RADIUS_OUTER_MOST,self.gameObjectSprite.position.x,
               self.gameObjectSprite.position.y,self.angleRotated);*/
         
+        // The player has arrived the outer track or the center.  This
+        // means the player will not need to move along radial direction anymore
+        // Also, the bounding path will be reset to be around the player itself
+        // only.  Dummy player will be set to be along the outer track or the
+        // center.
         if ((self.radius >=PLAYER_RADIUS_OUTER_MOST) || (self.radius <=0))
         {
             self.playerRadialSpeed = 0;
             playerBoundingPath = nil;
             playerBoundingPath = PlayerBoundingPathStill;
+            self.dummyPlayer.position = COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER,
+                                                                    self.radius,
+                                                                    self.angleRotated);
         }
         
     }
     
-}
-
-// -----------------------------------------------------------------------------------
-- (void) updatePlayerSpritePath
-{
-    CGPathRelease(playerBoundingPath);
-    playerBoundingPath = nil;
-    playerBoundingPath = CGPathCreateMutable();
-    
-    CGPathMoveToPoint(playerBoundingPath,
-                      NULL,
-                      (COMMON_GRID_WIDTH/2),
-                      (COMMON_GRID_HEIGHT/2));
-    CGPathAddLineToPoint(playerBoundingPath,
-                         NULL,
-                         (COMMON_GRID_WIDTH/2),
-                         -(COMMON_GRID_HEIGHT/2));
-    CGPathAddLineToPoint(playerBoundingPath,
-                         NULL,
-                         -(COMMON_GRID_WIDTH/2),
-                         -(COMMON_GRID_HEIGHT/2));
-    CGPathAddLineToPoint(playerBoundingPath,
-                         NULL,
-                         -(COMMON_GRID_WIDTH/2),
-                         (COMMON_GRID_HEIGHT/2));
-    
-    CGPathCloseSubpath(playerBoundingPath);
 }
 
 // -----------------------------------------------------------------------------------
@@ -160,6 +150,8 @@
                              (COMMON_GRID_HEIGHT/2));
         
         CGPathCloseSubpath(PlayerBoundingPathStill);
+        
+        dummyPlayer = [[CCNode alloc]init];
     }
     return (self);
 }

@@ -81,8 +81,7 @@
     // Once converted, we will CGPathContainsPoint this node space coordinate with
     // the path to do a match.
     
-    CGPoint gameObjectPoint = [self.parentGameLayer.player.gameObjectSprite convertToNodeSpace: self.gameObjectSprite.position];
-    
+    CGPoint gameObjectPoint = [self.parentGameLayer.player.dummyPlayer convertToNodeSpace: self.gameObjectSprite.position];
     if (CGPathContainsPoint(self.parentGameLayer.player.playerBoundingPath,
                             NULL,
                             gameObjectPoint,

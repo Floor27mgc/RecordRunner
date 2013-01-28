@@ -59,16 +59,16 @@
             [child runAction:[CCEaseElasticOut actionWithAction:[CCMoveBy actionWithDuration:4 position:ccp(400,0)] period:0.35f + (periodAdjustment*0.1)]];
             periodAdjustment++;
         }
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:4.0f scene:[GameLayer scene]]];
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:4.0f scene:[GameLayer sceneWithMode:kGameModeNoRotation]]];
 
     }];
     
     CCMenuItem *item2 = [CCMenuItemImage itemWithNormalImage:@"modeButton.png" selectedImage:@"modeButton.png" block:^(id sender) {
-        [[CCDirector sharedDirector] replaceScene:[GameLayer scene]];
+        [[CCDirector sharedDirector] replaceScene:[GameLayer sceneWithMode:kGameModeRotation]];
     }];
 
     CCMenuItem *item3 = [CCMenuItemImage itemWithNormalImage:@"newsButton.png" selectedImage:@"newsButton.png" block:^(id sender) {
-        [[CCDirector sharedDirector] replaceScene:[GameLayer scene]];
+        [[CCDirector sharedDirector] replaceScene:[GameLayer sceneWithMode:kGameModeNoRotation]];
     }];
 
     CCMenu *menu = [CCMenu menuWithItems:item1,item2,item3, nil];

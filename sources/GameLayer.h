@@ -24,6 +24,8 @@
 #define MIN_NUM_COINS_PER_TRACK   5
 #define MAX_NUM_TRACK             4
 
+#define kGameModeNoRotation 0
+#define kGameModeRotation   1
 typedef enum {
     SPACE_TYPE,
     BOMB_TYPE,
@@ -43,8 +45,8 @@ typedef enum {
 }
 
 // returns a CCScene that contains the GameLayer as the only child
-+(CCScene *) scene;
-
+//+(CCScene *) scene;
++(CCScene *) sceneWithMode:(int) gameMode;
 // handle "game over" scenario
 - (void) gameOver;
 
