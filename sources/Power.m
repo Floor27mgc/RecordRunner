@@ -13,6 +13,7 @@
 
 @synthesize powerType;
 @synthesize parentGameLayer;
+@synthesize myTrackNum;
 
 // -----------------------------------------------------------------------------------
 - (id) initWithType:(power_type_t)type gameLayer:(GameLayer *)parentLayer
@@ -20,6 +21,7 @@
     if (self = [super init]) {
         self.powerType = type;
         self.parentGameLayer = parentLayer;
+        self.myTrackNum = arc4random() % MAX_NUM_TRACK;
     }
     
     return self;
@@ -33,6 +35,12 @@
 
 // -----------------------------------------------------------------------------------
 - (void) runPower
+{
+    
+}
+
+// -----------------------------------------------------------------------------------
+- (void) resetObject
 {
     
 }

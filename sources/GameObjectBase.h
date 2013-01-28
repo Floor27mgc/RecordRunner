@@ -39,7 +39,7 @@
                           freePool:(Queue *)_freeObjPool;
 
 // reset object and remove it from "pool"
-- (void) removeFromGamePool:(Queue *)pool;
+- (BOOL) removeFromGamePool:(Queue *)pool;
 
 // Determines if the current game object has
 // collided with the player

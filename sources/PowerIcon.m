@@ -38,6 +38,7 @@
     if ([self encounterWithPlayer]) {
         [self handleCollision];
     } else {
+        // object has rotated to the point where it should be removed from the screen
         CGSize windowSize = [[CCDirector sharedDirector] winSize];
         CGPoint curPoint = [self.gameObjectSprite position];
         
@@ -71,7 +72,9 @@
     }
     
     // remove PowerIcon from the parent game layer
-    [self removeFromGamePool:self.parentGameLayer.powerIconPool];
+    if (![self removeFromGamePool:self.parentGameLayer.powerIconPool]) {
+        NSLog(@"Failed to remove PowerIcon from icon pool");
+    }
     
     // add Power object to parentGameLayer
     [newPower addPower];

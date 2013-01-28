@@ -144,11 +144,16 @@
 }
 
 // -----------------------------------------------------------------------------------
-- (void) removeFromGamePool:(Queue *)pool
+- (BOOL) removeFromGamePool:(Queue *)pool
 {
-    NSInteger i = [pool.objects indexOfObjectIdenticalTo:self];
-    [[pool.objects objectAtIndex:i] resetObject];
-    [pool.objects removeObjectAtIndex:i];
+    // find which track I'm on then remove myself
+    for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
+        if ([pool contains:self onTrack:trackNum]) {
+            [pool removeObjectFromTrack:trackNum withObject:self];
+            return YES;
+        }
+    }
+    return NO;
 }
 
 // -----------------------------------------------------------------------------------

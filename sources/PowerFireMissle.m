@@ -19,13 +19,22 @@
                         imageFileName:@"missile.gif"
                           objectSpeed:4];
     
-    // missile will start pointing at the player
-    CGPoint startLoc = [self.parentGameLayer generateRandomTrackCoords];
-    [_missle moveTo:startLoc];
+    _missle.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
+    _missle.angleRotated = 0;
+    CGPoint preferredLocation = [self.parentGameLayer generateRandomTrackCoords];
     
+    _missle.radius = preferredLocation.x - COMMON_SCREEN_CENTER.x;
+    [_missle moveTo:preferredLocation];
+    
+    //PATTERN_ALIGN_TO_GRID(preferredLocation);
+    //int trackNum = (preferredLocation.x - COMMON_SCREEN_CENTER_X) / COMMON_GRID_WIDTH;
+    self.myTrackNum = arc4random() % 4;
+    
+    //add missle to parent game layer
     [self.parentGameLayer addChild:_missle.gameObjectSprite];
-    [self.parentGameLayer.powerPool.objects addObject:self];
-    [self.parentGameLayer.bombUsedPool.objects addObject:_missle];
+    
+    // add self to parent game layer
+    [self.parentGameLayer.powerPool addObject:self toTrack:self.myTrackNum];
 }
 
 // -----------------------------------------------------------------------------------
@@ -34,11 +43,17 @@
     [_missle showNextFrame];
     
     // if the missle has been hit, remove this power from the PowerPool
-    if (![self.parentGameLayer.bombUsedPool contains:_missle]) {
-        NSInteger i =
-            [self.parentGameLayer.powerPool.objects indexOfObjectIdenticalTo:self];
-        [self.parentGameLayer.powerPool.objects removeObjectAtIndex:i];
+    if (_missle.isHit) {
+        NSLog(@"PowerFireMissle removing self from track");
+        [self.parentGameLayer.powerPool removeObjectFromTrack:self.myTrackNum
+                                                withObject:self];
     }
+}
+
+// -----------------------------------------------------------------------------------
+- (void) resetObject
+{
+    [_missle resetObject];
 }
 
 @end

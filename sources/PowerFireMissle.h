@@ -9,9 +9,12 @@
 #import "Power.h"
 #import "GameObjectBase.h"
 #import "Missile.h"
+#import "GameObjectInjector.h"
 
 @interface PowerFireMissle : Power
 
-@property (nonatomic) Missile * missle;
+- (void) resetObject;
+
+@property (nonatomic, strong) Missile * missle;
 
 @end

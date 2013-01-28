@@ -7,6 +7,7 @@
 //
 
 #import "Queue.h"
+#import "GameObjectBase.h"
 
 @implementation Queue
 
@@ -70,7 +71,6 @@
 // -----------------------------------------------------------------------------------
 - (id)takeObjectFromTrack:(int) trackNum
 {
-    
     id objectArray = [self getObjectArray:trackNum];
 
     
@@ -106,7 +106,8 @@
             objectArray = objectsOnTrack3;
             break;
         default:
-            NSLog(@"Invalid trackNum to add to object %@", [self description]);
+            NSLog(@"Invalid trackNum %i to add to object %@", trackNum,
+                  [self description]);
             break;
     }
     return objectArray;
@@ -119,6 +120,71 @@
             [objectsOnTrack1 containsObject:object] ||
             [objectsOnTrack2 containsObject:object] ||
             [objectsOnTrack3 containsObject:object]);
+}
+
+// -----------------------------------------------------------------------------------
+- (BOOL) contains:(id)object onTrack:(int)trackNum
+{
+    switch (trackNum) {
+        case 0:
+            return [objectsOnTrack0 containsObject:object];
+            break;
+        case 1:
+            return [objectsOnTrack1 containsObject:object];
+            break;
+        case 2:
+            return [objectsOnTrack2 containsObject:object];
+            break;
+        case 3:
+            return [objectsOnTrack3 containsObject:object];
+            break;
+        default:
+            return NO;
+    }
+}
+
+// -----------------------------------------------------------------------------------
+- (void) removeObjectFromTrack:(int)trackNum withObject:(id)object
+{
+    NSMutableArray * targetTrack = nil;
+    
+    switch (trackNum) {
+        case 0:
+            targetTrack = objectsOnTrack0;
+            break;
+        case 1:
+            targetTrack = objectsOnTrack1;
+            break;
+        case 2:
+            targetTrack = objectsOnTrack2;
+            break;
+        case 3:
+            targetTrack = objectsOnTrack3;
+            break;
+        default:
+            break;
+    }
+
+    if (targetTrack != nil) {
+        NSInteger i = [targetTrack indexOfObjectIdenticalTo:object];
+
+        // only call resetObject on those objects that support it
+        if ([[targetTrack objectAtIndex:i] respondsToSelector:@selector(resetObject)]) {
+            [[targetTrack objectAtIndex:i] resetObject];
+        }
+        
+        [targetTrack removeObjectAtIndex:i];
+            
+    }
+}
+
+// -----------------------------------------------------------------------------------
+- (void) clearTracks
+{
+    [objectsOnTrack0 removeAllObjects];
+    [objectsOnTrack1 removeAllObjects];
+    [objectsOnTrack2 removeAllObjects];
+    [objectsOnTrack3 removeAllObjects];
 }
 
 // -----------------------------------------------------------------------------------

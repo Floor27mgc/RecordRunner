@@ -26,6 +26,9 @@
 - (id)takeObjectFromTrack:(int) trackNum;
 - (id)getObjectArray:(int) trackNum;
 - (BOOL) contains:(id)object;
+- (BOOL) contains:(id)object onTrack:(int) trackNum;
+- (void) removeObjectFromTrack:(int) trackNum withObject:(id)object;
 - (int) getObjectCount;
+- (void) clearTracks;
 
 @end

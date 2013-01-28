@@ -70,6 +70,9 @@ typedef enum {
 - (void) resetPoolsWithUsedPool:(Queue *)usedPool
                        freePool:(Queue *)freePool;
 
+// clear pool and reset all objects in pool
+- (void) resetPool:(Queue *) pool;
+
 @property (nonatomic, strong) GameObjectPlayer *player;
 
 @property (nonatomic, strong) Queue * bombFreePool;

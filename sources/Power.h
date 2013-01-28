@@ -25,7 +25,11 @@ typedef enum {
 // trigger the start of this power in the main game layer
 - (void) runPower;
 
+// reset this Power's power
+- (void) resetObject;
+
 @property (nonatomic) power_type_t powerType;
 @property (nonatomic, assign) GameLayer * parentGameLayer;
+@property (nonatomic) int myTrackNum;
 
 @end

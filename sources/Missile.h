@@ -10,4 +10,6 @@
 
 @interface Missile : GameObjectBase
 
+@property (nonatomic) BOOL isHit;
+
 @end

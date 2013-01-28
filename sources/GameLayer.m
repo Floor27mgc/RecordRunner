@@ -171,16 +171,6 @@
 	return self;
 }
 
-/*- (void) draw
-{
-    glLineWidth(2);
-    ccDrawColor4B(255, 0, 0, 255);
-    
-    for (int trackNum = 0; trackNum < MAX_NUM_TRACK; trackNum++)
-    {
-        ccDrawCircle(COMMON_SCREEN_CENTER, (trackNum+1)*COMMON_GRID_WIDTH, 0, 50, NO);
-    }
-}*/
 // -----------------------------------------------------------------------------------
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
@@ -239,13 +229,14 @@
     for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
         for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_powerIconPool, trackNum); ++i) {
             [POOL_OBJS_ON_TRACK(_powerIconPool, trackNum)[i] showNextFrame];
-        //[_powerIconPool.objects[i] showNextFrame];
         }
     }
     
     // update all Powers
-    for (int i = 0; i < [_powerPool.objects count]; ++i) {
-        [_powerPool.objects[i] runPower];
+    for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
+        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_powerPool, trackNum); ++i) {
+            [POOL_OBJS_ON_TRACK(_powerPool, trackNum)[i] runPower];
+        }
     }
 }
 
@@ -277,14 +268,13 @@
 
 // -----------------------------------------------------------------------------------
 - (CGPoint) generateRandomTrackCoords
-{
+{ 
     CGPoint randomTrackCoords;
     
     randomTrackCoords.x = COMMON_SCREEN_CENTER_X +
         (COMMON_GRID_WIDTH * (arc4random()%4));
     randomTrackCoords.y = COMMON_SCREEN_CENTER_Y;
     PATTERN_ALIGN_TO_GRID(randomTrackCoords);
-    
     randomTrackCoords.x += COMMON_GRID_WIDTH;
 
     return randomTrackCoords;
@@ -300,7 +290,6 @@
                                               imageFileName:@"missle_icon.png" objectSpeed:2
                                                   powerType:fire_missle];
 
-        newPower.gameObjectSprite.visible = NO;
         newPower.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
         newPower.angleRotated = 0;
         CGPoint preferredLocation = [self generateRandomTrackCoords];
@@ -308,10 +297,9 @@
         newPower.radius = preferredLocation.x - COMMON_SCREEN_CENTER.x;
         [newPower moveTo:preferredLocation];
         
-        int trackNum = (preferredLocation.x - COMMON_SCREEN_CENTER_X) / COMMON_GRID_WIDTH;
-                
-        //[newPower moveTo:iconLoc];
-        newPower.gameObjectSprite.visible = YES;
+        PATTERN_ALIGN_TO_GRID(preferredLocation);
+        int trackNum = arc4random() % 4;
+        
         [self addChild:newPower.gameObjectSprite];
         [_powerIconPool addObject:newPower toTrack:(trackNum)];
     }
@@ -347,6 +335,12 @@
 // -----------------------------------------------------------------------------------
 - (void) startOver
 {
+    // clear PowerIcon pool
+    [self resetPool:_powerIconPool];
+    
+    // clear Power pool
+    [self resetPool:_powerPool];
+    
     // reset bomb pools
     [self resetPoolsWithUsedPool:_bombUsedPool freePool:_bombFreePool];
     
@@ -358,6 +352,20 @@
     [_gameOverLayer runAction:[CCSequence actions: zoomWayOut, nil]];
     
     [self resumeSchedulerAndActions];
+}
+
+// -----------------------------------------------------------------------------------
+- (void) resetPool:(Queue *)pool
+{
+    for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
+        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(pool, trackNum); ++i) {
+            if ([POOL_OBJS_ON_TRACK(pool, trackNum)[i] respondsToSelector:@selector(resetObject)]) {
+                [POOL_OBJS_ON_TRACK(pool, trackNum)[i] resetObject];
+            }
+        }
+    }
+    
+    [pool clearTracks];
 }
 
 // -----------------------------------------------------------------------------------

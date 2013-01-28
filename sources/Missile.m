@@ -11,13 +11,14 @@
 
 @implementation Missile
 
+@synthesize isHit = _isHit;
 
 // -----------------------------------------------------------------------------------
 - (id) init
 {
     if( (self=[super init]) )
     {
-        
+        _isHit = NO;
     }
     return (self);
 }
@@ -34,23 +35,29 @@
     if ([self encounterWithPlayer]) {
         [self handleCollision];
     } else {
-        CGSize windowSize = [[CCDirector sharedDirector] winSize];
+        /*CGSize windowSize = [[CCDirector sharedDirector] winSize];
         CGPoint curPoint = [self.gameObjectSprite position];
         
         if (curPoint.y > windowSize.height) {
             [self removeFromGamePool:self.parentGameLayer.bombUsedPool];
-        }
+        }*/
     }
 }
 
 // -----------------------------------------------------------------------------------
 - (void) handleCollision
 {
-    [self removeFromGamePool:self.parentGameLayer.bombUsedPool];
+    //[self removeFromGamePool:self.parentGameLayer.bombUsedPool];
+    NSLog(@"Missle is hit -- Entering");
+    _isHit = YES;
+    
+    [self resetObject];
     
     [self.parentGameLayer gameOver];
     
     [self.parentGameLayer.score decrementScore:1000];
+    
+    NSLog(@"Missle is hit -- Exiting");
 }
 
 // -----------------------------------------------------------------------------------
