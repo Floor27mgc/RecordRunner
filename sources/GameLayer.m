@@ -18,7 +18,6 @@
 #import "SimpleAudioEngine.h"
 #import "ccDrawGameLayer.h"
 #import "common.h"
-#import "Power.h"
 #import "PowerIcon.h"
 
 #pragma mark - GameLayer
@@ -306,9 +305,15 @@
     // trigger Power for every Nth coin collected
     if ([_score getScore] % 10 == 0 &&
         [_powerIconPool getObjectCount] == 0) {
+        
+        power_type_t randType = (power_type_t)(arc4random() % max_power_type_val);
+
+        NSString * powerIconImage = [PowerIcon getIconImageFromPowerType:randType];
+        
         PowerIcon * newPower = [PowerIcon initWithGameLayer:self
-                                              imageFileName:@"missle_icon.png" objectSpeed:2
-                                                  powerType:fire_missle];
+                                              imageFileName:powerIconImage
+                                                objectSpeed:2
+                                                  powerType:randType];
 
         newPower.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
         newPower.angleRotated = 0;

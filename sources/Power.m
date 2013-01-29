@@ -8,7 +8,6 @@
 
 #import "Power.h"
 
-
 @implementation Power
 
 @synthesize powerType;
@@ -30,7 +29,8 @@
 // -----------------------------------------------------------------------------------
 - (void) addPower
 {
-    
+    self.myTrackNum = arc4random() % 4;
+    [self.parentGameLayer.powerPool addObject:self toTrack:self.myTrackNum];
 }
 
 // -----------------------------------------------------------------------------------
@@ -40,9 +40,10 @@
 }
 
 // -----------------------------------------------------------------------------------
-- (void) resetObject
+- (void) resetPower
 {
-    
+    [self.parentGameLayer.powerPool removeObjectFromTrack:self.myTrackNum
+                                               withObject:self];
 }
 
 @end

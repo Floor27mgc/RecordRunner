@@ -98,6 +98,8 @@
 		8583C67916828098003A3213 /* yes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8583C67816828098003A3213 /* yes.jpg */; };
 		8583C67C1682809E003A3213 /* no.png in Resources */ = {isa = PBXBuildFile; fileRef = 8583C67B1682809E003A3213 /* no.png */; };
 		8592EC101673EE3B0008B1B2 /* gorbNormal16.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 8592EC0F1673EE3B0008B1B2 /* gorbNormal16.fnt */; };
+		859EC13C16B60FB7003BFF41 /* PowerSlowDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 859EC13B16B60FB7003BFF41 /* PowerSlowDown.m */; };
+		859EC13F16B6106D003BFF41 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 859EC13E16B6106D003BFF41 /* clock.png */; };
 		85A671361651D14000499BF7 /* Bomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671351651D14000499BF7 /* Bomb.m */; };
 		85A6713A1651D16000499BF7 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671391651D16000499BF7 /* Coin.m */; };
 		85A671441654581B00499BF7 /* Bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = 85A671431654581B00499BF7 /* Bomb.png */; };
@@ -462,6 +464,9 @@
 		8583C67816828098003A3213 /* yes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yes.jpg; sourceTree = "<group>"; };
 		8583C67B1682809E003A3213 /* no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no.png; sourceTree = "<group>"; };
 		8592EC0F1673EE3B0008B1B2 /* gorbNormal16.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = gorbNormal16.fnt; path = Graphics/gorbNormal16.fnt; sourceTree = SOURCE_ROOT; };
+		859EC13A16B60FB7003BFF41 /* PowerSlowDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerSlowDown.h; path = sources/PowerSlowDown.h; sourceTree = SOURCE_ROOT; };
+		859EC13B16B60FB7003BFF41 /* PowerSlowDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowerSlowDown.m; path = sources/PowerSlowDown.m; sourceTree = SOURCE_ROOT; };
+		859EC13E16B6106D003BFF41 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
 		85A671341651D13F00499BF7 /* Bomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bomb.h; path = sources/Bomb.h; sourceTree = SOURCE_ROOT; };
 		85A671351651D14000499BF7 /* Bomb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bomb.m; path = sources/Bomb.m; sourceTree = SOURCE_ROOT; };
 		85A671381651D16000499BF7 /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Coin.h; path = sources/Coin.h; sourceTree = SOURCE_ROOT; };
@@ -765,22 +770,23 @@
 		0840D593163F435E003D5FE6 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
-				08DA1FA516A2294D0059439D /* official */,
-				850300DC169D2E660035D7C1 /* reset.jpg */,
+				08E5B160164387A400E4AAA4 /* background.png */,
+				08FF6C55167B867400E8ABF6 /* background_small.png */,
+				85A671431654581B00499BF7 /* Bomb.png */,
+				859EC13E16B6106D003BFF41 /* clock.png */,
+				85A671461654582500499BF7 /* Coin.png */,
+				8592EC0F1673EE3B0008B1B2 /* gorbNormal16.fnt */,
+				08DA1F881699503B0059439D /* MainMenu.jpg */,
 				8503010116A900F40035D7C1 /* missile.gif */,
 				8503010416A900FA0035D7C1 /* missle_icon.png */,
-				08DA1F8E169A42DA0059439D /* playButton.png */,
 				08DA1F8A169A426F0059439D /* modeButton.png */,
 				08DA1F8B169A426F0059439D /* newsButton.png */,
-				08E5B160164387A400E4AAA4 /* background.png */,
-				8583C67816828098003A3213 /* yes.jpg */,
 				8583C67B1682809E003A3213 /* no.png */,
-				08FF6C55167B867400E8ABF6 /* background_small.png */,
-				8592EC0F1673EE3B0008B1B2 /* gorbNormal16.fnt */,
-				85A671461654582500499BF7 /* Coin.png */,
+				08DA1FA516A2294D0059439D /* official */,
+				08DA1F8E169A42DA0059439D /* playButton.png */,
 				0840D5A8163F4D67003D5FE6 /* player.png */,
-				85A671431654581B00499BF7 /* Bomb.png */,
-				08DA1F881699503B0059439D /* MainMenu.jpg */,
+				850300DC169D2E660035D7C1 /* reset.jpg */,
+				8583C67816828098003A3213 /* yes.jpg */,
 			);
 			name = Graphics;
 			path = ../Graphics;
@@ -809,11 +815,11 @@
 			children = (
 				85A671341651D13F00499BF7 /* Bomb.h */,
 				85A671351651D14000499BF7 /* Bomb.m */,
+				08DA1FFD16AAF46B0059439D /* ccDrawGameLayer.h */,
+				08DA1FFE16AAF46C0059439D /* ccDrawGameLayer.m */,
 				85A671381651D16000499BF7 /* Coin.h */,
 				85A671391651D16000499BF7 /* Coin.m */,
 				08B6D63A169548B000608ACF /* common.h */,
-				08DA1FFD16AAF46B0059439D /* ccDrawGameLayer.h */,
-				08DA1FFE16AAF46C0059439D /* ccDrawGameLayer.m */,
 				0840D59B163F4BCC003D5FE6 /* GameLayer.h */,
 				0840D59C163F4BCC003D5FE6 /* GameLayer.m */,
 				08DA1F841698BD240059439D /* GameMainMenuLayer.h */,
@@ -836,6 +842,8 @@
 				850300F316A661280035D7C1 /* PowerFireMissle.m */,
 				850300EB16A63FBA0035D7C1 /* PowerIcon.h */,
 				850300EC16A63FBA0035D7C1 /* PowerIcon.m */,
+				859EC13A16B60FB7003BFF41 /* PowerSlowDown.h */,
+				859EC13B16B60FB7003BFF41 /* PowerSlowDown.m */,
 				85A6714A1655A6CB00499BF7 /* Queue.h */,
 				85A6714B1655A6CB00499BF7 /* Queue.m */,
 				85B53BAB1673C5CC001163F7 /* Score.h */,
@@ -1640,6 +1648,7 @@
 				08DA1FBC16A238F10059439D /* background-white.jpg in Resources */,
 				8503010216A900F40035D7C1 /* missile.gif in Resources */,
 				8503010516A900FA0035D7C1 /* missle_icon.png in Resources */,
+				859EC13F16B6106D003BFF41 /* clock.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1668,6 +1677,7 @@
 				850300F116A640E50035D7C1 /* Power.m in Sources */,
 				850300F416A661290035D7C1 /* PowerFireMissle.m in Sources */,
 				8503011416A9FF790035D7C1 /* Missile.m in Sources */,
+				859EC13C16B60FB7003BFF41 /* PowerSlowDown.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
