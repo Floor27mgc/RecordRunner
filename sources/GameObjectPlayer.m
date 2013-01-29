@@ -152,6 +152,7 @@
         CGPathCloseSubpath(PlayerBoundingPathStill);
         
         dummyPlayer = [[CCNode alloc]init];
+        dummyPlayer.position = COMMON_SCREEN_CENTER;
     }
     return (self);
 }

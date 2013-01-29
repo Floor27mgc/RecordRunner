@@ -24,18 +24,19 @@
 // -----------------------------------------------------------------------------------
 - (void) showNextFrame
 {
-    // this is a negative movement down the Y-axis, the Bomb is rising
-    // from the bottom of the screen
-//    [self moveBy:ccp(0, self.gameObjectAngularVelocity)];
-    
+    // this is a negative movement down the Y-axis, the Coin is falling
+    // from the top of the screen
+    //[self moveBy:ccp(0, self.gameObjectSpeed)];
+    [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER,self.radius,self.angleRotated)];
+    self.angleRotated = self.angleRotated + self.gameObjectAngularVelocity;
     if ([self encounterWithPlayer])
     {
         [self handleCollision];
     }
     else
-    { 
-        [self recycleOffScreenObjWithUsedPool:self.parentGameLayer.bombUsedPool
-                                     freePool:self.parentGameLayer.bombFreePool];
+    {
+        //        [self recycleOffScreenObjWithUsedPool:self.parentGameLayer.coinUsedPool
+        //                                     freePool:self.parentGameLayer.coinFreePool];
     }
 }
 

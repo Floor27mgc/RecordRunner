@@ -45,6 +45,20 @@
     
     PATTERN_ALIGN_TO_GRID(preferredLocation);
     trackNum = (preferredLocation.x - COMMON_SCREEN_CENTER_X) / COMMON_GRID_WIDTH;
+
+    // Since we want to push all objects into more outer circle, we force it here.
+    preferredLocation.x = preferredLocation.x + COMMON_GRID_WIDTH;
+    
+    // If we happen to insert to where player is currently at,
+    // we bails.
+    CGPoint gameObjectPoint = [self.mainGameLayer.player.dummyPlayer convertToNodeSpace: preferredLocation];
+    if (CGPathContainsPoint(self.mainGameLayer.player.playerBoundingPath,
+                            NULL,
+                            gameObjectPoint,
+                            true))
+    {
+        return nil;
+    }
     
     switch (_gameObjectType)
     {
@@ -62,13 +76,26 @@
             return nil;
     }
 
-    // Since we want to push all objects into more outer circle, we force it here.
-    preferredLocation.x = preferredLocation.x + COMMON_GRID_WIDTH;
-
     // Check to see if we can insert this one without overlapping
-    for (int i=0; i<POOL_OBJ_COUNT_ON_TRACK(usedPool, trackNum); i++)
+    for (int i=0; i<POOL_OBJ_COUNT_ON_TRACK(self.mainGameLayer.coinUsedPool, trackNum); i++)
     {
-        NSMutableArray *currentObjectArray = POOL_OBJS_ON_TRACK(usedPool, trackNum);
+        // Check to see if any coin is overlapping
+        NSMutableArray *currentObjectArray = POOL_OBJS_ON_TRACK(self.mainGameLayer.coinUsedPool, trackNum);
+        CGRect currentObjectBoundingBox = ((GameObjectBase *)currentObjectArray[i]).gameObjectSprite.boundingBox;
+        if (CGRectIntersectsRect(currentObjectBoundingBox,
+                                 CGRectMake(preferredLocation.x - (currentObjectBoundingBox.size.width/2),
+                                            preferredLocation.y - (currentObjectBoundingBox.size.height/2) ,
+                                            currentObjectBoundingBox.size.width,
+                                            currentObjectBoundingBox.size.height)))
+        {
+            return nil;
+        }        
+    }
+    
+    for (int i=0; i<POOL_OBJ_COUNT_ON_TRACK(self.mainGameLayer.bombUsedPool, trackNum); i++)
+    {
+        // Check to see if any bomb is overlapping
+        NSMutableArray *currentObjectArray = POOL_OBJS_ON_TRACK(self.mainGameLayer.bombUsedPool, trackNum);
         CGRect currentObjectBoundingBox = ((GameObjectBase *)currentObjectArray[i]).gameObjectSprite.boundingBox;
         if (CGRectIntersectsRect(currentObjectBoundingBox,
                                  CGRectMake(preferredLocation.x - (currentObjectBoundingBox.size.width/2),
@@ -79,6 +106,7 @@
             return nil;
         }
     }
+    
     newObject = [freePool takeObjectFromTrack:trackNum];
     if (newObject != nil) {
         newObject.gameObjectSprite.anchorPoint = ccp(0.5,0.5);

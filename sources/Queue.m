@@ -25,6 +25,10 @@
     objCreated.objectsOnTrack1 = [[NSMutableArray alloc] initWithCapacity:(size * 2)];
     objCreated.objectsOnTrack2 = [[NSMutableArray alloc] initWithCapacity:(size * 3)];
     objCreated.objectsOnTrack3 = [[NSMutableArray alloc] initWithCapacity:(size * 4)];
+/*    objCreated.objectsOnTrack0 = [[NSMutableArray alloc] init];
+    objCreated.objectsOnTrack1 = [[NSMutableArray alloc] init];
+    objCreated.objectsOnTrack2 = [[NSMutableArray alloc] init];
+    objCreated.objectsOnTrack3 = [[NSMutableArray alloc] init]; */
     return objCreated;
 }
 

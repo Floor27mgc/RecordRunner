@@ -129,16 +129,14 @@
        
         // Create NUM_OBSTACLES bombs and add them to the free pool
         for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
-            for (int i=0; i<(trackNum+1) * MIN_NUM_BOMBS_PER_TRACK; i++) {
-                Bomb * _bomb = [Bomb initWithGameLayer: self
-                                         imageFileName:@"bomb-hd.png"
-                                           objectSpeed:kDefaultGameObjectAngularVelocityInDegree];
-                _bomb.gameObjectSprite.visible = 0;
-                [_bombFreePool addObject:_bomb toTrack:trackNum];
-                
-                // add bomb to GameLayer
-                [self addChild: _bomb.gameObjectSprite];
-            }
+            Bomb * _bomb = [Bomb initWithGameLayer: self
+                                     imageFileName:@"bomb-hd.png"
+                                       objectSpeed:kDefaultGameObjectAngularVelocityInDegree];
+            _bomb.gameObjectSprite.visible = 0;
+            [_bombFreePool addObject:_bomb toTrack:trackNum];
+            
+            // add bomb to GameLayer
+            [self addChild: _bomb.gameObjectSprite];
         }
         
         // Create coin free pool (queue)
@@ -149,7 +147,10 @@
         
         // Create NUM_REWARDS coins and add them to the free pool
         for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
-            for (int i=0; i<(trackNum+1) * MIN_NUM_COINS_PER_TRACK; i++) {
+            for (int i=0; i<(trackNum+1) * MIN_NUM_BOMBS_PER_TRACK; i++) {
+/*                Coin * _coin = [Coin initWithGameLayer:self
+                                         imageFileName:@"coin-hd.png"
+                                           objectSpeed:kDefaultGameObjectAngularVelocityInDegree]; */
                 Coin * _coin = [Coin initWithGameLayer:self
                                          imageFileName:@"coin-hd.png"
                                            objectSpeed:kDefaultGameObjectAngularVelocityInDegree];
@@ -216,6 +217,12 @@
 
     }
 
+    // generate Game Objectsrandomly
+    if (arc4random() % RANDOM_MAX == 1) {
+        int offsetX = COMMON_SCREEN_CENTER_X + (COMMON_GRID_WIDTH * (arc4random()%4));
+        [gameObjectInjector injectObjectAt:ccp(offsetX,COMMON_SCREEN_CENTER_Y) gameObjectType:BOMB_TYPE effectType:kRotation];
+        
+    }
     // Trigger each bomb objects and coin object proceed to
     // show the next frame.  Each object will be responsible
     // for the following task:

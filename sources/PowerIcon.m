@@ -33,7 +33,7 @@
     // from the top of the screen
     [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER, self.radius,
                                              self.angleRotated)];
-    self.angleRotated++;
+    self.angleRotated = self.angleRotated + self.gameObjectAngularVelocity;
     
     if ([self encounterWithPlayer]) {
         [self handleCollision];
