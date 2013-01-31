@@ -11,7 +11,9 @@
 
 typedef enum {
     slow_down,
-    fire_missle
+    fire_missle,
+    
+    max_power_type_val
 } power_type_t;
 
 @interface Power : NSObject
@@ -26,7 +28,7 @@ typedef enum {
 - (void) runPower;
 
 // reset this Power's power
-- (void) resetObject;
+- (void) resetPower;
 
 @property (nonatomic) power_type_t powerType;
 @property (nonatomic, assign) GameLayer * parentGameLayer;

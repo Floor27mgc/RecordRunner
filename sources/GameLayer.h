@@ -14,6 +14,7 @@
 #import "Queue.h"
 #import "Score.h"
 #import "GameOverLayer.h"
+#import "Power.h"
 
 #define NUM_OBSTACLES            20
 #define NUM_REWARDS              20
@@ -89,4 +90,5 @@ typedef enum {
 @property (nonatomic, strong) GameObjectInjector * gameObjectInjector;
 @property (nonatomic, strong) GameOverLayer * gameOverLayer;
 @property (nonatomic, strong) CCParticleSystemQuad *playerOnFireEmitter;
+
 @end

@@ -25,16 +25,11 @@
     
     _missle.radius = preferredLocation.x - COMMON_SCREEN_CENTER.x;
     [_missle moveTo:preferredLocation];
-    
-    //PATTERN_ALIGN_TO_GRID(preferredLocation);
-    //int trackNum = (preferredLocation.x - COMMON_SCREEN_CENTER_X) / COMMON_GRID_WIDTH;
-    self.myTrackNum = arc4random() % 4;
-    
+
     //add missle to parent game layer
     [self.parentGameLayer addChild:_missle.gameObjectSprite];
     
-    // add self to parent game layer
-    [self.parentGameLayer.powerPool addObject:self toTrack:self.myTrackNum];
+    [super addPower];
 }
 
 // -----------------------------------------------------------------------------------
@@ -45,13 +40,13 @@
     // if the missle has been hit, remove this power from the PowerPool
     if (_missle.isHit) {
         NSLog(@"PowerFireMissle removing self from track");
-        [self.parentGameLayer.powerPool removeObjectFromTrack:self.myTrackNum
-                                                withObject:self];
+        [self resetPower];
+        [super resetPower];
     }
 }
 
 // -----------------------------------------------------------------------------------
-- (void) resetObject
+- (void) resetPower
 {
     [_missle resetObject];
 }
