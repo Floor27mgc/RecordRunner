@@ -279,6 +279,20 @@
 }
 
 // -----------------------------------------------------------------------------------
+- (int) depositCoinsToBank
+{
+    int bankBalance = [[NSUserDefaults standardUserDefaults] integerForKey:@"coinBank"];
+
+    bankBalance += [_score getScore];
+    
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    [standardUserDefaults setInteger:bankBalance forKey:@"coinBank"];
+    [standardUserDefaults synchronize];
+    
+    return bankBalance;
+}
+
+// -----------------------------------------------------------------------------------
 - (void) resetHighScore
 {
     [_highScore setScoreValue:0];
@@ -343,6 +357,9 @@
     // update high score, if necessary
     [self updateHighScore];
     
+    // cash in coins collected from this round
+    int bankSize = [self depositCoinsToBank];
+    
     NSString * score = [_score generateScoreString];
     CGSize mainSize = [[CCDirector sharedDirector] winSize];
     
@@ -351,7 +368,8 @@
     _gameOverLayer = [GameOverLayer initWithScoreString:score
                                                 winSize:mainSize
                                                     gameLayer:self
-                                                    highScore:didWin];
+                                                    highScore:didWin
+                                                    bankSize:bankSize];
 
     // set game over layer's display actions
     id zoomIn  = [CCScaleTo actionWithDuration:0.2 scale:1.25];
@@ -393,6 +411,9 @@
         for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(pool, trackNum); ++i) {
             if ([POOL_OBJS_ON_TRACK(pool, trackNum)[i] respondsToSelector:@selector(resetObject)]) {
                 [POOL_OBJS_ON_TRACK(pool, trackNum)[i] resetObject];
+            } else if ([POOL_OBJS_ON_TRACK(pool, trackNum)[i]
+                        respondsToSelector:@selector(resetPower)]) {
+                [POOL_OBJS_ON_TRACK(pool, trackNum)[i] resetPower];
             }
         }
     }

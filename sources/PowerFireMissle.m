@@ -41,7 +41,6 @@
     if (_missle.isHit) {
         NSLog(@"PowerFireMissle removing self from track");
         [self resetPower];
-        [super resetPower];
     }
 }
 
@@ -49,6 +48,7 @@
 - (void) resetPower
 {
     [_missle resetObject];
+    [super resetPower];
 }
 
 @end

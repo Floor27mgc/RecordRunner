@@ -60,6 +60,9 @@ typedef enum {
 // reset high score to zero
 - (void) resetHighScore;
 
+// add coins to persistent coin bank
+- (int) depositCoinsToBank;
+
 // add Power to the layer
 - (void) addPower:(id) newPower;
 

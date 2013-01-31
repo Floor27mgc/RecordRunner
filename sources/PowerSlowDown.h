@@ -8,9 +8,13 @@
 
 #import "Power.h"
 
-#define SLOW_DOWN_LIFETIME_SEC 10
+#define SLOW_DOWN_LIFETIME_SEC 7
 
 @interface PowerSlowDown : Power
+
+// static methods to ensure slow downs don't "stack"
++ (BOOL) slowDownActive;
++ (void) setSlowDownActive:(BOOL) newVal;
 
 // change speed of objects from parent game layer pools
 - (void) changeGameLayerObjectsSpeed:(Queue *) pool
@@ -25,5 +29,6 @@
 
 @property (nonatomic) NSDate * startTime;
 @property (nonatomic) int mySpeed;
+@property (nonatomic) BOOL didISlowDown;
 
 @end

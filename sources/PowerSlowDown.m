@@ -12,6 +12,21 @@
 
 @synthesize startTime = _startTime;
 @synthesize mySpeed = _mySpeed;
+@synthesize didISlowDown = _didISlowDown;
+
+static BOOL slowedDown = NO;
+
+// ----------------------------------------------------------------------------------
++(BOOL) slowDownActive
+{
+    return slowedDown;
+}
+
+// ----------------------------------------------------------------------------------
++(void) setSlowDownActive:(BOOL) newVal
+{
+    slowedDown = newVal;
+}
 
 // ----------------------------------------------------------------------------------
 - (void) addPower
@@ -19,7 +34,9 @@
     _startTime = [NSDate date];
     
     _mySpeed = (arc4random() % 5) + 1;
- 
+    
+    _didISlowDown = YES;
+    
     [super addPower];
     
     [self slowDown];
@@ -28,27 +45,48 @@
 // ----------------------------------------------------------------------------------
 - (void) slowDown
 {
-    [self changeGameLayerObjectsSpeed:self.parentGameLayer.bombUsedPool
-                                   up:NO speed:_mySpeed];
+    if (![PowerSlowDown slowDownActive]) {
+        [PowerSlowDown setSlowDownActive: YES];
+        
+        [self changeGameLayerObjectsSpeed:self.parentGameLayer.bombUsedPool
+                                       up:NO speed:_mySpeed];
+    
+        [self changeGameLayerObjectsSpeed:self.parentGameLayer.bombFreePool
+                                       up:NO speed:_mySpeed];
 
-    [self changeGameLayerObjectsSpeed:self.parentGameLayer.coinUsedPool
-                                   up:NO speed:_mySpeed];
+        [self changeGameLayerObjectsSpeed:self.parentGameLayer.coinUsedPool
+                                       up:NO speed:_mySpeed];
 
-    [self changeGameLayerObjectsSpeed:self.parentGameLayer.powerIconPool
-                                   up:NO speed:_mySpeed];
+        [self changeGameLayerObjectsSpeed:self.parentGameLayer.coinFreePool
+                                       up:NO speed:_mySpeed];
+    
+        [self changeGameLayerObjectsSpeed:self.parentGameLayer.powerIconPool
+                                       up:NO speed:_mySpeed];
+    } else {
+        _didISlowDown = NO;
+    }
 }
 
 // ----------------------------------------------------------------------------------
 - (void) speedUp
 {
-    [self changeGameLayerObjectsSpeed:self.parentGameLayer.bombUsedPool
-                                   up:YES speed:_mySpeed];
+    if (_didISlowDown) {
+        [self changeGameLayerObjectsSpeed:self.parentGameLayer.bombUsedPool
+                                       up:YES speed:_mySpeed];
     
-    [self changeGameLayerObjectsSpeed:self.parentGameLayer.coinUsedPool
-                                   up:YES speed:_mySpeed];
+        [self changeGameLayerObjectsSpeed:self.parentGameLayer.bombFreePool
+                                       up:YES speed:_mySpeed];
     
-    [self changeGameLayerObjectsSpeed:self.parentGameLayer.powerIconPool
-                                   up:YES speed:_mySpeed];
+        [self changeGameLayerObjectsSpeed:self.parentGameLayer.coinUsedPool
+                                       up:YES speed:_mySpeed];
+    
+        [self changeGameLayerObjectsSpeed:self.parentGameLayer.coinFreePool
+                                       up:YES speed:_mySpeed];
+    
+        [self changeGameLayerObjectsSpeed:self.parentGameLayer.powerIconPool
+                                       up:YES speed:_mySpeed];
+        [PowerSlowDown setSlowDownActive: NO];
+    }
 }
 
 // ----------------------------------------------------------------------------------
@@ -57,11 +95,9 @@
     NSTimeInterval elapsed = abs([_startTime timeIntervalSinceNow]);
     
     if (elapsed > SLOW_DOWN_LIFETIME_SEC) {
-        NSLog(@"Slow down complete...");
         [self speedUp];
         [super resetPower];
     } else {
-        NSLog(@"Still slowing down, %f elapsed...", elapsed);
     }
 }
 
@@ -77,9 +113,13 @@
             GameObjectBase * tempObj = POOL_OBJS_ON_TRACK(pool, trackNum)[i];
             
             if (speedUp) {
-                tempObj.gameObjectAngularVelocity *= factor;
+                tempObj.gameObjectAngularVelocity++;
             } else {
-                tempObj.gameObjectAngularVelocity /= factor;
+                tempObj.gameObjectAngularVelocity--;
+                
+                if (tempObj.gameObjectAngularVelocity == 0) {
+                    tempObj.gameObjectAngularVelocity = 1;
+                }
             }
         }
     }

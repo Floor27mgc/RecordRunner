@@ -13,7 +13,7 @@
 
 @interface PowerFireMissle : Power
 
-- (void) resetObject;
+- (void) resetPower;
 
 @property (nonatomic, strong) Missile * missle;
 

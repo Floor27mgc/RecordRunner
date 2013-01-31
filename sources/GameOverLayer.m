@@ -20,6 +20,7 @@
                     winSize:(CGSize)winSize
                     gameLayer:(GameLayer *) gamelayer
                     highScore:(bool)won
+                    bankSize:(int) coinsInBank
 {
     GameOverLayer * objCreated;
     objCreated = [[self alloc] init];
@@ -42,9 +43,9 @@
     // congratulations label
     NSString * congrats = nil;
     if (won) {
-        congrats = @"You got the high score!";
+        congrats = @"High score!";
     } else {
-        congrats = @"Failed to get the high score.";
+        congrats = @"Failure.";
     }
     
     CCLabelBMFont * congratsLabel = [CCLabelBMFont labelWithString:congrats
@@ -62,9 +63,21 @@
                     alignment:kCCTextAlignmentCenter];
     CGPoint scorePosition;
     scorePosition.x = gameOverLayerPosition.x + (gameOverLayerSize.width * .06125);
-    scorePosition.y = (gameOverLayerSize.height / 2);// + (label.texture.contentSize.height);
+    scorePosition.y = (gameOverLayerSize.height / 1.5);
     [label setPosition:scorePosition];
     [objCreated addChild:label];
+    
+    // bank label
+    NSString * bankString = [NSString  stringWithFormat:@"%@ %d", @"Bank: ", coinsInBank];
+    
+    CCLabelBMFont * bankLabel = [CCLabelBMFont labelWithString:bankString
+                                                           fntFile:@"bitmapFontTest.fnt"
+                                                             width:(gameOverLayerSize.width * .75) alignment:kCCTextAlignmentCenter];
+    CGPoint bankLabelPosition;
+    bankLabelPosition.x = gameOverLayerPosition.x + (gameOverLayerSize.width * .06125);
+    bankLabelPosition.y = (gameOverLayerSize.height / 2);// - 25;
+    [bankLabel setPosition:bankLabelPosition];
+    [objCreated addChild:bankLabel];
     
     // continue label
     CCLabelBMFont * continueLabel = [CCLabelBMFont labelWithString:@"Continue?"

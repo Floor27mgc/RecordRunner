@@ -19,7 +19,8 @@
 + (id)initWithScoreString:(NSString *) score
                   winSize:(CGSize) winSize
                 gameLayer:(GameLayer *) gamelayer
-                highScore:(bool) won;
+                highScore:(bool) won
+                 bankSize:(int)coinsInBank;
 - (id) init;
 - (void) yesTapped:(id) sender;
 - (void) noTapped:(id) sender;
