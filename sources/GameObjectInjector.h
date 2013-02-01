@@ -28,12 +28,18 @@ typedef enum {
 
 @property (nonatomic,assign) GameLayer *mainGameLayer;
 @property (nonatomic,assign) GameObjectBase *lastObject;
+@property CGMutablePathRef injectorHitBoxPath;
+@property (nonatomic, strong) CCNode *dummyInjectorBox;
 + (id) initWithGameLayer:(GameLayer *) gamelayer;
-- (GameObjectBase *) injectObjectAt: (CGPoint)preferredLocation
+/*- (GameObjectBase *) injectObjectAt: (CGPoint)preferredLocation
          gameObjectType: (game_object_t)_gameObjectType
-             effectType: (effect_type_t) _effectType;
-- (void) injectObjectWithPattern:(pattern_type)_pattern_type
-                initialXPosition: (CGPoint) _initialXPosition;
+             effectType: (effect_type_t) _effectType;*/
+/*- (void) injectObjectWithPattern:(pattern_type)_pattern_type
+                initialXPosition: (CGPoint) _initialXPosition;*/
+- (GameObjectBase *) injectObjectToTrack: (int) trackNum
+                                 atAngle: (int) insertionAngle
+                          gameObjectType: (game_object_t)_gameObjectType
+                              effectType: (effect_type_t) _effectType;
 - (bool) isLastObjectOnScreen;
 
 @end
