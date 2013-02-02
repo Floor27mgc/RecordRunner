@@ -12,6 +12,8 @@
 @implementation GameObjectInjector
 @synthesize mainGameLayer;
 @synthesize lastObject;
+@synthesize injectorHitBoxPath;
+@synthesize dummyInjectorBox;
 // -----------------------------------------------------------------------------------
 + (id) initWithGameLayer:(GameLayer *) gamelayer
 {
@@ -19,6 +21,7 @@
     objCreated = [[self alloc] init];
     objCreated.mainGameLayer = gamelayer;
     objCreated.lastObject = gamelayer.player;
+
     return objCreated;
 }
 
@@ -27,38 +30,63 @@
 {
     if (self=[super init]) {
         // Add init stuff here for the base class
+        injectorHitBoxPath = CGPathCreateMutable();
+        
+        CGPathMoveToPoint(injectorHitBoxPath,
+                          NULL,
+                          0,
+                          (COMMON_GRID_HEIGHT/2));
+        CGPathAddLineToPoint(injectorHitBoxPath,
+                             NULL,
+                             PLAYER_RADIUS_OUTER_MOST,
+                             (COMMON_GRID_HEIGHT/2));
+        CGPathAddLineToPoint(injectorHitBoxPath,
+                             NULL,
+                             PLAYER_RADIUS_OUTER_MOST,
+                             -((COMMON_GRID_HEIGHT/2)));
+        CGPathAddLineToPoint(injectorHitBoxPath,
+                             NULL,
+                             0,
+                             -((COMMON_GRID_HEIGHT/2)));
+        CGPathCloseSubpath(injectorHitBoxPath);
+        dummyInjectorBox = [[CCNode alloc]init];
+        dummyInjectorBox.position = COMMON_SCREEN_CENTER;
     }
     return (self);
 }
 
 // -----------------------------------------------------------------------------------
-- (GameObjectBase *) injectObjectAt:(CGPoint)preferredLocation
+/*- (GameObjectBase *) injectObjectAt:(CGPoint)preferredLocation
          gameObjectType: (game_object_t)_gameObjectType
-             effectType: (effect_type_t) _effectType
+             effectType: (effect_type_t) _effectType */
+- (GameObjectBase *) injectObjectToTrack: (int) trackNum
+                                 atAngle: (int) insertionAngle
+                          gameObjectType: (game_object_t)_gameObjectType
+                              effectType: (effect_type_t) _effectType
+
 {
     Queue * usedPool;
     Queue * freePool;
 
     GameObjectBase * newObject = nil;
     int maxlimit;
-    int trackNum = 0;
     
-    PATTERN_ALIGN_TO_GRID(preferredLocation);
-    trackNum = (preferredLocation.x - COMMON_SCREEN_CENTER_X) / COMMON_GRID_WIDTH;
-
-    // Since we want to push all objects into more outer circle, we force it here.
-    preferredLocation.x = preferredLocation.x + COMMON_GRID_WIDTH;
+    CGPoint preferredLocation = ccp ((COMMON_SCREEN_CENTER_X +
+                                      RADIUS_FROM_TRACKNUM(trackNum)*cos(CC_DEGREES_TO_RADIANS(insertionAngle))),
+                                     (COMMON_SCREEN_CENTER_Y +
+                                      RADIUS_FROM_TRACKNUM(trackNum)*sin(CC_DEGREES_TO_RADIANS(insertionAngle))));
     
     // If we happen to insert to where player is currently at,
     // we bails.
-    CGPoint gameObjectPoint = [self.mainGameLayer.player.dummyPlayer convertToNodeSpace: preferredLocation];
-    if (CGPathContainsPoint(self.mainGameLayer.player.playerBoundingPath,
+    dummyInjectorBox.rotation = insertionAngle;
+/*    CGPoint gameObjectPoint = [self.mainGameLayer.player.dummyPlayer convertToNodeSpace: self.mainGameLayer.player.gameObjectSprite.position];
+    if (CGPathContainsPoint(self.mainGameLayer.player.playerBoundingPath
                             NULL,
                             gameObjectPoint,
                             true))
     {
         return nil;
-    }
+    } */
     
     switch (_gameObjectType)
     {
@@ -79,14 +107,35 @@
     // Check to see if we can insert this one without overlapping
     for (int i=0; i<POOL_OBJ_COUNT_ON_TRACK(self.mainGameLayer.coinUsedPool, trackNum); i++)
     {
-        // Check to see if any coin is overlapping
         NSMutableArray *currentObjectArray = POOL_OBJS_ON_TRACK(self.mainGameLayer.coinUsedPool, trackNum);
-        CGRect currentObjectBoundingBox = ((GameObjectBase *)currentObjectArray[i]).gameObjectSprite.boundingBox;
-        if (CGRectIntersectsRect(currentObjectBoundingBox,
-                                 CGRectMake(preferredLocation.x - (currentObjectBoundingBox.size.width/2),
-                                            preferredLocation.y - (currentObjectBoundingBox.size.height/2) ,
-                                            currentObjectBoundingBox.size.width,
-                                            currentObjectBoundingBox.size.height)))
+        CGPoint currentObjectPosition = ((GameObjectBase *)currentObjectArray[i]).gameObjectSprite.position;
+        CGPoint gameObjectPoint = [dummyInjectorBox convertToNodeSpace: currentObjectPosition];
+        CGPoint gameObjectPoint1 = CGPointMake(gameObjectPoint.x + COMMON_GRID_WIDTH/2,
+                                               gameObjectPoint.y + COMMON_GRID_HEIGHT/2);
+        CGPoint gameObjectPoint2 = CGPointMake(gameObjectPoint.x - COMMON_GRID_WIDTH/2,
+                                               gameObjectPoint.y - COMMON_GRID_HEIGHT/2);
+        CGPoint gameObjectPoint3 = CGPointMake(gameObjectPoint.x + COMMON_GRID_WIDTH/2,
+                                               gameObjectPoint.y - COMMON_GRID_HEIGHT/2);
+        CGPoint gameObjectPoint4 = CGPointMake(gameObjectPoint.x - COMMON_GRID_WIDTH/2,
+                                               gameObjectPoint.y + COMMON_GRID_HEIGHT/2);
+
+        
+        if (CGPathContainsPoint(injectorHitBoxPath,
+                                NULL,
+                                gameObjectPoint1,
+                                true) ||
+            CGPathContainsPoint(injectorHitBoxPath,
+                                NULL,
+                                gameObjectPoint2,
+                                true) ||
+            CGPathContainsPoint(injectorHitBoxPath,
+                                NULL,
+                                gameObjectPoint3,
+                                true) ||
+            CGPathContainsPoint(injectorHitBoxPath,
+                                NULL,
+                                gameObjectPoint4,
+                                true))
         {
             return nil;
         }        
@@ -94,14 +143,35 @@
     
     for (int i=0; i<POOL_OBJ_COUNT_ON_TRACK(self.mainGameLayer.bombUsedPool, trackNum); i++)
     {
-        // Check to see if any bomb is overlapping
         NSMutableArray *currentObjectArray = POOL_OBJS_ON_TRACK(self.mainGameLayer.bombUsedPool, trackNum);
-        CGRect currentObjectBoundingBox = ((GameObjectBase *)currentObjectArray[i]).gameObjectSprite.boundingBox;
-        if (CGRectIntersectsRect(currentObjectBoundingBox,
-                                 CGRectMake(preferredLocation.x - (currentObjectBoundingBox.size.width/2),
-                                            preferredLocation.y - (currentObjectBoundingBox.size.height/2) ,
-                                            currentObjectBoundingBox.size.width,
-                                            currentObjectBoundingBox.size.height)))
+        CGPoint currentObjectPosition = ((GameObjectBase *)currentObjectArray[i]).gameObjectSprite.position;
+        CGPoint gameObjectPoint = [dummyInjectorBox convertToNodeSpace: currentObjectPosition];
+        CGPoint gameObjectPoint1 = CGPointMake(gameObjectPoint.x + COMMON_GRID_WIDTH/2,
+                                               gameObjectPoint.y + COMMON_GRID_HEIGHT/2);
+        CGPoint gameObjectPoint2 = CGPointMake(gameObjectPoint.x - COMMON_GRID_WIDTH/2,
+                                               gameObjectPoint.y - COMMON_GRID_HEIGHT/2);
+        CGPoint gameObjectPoint3 = CGPointMake(gameObjectPoint.x + COMMON_GRID_WIDTH/2,
+                                               gameObjectPoint.y - COMMON_GRID_HEIGHT/2);
+        CGPoint gameObjectPoint4 = CGPointMake(gameObjectPoint.x - COMMON_GRID_WIDTH/2,
+                                               gameObjectPoint.y + COMMON_GRID_HEIGHT/2);
+        
+        
+        if (CGPathContainsPoint(injectorHitBoxPath,
+                                NULL,
+                                gameObjectPoint1,
+                                true) ||
+            CGPathContainsPoint(injectorHitBoxPath,
+                                NULL,
+                                gameObjectPoint2,
+                                true) ||
+            CGPathContainsPoint(injectorHitBoxPath,
+                                NULL,
+                                gameObjectPoint3,
+                                true) ||
+            CGPathContainsPoint(injectorHitBoxPath,
+                                NULL,
+                                gameObjectPoint4,
+                                true))
         {
             return nil;
         }
@@ -110,8 +180,8 @@
     newObject = [freePool takeObjectFromTrack:trackNum];
     if (newObject != nil) {
         newObject.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
-        newObject.angleRotated = 0;
-        newObject.radius = preferredLocation.x - COMMON_SCREEN_CENTER.x;
+        newObject.angleRotated = insertionAngle;
+        newObject.radius = RADIUS_FROM_TRACKNUM(trackNum);
         [newObject moveTo:preferredLocation];
         newObject.gameObjectSprite.visible = 1;
         [usedPool addObject:newObject toTrack:trackNum];
@@ -142,10 +212,10 @@
     {
         for (x = 0; x < PATTERN_NUM_COLS; x++)
         {
-            objCreated =
+/*            objCreated =
             [self injectObjectAt:currentLocation
                   gameObjectType:injectorPatternArray[_pattern_type][y][x]
-                      effectType:kHeartPumping];
+                      effectType:kHeartPumping]; */
             currentLocation.x = currentLocation.x + COMMON_GRID_WIDTH;
             
             if (objCreated != nil)

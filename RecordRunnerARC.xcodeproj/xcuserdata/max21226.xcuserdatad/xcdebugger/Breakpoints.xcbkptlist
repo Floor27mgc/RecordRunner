@@ -188,13 +188,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameObjectInjector.m"
-         timestampString = "377149677.080001"
+         timestampString = "381307220.872054"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "35"
-         endingLineNumber = "35"
-         landmarkName = "-injectObjectAt:gameObjectType:effectType:"
-         landmarkType = "5">
+         startingLineNumber = "59"
+         endingLineNumber = "59"
+         landmarkName = "@implementation GameObjectInjector"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -212,12 +212,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameObjectInjector.m"
-         timestampString = "381130764.000506"
+         timestampString = "381394580.251584"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "148"
-         endingLineNumber = "148"
-         landmarkName = "-injectObjectWithPattern:initialXPosition:"
+         startingLineNumber = "218"
+         endingLineNumber = "218"
+         landmarkName = "-injectObjectToTrack:atAngle:gameObjectType:effectType:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -225,12 +225,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameObjectInjector.m"
-         timestampString = "381130764.000506"
+         timestampString = "381394580.251584"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "112"
-         endingLineNumber = "112"
-         landmarkName = "-injectObjectAt:gameObjectType:effectType:"
+         startingLineNumber = "182"
+         endingLineNumber = "182"
+         landmarkName = "-injectObjectToTrack:atAngle:gameObjectType:effectType:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -238,12 +238,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameObjectInjector.m"
-         timestampString = "377149677.080001"
+         timestampString = "381307220.872054"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "45"
-         endingLineNumber = "45"
-         landmarkName = "-injectObjectAt:gameObjectType:effectType:"
+         startingLineNumber = "74"
+         endingLineNumber = "74"
+         landmarkName = "-injectObjectToTrack:atAngle:gameObjectType:effectType:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -251,12 +251,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameObjectInjector.m"
-         timestampString = "381130764.000506"
+         timestampString = "381394580.251584"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "154"
-         endingLineNumber = "154"
-         landmarkName = "-injectObjectWithPattern:initialXPosition:"
+         startingLineNumber = "224"
+         endingLineNumber = "224"
+         landmarkName = "-injectObjectToTrack:atAngle:gameObjectType:effectType:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -277,12 +277,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameObjectInjector.m"
-         timestampString = "381130764.000506"
+         timestampString = "381394580.251584"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "138"
-         endingLineNumber = "138"
-         landmarkName = "-injectObjectWithPattern:initialXPosition:"
+         startingLineNumber = "208"
+         endingLineNumber = "208"
+         landmarkName = "-injectObjectToTrack:atAngle:gameObjectType:effectType:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -290,12 +290,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameObjectInjector.m"
-         timestampString = "381130764.000506"
+         timestampString = "381394580.251584"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "156"
-         endingLineNumber = "156"
-         landmarkName = "-injectObjectWithPattern:initialXPosition:"
+         startingLineNumber = "226"
+         endingLineNumber = "226"
+         landmarkName = "-injectObjectToTrack:atAngle:gameObjectType:effectType:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -303,12 +303,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameObjectInjector.m"
-         timestampString = "381130764.000506"
+         timestampString = "381394580.251584"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "133"
-         endingLineNumber = "133"
-         landmarkName = "-injectObjectWithPattern:initialXPosition:"
+         startingLineNumber = "203"
+         endingLineNumber = "203"
+         landmarkName = "-injectObjectToTrack:atAngle:gameObjectType:effectType:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -316,12 +316,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameObjectInjector.m"
-         timestampString = "381130764.000506"
+         timestampString = "381394580.251584"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "118"
-         endingLineNumber = "118"
-         landmarkName = "-injectObjectAt:gameObjectType:effectType:"
+         startingLineNumber = "188"
+         endingLineNumber = "188"
+         landmarkName = "-injectObjectToTrack:atAngle:gameObjectType:effectType:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -329,12 +329,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameObjectInjector.m"
-         timestampString = "381130764.000506"
+         timestampString = "381394580.251584"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "120"
-         endingLineNumber = "120"
-         landmarkName = "-injectObjectAt:gameObjectType:effectType:"
+         startingLineNumber = "190"
+         endingLineNumber = "190"
+         landmarkName = "-injectObjectToTrack:atAngle:gameObjectType:effectType:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -342,12 +342,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameObjectInjector.m"
-         timestampString = "381130764.000506"
+         timestampString = "381394580.251584"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "142"
-         endingLineNumber = "142"
-         landmarkName = "-injectObjectWithPattern:initialXPosition:"
+         startingLineNumber = "212"
+         endingLineNumber = "212"
+         landmarkName = "-injectObjectToTrack:atAngle:gameObjectType:effectType:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -420,11 +420,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameLayer.m"
-         timestampString = "381132164.848974"
+         timestampString = "381393247.648399"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "219"
-         endingLineNumber = "219"
+         startingLineNumber = "222"
+         endingLineNumber = "222"
          landmarkName = "-update:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -524,11 +524,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameLayer.m"
-         timestampString = "381132164.848974"
+         timestampString = "381393247.648399"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "236"
-         endingLineNumber = "236"
+         startingLineNumber = "241"
+         endingLineNumber = "241"
          landmarkName = "-update:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -537,12 +537,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameObjectInjector.m"
-         timestampString = "381130764.000506"
+         timestampString = "381394580.251584"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "119"
-         endingLineNumber = "119"
-         landmarkName = "-injectObjectAt:gameObjectType:effectType:"
+         startingLineNumber = "189"
+         endingLineNumber = "189"
+         landmarkName = "-injectObjectToTrack:atAngle:gameObjectType:effectType:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -550,12 +550,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameObjectInjector.m"
-         timestampString = "381130764.000506"
+         timestampString = "381307220.872054"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "73"
-         endingLineNumber = "73"
-         landmarkName = "-injectObjectAt:gameObjectType:effectType:"
+         startingLineNumber = "101"
+         endingLineNumber = "101"
+         landmarkName = "-injectObjectToTrack:atAngle:gameObjectType:effectType:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -563,12 +563,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameObjectInjector.m"
-         timestampString = "381130764.000506"
+         timestampString = "381394580.251584"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "91"
-         endingLineNumber = "91"
-         landmarkName = "-injectObjectAt:gameObjectType:effectType:"
+         startingLineNumber = "140"
+         endingLineNumber = "140"
+         landmarkName = "-injectObjectToTrack:atAngle:gameObjectType:effectType:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -576,11 +576,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameLayer.m"
-         timestampString = "381131085.445269"
+         timestampString = "381393247.648399"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "133"
-         endingLineNumber = "133"
+         startingLineNumber = "134"
+         endingLineNumber = "134"
          landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
@@ -589,11 +589,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameLayer.m"
-         timestampString = "381131085.445269"
+         timestampString = "381393247.648399"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "152"
-         endingLineNumber = "152"
+         startingLineNumber = "154"
+         endingLineNumber = "154"
          landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
@@ -602,12 +602,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameObjectInjector.m"
-         timestampString = "381130764.000506"
+         timestampString = "381394580.251584"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "110"
-         endingLineNumber = "110"
-         landmarkName = "-injectObjectAt:gameObjectType:effectType:"
+         startingLineNumber = "180"
+         endingLineNumber = "180"
+         landmarkName = "-injectObjectToTrack:atAngle:gameObjectType:effectType:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -615,12 +615,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameObjectInjector.m"
-         timestampString = "381130764.000506"
+         timestampString = "381394580.251584"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "111"
-         endingLineNumber = "111"
-         landmarkName = "-injectObjectAt:gameObjectType:effectType:"
+         startingLineNumber = "181"
+         endingLineNumber = "181"
+         landmarkName = "-injectObjectToTrack:atAngle:gameObjectType:effectType:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -927,11 +927,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameLayer.m"
-         timestampString = "381132164.848974"
+         timestampString = "381393247.648399"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "166"
-         endingLineNumber = "166"
+         startingLineNumber = "168"
+         endingLineNumber = "168"
          landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
@@ -959,6 +959,58 @@
          startingLineNumber = "36"
          endingLineNumber = "36"
          landmarkName = "-showNextFrame"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sources/GameObjectInjector.m"
+         timestampString = "381307220.872054"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "82"
+         endingLineNumber = "82"
+         landmarkName = "-injectObjectToTrack:atAngle:gameObjectType:effectType:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sources/GameObjectInjector.m"
+         timestampString = "381394580.251584"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "184"
+         endingLineNumber = "184"
+         landmarkName = "-injectObjectToTrack:atAngle:gameObjectType:effectType:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sources/GameObjectInjector.m"
+         timestampString = "381394580.251584"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "185"
+         endingLineNumber = "185"
+         landmarkName = "-injectObjectToTrack:atAngle:gameObjectType:effectType:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sources/GameLayer.m"
+         timestampString = "381393247.648399"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "244"
+         endingLineNumber = "244"
+         landmarkName = "-update:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

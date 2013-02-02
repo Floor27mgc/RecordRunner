@@ -27,7 +27,7 @@
  
     objCreated.parentGameLayer = gamelayer;
     objCreated.isTouchEnabled = YES;
-    
+    objCreated.opacity = 125;
     // set GameOverLayer's size
     CGSize gameOverLayerSize;
     gameOverLayerSize.height = winSize.height - (winSize.height * .5);

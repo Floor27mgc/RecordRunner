@@ -128,14 +128,16 @@
        
         // Create NUM_OBSTACLES bombs and add them to the free pool
         for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
-            Bomb * _bomb = [Bomb initWithGameLayer: self
-                                     imageFileName:@"bomb-hd.png"
-                                       objectSpeed:kDefaultGameObjectAngularVelocityInDegree];
-            _bomb.gameObjectSprite.visible = 0;
-            [_bombFreePool addObject:_bomb toTrack:trackNum];
-            
-            // add bomb to GameLayer
-            [self addChild: _bomb.gameObjectSprite];
+            for (int i=0; i<trackNum+1;i++) {
+                Bomb * _bomb = [Bomb initWithGameLayer: self
+                                         imageFileName:@"bomb-hd.png"
+                                           objectSpeed:kDefaultGameObjectAngularVelocityInDegree];
+                _bomb.gameObjectSprite.visible = 0;
+                [_bombFreePool addObject:_bomb toTrack:trackNum];
+                
+                // add bomb to GameLayer
+                [self addChild: _bomb.gameObjectSprite];
+            }
         }
         
         // Create coin free pool (queue)
@@ -162,10 +164,10 @@
         }
       
         // Create Power Pool
-        _powerPool = [Queue initWithMinSize:1];
+//        _powerPool = [Queue initWithMinSize:1];
         
         // Create PowerIcon Pool
-        _powerIconPool = [Queue initWithMinSize:1];
+//        _powerIconPool = [Queue initWithMinSize:1];
         
         // Create and load high score
         _highScore = [Score initWithGameLayer:self imageFileName:@"" objectSpeed:0];
@@ -210,16 +212,19 @@
     [_player showNextFrame];
     
     // generate Game Objectsrandomly
-    if (arc4random() % RANDOM_MAX == 1) {
-        int offsetX = COMMON_SCREEN_CENTER_X + (COMMON_GRID_WIDTH * (arc4random()%4));
-        [gameObjectInjector injectObjectAt:ccp(offsetX,COMMON_SCREEN_CENTER_Y) gameObjectType:2 effectType:kRotation];
+    if (arc4random() % RANDOM_MAX <= 5) {
+//        int offsetX = COMMON_SCREEN_CENTER_X + (COMMON_GRID_WIDTH * (arc4random()%4));
+//        [gameObjectInjector injectObjectAt:ccp(offsetX,COMMON_SCREEN_CENTER_Y) gameObjectType:2 effectType:kRotation];
+        [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:COIN_TYPE effectType:kRotation];
 
     }
 
     // generate Game Objectsrandomly
     if (arc4random() % RANDOM_MAX == 1) {
-        int offsetX = COMMON_SCREEN_CENTER_X + (COMMON_GRID_WIDTH * (arc4random()%4));
-        [gameObjectInjector injectObjectAt:ccp(offsetX,COMMON_SCREEN_CENTER_Y) gameObjectType:BOMB_TYPE effectType:kRotation];
+//        int offsetX = COMMON_SCREEN_CENTER_X + (COMMON_GRID_WIDTH * (arc4random()%4));
+        [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:BOMB_TYPE effectType:kRotation];
+
+//        [gameObjectInjector injectObjectAt:ccp(offsetX,COMMON_SCREEN_CENTER_Y) gameObjectType:BOMB_TYPE effectType:kRotation];
         
     }
     // Trigger each bomb objects and coin object proceed to
@@ -249,7 +254,7 @@
     [_highScore showNextFrame];
     
     // check if new Power up has been triggered
-    [self triggerPowerIcons];
+//    [self triggerPowerIcons];
     
     // update all PowerIcons
     for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
