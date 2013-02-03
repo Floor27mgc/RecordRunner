@@ -94,6 +94,9 @@
 		8503010216A900F40035D7C1 /* missile.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8503010116A900F40035D7C1 /* missile.gif */; };
 		8503010516A900FA0035D7C1 /* missle_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8503010416A900FA0035D7C1 /* missle_icon.png */; };
 		8503011416A9FF790035D7C1 /* Missile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8503011316A9FF790035D7C1 /* Missile.m */; };
+		850FAD1016BD9D8F00EBF5FF /* PowerShield.m in Sources */ = {isa = PBXBuildFile; fileRef = 850FAD0F16BD9D8F00EBF5FF /* PowerShield.m */; };
+		850FAD1316BDA04F00EBF5FF /* shield.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 850FAD1216BDA04F00EBF5FF /* shield.jpg */; };
+		850FAD1516BF24F900EBF5FF /* player_with_shield.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 850FAD1416BF24F900EBF5FF /* player_with_shield.jpg */; };
 		8583C66A16802C9C003A3213 /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8583C66916802C9C003A3213 /* GameOverLayer.m */; };
 		8583C67916828098003A3213 /* yes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8583C67816828098003A3213 /* yes.jpg */; };
 		8583C67C1682809E003A3213 /* no.png in Resources */ = {isa = PBXBuildFile; fileRef = 8583C67B1682809E003A3213 /* no.png */; };
@@ -459,6 +462,10 @@
 		8503010416A900FA0035D7C1 /* missle_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = missle_icon.png; sourceTree = "<group>"; };
 		8503011216A9FF790035D7C1 /* Missile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Missile.h; path = sources/Missile.h; sourceTree = SOURCE_ROOT; };
 		8503011316A9FF790035D7C1 /* Missile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Missile.m; path = sources/Missile.m; sourceTree = SOURCE_ROOT; };
+		850FAD0E16BD9D8F00EBF5FF /* PowerShield.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerShield.h; path = sources/PowerShield.h; sourceTree = SOURCE_ROOT; };
+		850FAD0F16BD9D8F00EBF5FF /* PowerShield.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowerShield.m; path = sources/PowerShield.m; sourceTree = SOURCE_ROOT; };
+		850FAD1216BDA04F00EBF5FF /* shield.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shield.jpg; sourceTree = "<group>"; };
+		850FAD1416BF24F900EBF5FF /* player_with_shield.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = player_with_shield.jpg; sourceTree = "<group>"; };
 		8583C66816802C9C003A3213 /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverLayer.h; path = sources/GameOverLayer.h; sourceTree = SOURCE_ROOT; };
 		8583C66916802C9C003A3213 /* GameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverLayer.m; path = sources/GameOverLayer.m; sourceTree = SOURCE_ROOT; };
 		8583C67816828098003A3213 /* yes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yes.jpg; sourceTree = "<group>"; };
@@ -770,6 +777,7 @@
 		0840D593163F435E003D5FE6 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				850FAD1416BF24F900EBF5FF /* player_with_shield.jpg */,
 				08E5B160164387A400E4AAA4 /* background.png */,
 				08FF6C55167B867400E8ABF6 /* background_small.png */,
 				85A671431654581B00499BF7 /* Bomb.png */,
@@ -786,6 +794,7 @@
 				08DA1F8E169A42DA0059439D /* playButton.png */,
 				0840D5A8163F4D67003D5FE6 /* player.png */,
 				850300DC169D2E660035D7C1 /* reset.jpg */,
+				850FAD1216BDA04F00EBF5FF /* shield.jpg */,
 				8583C67816828098003A3213 /* yes.jpg */,
 			);
 			name = Graphics;
@@ -848,6 +857,8 @@
 				85A6714B1655A6CB00499BF7 /* Queue.m */,
 				85B53BAB1673C5CC001163F7 /* Score.h */,
 				85B53BAC1673C5CC001163F7 /* Score.m */,
+				850FAD0E16BD9D8F00EBF5FF /* PowerShield.h */,
+				850FAD0F16BD9D8F00EBF5FF /* PowerShield.m */,
 			);
 			name = game;
 			sourceTree = "<group>";
@@ -1649,6 +1660,8 @@
 				8503010216A900F40035D7C1 /* missile.gif in Resources */,
 				8503010516A900FA0035D7C1 /* missle_icon.png in Resources */,
 				859EC13F16B6106D003BFF41 /* clock.png in Resources */,
+				850FAD1316BDA04F00EBF5FF /* shield.jpg in Resources */,
+				850FAD1516BF24F900EBF5FF /* player_with_shield.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1678,6 +1691,7 @@
 				850300F416A661290035D7C1 /* PowerFireMissle.m in Sources */,
 				8503011416A9FF790035D7C1 /* Missile.m in Sources */,
 				859EC13C16B60FB7003BFF41 /* PowerSlowDown.m in Sources */,
+				850FAD1016BD9D8F00EBF5FF /* PowerShield.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

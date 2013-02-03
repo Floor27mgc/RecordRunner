@@ -56,9 +56,6 @@
 }
 
 // -----------------------------------------------------------------------------------
-/*- (GameObjectBase *) injectObjectAt:(CGPoint)preferredLocation
-         gameObjectType: (game_object_t)_gameObjectType
-             effectType: (effect_type_t) _effectType */
 - (GameObjectBase *) injectObjectToTrack: (int) trackNum
                                  atAngle: (int) insertionAngle
                           gameObjectType: (game_object_t)_gameObjectType
@@ -79,15 +76,7 @@
     // If we happen to insert to where player is currently at,
     // we bails.
     dummyInjectorBox.rotation = insertionAngle;
-/*    CGPoint gameObjectPoint = [self.mainGameLayer.player.dummyPlayer convertToNodeSpace: self.mainGameLayer.player.gameObjectSprite.position];
-    if (CGPathContainsPoint(self.mainGameLayer.player.playerBoundingPath
-                            NULL,
-                            gameObjectPoint,
-                            true))
-    {
-        return nil;
-    } */
-    
+
     switch (_gameObjectType)
     {
         case BOMB_TYPE:
@@ -100,7 +89,13 @@
             freePool = self.mainGameLayer.coinFreePool;
             maxlimit = (MIN_NUM_COINS_PER_TRACK * (trackNum + 1));
             break;
+        case POWER_ICON_TYPE:
+            usedPool = self.mainGameLayer.powerIconUsedPool;
+            freePool = self.mainGameLayer.powerIconFreePool;
+            maxlimit = (MIN_NUM_POWER_ICONS_PER_TRACK * (trackNum + 1));
+            break;
         case SPACE_TYPE:
+        case POWER_TYPE:
             return nil;
     }
 

@@ -10,6 +10,7 @@
 #import "GameLayer.h"
 #import "common.h"
 @implementation GameObjectPlayer
+
 @synthesize direction;
 @synthesize playerStreak;
 @synthesize playerRadialSpeed;
@@ -19,6 +20,8 @@
 @synthesize PlayerBoundingPathCrossing;
 @synthesize PlayerBoundingPathStill;
 @synthesize dummyPlayer;
+@synthesize hasShield;
+
 
 // -----------------------------------------------------------------------------------
 - (void) showNextFrame
@@ -50,8 +53,7 @@
         
         self.gameObjectSprite.rotation = self.playerFacingAngle;
         self.dummyPlayer.rotation = self.gameObjectSprite.rotation;
-//        NSLog(@"self.angleRotated = %d",self.angleRotated);
-        
+//        NSLog(@"self.angleRotated = %d",self.angleRotated);        
     }
     else
     {
@@ -153,8 +155,27 @@
         
         dummyPlayer = [[CCNode alloc]init];
         dummyPlayer.position = COMMON_SCREEN_CENTER;
+        
+        self.hasShield = NO;
     }
     return (self);
+}
+
+// -----------------------------------------------------------------------------------
+- (void) setSheilded:(BOOL)trigger
+{
+    [self.parentGameLayer removeChild:self.gameObjectSprite cleanup:YES];
+    
+    if (trigger) {
+        hasShield = YES;
+        self.gameObjectSprite = [CCSprite spriteWithFile:@"player_with_shield.jpg"];
+    } else {
+        hasShield = NO;
+        self.gameObjectSprite = [CCSprite spriteWithFile:@"player-hd.png"];        
+    }
+    
+    self.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
+    [self.parentGameLayer addChild:self.gameObjectSprite];
 }
 
 // -----------------------------------------------------------------------------------

@@ -37,18 +37,6 @@
     
     if ([self encounterWithPlayer]) {
         [self handleCollision];
-    } else {
-        // object has rotated to the point where it should be removed from the screen
-        CGSize windowSize = [[CCDirector sharedDirector] winSize];
-        CGPoint curPoint = [self.gameObjectSprite position];
-        
-        if (curPoint.y > windowSize.height) {
-            NSLog(@"removing icon from pool, size is %i",
-                  [self.parentGameLayer.powerIconPool.objects count]);
-            [self removeFromGamePool:self.parentGameLayer.powerIconPool];
-            NSLog(@"icon removed from pool, size is %i",
-                  [self.parentGameLayer.powerIconPool.objects count]);
-        }
     }
 }
 
@@ -69,14 +57,17 @@
             newPower = [[PowerSlowDown alloc] initWithType:slow_down
                                                  gameLayer:self.parentGameLayer];
             break;
+        case shield:
+            NSLog(@"Creating a shield PowerUp");
+            newPower = [[PowerShield alloc] initWithType:shield
+                                               gameLayer:self.parentGameLayer];
         default:
             break;
     }
     
     // remove PowerIcon from the parent game layer
-    if (![self removeFromGamePool:self.parentGameLayer.powerIconPool]) {
-        NSLog(@"Failed to remove PowerIcon from icon pool");
-    }
+    [self recycleObjectWithUsedPool:self.parentGameLayer.powerIconUsedPool
+                           freePool:self.parentGameLayer.powerIconFreePool];
     
     // add Power object to parentGameLayer
     [newPower addPower];
@@ -99,6 +90,9 @@
             break;
         case slow_down:
             fileName = @"clock.png";
+            break;
+        case shield:
+            fileName = @"shield.jpg";
             break;
         default:
             break;

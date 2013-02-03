@@ -12,6 +12,7 @@
 typedef enum {
     slow_down,
     fire_missle,
+    shield,
     
     max_power_type_val
 } power_type_t;

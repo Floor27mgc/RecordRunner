@@ -60,7 +60,10 @@ static BOOL slowedDown = NO;
         [self changeGameLayerObjectsSpeed:self.parentGameLayer.coinFreePool
                                        up:NO speed:_mySpeed];
     
-        [self changeGameLayerObjectsSpeed:self.parentGameLayer.powerIconPool
+        [self changeGameLayerObjectsSpeed:self.parentGameLayer.powerIconUsedPool
+                                       up:NO speed:_mySpeed];
+        
+        [self changeGameLayerObjectsSpeed:self.parentGameLayer.powerIconFreePool
                                        up:NO speed:_mySpeed];
     } else {
         _didISlowDown = NO;
@@ -83,7 +86,10 @@ static BOOL slowedDown = NO;
         [self changeGameLayerObjectsSpeed:self.parentGameLayer.coinFreePool
                                        up:YES speed:_mySpeed];
     
-        [self changeGameLayerObjectsSpeed:self.parentGameLayer.powerIconPool
+        [self changeGameLayerObjectsSpeed:self.parentGameLayer.powerIconUsedPool
+                                       up:YES speed:_mySpeed];
+
+        [self changeGameLayerObjectsSpeed:self.parentGameLayer.powerIconFreePool
                                        up:YES speed:_mySpeed];
         [PowerSlowDown setSlowDownActive: NO];
     }

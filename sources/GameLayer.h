@@ -16,21 +16,24 @@
 #import "GameOverLayer.h"
 #import "Power.h"
 
-#define NUM_OBSTACLES            20
-#define NUM_REWARDS              20
-#define RANDOM_MAX              100
-#define BOMB_CREATION_THRESHOLD  97
-#define COIN_CREATION_THRESHOLD  90
-#define MIN_NUM_BOMBS_PER_TRACK   5
-#define MIN_NUM_COINS_PER_TRACK   5
-#define MAX_NUM_TRACK             4
+#define NUM_OBSTACLES                20
+#define NUM_REWARDS                  20
+#define RANDOM_MAX                  100
+#define BOMB_CREATION_THRESHOLD      97
+#define COIN_CREATION_THRESHOLD      90
+#define MIN_NUM_BOMBS_PER_TRACK       5
+#define MIN_NUM_COINS_PER_TRACK       5
+#define MIN_NUM_POWER_ICONS_PER_TRACK 5
+#define MAX_NUM_TRACK                 4
 
 #define kGameModeNoRotation 0
 #define kGameModeRotation   1
 typedef enum {
     SPACE_TYPE,
     BOMB_TYPE,
-    COIN_TYPE
+    COIN_TYPE,
+    POWER_ICON_TYPE,
+    POWER_TYPE
 } game_object_t;
 
 typedef enum {
@@ -86,7 +89,8 @@ typedef enum {
 @property (nonatomic, strong) Queue * coinFreePool;
 @property (nonatomic, strong) Queue * coinUsedPool;
 @property (nonatomic, strong) Queue * powerPool;
-@property (nonatomic, strong) Queue * powerIconPool;
+@property (nonatomic, strong) Queue * powerIconFreePool;
+@property (nonatomic, strong) Queue * powerIconUsedPool;
 @property (nonatomic, strong) CCSprite *background;
 @property (nonatomic, strong) Score * score;
 @property (nonatomic, strong) Score * highScore;

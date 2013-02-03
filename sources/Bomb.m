@@ -45,10 +45,15 @@
 {
     [self recycleObjectWithUsedPool:self.parentGameLayer.bombUsedPool
                            freePool:self.parentGameLayer.bombFreePool];
+
+    // if the player has a shield, act accordingly
+    if (self.parentGameLayer.player.hasShield) {
+        [self.parentGameLayer.score incrementScore:2];
+    } else {
+        [self.parentGameLayer gameOver];
     
-    [self.parentGameLayer gameOver];
-    
-    [self.parentGameLayer.score decrementScore:1000];
+        [self.parentGameLayer.score decrementScore:1000];
+    }
 }
 
 // -----------------------------------------------------------------------------------

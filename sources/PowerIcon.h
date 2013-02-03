@@ -10,6 +10,7 @@
 #import "Power.h"
 #import "PowerFireMissle.h"
 #import "PowerSlowDown.h"
+#import "PowerShield.h"
 
 @interface PowerIcon : GameObjectBase
 

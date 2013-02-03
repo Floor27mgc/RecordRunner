@@ -38,7 +38,8 @@
 @synthesize coinUsedPool = _coinUsedPool;
 
 @synthesize powerPool = _powerPool;
-@synthesize powerIconPool = _powerIconPool;
+@synthesize powerIconFreePool = _powerIconFreePool;
+@synthesize powerIconUsedPool = _powerIconUsedPool;
 
 @synthesize gameOverLayer = _gameOverLayer;
 
@@ -113,10 +114,6 @@
                                           objectSpeed:0];
         _player.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
         [_player moveTo:PLAYER_START_POSITION];
-
-//        self.playerOnFireEmitter = [CCParticleSystemQuad particleWithFile:@"PlayerOnFire.plist"];
-        
-//        [self addChild:playerOnFireEmitter z:10];
         
         [self addChild:_player.gameObjectSprite];
         
@@ -149,9 +146,6 @@
         // Create NUM_REWARDS coins and add them to the free pool
         for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
             for (int i=0; i<(trackNum+1) * MIN_NUM_BOMBS_PER_TRACK; i++) {
-/*                Coin * _coin = [Coin initWithGameLayer:self
-                                         imageFileName:@"coin-hd.png"
-                                           objectSpeed:kDefaultGameObjectAngularVelocityInDegree]; */
                 Coin * _coin = [Coin initWithGameLayer:self
                                          imageFileName:@"coin-hd.png"
                                            objectSpeed:kDefaultGameObjectAngularVelocityInDegree];
@@ -164,10 +158,28 @@
         }
       
         // Create Power Pool
-//        _powerPool = [Queue initWithMinSize:1];
+        _powerPool = [Queue initWithMinSize:1];
         
-        // Create PowerIcon Pool
-//        _powerIconPool = [Queue initWithMinSize:1];
+        // Create PowerIcon Pools
+        _powerIconFreePool = [Queue initWithMinSize:MIN_NUM_POWER_ICONS_PER_TRACK];
+        _powerIconUsedPool = [Queue initWithMinSize:MIN_NUM_POWER_ICONS_PER_TRACK];
+        
+        // Create Power Icons and add them to the free pool
+        for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
+            for (int i=0; i<(trackNum+1) * MIN_NUM_BOMBS_PER_TRACK; i++) {
+                PowerIcon * powerIcon =
+                [PowerIcon initWithGameLayer:self
+                                imageFileName:@"shield.jpg"
+                                 objectSpeed:kDefaultGameObjectAngularVelocityInDegree
+                                    powerType:shield];
+                
+                powerIcon.gameObjectSprite.visible = 0;
+                [_powerIconFreePool addObject:powerIcon toTrack:trackNum];
+                
+                // add coin to GameLayer
+                [self addChild: powerIcon.gameObjectSprite];
+            }
+        }
         
         // Create and load high score
         _highScore = [Score initWithGameLayer:self imageFileName:@"" objectSpeed:0];
@@ -213,19 +225,12 @@
     
     // generate Game Objectsrandomly
     if (arc4random() % RANDOM_MAX <= 5) {
-//        int offsetX = COMMON_SCREEN_CENTER_X + (COMMON_GRID_WIDTH * (arc4random()%4));
-//        [gameObjectInjector injectObjectAt:ccp(offsetX,COMMON_SCREEN_CENTER_Y) gameObjectType:2 effectType:kRotation];
         [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:COIN_TYPE effectType:kRotation];
-
     }
 
     // generate Game Objectsrandomly
     if (arc4random() % RANDOM_MAX == 1) {
-//        int offsetX = COMMON_SCREEN_CENTER_X + (COMMON_GRID_WIDTH * (arc4random()%4));
         [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:BOMB_TYPE effectType:kRotation];
-
-//        [gameObjectInjector injectObjectAt:ccp(offsetX,COMMON_SCREEN_CENTER_Y) gameObjectType:BOMB_TYPE effectType:kRotation];
-        
     }
     // Trigger each bomb objects and coin object proceed to
     // show the next frame.  Each object will be responsible
@@ -254,12 +259,12 @@
     [_highScore showNextFrame];
     
     // check if new Power up has been triggered
-//    [self triggerPowerIcons];
+    [self triggerPowerIcons];
     
     // update all PowerIcons
     for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
-        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_powerIconPool, trackNum); ++i) {
-            [POOL_OBJS_ON_TRACK(_powerIconPool, trackNum)[i] showNextFrame];
+        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_powerIconUsedPool, trackNum); ++i) {
+            [POOL_OBJS_ON_TRACK(_powerIconUsedPool, trackNum)[i] showNextFrame];
         }
     }
     
@@ -330,29 +335,10 @@
 {
     // trigger Power for every Nth coin collected
     if ([_score getScore] % 10 == 0 &&
-        [_powerIconPool getObjectCount] == 0) {
+        [_powerIconUsedPool getObjectCount] == 0) {
+        NSLog(@"Triggering Power Icon!");
         
-        power_type_t randType = (power_type_t)(arc4random() % max_power_type_val);
-
-        NSString * powerIconImage = [PowerIcon getIconImageFromPowerType:randType];
-        
-        PowerIcon * newPower = [PowerIcon initWithGameLayer:self
-                                              imageFileName:powerIconImage
-                                                objectSpeed:2
-                                                  powerType:randType];
-
-        newPower.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
-        newPower.angleRotated = 0;
-        CGPoint preferredLocation = [self generateRandomTrackCoords];
-        
-        newPower.radius = preferredLocation.x - COMMON_SCREEN_CENTER.x;
-        [newPower moveTo:preferredLocation];
-        
-        PATTERN_ALIGN_TO_GRID(preferredLocation);
-        int trackNum = arc4random() % 4;
-        
-        [self addChild:newPower.gameObjectSprite];
-        [_powerIconPool addObject:newPower toTrack:(trackNum)];
+        [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:POWER_ICON_TYPE effectType:kRotation];
     }
 }
 
@@ -391,7 +377,7 @@
 - (void) startOver
 {
     // clear PowerIcon pool
-    [self resetPool:_powerIconPool];
+    [self resetPoolsWithUsedPool:_powerIconUsedPool freePool:_powerIconFreePool];
     
     // clear Power pool
     [self resetPool:_powerPool];
