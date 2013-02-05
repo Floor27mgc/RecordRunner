@@ -7,6 +7,7 @@
 //
 
 #import "Score.h"
+#import "GameLayer.h"
 
 @implementation Score
 
@@ -50,16 +51,37 @@
 // -----------------------------------------------------------------------------------
 - (void) incrementScore:(int)amount
 {
+    int currenScoreLevel = _scoreValue / kSpeedUpScoreInterval;
     _scoreValue += amount;
+    
+    int newScoreLevel = _scoreValue / kSpeedUpScoreInterval;
+    
+    if (newScoreLevel < kSpeedUpScoreLevelCeiling)
+    {
+        if (currenScoreLevel < newScoreLevel)
+        {
+            [self.parentGameLayer speedUpGame];
+        }
+    }
 }
 
 // -----------------------------------------------------------------------------------
 - (void) decrementScore:(int)amount
 {
+    int currenScoreLevel = _scoreValue / kSpeedUpScoreInterval;
     if (amount > _scoreValue) {
         _scoreValue = 0;
     } else {
         _scoreValue -= amount;
+    }
+    int newScoreLevel = _scoreValue / kSpeedUpScoreInterval;
+    
+    if (newScoreLevel >= 0)
+    {
+        if (currenScoreLevel > newScoreLevel)
+        {
+            [self.parentGameLayer slowDownGame];
+        }
     }
 }
 

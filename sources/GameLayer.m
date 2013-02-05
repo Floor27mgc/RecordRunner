@@ -436,4 +436,69 @@
 	[self.player changeDirection];
 }
 
+// -----------------------------------------------------------------------------------
+- (void) changeGameObjectsSpeed:(Queue *)pool up:(BOOL)speedUp speed:(int)factor
+{
+    if (factor <= 0) {
+        return;
+    }
+    
+    for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
+        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(pool, trackNum); ++i) {
+            GameObjectBase * tempObj = POOL_OBJS_ON_TRACK(pool, trackNum)[i];
+            
+            if (speedUp) {
+                tempObj.gameObjectAngularVelocity++;
+            } else {
+                tempObj.gameObjectAngularVelocity--;
+                
+                if (tempObj.gameObjectAngularVelocity == 0) {
+                    tempObj.gameObjectAngularVelocity = 1;
+                }
+            }
+        }
+    }
+}
+
+- (void) speedUpGame
+{
+    [self changeGameObjectsSpeed:self.bombUsedPool
+                              up:YES speed:1];
+    
+    [self changeGameObjectsSpeed:self.bombFreePool
+                              up:YES speed:1];
+    
+    [self changeGameObjectsSpeed:self.coinUsedPool
+                              up:YES speed:1];
+    
+    [self changeGameObjectsSpeed:self.coinFreePool
+                              up:YES speed:1];
+    
+    [self changeGameObjectsSpeed:self.powerIconUsedPool
+                              up:YES speed:1];
+    
+    [self changeGameObjectsSpeed:self.powerIconFreePool
+                              up:YES speed:1];
+}
+
+- (void) slowDownGame
+{
+    [self changeGameObjectsSpeed:self.bombUsedPool
+                              up:NO speed:1];
+    
+    [self changeGameObjectsSpeed:self.bombFreePool
+                              up:NO speed:1];
+    
+    [self changeGameObjectsSpeed:self.coinUsedPool
+                              up:NO speed:1];
+    
+    [self changeGameObjectsSpeed:self.coinFreePool
+                              up:NO speed:1];
+    
+    [self changeGameObjectsSpeed:self.powerIconUsedPool
+                              up:NO speed:1];
+    
+    [self changeGameObjectsSpeed:self.powerIconFreePool
+                              up:NO speed:1];
+}
 @end

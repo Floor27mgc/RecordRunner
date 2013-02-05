@@ -48,22 +48,22 @@ static BOOL slowedDown = NO;
     if (![PowerSlowDown slowDownActive]) {
         [PowerSlowDown setSlowDownActive: YES];
         
-        [self changeGameLayerObjectsSpeed:self.parentGameLayer.bombUsedPool
+        [self.parentGameLayer changeGameObjectsSpeed:self.parentGameLayer.bombUsedPool
                                        up:NO speed:_mySpeed];
     
-        [self changeGameLayerObjectsSpeed:self.parentGameLayer.bombFreePool
+        [self.parentGameLayer changeGameObjectsSpeed:self.parentGameLayer.bombFreePool
                                        up:NO speed:_mySpeed];
 
-        [self changeGameLayerObjectsSpeed:self.parentGameLayer.coinUsedPool
+        [self.parentGameLayer changeGameObjectsSpeed:self.parentGameLayer.coinUsedPool
                                        up:NO speed:_mySpeed];
 
-        [self changeGameLayerObjectsSpeed:self.parentGameLayer.coinFreePool
+        [self.parentGameLayer changeGameObjectsSpeed:self.parentGameLayer.coinFreePool
                                        up:NO speed:_mySpeed];
     
-        [self changeGameLayerObjectsSpeed:self.parentGameLayer.powerIconUsedPool
+        [self.parentGameLayer changeGameObjectsSpeed:self.parentGameLayer.powerIconUsedPool
                                        up:NO speed:_mySpeed];
         
-        [self changeGameLayerObjectsSpeed:self.parentGameLayer.powerIconFreePool
+        [self.parentGameLayer changeGameObjectsSpeed:self.parentGameLayer.powerIconFreePool
                                        up:NO speed:_mySpeed];
     } else {
         _didISlowDown = NO;
@@ -74,22 +74,22 @@ static BOOL slowedDown = NO;
 - (void) speedUp
 {
     if (_didISlowDown) {
-        [self changeGameLayerObjectsSpeed:self.parentGameLayer.bombUsedPool
+        [self.parentGameLayer changeGameObjectsSpeed:self.parentGameLayer.bombUsedPool
                                        up:YES speed:_mySpeed];
     
-        [self changeGameLayerObjectsSpeed:self.parentGameLayer.bombFreePool
+        [self.parentGameLayer changeGameObjectsSpeed:self.parentGameLayer.bombFreePool
                                        up:YES speed:_mySpeed];
     
-        [self changeGameLayerObjectsSpeed:self.parentGameLayer.coinUsedPool
+        [self.parentGameLayer changeGameObjectsSpeed:self.parentGameLayer.coinUsedPool
                                        up:YES speed:_mySpeed];
     
-        [self changeGameLayerObjectsSpeed:self.parentGameLayer.coinFreePool
+        [self.parentGameLayer changeGameObjectsSpeed:self.parentGameLayer.coinFreePool
                                        up:YES speed:_mySpeed];
     
-        [self changeGameLayerObjectsSpeed:self.parentGameLayer.powerIconUsedPool
+        [self.parentGameLayer changeGameObjectsSpeed:self.parentGameLayer.powerIconUsedPool
                                        up:YES speed:_mySpeed];
 
-        [self changeGameLayerObjectsSpeed:self.parentGameLayer.powerIconFreePool
+        [self.parentGameLayer changeGameObjectsSpeed:self.parentGameLayer.powerIconFreePool
                                        up:YES speed:_mySpeed];
         [PowerSlowDown setSlowDownActive: NO];
     }
@@ -108,7 +108,7 @@ static BOOL slowedDown = NO;
 }
 
 // ----------------------------------------------------------------------------------
-- (void) changeGameLayerObjectsSpeed:(Queue *)pool up:(BOOL)speedUp speed:(int)factor
+/*- (void) changeGameLayerObjectsSpeed:(Queue *)pool up:(BOOL)speedUp speed:(int)factor
 {
     if (factor <= 0) {
         return;
@@ -129,6 +129,6 @@ static BOOL slowedDown = NO;
             }
         }
     }
-}
+}*/
 
 @end

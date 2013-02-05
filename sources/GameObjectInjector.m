@@ -171,6 +171,42 @@
             return nil;
         }
     }
+
+    for (int i=0; i<POOL_OBJ_COUNT_ON_TRACK(self.mainGameLayer.powerIconUsedPool, trackNum); i++)
+    {
+        NSMutableArray *currentObjectArray = POOL_OBJS_ON_TRACK(self.mainGameLayer.powerIconUsedPool, trackNum);
+        CGPoint currentObjectPosition = ((GameObjectBase *)currentObjectArray[i]).gameObjectSprite.position;
+        CGPoint gameObjectPoint = [dummyInjectorBox convertToNodeSpace: currentObjectPosition];
+        CGPoint gameObjectPoint1 = CGPointMake(gameObjectPoint.x + COMMON_GRID_WIDTH/2,
+                                               gameObjectPoint.y + COMMON_GRID_HEIGHT/2);
+        CGPoint gameObjectPoint2 = CGPointMake(gameObjectPoint.x - COMMON_GRID_WIDTH/2,
+                                               gameObjectPoint.y - COMMON_GRID_HEIGHT/2);
+        CGPoint gameObjectPoint3 = CGPointMake(gameObjectPoint.x + COMMON_GRID_WIDTH/2,
+                                               gameObjectPoint.y - COMMON_GRID_HEIGHT/2);
+        CGPoint gameObjectPoint4 = CGPointMake(gameObjectPoint.x - COMMON_GRID_WIDTH/2,
+                                               gameObjectPoint.y + COMMON_GRID_HEIGHT/2);
+        
+        
+        if (CGPathContainsPoint(injectorHitBoxPath,
+                                NULL,
+                                gameObjectPoint1,
+                                true) ||
+            CGPathContainsPoint(injectorHitBoxPath,
+                                NULL,
+                                gameObjectPoint2,
+                                true) ||
+            CGPathContainsPoint(injectorHitBoxPath,
+                                NULL,
+                                gameObjectPoint3,
+                                true) ||
+            CGPathContainsPoint(injectorHitBoxPath,
+                                NULL,
+                                gameObjectPoint4,
+                                true))
+        {
+            return nil;
+        }
+    }
     
     newObject = [freePool takeObjectFromTrack:trackNum];
     if (newObject != nil) {

@@ -17,9 +17,9 @@
 + (void) setSlowDownActive:(BOOL) newVal;
 
 // change speed of objects from parent game layer pools
-- (void) changeGameLayerObjectsSpeed:(Queue *) pool
+/*- (void) changeGameLayerObjectsSpeed:(Queue *) pool
                                   up:(BOOL) speedUp
-                                    speed:(int) factor;
+                                    speed:(int) factor; */
 
 // slow down objects on parent game layer pools
 - (void) slowDown;

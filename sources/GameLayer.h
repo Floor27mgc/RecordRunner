@@ -82,6 +82,14 @@ typedef enum {
 // clear pool and reset all objects in pool
 - (void) resetPool:(Queue *) pool;
 
+// Change all game object speed all at once
+- (void) changeGameObjectsSpeed:(Queue *)pool up:(BOOL)speedUp speed:(int)factor;
+
+// Speed up the game;
+- (void) speedUpGame;
+
+// Slow down the game;
+- (void) slowDownGame;
 @property (nonatomic, strong) GameObjectPlayer *player;
 
 @property (nonatomic, strong) Queue * bombFreePool;

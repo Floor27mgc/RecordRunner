@@ -11,6 +11,9 @@
 
 #define kScorePositionX (size.width-100)
 #define kScorePositionY (size.height-30)
+
+#define kSpeedUpScoreInterval 50
+#define kSpeedUpScoreLevelCeiling 3
 @interface Score : GameObjectBase
 
 @property (nonatomic) CCLabelBMFont * score;
