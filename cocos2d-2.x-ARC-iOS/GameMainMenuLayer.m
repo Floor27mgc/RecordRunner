@@ -7,7 +7,7 @@
 //
 #import "GameLayer.h"
 #import "GameMainMenuLayer.h"
-
+#import "CCBReader.h"
 
 @implementation GameMainMenuLayer
 @synthesize background;
@@ -37,7 +37,7 @@
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) )
     {
-        self.isTouchEnabled = YES;
+//        self.isTouchEnabled = YES;
         background = [CCSprite spriteWithFile:@"MainMenu.jpg"];
         background.anchorPoint = ccp(0,0); 
         background.position = ccp(0,0);
@@ -68,7 +68,8 @@
     }];
 
     CCMenuItem *item3 = [CCMenuItemImage itemWithNormalImage:@"newsButton.png" selectedImage:@"newsButton.png" block:^(id sender) {
-        [[CCDirector sharedDirector] replaceScene:[GameLayer sceneWithMode:kGameModeNoRotation]];
+//        [[CCDirector sharedDirector] replaceScene:[GameLayer sceneWithMode:kGameModeNoRotation]];
+        [[CCDirector sharedDirector] replaceScene:[CCBReader sceneWithNodeGraphFromFile:@"MainScene.ccbi"]];
     }];
 
     CCMenu *menu = [CCMenu menuWithItems:item1,item2,item3, nil];
