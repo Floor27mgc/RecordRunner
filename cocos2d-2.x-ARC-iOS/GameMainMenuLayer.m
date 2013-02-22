@@ -69,7 +69,7 @@
 
     CCMenuItem *item3 = [CCMenuItemImage itemWithNormalImage:@"newsButton.png" selectedImage:@"newsButton.png" block:^(id sender) {
 //        [[CCDirector sharedDirector] replaceScene:[GameLayer sceneWithMode:kGameModeNoRotation]];
-        [[CCDirector sharedDirector] replaceScene:[CCBReader sceneWithNodeGraphFromFile:@"MainScene.ccbi"]];
+        [[CCDirector sharedDirector] replaceScene:[CCBReader sceneWithNodeGraphFromFile:@"MainGameScene.ccbi"]];
     }];
 
     CCMenu *menu = [CCMenu menuWithItems:item1,item2,item3, nil];
