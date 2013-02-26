@@ -19,6 +19,8 @@
 		0801C92016D74C3E00ED1A1B /* parts_bomb-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0801C91C16D74C3E00ED1A1B /* parts_bomb-hd.png */; };
 		0801C92216D9FAEF00ED1A1B /* gameObjectCoin.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0801C92116D9FAEF00ED1A1B /* gameObjectCoin.ccbi */; };
 		0801C92716DA92C800ED1A1B /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0801C92616DA92C700ED1A1B /* Explosion.m */; };
+		0801C92A16DC7ABA00ED1A1B /* pickup_coin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0801C92916DC7ABA00ED1A1B /* pickup_coin.wav */; };
+		0801C92C16DC7B1900ED1A1B /* JewelBeat - Follow The Beat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0801C92B16DC7B1900ED1A1B /* JewelBeat - Follow The Beat.wav */; };
 		082018321678479B000A3F8D /* GameObjectInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 082018311678479B000A3F8D /* GameObjectInjector.m */; };
 		082018351679577D000A3F8D /* pattern.c in Sources */ = {isa = PBXBuildFile; fileRef = 082018341679577D000A3F8D /* pattern.c */; };
 		0840D59D163F4BCC003D5FE6 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0840D59C163F4BCC003D5FE6 /* GameLayer.m */; };
@@ -427,6 +429,8 @@
 		0801C92316DA927A00ED1A1B /* explosion.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = explosion.ccbi; path = ../CocosBuilder/explosion.ccbi; sourceTree = "<group>"; };
 		0801C92516DA92C700ED1A1B /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Explosion.h; path = sources/Explosion.h; sourceTree = SOURCE_ROOT; };
 		0801C92616DA92C700ED1A1B /* Explosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Explosion.m; path = sources/Explosion.m; sourceTree = SOURCE_ROOT; };
+		0801C92916DC7ABA00ED1A1B /* pickup_coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = pickup_coin.wav; path = ../Sound/pickup_coin.wav; sourceTree = "<group>"; };
+		0801C92B16DC7B1900ED1A1B /* JewelBeat - Follow The Beat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "JewelBeat - Follow The Beat.wav"; path = "../Sound/JewelBeat - Follow The Beat.wav"; sourceTree = "<group>"; };
 		082018301678479B000A3F8D /* GameObjectInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjectInjector.h; path = sources/GameObjectInjector.h; sourceTree = SOURCE_ROOT; };
 		082018311678479B000A3F8D /* GameObjectInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectInjector.m; path = sources/GameObjectInjector.m; sourceTree = SOURCE_ROOT; };
 		082018341679577D000A3F8D /* pattern.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pattern.c; path = ../sources/pattern.c; sourceTree = "<group>"; };
@@ -884,6 +888,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0801C92816DC7A9900ED1A1B /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				0801C92B16DC7B1900ED1A1B /* JewelBeat - Follow The Beat.wav */,
+				0801C92916DC7ABA00ED1A1B /* pickup_coin.wav */,
+			);
+			name = Sound;
+			sourceTree = "<group>";
+		};
 		0840D593163F435E003D5FE6 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
@@ -1465,6 +1478,7 @@
 		DC0C4A07154AB4DD00B4B727 /* RecordRunnerARC */ = {
 			isa = PBXGroup;
 			children = (
+				0801C92816DC7A9900ED1A1B /* Sound */,
 				08A372A416C8A69C006819E3 /* CocosBuilder */,
 				08D7E75C16803CB100826AAB /* Particles */,
 				08C86DBE167454C10082DBE5 /* fonts */,
@@ -1931,6 +1945,8 @@
 				0801C91F16D74C3E00ED1A1B /* parts_coin-hd.png in Resources */,
 				0801C92016D74C3E00ED1A1B /* parts_bomb-hd.png in Resources */,
 				0801C92216D9FAEF00ED1A1B /* gameObjectCoin.ccbi in Resources */,
+				0801C92A16DC7ABA00ED1A1B /* pickup_coin.wav in Resources */,
+				0801C92C16DC7B1900ED1A1B /* JewelBeat - Follow The Beat.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
