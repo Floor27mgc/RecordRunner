@@ -45,12 +45,16 @@ typedef enum {
 // GameLayer
 @interface GameLayer : CCLayer
 {
-
+//    GameObjectPlayer *player;
 }
 
++ (GameLayer *) sharedGameLayer;
+
+/*
 // returns a CCScene that contains the GameLayer as the only child
 //+(CCScene *) scene;
 +(CCScene *) sceneWithMode:(int) gameMode;
+
 // handle "game over" scenario
 - (void) gameOver;
 
@@ -89,21 +93,23 @@ typedef enum {
 - (void) speedUpGame;
 
 // Slow down the game;
-- (void) slowDownGame;
+- (void) slowDownGame; */
 @property (nonatomic, strong) GameObjectPlayer *player;
-
-@property (nonatomic, strong) Queue * bombFreePool;
-@property (nonatomic, strong) Queue * bombUsedPool;
 @property (nonatomic, strong) Queue * coinFreePool;
 @property (nonatomic, strong) Queue * coinUsedPool;
+@property (nonatomic, strong) GameObjectInjector * gameObjectInjector;
+@property (nonatomic, assign) Boolean isGameReadyToStart;
+/*@property (nonatomic, strong) Queue * bombFreePool;
+@property (nonatomic, strong) Queue * bombUsedPool;
+
 @property (nonatomic, strong) Queue * powerPool;
 @property (nonatomic, strong) Queue * powerIconFreePool;
 @property (nonatomic, strong) Queue * powerIconUsedPool;
 @property (nonatomic, strong) CCSprite *background;
 @property (nonatomic, strong) Score * score;
 @property (nonatomic, strong) Score * highScore;
-@property (nonatomic, strong) GameObjectInjector * gameObjectInjector;
+
 @property (nonatomic, strong) GameOverLayer * gameOverLayer;
-@property (nonatomic, strong) CCParticleSystemQuad *playerOnFireEmitter;
+@property (nonatomic, strong) CCParticleSystemQuad *playerOnFireEmitter; */
 
 @end

@@ -10,6 +10,7 @@
 #import "GameLayer.h"
 #import "SimpleAudioEngine.h"
 @implementation Coin
+
 @synthesize emitter=emitter_;
 // -----------------------------------------------------------------------------------
 - (id) init
@@ -34,8 +35,8 @@
     }
     else
     {
-//        [self recycleOffScreenObjWithUsedPool:self.parentGameLayer.coinUsedPool
-//                                     freePool:self.parentGameLayer.coinFreePool];
+//        [self recycleOffScreenObjWithUsedPool:[GameLayer sharedGameLayer].coinUsedPool
+//                                     freePool:[GameLayer sharedGameLayer].coinFreePool];
     }
 }
 
@@ -49,12 +50,12 @@
 
     self.emitter.sourcePosition = self.gameObjectSprite.position;
 
-	[self.parentGameLayer addChild:emitter_ z:10];
+	[[GameLayer sharedGameLayer] addChild:emitter_ z:10];
     
-    [self recycleObjectWithUsedPool:self.parentGameLayer.coinUsedPool
-                           freePool:self.parentGameLayer.coinFreePool];
+    [self recycleObjectWithUsedPool:[GameLayer sharedGameLayer].coinUsedPool
+                           freePool:[GameLayer sharedGameLayer].coinFreePool];
     // increment score
-    [self.parentGameLayer.score incrementScore:1];
+//    [[GameLayer sharedGameLayer].score incrementScore:1];
     [[SimpleAudioEngine sharedEngine] playEffect:@"coin-pick-up.wav"];
 }
 

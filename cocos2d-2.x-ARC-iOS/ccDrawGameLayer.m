@@ -23,7 +23,7 @@
     }
     UIGraphicsBeginImageContext(self.boundingBox.size);    
     CGContextRef ctx = UIGraphicsGetCurrentContext();
-    CGContextAddPath(ctx, self.parentGameLayer.player.playerBoundingPath);
+    CGContextAddPath(ctx, [GameLayer sharedGameLayer].player.playerBoundingPath);
     CGContextSetStrokeColorWithColor(ctx,[UIColor whiteColor].CGColor);
     CGContextStrokePath(ctx);
     UIGraphicsEndImageContext();
@@ -50,7 +50,7 @@
 
 - (id) initWithGameLayer:(GameLayer *) gamelayer
 {
-    self.parentGameLayer = gamelayer;
+//    [GameLayer sharedGameLayer] = gamelayer;
     return self;
 }
 @end

@@ -10,7 +10,7 @@
 #import "GameLayer.h"
 
 @implementation Score
-
+/*
 @synthesize score = _score;
 @synthesize scoreValue = _scoreValue;
 @synthesize prevScore = _prevScore;
@@ -60,7 +60,7 @@
     {
         if (currenScoreLevel < newScoreLevel)
         {
-            [self.parentGameLayer speedUpGame];
+            [[GameLayer sharedGameLayer] speedUpGame];
         }
     }
 }
@@ -80,7 +80,7 @@
     {
         if (currenScoreLevel > newScoreLevel)
         {
-            [self.parentGameLayer slowDownGame];
+            [[GameLayer sharedGameLayer] slowDownGame];
         }
     }
 }
@@ -129,5 +129,5 @@
     _scoreValue = 0;
     [self showNextFrame];
 }
-
+*/
 @end

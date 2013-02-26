@@ -9,7 +9,7 @@
 #import "PowerIcon.h"
 
 @implementation PowerIcon
-
+/*
 @synthesize type;
 
 // -----------------------------------------------------------------------------------
@@ -50,24 +50,24 @@
         case fire_missle:
             NSLog(@"Creating a missle PowerUp");
             newPower = [[PowerFireMissle alloc] initWithType:fire_missle
-                                                   gameLayer:self.parentGameLayer];
+                                                   gameLayer:[GameLayer sharedGameLayer]];
             break;
         case slow_down:
             NSLog(@"Creating a slow down PowerUp");
             newPower = [[PowerSlowDown alloc] initWithType:slow_down
-                                                 gameLayer:self.parentGameLayer];
+                                                 gameLayer:[GameLayer sharedGameLayer]];
             break;
         case shield:
             NSLog(@"Creating a shield PowerUp");
             newPower = [[PowerShield alloc] initWithType:shield
-                                               gameLayer:self.parentGameLayer];
+                                               gameLayer:[GameLayer sharedGameLayer]];
         default:
             break;
     }
     
     // remove PowerIcon from the parent game layer
-    [self recycleObjectWithUsedPool:self.parentGameLayer.powerIconUsedPool
-                           freePool:self.parentGameLayer.powerIconFreePool];
+    [self recycleObjectWithUsedPool:[GameLayer sharedGameLayer].powerIconUsedPool
+                           freePool:[GameLayer sharedGameLayer].powerIconFreePool];
     
     // add Power object to parentGameLayer
     [newPower addPower];
@@ -100,5 +100,5 @@
     
     return fileName;
 }
-
+*/
 @end

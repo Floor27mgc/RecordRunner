@@ -10,7 +10,7 @@
 #import "GameOverLayer.h"
 
 @implementation GameOverLayer
-
+/*
 @synthesize parentGameLayer;
 @synthesize noButton = _noButton;
 @synthesize yesButton = _yesButton;
@@ -139,7 +139,7 @@
 // -----------------------------------------------------------------------------------
 - (void) yesTapped:(id)sender
 {
-    [self.parentGameLayer startOver];
+    [[GameLayer sharedGameLayer] startOver];
     self.visible = NO;
 }
 
@@ -152,7 +152,7 @@
 // -----------------------------------------------------------------------------------
 - (void) resetTapped:(id)sender
 {
-    [self.parentGameLayer resetHighScore];
+    [[GameLayer sharedGameLayer] resetHighScore];
 }
-
+*/
 @end

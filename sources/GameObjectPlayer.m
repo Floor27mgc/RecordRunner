@@ -9,6 +9,7 @@
 #import "GameObjectPlayer.h"
 #import "GameLayer.h"
 #import "common.h"
+#import "GameObjectInjector.h"
 @implementation GameObjectPlayer
 
 @synthesize direction;
@@ -26,10 +27,27 @@
 // -----------------------------------------------------------------------------------
 - (void) showNextFrame
 {
+/*    static int direction_factor = -1;
+    if (self.position.x >= 0)
+    {
+        [self setPosition:ccp(self.position.x + direction_factor, self.position.y)];
+    }
+    
+    if (self.position.x == 0)
+    {
+        direction_factor = 1;
+    }
+    
+    if (self.position.x == COMMON_SCREEN_CENTER_X)
+    {
+        direction_factor = -1;
+    }
+ */
+
     if (self.playerRadialSpeed == 0)
     {
         // The player is in the center
-        if (CGPointEqualToPoint(self.gameObjectSprite.position, COMMON_SCREEN_CENTER))
+        if (CGPointEqualToPoint(self.position, COMMON_SCREEN_CENTER))
         {
             self.angleRotated = self.angleRotated - self.gameObjectAngularVelocity;
             self.playerFacingAngle = self.angleRotated;
@@ -51,7 +69,7 @@
             playerBoundingPath = PlayerBoundingPathStill;
         }
         
-        self.gameObjectSprite.rotation = self.playerFacingAngle;
+        self.rotation = self.playerFacingAngle;
         self.dummyPlayer.rotation = self.gameObjectSprite.rotation;
 //        NSLog(@"self.angleRotated = %d",self.angleRotated);        
     }
@@ -164,7 +182,7 @@
 // -----------------------------------------------------------------------------------
 - (void) setSheilded:(BOOL)trigger
 {
-    [self.parentGameLayer removeChild:self.gameObjectSprite cleanup:YES];
+    [[GameLayer sharedGameLayer] removeChild:self.gameObjectSprite cleanup:YES];
     
     if (trigger) {
         hasShield = YES;
@@ -175,7 +193,7 @@
     }
     
     self.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
-    [self.parentGameLayer addChild:self.gameObjectSprite];
+    [[GameLayer sharedGameLayer] addChild:self.gameObjectSprite];
 }
 
 // -----------------------------------------------------------------------------------
@@ -184,6 +202,22 @@
     direction = (direction == kMoveInToOut) ? kMoveOutToIn : kMoveInToOut;
     self.playerRadialSpeed = kPlayerRadialSpeed;
     playerBoundingPath = nil;
-    playerBoundingPath = self.PlayerBoundingPathCrossing;    
+    playerBoundingPath = self.PlayerBoundingPathCrossing;
+    NSLog(@"%fx%f",COMMON_SCREEN_WIDTH, COMMON_SCREEN_HEIGHT);
+    
+//    GameLayer *tempLayer = [GameLayer sharedGameLayer];
+//    [tempLayer.gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:COIN_TYPE effectType:kRotation]; 
+}
+
+- (void) onEnter
+{
+    // Setup a delegate method for the animationManager of the explosion
+//    CCBAnimationManager* animationManager = self.userObject;
+//    animationManager.delegate = self;
+}
+- (void) completedAnimationSequenceNamed:(NSString *)name
+{
+    // Remove the explosion object after the animation has finished
+    [GameLayer sharedGameLayer].isGameReadyToStart = TRUE;
 }
 @end
