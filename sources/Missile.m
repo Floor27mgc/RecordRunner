@@ -39,7 +39,7 @@
         CGPoint curPoint = [self.gameObjectSprite position];
         
         if (curPoint.y > windowSize.height) {
-            [self removeFromGamePool:self.parentGameLayer.bombUsedPool];
+            [self removeFromGamePool:[GameLayer sharedGameLayer].bombUsedPool];
         }*/
 /*    }
 }
@@ -47,15 +47,15 @@
 // -----------------------------------------------------------------------------------
 - (void) handleCollision
 {
-    //[self removeFromGamePool:self.parentGameLayer.bombUsedPool];
+    //[self removeFromGamePool:[GameLayer sharedGameLayer].bombUsedPool];
     NSLog(@"Missle is hit -- Entering");
     _isHit = YES;
     
     [self resetObject];
     
-    [self.parentGameLayer gameOver];
+    [[GameLayer sharedGameLayer] gameOver];
     
-    [self.parentGameLayer.score decrementScore:1000];
+    [[GameLayer sharedGameLayer].score decrementScore:1000];
     
     NSLog(@"Missle is hit -- Exiting");
 }

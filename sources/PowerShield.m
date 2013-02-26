@@ -16,7 +16,7 @@
 - (void) addPower
 {
     _startTime = [NSDate date];
-    [self.parentGameLayer.player setSheilded:YES];
+    [[GameLayer sharedGameLayer].player setSheilded:YES];
     
     [super addPower];
 }
@@ -27,7 +27,7 @@
     NSTimeInterval elapsed = abs([_startTime timeIntervalSinceNow]);
     NSLog(@"Shield is running");
     if (elapsed > SHIELD_LIFETIME_SEC) {
-        [self.parentGameLayer.player setSheilded:NO];
+        [[GameLayer sharedGameLayer].player setSheilded:NO];
         [super resetPower];
     }
 }

@@ -139,7 +139,7 @@
 // -----------------------------------------------------------------------------------
 - (void) yesTapped:(id)sender
 {
-    [self.parentGameLayer startOver];
+    [[GameLayer sharedGameLayer] startOver];
     self.visible = NO;
 }
 
@@ -152,7 +152,7 @@
 // -----------------------------------------------------------------------------------
 - (void) resetTapped:(id)sender
 {
-    [self.parentGameLayer resetHighScore];
+    [[GameLayer sharedGameLayer] resetHighScore];
 }
 */
 @end

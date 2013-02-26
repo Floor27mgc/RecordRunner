@@ -159,8 +159,8 @@
 // -----------------------------------------------------------------------------------
 - (void) resetObject
 {
-    self.gameObjectSprite.position = ccp(0,0);
-    self.gameObjectSprite.visible = 0;
+    self.position = ccp(0,0);
+    self.visible = 0;
 }
 
 // -----------------------------------------------------------------------------------

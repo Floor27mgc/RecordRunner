@@ -60,7 +60,7 @@
     {
         if (currenScoreLevel < newScoreLevel)
         {
-            [self.parentGameLayer speedUpGame];
+            [[GameLayer sharedGameLayer] speedUpGame];
         }
     }
 }
@@ -80,7 +80,7 @@
     {
         if (currenScoreLevel > newScoreLevel)
         {
-            [self.parentGameLayer slowDownGame];
+            [[GameLayer sharedGameLayer] slowDownGame];
         }
     }
 }

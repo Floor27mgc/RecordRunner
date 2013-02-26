@@ -182,7 +182,7 @@
 // -----------------------------------------------------------------------------------
 - (void) setSheilded:(BOOL)trigger
 {
-    [self.parentGameLayer removeChild:self.gameObjectSprite cleanup:YES];
+    [[GameLayer sharedGameLayer] removeChild:self.gameObjectSprite cleanup:YES];
     
     if (trigger) {
         hasShield = YES;
@@ -193,7 +193,7 @@
     }
     
     self.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
-    [self.parentGameLayer addChild:self.gameObjectSprite];
+    [[GameLayer sharedGameLayer] addChild:self.gameObjectSprite];
 }
 
 // -----------------------------------------------------------------------------------
@@ -218,6 +218,6 @@
 - (void) completedAnimationSequenceNamed:(NSString *)name
 {
     // Remove the explosion object after the animation has finished
-    self.parentGameLayer.isGameReadyToStart = TRUE;
+    [GameLayer sharedGameLayer].isGameReadyToStart = TRUE;
 }
 @end

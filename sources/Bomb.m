@@ -35,24 +35,24 @@
     }
     else
     {
-        //        [self recycleOffScreenObjWithUsedPool:self.parentGameLayer.coinUsedPool
-        //                                     freePool:self.parentGameLayer.coinFreePool];
+        //        [self recycleOffScreenObjWithUsedPool:[GameLayer sharedGameLayer].coinUsedPool
+        //                                     freePool:[GameLayer sharedGameLayer].coinFreePool];
     }
 }
 
 // -----------------------------------------------------------------------------------
 - (void) handleCollision
 {
-    [self recycleObjectWithUsedPool:self.parentGameLayer.bombUsedPool
-                           freePool:self.parentGameLayer.bombFreePool];
+    [self recycleObjectWithUsedPool:[GameLayer sharedGameLayer].bombUsedPool
+                           freePool:[GameLayer sharedGameLayer].bombFreePool];
 
     // if the player has a shield, act accordingly
-    if (self.parentGameLayer.player.hasShield) {
-        [self.parentGameLayer.score incrementScore:2];
+    if ([GameLayer sharedGameLayer].player.hasShield) {
+        [[GameLayer sharedGameLayer].score incrementScore:2];
     } else {
-        [self.parentGameLayer gameOver];
+        [[GameLayer sharedGameLayer] gameOver];
     
-        [self.parentGameLayer.score decrementScore:1000];
+        [[GameLayer sharedGameLayer].score decrementScore:1000];
     }
 }
 

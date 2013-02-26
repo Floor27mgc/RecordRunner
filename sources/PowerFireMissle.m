@@ -15,19 +15,19 @@
 // -----------------------------------------------------------------------------------
 - (void) addPower
 {
-    _missle = [Missile initWithGameLayer:self.parentGameLayer
+    _missle = [Missile initWithGameLayer:[GameLayer sharedGameLayer]
                         imageFileName:@"missile.gif"
                           objectSpeed:4];
     
     _missle.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
     _missle.angleRotated = 0;
-    CGPoint preferredLocation = [self.parentGameLayer generateRandomTrackCoords];
+    CGPoint preferredLocation = [[GameLayer sharedGameLayer] generateRandomTrackCoords];
     
     _missle.radius = preferredLocation.x - COMMON_SCREEN_CENTER.x;
     [_missle moveTo:preferredLocation];
 
     //add missle to parent game layer
-    [self.parentGameLayer addChild:_missle.gameObjectSprite];
+    [[GameLayer sharedGameLayer] addChild:_missle.gameObjectSprite];
     
     [super addPower];
 }
