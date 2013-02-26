@@ -80,9 +80,10 @@
     // node space for collision detection
     // Once converted, we will CGPathContainsPoint this node space coordinate with
     // the path to do a match.
+    GameLayer *gameLayer = [GameLayer sharedGameLayer];
     
-    CGPoint gameObjectPoint = [self.parentGameLayer.player.dummyPlayer convertToNodeSpace: self.gameObjectSprite.position];
-    if (CGPathContainsPoint(self.parentGameLayer.player.playerBoundingPath,
+    CGPoint gameObjectPoint = [gameLayer.player.dummyPlayer convertToNodeSpace: self.position];
+    if (CGPathContainsPoint(gameLayer.player.playerBoundingPath,
                             NULL,
                             gameObjectPoint,
                             true))
@@ -99,19 +100,19 @@
 // -----------------------------------------------------------------------------------
 - (void) moveTo:(CGPoint) targetPoint
 {
-    [_gameObjectSprite setPosition: targetPoint];
+    [self setPosition: targetPoint];
 }
 
 // -----------------------------------------------------------------------------------
 - (CGPoint) getGameObjectSpritePosition
 {
-    return _gameObjectSprite.position;
+    return self.position;
 }
 
 // -----------------------------------------------------------------------------------
 - (void) moveBy:(CGPoint) relativePoint
 {
-    [_gameObjectSprite setPosition:ccp(_gameObjectSprite.position.x + relativePoint.x,
+    [self setPosition:ccp(_gameObjectSprite.position.x + relativePoint.x,
                                        _gameObjectSprite.position.y + relativePoint.y)];
 }
 
@@ -175,7 +176,7 @@
 // -----------------------------------------------------------------------------------
 - (void) showNextFrame
 {
-    
+    NSLog(@"in base clas");
 }
 
 // -----------------------------------------------------------------------------------

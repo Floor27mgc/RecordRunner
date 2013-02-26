@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "common.h"
 #import "GameObjectBase.h"
+#import "CCBAnimationManager.h"
 #define kPlayerRadialSpeed 32
 #define kPlayerHitBoxSegmentWidth kPlayerSpeed
 

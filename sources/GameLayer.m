@@ -19,13 +19,26 @@
 #import "ccDrawGameLayer.h"
 #import "common.h"
 #import "PowerIcon.h"
+#import "CCBReader.h"
 
 #pragma mark - GameLayer
 
 // GameLayer implementation
 @implementation GameLayer
-@synthesize player = _player;
+@synthesize player;
+@synthesize coinFreePool = _coinFreePool;
+@synthesize coinUsedPool = _coinUsedPool;
+@synthesize gameObjectInjector;
+@synthesize isGameReadyToStart;
 
+static GameLayer *sharedGameLayer;
+
++ (GameLayer *) sharedGameLayer
+{
+    return sharedGameLayer;
+}
+
+/*
 @synthesize score = _score;
 @synthesize highScore = _highScore;
 
@@ -34,8 +47,7 @@
 @synthesize bombFreePool = _bombFreePool;
 @synthesize bombUsedPool = _bombUsedPool;
 
-@synthesize coinFreePool = _coinFreePool;
-@synthesize coinUsedPool = _coinUsedPool;
+
 
 @synthesize powerPool = _powerPool;
 @synthesize powerIconFreePool = _powerIconFreePool;
@@ -43,7 +55,7 @@
 
 @synthesize gameOverLayer = _gameOverLayer;
 
-@synthesize gameObjectInjector;
+
 @synthesize playerOnFireEmitter;
 // -----------------------------------------------------------------------------------
 // Helper class method that creates a Scene with the GameLayer as the only child.
@@ -81,7 +93,7 @@
     }
     return layer;
 }
-
+*/
 // -----------------------------------------------------------------------------------
 // on "init" you need to initialize your instance
 -(id) init
@@ -90,6 +102,32 @@
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) )
     {
+        isGameReadyToStart = FALSE;
+        sharedGameLayer = self;
+        
+        // Create coin free pool (queue)
+        _coinFreePool = [Queue initWithMinSize:MIN_NUM_COINS_PER_TRACK];
+        
+        // Create coin used pool (queue)
+        _coinUsedPool = [Queue initWithMinSize:MIN_NUM_COINS_PER_TRACK];
+        
+        // Create NUM_REWARDS coins and add them to the free pool
+        for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
+            for (int i=0; i<(trackNum+1) * MIN_NUM_BOMBS_PER_TRACK; i++) {
+                Coin *_coin = (Coin*)[CCBReader nodeGraphFromFile:@"gameObjectCoin.ccbi"];
+                _coin.visible = 0;
+                _coin.gameObjectAngularVelocity = kDefaultGameObjectAngularVelocityInDegree;
+                [_coinFreePool addObject:_coin toTrack:trackNum];
+                
+                // add coin to GameLayer
+                [self addChild: _coin z:10];
+            }
+        }
+        
+        // Create Game Object injector to inject Bomb, coins, etc
+        gameObjectInjector = [GameObjectInjector initWithGameLayer:self];
+    }
+ /*
         self.isTouchEnabled = YES;
         // This is where we create ALL game objects in this game layer
         // This includes gameObjects like bombs, players, background..etc.
@@ -197,14 +235,29 @@
         [_score moveBy:ccp(0, -20)];
         [self addChild:_score.score];
         
-        // Create Game Object injector to inject Bomb, coins, etc
-        gameObjectInjector = [GameObjectInjector initWithGameLayer:self];        
+       
     }
 
-    [self schedule: @selector(update:)];
+    [self schedule: @selector(update:)]; */
 	return self;
 }
 
+- (void) onEnter
+{
+    [super onEnter];
+    
+    // Schedule a selector that is called every frame
+    [self schedule:@selector(update:)];
+    
+}
+
+- (void) onExit
+{
+    [super onExit];
+    
+    // Remove the scheduled selector
+    [self unscheduleAllSelectors];
+}
 // -----------------------------------------------------------------------------------
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
@@ -221,17 +274,22 @@
 // -----------------------------------------------------------------------------------
 - (void) update:(ccTime) dt
 {
-    [_player showNextFrame];
+/*    if (isGameReadyToStart == FALSE)
+    {
+        return;
+    } */
     
+    [player showNextFrame];
+
     // generate Game Objectsrandomly
     if (arc4random() % RANDOM_MAX <= 5) {
         [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:COIN_TYPE effectType:kRotation];
     }
-
+/*
     // generate Game Objectsrandomly
     if (arc4random() % RANDOM_MAX == 1) {
         [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:BOMB_TYPE effectType:kRotation];
-    }
+    }*/
     // Trigger each bomb objects and coin object proceed to
     // show the next frame.  Each object will be responsible
     // for the following task:
@@ -248,11 +306,11 @@
             [POOL_OBJS_ON_TRACK(_coinUsedPool, trackNum)[i] showNextFrame];
         }
         
-        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_bombUsedPool, trackNum); ++i) {
-            [POOL_OBJS_ON_TRACK(_bombUsedPool, trackNum)[i] showNextFrame];
-        }
+//        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_bombUsedPool, trackNum); ++i) {
+//            [POOL_OBJS_ON_TRACK(_bombUsedPool, trackNum)[i] showNextFrame];
+//        }
     }
-    
+/*
     // update high score, if needed
     [self updateHighScore];
     [_score showNextFrame];
@@ -273,9 +331,10 @@
         for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_powerPool, trackNum); ++i) {
             [POOL_OBJS_ON_TRACK(_powerPool, trackNum)[i] runPower];
         }
-    }
+    } */
 }
 
+/*
 // -----------------------------------------------------------------------------------
 - (bool) updateHighScore
 {
@@ -429,13 +488,17 @@
         }
     }
 }
-
+*/
 // -----------------------------------------------------------------------------------
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	[self.player changeDirection];
+    
+/*CCNode* explosion = [CCBReader nodeGraphFromFile:@"Explosion.ccbi"];
+    explosion.position = self.position;
+    [self.parent addChild:explosion]; */
 }
-
+/*
 // -----------------------------------------------------------------------------------
 - (void) changeGameObjectsSpeed:(Queue *)pool up:(BOOL)speedUp speed:(int)factor
 {
@@ -500,5 +563,5 @@
     
     [self changeGameObjectsSpeed:self.powerIconFreePool
                               up:NO speed:1];
-}
+} */
 @end

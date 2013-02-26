@@ -13,6 +13,12 @@
 		0801C91616D5F41C00ED1A1B /* parts_coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 0801C91216D5F41C00ED1A1B /* parts_coin.png */; };
 		0801C91716D5F41C00ED1A1B /* parts_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 0801C91316D5F41C00ED1A1B /* parts_player.png */; };
 		0801C91816D5F41C00ED1A1B /* parts_record.png in Resources */ = {isa = PBXBuildFile; fileRef = 0801C91416D5F41C00ED1A1B /* parts_record.png */; };
+		0801C91D16D74C3E00ED1A1B /* parts_record-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0801C91916D74C3E00ED1A1B /* parts_record-hd.png */; };
+		0801C91E16D74C3E00ED1A1B /* parts_player-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0801C91A16D74C3E00ED1A1B /* parts_player-hd.png */; };
+		0801C91F16D74C3E00ED1A1B /* parts_coin-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0801C91B16D74C3E00ED1A1B /* parts_coin-hd.png */; };
+		0801C92016D74C3E00ED1A1B /* parts_bomb-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0801C91C16D74C3E00ED1A1B /* parts_bomb-hd.png */; };
+		0801C92216D9FAEF00ED1A1B /* gameObjectCoin.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0801C92116D9FAEF00ED1A1B /* gameObjectCoin.ccbi */; };
+		0801C92716DA92C800ED1A1B /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0801C92616DA92C700ED1A1B /* Explosion.m */; };
 		082018321678479B000A3F8D /* GameObjectInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 082018311678479B000A3F8D /* GameObjectInjector.m */; };
 		082018351679577D000A3F8D /* pattern.c in Sources */ = {isa = PBXBuildFile; fileRef = 082018341679577D000A3F8D /* pattern.c */; };
 		0840D59D163F4BCC003D5FE6 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0840D59C163F4BCC003D5FE6 /* GameLayer.m */; };
@@ -413,6 +419,14 @@
 		0801C91216D5F41C00ED1A1B /* parts_coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parts_coin.png; sourceTree = "<group>"; };
 		0801C91316D5F41C00ED1A1B /* parts_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parts_player.png; sourceTree = "<group>"; };
 		0801C91416D5F41C00ED1A1B /* parts_record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parts_record.png; sourceTree = "<group>"; };
+		0801C91916D74C3E00ED1A1B /* parts_record-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parts_record-hd.png"; sourceTree = "<group>"; };
+		0801C91A16D74C3E00ED1A1B /* parts_player-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parts_player-hd.png"; sourceTree = "<group>"; };
+		0801C91B16D74C3E00ED1A1B /* parts_coin-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parts_coin-hd.png"; sourceTree = "<group>"; };
+		0801C91C16D74C3E00ED1A1B /* parts_bomb-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parts_bomb-hd.png"; sourceTree = "<group>"; };
+		0801C92116D9FAEF00ED1A1B /* gameObjectCoin.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = gameObjectCoin.ccbi; path = ../CocosBuilder/gameObjectCoin.ccbi; sourceTree = "<group>"; };
+		0801C92316DA927A00ED1A1B /* explosion.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = explosion.ccbi; path = ../CocosBuilder/explosion.ccbi; sourceTree = "<group>"; };
+		0801C92516DA92C700ED1A1B /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Explosion.h; path = sources/Explosion.h; sourceTree = SOURCE_ROOT; };
+		0801C92616DA92C700ED1A1B /* Explosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Explosion.m; path = sources/Explosion.m; sourceTree = SOURCE_ROOT; };
 		082018301678479B000A3F8D /* GameObjectInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjectInjector.h; path = sources/GameObjectInjector.h; sourceTree = SOURCE_ROOT; };
 		082018311678479B000A3F8D /* GameObjectInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectInjector.m; path = sources/GameObjectInjector.m; sourceTree = SOURCE_ROOT; };
 		082018341679577D000A3F8D /* pattern.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pattern.c; path = ../sources/pattern.c; sourceTree = "<group>"; };
@@ -941,6 +955,8 @@
 				85B53BAC1673C5CC001163F7 /* Score.m */,
 				850FAD0E16BD9D8F00EBF5FF /* PowerShield.h */,
 				850FAD0F16BD9D8F00EBF5FF /* PowerShield.m */,
+				0801C92516DA92C700ED1A1B /* Explosion.h */,
+				0801C92616DA92C700ED1A1B /* Explosion.m */,
 			);
 			name = game;
 			sourceTree = "<group>";
@@ -1315,6 +1331,8 @@
 		08A372A416C8A69C006819E3 /* CocosBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				0801C92316DA927A00ED1A1B /* explosion.ccbi */,
+				0801C92116D9FAEF00ED1A1B /* gameObjectCoin.ccbi */,
 				0801C90D16D5F06400ED1A1B /* MainGameLayer.ccbi */,
 				0801C90E16D5F06400ED1A1B /* MainGameScene.ccbi */,
 			);
@@ -1324,6 +1342,10 @@
 		08A372AB16C8A856006819E3 /* CocosBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				0801C91916D74C3E00ED1A1B /* parts_record-hd.png */,
+				0801C91A16D74C3E00ED1A1B /* parts_player-hd.png */,
+				0801C91B16D74C3E00ED1A1B /* parts_coin-hd.png */,
+				0801C91C16D74C3E00ED1A1B /* parts_bomb-hd.png */,
 				0801C91116D5F41C00ED1A1B /* parts_bomb.png */,
 				0801C91216D5F41C00ED1A1B /* parts_coin.png */,
 				0801C91316D5F41C00ED1A1B /* parts_player.png */,
@@ -1904,6 +1926,11 @@
 				0801C91616D5F41C00ED1A1B /* parts_coin.png in Resources */,
 				0801C91716D5F41C00ED1A1B /* parts_player.png in Resources */,
 				0801C91816D5F41C00ED1A1B /* parts_record.png in Resources */,
+				0801C91D16D74C3E00ED1A1B /* parts_record-hd.png in Resources */,
+				0801C91E16D74C3E00ED1A1B /* parts_player-hd.png in Resources */,
+				0801C91F16D74C3E00ED1A1B /* parts_coin-hd.png in Resources */,
+				0801C92016D74C3E00ED1A1B /* parts_bomb-hd.png in Resources */,
+				0801C92216D9FAEF00ED1A1B /* gameObjectCoin.ccbi in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1934,6 +1961,7 @@
 				8503011416A9FF790035D7C1 /* Missile.m in Sources */,
 				859EC13C16B60FB7003BFF41 /* PowerSlowDown.m in Sources */,
 				850FAD1016BD9D8F00EBF5FF /* PowerShield.m in Sources */,
+				0801C92716DA92C800ED1A1B /* Explosion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

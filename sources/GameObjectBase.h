@@ -14,7 +14,7 @@
 #define TRACKNUM_FROM_RADIUS (self.radius/COMMON_GRID_WIDTH - 1)
 @class GameLayer;
 
-@interface GameObjectBase : NSObject
+@interface GameObjectBase : CCSprite
 
 @property (nonatomic, assign) CCSprite *gameObjectSprite;
 @property (nonatomic, assign) GameLayer *parentGameLayer;

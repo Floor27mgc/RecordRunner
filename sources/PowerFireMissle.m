@@ -9,7 +9,7 @@
 #import "PowerFireMissle.h"
 
 @implementation PowerFireMissle
-
+/*
 @synthesize missle = _missle;
 
 // -----------------------------------------------------------------------------------
@@ -50,5 +50,5 @@
     [_missle resetObject];
     [super resetPower];
 }
-
+*/
 @end

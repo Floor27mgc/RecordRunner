@@ -10,7 +10,7 @@
 #import "GameOverLayer.h"
 
 @implementation GameOverLayer
-
+/*
 @synthesize parentGameLayer;
 @synthesize noButton = _noButton;
 @synthesize yesButton = _yesButton;
@@ -154,5 +154,5 @@
 {
     [self.parentGameLayer resetHighScore];
 }
-
+*/
 @end

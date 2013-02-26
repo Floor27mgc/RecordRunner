@@ -10,7 +10,7 @@
 #import "GameLayer.h"
 
 @implementation Score
-
+/*
 @synthesize score = _score;
 @synthesize scoreValue = _scoreValue;
 @synthesize prevScore = _prevScore;
@@ -129,5 +129,5 @@
     _scoreValue = 0;
     [self showNextFrame];
 }
-
+*/
 @end

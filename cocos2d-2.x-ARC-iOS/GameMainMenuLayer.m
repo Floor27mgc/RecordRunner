@@ -10,6 +10,7 @@
 #import "CCBReader.h"
 
 @implementation GameMainMenuLayer
+/*
 @synthesize background;
 
 // -----------------------------------------------------------------------------------
@@ -108,5 +109,5 @@
 {
 //	[self.player changeDirection];
 }
-
+*/
 @end

@@ -9,7 +9,7 @@
 #import "PowerIcon.h"
 
 @implementation PowerIcon
-
+/*
 @synthesize type;
 
 // -----------------------------------------------------------------------------------
@@ -100,5 +100,5 @@
     
     return fileName;
 }
-
+*/
 @end

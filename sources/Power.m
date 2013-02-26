@@ -9,7 +9,7 @@
 #import "Power.h"
 
 @implementation Power
-
+/*
 @synthesize powerType;
 @synthesize parentGameLayer;
 @synthesize myTrackNum;
@@ -45,5 +45,5 @@
     [self.parentGameLayer.powerPool removeObjectFromTrack:self.myTrackNum
                                                withObject:self];
 }
-
+*/
 @end

@@ -10,6 +10,7 @@
 #import "GameLayer.h"
 #import "SimpleAudioEngine.h"
 @implementation Coin
+
 @synthesize emitter=emitter_;
 // -----------------------------------------------------------------------------------
 - (id) init
@@ -54,7 +55,7 @@
     [self recycleObjectWithUsedPool:self.parentGameLayer.coinUsedPool
                            freePool:self.parentGameLayer.coinFreePool];
     // increment score
-    [self.parentGameLayer.score incrementScore:1];
+//    [self.parentGameLayer.score incrementScore:1];
     [[SimpleAudioEngine sharedEngine] playEffect:@"coin-pick-up.wav"];
 }
 

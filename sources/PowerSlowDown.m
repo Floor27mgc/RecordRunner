@@ -9,7 +9,7 @@
 #import "PowerSlowDown.h"
 
 @implementation PowerSlowDown
-
+/*
 @synthesize startTime = _startTime;
 @synthesize mySpeed = _mySpeed;
 @synthesize didISlowDown = _didISlowDown;
@@ -106,7 +106,7 @@ static BOOL slowedDown = NO;
     } else {
     }
 }
-
+*/
 // ----------------------------------------------------------------------------------
 /*- (void) changeGameLayerObjectsSpeed:(Queue *)pool up:(BOOL)speedUp speed:(int)factor
 {

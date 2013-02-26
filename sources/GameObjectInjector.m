@@ -10,6 +10,7 @@
 #import "pattern.h"
 
 @implementation GameObjectInjector
+
 @synthesize mainGameLayer;
 @synthesize lastObject;
 @synthesize injectorHitBoxPath;
@@ -80,8 +81,8 @@
     switch (_gameObjectType)
     {
         case BOMB_TYPE:
-            usedPool = self.mainGameLayer.bombUsedPool;
-            freePool = self.mainGameLayer.bombFreePool;
+//            usedPool = self.mainGameLayer.bombUsedPool;
+//            freePool = self.mainGameLayer.bombFreePool;
             maxlimit = (MIN_NUM_BOMBS_PER_TRACK * (trackNum + 1));
             break;
         case COIN_TYPE:
@@ -90,8 +91,8 @@
             maxlimit = (MIN_NUM_COINS_PER_TRACK * (trackNum + 1));
             break;
         case POWER_ICON_TYPE:
-            usedPool = self.mainGameLayer.powerIconUsedPool;
-            freePool = self.mainGameLayer.powerIconFreePool;
+//            usedPool = self.mainGameLayer.powerIconUsedPool;
+//            freePool = self.mainGameLayer.powerIconFreePool;
             maxlimit = (MIN_NUM_POWER_ICONS_PER_TRACK * (trackNum + 1));
             break;
         case SPACE_TYPE:
@@ -135,7 +136,8 @@
             return nil;
         }        
     }
-    
+
+/*
     for (int i=0; i<POOL_OBJ_COUNT_ON_TRACK(self.mainGameLayer.bombUsedPool, trackNum); i++)
     {
         NSMutableArray *currentObjectArray = POOL_OBJS_ON_TRACK(self.mainGameLayer.bombUsedPool, trackNum);
@@ -207,14 +209,14 @@
             return nil;
         }
     }
-    
+*/    
     newObject = [freePool takeObjectFromTrack:trackNum];
     if (newObject != nil) {
-        newObject.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
+        newObject.anchorPoint = ccp(0.5,0.5);
         newObject.angleRotated = insertionAngle;
         newObject.radius = RADIUS_FROM_TRACKNUM(trackNum);
         [newObject moveTo:preferredLocation];
-        newObject.gameObjectSprite.visible = 1;
+        newObject.visible = 1;
         [usedPool addObject:newObject toTrack:trackNum];
     } else {
         NSLog(@"out of object");
@@ -243,10 +245,6 @@
     {
         for (x = 0; x < PATTERN_NUM_COLS; x++)
         {
-/*            objCreated =
-            [self injectObjectAt:currentLocation
-                  gameObjectType:injectorPatternArray[_pattern_type][y][x]
-                      effectType:kHeartPumping]; */
             currentLocation.x = currentLocation.x + COMMON_GRID_WIDTH;
             
             if (objCreated != nil)
@@ -266,4 +264,5 @@
     return (((self.lastObject.gameObjectSprite.position.y > 0) ||
             (self.lastObject.gameObjectSprite.visible   == 0))?YES:NO);
 }
+
 @end

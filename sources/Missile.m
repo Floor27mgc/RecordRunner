@@ -10,7 +10,7 @@
 #import "Missile.h"
 
 @implementation Missile
-
+/*
 @synthesize isHit = _isHit;
 
 // -----------------------------------------------------------------------------------
@@ -41,7 +41,7 @@
         if (curPoint.y > windowSize.height) {
             [self removeFromGamePool:self.parentGameLayer.bombUsedPool];
         }*/
-    }
+/*    }
 }
 
 // -----------------------------------------------------------------------------------
@@ -65,5 +65,5 @@
 {
     [super resetObject];
 }
-
+*/
 @end
