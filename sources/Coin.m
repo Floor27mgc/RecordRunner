@@ -43,15 +43,6 @@
 // -----------------------------------------------------------------------------------
 - (void) handleCollision
 {
-//    id FadeAction = [CCFadeOut actionWithDuration:1];
-//    id callHandler = [CCCallFunc actionWithTarget:self selector:@selector(handleCollision)];
-//    [self.gameObjectSprite runAction:[CCSequence actions:FadeAction, nil]];
-    self.emitter = [CCParticleSystemQuad particleWithFile:@"ExplodingRing.plist"];
-
-    self.emitter.sourcePosition = self.gameObjectSprite.position;
-
-	[[GameLayer sharedGameLayer] addChild:emitter_ z:10];
-    
     [self recycleObjectWithUsedPool:[GameLayer sharedGameLayer].coinUsedPool
                            freePool:[GameLayer sharedGameLayer].coinFreePool];
     // increment score

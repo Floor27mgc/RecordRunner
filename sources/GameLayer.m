@@ -124,6 +124,9 @@ static GameLayer *sharedGameLayer;
             }
         }
         
+        // Create background music
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"JewelBeat - Follow The Beat.wav"];
+        
         // Create Game Object injector to inject Bomb, coins, etc
         gameObjectInjector = [GameObjectInjector initWithGameLayer:self];
     }
