@@ -11,20 +11,10 @@
 
 @implementation GameObjectInjector
 
-@synthesize mainGameLayer;
-@synthesize lastObject;
+//@synthesize mainGameLayer;
+
 @synthesize injectorHitBoxPath;
 @synthesize dummyInjectorBox;
-// -----------------------------------------------------------------------------------
-+ (id) initWithGameLayer:(GameLayer *) gamelayer
-{
-    GameObjectInjector *objCreated;
-    objCreated = [[self alloc] init];
-    objCreated.mainGameLayer = gamelayer;
-    objCreated.lastObject = gamelayer.player;
-
-    return objCreated;
-}
 
 // -----------------------------------------------------------------------------------
 - (id) init
@@ -81,13 +71,13 @@
     switch (_gameObjectType)
     {
         case BOMB_TYPE:
-//            usedPool = self.mainGameLayer.bombUsedPool;
-//            freePool = self.mainGameLayer.bombFreePool;
+            usedPool = [GameLayer sharedGameLayer].bombUsedPool;
+            freePool = [GameLayer sharedGameLayer].bombFreePool;
             maxlimit = (MIN_NUM_BOMBS_PER_TRACK * (trackNum + 1));
             break;
         case COIN_TYPE:
-            usedPool = self.mainGameLayer.coinUsedPool;
-            freePool = self.mainGameLayer.coinFreePool;
+            usedPool = [GameLayer sharedGameLayer].coinUsedPool;
+            freePool = [GameLayer sharedGameLayer].coinFreePool;
             maxlimit = (MIN_NUM_COINS_PER_TRACK * (trackNum + 1));
             break;
         case POWER_ICON_TYPE:
@@ -101,10 +91,10 @@
     }
 
     // Check to see if we can insert this one without overlapping
-    for (int i=0; i<POOL_OBJ_COUNT_ON_TRACK(self.mainGameLayer.coinUsedPool, trackNum); i++)
+    for (int i=0; i<POOL_OBJ_COUNT_ON_TRACK([GameLayer sharedGameLayer].coinUsedPool, trackNum); i++)
     {
-        NSMutableArray *currentObjectArray = POOL_OBJS_ON_TRACK(self.mainGameLayer.coinUsedPool, trackNum);
-        CGPoint currentObjectPosition = ((GameObjectBase *)currentObjectArray[i]).gameObjectSprite.position;
+        NSMutableArray *currentObjectArray = POOL_OBJS_ON_TRACK([GameLayer sharedGameLayer].coinUsedPool, trackNum);
+        CGPoint currentObjectPosition = ((GameObjectBase *)currentObjectArray[i]).position;
         CGPoint gameObjectPoint = [dummyInjectorBox convertToNodeSpace: currentObjectPosition];
         CGPoint gameObjectPoint1 = CGPointMake(gameObjectPoint.x + COMMON_GRID_WIDTH/2,
                                                gameObjectPoint.y + COMMON_GRID_HEIGHT/2);
@@ -137,11 +127,11 @@
         }        
     }
 
-/*
-    for (int i=0; i<POOL_OBJ_COUNT_ON_TRACK(self.mainGameLayer.bombUsedPool, trackNum); i++)
+
+    for (int i=0; i<POOL_OBJ_COUNT_ON_TRACK([GameLayer sharedGameLayer].bombUsedPool, trackNum); i++)
     {
-        NSMutableArray *currentObjectArray = POOL_OBJS_ON_TRACK(self.mainGameLayer.bombUsedPool, trackNum);
-        CGPoint currentObjectPosition = ((GameObjectBase *)currentObjectArray[i]).gameObjectSprite.position;
+        NSMutableArray *currentObjectArray = POOL_OBJS_ON_TRACK([GameLayer sharedGameLayer].bombUsedPool, trackNum);
+        CGPoint currentObjectPosition = ((GameObjectBase *)currentObjectArray[i]).position;
         CGPoint gameObjectPoint = [dummyInjectorBox convertToNodeSpace: currentObjectPosition];
         CGPoint gameObjectPoint1 = CGPointMake(gameObjectPoint.x + COMMON_GRID_WIDTH/2,
                                                gameObjectPoint.y + COMMON_GRID_HEIGHT/2);
@@ -173,7 +163,7 @@
             return nil;
         }
     }
-
+/*
     for (int i=0; i<POOL_OBJ_COUNT_ON_TRACK(self.mainGameLayer.powerIconUsedPool, trackNum); i++)
     {
         NSMutableArray *currentObjectArray = POOL_OBJS_ON_TRACK(self.mainGameLayer.powerIconUsedPool, trackNum);
@@ -217,52 +207,21 @@
         newObject.radius = RADIUS_FROM_TRACKNUM(trackNum);
         [newObject moveTo:preferredLocation];
         newObject.visible = 1;
+        if ([newObject isKindOfClass:[Bomb class]]) {
+            CCBAnimationManager* animationManager = newObject.userObject;
+            NSLog(@"Bomb animationManager %p",animationManager);
+        }
+        if ([newObject isKindOfClass:[Coin class]]) {
+            CCBAnimationManager* animationManager = newObject.userObject;
+            NSLog(@"Coin animationManager %p",animationManager);
+            [animationManager runAnimationsForSequenceNamed:@"Spawn"];
+        }
         [usedPool addObject:newObject toTrack:trackNum];
     } else {
         NSLog(@"out of object");
     }
     
     return newObject;
-}
-
-// -----------------------------------------------------------------------------------
-- (void) injectObjectWithPattern:(pattern_type)_pattern_type
-                initialXPosition: (CGPoint) _initialXPosition
-{
-    int y;
-    int x;
-    CGPoint currentLocation = CGPointMake(_initialXPosition.x,0);
-    GameObjectBase *objCreated = nil;
-    
-    // if Last Object of this pattern has not been displayed yet,
-    // then we bailed out and not going to inject any more objects
-    if ([self isLastObjectOnScreen] == NO)
-    {
-        return;
-    }
-        
-    for (y=0; y<PATTERN_NUM_ROWS; y++)
-    {
-        for (x = 0; x < PATTERN_NUM_COLS; x++)
-        {
-            currentLocation.x = currentLocation.x + COMMON_GRID_WIDTH;
-            
-            if (objCreated != nil)
-            {
-                lastObject = objCreated;
-            }
-        }
-        currentLocation.x = _initialXPosition.x;
-        currentLocation.y = currentLocation.y - COMMON_GRID_WIDTH;
-    }
-
-}
-
-// -----------------------------------------------------------------------------------
-- (bool) isLastObjectOnScreen
-{
-    return (((self.lastObject.gameObjectSprite.position.y > 0) ||
-            (self.lastObject.gameObjectSprite.visible   == 0))?YES:NO);
 }
 
 @end

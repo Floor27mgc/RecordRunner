@@ -28,6 +28,8 @@
 @synthesize player;
 @synthesize coinFreePool = _coinFreePool;
 @synthesize coinUsedPool = _coinUsedPool;
+@synthesize bombFreePool = _bombFreePool;
+@synthesize bombUsedPool = _bombUsedPool;
 @synthesize gameObjectInjector;
 @synthesize isGameReadyToStart;
 
@@ -44,8 +46,7 @@ static GameLayer *sharedGameLayer;
 
 @synthesize background;
 
-@synthesize bombFreePool = _bombFreePool;
-@synthesize bombUsedPool = _bombUsedPool;
+
 
 
 
@@ -115,6 +116,7 @@ static GameLayer *sharedGameLayer;
         for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
             for (int i=0; i<(trackNum+1) * MIN_NUM_BOMBS_PER_TRACK; i++) {
                 Coin *_coin = (Coin*)[CCBReader nodeGraphFromFile:@"gameObjectCoin.ccbi"];
+                NSLog(@"%p",_coin.userObject);
                 _coin.visible = 0;
                 _coin.gameObjectAngularVelocity = kDefaultGameObjectAngularVelocityInDegree;
                 [_coinFreePool addObject:_coin toTrack:trackNum];
@@ -123,12 +125,31 @@ static GameLayer *sharedGameLayer;
                 [self addChild: _coin z:10];
             }
         }
+
+
+        // Create bomb free pool (queue)
+        _bombFreePool = [Queue initWithMinSize:MIN_NUM_BOMBS_PER_TRACK];
         
+        // Create bomb used pool (queue)
+        _bombUsedPool = [Queue initWithMinSize:MIN_NUM_BOMBS_PER_TRACK];
+        
+        // Create NUM_OBSTACLES bombs and add them to the free pool
+        for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
+            for (int i=0; i<trackNum+1;i++) {
+                Bomb *_bomb = (Bomb *)[CCBReader nodeGraphFromFile:@"gameObjectBomb.ccbi"];
+                _bomb.visible = 0;
+                _bomb.gameObjectAngularVelocity = kDefaultGameObjectAngularVelocityInDegree;
+                [_bombFreePool addObject:_bomb toTrack:trackNum];
+                
+                // add bomb to GameLayer
+                [self addChild: _bomb z:10];
+            }
+        }
         // Create background music
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"JewelBeat - Follow The Beat.wav"];
         
         // Create Game Object injector to inject Bomb, coins, etc
-        gameObjectInjector = [GameObjectInjector initWithGameLayer:self];
+        gameObjectInjector = [[GameObjectInjector alloc ]init];
     }
  /*
         self.isTouchEnabled = YES;
@@ -281,18 +302,18 @@ static GameLayer *sharedGameLayer;
     {
         return;
     } */
-    
+
     [player showNextFrame];
 
     // generate Game Objectsrandomly
     if (arc4random() % RANDOM_MAX <= 5) {
-        [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:COIN_TYPE effectType:kRotation];
+        [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:COIN_TYPE effectType:kRotation]; 
     }
-/*
+
     // generate Game Objectsrandomly
     if (arc4random() % RANDOM_MAX == 1) {
         [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:BOMB_TYPE effectType:kRotation];
-    }*/
+    } 
     // Trigger each bomb objects and coin object proceed to
     // show the next frame.  Each object will be responsible
     // for the following task:
@@ -309,9 +330,9 @@ static GameLayer *sharedGameLayer;
             [POOL_OBJS_ON_TRACK(_coinUsedPool, trackNum)[i] showNextFrame];
         }
         
-//        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_bombUsedPool, trackNum); ++i) {
-//            [POOL_OBJS_ON_TRACK(_bombUsedPool, trackNum)[i] showNextFrame];
-//        }
+        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_bombUsedPool, trackNum); ++i) {
+            [POOL_OBJS_ON_TRACK(_bombUsedPool, trackNum)[i] showNextFrame];
+        }
     }
 /*
     // update high score, if needed
