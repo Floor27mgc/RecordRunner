@@ -17,7 +17,7 @@
 @synthesize parentGameLayer;
 @synthesize radius;
 @synthesize angleRotated;
-
+@synthesize animationManager;
 // -----------------------------------------------------------------------------------
 + (id) initWithGameLayer:(GameLayer *) gamelayer
            imageFileName:(NSString *) fileName
@@ -38,6 +38,7 @@
 {
     if (self=[super init]) {
         // Add init stuff here for the base class
+        animationManager = nil;
     }
     return (self);
 }

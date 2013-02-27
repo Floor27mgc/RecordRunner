@@ -208,13 +208,10 @@
         [newObject moveTo:preferredLocation];
         newObject.visible = 1;
         if ([newObject isKindOfClass:[Bomb class]]) {
-            CCBAnimationManager* animationManager = newObject.userObject;
-            NSLog(@"Bomb animationManager %p",animationManager);
+            [newObject.animationManager runAnimationsForSequenceNamed:@"Spawn"];
         }
         if ([newObject isKindOfClass:[Coin class]]) {
-            CCBAnimationManager* animationManager = newObject.userObject;
-            NSLog(@"Coin animationManager %p",animationManager);
-            [animationManager runAnimationsForSequenceNamed:@"Spawn"];
+            [newObject.animationManager runAnimationsForSequenceNamed:@"Spawn"];
         }
         [usedPool addObject:newObject toTrack:trackNum];
     } else {

@@ -119,8 +119,9 @@ static GameLayer *sharedGameLayer;
                 NSLog(@"%p",_coin.userObject);
                 _coin.visible = 0;
                 _coin.gameObjectAngularVelocity = kDefaultGameObjectAngularVelocityInDegree;
+                _coin.animationManager = _coin.userObject;
                 [_coinFreePool addObject:_coin toTrack:trackNum];
-                
+
                 // add coin to GameLayer
                 [self addChild: _coin z:10];
             }
@@ -139,6 +140,7 @@ static GameLayer *sharedGameLayer;
                 Bomb *_bomb = (Bomb *)[CCBReader nodeGraphFromFile:@"gameObjectBomb.ccbi"];
                 _bomb.visible = 0;
                 _bomb.gameObjectAngularVelocity = kDefaultGameObjectAngularVelocityInDegree;
+                _bomb.animationManager = _bomb.userObject;
                 [_bombFreePool addObject:_bomb toTrack:trackNum];
                 
                 // add bomb to GameLayer
