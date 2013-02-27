@@ -70,7 +70,7 @@
         }
         
         self.rotation = self.playerFacingAngle;
-        self.dummyPlayer.rotation = self.gameObjectSprite.rotation;
+        self.dummyPlayer.rotation = self.rotation;
 //        NSLog(@"self.angleRotated = %d",self.angleRotated);        
     }
     else
@@ -92,11 +92,6 @@
         [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER,
                                                  self.radius,
                                                  self.angleRotated)];
- 
-
-/*        NSLog(@"radius = %d outerradius=%d x=%f, y=%f angleRotated=%d",self.radius,
-              PLAYER_RADIUS_OUTER_MOST,self.gameObjectSprite.position.x,
-              self.gameObjectSprite.position.y,self.angleRotated);*/
         
         // The player has arrived the outer track or the center.  This
         // means the player will not need to move along radial direction anymore
@@ -203,10 +198,6 @@
     self.playerRadialSpeed = kPlayerRadialSpeed;
     playerBoundingPath = nil;
     playerBoundingPath = self.PlayerBoundingPathCrossing;
-    NSLog(@"%fx%f",COMMON_SCREEN_WIDTH, COMMON_SCREEN_HEIGHT);
-    
-//    GameLayer *tempLayer = [GameLayer sharedGameLayer];
-//    [tempLayer.gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:COIN_TYPE effectType:kRotation]; 
 }
 
 - (void) onEnter

@@ -10,7 +10,7 @@
 #import "Bomb.h"
 
 @implementation Bomb
-/*
+
 // -----------------------------------------------------------------------------------
 - (id) init
 {
@@ -48,11 +48,11 @@
 
     // if the player has a shield, act accordingly
     if ([GameLayer sharedGameLayer].player.hasShield) {
-        [[GameLayer sharedGameLayer].score incrementScore:2];
+//        [[GameLayer sharedGameLayer].score incrementScore:2];
     } else {
-        [[GameLayer sharedGameLayer] gameOver];
+//        [[GameLayer sharedGameLayer] gameOver];
     
-        [[GameLayer sharedGameLayer].score decrementScore:1000];
+//        [[GameLayer sharedGameLayer].score decrementScore:1000];
     }
 }
 
@@ -61,5 +61,5 @@
 {
     [super resetObject];
 }
-*/
+
 @end

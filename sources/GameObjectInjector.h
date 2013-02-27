@@ -26,15 +26,15 @@ typedef enum {
 
 @interface GameObjectInjector : NSObject
 
-@property (nonatomic,assign) GameLayer *mainGameLayer;
-@property (nonatomic,assign) GameObjectBase *lastObject;
+//@property (nonatomic,assign) GameLayer *mainGameLayer;
+//@property (nonatomic,assign) GameObjectBase *lastObject;
 @property CGMutablePathRef injectorHitBoxPath;
 @property (nonatomic, strong) CCNode *dummyInjectorBox;
-+ (id) initWithGameLayer:(GameLayer *) gamelayer;
+
 - (GameObjectBase *) injectObjectToTrack: (int) trackNum
                                  atAngle: (int) insertionAngle
                           gameObjectType: (game_object_t)_gameObjectType
                               effectType: (effect_type_t) _effectType;
-- (bool) isLastObjectOnScreen;
+//- (bool) isLastObjectOnScreen;
 
 @end

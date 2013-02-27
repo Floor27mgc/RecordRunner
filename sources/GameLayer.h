@@ -99,9 +99,9 @@ typedef enum {
 @property (nonatomic, strong) Queue * coinUsedPool;
 @property (nonatomic, strong) GameObjectInjector * gameObjectInjector;
 @property (nonatomic, assign) Boolean isGameReadyToStart;
-/*@property (nonatomic, strong) Queue * bombFreePool;
+@property (nonatomic, strong) Queue * bombFreePool;
 @property (nonatomic, strong) Queue * bombUsedPool;
-
+/*
 @property (nonatomic, strong) Queue * powerPool;
 @property (nonatomic, strong) Queue * powerIconFreePool;
 @property (nonatomic, strong) Queue * powerIconUsedPool;
