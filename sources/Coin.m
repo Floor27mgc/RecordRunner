@@ -9,14 +9,18 @@
 #import "Coin.h"
 #import "GameLayer.h"
 #import "SimpleAudioEngine.h"
+
 @implementation Coin
 
 @synthesize emitter=emitter_;
+@synthesize bouncing = _bouncing;
+
 // -----------------------------------------------------------------------------------
 - (id) init
 {
     if( (self=[super init]) )
     {
+        _bouncing = NO;
     }
     return (self);
 }
@@ -48,6 +52,31 @@
     // increment score
 //    [[GameLayer sharedGameLayer].score incrementScore:1];
     [[SimpleAudioEngine sharedEngine] playEffect:@"pickup_coin.wav"];
+}
+
+// -----------------------------------------------------------------------------------
+-(void) bounce
+{
+    [self.animationManager runAnimationsForSequenceNamed:@"QuickBounce"];
+}
+
+// -----------------------------------------------------------------------------------
+-(void) scaleMe:(double)factor
+{
+    if (factor < 0) {
+        return;
+    }
+    
+    double scaleFactor = 1 + (3*factor);
+    NSLog(@"scaling to: %f", scaleFactor);
+    CCSprite * coinImage;
+    NSLog(@"coin position, x: %f y: %f ", coinImage.position.x, coinImage.position.y);
+    //self.gameObjectSprite.anchorPoint = ccp( 0.5, 0.5 );
+    //id myAction  = [CCScaleTo actionWithDuration:0.01 scale:scaleFactor];
+    //[self runAction:[CCSequence actions:myAction, nil]];
+    //[self.gameObjectSprite runAction:myAction];
+    coinImage.scaleX = scaleFactor;
+    coinImage.scaleY = scaleFactor;
 }
 
 // -----------------------------------------------------------------------------------

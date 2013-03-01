@@ -15,6 +15,7 @@
 #import "Score.h"
 #import "GameOverLayer.h"
 #import "Power.h"
+#import "SoundController.h"
 
 #define NUM_OBSTACLES                20
 #define NUM_REWARDS                  20
@@ -25,6 +26,8 @@
 #define MIN_NUM_COINS_PER_TRACK       5
 #define MIN_NUM_POWER_ICONS_PER_TRACK 5
 #define MAX_NUM_TRACK                 4
+#define MAX_NUM_BOUNCING_COINS        7
+
 
 #define kGameModeNoRotation 0
 #define kGameModeRotation   1
@@ -101,6 +104,7 @@ typedef enum {
 @property (nonatomic, assign) Boolean isGameReadyToStart;
 @property (nonatomic, strong) Queue * bombFreePool;
 @property (nonatomic, strong) Queue * bombUsedPool;
+@property (nonatomic, strong) SoundController * soundController;
 /*
 @property (nonatomic, strong) Queue * powerPool;
 @property (nonatomic, strong) Queue * powerIconFreePool;

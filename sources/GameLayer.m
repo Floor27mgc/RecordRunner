@@ -32,6 +32,7 @@
 @synthesize bombUsedPool = _bombUsedPool;
 @synthesize gameObjectInjector;
 @synthesize isGameReadyToStart;
+@synthesize soundController = _soundController;
 
 static GameLayer *sharedGameLayer;
 
@@ -115,7 +116,8 @@ static GameLayer *sharedGameLayer;
         // Create NUM_REWARDS coins and add them to the free pool
         for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
             for (int i=0; i<(trackNum+1) * MIN_NUM_BOMBS_PER_TRACK; i++) {
-                Coin *_coin = (Coin*)[CCBReader nodeGraphFromFile:@"gameObjectCoin.ccbi"];
+                Coin *_coin = (Coin*)[CCBReader nodeGraphFromFile:@"gameObjectCoin.ccbi"
+                                      owner:_coin];
                 NSLog(@"%p",_coin.userObject);
                 _coin.visible = 0;
                 _coin.gameObjectAngularVelocity = kDefaultGameObjectAngularVelocityInDegree;
@@ -147,9 +149,10 @@ static GameLayer *sharedGameLayer;
                 [self addChild: _bomb z:10];
             }
         }
-        // Create background music
-        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"JewelBeat - Follow The Beat.wav"];
         
+        // enable sounds
+        _soundController = [SoundController init];
+
         // Create Game Object injector to inject Bomb, coins, etc
         gameObjectInjector = [[GameObjectInjector alloc ]init];
     }
@@ -300,13 +303,12 @@ static GameLayer *sharedGameLayer;
 // -----------------------------------------------------------------------------------
 - (void) update:(ccTime) dt
 {
-/*    if (isGameReadyToStart == FALSE)
-    {
-        return;
-    } */
-
     [player showNextFrame];
 
+    // update sound-related items
+    BOOL doBounce = [_soundController updateMeterSamples];
+    BOOL doBouncePoolRefresh = [_soundController refreshBouncePool];
+   
     // generate Game Objectsrandomly
     if (arc4random() % RANDOM_MAX <= 5) {
         [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:COIN_TYPE effectType:kRotation]; 
@@ -326,17 +328,32 @@ static GameLayer *sharedGameLayer;
     //         1. If yes, hide the object and recycle the
     //            object.
     //         2. If no, no op
-    for (int trackNum=0; trackNum < MAX_NUM_TRACK; trackNum++)
+    int numBouncing = 0;
+    for (int trackNum = 0; trackNum < MAX_NUM_TRACK; trackNum++)
     {
         for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_coinUsedPool, trackNum); ++i) {
-            [POOL_OBJS_ON_TRACK(_coinUsedPool, trackNum)[i] showNextFrame];
+            Coin * tmpCoin = POOL_OBJS_ON_TRACK(_coinUsedPool, trackNum)[i];
+            if (doBouncePoolRefresh && numBouncing < MAX_NUM_BOUNCING_COINS) {
+                if (tmpCoin.bouncing) {
+                    tmpCoin.bouncing = NO;
+                } else {
+                    tmpCoin.bouncing = YES;
+                    ++numBouncing;
+                }
+            }
+            
+            if (doBounce && tmpCoin.bouncing) {
+                [tmpCoin bounce];
+            }
+            [tmpCoin showNextFrame];
         }
         
         for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_bombUsedPool, trackNum); ++i) {
             [POOL_OBJS_ON_TRACK(_bombUsedPool, trackNum)[i] showNextFrame];
         }
     }
-/*
+    
+    /*
     // update high score, if needed
     [self updateHighScore];
     [_score showNextFrame];

@@ -348,6 +348,7 @@
 		8503010516A900FA0035D7C1 /* missle_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8503010416A900FA0035D7C1 /* missle_icon.png */; };
 		8503011416A9FF790035D7C1 /* Missile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8503011316A9FF790035D7C1 /* Missile.m */; };
 		850FAD1016BD9D8F00EBF5FF /* PowerShield.m in Sources */ = {isa = PBXBuildFile; fileRef = 850FAD0F16BD9D8F00EBF5FF /* PowerShield.m */; };
+		851C65B616DEB28D00B9BDB5 /* SoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 851C65B516DEB28D00B9BDB5 /* SoundController.m */; };
 		8583C66A16802C9C003A3213 /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8583C66916802C9C003A3213 /* GameOverLayer.m */; };
 		859EC13C16B60FB7003BFF41 /* PowerSlowDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 859EC13B16B60FB7003BFF41 /* PowerSlowDown.m */; };
 		85A671361651D14000499BF7 /* Bomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671351651D14000499BF7 /* Bomb.m */; };
@@ -778,6 +779,8 @@
 		8503011316A9FF790035D7C1 /* Missile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Missile.m; path = sources/Missile.m; sourceTree = SOURCE_ROOT; };
 		850FAD0E16BD9D8F00EBF5FF /* PowerShield.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerShield.h; path = sources/PowerShield.h; sourceTree = SOURCE_ROOT; };
 		850FAD0F16BD9D8F00EBF5FF /* PowerShield.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowerShield.m; path = sources/PowerShield.m; sourceTree = SOURCE_ROOT; };
+		851C65B416DEB28D00B9BDB5 /* SoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundController.h; path = sources/SoundController.h; sourceTree = SOURCE_ROOT; };
+		851C65B516DEB28D00B9BDB5 /* SoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SoundController.m; path = sources/SoundController.m; sourceTree = SOURCE_ROOT; };
 		8583C66816802C9C003A3213 /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverLayer.h; path = sources/GameOverLayer.h; sourceTree = SOURCE_ROOT; };
 		8583C66916802C9C003A3213 /* GameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverLayer.m; path = sources/GameOverLayer.m; sourceTree = SOURCE_ROOT; };
 		859EC13A16B60FB7003BFF41 /* PowerSlowDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerSlowDown.h; path = sources/PowerSlowDown.h; sourceTree = SOURCE_ROOT; };
@@ -940,6 +943,8 @@
 				85A671381651D16000499BF7 /* Coin.h */,
 				85A671391651D16000499BF7 /* Coin.m */,
 				08B6D63A169548B000608ACF /* common.h */,
+				0801C92516DA92C700ED1A1B /* Explosion.h */,
+				0801C92616DA92C700ED1A1B /* Explosion.m */,
 				0840D59B163F4BCC003D5FE6 /* GameLayer.h */,
 				0840D59C163F4BCC003D5FE6 /* GameLayer.m */,
 				08DA1F841698BD240059439D /* GameMainMenuLayer.h */,
@@ -962,16 +967,16 @@
 				850300F316A661280035D7C1 /* PowerFireMissle.m */,
 				850300EB16A63FBA0035D7C1 /* PowerIcon.h */,
 				850300EC16A63FBA0035D7C1 /* PowerIcon.m */,
+				850FAD0E16BD9D8F00EBF5FF /* PowerShield.h */,
+				850FAD0F16BD9D8F00EBF5FF /* PowerShield.m */,
 				859EC13A16B60FB7003BFF41 /* PowerSlowDown.h */,
 				859EC13B16B60FB7003BFF41 /* PowerSlowDown.m */,
 				85A6714A1655A6CB00499BF7 /* Queue.h */,
 				85A6714B1655A6CB00499BF7 /* Queue.m */,
 				85B53BAB1673C5CC001163F7 /* Score.h */,
 				85B53BAC1673C5CC001163F7 /* Score.m */,
-				850FAD0E16BD9D8F00EBF5FF /* PowerShield.h */,
-				850FAD0F16BD9D8F00EBF5FF /* PowerShield.m */,
-				0801C92516DA92C700ED1A1B /* Explosion.h */,
-				0801C92616DA92C700ED1A1B /* Explosion.m */,
+				851C65B416DEB28D00B9BDB5 /* SoundController.h */,
+				851C65B516DEB28D00B9BDB5 /* SoundController.m */,
 			);
 			name = game;
 			sourceTree = "<group>";
@@ -1982,6 +1987,7 @@
 				859EC13C16B60FB7003BFF41 /* PowerSlowDown.m in Sources */,
 				850FAD1016BD9D8F00EBF5FF /* PowerShield.m in Sources */,
 				0801C92716DA92C800ED1A1B /* Explosion.m in Sources */,
+				851C65B616DEB28D00B9BDB5 /* SoundController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
