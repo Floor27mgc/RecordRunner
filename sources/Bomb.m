@@ -10,13 +10,13 @@
 #import "Bomb.h"
 
 @implementation Bomb
-
+@synthesize gameObjectUpdateTick;
 // -----------------------------------------------------------------------------------
 - (id) init
 {
     if( (self=[super init]) )
     {
-        
+        gameObjectUpdateTick = 0;        
     }
     return (self);
 }
@@ -24,6 +24,7 @@
 // -----------------------------------------------------------------------------------
 - (void) showNextFrame
 {
+    int numRoundsRan = 0;
     // this is a negative movement down the Y-axis, the Coin is falling
     // from the top of the screen
     //[self moveBy:ccp(0, self.gameObjectSpeed)];
@@ -37,6 +38,16 @@
     {
         //        [self recycleOffScreenObjWithUsedPool:[GameLayer sharedGameLayer].coinUsedPool
         //                                     freePool:[GameLayer sharedGameLayer].coinFreePool];
+    }
+    gameObjectUpdateTick++;
+    
+    // Determine if this Bomb has been obsolute.  If yes, we need to clear this
+    // one out so the the user is not bored seeing the same bomb at the same place
+    // over and over again.
+    numRoundsRan = gameObjectUpdateTick / (360 / self.gameObjectAngularVelocity);
+    if (numRoundsRan > BOMB_NUM_ROUNDS_BEFORE_RECYCLE) {
+        [self recycleObjectWithUsedPool:[GameLayer sharedGameLayer].bombUsedPool
+                               freePool:[GameLayer sharedGameLayer].bombFreePool];
     }
 }
 
@@ -60,6 +71,7 @@
 - (void) resetObject
 {
     [super resetObject];
+    gameObjectUpdateTick = 0;
 }
 
 @end

@@ -100,6 +100,7 @@ static GameLayer *sharedGameLayer;
 // on "init" you need to initialize your instance
 -(id) init
 {
+    int gameObjectTag = 0;
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) )
@@ -114,16 +115,18 @@ static GameLayer *sharedGameLayer;
         _coinUsedPool = [Queue initWithMinSize:MIN_NUM_COINS_PER_TRACK];
         
         // Create NUM_REWARDS coins and add them to the free pool
+        gameObjectTag = 0;
         for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
             for (int i=0; i<(trackNum+1) * MIN_NUM_BOMBS_PER_TRACK; i++) {
                 Coin *_coin = (Coin*)[CCBReader nodeGraphFromFile:@"gameObjectCoin.ccbi"
                                       owner:_coin];
                 NSLog(@"%p",_coin.userObject);
+                _coin.tag = gameObjectTag;
                 _coin.visible = 0;
                 _coin.gameObjectAngularVelocity = kDefaultGameObjectAngularVelocityInDegree;
                 _coin.animationManager = _coin.userObject;
                 [_coinFreePool addObject:_coin toTrack:trackNum];
-
+                gameObjectTag++;
                 // add coin to GameLayer
                 [self addChild: _coin z:10];
             }
@@ -137,14 +140,16 @@ static GameLayer *sharedGameLayer;
         _bombUsedPool = [Queue initWithMinSize:MIN_NUM_BOMBS_PER_TRACK];
         
         // Create NUM_OBSTACLES bombs and add them to the free pool
+        gameObjectTag = 0;
         for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
             for (int i=0; i<trackNum+1;i++) {
                 Bomb *_bomb = (Bomb *)[CCBReader nodeGraphFromFile:@"gameObjectBomb.ccbi"];
+                _bomb.tag = gameObjectTag;
                 _bomb.visible = 0;
                 _bomb.gameObjectAngularVelocity = kDefaultGameObjectAngularVelocityInDegree;
                 _bomb.animationManager = _bomb.userObject;
                 [_bombFreePool addObject:_bomb toTrack:trackNum];
-                
+                gameObjectTag++;
                 // add bomb to GameLayer
                 [self addChild: _bomb z:10];
             }
@@ -303,11 +308,8 @@ static GameLayer *sharedGameLayer;
 // -----------------------------------------------------------------------------------
 - (void) update:(ccTime) dt
 {
-    [player showNextFrame];
 
-    // update sound-related items
-    BOOL doBounce = [_soundController updateMeterSamples];
-    BOOL doBouncePoolRefresh = [_soundController refreshBouncePool];
+    [player showNextFrame];
    
     // generate Game Objectsrandomly
     if (arc4random() % RANDOM_MAX <= 5) {
@@ -317,7 +319,15 @@ static GameLayer *sharedGameLayer;
     // generate Game Objectsrandomly
     if (arc4random() % RANDOM_MAX == 1) {
         [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:BOMB_TYPE effectType:kRotation];
-    } 
+    }
+    
+    // Bounce game object based on sound level
+    // Note: we are not performing showNextFrame() here.  We
+    //       are simply changing the scale factor of all
+    //       objects inside the queue.  We'll let the trigger
+    //       loop below to actually perform the showNextFrame()
+    [self soundBounceGameObjectUsedPool:_coinUsedPool];
+    
     // Trigger each bomb objects and coin object proceed to
     // show the next frame.  Each object will be responsible
     // for the following task:
@@ -327,25 +337,11 @@ static GameLayer *sharedGameLayer;
     //      b. If no, check if the object is off screen
     //         1. If yes, hide the object and recycle the
     //            object.
-    //         2. If no, no op
-    int numBouncing = 0;
+    //         2. If no, no op 
     for (int trackNum = 0; trackNum < MAX_NUM_TRACK; trackNum++)
     {
         for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_coinUsedPool, trackNum); ++i) {
-            Coin * tmpCoin = POOL_OBJS_ON_TRACK(_coinUsedPool, trackNum)[i];
-            if (doBouncePoolRefresh && numBouncing < MAX_NUM_BOUNCING_COINS) {
-                if (tmpCoin.bouncing) {
-                    tmpCoin.bouncing = NO;
-                } else {
-                    tmpCoin.bouncing = YES;
-                    ++numBouncing;
-                }
-            }
-            
-            if (doBounce && tmpCoin.bouncing) {
-                [tmpCoin bounce];
-            }
-            [tmpCoin showNextFrame];
+            [POOL_OBJS_ON_TRACK(_coinUsedPool, trackNum)[i] showNextFrame];            
         }
         
         for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_bombUsedPool, trackNum); ++i) {
@@ -607,4 +603,38 @@ static GameLayer *sharedGameLayer;
     [self changeGameObjectsSpeed:self.powerIconFreePool
                               up:NO speed:1];
 } */
+
+-(void) soundBounceGameObjectUsedPool:(Queue *)gameObjectUsedPool
+{
+    static int subsetIdx = 1;
+    double soundLevel = 0;
+
+    // update sound-related items
+    soundLevel = [_soundController updateMeterSamples];
+    
+    int bounceIdx = 0;
+    int previousSubset = 0;
+    
+    // Percentage chance that we are bounching to a different
+    // subset of coins
+    if ((arc4random()%100) == 1) {
+        previousSubset = subsetIdx;
+        subsetIdx = arc4random()%10+1;
+    }
+    
+    for (int trackNum = 0; trackNum < MAX_NUM_TRACK; trackNum++)
+    {
+        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(gameObjectUsedPool, trackNum); ++i) {
+            GameObjectBase *gameObject = POOL_OBJS_ON_TRACK(gameObjectUsedPool, trackNum)[i];
+            
+            if ((previousSubset != 0) && (bounceIdx % previousSubset == 0))
+            {
+                [gameObject scaleMe:0];
+            }
+            
+            [gameObject scaleMe:((bounceIdx % subsetIdx == 0)?soundLevel:0)];
+            bounceIdx ++;
+        }
+    }
+}
 @end

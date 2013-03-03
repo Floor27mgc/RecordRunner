@@ -97,6 +97,7 @@ typedef enum {
 
 // Slow down the game;
 - (void) slowDownGame; */
+-(void) soundBounceGameObjectUsedPool:(Queue *)gameObjectUsedPool;
 @property (nonatomic, strong) GameObjectPlayer *player;
 @property (nonatomic, strong) Queue * coinFreePool;
 @property (nonatomic, strong) Queue * coinUsedPool;

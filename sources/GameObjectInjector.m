@@ -213,6 +213,7 @@
         if ([newObject isKindOfClass:[Coin class]]) {
             [newObject.animationManager runAnimationsForSequenceNamed:@"Spawn"];
         }
+        [[SimpleAudioEngine sharedEngine] playEffect:@"popup.m4a"];
         [usedPool addObject:newObject toTrack:trackNum];
     } else {
         NSLog(@"out of object");

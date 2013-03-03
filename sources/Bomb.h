@@ -8,9 +8,14 @@
 
 #import "GameObjectBase.h"
 #define BOMB_START_POSITION ccp(100,0)
+#define BOMB_NUM_ROUNDS_BEFORE_RECYCLE 2
 @interface Bomb : GameObjectBase
 {
     
 }
 
+// gameObjectUpdateTick will keep track of how many time
+// this gameObject update() in gamelayer has called this
+// gameObject's showNextFrame();
+@property (nonatomic, assign) int gameObjectUpdateTick;
 @end

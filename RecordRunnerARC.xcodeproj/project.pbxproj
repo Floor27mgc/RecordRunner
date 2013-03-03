@@ -434,6 +434,7 @@
 		0801C92916DC7ABA00ED1A1B /* pickup_coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = pickup_coin.wav; path = ../Sound/pickup_coin.wav; sourceTree = "<group>"; };
 		0801C92B16DC7B1900ED1A1B /* JewelBeat - Follow The Beat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "JewelBeat - Follow The Beat.wav"; path = "../Sound/JewelBeat - Follow The Beat.wav"; sourceTree = "<group>"; };
 		0801C92D16DC819E00ED1A1B /* gameObjectBomb.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = gameObjectBomb.ccbi; path = ../CocosBuilder/gameObjectBomb.ccbi; sourceTree = "<group>"; };
+		0803EEC016E331CD00CC932B /* popup.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = popup.m4a; path = ../../../master.matt/RecordRunner/Sound/popup.m4a; sourceTree = "<group>"; };
 		082018301678479B000A3F8D /* GameObjectInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjectInjector.h; path = sources/GameObjectInjector.h; sourceTree = SOURCE_ROOT; };
 		082018311678479B000A3F8D /* GameObjectInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectInjector.m; path = sources/GameObjectInjector.m; sourceTree = SOURCE_ROOT; };
 		082018341679577D000A3F8D /* pattern.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pattern.c; path = ../sources/pattern.c; sourceTree = "<group>"; };
@@ -897,6 +898,7 @@
 			isa = PBXGroup;
 			children = (
 				0801C92B16DC7B1900ED1A1B /* JewelBeat - Follow The Beat.wav */,
+				0803EEC016E331CD00CC932B /* popup.m4a */,
 				0801C92916DC7ABA00ED1A1B /* pickup_coin.wav */,
 			);
 			name = Sound;

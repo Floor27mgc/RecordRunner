@@ -63,4 +63,5 @@
 - (void) showNextFrame;
 - (void) handleCollision;
 
+-(void) scaleMe:(double)factor;
 @end

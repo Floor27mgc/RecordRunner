@@ -15,7 +15,7 @@
 }
 
 -(void) bounce;
--(void) scaleMe:(double) factor;
+//-(void) scaleMe:(double) factor;
 
 @property (nonatomic, assign) CCParticleSystemQuad *emitter;
 @property (nonatomic) BOOL bouncing;

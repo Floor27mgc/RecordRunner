@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SimpleAudioEngine.h"
-
+#import "GameObjectBase.h"
 @interface SoundController : NSObject
 
 // seconds between bounce pool refreshes
@@ -16,12 +16,15 @@
 
 +(id) init;
 -(id) init;
--(BOOL) updateMeterSamples;
--(BOOL) refreshBouncePool;
+-(double) updateMeterSamples;
+-(void) soundBounceGameObject:(GameObjectBase *) gameObject
+                     withLevel:(double) soundLevel;
 
 @property (nonatomic, strong) NSString * currentSongTitle;
 @property (nonatomic, strong) SimpleAudioEngine * audioEngine;
 @property (nonatomic, strong) AVAudioPlayer * audioPlayer;
-@property (nonatomic, strong) NSDate * lastBounceRefresh;
-
+@property (nonatomic, assign) int subsetIdx;
+@property (nonatomic, assign) int previousSubset;
+@property (nonatomic, assign) int subsetCurrentRepeatCount;
+@property (nonatomic, assign) int subsetMaxRepeatCount;
 @end

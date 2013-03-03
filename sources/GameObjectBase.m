@@ -186,4 +186,17 @@
     NSAssert(YES, @"Update method is missing in implementation of class %s",
              class_getName([self class]));
 }
+
+// -----------------------------------------------------------------------------------
+-(void) scaleMe:(double)factor
+{
+    if (factor < 0) {
+        return;
+    }
+    
+    double scaleFactor = factor+1;//1 + (3*factor);
+
+    self.scaleX = scaleFactor;
+    self.scaleY = scaleFactor;
+}
 @end

@@ -7,12 +7,16 @@
 //
 
 #import "SoundController.h"
+#import "GameObjectBase.h"
 
 @implementation SoundController
 @synthesize currentSongTitle;
 @synthesize audioEngine;
 @synthesize audioPlayer;
-@synthesize lastBounceRefresh;
+@synthesize subsetIdx;
+@synthesize subsetCurrentRepeatCount;
+@synthesize subsetMaxRepeatCount;
+@synthesize previousSubset;
 
 // -----------------------------------------------------------------------------------
 +(id) init
@@ -24,8 +28,10 @@
 
     objCreated.audioPlayer = [CDAudioManager sharedManager].backgroundMusic.audioSourcePlayer;
     objCreated.audioPlayer.meteringEnabled = YES;
-    objCreated.lastBounceRefresh = [NSDate date];
-
+    objCreated.subsetIdx = 1;
+    objCreated.previousSubset = 0;
+    objCreated.subsetCurrentRepeatCount = 0;
+    objCreated.subsetMaxRepeatCount = arc4random() % 10 + 1;
     return objCreated;
 }
 
@@ -38,7 +44,7 @@
 }
 
 // -----------------------------------------------------------------------------------
--(BOOL) updateMeterSamples
+-(double) updateMeterSamples
 {
     [audioPlayer updateMeters];
     
@@ -59,24 +65,30 @@
          }
     }
 
-    if (filteredAverage_[audioPlayer.numberOfChannels - 1] > .125) {
-        return YES;
-    } else {
-        return NO;
-    }
+    return (filteredAverage_[audioPlayer.numberOfChannels - 1]*4);
+
 }
 
-// -----------------------------------------------------------------------------------
--(BOOL) refreshBouncePool
+- (void) soundBounceGameObject:(GameObjectBase *) gameObject
+                     withLevel:(double) soundLevel;
 {
-    NSTimeInterval elapsed = abs([lastBounceRefresh timeIntervalSinceNow]);
-    
-    if (elapsed > BOUNCE_REFRESH_THRESHOLD) {
-        lastBounceRefresh = [NSDate date];
-        return YES;
-    } else {
-        return NO;
+
+    // Determine if we need to change subset.
+    if (subsetCurrentRepeatCount >= subsetMaxRepeatCount)
+    {
+        subsetMaxRepeatCount = arc4random() % 10 + 5;
+        subsetCurrentRepeatCount = 0;
+        previousSubset = subsetIdx;
+        subsetIdx = arc4random()%10+1;
+        
+        if ((previousSubset != 0) && (gameObject.tag % previousSubset == 0))
+        {
+            [(GameObjectBase *)gameObject scaleMe:0];
+        }
     }
+
+    [gameObject scaleMe:((gameObject.tag % subsetIdx == 0)?soundLevel:0)];
+    
 }
 
 @end

@@ -61,23 +61,23 @@
 }
 
 // -----------------------------------------------------------------------------------
--(void) scaleMe:(double)factor
+/*-(void) scaleMe:(double)factor
 {
     if (factor < 0) {
         return;
     }
     
-    double scaleFactor = 1 + (3*factor);
-    NSLog(@"scaling to: %f", scaleFactor);
-    CCSprite * coinImage;
-    NSLog(@"coin position, x: %f y: %f ", coinImage.position.x, coinImage.position.y);
+    double scaleFactor = factor+1;//1 + (3*factor);
+//    NSLog(@"scaling to: %f", scaleFactor);
+//    CCSprite * coinImage;
+//    NSLog(@"coin position, x: %f y: %f ", coinImage.position.x, coinImage.position.y);
     //self.gameObjectSprite.anchorPoint = ccp( 0.5, 0.5 );
     //id myAction  = [CCScaleTo actionWithDuration:0.01 scale:scaleFactor];
     //[self runAction:[CCSequence actions:myAction, nil]];
     //[self.gameObjectSprite runAction:myAction];
-    coinImage.scaleX = scaleFactor;
-    coinImage.scaleY = scaleFactor;
-}
+    self.scaleX = scaleFactor;
+    self.scaleY = scaleFactor;
+}*/
 
 // -----------------------------------------------------------------------------------
 - (void) resetObject
