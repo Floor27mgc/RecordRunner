@@ -20,6 +20,7 @@
 #import "common.h"
 #import "PowerIcon.h"
 #import "CCBReader.h"
+#import "GameInfoGlobal.h"
 
 #pragma mark - GameLayer
 
@@ -101,6 +102,9 @@ static GameLayer *sharedGameLayer;
 -(id) init
 {
     int gameObjectTag = 0;
+    
+    NSLog(@"GameMode = %d",[GameInfoGlobal sharedGameInfoGlobal].gameMode);
+    
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) )
@@ -155,8 +159,12 @@ static GameLayer *sharedGameLayer;
             }
         }
         
-        // enable sounds
-        _soundController = [SoundController init];
+        if ([GameInfoGlobal sharedGameInfoGlobal].gameMode == kGameModeBouncyMusic) {
+            // enable sounds
+            _soundController = [SoundController init];
+        } else {
+            [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"JewelBeat - Follow The Beat.wav"];
+        }
 
         // Create Game Object injector to inject Bomb, coins, etc
         gameObjectInjector = [[GameObjectInjector alloc ]init];
@@ -321,13 +329,14 @@ static GameLayer *sharedGameLayer;
         [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:BOMB_TYPE effectType:kRotation];
     }
     
-    // Bounce game object based on sound level
-    // Note: we are not performing showNextFrame() here.  We
-    //       are simply changing the scale factor of all
-    //       objects inside the queue.  We'll let the trigger
-    //       loop below to actually perform the showNextFrame()
-    [self soundBounceGameObjectUsedPool:_coinUsedPool];
-    
+    if ([GameInfoGlobal sharedGameInfoGlobal].gameMode == kGameModeBouncyMusic) {
+        // Bounce game object based on sound level
+        // Note: we are not performing showNextFrame() here.  We
+        //       are simply changing the scale factor of all
+        //       objects inside the queue.  We'll let the trigger
+        //       loop below to actually perform the showNextFrame()
+        [self soundBounceGameObjectUsedPool:_coinUsedPool];
+    }
     // Trigger each bomb objects and coin object proceed to
     // show the next frame.  Each object will be responsible
     // for the following task:

@@ -15,7 +15,7 @@
 @implementation AppController
 
 @synthesize window=window_, navController=navController_, director=director_;
-
+@synthesize gameInfoGlobal;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	// Create the main window
@@ -86,7 +86,11 @@
 
 	// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
 //	[director_ pushScene: [GameMainMenuLayer scene]];
+    gameInfoGlobal = [[GameInfoGlobal alloc]init];
+    gameInfoGlobal.gameMode = kGameModeNormal;
     [[CCDirector sharedDirector] pushScene:[CCBReader sceneWithNodeGraphFromFile:@"MainGameScene.ccbi"]];
+//    [[CCDirector sharedDirector] pushScene:[CCBReader sceneWithNodeGraphFromFile:@"GameModeMenu.ccbi"]];
+
     //[director_ pushScene:[CCTransitionFade transitionWithDuration:1.0f scene:[GameMainMenuLayer scene]]];
 	return YES;
 }

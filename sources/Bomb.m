@@ -8,6 +8,7 @@
 
 #import "GameLayer.h"
 #import "Bomb.h"
+#import "CCBReader.h"
 
 @implementation Bomb
 @synthesize gameObjectUpdateTick;
@@ -61,6 +62,11 @@
     if ([GameLayer sharedGameLayer].player.hasShield) {
 //        [[GameLayer sharedGameLayer].score incrementScore:2];
     } else {
+
+        CCNode* gameOverLayer = [CCBReader nodeGraphFromFile:@"GameOverLayer.ccbi"];
+        [[GameLayer sharedGameLayer] addChild:gameOverLayer z:12];
+        [[GameLayer sharedGameLayer] pauseSchedulerAndActions];
+
 //        [[GameLayer sharedGameLayer] gameOver];
     
 //        [[GameLayer sharedGameLayer].score decrementScore:1000];

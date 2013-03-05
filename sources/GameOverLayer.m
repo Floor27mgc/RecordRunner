@@ -155,4 +155,16 @@
     [[GameLayer sharedGameLayer] resetHighScore];
 }
 */
+
+- (void) pressedNO:(id) sender
+{
+    exit(0);
+}
+- (void) pressedYES:(id) sender
+{
+    CCBAnimationManager* animationManager = self.userObject;
+    NSLog(@"animationManager: %@", animationManager);
+    [animationManager runAnimationsForSequenceNamed:@"Pop Out"];
+    [[GameLayer sharedGameLayer] resumeSchedulerAndActions];
+}
 @end

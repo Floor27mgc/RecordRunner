@@ -10,7 +10,7 @@
 #import "cocos2d.h"
 
 @interface GameOverLayer : CCLayerColor
-
+/*
 @property (nonatomic, assign) GameLayer * parentGameLayer;
 @property (nonatomic, assign) CCMenuItem * noButton;
 @property (nonatomic, assign) CCMenuItem * yesButton;
@@ -24,6 +24,8 @@
 - (id) init;
 - (void) yesTapped:(id) sender;
 - (void) noTapped:(id) sender;
-- (void) resetTapped:(id) sender;
+- (void) resetTapped:(id) sender; */
+- (void) pressedNO:(id) sender;
+- (void) pressedYES:(id) sender;
 
 @end

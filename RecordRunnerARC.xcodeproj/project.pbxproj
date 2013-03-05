@@ -9,19 +9,31 @@
 /* Begin PBXBuildFile section */
 		0801C90F16D5F06400ED1A1B /* MainGameLayer.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0801C90D16D5F06400ED1A1B /* MainGameLayer.ccbi */; };
 		0801C91016D5F06400ED1A1B /* MainGameScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0801C90E16D5F06400ED1A1B /* MainGameScene.ccbi */; };
-		0801C91516D5F41C00ED1A1B /* parts_bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0801C91116D5F41C00ED1A1B /* parts_bomb.png */; };
-		0801C91616D5F41C00ED1A1B /* parts_coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 0801C91216D5F41C00ED1A1B /* parts_coin.png */; };
-		0801C91716D5F41C00ED1A1B /* parts_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 0801C91316D5F41C00ED1A1B /* parts_player.png */; };
-		0801C91816D5F41C00ED1A1B /* parts_record.png in Resources */ = {isa = PBXBuildFile; fileRef = 0801C91416D5F41C00ED1A1B /* parts_record.png */; };
-		0801C91D16D74C3E00ED1A1B /* parts_record-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0801C91916D74C3E00ED1A1B /* parts_record-hd.png */; };
-		0801C91E16D74C3E00ED1A1B /* parts_player-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0801C91A16D74C3E00ED1A1B /* parts_player-hd.png */; };
-		0801C91F16D74C3E00ED1A1B /* parts_coin-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0801C91B16D74C3E00ED1A1B /* parts_coin-hd.png */; };
-		0801C92016D74C3E00ED1A1B /* parts_bomb-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0801C91C16D74C3E00ED1A1B /* parts_bomb-hd.png */; };
 		0801C92216D9FAEF00ED1A1B /* gameObjectCoin.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0801C92116D9FAEF00ED1A1B /* gameObjectCoin.ccbi */; };
 		0801C92716DA92C800ED1A1B /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0801C92616DA92C700ED1A1B /* Explosion.m */; };
 		0801C92A16DC7ABA00ED1A1B /* pickup_coin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0801C92916DC7ABA00ED1A1B /* pickup_coin.wav */; };
 		0801C92C16DC7B1900ED1A1B /* JewelBeat - Follow The Beat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0801C92B16DC7B1900ED1A1B /* JewelBeat - Follow The Beat.wav */; };
 		0801C92E16DC819E00ED1A1B /* gameObjectBomb.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0801C92D16DC819E00ED1A1B /* gameObjectBomb.ccbi */; };
+		0803EEC716E3D1E500CC932B /* CCUIViewWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803EEC516E3D1A000CC932B /* CCUIViewWrapper.m */; };
+		0803EEC916E3D24A00CC932B /* popup.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEC016E331CD00CC932B /* popup.m4a */; };
+		0803EECC16E3D29100CC932B /* GameInfoGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803EECB16E3D29000CC932B /* GameInfoGlobal.m */; };
+		0803EECF16E4212600CC932B /* GameModeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803EECE16E4212600CC932B /* GameModeMenu.m */; };
+		0803EED116E464EF00CC932B /* GameModeMenu.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0803EED016E464EF00CC932B /* GameModeMenu.ccbi */; };
+		0803EEDF16E4664800CC932B /* eagle-nebula-star-birth-clouds-in-m16-ga.jpg_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EED316E4664800CC932B /* eagle-nebula-star-birth-clouds-in-m16-ga.jpg_thumb.png */; };
+		0803EEE016E4664800CC932B /* HollywoodStarPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EED416E4664800CC932B /* HollywoodStarPhoto.png */; };
+		0803EEE116E4664800CC932B /* parts_bomb-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EED516E4664800CC932B /* parts_bomb-hd.png */; };
+		0803EEE216E4664800CC932B /* parts_bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EED616E4664800CC932B /* parts_bomb.png */; };
+		0803EEE316E4664800CC932B /* parts_coin-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EED716E4664800CC932B /* parts_coin-hd.png */; };
+		0803EEE416E4664800CC932B /* parts_coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EED816E4664800CC932B /* parts_coin.png */; };
+		0803EEE516E4664800CC932B /* parts_player-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EED916E4664800CC932B /* parts_player-hd.png */; };
+		0803EEE616E4664800CC932B /* parts_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEDA16E4664800CC932B /* parts_player.png */; };
+		0803EEE716E4664800CC932B /* parts_record-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEDB16E4664800CC932B /* parts_record-hd.png */; };
+		0803EEE816E4664800CC932B /* parts_record.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEDC16E4664800CC932B /* parts_record.png */; };
+		0803EEE916E4664800CC932B /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEDD16E4664800CC932B /* star.png */; };
+		0803EEEA16E4664800CC932B /* thumb_COLOURBOX5429592.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEDE16E4664800CC932B /* thumb_COLOURBOX5429592.png */; };
+		0803EEEC16E5B99900CC932B /* GameOverLayer.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEEB16E5B99900CC932B /* GameOverLayer.ccbi */; };
+		0803EEEF16E5C59700CC932B /* no.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEED16E5C59700CC932B /* no.png */; };
+		0803EEF016E5C59700CC932B /* Yes.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEEE16E5C59700CC932B /* Yes.png */; };
 		082018321678479B000A3F8D /* GameObjectInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 082018311678479B000A3F8D /* GameObjectInjector.m */; };
 		082018351679577D000A3F8D /* pattern.c in Sources */ = {isa = PBXBuildFile; fileRef = 082018341679577D000A3F8D /* pattern.c */; };
 		0840D59D163F4BCC003D5FE6 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0840D59C163F4BCC003D5FE6 /* GameLayer.m */; };
@@ -331,8 +343,6 @@
 		08A372A116C822B9006819E3 /* utlist.h in Headers */ = {isa = PBXBuildFile; fileRef = 08A371D716C822B9006819E3 /* utlist.h */; };
 		08A372A216C822B9006819E3 /* ZipUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 08A371D816C822B9006819E3 /* ZipUtils.h */; };
 		08A372A316C822B9006819E3 /* ZipUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A371D916C822B9006819E3 /* ZipUtils.m */; };
-		08A372A916C8A84D006819E3 /* clickme-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A372A716C8A84D006819E3 /* clickme-down.png */; };
-		08A372AA16C8A84D006819E3 /* clickme.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A372A816C8A84D006819E3 /* clickme.png */; };
 		08C86DC11674552F0082DBE5 /* tuffy_bold_italic-charmap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DC01674552F0082DBE5 /* tuffy_bold_italic-charmap.plist */; };
 		08C86DF716745C3F0082DBE5 /* tuffy_bold_italic-charmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DF616745C3F0082DBE5 /* tuffy_bold_italic-charmap.png */; };
 		08D7E75F16803CCC00826AAB /* ExplodingRing.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08D7E75E16803CCC00826AAB /* ExplodingRing.plist */; };
@@ -417,24 +427,37 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0801C90D16D5F06400ED1A1B /* MainGameLayer.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainGameLayer.ccbi; path = ../CocosBuilder/MainGameLayer.ccbi; sourceTree = "<group>"; };
-		0801C90E16D5F06400ED1A1B /* MainGameScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainGameScene.ccbi; path = ../CocosBuilder/MainGameScene.ccbi; sourceTree = "<group>"; };
-		0801C91116D5F41C00ED1A1B /* parts_bomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parts_bomb.png; sourceTree = "<group>"; };
-		0801C91216D5F41C00ED1A1B /* parts_coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parts_coin.png; sourceTree = "<group>"; };
-		0801C91316D5F41C00ED1A1B /* parts_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parts_player.png; sourceTree = "<group>"; };
-		0801C91416D5F41C00ED1A1B /* parts_record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parts_record.png; sourceTree = "<group>"; };
-		0801C91916D74C3E00ED1A1B /* parts_record-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parts_record-hd.png"; sourceTree = "<group>"; };
-		0801C91A16D74C3E00ED1A1B /* parts_player-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parts_player-hd.png"; sourceTree = "<group>"; };
-		0801C91B16D74C3E00ED1A1B /* parts_coin-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parts_coin-hd.png"; sourceTree = "<group>"; };
-		0801C91C16D74C3E00ED1A1B /* parts_bomb-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "parts_bomb-hd.png"; sourceTree = "<group>"; };
-		0801C92116D9FAEF00ED1A1B /* gameObjectCoin.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = gameObjectCoin.ccbi; path = ../CocosBuilder/gameObjectCoin.ccbi; sourceTree = "<group>"; };
-		0801C92316DA927A00ED1A1B /* explosion.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = explosion.ccbi; path = ../CocosBuilder/explosion.ccbi; sourceTree = "<group>"; };
+		0801C90D16D5F06400ED1A1B /* MainGameLayer.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainGameLayer.ccbi; path = "../CocosBuilder/CCB_files/Published-iOS/MainGameLayer.ccbi"; sourceTree = "<group>"; };
+		0801C90E16D5F06400ED1A1B /* MainGameScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainGameScene.ccbi; path = "../CocosBuilder/CCB_files/Published-iOS/MainGameScene.ccbi"; sourceTree = "<group>"; };
+		0801C92116D9FAEF00ED1A1B /* gameObjectCoin.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = gameObjectCoin.ccbi; path = "../CocosBuilder/CCB_files/Published-iOS/gameObjectCoin.ccbi"; sourceTree = "<group>"; };
 		0801C92516DA92C700ED1A1B /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Explosion.h; path = sources/Explosion.h; sourceTree = SOURCE_ROOT; };
 		0801C92616DA92C700ED1A1B /* Explosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Explosion.m; path = sources/Explosion.m; sourceTree = SOURCE_ROOT; };
 		0801C92916DC7ABA00ED1A1B /* pickup_coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = pickup_coin.wav; path = ../Sound/pickup_coin.wav; sourceTree = "<group>"; };
 		0801C92B16DC7B1900ED1A1B /* JewelBeat - Follow The Beat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "JewelBeat - Follow The Beat.wav"; path = "../Sound/JewelBeat - Follow The Beat.wav"; sourceTree = "<group>"; };
-		0801C92D16DC819E00ED1A1B /* gameObjectBomb.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = gameObjectBomb.ccbi; path = ../CocosBuilder/gameObjectBomb.ccbi; sourceTree = "<group>"; };
-		0803EEC016E331CD00CC932B /* popup.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = popup.m4a; path = ../../../master.matt/RecordRunner/Sound/popup.m4a; sourceTree = "<group>"; };
+		0801C92D16DC819E00ED1A1B /* gameObjectBomb.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = gameObjectBomb.ccbi; path = "../CocosBuilder/CCB_files/Published-iOS/gameObjectBomb.ccbi"; sourceTree = "<group>"; };
+		0803EEC016E331CD00CC932B /* popup.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = popup.m4a; path = ../Sound/popup.m4a; sourceTree = "<group>"; };
+		0803EEC416E3D19F00CC932B /* CCUIViewWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCUIViewWrapper.h; path = sources/CCUIViewWrapper.h; sourceTree = SOURCE_ROOT; };
+		0803EEC516E3D1A000CC932B /* CCUIViewWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCUIViewWrapper.m; path = sources/CCUIViewWrapper.m; sourceTree = SOURCE_ROOT; };
+		0803EECA16E3D29000CC932B /* GameInfoGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameInfoGlobal.h; path = sources/GameInfoGlobal.h; sourceTree = SOURCE_ROOT; };
+		0803EECB16E3D29000CC932B /* GameInfoGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameInfoGlobal.m; path = sources/GameInfoGlobal.m; sourceTree = SOURCE_ROOT; };
+		0803EECD16E4212500CC932B /* GameModeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameModeMenu.h; path = sources/GameModeMenu.h; sourceTree = SOURCE_ROOT; };
+		0803EECE16E4212600CC932B /* GameModeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameModeMenu.m; path = sources/GameModeMenu.m; sourceTree = SOURCE_ROOT; };
+		0803EED016E464EF00CC932B /* GameModeMenu.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameModeMenu.ccbi; path = "../CocosBuilder/CCB_files/Published-iOS/GameModeMenu.ccbi"; sourceTree = "<group>"; };
+		0803EED316E4664800CC932B /* eagle-nebula-star-birth-clouds-in-m16-ga.jpg_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "eagle-nebula-star-birth-clouds-in-m16-ga.jpg_thumb.png"; path = "CocosBuilder/CCB_files/Published-iOS/eagle-nebula-star-birth-clouds-in-m16-ga.jpg_thumb.png"; sourceTree = SOURCE_ROOT; };
+		0803EED416E4664800CC932B /* HollywoodStarPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HollywoodStarPhoto.png; path = "CocosBuilder/CCB_files/Published-iOS/HollywoodStarPhoto.png"; sourceTree = SOURCE_ROOT; };
+		0803EED516E4664800CC932B /* parts_bomb-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_bomb-hd.png"; path = "CocosBuilder/CCB_files/Published-iOS/parts_bomb-hd.png"; sourceTree = SOURCE_ROOT; };
+		0803EED616E4664800CC932B /* parts_bomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_bomb.png; path = "CocosBuilder/CCB_files/Published-iOS/parts_bomb.png"; sourceTree = SOURCE_ROOT; };
+		0803EED716E4664800CC932B /* parts_coin-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_coin-hd.png"; path = "CocosBuilder/CCB_files/Published-iOS/parts_coin-hd.png"; sourceTree = SOURCE_ROOT; };
+		0803EED816E4664800CC932B /* parts_coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_coin.png; path = "CocosBuilder/CCB_files/Published-iOS/parts_coin.png"; sourceTree = SOURCE_ROOT; };
+		0803EED916E4664800CC932B /* parts_player-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_player-hd.png"; path = "CocosBuilder/CCB_files/Published-iOS/parts_player-hd.png"; sourceTree = SOURCE_ROOT; };
+		0803EEDA16E4664800CC932B /* parts_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_player.png; path = "CocosBuilder/CCB_files/Published-iOS/parts_player.png"; sourceTree = SOURCE_ROOT; };
+		0803EEDB16E4664800CC932B /* parts_record-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_record-hd.png"; path = "CocosBuilder/CCB_files/Published-iOS/parts_record-hd.png"; sourceTree = SOURCE_ROOT; };
+		0803EEDC16E4664800CC932B /* parts_record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_record.png; path = "CocosBuilder/CCB_files/Published-iOS/parts_record.png"; sourceTree = SOURCE_ROOT; };
+		0803EEDD16E4664800CC932B /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = "CocosBuilder/CCB_files/Published-iOS/star.png"; sourceTree = SOURCE_ROOT; };
+		0803EEDE16E4664800CC932B /* thumb_COLOURBOX5429592.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thumb_COLOURBOX5429592.png; path = "CocosBuilder/CCB_files/Published-iOS/thumb_COLOURBOX5429592.png"; sourceTree = SOURCE_ROOT; };
+		0803EEEB16E5B99900CC932B /* GameOverLayer.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameOverLayer.ccbi; path = "CocosBuilder/CCB_files/Published-iOS/GameOverLayer.ccbi"; sourceTree = SOURCE_ROOT; };
+		0803EEED16E5C59700CC932B /* no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = no.png; path = CocosBuilder/CCB_files/Resources/no.png; sourceTree = SOURCE_ROOT; };
+		0803EEEE16E5C59700CC932B /* Yes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Yes.png; path = CocosBuilder/CCB_files/Resources/Yes.png; sourceTree = SOURCE_ROOT; };
 		082018301678479B000A3F8D /* GameObjectInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjectInjector.h; path = sources/GameObjectInjector.h; sourceTree = SOURCE_ROOT; };
 		082018311678479B000A3F8D /* GameObjectInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectInjector.m; path = sources/GameObjectInjector.m; sourceTree = SOURCE_ROOT; };
 		082018341679577D000A3F8D /* pattern.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pattern.c; path = ../sources/pattern.c; sourceTree = "<group>"; };
@@ -702,8 +725,6 @@
 		08A371D716C822B9006819E3 /* utlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utlist.h; sourceTree = "<group>"; };
 		08A371D816C822B9006819E3 /* ZipUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipUtils.h; sourceTree = "<group>"; };
 		08A371D916C822B9006819E3 /* ZipUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipUtils.m; sourceTree = "<group>"; };
-		08A372A716C8A84D006819E3 /* clickme-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clickme-down.png"; sourceTree = "<group>"; };
-		08A372A816C8A84D006819E3 /* clickme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clickme.png; sourceTree = "<group>"; };
 		08B6D63A169548B000608ACF /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = common.h; path = sources/common.h; sourceTree = SOURCE_ROOT; };
 		08C86DC01674552F0082DBE5 /* tuffy_bold_italic-charmap.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "tuffy_bold_italic-charmap.plist"; path = "Fonts/tuffy_bold_italic-charmap.plist"; sourceTree = SOURCE_ROOT; };
 		08C86DF616745C3F0082DBE5 /* tuffy_bold_italic-charmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tuffy_bold_italic-charmap.png"; path = "../Fonts/tuffy_bold_italic-charmap.png"; sourceTree = "<group>"; };
@@ -904,10 +925,40 @@
 			name = Sound;
 			sourceTree = "<group>";
 		};
+		0803EEC816E3D20000CC932B /* CCUIViewWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				0803EEC416E3D19F00CC932B /* CCUIViewWrapper.h */,
+				0803EEC516E3D1A000CC932B /* CCUIViewWrapper.m */,
+			);
+			name = CCUIViewWrapper;
+			sourceTree = "<group>";
+		};
+		0803EED216E4660000CC932B /* CocosBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				0803EEED16E5C59700CC932B /* no.png */,
+				0803EEEE16E5C59700CC932B /* Yes.png */,
+				0803EED316E4664800CC932B /* eagle-nebula-star-birth-clouds-in-m16-ga.jpg_thumb.png */,
+				0803EED416E4664800CC932B /* HollywoodStarPhoto.png */,
+				0803EED516E4664800CC932B /* parts_bomb-hd.png */,
+				0803EED616E4664800CC932B /* parts_bomb.png */,
+				0803EED716E4664800CC932B /* parts_coin-hd.png */,
+				0803EED816E4664800CC932B /* parts_coin.png */,
+				0803EED916E4664800CC932B /* parts_player-hd.png */,
+				0803EEDA16E4664800CC932B /* parts_player.png */,
+				0803EEDB16E4664800CC932B /* parts_record-hd.png */,
+				0803EEDC16E4664800CC932B /* parts_record.png */,
+				0803EEDD16E4664800CC932B /* star.png */,
+				0803EEDE16E4664800CC932B /* thumb_COLOURBOX5429592.png */,
+			);
+			name = CocosBuilder;
+			sourceTree = "<group>";
+		};
 		0840D593163F435E003D5FE6 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
-				08A372AB16C8A856006819E3 /* CocosBuilder */,
+				0803EED216E4660000CC932B /* CocosBuilder */,
 				08DA1F881699503B0059439D /* MainMenu.jpg */,
 				8503010416A900FA0035D7C1 /* missle_icon.png */,
 				08DA1F8A169A426F0059439D /* modeButton.png */,
@@ -938,6 +989,8 @@
 		0840D5AC163F50FF003D5FE6 /* game */ = {
 			isa = PBXGroup;
 			children = (
+				0803EECA16E3D29000CC932B /* GameInfoGlobal.h */,
+				0803EECB16E3D29000CC932B /* GameInfoGlobal.m */,
 				85A671341651D13F00499BF7 /* Bomb.h */,
 				85A671351651D14000499BF7 /* Bomb.m */,
 				08DA1FFD16AAF46B0059439D /* ccDrawGameLayer.h */,
@@ -948,6 +1001,8 @@
 				0801C92516DA92C700ED1A1B /* Explosion.h */,
 				0801C92616DA92C700ED1A1B /* Explosion.m */,
 				0840D59B163F4BCC003D5FE6 /* GameLayer.h */,
+				0803EECD16E4212500CC932B /* GameModeMenu.h */,
+				0803EECE16E4212600CC932B /* GameModeMenu.m */,
 				0840D59C163F4BCC003D5FE6 /* GameLayer.m */,
 				08DA1F841698BD240059439D /* GameMainMenuLayer.h */,
 				08DA1F851698BD240059439D /* GameMainMenuLayer.m */,
@@ -1353,28 +1408,12 @@
 		08A372A416C8A69C006819E3 /* CocosBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				0803EEEB16E5B99900CC932B /* GameOverLayer.ccbi */,
 				0801C92D16DC819E00ED1A1B /* gameObjectBomb.ccbi */,
-				0801C92316DA927A00ED1A1B /* explosion.ccbi */,
+				0803EED016E464EF00CC932B /* GameModeMenu.ccbi */,
 				0801C92116D9FAEF00ED1A1B /* gameObjectCoin.ccbi */,
 				0801C90D16D5F06400ED1A1B /* MainGameLayer.ccbi */,
 				0801C90E16D5F06400ED1A1B /* MainGameScene.ccbi */,
-			);
-			name = CocosBuilder;
-			sourceTree = "<group>";
-		};
-		08A372AB16C8A856006819E3 /* CocosBuilder */ = {
-			isa = PBXGroup;
-			children = (
-				0801C91916D74C3E00ED1A1B /* parts_record-hd.png */,
-				0801C91A16D74C3E00ED1A1B /* parts_player-hd.png */,
-				0801C91B16D74C3E00ED1A1B /* parts_coin-hd.png */,
-				0801C91C16D74C3E00ED1A1B /* parts_bomb-hd.png */,
-				0801C91116D5F41C00ED1A1B /* parts_bomb.png */,
-				0801C91216D5F41C00ED1A1B /* parts_coin.png */,
-				0801C91316D5F41C00ED1A1B /* parts_player.png */,
-				0801C91416D5F41C00ED1A1B /* parts_record.png */,
-				08A372A716C8A84D006819E3 /* clickme-down.png */,
-				08A372A816C8A84D006819E3 /* clickme.png */,
 			);
 			name = CocosBuilder;
 			sourceTree = "<group>";
@@ -1533,6 +1572,7 @@
 		DC0C4B93154AB59800B4B727 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				0803EEC816E3D20000CC932B /* CCUIViewWrapper */,
 				08A3710A16C822B8006819E3 /* cocos2d */,
 				08A3709716C821BD006819E3 /* CCBReader */,
 				DC0C4C54154AB59800B4B727 /* CocosDenshion */,
@@ -1942,22 +1982,29 @@
 				08DA1F8C169A426F0059439D /* modeButton.png in Resources */,
 				08DA1F8D169A426F0059439D /* newsButton.png in Resources */,
 				8503010516A900FA0035D7C1 /* missle_icon.png in Resources */,
-				08A372A916C8A84D006819E3 /* clickme-down.png in Resources */,
-				08A372AA16C8A84D006819E3 /* clickme.png in Resources */,
 				0801C90F16D5F06400ED1A1B /* MainGameLayer.ccbi in Resources */,
 				0801C91016D5F06400ED1A1B /* MainGameScene.ccbi in Resources */,
-				0801C91516D5F41C00ED1A1B /* parts_bomb.png in Resources */,
-				0801C91616D5F41C00ED1A1B /* parts_coin.png in Resources */,
-				0801C91716D5F41C00ED1A1B /* parts_player.png in Resources */,
-				0801C91816D5F41C00ED1A1B /* parts_record.png in Resources */,
-				0801C91D16D74C3E00ED1A1B /* parts_record-hd.png in Resources */,
-				0801C91E16D74C3E00ED1A1B /* parts_player-hd.png in Resources */,
-				0801C91F16D74C3E00ED1A1B /* parts_coin-hd.png in Resources */,
-				0801C92016D74C3E00ED1A1B /* parts_bomb-hd.png in Resources */,
 				0801C92216D9FAEF00ED1A1B /* gameObjectCoin.ccbi in Resources */,
 				0801C92A16DC7ABA00ED1A1B /* pickup_coin.wav in Resources */,
 				0801C92C16DC7B1900ED1A1B /* JewelBeat - Follow The Beat.wav in Resources */,
 				0801C92E16DC819E00ED1A1B /* gameObjectBomb.ccbi in Resources */,
+				0803EEC916E3D24A00CC932B /* popup.m4a in Resources */,
+				0803EED116E464EF00CC932B /* GameModeMenu.ccbi in Resources */,
+				0803EEDF16E4664800CC932B /* eagle-nebula-star-birth-clouds-in-m16-ga.jpg_thumb.png in Resources */,
+				0803EEE016E4664800CC932B /* HollywoodStarPhoto.png in Resources */,
+				0803EEE116E4664800CC932B /* parts_bomb-hd.png in Resources */,
+				0803EEE216E4664800CC932B /* parts_bomb.png in Resources */,
+				0803EEE316E4664800CC932B /* parts_coin-hd.png in Resources */,
+				0803EEE416E4664800CC932B /* parts_coin.png in Resources */,
+				0803EEE516E4664800CC932B /* parts_player-hd.png in Resources */,
+				0803EEE616E4664800CC932B /* parts_player.png in Resources */,
+				0803EEE716E4664800CC932B /* parts_record-hd.png in Resources */,
+				0803EEE816E4664800CC932B /* parts_record.png in Resources */,
+				0803EEE916E4664800CC932B /* star.png in Resources */,
+				0803EEEA16E4664800CC932B /* thumb_COLOURBOX5429592.png in Resources */,
+				0803EEEC16E5B99900CC932B /* GameOverLayer.ccbi in Resources */,
+				0803EEEF16E5C59700CC932B /* no.png in Resources */,
+				0803EEF016E5C59700CC932B /* Yes.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1990,6 +2037,8 @@
 				850FAD1016BD9D8F00EBF5FF /* PowerShield.m in Sources */,
 				0801C92716DA92C800ED1A1B /* Explosion.m in Sources */,
 				851C65B616DEB28D00B9BDB5 /* SoundController.m in Sources */,
+				0803EECC16E3D29100CC932B /* GameInfoGlobal.m in Sources */,
+				0803EECF16E4212600CC932B /* GameModeMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2127,6 +2176,7 @@
 				08A3729D16C822B9006819E3 /* TGAlib.m in Sources */,
 				08A3729F16C822B9006819E3 /* TransformUtils.m in Sources */,
 				08A372A316C822B9006819E3 /* ZipUtils.m in Sources */,
+				0803EEC716E3D1E500CC932B /* CCUIViewWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
