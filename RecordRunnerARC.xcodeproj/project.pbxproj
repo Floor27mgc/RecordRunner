@@ -19,8 +19,6 @@
 		0803EECC16E3D29100CC932B /* GameInfoGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803EECB16E3D29000CC932B /* GameInfoGlobal.m */; };
 		0803EECF16E4212600CC932B /* GameModeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803EECE16E4212600CC932B /* GameModeMenu.m */; };
 		0803EED116E464EF00CC932B /* GameModeMenu.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0803EED016E464EF00CC932B /* GameModeMenu.ccbi */; };
-		0803EEDF16E4664800CC932B /* eagle-nebula-star-birth-clouds-in-m16-ga.jpg_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EED316E4664800CC932B /* eagle-nebula-star-birth-clouds-in-m16-ga.jpg_thumb.png */; };
-		0803EEE016E4664800CC932B /* HollywoodStarPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EED416E4664800CC932B /* HollywoodStarPhoto.png */; };
 		0803EEE116E4664800CC932B /* parts_bomb-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EED516E4664800CC932B /* parts_bomb-hd.png */; };
 		0803EEE216E4664800CC932B /* parts_bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EED616E4664800CC932B /* parts_bomb.png */; };
 		0803EEE316E4664800CC932B /* parts_coin-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EED716E4664800CC932B /* parts_coin-hd.png */; };
@@ -29,8 +27,6 @@
 		0803EEE616E4664800CC932B /* parts_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEDA16E4664800CC932B /* parts_player.png */; };
 		0803EEE716E4664800CC932B /* parts_record-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEDB16E4664800CC932B /* parts_record-hd.png */; };
 		0803EEE816E4664800CC932B /* parts_record.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEDC16E4664800CC932B /* parts_record.png */; };
-		0803EEE916E4664800CC932B /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEDD16E4664800CC932B /* star.png */; };
-		0803EEEA16E4664800CC932B /* thumb_COLOURBOX5429592.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEDE16E4664800CC932B /* thumb_COLOURBOX5429592.png */; };
 		0803EEEC16E5B99900CC932B /* GameOverLayer.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEEB16E5B99900CC932B /* GameOverLayer.ccbi */; };
 		0803EEEF16E5C59700CC932B /* no.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEED16E5C59700CC932B /* no.png */; };
 		0803EEF016E5C59700CC932B /* Yes.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEEE16E5C59700CC932B /* Yes.png */; };
@@ -359,6 +355,9 @@
 		8503011416A9FF790035D7C1 /* Missile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8503011316A9FF790035D7C1 /* Missile.m */; };
 		850FAD1016BD9D8F00EBF5FF /* PowerShield.m in Sources */ = {isa = PBXBuildFile; fileRef = 850FAD0F16BD9D8F00EBF5FF /* PowerShield.m */; };
 		851C65B616DEB28D00B9BDB5 /* SoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 851C65B516DEB28D00B9BDB5 /* SoundController.m */; };
+		8521529B16E6A079007F5665 /* parts_shield.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8521529916E6A079007F5665 /* parts_shield.jpg */; };
+		8521529C16E6A079007F5665 /* parts_shield-hd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8521529A16E6A079007F5665 /* parts_shield-hd.jpg */; };
+		8521529F16E6FDEB007F5665 /* player_with_shield.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8521529E16E6FDEB007F5665 /* player_with_shield.jpg */; };
 		8583C66A16802C9C003A3213 /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8583C66916802C9C003A3213 /* GameOverLayer.m */; };
 		859EC13C16B60FB7003BFF41 /* PowerSlowDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 859EC13B16B60FB7003BFF41 /* PowerSlowDown.m */; };
 		85A671361651D14000499BF7 /* Bomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671351651D14000499BF7 /* Bomb.m */; };
@@ -443,8 +442,6 @@
 		0803EECD16E4212500CC932B /* GameModeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameModeMenu.h; path = sources/GameModeMenu.h; sourceTree = SOURCE_ROOT; };
 		0803EECE16E4212600CC932B /* GameModeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameModeMenu.m; path = sources/GameModeMenu.m; sourceTree = SOURCE_ROOT; };
 		0803EED016E464EF00CC932B /* GameModeMenu.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameModeMenu.ccbi; path = "../CocosBuilder/CCB_files/Published-iOS/GameModeMenu.ccbi"; sourceTree = "<group>"; };
-		0803EED316E4664800CC932B /* eagle-nebula-star-birth-clouds-in-m16-ga.jpg_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "eagle-nebula-star-birth-clouds-in-m16-ga.jpg_thumb.png"; path = "CocosBuilder/CCB_files/Published-iOS/eagle-nebula-star-birth-clouds-in-m16-ga.jpg_thumb.png"; sourceTree = SOURCE_ROOT; };
-		0803EED416E4664800CC932B /* HollywoodStarPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HollywoodStarPhoto.png; path = "CocosBuilder/CCB_files/Published-iOS/HollywoodStarPhoto.png"; sourceTree = SOURCE_ROOT; };
 		0803EED516E4664800CC932B /* parts_bomb-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_bomb-hd.png"; path = "CocosBuilder/CCB_files/Published-iOS/parts_bomb-hd.png"; sourceTree = SOURCE_ROOT; };
 		0803EED616E4664800CC932B /* parts_bomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_bomb.png; path = "CocosBuilder/CCB_files/Published-iOS/parts_bomb.png"; sourceTree = SOURCE_ROOT; };
 		0803EED716E4664800CC932B /* parts_coin-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_coin-hd.png"; path = "CocosBuilder/CCB_files/Published-iOS/parts_coin-hd.png"; sourceTree = SOURCE_ROOT; };
@@ -453,8 +450,6 @@
 		0803EEDA16E4664800CC932B /* parts_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_player.png; path = "CocosBuilder/CCB_files/Published-iOS/parts_player.png"; sourceTree = SOURCE_ROOT; };
 		0803EEDB16E4664800CC932B /* parts_record-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_record-hd.png"; path = "CocosBuilder/CCB_files/Published-iOS/parts_record-hd.png"; sourceTree = SOURCE_ROOT; };
 		0803EEDC16E4664800CC932B /* parts_record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_record.png; path = "CocosBuilder/CCB_files/Published-iOS/parts_record.png"; sourceTree = SOURCE_ROOT; };
-		0803EEDD16E4664800CC932B /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = "CocosBuilder/CCB_files/Published-iOS/star.png"; sourceTree = SOURCE_ROOT; };
-		0803EEDE16E4664800CC932B /* thumb_COLOURBOX5429592.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thumb_COLOURBOX5429592.png; path = "CocosBuilder/CCB_files/Published-iOS/thumb_COLOURBOX5429592.png"; sourceTree = SOURCE_ROOT; };
 		0803EEEB16E5B99900CC932B /* GameOverLayer.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameOverLayer.ccbi; path = "CocosBuilder/CCB_files/Published-iOS/GameOverLayer.ccbi"; sourceTree = SOURCE_ROOT; };
 		0803EEED16E5C59700CC932B /* no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = no.png; path = CocosBuilder/CCB_files/Resources/no.png; sourceTree = SOURCE_ROOT; };
 		0803EEEE16E5C59700CC932B /* Yes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Yes.png; path = CocosBuilder/CCB_files/Resources/Yes.png; sourceTree = SOURCE_ROOT; };
@@ -803,6 +798,10 @@
 		850FAD0F16BD9D8F00EBF5FF /* PowerShield.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowerShield.m; path = sources/PowerShield.m; sourceTree = SOURCE_ROOT; };
 		851C65B416DEB28D00B9BDB5 /* SoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundController.h; path = sources/SoundController.h; sourceTree = SOURCE_ROOT; };
 		851C65B516DEB28D00B9BDB5 /* SoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SoundController.m; path = sources/SoundController.m; sourceTree = SOURCE_ROOT; };
+		8521529916E6A079007F5665 /* parts_shield.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = parts_shield.jpg; sourceTree = "<group>"; };
+		8521529A16E6A079007F5665 /* parts_shield-hd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "parts_shield-hd.jpg"; sourceTree = "<group>"; };
+		8521529D16E6A0FB007F5665 /* gameObjectShield.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameObjectShield.ccbi; sourceTree = "<group>"; };
+		8521529E16E6FDEB007F5665 /* player_with_shield.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = player_with_shield.jpg; sourceTree = "<group>"; };
 		8583C66816802C9C003A3213 /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverLayer.h; path = sources/GameOverLayer.h; sourceTree = SOURCE_ROOT; };
 		8583C66916802C9C003A3213 /* GameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverLayer.m; path = sources/GameOverLayer.m; sourceTree = SOURCE_ROOT; };
 		859EC13A16B60FB7003BFF41 /* PowerSlowDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerSlowDown.h; path = sources/PowerSlowDown.h; sourceTree = SOURCE_ROOT; };
@@ -938,9 +937,6 @@
 			isa = PBXGroup;
 			children = (
 				0803EEED16E5C59700CC932B /* no.png */,
-				0803EEEE16E5C59700CC932B /* Yes.png */,
-				0803EED316E4664800CC932B /* eagle-nebula-star-birth-clouds-in-m16-ga.jpg_thumb.png */,
-				0803EED416E4664800CC932B /* HollywoodStarPhoto.png */,
 				0803EED516E4664800CC932B /* parts_bomb-hd.png */,
 				0803EED616E4664800CC932B /* parts_bomb.png */,
 				0803EED716E4664800CC932B /* parts_coin-hd.png */,
@@ -949,8 +945,9 @@
 				0803EEDA16E4664800CC932B /* parts_player.png */,
 				0803EEDB16E4664800CC932B /* parts_record-hd.png */,
 				0803EEDC16E4664800CC932B /* parts_record.png */,
-				0803EEDD16E4664800CC932B /* star.png */,
-				0803EEDE16E4664800CC932B /* thumb_COLOURBOX5429592.png */,
+				8521529A16E6A079007F5665 /* parts_shield-hd.jpg */,
+				8521529916E6A079007F5665 /* parts_shield.jpg */,
+				0803EEEE16E5C59700CC932B /* Yes.png */,
 			);
 			name = CocosBuilder;
 			sourceTree = "<group>";
@@ -963,6 +960,7 @@
 				8503010416A900FA0035D7C1 /* missle_icon.png */,
 				08DA1F8A169A426F0059439D /* modeButton.png */,
 				08DA1F8B169A426F0059439D /* newsButton.png */,
+				8521529E16E6FDEB007F5665 /* player_with_shield.jpg */,
 			);
 			name = Graphics;
 			path = ../Graphics;
@@ -989,8 +987,6 @@
 		0840D5AC163F50FF003D5FE6 /* game */ = {
 			isa = PBXGroup;
 			children = (
-				0803EECA16E3D29000CC932B /* GameInfoGlobal.h */,
-				0803EECB16E3D29000CC932B /* GameInfoGlobal.m */,
 				85A671341651D13F00499BF7 /* Bomb.h */,
 				85A671351651D14000499BF7 /* Bomb.m */,
 				08DA1FFD16AAF46B0059439D /* ccDrawGameLayer.h */,
@@ -1000,12 +996,14 @@
 				08B6D63A169548B000608ACF /* common.h */,
 				0801C92516DA92C700ED1A1B /* Explosion.h */,
 				0801C92616DA92C700ED1A1B /* Explosion.m */,
+				0803EECA16E3D29000CC932B /* GameInfoGlobal.h */,
+				0803EECB16E3D29000CC932B /* GameInfoGlobal.m */,
 				0840D59B163F4BCC003D5FE6 /* GameLayer.h */,
-				0803EECD16E4212500CC932B /* GameModeMenu.h */,
-				0803EECE16E4212600CC932B /* GameModeMenu.m */,
 				0840D59C163F4BCC003D5FE6 /* GameLayer.m */,
 				08DA1F841698BD240059439D /* GameMainMenuLayer.h */,
 				08DA1F851698BD240059439D /* GameMainMenuLayer.m */,
+				0803EECD16E4212500CC932B /* GameModeMenu.h */,
+				0803EECE16E4212600CC932B /* GameModeMenu.m */,
 				0840D59E163F4BF5003D5FE6 /* GameObjectBase.h */,
 				0840D59F163F4BF5003D5FE6 /* GameObjectBase.m */,
 				082018301678479B000A3F8D /* GameObjectInjector.h */,
@@ -1408,6 +1406,7 @@
 		08A372A416C8A69C006819E3 /* CocosBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				8521529D16E6A0FB007F5665 /* gameObjectShield.ccbi */,
 				0803EEEB16E5B99900CC932B /* GameOverLayer.ccbi */,
 				0801C92D16DC819E00ED1A1B /* gameObjectBomb.ccbi */,
 				0803EED016E464EF00CC932B /* GameModeMenu.ccbi */,
@@ -1990,8 +1989,6 @@
 				0801C92E16DC819E00ED1A1B /* gameObjectBomb.ccbi in Resources */,
 				0803EEC916E3D24A00CC932B /* popup.m4a in Resources */,
 				0803EED116E464EF00CC932B /* GameModeMenu.ccbi in Resources */,
-				0803EEDF16E4664800CC932B /* eagle-nebula-star-birth-clouds-in-m16-ga.jpg_thumb.png in Resources */,
-				0803EEE016E4664800CC932B /* HollywoodStarPhoto.png in Resources */,
 				0803EEE116E4664800CC932B /* parts_bomb-hd.png in Resources */,
 				0803EEE216E4664800CC932B /* parts_bomb.png in Resources */,
 				0803EEE316E4664800CC932B /* parts_coin-hd.png in Resources */,
@@ -2000,11 +1997,12 @@
 				0803EEE616E4664800CC932B /* parts_player.png in Resources */,
 				0803EEE716E4664800CC932B /* parts_record-hd.png in Resources */,
 				0803EEE816E4664800CC932B /* parts_record.png in Resources */,
-				0803EEE916E4664800CC932B /* star.png in Resources */,
-				0803EEEA16E4664800CC932B /* thumb_COLOURBOX5429592.png in Resources */,
 				0803EEEC16E5B99900CC932B /* GameOverLayer.ccbi in Resources */,
 				0803EEEF16E5C59700CC932B /* no.png in Resources */,
 				0803EEF016E5C59700CC932B /* Yes.png in Resources */,
+				8521529B16E6A079007F5665 /* parts_shield.jpg in Resources */,
+				8521529C16E6A079007F5665 /* parts_shield-hd.jpg in Resources */,
+				8521529F16E6FDEB007F5665 /* player_with_shield.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

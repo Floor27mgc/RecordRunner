@@ -9,17 +9,17 @@
 #import "Power.h"
 
 @implementation Power
-/*
+
 @synthesize powerType;
 @synthesize parentGameLayer;
 @synthesize myTrackNum;
 
-// -----------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------
 - (id) initWithType:(power_type_t)type gameLayer:(GameLayer *)parentLayer
 {
     if (self = [super init]) {
         self.powerType = type;
-        [GameLayer sharedGameLayer] = parentLayer;
+        //[GameLayer sharedGameLayer] = parentLayer;
         self.myTrackNum = arc4random() % MAX_NUM_TRACK;
     }
     
@@ -45,5 +45,5 @@
     [[GameLayer sharedGameLayer].powerPool removeObjectFromTrack:self.myTrackNum
                                                withObject:self];
 }
-*/
+
 @end

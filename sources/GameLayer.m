@@ -236,7 +236,7 @@ static GameLayer *sharedGameLayer;
                 [self addChild: _coin.gameObjectSprite];
             }
         }
-      
+        */
         // Create Power Pool
         _powerPool = [Queue initWithMinSize:1];
         
@@ -248,19 +248,20 @@ static GameLayer *sharedGameLayer;
         for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
             for (int i=0; i<(trackNum+1) * MIN_NUM_BOMBS_PER_TRACK; i++) {
                 PowerIcon * powerIcon =
-                [PowerIcon initWithGameLayer:self
-                                imageFileName:@"shield.jpg"
-                                 objectSpeed:kDefaultGameObjectAngularVelocityInDegree
-                                    powerType:shield];
+                (PowerIcon *)[CCBReader nodeGraphFromFile:@"gameObjectShield.ccbi"];
                 
-                powerIcon.gameObjectSprite.visible = 0;
+                powerIcon.tag = gameObjectTag;
+                powerIcon.visible = 0;
+                powerIcon.gameObjectAngularVelocity = kDefaultGameObjectAngularVelocityInDegree;
+                powerIcon.animationManager = powerIcon.userObject;
+                powerIcon.type = shield;
                 [_powerIconFreePool addObject:powerIcon toTrack:trackNum];
-                
-                // add coin to GameLayer
-                [self addChild: powerIcon.gameObjectSprite];
+                gameObjectTag++;
+                // add power icon to GameLayer
+                [self addChild: powerIcon z:10];
             }
         }
-        
+        /*
         // Create and load high score
         _highScore = [Score initWithGameLayer:self imageFileName:@"" objectSpeed:0];
         int tempHighScore =
@@ -363,13 +364,14 @@ static GameLayer *sharedGameLayer;
     [self updateHighScore];
     [_score showNextFrame];
     [_highScore showNextFrame];
-    
+    */
     // check if new Power up has been triggered
     [self triggerPowerIcons];
     
     // update all PowerIcons
     for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
-        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_powerIconUsedPool, trackNum); ++i) {
+        for (int i = 0;
+             i < POOL_OBJ_COUNT_ON_TRACK(_powerIconUsedPool, trackNum); ++i) {
             [POOL_OBJS_ON_TRACK(_powerIconUsedPool, trackNum)[i] showNextFrame];
         }
     }
@@ -379,7 +381,7 @@ static GameLayer *sharedGameLayer;
         for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_powerPool, trackNum); ++i) {
             [POOL_OBJS_ON_TRACK(_powerPool, trackNum)[i] runPower];
         }
-    } */
+    }
 }
 
 /*
@@ -436,19 +438,18 @@ static GameLayer *sharedGameLayer;
 
     return randomTrackCoords;
 }
-
+*/
 // -----------------------------------------------------------------------------------
 - (void) triggerPowerIcons
-{
-    // trigger Power for every Nth coin collected
-    if ([_score getScore] % 10 == 0 &&
-        [_powerIconUsedPool getObjectCount] == 0) {
+{ 
+    if ([_powerIconUsedPool getObjectCount] == 0) {
         NSLog(@"Triggering Power Icon!");
         
         [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:POWER_ICON_TYPE effectType:kRotation];
     }
 }
 
+ /*
 // -----------------------------------------------------------------------------------
 - (void) gameOver
 {

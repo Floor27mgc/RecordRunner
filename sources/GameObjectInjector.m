@@ -81,8 +81,8 @@
             maxlimit = (MIN_NUM_COINS_PER_TRACK * (trackNum + 1));
             break;
         case POWER_ICON_TYPE:
-//            usedPool = self.mainGameLayer.powerIconUsedPool;
-//            freePool = self.mainGameLayer.powerIconFreePool;
+            usedPool = [GameLayer sharedGameLayer].powerIconUsedPool;
+            freePool = [GameLayer sharedGameLayer].powerIconFreePool;
             maxlimit = (MIN_NUM_POWER_ICONS_PER_TRACK * (trackNum + 1));
             break;
         case SPACE_TYPE:
@@ -163,10 +163,12 @@
             return nil;
         }
     }
-/*
-    for (int i=0; i<POOL_OBJ_COUNT_ON_TRACK(self.mainGameLayer.powerIconUsedPool, trackNum); i++)
+
+    for (int i=0;
+         i<POOL_OBJ_COUNT_ON_TRACK([GameLayer sharedGameLayer].powerIconUsedPool, trackNum);
+         i++)
     {
-        NSMutableArray *currentObjectArray = POOL_OBJS_ON_TRACK(self.mainGameLayer.powerIconUsedPool, trackNum);
+        NSMutableArray *currentObjectArray =POOL_OBJS_ON_TRACK([GameLayer sharedGameLayer].powerIconUsedPool, trackNum);
         CGPoint currentObjectPosition = ((GameObjectBase *)currentObjectArray[i]).gameObjectSprite.position;
         CGPoint gameObjectPoint = [dummyInjectorBox convertToNodeSpace: currentObjectPosition];
         CGPoint gameObjectPoint1 = CGPointMake(gameObjectPoint.x + COMMON_GRID_WIDTH/2,
@@ -199,7 +201,7 @@
             return nil;
         }
     }
-*/    
+
     newObject = [freePool takeObjectFromTrack:trackNum];
     if (newObject != nil) {
         newObject.anchorPoint = ccp(0.5,0.5);
@@ -218,8 +220,7 @@
     } else {
         NSLog(@"out of object");
     }
-    
+ 
     return newObject;
 }
-
 @end

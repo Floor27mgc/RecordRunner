@@ -75,10 +75,10 @@ typedef enum {
 
 // add Power to the layer
 - (void) addPower:(id) newPower;
-
+*/
 // add PowerIcon to layer, if condition has occurred
 - (void) triggerPowerIcons;
-
+/*
 // generate start coordinates for a random track
 - (CGPoint) generateRandomTrackCoords;
 
@@ -106,10 +106,10 @@ typedef enum {
 @property (nonatomic, strong) Queue * bombFreePool;
 @property (nonatomic, strong) Queue * bombUsedPool;
 @property (nonatomic, strong) SoundController * soundController;
-/*
 @property (nonatomic, strong) Queue * powerPool;
 @property (nonatomic, strong) Queue * powerIconFreePool;
 @property (nonatomic, strong) Queue * powerIconUsedPool;
+/*
 @property (nonatomic, strong) CCSprite *background;
 @property (nonatomic, strong) Score * score;
 @property (nonatomic, strong) Score * highScore;

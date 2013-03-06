@@ -25,8 +25,8 @@
 - (void) runPower
 {
     NSTimeInterval elapsed = abs([_startTime timeIntervalSinceNow]);
-    NSLog(@"Shield is running");
     if (elapsed > SHIELD_LIFETIME_SEC) {
+        NSLog(@"Shield has expired");
         [[GameLayer sharedGameLayer].player setSheilded:NO];
         [super resetPower];
     }

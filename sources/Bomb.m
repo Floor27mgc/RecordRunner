@@ -60,6 +60,7 @@
 
     // if the player has a shield, act accordingly
     if ([GameLayer sharedGameLayer].player.hasShield) {
+        NSLog(@"Bomb absorbed by player's shield!");
 //        [[GameLayer sharedGameLayer].score incrementScore:2];
     } else {
 
