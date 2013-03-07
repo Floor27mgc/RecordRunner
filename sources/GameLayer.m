@@ -248,7 +248,7 @@ static GameLayer *sharedGameLayer;
         for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
             for (int i=0; i<(trackNum+1) * MIN_NUM_BOMBS_PER_TRACK; i++) {
                 PowerIcon * powerIcon =
-                (PowerIcon *)[CCBReader nodeGraphFromFile:@"gameObjectShield.ccbi"];
+                (PowerIcon *)[CCBReader nodeGraphFromFile:@"GameObjectShield.ccbi"];
                 
                 powerIcon.tag = gameObjectTag;
                 powerIcon.visible = 0;

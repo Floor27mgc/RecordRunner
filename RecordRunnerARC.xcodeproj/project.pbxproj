@@ -30,6 +30,7 @@
 		0803EEEC16E5B99900CC932B /* GameOverLayer.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEEB16E5B99900CC932B /* GameOverLayer.ccbi */; };
 		0803EEEF16E5C59700CC932B /* no.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEED16E5C59700CC932B /* no.png */; };
 		0803EEF016E5C59700CC932B /* Yes.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEEE16E5C59700CC932B /* Yes.png */; };
+		0803EEF116E8639500CC932B /* GameObjectShield.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 8521529D16E6A0FB007F5665 /* GameObjectShield.ccbi */; };
 		082018321678479B000A3F8D /* GameObjectInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 082018311678479B000A3F8D /* GameObjectInjector.m */; };
 		082018351679577D000A3F8D /* pattern.c in Sources */ = {isa = PBXBuildFile; fileRef = 082018341679577D000A3F8D /* pattern.c */; };
 		0840D59D163F4BCC003D5FE6 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0840D59C163F4BCC003D5FE6 /* GameLayer.m */; };
@@ -355,8 +356,8 @@
 		8503011416A9FF790035D7C1 /* Missile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8503011316A9FF790035D7C1 /* Missile.m */; };
 		850FAD1016BD9D8F00EBF5FF /* PowerShield.m in Sources */ = {isa = PBXBuildFile; fileRef = 850FAD0F16BD9D8F00EBF5FF /* PowerShield.m */; };
 		851C65B616DEB28D00B9BDB5 /* SoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 851C65B516DEB28D00B9BDB5 /* SoundController.m */; };
-		8521529B16E6A079007F5665 /* parts_shield.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8521529916E6A079007F5665 /* parts_shield.jpg */; };
-		8521529C16E6A079007F5665 /* parts_shield-hd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8521529A16E6A079007F5665 /* parts_shield-hd.jpg */; };
+		8521529B16E6A079007F5665 /* parts_shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 8521529916E6A079007F5665 /* parts_shield.png */; };
+		8521529C16E6A079007F5665 /* parts_shield-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 8521529A16E6A079007F5665 /* parts_shield-hd.png */; };
 		8521529F16E6FDEB007F5665 /* player_with_shield.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8521529E16E6FDEB007F5665 /* player_with_shield.jpg */; };
 		8583C66A16802C9C003A3213 /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8583C66916802C9C003A3213 /* GameOverLayer.m */; };
 		859EC13C16B60FB7003BFF41 /* PowerSlowDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 859EC13B16B60FB7003BFF41 /* PowerSlowDown.m */; };
@@ -451,8 +452,8 @@
 		0803EEDB16E4664800CC932B /* parts_record-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_record-hd.png"; path = "CocosBuilder/CCB_files/Published-iOS/parts_record-hd.png"; sourceTree = SOURCE_ROOT; };
 		0803EEDC16E4664800CC932B /* parts_record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_record.png; path = "CocosBuilder/CCB_files/Published-iOS/parts_record.png"; sourceTree = SOURCE_ROOT; };
 		0803EEEB16E5B99900CC932B /* GameOverLayer.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameOverLayer.ccbi; path = "CocosBuilder/CCB_files/Published-iOS/GameOverLayer.ccbi"; sourceTree = SOURCE_ROOT; };
-		0803EEED16E5C59700CC932B /* no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = no.png; path = CocosBuilder/CCB_files/Resources/no.png; sourceTree = SOURCE_ROOT; };
-		0803EEEE16E5C59700CC932B /* Yes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Yes.png; path = CocosBuilder/CCB_files/Resources/Yes.png; sourceTree = SOURCE_ROOT; };
+		0803EEED16E5C59700CC932B /* no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = no.png; path = "CocosBuilder/CCB_files/Published-iOS/no.png"; sourceTree = SOURCE_ROOT; };
+		0803EEEE16E5C59700CC932B /* Yes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Yes.png; path = "CocosBuilder/CCB_files/Published-iOS/Yes.png"; sourceTree = SOURCE_ROOT; };
 		082018301678479B000A3F8D /* GameObjectInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjectInjector.h; path = sources/GameObjectInjector.h; sourceTree = SOURCE_ROOT; };
 		082018311678479B000A3F8D /* GameObjectInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectInjector.m; path = sources/GameObjectInjector.m; sourceTree = SOURCE_ROOT; };
 		082018341679577D000A3F8D /* pattern.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pattern.c; path = ../sources/pattern.c; sourceTree = "<group>"; };
@@ -798,9 +799,9 @@
 		850FAD0F16BD9D8F00EBF5FF /* PowerShield.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowerShield.m; path = sources/PowerShield.m; sourceTree = SOURCE_ROOT; };
 		851C65B416DEB28D00B9BDB5 /* SoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundController.h; path = sources/SoundController.h; sourceTree = SOURCE_ROOT; };
 		851C65B516DEB28D00B9BDB5 /* SoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SoundController.m; path = sources/SoundController.m; sourceTree = SOURCE_ROOT; };
-		8521529916E6A079007F5665 /* parts_shield.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = parts_shield.jpg; sourceTree = "<group>"; };
-		8521529A16E6A079007F5665 /* parts_shield-hd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "parts_shield-hd.jpg"; sourceTree = "<group>"; };
-		8521529D16E6A0FB007F5665 /* gameObjectShield.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameObjectShield.ccbi; sourceTree = "<group>"; };
+		8521529916E6A079007F5665 /* parts_shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_shield.png; path = "../CocosBuilder/CCB_files/Published-iOS/parts_shield.png"; sourceTree = "<group>"; };
+		8521529A16E6A079007F5665 /* parts_shield-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_shield-hd.png"; path = "../CocosBuilder/CCB_files/Published-iOS/parts_shield-hd.png"; sourceTree = "<group>"; };
+		8521529D16E6A0FB007F5665 /* GameObjectShield.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameObjectShield.ccbi; path = "../CocosBuilder/CCB_files/Published-iOS/GameObjectShield.ccbi"; sourceTree = "<group>"; };
 		8521529E16E6FDEB007F5665 /* player_with_shield.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = player_with_shield.jpg; sourceTree = "<group>"; };
 		8583C66816802C9C003A3213 /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverLayer.h; path = sources/GameOverLayer.h; sourceTree = SOURCE_ROOT; };
 		8583C66916802C9C003A3213 /* GameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverLayer.m; path = sources/GameOverLayer.m; sourceTree = SOURCE_ROOT; };
@@ -945,8 +946,8 @@
 				0803EEDA16E4664800CC932B /* parts_player.png */,
 				0803EEDB16E4664800CC932B /* parts_record-hd.png */,
 				0803EEDC16E4664800CC932B /* parts_record.png */,
-				8521529A16E6A079007F5665 /* parts_shield-hd.jpg */,
-				8521529916E6A079007F5665 /* parts_shield.jpg */,
+				8521529A16E6A079007F5665 /* parts_shield-hd.png */,
+				8521529916E6A079007F5665 /* parts_shield.png */,
 				0803EEEE16E5C59700CC932B /* Yes.png */,
 			);
 			name = CocosBuilder;
@@ -1406,7 +1407,7 @@
 		08A372A416C8A69C006819E3 /* CocosBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				8521529D16E6A0FB007F5665 /* gameObjectShield.ccbi */,
+				8521529D16E6A0FB007F5665 /* GameObjectShield.ccbi */,
 				0803EEEB16E5B99900CC932B /* GameOverLayer.ccbi */,
 				0801C92D16DC819E00ED1A1B /* gameObjectBomb.ccbi */,
 				0803EED016E464EF00CC932B /* GameModeMenu.ccbi */,
@@ -2000,9 +2001,10 @@
 				0803EEEC16E5B99900CC932B /* GameOverLayer.ccbi in Resources */,
 				0803EEEF16E5C59700CC932B /* no.png in Resources */,
 				0803EEF016E5C59700CC932B /* Yes.png in Resources */,
-				8521529B16E6A079007F5665 /* parts_shield.jpg in Resources */,
-				8521529C16E6A079007F5665 /* parts_shield-hd.jpg in Resources */,
+				8521529B16E6A079007F5665 /* parts_shield.png in Resources */,
+				8521529C16E6A079007F5665 /* parts_shield-hd.png in Resources */,
 				8521529F16E6FDEB007F5665 /* player_with_shield.jpg in Resources */,
+				0803EEF116E8639500CC932B /* GameObjectShield.ccbi in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

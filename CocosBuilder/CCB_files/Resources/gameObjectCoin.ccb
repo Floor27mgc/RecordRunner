@@ -240,9 +240,9 @@
 				<key>displayName</key>
 				<string>parts_coin</string>
 				<key>memberVarAssignmentName</key>
-				<string>coinImage</string>
+				<string></string>
 				<key>memberVarAssignmentType</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>properties</key>
 				<array>
 					<dict>
@@ -306,8 +306,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
