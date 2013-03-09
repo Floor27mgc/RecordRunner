@@ -109,6 +109,7 @@ typedef enum {
 @property (nonatomic, strong) Queue * powerPool;
 @property (nonatomic, strong) Queue * powerIconFreePool;
 @property (nonatomic, strong) Queue * powerIconUsedPool;
+@property (nonatomic, strong) GameOverLayer * gameOverLayer;
 /*
 @property (nonatomic, strong) CCSprite *background;
 @property (nonatomic, strong) Score * score;

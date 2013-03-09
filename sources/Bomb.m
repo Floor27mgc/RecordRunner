@@ -63,10 +63,20 @@
         NSLog(@"Bomb absorbed by player's shield!");
 //        [[GameLayer sharedGameLayer].score incrementScore:2];
     } else {
+        if ([GameLayer sharedGameLayer].gameOverLayer != nil)
+        {
+            CCBAnimationManager* animationManager =
+                [GameLayer sharedGameLayer].gameOverLayer.userObject;
+            NSLog(@"animationManager: %@", animationManager);
 
-        CCNode* gameOverLayer = [CCBReader nodeGraphFromFile:@"GameOverLayer.ccbi"];
-        [[GameLayer sharedGameLayer] addChild:gameOverLayer z:12];
-        [[GameLayer sharedGameLayer] pauseSchedulerAndActions];
+            [animationManager runAnimationsForSequenceNamed:@"Pop in"];
+        } else {
+            CCNode* gameOverLayer = [CCBReader nodeGraphFromFile:@"GameOverLayerBox.ccbi"];
+            gameOverLayer.position = COMMON_SCREEN_CENTER;
+            [[GameLayer sharedGameLayer] addChild:gameOverLayer z:11];
+        }
+        
+        [[GameLayer sharedGameLayer] pauseSchedulerAndActions]; 
 
 //        [[GameLayer sharedGameLayer] gameOver];
     

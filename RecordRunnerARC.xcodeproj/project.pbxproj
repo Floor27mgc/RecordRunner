@@ -27,10 +27,10 @@
 		0803EEE616E4664800CC932B /* parts_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEDA16E4664800CC932B /* parts_player.png */; };
 		0803EEE716E4664800CC932B /* parts_record-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEDB16E4664800CC932B /* parts_record-hd.png */; };
 		0803EEE816E4664800CC932B /* parts_record.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEDC16E4664800CC932B /* parts_record.png */; };
-		0803EEEC16E5B99900CC932B /* GameOverLayer.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEEB16E5B99900CC932B /* GameOverLayer.ccbi */; };
 		0803EEEF16E5C59700CC932B /* no.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEED16E5C59700CC932B /* no.png */; };
 		0803EEF016E5C59700CC932B /* Yes.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEEE16E5C59700CC932B /* Yes.png */; };
 		0803EEF116E8639500CC932B /* GameObjectShield.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 8521529D16E6A0FB007F5665 /* GameObjectShield.ccbi */; };
+		0803EEF316EAA19000CC932B /* GameOverLayerBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEF216EAA19000CC932B /* GameOverLayerBox.ccbi */; };
 		082018321678479B000A3F8D /* GameObjectInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 082018311678479B000A3F8D /* GameObjectInjector.m */; };
 		082018351679577D000A3F8D /* pattern.c in Sources */ = {isa = PBXBuildFile; fileRef = 082018341679577D000A3F8D /* pattern.c */; };
 		0840D59D163F4BCC003D5FE6 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0840D59C163F4BCC003D5FE6 /* GameLayer.m */; };
@@ -451,9 +451,9 @@
 		0803EEDA16E4664800CC932B /* parts_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_player.png; path = "CocosBuilder/CCB_files/Published-iOS/parts_player.png"; sourceTree = SOURCE_ROOT; };
 		0803EEDB16E4664800CC932B /* parts_record-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_record-hd.png"; path = "CocosBuilder/CCB_files/Published-iOS/parts_record-hd.png"; sourceTree = SOURCE_ROOT; };
 		0803EEDC16E4664800CC932B /* parts_record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_record.png; path = "CocosBuilder/CCB_files/Published-iOS/parts_record.png"; sourceTree = SOURCE_ROOT; };
-		0803EEEB16E5B99900CC932B /* GameOverLayer.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameOverLayer.ccbi; path = "CocosBuilder/CCB_files/Published-iOS/GameOverLayer.ccbi"; sourceTree = SOURCE_ROOT; };
 		0803EEED16E5C59700CC932B /* no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = no.png; path = "CocosBuilder/CCB_files/Published-iOS/no.png"; sourceTree = SOURCE_ROOT; };
 		0803EEEE16E5C59700CC932B /* Yes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Yes.png; path = "CocosBuilder/CCB_files/Published-iOS/Yes.png"; sourceTree = SOURCE_ROOT; };
+		0803EEF216EAA19000CC932B /* GameOverLayerBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameOverLayerBox.ccbi; path = "CocosBuilder/CCB_files/Published-iOS/GameOverLayerBox.ccbi"; sourceTree = SOURCE_ROOT; };
 		082018301678479B000A3F8D /* GameObjectInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjectInjector.h; path = sources/GameObjectInjector.h; sourceTree = SOURCE_ROOT; };
 		082018311678479B000A3F8D /* GameObjectInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectInjector.m; path = sources/GameObjectInjector.m; sourceTree = SOURCE_ROOT; };
 		082018341679577D000A3F8D /* pattern.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pattern.c; path = ../sources/pattern.c; sourceTree = "<group>"; };
@@ -1408,12 +1408,12 @@
 			isa = PBXGroup;
 			children = (
 				8521529D16E6A0FB007F5665 /* GameObjectShield.ccbi */,
-				0803EEEB16E5B99900CC932B /* GameOverLayer.ccbi */,
 				0801C92D16DC819E00ED1A1B /* gameObjectBomb.ccbi */,
 				0803EED016E464EF00CC932B /* GameModeMenu.ccbi */,
 				0801C92116D9FAEF00ED1A1B /* gameObjectCoin.ccbi */,
 				0801C90D16D5F06400ED1A1B /* MainGameLayer.ccbi */,
 				0801C90E16D5F06400ED1A1B /* MainGameScene.ccbi */,
+				0803EEF216EAA19000CC932B /* GameOverLayerBox.ccbi */,
 			);
 			name = CocosBuilder;
 			sourceTree = "<group>";
@@ -1998,13 +1998,13 @@
 				0803EEE616E4664800CC932B /* parts_player.png in Resources */,
 				0803EEE716E4664800CC932B /* parts_record-hd.png in Resources */,
 				0803EEE816E4664800CC932B /* parts_record.png in Resources */,
-				0803EEEC16E5B99900CC932B /* GameOverLayer.ccbi in Resources */,
 				0803EEEF16E5C59700CC932B /* no.png in Resources */,
 				0803EEF016E5C59700CC932B /* Yes.png in Resources */,
 				8521529B16E6A079007F5665 /* parts_shield.png in Resources */,
 				8521529C16E6A079007F5665 /* parts_shield-hd.png in Resources */,
 				8521529F16E6FDEB007F5665 /* player_with_shield.jpg in Resources */,
 				0803EEF116E8639500CC932B /* GameObjectShield.ccbi in Resources */,
+				0803EEF316EAA19000CC932B /* GameOverLayerBox.ccbi in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

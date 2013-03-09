@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface GameOverLayer : CCLayerColor
+@interface GameOverLayer : CCNode <CCBAnimationManagerDelegate>
 /*
 @property (nonatomic, assign) GameLayer * parentGameLayer;
 @property (nonatomic, assign) CCMenuItem * noButton;

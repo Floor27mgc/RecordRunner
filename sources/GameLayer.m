@@ -34,7 +34,7 @@
 @synthesize gameObjectInjector;
 @synthesize isGameReadyToStart;
 @synthesize soundController = _soundController;
-
+@synthesize gameOverLayer;
 static GameLayer *sharedGameLayer;
 
 + (GameLayer *) sharedGameLayer
@@ -104,13 +104,15 @@ static GameLayer *sharedGameLayer;
     int gameObjectTag = 0;
     
     NSLog(@"GameMode = %d",[GameInfoGlobal sharedGameInfoGlobal].gameMode);
-    
+
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) )
     {
         isGameReadyToStart = FALSE;
         sharedGameLayer = self;
+        
+        gameOverLayer = nil;
         
         // Create coin free pool (queue)
         _coinFreePool = [Queue initWithMinSize:MIN_NUM_COINS_PER_TRACK];

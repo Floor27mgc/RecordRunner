@@ -8,7 +8,7 @@
 
 #import "GameLayer.h"
 #import "GameOverLayer.h"
-
+#import "CCBAnimationManager.h"
 @implementation GameOverLayer
 /*
 @synthesize parentGameLayer;
@@ -164,7 +164,24 @@
 {
     CCBAnimationManager* animationManager = self.userObject;
     NSLog(@"animationManager: %@", animationManager);
-    [animationManager runAnimationsForSequenceNamed:@"Pop Out"];
     [[GameLayer sharedGameLayer] resumeSchedulerAndActions];
+    [animationManager runAnimationsForSequenceNamed:@"Pop out"];
+}
+
+- (void) didLoadFromCCB
+{
+    // Setup a delegate method for the animationManager of the explosion
+    CCBAnimationManager* animationManager = self.userObject;
+    animationManager.delegate = self;
+}
+
+- (void) completedAnimationSequenceNamed:(NSString *)name
+{
+    NSLog(@"%@",name);
+    if ([name compare:@"Pop out"] == NSOrderedSame) {
+        self.visible = NO;
+    }
+//    [[GameLayer sharedGameLayer] unschedule:@selector(update:)];
+//    [[CCDirector sharedDirector] pause];
 }
 @end
