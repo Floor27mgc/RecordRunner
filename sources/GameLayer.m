@@ -105,6 +105,8 @@ static GameLayer *sharedGameLayer;
     
     NSLog(@"GameMode = %d",[GameInfoGlobal sharedGameInfoGlobal].gameMode);
 
+    [Flurry logEvent:@"StartedGame"];
+    
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) )

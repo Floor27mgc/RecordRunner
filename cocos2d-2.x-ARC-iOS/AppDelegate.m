@@ -12,6 +12,7 @@
 #import "GameLayer.h"
 #import "GameMainMenuLayer.h"
 #import "CCBReader.h"
+
 @implementation AppController
 
 @synthesize window=window_, navController=navController_, director=director_;
@@ -92,7 +93,11 @@
 //    [[CCDirector sharedDirector] pushScene:[CCBReader sceneWithNodeGraphFromFile:@"GameModeMenu.ccbi"]];
 
     //[director_ pushScene:[CCTransitionFade transitionWithDuration:1.0f scene:[GameMainMenuLayer scene]]];
-	return YES;
+
+    // start the Flurry statistics tracking session
+    [Flurry startSession:@"Z3MMTK2F4CB9CNK5ZDWB"];
+    
+    return YES;
 }
 
 // Supported orientations: Landscape. Customize it for your own needs

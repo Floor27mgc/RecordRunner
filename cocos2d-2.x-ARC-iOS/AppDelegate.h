@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "cocos2d.h"
 #import "GameInfoGlobal.h"
+#import "Flurry.h"
 
 @interface AppController : NSObject <UIApplicationDelegate, CCDirectorDelegate>
 {
