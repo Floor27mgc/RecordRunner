@@ -7,6 +7,7 @@
 //
 
 #import "PowerShield.h"
+#import "GameInfoGlobal.h"
 
 @implementation PowerShield
 
@@ -19,6 +20,8 @@
     [[GameLayer sharedGameLayer].player setSheilded:YES];
     
     [super addPower];
+    
+    [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer at:SHIELD_STATS] tick];
 }
 
 // -----------------------------------------------------------------------------------

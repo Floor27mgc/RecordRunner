@@ -104,8 +104,6 @@ static GameLayer *sharedGameLayer;
     int gameObjectTag = 0;
     
     NSLog(@"GameMode = %d",[GameInfoGlobal sharedGameInfoGlobal].gameMode);
-
-    [Flurry logEvent:@"StartedGame"];
     
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value
@@ -545,6 +543,8 @@ static GameLayer *sharedGameLayer;
 // -----------------------------------------------------------------------------------
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer at:TAPS_STATS] tick];
+    
 	[self.player changeDirection];
     
 /*CCNode* explosion = [CCBReader nodeGraphFromFile:@"Explosion.ccbi"];

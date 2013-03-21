@@ -9,6 +9,7 @@
 #import "Coin.h"
 #import "GameLayer.h"
 #import "SimpleAudioEngine.h"
+#import "GameInfoGlobal.h"
 
 @implementation Coin
 
@@ -47,6 +48,8 @@
 // -----------------------------------------------------------------------------------
 - (void) handleCollision
 {
+    [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer at:COIN_STATS] tick];
+    
     [self recycleObjectWithUsedPool:[GameLayer sharedGameLayer].coinUsedPool
                            freePool:[GameLayer sharedGameLayer].coinFreePool];
     // increment score

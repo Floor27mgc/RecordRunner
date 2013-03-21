@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StatisticsContainer.h"
+
 typedef enum {
     kGameModeNormal = 0,
     kGameModeRotatingPlayer,
@@ -17,5 +19,6 @@ typedef enum {
 
 + (GameInfoGlobal *) sharedGameInfoGlobal;
 @property (nonatomic,assign) ENUM_GAME_MODE_T gameMode;
+@property (nonatomic, strong) StatisticsContainer * statsContainer;
 
 @end

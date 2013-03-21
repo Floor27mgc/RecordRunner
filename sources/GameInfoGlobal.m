@@ -10,6 +10,7 @@
 
 @implementation GameInfoGlobal
 @synthesize gameMode;
+@synthesize statsContainer;
 
 static GameInfoGlobal *sharedGameInfoGlobal;
 
@@ -26,6 +27,8 @@ static GameInfoGlobal *sharedGameInfoGlobal;
     {
         sharedGameInfoGlobal = self;
         gameMode = kGameModeNormal;
+        
+        statsContainer = [[StatisticsContainer alloc] init];
     }
     return self;
 }

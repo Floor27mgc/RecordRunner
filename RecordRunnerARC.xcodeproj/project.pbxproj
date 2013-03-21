@@ -445,6 +445,8 @@
 		850CF31616ED974400B292DE /* Flurry_AppSpot_Publisher_Platform_TOS.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 850CF2BD16ED974400B292DE /* Flurry_AppSpot_Publisher_Platform_TOS.pdf */; };
 		850CF31716ED974400B292DE /* Jansson-LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 850CF2BE16ED974400B292DE /* Jansson-LICENSE.txt */; };
 		850CF31816ED974400B292DE /* ProjectApiKey.txt in Resources */ = {isa = PBXBuildFile; fileRef = 850CF2BF16ED974400B292DE /* ProjectApiKey.txt */; };
+		850CF31B16F9618E00B292DE /* StatisticsContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 850CF31A16F9618E00B292DE /* StatisticsContainer.m */; };
+		850CF31E16F9652100B292DE /* StatisticsTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 850CF31D16F9652100B292DE /* StatisticsTracker.m */; };
 		850FAD1016BD9D8F00EBF5FF /* PowerShield.m in Sources */ = {isa = PBXBuildFile; fileRef = 850FAD0F16BD9D8F00EBF5FF /* PowerShield.m */; };
 		851C65B616DEB28D00B9BDB5 /* SoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 851C65B516DEB28D00B9BDB5 /* SoundController.m */; };
 		8521529B16E6A079007F5665 /* parts_shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 8521529916E6A079007F5665 /* parts_shield.png */; };
@@ -980,6 +982,10 @@
 		850CF2BD16ED974400B292DE /* Flurry_AppSpot_Publisher_Platform_TOS.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Flurry_AppSpot_Publisher_Platform_TOS.pdf; sourceTree = "<group>"; };
 		850CF2BE16ED974400B292DE /* Jansson-LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Jansson-LICENSE.txt"; sourceTree = "<group>"; };
 		850CF2BF16ED974400B292DE /* ProjectApiKey.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProjectApiKey.txt; sourceTree = "<group>"; };
+		850CF31916F9618E00B292DE /* StatisticsContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatisticsContainer.h; path = sources/StatisticsContainer.h; sourceTree = SOURCE_ROOT; };
+		850CF31A16F9618E00B292DE /* StatisticsContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatisticsContainer.m; path = sources/StatisticsContainer.m; sourceTree = SOURCE_ROOT; };
+		850CF31C16F9652100B292DE /* StatisticsTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatisticsTracker.h; path = sources/StatisticsTracker.h; sourceTree = SOURCE_ROOT; };
+		850CF31D16F9652100B292DE /* StatisticsTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatisticsTracker.m; path = sources/StatisticsTracker.m; sourceTree = SOURCE_ROOT; };
 		850FAD0E16BD9D8F00EBF5FF /* PowerShield.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerShield.h; path = sources/PowerShield.h; sourceTree = SOURCE_ROOT; };
 		850FAD0F16BD9D8F00EBF5FF /* PowerShield.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowerShield.m; path = sources/PowerShield.m; sourceTree = SOURCE_ROOT; };
 		851C65B416DEB28D00B9BDB5 /* SoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundController.h; path = sources/SoundController.h; sourceTree = SOURCE_ROOT; };
@@ -1222,6 +1228,10 @@
 				85B53BAC1673C5CC001163F7 /* Score.m */,
 				851C65B416DEB28D00B9BDB5 /* SoundController.h */,
 				851C65B516DEB28D00B9BDB5 /* SoundController.m */,
+				850CF31916F9618E00B292DE /* StatisticsContainer.h */,
+				850CF31A16F9618E00B292DE /* StatisticsContainer.m */,
+				850CF31C16F9652100B292DE /* StatisticsTracker.h */,
+				850CF31D16F9652100B292DE /* StatisticsTracker.m */,
 			);
 			name = game;
 			sourceTree = "<group>";
@@ -2465,6 +2475,8 @@
 				850CF2E216ED974400B292DE /* navtree.js in Sources */,
 				850CF2E716ED974400B292DE /* resize.js in Sources */,
 				850CF30116ED974400B292DE /* search.js in Sources */,
+				850CF31B16F9618E00B292DE /* StatisticsContainer.m in Sources */,
+				850CF31E16F9652100B292DE /* StatisticsTracker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

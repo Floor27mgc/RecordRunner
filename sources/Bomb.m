@@ -9,6 +9,7 @@
 #import "GameLayer.h"
 #import "Bomb.h"
 #import "CCBReader.h"
+#import "GameInfoGlobal.h"
 
 @implementation Bomb
 @synthesize gameObjectUpdateTick;
@@ -60,9 +61,12 @@
 
     // if the player has a shield, act accordingly
     if ([GameLayer sharedGameLayer].player.hasShield) {
+        [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer at:BOMB_STATS] tick];
         NSLog(@"Bomb absorbed by player's shield!");
-//        [[GameLayer sharedGameLayer].score incrementScore:2];
     } else {
+        // update end-of-game statistics
+        [[[GameInfoGlobal sharedGameInfoGlobal] statsContainer] writeStats];
+        
         if ([GameLayer sharedGameLayer].gameOverLayer != nil)
         {
             CCBAnimationManager* animationManager =
@@ -76,11 +80,9 @@
             [[GameLayer sharedGameLayer] addChild:gameOverLayer z:11];
         }
         
-        [[GameLayer sharedGameLayer] pauseSchedulerAndActions]; 
-
-//        [[GameLayer sharedGameLayer] gameOver];
-    
-//        [[GameLayer sharedGameLayer].score decrementScore:1000];
+        [[GameLayer sharedGameLayer] pauseSchedulerAndActions];
+        
+        [[[GameInfoGlobal sharedGameInfoGlobal] statsContainer] resetGameTimer];
     }
 }
 
