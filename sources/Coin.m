@@ -47,6 +47,9 @@
 // -----------------------------------------------------------------------------------
 - (void) handleCollision
 {
+    if ([GameLayer sharedGameLayer].isDebugMode == YES)
+        return;
+    
     [self recycleObjectWithUsedPool:[GameLayer sharedGameLayer].coinUsedPool
                            freePool:[GameLayer sharedGameLayer].coinFreePool];
     // increment score

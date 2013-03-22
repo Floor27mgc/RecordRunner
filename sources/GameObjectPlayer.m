@@ -44,6 +44,9 @@
     }
  */
 
+    if ([GameLayer sharedGameLayer].isDebugMode == YES)
+        return;
+    
     if (self.playerRadialSpeed == 0)
     {
         // The player is in the center

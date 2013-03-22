@@ -199,4 +199,14 @@
     self.scaleX = scaleFactor;
     self.scaleY = scaleFactor;
 }
+
+// -----------------------------------------------------------------------------------
+-(void) changeAngularVelocityByDegree:(float) byDegree
+{
+    if ((self.gameObjectAngularVelocity + byDegree) != 0.0f)
+    {
+        self.gameObjectAngularVelocity += byDegree;
+    }
+}
+
 @end

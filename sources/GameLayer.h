@@ -19,7 +19,7 @@
 
 #define NUM_OBSTACLES                20
 #define NUM_REWARDS                  20
-#define RANDOM_MAX                  100
+#define RANDOM_MAX                  1000
 #define BOMB_CREATION_THRESHOLD      97
 #define COIN_CREATION_THRESHOLD      90
 #define MIN_NUM_BOMBS_PER_TRACK       5
@@ -27,7 +27,9 @@
 #define MIN_NUM_POWER_ICONS_PER_TRACK 5
 #define MAX_NUM_TRACK                 4
 #define MAX_NUM_BOUNCING_COINS        7
-
+#define kBombSpawnRate 10
+#define kCoinSpawnRate 50
+#define kShieldSpawnRate 10
 
 #define kGameModeNoRotation 0
 #define kGameModeRotation   1
@@ -98,6 +100,16 @@ typedef enum {
 // Slow down the game;
 - (void) slowDownGame; */
 -(void) soundBounceGameObjectUsedPool:(Queue *)gameObjectUsedPool;
+-(float) changeGameAngularVelocityByDegree:(float) byDegree;
+-(float) getGameAngularVelocityInDegree;
+-(int) changeBombSpawnRateBy:(int) amount;
+-(int) changeCoinSpawnRateBy:(int) amount;
+-(int) changeShieldSpawnRateBy:(int) amount;
+-(int) getCoinSpawnRate;
+-(int) getBombSpawnRate;
+-(int) getShieldSpawnRate;
+-(void) cleanUpPlayField;
+
 @property (nonatomic, strong) GameObjectPlayer *player;
 @property (nonatomic, strong) Queue * coinFreePool;
 @property (nonatomic, strong) Queue * coinUsedPool;
@@ -110,6 +122,10 @@ typedef enum {
 @property (nonatomic, strong) Queue * powerIconFreePool;
 @property (nonatomic, strong) Queue * powerIconUsedPool;
 @property (nonatomic, strong) GameOverLayer * gameOverLayer;
+@property (nonatomic, assign) int bombSpawnRate;
+@property (nonatomic, assign) int coinSpawnRate;
+@property (nonatomic, assign) int shieldSpawnRate;
+@property (nonatomic, assign) BOOL isDebugMode;
 /*
 @property (nonatomic, strong) CCSprite *background;
 @property (nonatomic, strong) Score * score;

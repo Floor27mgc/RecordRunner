@@ -55,6 +55,9 @@
 // -----------------------------------------------------------------------------------
 - (void) handleCollision
 {
+    if ([GameLayer sharedGameLayer].isDebugMode == YES)
+        return;
+    
     [self recycleObjectWithUsedPool:[GameLayer sharedGameLayer].bombUsedPool
                            freePool:[GameLayer sharedGameLayer].bombFreePool];
 
