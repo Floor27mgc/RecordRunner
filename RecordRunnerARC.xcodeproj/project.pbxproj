@@ -1082,6 +1082,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC0C4A06154AB4DD00B4B727 /* GameKit.framework in Frameworks */,
 				850CF25C16ED920D00B292DE /* MediaPlayer.framework in Frameworks */,
 				850CF25A16ED8F6900B292DE /* SystemConfiguration.framework in Frameworks */,
 				DC0C4B92154AB57C00B4B727 /* libcocos2d-library.a in Frameworks */,
@@ -1093,7 +1094,6 @@
 				DC0C4A00154AB4DD00B4B727 /* UIKit.framework in Frameworks */,
 				DC0C4A02154AB4DD00B4B727 /* Foundation.framework in Frameworks */,
 				DC0C4A04154AB4DD00B4B727 /* CoreGraphics.framework in Frameworks */,
-				DC0C4A06154AB4DD00B4B727 /* GameKit.framework in Frameworks */,
 				850CF2C016ED974400B292DE /* libFlurry.a in Frameworks */,
 				850CF30D16ED974400B292DE /* libFlurryAds.a in Frameworks */,
 			);
