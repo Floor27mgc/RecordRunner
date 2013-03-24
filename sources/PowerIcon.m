@@ -45,6 +45,9 @@
 {
     Power * newPower;
 
+    if ([GameLayer sharedGameLayer].isDebugMode == YES)
+        return;
+    
     // instantiate new Power object
     switch (type) {
         case fire_missle:

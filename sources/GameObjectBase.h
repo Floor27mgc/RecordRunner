@@ -18,9 +18,9 @@
 
 @property (nonatomic, assign) CCSprite *gameObjectSprite;
 @property (nonatomic, assign) GameLayer *parentGameLayer;
-@property (nonatomic) int gameObjectAngularVelocity;
+@property (nonatomic) float gameObjectAngularVelocity;
 @property (nonatomic) int radius;
-@property (nonatomic) int angleRotated;
+@property (nonatomic) float angleRotated;
 @property (nonatomic, strong) CCBAnimationManager *animationManager;
 
 // Class method.  Autorelease
@@ -64,4 +64,6 @@
 - (void) handleCollision;
 
 -(void) scaleMe:(double)factor;
+-(void) changeAngularVelocityByDegree:(float) degree;
+
 @end

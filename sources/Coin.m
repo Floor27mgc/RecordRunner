@@ -49,6 +49,9 @@
 - (void) handleCollision
 {
     [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer at:COIN_STATS] tick];
+
+    if ([GameLayer sharedGameLayer].isDebugMode == YES)
+        return;
     
     [self recycleObjectWithUsedPool:[GameLayer sharedGameLayer].coinUsedPool
                            freePool:[GameLayer sharedGameLayer].coinFreePool];

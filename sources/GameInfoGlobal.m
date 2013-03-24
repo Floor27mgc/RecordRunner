@@ -12,6 +12,11 @@
 @synthesize gameMode;
 @synthesize statsContainer;
 
+@synthesize gameObjectAngularVelocityInDegree;
+@synthesize bombSpawnRate;
+@synthesize coinSpawnRate;
+@synthesize shieldSpawnRate;
+
 static GameInfoGlobal *sharedGameInfoGlobal;
 
 + (GameInfoGlobal *) sharedGameInfoGlobal

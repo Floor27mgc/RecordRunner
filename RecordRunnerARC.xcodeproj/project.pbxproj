@@ -31,6 +31,14 @@
 		0803EEF016E5C59700CC932B /* Yes.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEEE16E5C59700CC932B /* Yes.png */; };
 		0803EEF116E8639500CC932B /* GameObjectShield.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 8521529D16E6A0FB007F5665 /* GameObjectShield.ccbi */; };
 		0803EEF316EAA19000CC932B /* GameOverLayerBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEF216EAA19000CC932B /* GameOverLayerBox.ccbi */; };
+		0803EEF916EC61A800CC932B /* bug.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEF416EC61A800CC932B /* bug.png */; };
+		0803EEFA16EC61A800CC932B /* checkbox_tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEF516EC61A800CC932B /* checkbox_tick.png */; };
+		0803EEFB16EC61A800CC932B /* downButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEF616EC61A800CC932B /* downButton.png */; };
+		0803EEFC16EC61A800CC932B /* Unticked.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEF716EC61A800CC932B /* Unticked.png */; };
+		0803EEFD16EC61A800CC932B /* upButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEF816EC61A800CC932B /* upButton.png */; };
+		0803EF0016EC630F00CC932B /* MainGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803EEFF16EC630E00CC932B /* MainGameScene.m */; };
+		0803EF0216EDBD7B00CC932B /* DebugMenuLayer.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0803EF0116EDBD7B00CC932B /* DebugMenuLayer.ccbi */; };
+		0803EF0716F047DE00CC932B /* GameDebugMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803EF0616F047DD00CC932B /* GameDebugMenu.m */; };
 		082018321678479B000A3F8D /* GameObjectInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 082018311678479B000A3F8D /* GameObjectInjector.m */; };
 		082018351679577D000A3F8D /* pattern.c in Sources */ = {isa = PBXBuildFile; fileRef = 082018341679577D000A3F8D /* pattern.c */; };
 		0840D59D163F4BCC003D5FE6 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0840D59C163F4BCC003D5FE6 /* GameLayer.m */; };
@@ -87,6 +95,10 @@
 		085E9740167597A800A50284 /* tuffy_bold_italic-charmap-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E281674EA550082DBE5 /* tuffy_bold_italic-charmap-hd.png */; };
 		085E9742167597A800A50284 /* west_england-64.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E2B1674EA550082DBE5 /* west_england-64.fnt */; };
 		085E9743167597A800A50284 /* west_england-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E2C1674EA550082DBE5 /* west_england-64.png */; };
+		089FA19716F79B3C0047F8A2 /* downButton-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 089FA19416F79B3C0047F8A2 /* downButton-hd.png */; };
+		089FA19816F79B3C0047F8A2 /* Unticked-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 089FA19516F79B3C0047F8A2 /* Unticked-hd.png */; };
+		089FA19916F79B3C0047F8A2 /* upButton-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 089FA19616F79B3C0047F8A2 /* upButton-hd.png */; };
+		089FA19B16F79C4D0047F8A2 /* checkbox_tick-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 089FA19A16F79C4D0047F8A2 /* checkbox_tick-hd.png */; };
 		08A370D616C821BD006819E3 /* CCBAnimationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 08A3709916C821BD006819E3 /* CCBAnimationManager.h */; };
 		08A370D716C821BD006819E3 /* CCBAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A3709A16C821BD006819E3 /* CCBAnimationManager.m */; };
 		08A370D816C821BD006819E3 /* CCBKeyframe.h in Headers */ = {isa = PBXBuildFile; fileRef = 08A3709B16C821BD006819E3 /* CCBKeyframe.h */; };
@@ -453,6 +465,7 @@
 		8521529C16E6A079007F5665 /* parts_shield-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 8521529A16E6A079007F5665 /* parts_shield-hd.png */; };
 		8521529F16E6FDEB007F5665 /* player_with_shield.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8521529E16E6FDEB007F5665 /* player_with_shield.jpg */; };
 		8583C66A16802C9C003A3213 /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8583C66916802C9C003A3213 /* GameOverLayer.m */; };
+		859AD9A616FF7E1F0081B41F /* DebugMenuNode.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 859AD9A516FF7E1F0081B41F /* DebugMenuNode.ccbi */; };
 		859EC13C16B60FB7003BFF41 /* PowerSlowDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 859EC13B16B60FB7003BFF41 /* PowerSlowDown.m */; };
 		85A671361651D14000499BF7 /* Bomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671351651D14000499BF7 /* Bomb.m */; };
 		85A6713A1651D16000499BF7 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671391651D16000499BF7 /* Coin.m */; };
@@ -547,6 +560,16 @@
 		0803EEED16E5C59700CC932B /* no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = no.png; path = "CocosBuilder/CCB_files/Published-iOS/no.png"; sourceTree = SOURCE_ROOT; };
 		0803EEEE16E5C59700CC932B /* Yes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Yes.png; path = "CocosBuilder/CCB_files/Published-iOS/Yes.png"; sourceTree = SOURCE_ROOT; };
 		0803EEF216EAA19000CC932B /* GameOverLayerBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameOverLayerBox.ccbi; path = "CocosBuilder/CCB_files/Published-iOS/GameOverLayerBox.ccbi"; sourceTree = SOURCE_ROOT; };
+		0803EEF416EC61A800CC932B /* bug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bug.png; path = "CocosBuilder/CCB_files/Published-iOS/bug.png"; sourceTree = SOURCE_ROOT; };
+		0803EEF516EC61A800CC932B /* checkbox_tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkbox_tick.png; path = "CocosBuilder/CCB_files/Published-iOS/checkbox_tick.png"; sourceTree = SOURCE_ROOT; };
+		0803EEF616EC61A800CC932B /* downButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = downButton.png; path = "CocosBuilder/CCB_files/Published-iOS/downButton.png"; sourceTree = SOURCE_ROOT; };
+		0803EEF716EC61A800CC932B /* Unticked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Unticked.png; path = "CocosBuilder/CCB_files/Published-iOS/Unticked.png"; sourceTree = SOURCE_ROOT; };
+		0803EEF816EC61A800CC932B /* upButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = upButton.png; path = "CocosBuilder/CCB_files/Published-iOS/upButton.png"; sourceTree = SOURCE_ROOT; };
+		0803EEFE16EC630E00CC932B /* MainGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainGameScene.h; path = sources/MainGameScene.h; sourceTree = SOURCE_ROOT; };
+		0803EEFF16EC630E00CC932B /* MainGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainGameScene.m; path = sources/MainGameScene.m; sourceTree = SOURCE_ROOT; };
+		0803EF0116EDBD7B00CC932B /* DebugMenuLayer.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = DebugMenuLayer.ccbi; path = "CocosBuilder/CCB_files/Published-iOS/DebugMenuLayer.ccbi"; sourceTree = SOURCE_ROOT; };
+		0803EF0516F047DD00CC932B /* GameDebugMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameDebugMenu.h; path = sources/GameDebugMenu.h; sourceTree = SOURCE_ROOT; };
+		0803EF0616F047DD00CC932B /* GameDebugMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameDebugMenu.m; path = sources/GameDebugMenu.m; sourceTree = SOURCE_ROOT; };
 		082018301678479B000A3F8D /* GameObjectInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjectInjector.h; path = sources/GameObjectInjector.h; sourceTree = SOURCE_ROOT; };
 		082018311678479B000A3F8D /* GameObjectInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectInjector.m; path = sources/GameObjectInjector.m; sourceTree = SOURCE_ROOT; };
 		082018341679577D000A3F8D /* pattern.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pattern.c; path = ../sources/pattern.c; sourceTree = "<group>"; };
@@ -557,6 +580,10 @@
 		0840D59F163F4BF5003D5FE6 /* GameObjectBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectBase.m; path = sources/GameObjectBase.m; sourceTree = SOURCE_ROOT; };
 		0840D5A1163F4C2A003D5FE6 /* GameObjectPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjectPlayer.h; path = sources/GameObjectPlayer.h; sourceTree = SOURCE_ROOT; };
 		0840D5A2163F4C2A003D5FE6 /* GameObjectPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectPlayer.m; path = sources/GameObjectPlayer.m; sourceTree = SOURCE_ROOT; };
+		089FA19416F79B3C0047F8A2 /* downButton-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "downButton-hd.png"; path = "CocosBuilder/CCB_files/Published-iOS/downButton-hd.png"; sourceTree = SOURCE_ROOT; };
+		089FA19516F79B3C0047F8A2 /* Unticked-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Unticked-hd.png"; path = "CocosBuilder/CCB_files/Published-iOS/Unticked-hd.png"; sourceTree = SOURCE_ROOT; };
+		089FA19616F79B3C0047F8A2 /* upButton-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "upButton-hd.png"; path = "CocosBuilder/CCB_files/Published-iOS/upButton-hd.png"; sourceTree = SOURCE_ROOT; };
+		089FA19A16F79C4D0047F8A2 /* checkbox_tick-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkbox_tick-hd.png"; path = "CocosBuilder/CCB_files/Published-iOS/checkbox_tick-hd.png"; sourceTree = SOURCE_ROOT; };
 		08A3709916C821BD006819E3 /* CCBAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBAnimationManager.h; sourceTree = "<group>"; };
 		08A3709A16C821BD006819E3 /* CCBAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBAnimationManager.m; sourceTree = "<group>"; };
 		08A3709B16C821BD006819E3 /* CCBKeyframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBKeyframe.h; sourceTree = "<group>"; };
@@ -996,6 +1023,7 @@
 		8521529E16E6FDEB007F5665 /* player_with_shield.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = player_with_shield.jpg; sourceTree = "<group>"; };
 		8583C66816802C9C003A3213 /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverLayer.h; path = sources/GameOverLayer.h; sourceTree = SOURCE_ROOT; };
 		8583C66916802C9C003A3213 /* GameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverLayer.m; path = sources/GameOverLayer.m; sourceTree = SOURCE_ROOT; };
+		859AD9A516FF7E1F0081B41F /* DebugMenuNode.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = DebugMenuNode.ccbi; path = "CocosBuilder/CCB_files/Published-iOS/DebugMenuNode.ccbi"; sourceTree = SOURCE_ROOT; };
 		859EC13A16B60FB7003BFF41 /* PowerSlowDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerSlowDown.h; path = sources/PowerSlowDown.h; sourceTree = SOURCE_ROOT; };
 		859EC13B16B60FB7003BFF41 /* PowerSlowDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowerSlowDown.m; path = sources/PowerSlowDown.m; sourceTree = SOURCE_ROOT; };
 		85A671341651D13F00499BF7 /* Bomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bomb.h; path = sources/Bomb.h; sourceTree = SOURCE_ROOT; };
@@ -1132,6 +1160,15 @@
 		0803EED216E4660000CC932B /* CocosBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				089FA19A16F79C4D0047F8A2 /* checkbox_tick-hd.png */,
+				089FA19416F79B3C0047F8A2 /* downButton-hd.png */,
+				089FA19516F79B3C0047F8A2 /* Unticked-hd.png */,
+				089FA19616F79B3C0047F8A2 /* upButton-hd.png */,
+				0803EEF416EC61A800CC932B /* bug.png */,
+				0803EEF516EC61A800CC932B /* checkbox_tick.png */,
+				0803EEF616EC61A800CC932B /* downButton.png */,
+				0803EEF716EC61A800CC932B /* Unticked.png */,
+				0803EEF816EC61A800CC932B /* upButton.png */,
 				0803EEED16E5C59700CC932B /* no.png */,
 				0803EED516E4664800CC932B /* parts_bomb-hd.png */,
 				0803EED616E4664800CC932B /* parts_bomb.png */,
@@ -1183,6 +1220,10 @@
 		0840D5AC163F50FF003D5FE6 /* game */ = {
 			isa = PBXGroup;
 			children = (
+				0803EEFE16EC630E00CC932B /* MainGameScene.h */,
+				0803EEFF16EC630E00CC932B /* MainGameScene.m */,
+				0803EF0516F047DD00CC932B /* GameDebugMenu.h */,
+				0803EF0616F047DD00CC932B /* GameDebugMenu.m */,
 				85A671341651D13F00499BF7 /* Bomb.h */,
 				85A671351651D14000499BF7 /* Bomb.m */,
 				08DA1FFD16AAF46B0059439D /* ccDrawGameLayer.h */,
@@ -1606,6 +1647,8 @@
 		08A372A416C8A69C006819E3 /* CocosBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				859AD9A516FF7E1F0081B41F /* DebugMenuNode.ccbi */,
+				0803EF0116EDBD7B00CC932B /* DebugMenuLayer.ccbi */,
 				8521529D16E6A0FB007F5665 /* GameObjectShield.ccbi */,
 				0801C92D16DC819E00ED1A1B /* gameObjectBomb.ccbi */,
 				0803EED016E464EF00CC932B /* GameModeMenu.ccbi */,
@@ -2437,6 +2480,17 @@
 				850CF31616ED974400B292DE /* Flurry_AppSpot_Publisher_Platform_TOS.pdf in Resources */,
 				850CF31716ED974400B292DE /* Jansson-LICENSE.txt in Resources */,
 				850CF31816ED974400B292DE /* ProjectApiKey.txt in Resources */,
+				0803EEF916EC61A800CC932B /* bug.png in Resources */,
+				0803EEFA16EC61A800CC932B /* checkbox_tick.png in Resources */,
+				0803EEFB16EC61A800CC932B /* downButton.png in Resources */,
+				0803EEFC16EC61A800CC932B /* Unticked.png in Resources */,
+				0803EEFD16EC61A800CC932B /* upButton.png in Resources */,
+				0803EF0216EDBD7B00CC932B /* DebugMenuLayer.ccbi in Resources */,
+				089FA19716F79B3C0047F8A2 /* downButton-hd.png in Resources */,
+				089FA19816F79B3C0047F8A2 /* Unticked-hd.png in Resources */,
+				089FA19916F79B3C0047F8A2 /* upButton-hd.png in Resources */,
+				089FA19B16F79C4D0047F8A2 /* checkbox_tick-hd.png in Resources */,
+				859AD9A616FF7E1F0081B41F /* DebugMenuNode.ccbi in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2477,6 +2531,8 @@
 				850CF30116ED974400B292DE /* search.js in Sources */,
 				850CF31B16F9618E00B292DE /* StatisticsContainer.m in Sources */,
 				850CF31E16F9652100B292DE /* StatisticsTracker.m in Sources */,
+				0803EF0016EC630F00CC932B /* MainGameScene.m in Sources */,
+				0803EF0716F047DE00CC932B /* GameDebugMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

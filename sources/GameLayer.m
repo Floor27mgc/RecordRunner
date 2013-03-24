@@ -35,6 +35,11 @@
 @synthesize isGameReadyToStart;
 @synthesize soundController = _soundController;
 @synthesize gameOverLayer;
+@synthesize bombSpawnRate;
+@synthesize coinSpawnRate;
+@synthesize shieldSpawnRate;
+@synthesize isDebugMode;
+
 static GameLayer *sharedGameLayer;
 
 + (GameLayer *) sharedGameLayer
@@ -113,7 +118,10 @@ static GameLayer *sharedGameLayer;
         sharedGameLayer = self;
         
         gameOverLayer = nil;
-        
+        bombSpawnRate = kBombSpawnRate;
+        coinSpawnRate = kCoinSpawnRate;
+        shieldSpawnRate = kShieldSpawnRate;
+        isDebugMode = NO;
         // Create coin free pool (queue)
         _coinFreePool = [Queue initWithMinSize:MIN_NUM_COINS_PER_TRACK];
         
@@ -323,12 +331,12 @@ static GameLayer *sharedGameLayer;
     [player showNextFrame];
    
     // generate Game Objectsrandomly
-    if (arc4random() % RANDOM_MAX <= 5) {
+    if (arc4random() % RANDOM_MAX <= coinSpawnRate) {
         [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:COIN_TYPE effectType:kRotation]; 
     }
 
     // generate Game Objectsrandomly
-    if (arc4random() % RANDOM_MAX == 1) {
+    if (arc4random() % RANDOM_MAX <= bombSpawnRate) {
         [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:BOMB_TYPE effectType:kRotation];
     }
     
@@ -386,6 +394,53 @@ static GameLayer *sharedGameLayer;
     }
 }
 
+-(float) changeGameAngularVelocityByDegree:(float) byDegree
+{
+    for (int trackNum = 0; trackNum < MAX_NUM_TRACK; trackNum++)
+    {
+        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_coinUsedPool, trackNum); ++i) {
+            [POOL_OBJS_ON_TRACK(_coinUsedPool, trackNum)[i] changeAngularVelocityByDegree:byDegree];
+        }
+        
+        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_bombUsedPool, trackNum); ++i) {
+            [POOL_OBJS_ON_TRACK(_bombUsedPool, trackNum)[i] changeAngularVelocityByDegree:byDegree];
+        }
+        
+        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_coinFreePool, trackNum); ++i) {
+            [POOL_OBJS_ON_TRACK(_coinFreePool, trackNum)[i] changeAngularVelocityByDegree:byDegree];
+        }
+        
+        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_bombFreePool, trackNum); ++i) {
+            [POOL_OBJS_ON_TRACK(_bombFreePool, trackNum)[i] changeAngularVelocityByDegree:byDegree];
+        }
+    }
+    
+    // update all PowerIcons
+    for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
+        for (int i = 0;
+             i < POOL_OBJ_COUNT_ON_TRACK(_powerIconUsedPool, trackNum); ++i) {
+            [POOL_OBJS_ON_TRACK(_powerIconUsedPool, trackNum)[i] changeAngularVelocityByDegree:byDegree];
+        }
+        
+        for (int i = 0;
+             i < POOL_OBJ_COUNT_ON_TRACK(_powerIconFreePool, trackNum); ++i) {
+            [POOL_OBJS_ON_TRACK(_powerIconFreePool, trackNum)[i] changeAngularVelocityByDegree:byDegree];
+        }
+    }
+    
+    return [self getGameAngularVelocityInDegree];
+
+}
+
+// -----------------------------------------------------------------------------------
+- (float) getGameAngularVelocityInDegree;
+{
+    if (POOL_OBJ_COUNT_ON_TRACK(_coinFreePool,0) != 0) {
+        return ((GameObjectBase *) POOL_OBJS_ON_TRACK(_coinFreePool, 0)[0]).gameObjectAngularVelocity;
+    } else {
+        return ((GameObjectBase *) POOL_OBJS_ON_TRACK(_coinUsedPool, 0)[0]).gameObjectAngularVelocity;
+    }
+}
 /*
 // -----------------------------------------------------------------------------------
 - (bool) updateHighScore
@@ -649,6 +704,71 @@ static GameLayer *sharedGameLayer;
             [gameObject scaleMe:((bounceIdx % subsetIdx == 0)?soundLevel:0)];
             bounceIdx ++;
         }
+    }
+}
+
+-(int) changeBombSpawnRateBy:(int) amount
+{
+    if (((bombSpawnRate + amount) != 0) ||
+        ((bombSpawnRate + amount) != RANDOM_MAX)){
+        bombSpawnRate += amount;
+    }
+    return bombSpawnRate;
+}
+
+-(int) changeCoinSpawnRateBy:(int) amount
+{
+    if (((coinSpawnRate + amount) != 0) ||
+        ((coinSpawnRate + amount) != RANDOM_MAX)){
+        coinSpawnRate += amount;
+    }
+    return coinSpawnRate;
+}
+
+-(int) getCoinSpawnRate
+{
+    return coinSpawnRate;
+}
+
+-(int) getBombSpawnRate
+{
+    return bombSpawnRate;
+}
+
+-(int) changeShieldSpawnRateBy:(int) amount
+{
+    if (((shieldSpawnRate + amount) != 0) ||
+        ((shieldSpawnRate + amount) != RANDOM_MAX)){
+        shieldSpawnRate += amount;
+    }
+    return shieldSpawnRate;
+}
+
+-(int) getShieldSpawnRate
+{
+    return shieldSpawnRate;
+}
+
+-(void) cleanUpPlayField
+{
+    
+    for (int trackNum = 0; trackNum < MAX_NUM_TRACK; trackNum++)
+    {
+        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_coinUsedPool, trackNum); ++i) {
+            [POOL_OBJS_ON_TRACK(_coinUsedPool, trackNum)[i] recycleObjectWithUsedPool:_coinUsedPool
+                                                                             freePool:_coinFreePool];
+        }
+        
+        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_bombUsedPool, trackNum); ++i) {
+            [POOL_OBJS_ON_TRACK(_bombUsedPool, trackNum)[i] recycleObjectWithUsedPool:_bombUsedPool
+                                                                             freePool:_bombFreePool];
+        }
+        
+        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_powerIconUsedPool, trackNum); ++i) {
+            [POOL_OBJS_ON_TRACK(_powerIconUsedPool, trackNum)[i] recycleObjectWithUsedPool:_powerIconUsedPool
+                                                                             freePool:_powerIconFreePool];
+        }
+        
     }
 }
 @end
