@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0801C90F16D5F06400ED1A1B /* MainGameLayer.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0801C90D16D5F06400ED1A1B /* MainGameLayer.ccbi */; };
-		0801C91016D5F06400ED1A1B /* MainGameScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0801C90E16D5F06400ED1A1B /* MainGameScene.ccbi */; };
 		0801C92216D9FAEF00ED1A1B /* gameObjectCoin.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 0801C92116D9FAEF00ED1A1B /* gameObjectCoin.ccbi */; };
 		0801C92716DA92C800ED1A1B /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0801C92616DA92C700ED1A1B /* Explosion.m */; };
 		0801C92A16DC7ABA00ED1A1B /* pickup_coin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0801C92916DC7ABA00ED1A1B /* pickup_coin.wav */; };
@@ -531,6 +530,7 @@
 		DC0C4D60154AB59800B4B727 /* vec2.c in Sources */ = {isa = PBXBuildFile; fileRef = DC0C4C7E154AB59800B4B727 /* vec2.c */; };
 		DC0C4D61154AB59800B4B727 /* vec3.c in Sources */ = {isa = PBXBuildFile; fileRef = DC0C4C7F154AB59800B4B727 /* vec3.c */; };
 		DC0C4D62154AB59800B4B727 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = DC0C4C80154AB59800B4B727 /* vec4.c */; };
+		E5BF874216FFA7E300D9AFBF /* MainMenuScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5BF874116FFA7E300D9AFBF /* MainMenuScene.ccbi */; };
 		E5E4C59616FC0915001B0B05 /* DialogCard.png in Resources */ = {isa = PBXBuildFile; fileRef = E5E4C59416FC0914001B0B05 /* DialogCard.png */; };
 		E5E4C59716FC0915001B0B05 /* DialogCard-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E5E4C59516FC0915001B0B05 /* DialogCard-hd.png */; };
 		E5E4C59A16FC124B001B0B05 /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = E5E4C59816FC124B001B0B05 /* banner.png */; };
@@ -556,7 +556,6 @@
 
 /* Begin PBXFileReference section */
 		0801C90D16D5F06400ED1A1B /* MainGameLayer.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainGameLayer.ccbi; path = "../CocosBuilder/CCB_files/Published-iOS/MainGameLayer.ccbi"; sourceTree = "<group>"; };
-		0801C90E16D5F06400ED1A1B /* MainGameScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainGameScene.ccbi; path = "../CocosBuilder/CCB_files/Published-iOS/MainGameScene.ccbi"; sourceTree = "<group>"; };
 		0801C92116D9FAEF00ED1A1B /* gameObjectCoin.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = gameObjectCoin.ccbi; path = "../CocosBuilder/CCB_files/Published-iOS/gameObjectCoin.ccbi"; sourceTree = "<group>"; };
 		0801C92516DA92C700ED1A1B /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Explosion.h; path = sources/Explosion.h; sourceTree = SOURCE_ROOT; };
 		0801C92616DA92C700ED1A1B /* Explosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Explosion.m; path = sources/Explosion.m; sourceTree = SOURCE_ROOT; };
@@ -1126,6 +1125,7 @@
 		DC0C4C81154AB59800B4B727 /* LICENSE_cocos2d.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_cocos2d.txt; sourceTree = "<group>"; };
 		DC0C4C82154AB59800B4B727 /* LICENSE_CocosDenshion.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_CocosDenshion.txt; sourceTree = "<group>"; };
 		DC0C4C83154AB59800B4B727 /* LICENSE_Kazmath.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_Kazmath.txt; sourceTree = "<group>"; };
+		E5BF874116FFA7E300D9AFBF /* MainMenuScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainMenuScene.ccbi; path = "CocosBuilder/CCB_files/Published-iOS/MainMenuScene.ccbi"; sourceTree = SOURCE_ROOT; };
 		E5E4C59416FC0914001B0B05 /* DialogCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DialogCard.png; sourceTree = "<group>"; };
 		E5E4C59516FC0915001B0B05 /* DialogCard-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DialogCard-hd.png"; sourceTree = "<group>"; };
 		E5E4C59816FC124B001B0B05 /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner.png; sourceTree = "<group>"; };
@@ -1712,6 +1712,7 @@
 		08A372A416C8A69C006819E3 /* CocosBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				E5BF874116FFA7E300D9AFBF /* MainMenuScene.ccbi */,
 				859AD9A516FF7E1F0081B41F /* DebugMenuNode.ccbi */,
 				859AD9A716FFA3570081B41F /* MainMenuScene.ccbi */,
 				0803EF0116EDBD7B00CC932B /* DebugMenuLayer.ccbi */,
@@ -1720,7 +1721,6 @@
 				0803EED016E464EF00CC932B /* GameModeMenu.ccbi */,
 				0801C92116D9FAEF00ED1A1B /* gameObjectCoin.ccbi */,
 				0801C90D16D5F06400ED1A1B /* MainGameLayer.ccbi */,
-				0801C90E16D5F06400ED1A1B /* MainGameScene.ccbi */,
 				0803EEF216EAA19000CC932B /* GameOverLayerBox.ccbi */,
 			);
 			name = CocosBuilder;
@@ -2441,7 +2441,6 @@
 				08DA1F8D169A426F0059439D /* newsButton.png in Resources */,
 				8503010516A900FA0035D7C1 /* missle_icon.png in Resources */,
 				0801C90F16D5F06400ED1A1B /* MainGameLayer.ccbi in Resources */,
-				0801C91016D5F06400ED1A1B /* MainGameScene.ccbi in Resources */,
 				0801C92216D9FAEF00ED1A1B /* gameObjectCoin.ccbi in Resources */,
 				0801C92A16DC7ABA00ED1A1B /* pickup_coin.wav in Resources */,
 				0801C92C16DC7B1900ED1A1B /* JewelBeat - Follow The Beat.wav in Resources */,
@@ -2579,6 +2578,7 @@
 				E5E4C5BE16FE718F001B0B05 /* gui_icon_social.png in Resources */,
 				E5E4C5BF16FE718F001B0B05 /* gui_icon_social-hd.png in Resources */,
 				859AD9A816FFA3570081B41F /* MainMenuScene.ccbi in Resources */,
+				E5BF874216FFA7E300D9AFBF /* MainMenuScene.ccbi in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
