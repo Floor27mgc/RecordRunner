@@ -1125,7 +1125,7 @@
 		DC0C4C81154AB59800B4B727 /* LICENSE_cocos2d.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_cocos2d.txt; sourceTree = "<group>"; };
 		DC0C4C82154AB59800B4B727 /* LICENSE_CocosDenshion.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_CocosDenshion.txt; sourceTree = "<group>"; };
 		DC0C4C83154AB59800B4B727 /* LICENSE_Kazmath.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_Kazmath.txt; sourceTree = "<group>"; };
-		E5BF874116FFA7E300D9AFBF /* MainMenuScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainMenuScene.ccbi; path = "CocosBuilder/CCB_files/Published-iOS/MainMenuScene.ccbi"; sourceTree = SOURCE_ROOT; };
+		E5BF874116FFA7E300D9AFBF /* MainMenuScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainMenuScene.ccbi; path = "cocos2d-2.x-ARC-iOS/MainMenuScene.ccbi"; sourceTree = SOURCE_ROOT; };
 		E5E4C59416FC0914001B0B05 /* DialogCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DialogCard.png; sourceTree = "<group>"; };
 		E5E4C59516FC0915001B0B05 /* DialogCard-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DialogCard-hd.png"; sourceTree = "<group>"; };
 		E5E4C59816FC124B001B0B05 /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner.png; sourceTree = "<group>"; };
