@@ -172,6 +172,8 @@
         dummyPlayer = [[CCNode alloc]init];
         dummyPlayer.position = COMMON_SCREEN_CENTER;
         
+        NSLog(@"I am calling this code");
+        self.animationManager = self.userObject;
         self.hasShield = NO;
     }
     return (self);
@@ -195,6 +197,19 @@
 }
 
 // -----------------------------------------------------------------------------------
+- (void) blinkShield
+{
+    NSLog(@"blinking player....");
+    [[GameLayer sharedGameLayer].userObject
+        runAnimationsForSequenceNamed:@"blink_player"];
+    if (self.animationManager == nil || self.userObject == nil) {
+        NSLog(@"player animation manager is null");
+    }
+    [self.animationManager runAnimationsForSequenceNamed:@"blink_player"];
+
+}
+
+// -----------------------------------------------------------------------------------
 - (void) changeDirection
 {
     direction = (direction == kMoveInToOut) ? kMoveOutToIn : kMoveInToOut;
@@ -206,8 +221,8 @@
 - (void) onEnter
 {
     // Setup a delegate method for the animationManager of the explosion
-//    CCBAnimationManager* animationManager = self.userObject;
-//    animationManager.delegate = self;
+    //CCBAnimationManager* animationManager = self.userObject;
+    //animationManager.delegate = self;
 }
 - (void) completedAnimationSequenceNamed:(NSString *)name
 {

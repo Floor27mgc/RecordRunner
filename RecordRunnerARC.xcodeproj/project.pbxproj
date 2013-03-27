@@ -1285,10 +1285,6 @@
 		0840D5AC163F50FF003D5FE6 /* game */ = {
 			isa = PBXGroup;
 			children = (
-				0803EEFE16EC630E00CC932B /* MainGameScene.h */,
-				0803EEFF16EC630E00CC932B /* MainGameScene.m */,
-				0803EF0516F047DD00CC932B /* GameDebugMenu.h */,
-				0803EF0616F047DD00CC932B /* GameDebugMenu.m */,
 				85A671341651D13F00499BF7 /* Bomb.h */,
 				85A671351651D14000499BF7 /* Bomb.m */,
 				08DA1FFD16AAF46B0059439D /* ccDrawGameLayer.h */,
@@ -1298,12 +1294,12 @@
 				08B6D63A169548B000608ACF /* common.h */,
 				0801C92516DA92C700ED1A1B /* Explosion.h */,
 				0801C92616DA92C700ED1A1B /* Explosion.m */,
+				0803EF0516F047DD00CC932B /* GameDebugMenu.h */,
+				0803EF0616F047DD00CC932B /* GameDebugMenu.m */,
 				0803EECA16E3D29000CC932B /* GameInfoGlobal.h */,
 				0803EECB16E3D29000CC932B /* GameInfoGlobal.m */,
 				0840D59B163F4BCC003D5FE6 /* GameLayer.h */,
 				0840D59C163F4BCC003D5FE6 /* GameLayer.m */,
-				08DA1F841698BD240059439D /* MainMenuScene.h */,
-				08DA1F851698BD240059439D /* MainMenuScene.m */,
 				0803EECD16E4212500CC932B /* GameModeMenu.h */,
 				0803EECE16E4212600CC932B /* GameModeMenu.m */,
 				0840D59E163F4BF5003D5FE6 /* GameObjectBase.h */,
@@ -1314,6 +1310,10 @@
 				0840D5A2163F4C2A003D5FE6 /* GameObjectPlayer.m */,
 				8583C66816802C9C003A3213 /* GameOverLayer.h */,
 				8583C66916802C9C003A3213 /* GameOverLayer.m */,
+				0803EEFE16EC630E00CC932B /* MainGameScene.h */,
+				0803EEFF16EC630E00CC932B /* MainGameScene.m */,
+				08DA1F841698BD240059439D /* MainMenuScene.h */,
+				08DA1F851698BD240059439D /* MainMenuScene.m */,
 				8503011216A9FF790035D7C1 /* Missile.h */,
 				8503011316A9FF790035D7C1 /* Missile.m */,
 				082018341679577D000A3F8D /* pattern.c */,
@@ -1712,16 +1712,16 @@
 		08A372A416C8A69C006819E3 /* CocosBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				E5BF874116FFA7E300D9AFBF /* MainMenuScene.ccbi */,
-				859AD9A516FF7E1F0081B41F /* DebugMenuNode.ccbi */,
-				859AD9A716FFA3570081B41F /* MainMenuScene.ccbi */,
 				0803EF0116EDBD7B00CC932B /* DebugMenuLayer.ccbi */,
-				8521529D16E6A0FB007F5665 /* GameObjectShield.ccbi */,
-				0801C92D16DC819E00ED1A1B /* gameObjectBomb.ccbi */,
+				859AD9A516FF7E1F0081B41F /* DebugMenuNode.ccbi */,
 				0803EED016E464EF00CC932B /* GameModeMenu.ccbi */,
+				0801C92D16DC819E00ED1A1B /* gameObjectBomb.ccbi */,
 				0801C92116D9FAEF00ED1A1B /* gameObjectCoin.ccbi */,
-				0801C90D16D5F06400ED1A1B /* MainGameLayer.ccbi */,
+				8521529D16E6A0FB007F5665 /* GameObjectShield.ccbi */,
 				0803EEF216EAA19000CC932B /* GameOverLayerBox.ccbi */,
+				0801C90D16D5F06400ED1A1B /* MainGameLayer.ccbi */,
+				E5BF874116FFA7E300D9AFBF /* MainMenuScene.ccbi */,
+				859AD9A716FFA3570081B41F /* MainMenuScene.ccbi */,
 			);
 			name = CocosBuilder;
 			sourceTree = "<group>";

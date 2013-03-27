@@ -33,6 +33,7 @@ typedef enum
 - (void) changeDirection;
 
 - (void) setSheilded: (BOOL) trigger;
+- (void) blinkShield;
 
 @property (nonatomic) direction_t direction;
 @property (nonatomic) int playerRadialSpeed; // How fast the player zips between center and

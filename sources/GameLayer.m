@@ -199,7 +199,7 @@ static GameLayer *sharedGameLayer;
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"JewelBeat - Follow The Beat.wav"];
 
         // Create player
-        _player = [GameObjectPlayer initWithGameLayer:self
+        player = [GameObjectPlayer initWithGameLayer:self
                                         imageFileName:@"player-hd.png"
                                           objectSpeed:0];
         _player.gameObjectSprite.anchorPoint = ccp(0.5,0.5);

@@ -23,4 +23,5 @@
 @property (readonly) UINavigationController *navController;
 @property (unsafe_unretained, readonly) CCDirectorIOS *director;
 @property (nonatomic) GameInfoGlobal *gameInfoGlobal;
+@property (nonatomic, strong, retain) CCScene * modeScene;
 @end
