@@ -35,7 +35,7 @@
 	<key>publishEnabledAndroid</key>
 	<false/>
 	<key>publishEnabledHTML5</key>
-	<true/>
+	<false/>
 	<key>publishEnablediPhone</key>
 	<true/>
 	<key>publishResolutionHTML5_height</key>
@@ -49,9 +49,9 @@
 	<key>publishResolution_hd</key>
 	<true/>
 	<key>publishResolution_ipad</key>
-	<true/>
+	<false/>
 	<key>publishResolution_ipadhd</key>
-	<true/>
+	<false/>
 	<key>publishResolution_large</key>
 	<true/>
 	<key>publishResolution_medium</key>
