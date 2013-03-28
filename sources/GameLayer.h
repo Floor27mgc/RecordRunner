@@ -127,10 +127,10 @@ typedef enum {
 @property (nonatomic, assign) int shieldSpawnRate;
 @property (nonatomic, assign) BOOL isDebugMode;
 /*
-@property (nonatomic, strong) CCSprite *background;
+@property (nonatomic, strong) CCSprite *background;*/
 @property (nonatomic, strong) Score * score;
 @property (nonatomic, strong) Score * highScore;
-
+/*
 @property (nonatomic, strong) GameOverLayer * gameOverLayer;
 @property (nonatomic, strong) CCParticleSystemQuad *playerOnFireEmitter; */
 

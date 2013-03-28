@@ -39,6 +39,9 @@
 @synthesize coinSpawnRate;
 @synthesize shieldSpawnRate;
 @synthesize isDebugMode;
+@synthesize score = _score;
+@synthesize highScore = _highScore;
+
 
 static GameLayer *sharedGameLayer;
 
@@ -48,9 +51,6 @@ static GameLayer *sharedGameLayer;
 }
 
 /*
-@synthesize score = _score;
-@synthesize highScore = _highScore;
-
 @synthesize background;
 
 
@@ -441,7 +441,7 @@ static GameLayer *sharedGameLayer;
         return ((GameObjectBase *) POOL_OBJS_ON_TRACK(_coinUsedPool, 0)[0]).gameObjectAngularVelocity;
     }
 }
-/*
+
 // -----------------------------------------------------------------------------------
 - (bool) updateHighScore
 {
@@ -467,7 +467,7 @@ static GameLayer *sharedGameLayer;
     
     return bankBalance;
 }
-
+/*
 // -----------------------------------------------------------------------------------
 - (void) resetHighScore
 {
