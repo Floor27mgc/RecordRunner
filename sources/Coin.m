@@ -56,7 +56,7 @@
     [self recycleObjectWithUsedPool:[GameLayer sharedGameLayer].coinUsedPool
                            freePool:[GameLayer sharedGameLayer].coinFreePool];
     // increment score
-//    [[GameLayer sharedGameLayer].score incrementScore:1];
+    [[GameLayer sharedGameLayer].score incrementScore:1];
     [[SimpleAudioEngine sharedEngine] playEffect:@"pickup_coin.wav"];
 }
 

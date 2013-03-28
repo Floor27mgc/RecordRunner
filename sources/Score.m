@@ -10,7 +10,7 @@
 #import "GameLayer.h"
 
 @implementation Score
-/*
+
 @synthesize score = _score;
 @synthesize scoreValue = _scoreValue;
 @synthesize prevScore = _prevScore;
@@ -60,9 +60,12 @@
     {
         if (currenScoreLevel < newScoreLevel)
         {
-            [[GameLayer sharedGameLayer] speedUpGame];
+            //[[GameLayer sharedGameLayer] speedUpGame];
         }
     }
+    
+    [[GameLayer sharedGameLayer].scoreLabel
+        setString:[NSString stringWithFormat:@"%d", _scoreValue]];
 }
 
 // -----------------------------------------------------------------------------------
@@ -80,7 +83,7 @@
     {
         if (currenScoreLevel > newScoreLevel)
         {
-            [[GameLayer sharedGameLayer] slowDownGame];
+            //[[GameLayer sharedGameLayer] slowDownGame];
         }
     }
 }
@@ -129,5 +132,5 @@
     _scoreValue = 0;
     [self showNextFrame];
 }
-*/
+
 @end

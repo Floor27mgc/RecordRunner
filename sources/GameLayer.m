@@ -39,6 +39,10 @@
 @synthesize coinSpawnRate;
 @synthesize shieldSpawnRate;
 @synthesize isDebugMode;
+@synthesize score = _score;
+@synthesize highScore = _highScore;
+@synthesize scoreLabel;
+
 
 static GameLayer *sharedGameLayer;
 
@@ -48,9 +52,6 @@ static GameLayer *sharedGameLayer;
 }
 
 /*
-@synthesize score = _score;
-@synthesize highScore = _highScore;
-
 @synthesize background;
 
 
@@ -271,24 +272,24 @@ static GameLayer *sharedGameLayer;
                 [self addChild: powerIcon z:10];
             }
         }
-        /*
+        
         // Create and load high score
         _highScore = [Score initWithGameLayer:self imageFileName:@"" objectSpeed:0];
         int tempHighScore =
             [[NSUserDefaults standardUserDefaults] integerForKey:@"highScore"];
         [_highScore setScoreValue:tempHighScore];
         [_highScore prepareScore:@"High Score"];
-        [self addChild:_highScore.score];
-        
+        //[self addChild:_highScore.score z:15];
+    
         // Create score
         _score = [Score initWithGameLayer:self
                             imageFileName:@""
                               objectSpeed:0];
         [_score prepareScore:@"Score"];
         [_score moveBy:ccp(0, -20)];
-        [self addChild:_score.score];
-        
-       
+        //[self addChild:_score.score z:15];
+    
+       /*
     }
 
     [self schedule: @selector(update:)]; */
@@ -369,12 +370,12 @@ static GameLayer *sharedGameLayer;
         }
     }
     
-    /*
+    
     // update high score, if needed
     [self updateHighScore];
     [_score showNextFrame];
     [_highScore showNextFrame];
-    */
+    
     // check if new Power up has been triggered
     [self triggerPowerIcons];
     
@@ -441,7 +442,7 @@ static GameLayer *sharedGameLayer;
         return ((GameObjectBase *) POOL_OBJS_ON_TRACK(_coinUsedPool, 0)[0]).gameObjectAngularVelocity;
     }
 }
-/*
+
 // -----------------------------------------------------------------------------------
 - (bool) updateHighScore
 {
@@ -475,7 +476,7 @@ static GameLayer *sharedGameLayer;
     [_highScore setHighScore];
     [_highScore showNextFrame];
 }
-
+/*
 // -----------------------------------------------------------------------------------
 - (void) addPower:(id)newPower
 {
