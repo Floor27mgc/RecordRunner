@@ -78,8 +78,12 @@
 
             [animationManager runAnimationsForSequenceNamed:@"Pop in"];
         } else {
-            CCNode* gameOverLayer = [CCBReader nodeGraphFromFile:@"GameOverLayerBox.ccbi"];
+            GameOverLayer * gameOverLayer =
+                (GameOverLayer *) [CCBReader nodeGraphFromFile:@"GameOverLayerBox.ccbi"];
             gameOverLayer.position = COMMON_SCREEN_CENTER;
+            [gameOverLayer.finalScore setString:[NSString stringWithFormat:@"%d",
+                                                 [[GameLayer sharedGameLayer].score getScore]]];
+            
             [[GameLayer sharedGameLayer] addChild:gameOverLayer z:11];
         }
         

@@ -28,4 +28,6 @@
 - (void) pressedNO:(id) sender;
 - (void) pressedYES:(id) sender;
 
+@property (nonatomic, strong) CCLabelTTF * finalScore;
+
 @end

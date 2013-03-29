@@ -10,6 +10,7 @@
 #import "GameOverLayer.h"
 #import "CCBAnimationManager.h"
 @implementation GameOverLayer
+@synthesize finalScore;
 /*
 @synthesize parentGameLayer;
 @synthesize noButton = _noButton;
