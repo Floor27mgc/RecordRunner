@@ -109,6 +109,7 @@ typedef enum {
 -(int) getBombSpawnRate;
 -(int) getShieldSpawnRate;
 -(void) cleanUpPlayField;
+-(void) openDebugMenu;
 
 @property (nonatomic, strong) GameObjectPlayer *player;
 @property (nonatomic, strong) Queue * coinFreePool;

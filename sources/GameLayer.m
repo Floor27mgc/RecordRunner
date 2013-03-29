@@ -21,6 +21,7 @@
 #import "PowerIcon.h"
 #import "CCBReader.h"
 #import "GameInfoGlobal.h"
+#import "GameDebugMenu.h"
 
 #pragma mark - GameLayer
 
@@ -505,6 +506,18 @@ static GameLayer *sharedGameLayer;
         
         [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:POWER_ICON_TYPE effectType:kRotation];
     }
+}
+
+// -----------------------------------------------------------------------------------
+-(void) openDebugMenu
+{
+    NSLog(@"openeing debug menu");
+    //CCNode* gameDebugLayer = [CCBReader nodeGraphFromFile:@"DebugMenuNode.ccbi"];
+    GameDebugMenu * debugMenu = (GameDebugMenu *) [CCBReader nodeGraphFromFile:@"DebugMenuNode.ccbi"];
+    debugMenu.position = ccp(COMMON_SCREEN_CENTER_X,COMMON_SCREEN_CENTER_Y);
+ 
+    [GameLayer sharedGameLayer].isDebugMode = YES;
+    [self addChild:debugMenu z:12];
 }
 
  /*
