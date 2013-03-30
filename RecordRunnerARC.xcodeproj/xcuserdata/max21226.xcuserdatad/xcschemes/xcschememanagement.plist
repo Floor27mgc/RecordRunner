@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>RecordRunnerARC.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>cocos2d-2.x-ARC-iOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>

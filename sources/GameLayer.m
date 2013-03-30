@@ -16,7 +16,6 @@
 #import "pattern.h"
 #import "GameOverLayer.h"
 #import "SimpleAudioEngine.h"
-#import "ccDrawGameLayer.h"
 #import "common.h"
 #import "PowerIcon.h"
 #import "CCBReader.h"
@@ -124,6 +123,7 @@ static GameLayer *sharedGameLayer;
         coinSpawnRate = kCoinSpawnRate;
         shieldSpawnRate = kShieldSpawnRate;
         isDebugMode = NO;
+        
         // Create coin free pool (queue)
         _coinFreePool = [Queue initWithMinSize:MIN_NUM_COINS_PER_TRACK];
         
@@ -180,75 +180,7 @@ static GameLayer *sharedGameLayer;
 
         // Create Game Object injector to inject Bomb, coins, etc
         gameObjectInjector = [[GameObjectInjector alloc ]init];
-    }
- /*
-        self.isTouchEnabled = YES;
-        // This is where we create ALL game objects in this game layer
-        // This includes gameObjects like bombs, players, background..etc.
-        CGSize size = [[CCDirector sharedDirector] winSize];
-        NSLog(@"height = %f width = %f", size.height, size.width);
-        
-        // Create background
-        background = [CCSprite spriteWithFile:@"background-white.jpg"];
-        background.anchorPoint=ccp(0,0);
-        background.position = ccp(0,0);
-        [self addChild:background];
-        
-        ccDrawGameLayer *ccDrawLayer = [[ccDrawGameLayer alloc] init];
-        [self addChild:ccDrawLayer];
- 
-        // Create background music
-        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"JewelBeat - Follow The Beat.wav"];
 
-        // Create player
-        _player = [GameObjectPlayer initWithGameLayer:self
-                                        imageFileName:@"player-hd.png"
-                                          objectSpeed:0];
-        _player.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
-        [_player moveTo:PLAYER_START_POSITION];
-        
-        [self addChild:_player.gameObjectSprite];
-        
-        // Create bomb free pool (queue)
-        _bombFreePool = [Queue initWithMinSize:MIN_NUM_BOMBS_PER_TRACK];
-        
-        // Create bomb used pool (queue)
-        _bombUsedPool = [Queue initWithMinSize:MIN_NUM_BOMBS_PER_TRACK];
-       
-        // Create NUM_OBSTACLES bombs and add them to the free pool
-        for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
-            for (int i=0; i<trackNum+1;i++) {
-                Bomb * _bomb = [Bomb initWithGameLayer: self
-                                         imageFileName:@"bomb-hd.png"
-                                           objectSpeed:kDefaultGameObjectAngularVelocityInDegree];
-                _bomb.gameObjectSprite.visible = 0;
-                [_bombFreePool addObject:_bomb toTrack:trackNum];
-                
-                // add bomb to GameLayer
-                [self addChild: _bomb.gameObjectSprite];
-            }
-        }
-        
-        // Create coin free pool (queue)
-        _coinFreePool = [Queue initWithMinSize:MIN_NUM_COINS_PER_TRACK];
-        
-        // Create coin used pool (queue)
-        _coinUsedPool = [Queue initWithMinSize:MIN_NUM_COINS_PER_TRACK];
-        
-        // Create NUM_REWARDS coins and add them to the free pool
-        for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
-            for (int i=0; i<(trackNum+1) * MIN_NUM_BOMBS_PER_TRACK; i++) {
-                Coin * _coin = [Coin initWithGameLayer:self
-                                         imageFileName:@"coin-hd.png"
-                                           objectSpeed:kDefaultGameObjectAngularVelocityInDegree];
-                _coin.gameObjectSprite.visible = 0;
-                [_coinFreePool addObject:_coin toTrack:trackNum];
-                
-                // add coin to GameLayer
-                [self addChild: _coin.gameObjectSprite];
-            }
-        }
-        */
         // Create Power Pool
         _powerPool = [Queue initWithMinSize:1];
         
@@ -294,6 +226,9 @@ static GameLayer *sharedGameLayer;
     }
 
     [self schedule: @selector(update:)]; */
+    
+//    [gameObjectInjector injectObjectToTrack:0 atAngle:45 gameObjectType:COIN_TYPE effectType:kRotation];
+    }   
 	return self;
 }
 
@@ -301,6 +236,8 @@ static GameLayer *sharedGameLayer;
 {
     [super onEnter];
     
+    player.position = ccp(COMMON_SCREEN_CENTER_X + PLAYER_RADIUS_INNER_MOST,
+                          COMMON_SCREEN_CENTER_Y);
     // Schedule a selector that is called every frame
     [self schedule:@selector(update:)];
     
@@ -329,8 +266,6 @@ static GameLayer *sharedGameLayer;
 // -----------------------------------------------------------------------------------
 - (void) update:(ccTime) dt
 {
-
-    [player showNextFrame];
    
     // generate Game Objectsrandomly
     if (arc4random() % RANDOM_MAX <= coinSpawnRate) {
@@ -378,7 +313,7 @@ static GameLayer *sharedGameLayer;
     [_highScore showNextFrame];
     
     // check if new Power up has been triggered
-    [self triggerPowerIcons];
+//    [self triggerPowerIcons];
     
     // update all PowerIcons
     for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
@@ -394,6 +329,9 @@ static GameLayer *sharedGameLayer;
             [POOL_OBJS_ON_TRACK(_powerPool, trackNum)[i] runPower];
         }
     }
+    
+    // Move player to a new location
+    [player showNextFrame];
 }
 
 -(float) changeGameAngularVelocityByDegree:(float) byDegree
@@ -784,5 +722,29 @@ static GameLayer *sharedGameLayer;
         }
         
     }
+}
+
+-(bool) getIsHitStateByTrackNum:(int) trackNum
+{
+    return ((trackNum < MAX_NUM_TRACK)?isTrackHit[trackNum]:NO);
+}
+
+-(void) setIsHitStateByTrackNum:(int) trackNum toState:(bool) state
+{
+    if (trackNum < MAX_NUM_TRACK) {
+        isTrackHit[trackNum] = state;
+    }
+}
+
+-(void) setHittingObjByTrackNum:(int) trackNum hittingObj:(id) obj
+{
+    if (trackNum < MAX_NUM_TRACK) {
+        whatHitTrack[trackNum] = obj;
+    }
+}
+
+-(id) getHittingObjByTrackNum:(int) trackNum
+{
+    return ((trackNum < MAX_NUM_TRACK)?whatHitTrack[trackNum]:nil);
 }
 @end

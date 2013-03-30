@@ -32,15 +32,7 @@
     //[self moveBy:ccp(0, self.gameObjectSpeed)];
     [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER,self.radius,self.angleRotated)];
     self.angleRotated = self.angleRotated + self.gameObjectAngularVelocity;
-    if ([self encounterWithPlayer])
-    {
-        [self handleCollision];
-    }
-    else
-    {
-        //        [self recycleOffScreenObjWithUsedPool:[GameLayer sharedGameLayer].coinUsedPool
-        //                                     freePool:[GameLayer sharedGameLayer].coinFreePool];
-    }
+
     gameObjectUpdateTick++;
     
     // Determine if this Bomb has been obsolute.  If yes, we need to clear this
@@ -50,7 +42,9 @@
     if (numRoundsRan > BOMB_NUM_ROUNDS_BEFORE_RECYCLE) {
         [self recycleObjectWithUsedPool:[GameLayer sharedGameLayer].bombUsedPool
                                freePool:[GameLayer sharedGameLayer].bombFreePool];
+        return;
     }
+    [self encounterWithPlayer];
 }
 
 // -----------------------------------------------------------------------------------

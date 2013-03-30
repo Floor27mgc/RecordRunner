@@ -9,6 +9,7 @@
 #import "GameObjectBase.h"
 #import "GameLayer.h"
 #import "cocos2d.h"
+#import "common.h"
 #import <objc/runtime.h>
 
 
@@ -39,6 +40,7 @@
     if (self=[super init]) {
         // Add init stuff here for the base class
         animationManager = nil;
+        self.radiusHitBox = (COMMON_GRID_WIDTH/2);
     }
     return (self);
 }
@@ -83,18 +85,31 @@
     // the path to do a match.
     GameLayer *gameLayer = [GameLayer sharedGameLayer];
     
-    CGPoint gameObjectPoint = [gameLayer.player.dummyPlayer convertToNodeSpace: self.position];
-    if (CGPathContainsPoint(gameLayer.player.playerBoundingPath,
+    if (ccpDistance(gameLayer.player.position, self.position) < (self.radiusHitBox)) {
+        [gameLayer setIsHitStateByTrackNum:TRACKNUM_FROM_RADIUS
+                                   toState:YES];
+        [gameLayer setHittingObjByTrackNum:TRACKNUM_FROM_RADIUS hittingObj:self];
+        return YES;
+    } else {
+        return NO;
+    }
+/*    CGPoint gameObjectPoint = [gameLayer.player convertToNodeSpace: self.position];
+    if ((abs(gameObjectPoint.y) < COMMON_GRID_HEIGHT) &&
+        (abs(gameObjectPoint.x) < COMMON_GRID_WIDTH)) */
+/*    if (CGPathContainsPoint(gameLayer.player.playerBoundingPath,
                             NULL,
                             gameObjectPoint,
-                            true))
-    {
+                            true)) */
+/*    {
+        [gameLayer setIsHitStateByTrackNum:TRACKNUM_FROM_RADIUS
+                                   toState:YES];
+        [gameLayer setHittingObjByTrackNum:TRACKNUM_FROM_RADIUS hittingObj:self];
         return YES;
     }
     else
     {
         return NO;
-    }
+    }*/
 
 }
 

@@ -351,7 +351,6 @@
 		08DA1F891699503B0059439D /* MainMenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08DA1F881699503B0059439D /* MainMenu.jpg */; };
 		08DA1F8C169A426F0059439D /* modeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 08DA1F8A169A426F0059439D /* modeButton.png */; };
 		08DA1F8D169A426F0059439D /* newsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 08DA1F8B169A426F0059439D /* newsButton.png */; };
-		08DA1FFF16AAF46E0059439D /* ccDrawGameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 08DA1FFE16AAF46C0059439D /* ccDrawGameLayer.m */; };
 		08E38C8416882A8000115F22 /* PlayerOnFire.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08E38C8316882A8000115F22 /* PlayerOnFire.plist */; };
 		850300ED16A63FBA0035D7C1 /* PowerIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 850300EC16A63FBA0035D7C1 /* PowerIcon.m */; };
 		850300F116A640E50035D7C1 /* Power.m in Sources */ = {isa = PBXBuildFile; fileRef = 850300F016A640E50035D7C1 /* Power.m */; };
@@ -918,8 +917,6 @@
 		08DA1F881699503B0059439D /* MainMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MainMenu.jpg; sourceTree = "<group>"; };
 		08DA1F8A169A426F0059439D /* modeButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = modeButton.png; sourceTree = "<group>"; };
 		08DA1F8B169A426F0059439D /* newsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newsButton.png; sourceTree = "<group>"; };
-		08DA1FFD16AAF46B0059439D /* ccDrawGameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccDrawGameLayer.h; sourceTree = "<group>"; };
-		08DA1FFE16AAF46C0059439D /* ccDrawGameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ccDrawGameLayer.m; sourceTree = "<group>"; };
 		08E38C8316882A8000115F22 /* PlayerOnFire.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PlayerOnFire.plist; sourceTree = "<group>"; };
 		850300EB16A63FBA0035D7C1 /* PowerIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerIcon.h; path = sources/PowerIcon.h; sourceTree = SOURCE_ROOT; };
 		850300EC16A63FBA0035D7C1 /* PowerIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowerIcon.m; path = sources/PowerIcon.m; sourceTree = SOURCE_ROOT; };
@@ -1287,8 +1284,6 @@
 			children = (
 				85A671341651D13F00499BF7 /* Bomb.h */,
 				85A671351651D14000499BF7 /* Bomb.m */,
-				08DA1FFD16AAF46B0059439D /* ccDrawGameLayer.h */,
-				08DA1FFE16AAF46C0059439D /* ccDrawGameLayer.m */,
 				85A671381651D16000499BF7 /* Coin.h */,
 				85A671391651D16000499BF7 /* Coin.m */,
 				08B6D63A169548B000608ACF /* common.h */,
@@ -2602,7 +2597,6 @@
 				082018351679577D000A3F8D /* pattern.c in Sources */,
 				8583C66A16802C9C003A3213 /* GameOverLayer.m in Sources */,
 				08DA1F861698BD240059439D /* MainMenuScene.m in Sources */,
-				08DA1FFF16AAF46E0059439D /* ccDrawGameLayer.m in Sources */,
 				850300ED16A63FBA0035D7C1 /* PowerIcon.m in Sources */,
 				850300F116A640E50035D7C1 /* Power.m in Sources */,
 				850300F416A661290035D7C1 /* PowerFireMissle.m in Sources */,
@@ -2769,8 +2763,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (NS2DXUE59G)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (NS2DXUE59G)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2782,8 +2776,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				PROVISIONING_PROFILE = "AD807EE2-C503-4606-8F15-463812B27D18";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AD807EE2-C503-4606-8F15-463812B27D18";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2794,7 +2788,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (NS2DXUE59G)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -2805,7 +2799,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AD807EE2-C503-4606-8F15-463812B27D18";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

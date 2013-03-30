@@ -11,7 +11,7 @@
 #import "Queue.h"
 #import "CCBAnimationManager.h"
 #define kDefaultGameObjectAngularVelocityInDegree 1
-#define TRACKNUM_FROM_RADIUS (self.radius/COMMON_GRID_WIDTH - 1)
+//#define TRACKNUM_FROM_RADIUS (self.radius/COMMON_GRID_WIDTH - 1)
 @class GameLayer;
 
 @interface GameObjectBase : CCSprite
@@ -22,6 +22,7 @@
 @property (nonatomic) int radius;
 @property (nonatomic) float angleRotated;
 @property (nonatomic, strong) CCBAnimationManager *animationManager;
+@property (nonatomic, assign) int radiusHitBox;
 
 // Class method.  Autorelease
 + (id) initWithGameLayer:(GameLayer *) gamelayer

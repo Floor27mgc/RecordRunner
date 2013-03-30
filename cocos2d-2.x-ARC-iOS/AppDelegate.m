@@ -86,15 +86,15 @@
 	[CCTexture2D PVRImagesHavePremultipliedAlpha:YES];
     
     //Cocos 2d scene stuff
-	CCScene* mainScene = [CCBReader sceneWithNodeGraphFromFile:@"MainMenuScene.ccbi"];
+//	CCScene* mainScene = [CCBReader sceneWithNodeGraphFromFile:@"MainMenuScene.ccbi"];
 
 	// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
-	 [director_ pushScene: mainScene];
+//	 [director_ pushScene: mainScene];
     
     
-//    gameInfoGlobal = [[GameInfoGlobal alloc]init];
-  //  gameInfoGlobal.gameMode = kGameModeNormal;
-//    [[CCDirector sharedDirector] pushScene:[CCBReader sceneWithNodeGraphFromFile:@"MainGameScene.ccbi"]];
+    gameInfoGlobal = [[GameInfoGlobal alloc]init];
+    gameInfoGlobal.gameMode = kGameModeNormal;
+    [[CCDirector sharedDirector] pushScene:[CCBReader sceneWithNodeGraphFromFile:@"MainGameScene.ccbi"]];
 //    [[CCDirector sharedDirector] pushScene:[CCBReader sceneWithNodeGraphFromFile:@"GameModeMenu.ccbi"]];
 //    [director_ pushScene:[CCTransitionFade transitionWithDuration:1.0f scene:[MainMenuScene scene]]];
 
