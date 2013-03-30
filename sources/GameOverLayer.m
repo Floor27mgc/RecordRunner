@@ -167,6 +167,8 @@
     NSLog(@"animationManager: %@", animationManager);
     [[GameLayer sharedGameLayer] resumeSchedulerAndActions];
     [animationManager runAnimationsForSequenceNamed:@"Pop out"];
+    [[GameLayer sharedGameLayer] cleanUpPlayField];
+    [[GameLayer sharedGameLayer].score setScoreValue:0];
 }
 
 - (void) didLoadFromCCB

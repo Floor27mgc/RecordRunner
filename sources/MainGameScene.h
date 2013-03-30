@@ -12,7 +12,6 @@
 
 + (MainGameScene *) sharedGameLayer;
 - (void) setScore:(int) score;
-- (void) openDebugMenu:(id) sender;
 @property (nonatomic,strong) CCLabelTTF *gameScoreLabel;
 @property (nonatomic,assign) int score;
 

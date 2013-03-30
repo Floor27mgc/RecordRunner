@@ -313,7 +313,7 @@ static GameLayer *sharedGameLayer;
     [_highScore showNextFrame];
     
     // check if new Power up has been triggered
-//    [self triggerPowerIcons];
+    [self triggerPowerIcons];
     
     // update all PowerIcons
     for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {

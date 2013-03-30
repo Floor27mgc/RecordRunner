@@ -72,6 +72,10 @@
 			<key>path</key>
 			<string>Resources</string>
 		</dict>
+		<dict>
+			<key>path</key>
+			<string>../../Graphics</string>
+		</dict>
 	</array>
 </dict>
 </plist>

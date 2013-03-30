@@ -35,26 +35,6 @@ static MainGameScene *sharedGameScene;
     
 }
 
-- (void) openDebugMenu:(id) sender
-{
-    CCNode* gameDebugLayer = [CCBReader nodeGraphFromFile:@"DebugMenuNode.ccbi"];
-    gameDebugLayer.position = ccp(COMMON_SCREEN_CENTER_X,COMMON_SCREEN_CENTER_Y);
-//    [[GameLayer sharedGameLayer] addChild:gameDebugLayer z:12];
-    [GameLayer sharedGameLayer].isDebugMode = YES;
-    [self addChild:gameDebugLayer z:12];
-/*    if ([GameLayer sharedGameLayer].gameOverLayer != nil)
-    {
-        CCBAnimationManager* animationManager =
-        [GameLayer sharedGameLayer].gameOverLayer.userObject;
-        NSLog(@"animationManager: %@", animationManager);
-        
-        [animationManager runAnimationsForSequenceNamed:@"Pop in"];
-    } else {
-        CCNode* gameOverLayer = [CCBReader nodeGraphFromFile:@"GameOverLayerBox.ccbi"];
-        gameOverLayer.position = COMMON_SCREEN_CENTER;
-        [[GameLayer sharedGameLayer] addChild:gameOverLayer z:11];
-    } */
-}
 
 @end
 

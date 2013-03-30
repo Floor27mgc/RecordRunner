@@ -106,6 +106,8 @@
 - (void) setScoreValue:(int)newScore
 {
     _scoreValue = newScore;
+    [[GameLayer sharedGameLayer].scoreLabel
+     setString:[NSString stringWithFormat:@"%d", _scoreValue]];
 }
 
 // -----------------------------------------------------------------------------------

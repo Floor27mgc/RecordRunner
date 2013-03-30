@@ -16,7 +16,7 @@
 - (void) pressedExit:(id) sender
 {
     [GameLayer sharedGameLayer].isDebugMode = NO;
-    [[MainGameScene sharedGameLayer] removeChild:self];
+    [[GameLayer sharedGameLayer] removeChild:self];
 }
 
 - (void) pressedDebugOption:(id) sender

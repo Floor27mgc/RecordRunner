@@ -94,7 +94,7 @@
     
     gameInfoGlobal = [[GameInfoGlobal alloc]init];
     gameInfoGlobal.gameMode = kGameModeNormal;
-    [[CCDirector sharedDirector] pushScene:[CCBReader sceneWithNodeGraphFromFile:@"MainGameScene.ccbi"]];
+    [[CCDirector sharedDirector] pushScene:[CCBReader sceneWithNodeGraphFromFile:@"MainMenuScene.ccbi"]];
 //    [[CCDirector sharedDirector] pushScene:[CCBReader sceneWithNodeGraphFromFile:@"GameModeMenu.ccbi"]];
 //    [director_ pushScene:[CCTransitionFade transitionWithDuration:1.0f scene:[MainMenuScene scene]]];
 

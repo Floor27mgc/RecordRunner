@@ -35,9 +35,10 @@
                                              self.angleRotated)];
     self.angleRotated = self.angleRotated + self.gameObjectAngularVelocity;
     
-    if ([self encounterWithPlayer]) {
+    [self encounterWithPlayer];
+/*    if ([self encounterWithPlayer]) {
         [self handleCollision];
-    }
+    }*/
 }
 
 // -----------------------------------------------------------------------------------
