@@ -18,7 +18,8 @@
 {
     if( (self=[super init]) )
     {
-        gameObjectUpdateTick = 0;        
+        gameObjectUpdateTick = 0;
+        self.radiusHitBox = (COMMON_GRID_WIDTH/4);
     }
     return (self);
 }
