@@ -16,6 +16,7 @@
 - (void) pressedExit:(id) sender
 {
     [GameLayer sharedGameLayer].isDebugMode = NO;
+    [[GameLayer sharedGameLayer] cleanUpPlayField];
     [[GameLayer sharedGameLayer] removeChild:self];
 }
 

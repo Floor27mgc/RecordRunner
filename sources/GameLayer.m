@@ -721,6 +721,8 @@ static GameLayer *sharedGameLayer;
                                                                              freePool:_powerIconFreePool];
         }
         
+        [[GameLayer sharedGameLayer] setIsHitStateByTrackNum:trackNum toState:NO];
+        [[GameLayer sharedGameLayer] setHittingObjByTrackNum:trackNum hittingObj:nil];
     }
 }
 
