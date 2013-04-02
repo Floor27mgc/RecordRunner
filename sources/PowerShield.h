@@ -8,10 +8,12 @@
 
 #import "Power.h"
 
-#define SHIELD_LIFETIME_SEC 5
+#define SHIELD_LIFETIME_SEC  5
+#define BLINK_WHEN_REMAINING 3
 
 @interface PowerShield : Power
 
 @property (nonatomic) NSDate * startTime;
+@property (nonatomic) BOOL startedBlink;
 
 @end

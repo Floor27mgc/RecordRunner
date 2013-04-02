@@ -84,6 +84,8 @@
 {
     if( (self=[super init]) )
     {
+        self.animationManager = [[GameLayer sharedGameLayer].player userObject];
+        NSLog(@"init anim man: %p, user obj: %p", self.animationManager, self.userObject);
         direction = kMoveStill;
         self.radius = PLAYER_RADIUS_INNER_MOST;
 
@@ -120,6 +122,13 @@
 {
     direction = (direction == kMoveInToOut) ? kMoveOutToIn : kMoveInToOut;
     self.playerRadialSpeed = kPlayerRadialSpeed;
+}
+
+// -----------------------------------------------------------------------------------
+- (void) blink
+{
+    NSLog(@"animation manager: %p", self.animationManager);
+    [self.animationManager runAnimationsForSequenceNamed:@"blink_player"];
 }
 
 - (void) onEnter

@@ -123,6 +123,7 @@ static GameLayer *sharedGameLayer;
         coinSpawnRate = kCoinSpawnRate;
         shieldSpawnRate = kShieldSpawnRate;
         isDebugMode = NO;
+
         
         // Create coin free pool (queue)
         _coinFreePool = [Queue initWithMinSize:MIN_NUM_COINS_PER_TRACK];

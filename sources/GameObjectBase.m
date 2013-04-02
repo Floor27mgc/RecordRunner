@@ -26,6 +26,7 @@
 {
     GameObjectBase *objCreated;
     objCreated = [[self alloc] init];
+    objCreated.animationManager = objCreated.gameObjectSprite.userObject;//objCreated.userObject;
     objCreated.parentGameLayer = gamelayer;
     objCreated.gameObjectSprite = [CCSprite spriteWithFile:fileName];
     objCreated.gameObjectAngularVelocity = speed;
@@ -39,7 +40,7 @@
 {
     if (self=[super init]) {
         // Add init stuff here for the base class
-        animationManager = nil;
+        //animationManager = nil;
         self.radiusHitBox = (COMMON_GRID_WIDTH/2);
     }
     return (self);
