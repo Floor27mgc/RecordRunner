@@ -11,6 +11,7 @@
 #import "GameLayer.h"
 @implementation GameDebugMenu
 @synthesize debugOptionMenu;
+@synthesize gameModeOptionMenu;
 @synthesize optionToTweakIdx;
 @synthesize valueLabel;
 - (void) pressedExit:(id) sender
@@ -20,6 +21,46 @@
     [[GameLayer sharedGameLayer] removeChild:self];
 }
 
+- (void) pressedGameMode:(id) sender
+{
+    CCMenuItemImage *selectedItem = (CCMenuItemImage *) sender;
+    CCNode *child;
+    CCMenuItem *currentItem;
+    
+//    CCARRAY_FOREACH(self.debugOptionMenu.children, child)
+    CCARRAY_FOREACH(selectedItem.parent.children, child)
+    {
+        currentItem = (CCMenuItem *) child;
+        [currentItem unselected];
+    }
+    
+//    currentItem = (CCMenuItem *) [self.debugOptionMenu getChildByTag:selectedItem.tag];
+    currentItem = (CCMenuItem *) [selectedItem.parent getChildByTag:selectedItem.tag];
+    [currentItem selected];
+
+    [self resetToDefaultGameMode];
+    
+    switch (selectedItem.tag) {
+        case 1: [GameLayer sharedGameLayer].player.gameObjectAngularVelocity =
+            kDefaultGameObjectAngularVelocityInDegree;
+            break;
+        case 2:
+            break;
+        default:
+            NSLog(@"[ERROR] invalid optionToTweakIdx[%d]",optionToTweakIdx);
+            break;
+    }
+    [[GameLayer sharedGameLayer] cleanUpPlayField];
+}
+
+-(void) resetToDefaultGameMode
+{
+    [GameLayer sharedGameLayer].player.gameObjectAngularVelocity = 0;
+    [GameLayer sharedGameLayer].player.angleRotated = 0;
+    [[GameLayer sharedGameLayer].player moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER,
+                                             [GameLayer sharedGameLayer].player.radius,
+                                             [GameLayer sharedGameLayer].player.angleRotated)];
+}
 - (void) pressedDebugOption:(id) sender
 {
     CCMenuItemImage *selectedItem = (CCMenuItemImage *) sender;

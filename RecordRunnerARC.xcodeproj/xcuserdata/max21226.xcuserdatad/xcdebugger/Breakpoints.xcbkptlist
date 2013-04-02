@@ -747,11 +747,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameObjectPlayer.m"
-         timestampString = "386292655.840986"
+         timestampString = "386404109.669552"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "121"
-         endingLineNumber = "121"
+         startingLineNumber = "123"
+         endingLineNumber = "123"
          landmarkName = "-changeDirection"
          landmarkType = "5">
       </FileBreakpoint>
@@ -825,11 +825,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameObjectPlayer.m"
-         timestampString = "386292655.840986"
+         timestampString = "386404109.669552"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "134"
-         endingLineNumber = "134"
+         startingLineNumber = "136"
+         endingLineNumber = "136"
          landmarkName = "-completedAnimationSequenceNamed:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -851,11 +851,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameObjectPlayer.m"
-         timestampString = "386292655.840986"
+         timestampString = "386404109.669552"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "128"
-         endingLineNumber = "128"
+         startingLineNumber = "130"
+         endingLineNumber = "130"
          landmarkName = "-onEnter"
          landmarkType = "5">
       </FileBreakpoint>
@@ -864,11 +864,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameObjectPlayer.m"
-         timestampString = "386292655.840986"
+         timestampString = "386404109.669552"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "129"
-         endingLineNumber = "129"
+         startingLineNumber = "131"
+         endingLineNumber = "131"
          landmarkName = "-onEnter"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1319,11 +1319,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameDebugMenu.m"
-         timestampString = "386391592.344431"
+         timestampString = "386570542.543401"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "25"
-         endingLineNumber = "25"
+         startingLineNumber = "66"
+         endingLineNumber = "66"
          landmarkName = "-pressedDebugOption:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1332,11 +1332,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameDebugMenu.m"
-         timestampString = "386391592.344431"
+         timestampString = "386403960.072912"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "20"
-         endingLineNumber = "20"
+         startingLineNumber = "21"
+         endingLineNumber = "21"
          landmarkName = "-pressedExit:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1553,11 +1553,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameDebugMenu.m"
-         timestampString = "386391592.344431"
+         timestampString = "386570542.543401"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "93"
-         endingLineNumber = "93"
+         startingLineNumber = "134"
+         endingLineNumber = "134"
          landmarkName = "-pressedDown:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1566,11 +1566,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameDebugMenu.m"
-         timestampString = "386391592.344431"
+         timestampString = "386570542.543401"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "97"
-         endingLineNumber = "97"
+         startingLineNumber = "138"
+         endingLineNumber = "138"
          landmarkName = "-pressedDown:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1579,11 +1579,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameDebugMenu.m"
-         timestampString = "386391592.344431"
+         timestampString = "386570542.543401"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "39"
-         endingLineNumber = "39"
+         startingLineNumber = "80"
+         endingLineNumber = "80"
          landmarkName = "-pressedDebugOption:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1592,11 +1592,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameDebugMenu.m"
-         timestampString = "386391592.344431"
+         timestampString = "386570542.543401"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "67"
-         endingLineNumber = "67"
+         startingLineNumber = "108"
+         endingLineNumber = "108"
          landmarkName = "-pressedUp:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1663,6 +1663,19 @@
          startingLineNumber = "73"
          endingLineNumber = "73"
          landmarkName = "-handleCollision"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sources/GameDebugMenu.m"
+         timestampString = "386403974.329685"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "26"
+         endingLineNumber = "26"
+         landmarkName = "-pressedGameMode:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

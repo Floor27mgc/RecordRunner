@@ -22,8 +22,8 @@
 - (void) showNextFrame
 {
     int track_num;
-    if ([GameLayer sharedGameLayer].isDebugMode == YES)
-        return;
+/*    if ([GameLayer sharedGameLayer].isDebugMode == YES)
+        return;*/
 
     if ([[GameLayer sharedGameLayer] getIsHitStateByTrackNum:TRACKNUM_FROM_RADIUS] == YES)
     {
@@ -118,6 +118,8 @@
 // -----------------------------------------------------------------------------------
 - (void) changeDirection
 {
+    if ([GameLayer sharedGameLayer].isDebugMode == YES)
+        return;
     direction = (direction == kMoveInToOut) ? kMoveOutToIn : kMoveInToOut;
     self.playerRadialSpeed = kPlayerRadialSpeed;
 }
