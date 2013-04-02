@@ -461,6 +461,7 @@
 		85A6713A1651D16000499BF7 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671391651D16000499BF7 /* Coin.m */; };
 		85A6714C1655A6CC00499BF7 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A6714B1655A6CB00499BF7 /* Queue.m */; };
 		85B53BAD1673C5CC001163F7 /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B53BAC1673C5CC001163F7 /* Score.m */; };
+		85DA23FA170AA5FB000CC35C /* gameObjectPlayer.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 85DA23F9170AA5FB000CC35C /* gameObjectPlayer.ccbi */; };
 		DC0C49F6154AB4DD00B4B727 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0C49F5154AB4DD00B4B727 /* QuartzCore.framework */; };
 		DC0C49F8154AB4DD00B4B727 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0C49F7154AB4DD00B4B727 /* OpenGLES.framework */; };
 		DC0C49FA154AB4DD00B4B727 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0C49F9154AB4DD00B4B727 /* OpenAL.framework */; };
@@ -1045,6 +1046,7 @@
 		85A6714B1655A6CB00499BF7 /* Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Queue.m; path = sources/Queue.m; sourceTree = SOURCE_ROOT; };
 		85B53BAB1673C5CC001163F7 /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Score.h; path = sources/Score.h; sourceTree = SOURCE_ROOT; };
 		85B53BAC1673C5CC001163F7 /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Score.m; path = sources/Score.m; sourceTree = SOURCE_ROOT; };
+		85DA23F9170AA5FB000CC35C /* gameObjectPlayer.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = gameObjectPlayer.ccbi; path = "CocosBuilder/CCB_files/Published-iOS/gameObjectPlayer.ccbi"; sourceTree = SOURCE_ROOT; };
 		DC0C49F1154AB4DD00B4B727 /* RecordRunnerARC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordRunnerARC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0C49F5154AB4DD00B4B727 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DC0C49F7154AB4DD00B4B727 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1707,6 +1709,7 @@
 		08A372A416C8A69C006819E3 /* CocosBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				85DA23F9170AA5FB000CC35C /* gameObjectPlayer.ccbi */,
 				E5B95B3E1701606B00CF7463 /* DebugMenuNode copy.ccbi */,
 				E5B95B3F1701606B00CF7463 /* DebugMenuNode.ccbi */,
 				E5B95B401701606B00CF7463 /* GameModeMenu.ccbi */,
@@ -2574,6 +2577,7 @@
 				E5B95B4F1701606B00CF7463 /* MainGameLayer.ccbi in Resources */,
 				E5B95B501701606B00CF7463 /* MainGameScene.ccbi in Resources */,
 				E5B95B511701606B00CF7463 /* MainMenuScene.ccbi in Resources */,
+				85DA23FA170AA5FB000CC35C /* gameObjectPlayer.ccbi in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

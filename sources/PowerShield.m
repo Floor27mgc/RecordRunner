@@ -31,6 +31,7 @@
 {
     NSTimeInterval elapsed = abs([_startTime timeIntervalSinceNow]);
     if (!_startedBlink && elapsed > SHIELD_LIFETIME_SEC - BLINK_WHEN_REMAINING) {
+        NSLog(@"blinking player");
         _startedBlink = YES;
         [[GameLayer sharedGameLayer].player blink];
     }
