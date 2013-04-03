@@ -26,7 +26,7 @@
 
 // GameLayer implementation
 @implementation GameLayer
-@synthesize player;
+@synthesize player;// = _player;
 @synthesize coinFreePool = _coinFreePool;
 @synthesize coinUsedPool = _coinUsedPool;
 @synthesize bombFreePool = _bombFreePool;
@@ -123,6 +123,14 @@ static GameLayer *sharedGameLayer;
         coinSpawnRate = kCoinSpawnRate;
         shieldSpawnRate = kShieldSpawnRate;
         isDebugMode = NO;
+
+        // create the player
+        player = (GameObjectPlayer *)[CCBReader nodeGraphFromFile:@"gameObjectPlayer.ccbi"
+                                                             owner:player];
+        player.visible = 1;
+        player.animationManager = player.userObject;
+        player.gameObjectAngularVelocity = 0;//kDefaultGameObjectAngularVelocityInDegree;
+        [self addChild: player z:10];
         
         // Create coin free pool (queue)
         _coinFreePool = [Queue initWithMinSize:MIN_NUM_COINS_PER_TRACK];

@@ -84,6 +84,7 @@
 {
     if( (self=[super init]) )
     {
+        NSLog(@"init anim man: %p, user obj: %p", self.animationManager, self.userObject);
         direction = kMoveStill;
         self.radius = PLAYER_RADIUS_INNER_MOST;
 
@@ -122,6 +123,13 @@
         return;
     direction = (direction == kMoveInToOut) ? kMoveOutToIn : kMoveInToOut;
     self.playerRadialSpeed = kPlayerRadialSpeed;
+}
+
+// -----------------------------------------------------------------------------------
+- (void) blink
+{
+    NSLog(@"animation manager: %p", self.animationManager);
+    [self.animationManager runAnimationsForSequenceNamed:@"blink_player"];
 }
 
 - (void) onEnter
