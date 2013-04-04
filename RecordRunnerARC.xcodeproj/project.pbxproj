@@ -1724,11 +1724,8 @@
 		08A372A416C8A69C006819E3 /* CocosBuilder */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				85DA23F9170AA5FB000CC35C /* gameObjectPlayer.ccbi */,
 				E5B95B3E1701606B00CF7463 /* DebugMenuNode copy.ccbi */,
-=======
->>>>>>> max21226/collisionRedo
 				E5B95B3F1701606B00CF7463 /* DebugMenuNode.ccbi */,
 				E5B95B401701606B00CF7463 /* GameModeMenu.ccbi */,
 				E5B95B411701606B00CF7463 /* gameObjectBomb.ccbi */,
@@ -2525,9 +2522,7 @@
 				E5B95B4F1701606B00CF7463 /* MainGameLayer.ccbi in Resources */,
 				E5B95B501701606B00CF7463 /* MainGameScene.ccbi in Resources */,
 				E5B95B511701606B00CF7463 /* MainMenuScene.ccbi in Resources */,
-<<<<<<< HEAD
 				85DA23FA170AA5FB000CC35C /* gameObjectPlayer.ccbi in Resources */,
-=======
 				083B0926170AB0EC00EF0DB0 /* banner.png in Resources */,
 				083B0927170AB0EC00EF0DB0 /* blank-hd.png in Resources */,
 				083B0928170AB0EC00EF0DB0 /* blank.png in Resources */,
@@ -2578,7 +2573,6 @@
 				083B0955170AB0EC00EF0DB0 /* upButton-hd.png in Resources */,
 				083B0956170AB0EC00EF0DB0 /* upButton.png in Resources */,
 				083B0957170AB0EC00EF0DB0 /* Yes.png in Resources */,
->>>>>>> max21226/collisionRedo
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
