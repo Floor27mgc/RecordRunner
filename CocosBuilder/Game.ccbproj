@@ -70,11 +70,11 @@
 	<array>
 		<dict>
 			<key>path</key>
-			<string>Resources</string>
+			<string>CCB files</string>
 		</dict>
 		<dict>
 			<key>path</key>
-			<string>../../Graphics</string>
+			<string>CCB_files/Resources</string>
 		</dict>
 	</array>
 </dict>
