@@ -15,12 +15,18 @@
 @synthesize scoreValue = _scoreValue;
 @synthesize prevScore = _prevScore;
 @synthesize label = _label;
+@synthesize multiplier = _multiplier;
+@synthesize timerLifeInSec = _timerLifeInSec;
+@synthesize multiplierTime = _multiplierTime;
 
 // -----------------------------------------------------------------------------------
 - (id) init
 {
     _scoreValue = 0;
     _prevScore  = 0;
+    _multiplier = 1;
+    _timerLifeInSec = 0;
+    _multiplierTime = [NSDate distantFuture];;
     
     if(self = [super init]) {
 
@@ -52,7 +58,7 @@
 - (void) incrementScore:(int)amount
 {
     int currenScoreLevel = _scoreValue / kSpeedUpScoreInterval;
-    _scoreValue += amount;
+    _scoreValue += (_multiplier * amount);
     
     int newScoreLevel = _scoreValue / kSpeedUpScoreInterval;
     
@@ -62,6 +68,10 @@
         {
             //[[GameLayer sharedGameLayer] speedUpGame];
         }
+    }
+    
+    if (_scoreValue % 5 == 0) {
+        [self incrementMultiplier:1];
     }
     
     [[GameLayer sharedGameLayer].scoreLabel
@@ -121,6 +131,23 @@
 // -----------------------------------------------------------------------------------
 - (void) showNextFrame
 {
+    if (_multiplier > 1) {
+        int elapsed = [_multiplierTime timeIntervalSinceNow];
+
+        if (elapsed < 0) {
+            _timerLifeInSec += elapsed;
+            _multiplierTime = [NSDate date];
+           
+            if (_timerLifeInSec == 0) {
+                _multiplierTime = [NSDate distantFuture];
+            }
+        
+            if (_timerLifeInSec % MULTIPLIER_LIFE_TIME_SEC == 0) {
+                [self decrementMultiplier:1];
+            }
+        }
+    }
+    
     if (_prevScore != _scoreValue) {
         NSString * scoreString = [self generateScoreString];
         [_score setString:scoreString];
@@ -129,9 +156,50 @@
 }
 
 // -----------------------------------------------------------------------------------
+- (void) incrementMultiplier:(int)amount
+{
+    _multiplier += amount;
+    
+    _timerLifeInSec += MULTIPLIER_LIFE_TIME_SEC;
+
+    if (_multiplierTime == [NSDate distantFuture]) {
+        _multiplierTime = [NSDate date];
+    }
+    
+    [[GameLayer sharedGameLayer].multiplierLabel
+     setString:[NSString stringWithFormat:@"x %d", _multiplier]];
+    
+    ccColor3B currentColor = [GameLayer sharedGameLayer].multiplierLabel.color;
+    currentColor.r += 50;
+    [[GameLayer sharedGameLayer].multiplierLabel setColor:currentColor];
+    
+    CCBAnimationManager * multiplierAM =
+        [GameLayer sharedGameLayer].multiplierLabel.userObject;
+    [multiplierAM runAnimationsForSequenceNamed:@"bounce_multiplier"];
+}
+
+// -----------------------------------------------------------------------------------
+- (void) decrementMultiplier:(int)amount
+{
+    if (amount >= _multiplier) {
+        _multiplier = 1;
+    } else {
+        _multiplier -= amount;
+    }
+    
+    ccColor3B currentColor = [GameLayer sharedGameLayer].multiplierLabel.color;
+    currentColor.r -= 50;
+    [[GameLayer sharedGameLayer].multiplierLabel setColor:currentColor];
+    
+    [[GameLayer sharedGameLayer].multiplierLabel
+     setString:[NSString stringWithFormat:@"x %d", _multiplier]];
+}
+
+// -----------------------------------------------------------------------------------
 - (void) resetObject
 {
     _scoreValue = 0;
+    _multiplier = 1;
     [self showNextFrame];
 }
 

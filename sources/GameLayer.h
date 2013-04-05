@@ -139,6 +139,7 @@ typedef enum {
 @property (nonatomic, strong) CCLabelTTF * scoreLabel;
 @property (nonatomic, strong) Score * score;
 @property (nonatomic, strong) Score * highScore;
+@property (nonatomic, strong) CCLabelTTF * multiplierLabel;
 /*
 @property (nonatomic, strong) GameOverLayer * gameOverLayer;
 @property (nonatomic, strong) CCParticleSystemQuad *playerOnFireEmitter; */

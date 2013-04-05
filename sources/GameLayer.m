@@ -42,6 +42,7 @@
 @synthesize score = _score;
 @synthesize highScore = _highScore;
 @synthesize scoreLabel;
+@synthesize multiplierLabel;
 
 
 static GameLayer *sharedGameLayer;
@@ -220,7 +221,6 @@ static GameLayer *sharedGameLayer;
             [[NSUserDefaults standardUserDefaults] integerForKey:@"highScore"];
         [_highScore setScoreValue:tempHighScore];
         [_highScore prepareScore:@"High Score"];
-        //[self addChild:_highScore.score z:15];
     
         // Create score
         _score = [Score initWithGameLayer:self
@@ -228,8 +228,8 @@ static GameLayer *sharedGameLayer;
                               objectSpeed:0];
         [_score prepareScore:@"Score"];
         [_score moveBy:ccp(0, -20)];
-        //[self addChild:_score.score z:15];
-    
+
+
        /*
     }
 

@@ -25,9 +25,9 @@
 	<key>javascriptMainCCB</key>
 	<string>MainScene</string>
 	<key>onlyPublishCCBs</key>
-	<false/>
+	<true/>
 	<key>publishDirectory</key>
-	<string>Published-iOS</string>
+	<string>CCBI_files</string>
 	<key>publishDirectoryAndroid</key>
 	<string>Published-Android</string>
 	<key>publishDirectoryHTML5</key>
