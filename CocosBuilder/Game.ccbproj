@@ -21,9 +21,9 @@
 	<key>generatedSpriteSheets</key>
 	<dict/>
 	<key>javascriptBased</key>
-	<true/>
+	<false/>
 	<key>javascriptMainCCB</key>
-	<string>MainScene</string>
+	<string></string>
 	<key>onlyPublishCCBs</key>
 	<true/>
 	<key>publishDirectory</key>
@@ -74,7 +74,7 @@
 		</dict>
 		<dict>
 			<key>path</key>
-			<string>CCB_files/Resources</string>
+			<string>../Resources/Graphics</string>
 		</dict>
 	</array>
 </dict>
