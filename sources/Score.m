@@ -15,18 +15,18 @@
 @synthesize scoreValue = _scoreValue;
 @synthesize prevScore = _prevScore;
 @synthesize label = _label;
-@synthesize multiplier = _multiplier;
+/*@synthesize multiplier = _multiplier;
 @synthesize timerLifeInSec = _timerLifeInSec;
-@synthesize multiplierTime = _multiplierTime;
+@synthesize multiplierTime = _multiplierTime;*/
 
 // -----------------------------------------------------------------------------------
 - (id) init
 {
     _scoreValue = 0;
     _prevScore  = 0;
-    _multiplier = 1;
+/*    _multiplier = 1;
     _timerLifeInSec = 0;
-    _multiplierTime = [NSDate distantFuture];;
+    _multiplierTime = [NSDate distantFuture];;*/
     
     if(self = [super init]) {
 
@@ -58,7 +58,10 @@
 - (void) incrementScore:(int)amount
 {
     int currenScoreLevel = _scoreValue / kSpeedUpScoreInterval;
-    _scoreValue += (_multiplier * amount);
+
+    int multAmt = [GameLayer sharedGameLayer].multiplier.multiplierValue;
+    
+    _scoreValue += (multAmt * amount);
     
     int newScoreLevel = _scoreValue / kSpeedUpScoreInterval;
     
@@ -71,7 +74,7 @@
     }
     
     if (_scoreValue % 5 == 0) {
-        [self incrementMultiplier:1];
+        [[GameLayer sharedGameLayer].multiplier incrementMultiplier:1];
     }
     
     [[GameLayer sharedGameLayer].scoreLabel
@@ -130,24 +133,7 @@
 
 // -----------------------------------------------------------------------------------
 - (void) showNextFrame
-{
-    if (_multiplier > 1) {
-        int elapsed = [_multiplierTime timeIntervalSinceNow];
-
-        if (elapsed < 0) {
-            _timerLifeInSec += elapsed;
-            _multiplierTime = [NSDate date];
-           
-            if (_timerLifeInSec == 0) {
-                _multiplierTime = [NSDate distantFuture];
-            }
-        
-            if (_timerLifeInSec % MULTIPLIER_LIFE_TIME_SEC == 0) {
-                [self decrementMultiplier:1];
-            }
-        }
-    }
-    
+{   
     if (_prevScore != _scoreValue) {
         NSString * scoreString = [self generateScoreString];
         [_score setString:scoreString];
@@ -156,7 +142,7 @@
 }
 
 // -----------------------------------------------------------------------------------
-- (void) incrementMultiplier:(int)amount
+/*- (void) incrementMultiplier:(int)amount
 {
     _multiplier += amount;
     
@@ -193,13 +179,13 @@
     
     [[GameLayer sharedGameLayer].multiplierLabel
      setString:[NSString stringWithFormat:@"x %d", _multiplier]];
-}
+}*/
 
 // -----------------------------------------------------------------------------------
 - (void) resetObject
 {
     _scoreValue = 0;
-    _multiplier = 1;
+    //_multiplier = 1;
     [self showNextFrame];
 }
 

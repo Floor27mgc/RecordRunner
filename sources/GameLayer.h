@@ -16,6 +16,7 @@
 #import "GameOverLayer.h"
 #import "Power.h"
 #import "SoundController.h"
+#import "Multiplier.h"
 
 #define NUM_OBSTACLES                20
 #define NUM_REWARDS                  20
@@ -129,6 +130,7 @@ typedef enum {
 @property (nonatomic, strong) Queue * powerIconFreePool;
 @property (nonatomic, strong) Queue * powerIconUsedPool;
 @property (nonatomic, strong) GameOverLayer * gameOverLayer;
+@property (nonatomic, strong) Multiplier * multiplier;
 @property (nonatomic, assign) int bombSpawnRate;
 @property (nonatomic, assign) int coinSpawnRate;
 @property (nonatomic, assign) int shieldSpawnRate;
@@ -139,7 +141,7 @@ typedef enum {
 @property (nonatomic, strong) CCLabelTTF * scoreLabel;
 @property (nonatomic, strong) Score * score;
 @property (nonatomic, strong) Score * highScore;
-@property (nonatomic, strong) CCLabelTTF * multiplierLabel;
+//@property (nonatomic, strong) CCLabelTTF * multiplierLabel;
 /*
 @property (nonatomic, strong) GameOverLayer * gameOverLayer;
 @property (nonatomic, strong) CCParticleSystemQuad *playerOnFireEmitter; */

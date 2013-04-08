@@ -31,6 +31,7 @@
 @synthesize coinUsedPool = _coinUsedPool;
 @synthesize bombFreePool = _bombFreePool;
 @synthesize bombUsedPool = _bombUsedPool;
+@synthesize multiplier = _multiplier;
 @synthesize gameObjectInjector;
 @synthesize isGameReadyToStart;
 @synthesize soundController = _soundController;
@@ -42,7 +43,7 @@
 @synthesize score = _score;
 @synthesize highScore = _highScore;
 @synthesize scoreLabel;
-@synthesize multiplierLabel;
+//@synthesize multiplierLabel;
 
 
 static GameLayer *sharedGameLayer;
@@ -229,16 +230,20 @@ static GameLayer *sharedGameLayer;
         [_score prepareScore:@"Score"];
         [_score moveBy:ccp(0, -20)];
 
-
-       /*
+        _multiplier = (Multiplier *) [CCBReader nodeGraphFromFile:@"multiplier.ccbi"];
+        [_multiplier prepare];
+        [self addChild:_multiplier z:10];
+        _multiplier.position = ccp(100, 455);
+        
     }
-
+/*
     [self schedule: @selector(update:)]; */
     
 //    [gameObjectInjector injectObjectToTrack:0 atAngle:45 gameObjectType:COIN_TYPE effectType:kRotation];
-    }   
-	return self;
+
+    return self;
 }
+
 
 - (void) onEnter
 {
@@ -314,11 +319,11 @@ static GameLayer *sharedGameLayer;
         }
     }
     
-    
     // update high score, if needed
     [self updateHighScore];
     [_score showNextFrame];
     [_highScore showNextFrame];
+    [_multiplier showNextFrame];
     
     // check if new Power up has been triggered
     [self triggerPowerIcons];

@@ -477,6 +477,8 @@
 		850CF31E16F9652100B292DE /* StatisticsTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 850CF31D16F9652100B292DE /* StatisticsTracker.m */; };
 		850FAD1016BD9D8F00EBF5FF /* PowerShield.m in Sources */ = {isa = PBXBuildFile; fileRef = 850FAD0F16BD9D8F00EBF5FF /* PowerShield.m */; };
 		851C65B616DEB28D00B9BDB5 /* SoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 851C65B516DEB28D00B9BDB5 /* SoundController.m */; };
+		852E3DB217123300006EC44A /* Multiplier.m in Sources */ = {isa = PBXBuildFile; fileRef = 852E3DB117123300006EC44A /* Multiplier.m */; };
+		852E3DB41712391A006EC44A /* multiplier.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 852E3DB31712391A006EC44A /* multiplier.ccbi */; };
 		8583C66A16802C9C003A3213 /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8583C66916802C9C003A3213 /* GameOverLayer.m */; };
 		859EC13C16B60FB7003BFF41 /* PowerSlowDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 859EC13B16B60FB7003BFF41 /* PowerSlowDown.m */; };
 		85A671361651D14000499BF7 /* Bomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671351651D14000499BF7 /* Bomb.m */; };
@@ -1055,6 +1057,9 @@
 		850FAD0F16BD9D8F00EBF5FF /* PowerShield.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowerShield.m; path = sources/PowerShield.m; sourceTree = SOURCE_ROOT; };
 		851C65B416DEB28D00B9BDB5 /* SoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundController.h; path = sources/SoundController.h; sourceTree = SOURCE_ROOT; };
 		851C65B516DEB28D00B9BDB5 /* SoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SoundController.m; path = sources/SoundController.m; sourceTree = SOURCE_ROOT; };
+		852E3DB017123300006EC44A /* Multiplier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Multiplier.h; path = sources/Multiplier.h; sourceTree = SOURCE_ROOT; };
+		852E3DB117123300006EC44A /* Multiplier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Multiplier.m; path = sources/Multiplier.m; sourceTree = SOURCE_ROOT; };
+		852E3DB31712391A006EC44A /* multiplier.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = multiplier.ccbi; path = ../CocosBuilder/CCBI_files/multiplier.ccbi; sourceTree = "<group>"; };
 		8583C66816802C9C003A3213 /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverLayer.h; path = sources/GameOverLayer.h; sourceTree = SOURCE_ROOT; };
 		8583C66916802C9C003A3213 /* GameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverLayer.m; path = sources/GameOverLayer.m; sourceTree = SOURCE_ROOT; };
 		859EC13A16B60FB7003BFF41 /* PowerSlowDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerSlowDown.h; path = sources/PowerSlowDown.h; sourceTree = SOURCE_ROOT; };
@@ -1328,6 +1333,8 @@
 				08DA1F851698BD240059439D /* MainMenuScene.m */,
 				8503011216A9FF790035D7C1 /* Missile.h */,
 				8503011316A9FF790035D7C1 /* Missile.m */,
+				852E3DB017123300006EC44A /* Multiplier.h */,
+				852E3DB117123300006EC44A /* Multiplier.m */,
 				082018341679577D000A3F8D /* pattern.c */,
 				0820183616795ADE000A3F8D /* pattern.h */,
 				850300EF16A640E50035D7C1 /* Power.h */,
@@ -1724,6 +1731,7 @@
 		08A372A416C8A69C006819E3 /* CocosBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				852E3DB31712391A006EC44A /* multiplier.ccbi */,
 				85DA23F9170AA5FB000CC35C /* gameObjectPlayer.ccbi */,
 				E5B95B3F1701606B00CF7463 /* DebugMenuNode.ccbi */,
 				E5B95B401701606B00CF7463 /* GameModeMenu.ccbi */,
@@ -2572,6 +2580,7 @@
 				083B0955170AB0EC00EF0DB0 /* upButton-hd.png in Resources */,
 				083B0956170AB0EC00EF0DB0 /* upButton.png in Resources */,
 				083B0957170AB0EC00EF0DB0 /* Yes.png in Resources */,
+				852E3DB41712391A006EC44A /* multiplier.ccbi in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2613,6 +2622,7 @@
 				850CF31E16F9652100B292DE /* StatisticsTracker.m in Sources */,
 				0803EF0016EC630F00CC932B /* MainGameScene.m in Sources */,
 				0803EF0716F047DE00CC932B /* GameDebugMenu.m in Sources */,
+				852E3DB217123300006EC44A /* Multiplier.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
