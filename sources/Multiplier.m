@@ -36,6 +36,7 @@
     self.multiplierValue = 1;
     self.timerLifeInSec = 0;
     self.multiplierTime = [NSDate distantFuture];
+    multiplierLabel.color = ccMAGENTA;
 }
 
 // -----------------------------------------------------------------------------------
@@ -53,7 +54,7 @@
                                     multiplierValue]];
     
     ccColor3B currentColor = multiplierLabel.color;
-    currentColor.r += 50;
+//    currentColor.r += 50;
     [self.multiplierLabel setColor:currentColor];
     NSLog(@"mam %p", self.animationManager);
     [self.animationManager runAnimationsForSequenceNamed:@"bounce_multiplier"];
@@ -69,7 +70,7 @@
     }
     
     ccColor3B currentColor = multiplierLabel.color;
-    currentColor.r -= 50;
+//    currentColor.r -= 50;
     [self.multiplierLabel setColor:currentColor];
     
     [self.multiplierLabel setString:[NSString stringWithFormat:@"x %d",

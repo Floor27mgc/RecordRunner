@@ -290,6 +290,14 @@ static GameLayer *sharedGameLayer;
         [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:BOMB_TYPE effectType:kRotation];
     }
     
+    // generate Game Objectsrandomly
+    int ran = (arc4random() % RANDOM_MAX);
+    if ((ran <= shieldSpawnRate) &&
+        (arc4random() % 3 == 1) &&
+        ([_powerIconUsedPool getObjectCount] == 0)) {
+        [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:POWER_ICON_TYPE effectType:kRotation];
+    }
+    
     if ([GameInfoGlobal sharedGameInfoGlobal].gameMode == kGameModeBouncyMusic) {
         // Bounce game object based on sound level
         // Note: we are not performing showNextFrame() here.  We
@@ -326,7 +334,7 @@ static GameLayer *sharedGameLayer;
     [_multiplier showNextFrame];
     
     // check if new Power up has been triggered
-    [self triggerPowerIcons];
+//    [self triggerPowerIcons];
     
     // update all PowerIcons
     for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
@@ -716,27 +724,34 @@ static GameLayer *sharedGameLayer;
 
 -(void) cleanUpPlayField
 {
+    int numObjToCleanup;
     
     for (int trackNum = 0; trackNum < MAX_NUM_TRACK; trackNum++)
     {
-        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_coinUsedPool, trackNum); ++i) {
-            [POOL_OBJS_ON_TRACK(_coinUsedPool, trackNum)[i] recycleObjectWithUsedPool:_coinUsedPool
+        NSLog(@"%d", POOL_OBJ_COUNT_ON_TRACK(_coinUsedPool, trackNum));
+        
+        numObjToCleanup = POOL_OBJ_COUNT_ON_TRACK(_coinUsedPool, trackNum);
+        for (int i = 0; i < numObjToCleanup; i++) {
+            [[POOL_OBJS_ON_TRACK(_coinUsedPool, trackNum) lastObject] recycleObjectWithUsedPool:_coinUsedPool
                                                                              freePool:_coinFreePool];
         }
         
-        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_bombUsedPool, trackNum); ++i) {
-            [POOL_OBJS_ON_TRACK(_bombUsedPool, trackNum)[i] recycleObjectWithUsedPool:_bombUsedPool
+        numObjToCleanup = POOL_OBJ_COUNT_ON_TRACK(_bombUsedPool, trackNum);
+        for (int i = 0; i < numObjToCleanup; i++) {
+            [[POOL_OBJS_ON_TRACK(_bombUsedPool, trackNum) lastObject] recycleObjectWithUsedPool:_bombUsedPool
                                                                              freePool:_bombFreePool];
         }
         
-        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_powerIconUsedPool, trackNum); ++i) {
-            [POOL_OBJS_ON_TRACK(_powerIconUsedPool, trackNum)[i] recycleObjectWithUsedPool:_powerIconUsedPool
+        numObjToCleanup = POOL_OBJ_COUNT_ON_TRACK(_powerIconUsedPool, trackNum);
+        for (int i = 0; i < numObjToCleanup; i++) {
+            [[POOL_OBJS_ON_TRACK(_powerIconUsedPool, trackNum) lastObject] recycleObjectWithUsedPool:_powerIconUsedPool
                                                                              freePool:_powerIconFreePool];
         }
         
-        [[GameLayer sharedGameLayer] setIsHitStateByTrackNum:trackNum toState:NO];
-        [[GameLayer sharedGameLayer] setHittingObjByTrackNum:trackNum hittingObj:nil];
+        [self setIsHitStateByTrackNum:trackNum toState:NO];
+        [self setHittingObjByTrackNum:trackNum hittingObj:nil];
     }
+    [self.multiplier decrementMultiplier:self.multiplier.multiplierValue-1];
 }
 
 -(bool) getIsHitStateByTrackNum:(int) trackNum

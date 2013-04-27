@@ -149,13 +149,18 @@
                           freePool:(Queue *)_freeObjPool
 {
     NSUInteger i;
+    id objectToRecyle;
     
     i = [POOL_OBJS_ON_TRACK(_usedObjPool, TRACKNUM_FROM_RADIUS) indexOfObjectIdenticalTo:self];
     
-    [[POOL_OBJS_ON_TRACK(_usedObjPool, TRACKNUM_FROM_RADIUS) objectAtIndex:i] resetObject];
-    
+    objectToRecyle = [POOL_OBJS_ON_TRACK(_usedObjPool, TRACKNUM_FROM_RADIUS) objectAtIndex:i];
+    [objectToRecyle resetObject];
+
+    [_freeObjPool addObject:objectToRecyle toTrack:TRACKNUM_FROM_RADIUS];
+    [_usedObjPool takeObjectFromIndex:i fromTrack:TRACKNUM_FROM_RADIUS];
+    /*
     [POOL_OBJS_ON_TRACK(_freeObjPool, TRACKNUM_FROM_RADIUS) addObject:[POOL_OBJS_ON_TRACK(_usedObjPool,TRACKNUM_FROM_RADIUS) objectAtIndex:i]];
-    [POOL_OBJS_ON_TRACK(_usedObjPool, TRACKNUM_FROM_RADIUS) removeObjectAtIndex:i];
+    [POOL_OBJS_ON_TRACK(_usedObjPool, TRACKNUM_FROM_RADIUS) removeObjectAtIndex:i]; */
 
 }
 

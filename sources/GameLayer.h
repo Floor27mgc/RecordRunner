@@ -30,7 +30,7 @@
 #define MAX_NUM_BOUNCING_COINS        7
 #define kBombSpawnRate 10
 #define kCoinSpawnRate 50
-#define kShieldSpawnRate 10
+#define kShieldSpawnRate 1
 
 #define kGameModeNoRotation 0
 #define kGameModeRotation   1
