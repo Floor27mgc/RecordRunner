@@ -56,11 +56,15 @@
 
 - (void) pressedPlay:(id)sender
 {
-    // Load the game scene
-    CCScene* gameScene = [CCBReader sceneWithNodeGraphFromFile:@"MainGameScene.ccbi"];
+    //Only open the game if the menu is closed
+    if ([self anyAnyMenusOpen] == NO)
+    {
+        // Load the game scene
+        CCScene* gameScene = [CCBReader sceneWithNodeGraphFromFile:@"MainGameScene.ccbi"];
     
-    // Go to the game scene
-    [[CCDirector sharedDirector] replaceScene:gameScene];
+        // Go to the game scene
+        [[CCDirector sharedDirector] replaceScene:gameScene];
+    }
 }
 
 - (void) pressedExpandButton: (id)sender
@@ -83,43 +87,64 @@
 
 - (void) pressedRecommended: (id)sender
 {
+    if (self.menuExpanded)
+    {
     NSLog(@"Pressed Recommend");
    [self openMenus: BUTTON_RECOMMEND];
+    }
 }
 
 
 - (void) pressedHelp: (id)sender
 {
+    
+    if (self.menuExpanded)
+    {
     NSLog(@"Pressed Help");
     [self openMenus: BUTTON_HELP];
+    }
 }
 
 - (void) pressedScore: (id)sender
 {
+    
+    if (self.menuExpanded)
+    {
     NSLog(@"Pressed SCORE");
     [self openMenus: BUTTON_SCORE];
+    }
 }
-
-
 
 - (void) pressedBuy: (id)sender
 {
+    
+    if (self.menuExpanded)
+    {
     NSLog(@"Pressed BUY");
     [self openMenus: BUTTON_BUY];
+    }
 }
 
 
 - (void) pressedSocial: (id)sender
 {
+    
+    if (self.menuExpanded)
+    {
     NSLog(@"Pressed Social");
     [self openMenus: BUTTON_SOCIAL];
+    }
 }
 
 
 - (void) pressedSettings: (id)sender
 {
+    
+    if (self.menuExpanded)
+    {
     NSLog(@"Pressed SETTINGS");
     [self openMenus: BUTTON_SETTINGS];
+    }
 }
 
 - (void) closeAllMenus
@@ -132,6 +157,23 @@
         }
     }
 }
+
+
+
+//This is used by the rotato start button. We don't want to start the game if you have another menu open
+- (BOOL) anyAnyMenusOpen
+{
+    for (MenuBox *eachButton in buttonArray)
+    {
+        if (eachButton.isOpen)
+        {
+            return YES;
+        }
+    }
+
+    return NO;
+}
+
 
 
 - (void) openMenus: (MainMenuButtons) openThisMenu
