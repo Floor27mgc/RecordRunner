@@ -542,6 +542,10 @@
 		DC0C4D60154AB59800B4B727 /* vec2.c in Sources */ = {isa = PBXBuildFile; fileRef = DC0C4C7E154AB59800B4B727 /* vec2.c */; };
 		DC0C4D61154AB59800B4B727 /* vec3.c in Sources */ = {isa = PBXBuildFile; fileRef = DC0C4C7F154AB59800B4B727 /* vec3.c */; };
 		DC0C4D62154AB59800B4B727 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = DC0C4C80154AB59800B4B727 /* vec4.c */; };
+		E54E158B172C7A2A0022DACE /* bannerRed.png in Resources */ = {isa = PBXBuildFile; fileRef = E54E1589172C7A2A0022DACE /* bannerRed.png */; };
+		E54E158C172C7A2A0022DACE /* bannerRed-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E54E158A172C7A2A0022DACE /* bannerRed-hd.png */; };
+		E58F3A25172C13DE00C00E9C /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = E58F3A23172C13DE00C00E9C /* spark.png */; };
+		E58F3A26172C13DE00C00E9C /* spark-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E58F3A24172C13DE00C00E9C /* spark-hd.png */; };
 		E5973A441720EE8C001B948A /* MainMenuRecommendBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5973A3D1720EE8C001B948A /* MainMenuRecommendBox.m */; };
 		E5973A451720EE8C001B948A /* MainMenuScoreBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5973A3F1720EE8C001B948A /* MainMenuScoreBox.m */; };
 		E5973A461720EE8C001B948A /* MenuBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5973A411720EE8C001B948A /* MenuBox.m */; };
@@ -1151,6 +1155,10 @@
 		DC0C4C81154AB59800B4B727 /* LICENSE_cocos2d.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_cocos2d.txt; sourceTree = "<group>"; };
 		DC0C4C82154AB59800B4B727 /* LICENSE_CocosDenshion.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_CocosDenshion.txt; sourceTree = "<group>"; };
 		DC0C4C83154AB59800B4B727 /* LICENSE_Kazmath.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_Kazmath.txt; sourceTree = "<group>"; };
+		E54E1589172C7A2A0022DACE /* bannerRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bannerRed.png; path = Resources/Graphics/bannerRed.png; sourceTree = SOURCE_ROOT; };
+		E54E158A172C7A2A0022DACE /* bannerRed-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bannerRed-hd.png"; path = "Resources/Graphics/bannerRed-hd.png"; sourceTree = SOURCE_ROOT; };
+		E58F3A23172C13DE00C00E9C /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = Resources/Graphics/spark.png; sourceTree = SOURCE_ROOT; };
+		E58F3A24172C13DE00C00E9C /* spark-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spark-hd.png"; path = "Resources/Graphics/spark-hd.png"; sourceTree = SOURCE_ROOT; };
 		E5973A3C1720EE8C001B948A /* MainMenuRecommendBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuRecommendBox.h; sourceTree = "<group>"; };
 		E5973A3D1720EE8C001B948A /* MainMenuRecommendBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuRecommendBox.m; sourceTree = "<group>"; };
 		E5973A3E1720EE8C001B948A /* MainMenuScoreBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScoreBox.h; sourceTree = "<group>"; };
@@ -1261,6 +1269,10 @@
 		0840D593163F435E003D5FE6 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				E54E1589172C7A2A0022DACE /* bannerRed.png */,
+				E54E158A172C7A2A0022DACE /* bannerRed-hd.png */,
+				E58F3A23172C13DE00C00E9C /* spark.png */,
+				E58F3A24172C13DE00C00E9C /* spark-hd.png */,
 				083B08F4170AB0EC00EF0DB0 /* banner.png */,
 				083B08F5170AB0EC00EF0DB0 /* blank-hd.png */,
 				083B08F6170AB0EC00EF0DB0 /* blank.png */,
@@ -2640,6 +2652,10 @@
 				E5973A9717234A28001B948A /* MainMenuBuyBox.ccbi in Resources */,
 				E5973A9817234A28001B948A /* MainMenuSettingsBox.ccbi in Resources */,
 				E5973A9917234A28001B948A /* MainMenuSocialBox.ccbi in Resources */,
+				E58F3A25172C13DE00C00E9C /* spark.png in Resources */,
+				E58F3A26172C13DE00C00E9C /* spark-hd.png in Resources */,
+				E54E158B172C7A2A0022DACE /* bannerRed.png in Resources */,
+				E54E158C172C7A2A0022DACE /* bannerRed-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
