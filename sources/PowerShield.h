@@ -13,7 +13,11 @@
 
 @interface PowerShield : Power
 
+- (void) toggleInvincibleRecord:(int) elapsedMilliseconds;
+
 @property (nonatomic) NSDate * startTime;
 @property (nonatomic) BOOL startedBlink;
+@property (nonatomic) NSInteger * lastToggle;
+
 
 @end

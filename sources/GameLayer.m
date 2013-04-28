@@ -43,6 +43,7 @@
 @synthesize score = _score;
 @synthesize highScore = _highScore;
 @synthesize scoreLabel;
+@synthesize invincibleRecord;
 //@synthesize multiplierLabel;
 
 

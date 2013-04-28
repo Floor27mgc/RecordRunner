@@ -477,6 +477,16 @@
 		850FAD1016BD9D8F00EBF5FF /* PowerShield.m in Sources */ = {isa = PBXBuildFile; fileRef = 850FAD0F16BD9D8F00EBF5FF /* PowerShield.m */; };
 		851C65B616DEB28D00B9BDB5 /* SoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 851C65B516DEB28D00B9BDB5 /* SoundController.m */; };
 		852E3DB217123300006EC44A /* Multiplier.m in Sources */ = {isa = PBXBuildFile; fileRef = 852E3DB117123300006EC44A /* Multiplier.m */; };
+		853F15AE172C9C20004E33B6 /* parts_bomb_invincible.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15A4172C9C20004E33B6 /* parts_bomb_invincible.png */; };
+		853F15AF172C9C20004E33B6 /* parts_bomb_invincible-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15A5172C9C20004E33B6 /* parts_bomb_invincible-hd.png */; };
+		853F15B0172C9C20004E33B6 /* parts_coin_invincible.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15A6172C9C20004E33B6 /* parts_coin_invincible.png */; };
+		853F15B1172C9C20004E33B6 /* parts_coin_invincible-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15A7172C9C20004E33B6 /* parts_coin_invincible-hd.png */; };
+		853F15B2172C9C20004E33B6 /* parts_player_invincible-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15A8172C9C20004E33B6 /* parts_player_invincible-hd.png */; };
+		853F15B3172C9C20004E33B6 /* parts_player_invinvible.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15A9172C9C20004E33B6 /* parts_player_invinvible.png */; };
+		853F15B4172C9C20004E33B6 /* parts_record_invincible.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15AA172C9C20004E33B6 /* parts_record_invincible.png */; };
+		853F15B5172C9C20004E33B6 /* parts_record_invincible-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15AB172C9C20004E33B6 /* parts_record_invincible-hd.png */; };
+		853F15B6172C9C20004E33B6 /* parts_shield_invincible.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15AC172C9C20004E33B6 /* parts_shield_invincible.png */; };
+		853F15B7172C9C20004E33B6 /* parts_shield_invincible-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15AD172C9C20004E33B6 /* parts_shield_invincible-hd.png */; };
 		8583C66A16802C9C003A3213 /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8583C66916802C9C003A3213 /* GameOverLayer.m */; };
 		859EC13C16B60FB7003BFF41 /* PowerSlowDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 859EC13B16B60FB7003BFF41 /* PowerSlowDown.m */; };
 		85A671361651D14000499BF7 /* Bomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671351651D14000499BF7 /* Bomb.m */; };
@@ -1070,6 +1080,16 @@
 		851C65B516DEB28D00B9BDB5 /* SoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SoundController.m; path = sources/SoundController.m; sourceTree = SOURCE_ROOT; };
 		852E3DB017123300006EC44A /* Multiplier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Multiplier.h; path = sources/Multiplier.h; sourceTree = SOURCE_ROOT; };
 		852E3DB117123300006EC44A /* Multiplier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Multiplier.m; path = sources/Multiplier.m; sourceTree = SOURCE_ROOT; };
+		853F15A4172C9C20004E33B6 /* parts_bomb_invincible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_bomb_invincible.png; path = Resources/Graphics/parts_bomb_invincible.png; sourceTree = SOURCE_ROOT; };
+		853F15A5172C9C20004E33B6 /* parts_bomb_invincible-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_bomb_invincible-hd.png"; path = "Resources/Graphics/parts_bomb_invincible-hd.png"; sourceTree = SOURCE_ROOT; };
+		853F15A6172C9C20004E33B6 /* parts_coin_invincible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_coin_invincible.png; path = Resources/Graphics/parts_coin_invincible.png; sourceTree = SOURCE_ROOT; };
+		853F15A7172C9C20004E33B6 /* parts_coin_invincible-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_coin_invincible-hd.png"; path = "Resources/Graphics/parts_coin_invincible-hd.png"; sourceTree = SOURCE_ROOT; };
+		853F15A8172C9C20004E33B6 /* parts_player_invincible-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_player_invincible-hd.png"; path = "Resources/Graphics/parts_player_invincible-hd.png"; sourceTree = SOURCE_ROOT; };
+		853F15A9172C9C20004E33B6 /* parts_player_invinvible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_player_invinvible.png; path = Resources/Graphics/parts_player_invinvible.png; sourceTree = SOURCE_ROOT; };
+		853F15AA172C9C20004E33B6 /* parts_record_invincible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_record_invincible.png; path = Resources/Graphics/parts_record_invincible.png; sourceTree = SOURCE_ROOT; };
+		853F15AB172C9C20004E33B6 /* parts_record_invincible-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_record_invincible-hd.png"; path = "Resources/Graphics/parts_record_invincible-hd.png"; sourceTree = SOURCE_ROOT; };
+		853F15AC172C9C20004E33B6 /* parts_shield_invincible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_shield_invincible.png; path = Resources/Graphics/parts_shield_invincible.png; sourceTree = SOURCE_ROOT; };
+		853F15AD172C9C20004E33B6 /* parts_shield_invincible-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_shield_invincible-hd.png"; path = "Resources/Graphics/parts_shield_invincible-hd.png"; sourceTree = SOURCE_ROOT; };
 		8583C66816802C9C003A3213 /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverLayer.h; path = sources/GameOverLayer.h; sourceTree = SOURCE_ROOT; };
 		8583C66916802C9C003A3213 /* GameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverLayer.m; path = sources/GameOverLayer.m; sourceTree = SOURCE_ROOT; };
 		859EC13A16B60FB7003BFF41 /* PowerSlowDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerSlowDown.h; path = sources/PowerSlowDown.h; sourceTree = SOURCE_ROOT; };
@@ -1297,14 +1317,24 @@
 				083B0915170AB0EC00EF0DB0 /* no.png */,
 				083B0916170AB0EC00EF0DB0 /* parts_bomb-hd.png */,
 				083B0917170AB0EC00EF0DB0 /* parts_bomb.png */,
+				853F15A5172C9C20004E33B6 /* parts_bomb_invincible-hd.png */,
+				853F15A4172C9C20004E33B6 /* parts_bomb_invincible.png */,
 				083B0918170AB0EC00EF0DB0 /* parts_coin-hd.png */,
 				083B0919170AB0EC00EF0DB0 /* parts_coin.png */,
+				853F15A7172C9C20004E33B6 /* parts_coin_invincible-hd.png */,
+				853F15A6172C9C20004E33B6 /* parts_coin_invincible.png */,
 				083B091A170AB0EC00EF0DB0 /* parts_player-hd.png */,
 				083B091B170AB0EC00EF0DB0 /* parts_player.png */,
+				853F15A8172C9C20004E33B6 /* parts_player_invincible-hd.png */,
+				853F15A9172C9C20004E33B6 /* parts_player_invinvible.png */,
 				083B091C170AB0EC00EF0DB0 /* parts_record-hd.png */,
 				083B091D170AB0EC00EF0DB0 /* parts_record.png */,
+				853F15AB172C9C20004E33B6 /* parts_record_invincible-hd.png */,
+				853F15AA172C9C20004E33B6 /* parts_record_invincible.png */,
 				083B091E170AB0EC00EF0DB0 /* parts_shield-hd.png */,
 				083B091F170AB0EC00EF0DB0 /* parts_shield.png */,
+				853F15AD172C9C20004E33B6 /* parts_shield_invincible-hd.png */,
+				853F15AC172C9C20004E33B6 /* parts_shield_invincible.png */,
 				083B0920170AB0EC00EF0DB0 /* player_with_shield.jpg */,
 				083B0921170AB0EC00EF0DB0 /* Unticked-hd.png */,
 				083B0922170AB0EC00EF0DB0 /* Unticked.png */,
@@ -1339,20 +1369,6 @@
 			children = (
 				85A671341651D13F00499BF7 /* Bomb.h */,
 				85A671351651D14000499BF7 /* Bomb.m */,
-				E5973A3C1720EE8C001B948A /* MainMenuRecommendBox.h */,
-				E5973A3D1720EE8C001B948A /* MainMenuRecommendBox.m */,
-				E5973A3E1720EE8C001B948A /* MainMenuScoreBox.h */,
-				E5973A3F1720EE8C001B948A /* MainMenuScoreBox.m */,
-				E5973A401720EE8C001B948A /* MenuBox.h */,
-				E5973AA017234E08001B948A /* MainMenuSettingsBox.h */,
-				E5973AA117234E08001B948A /* MainMenuSettingsBox.m */,
-				E5973A411720EE8C001B948A /* MenuBox.m */,
-				E5973A421720EE8C001B948A /* MainMenuHelpBox.h */,
-				E5973A9D17234DB2001B948A /* MainMenuSocialBox.h */,
-				E5973A9E17234DB3001B948A /* MainMenuSocialBox.m */,
-				E5973A9A17234CD7001B948A /* MainMenuBuyBox.h */,
-				E5973A9B17234CD8001B948A /* MainMenuBuyBox.m */,
-				E5973A431720EE8C001B948A /* MainMenuHelpBox.m */,
 				85A671381651D16000499BF7 /* Coin.h */,
 				85A671391651D16000499BF7 /* Coin.m */,
 				08B6D63A169548B000608ACF /* common.h */,
@@ -1372,12 +1388,26 @@
 				082018311678479B000A3F8D /* GameObjectInjector.m */,
 				0840D5A1163F4C2A003D5FE6 /* GameObjectPlayer.h */,
 				0840D5A2163F4C2A003D5FE6 /* GameObjectPlayer.m */,
-				E5973A4B1720F4E4001B948A /* MainMenuScene.m */,
-				E5973A4C1720F4E5001B948A /* MainMenuScene.h */,
 				8583C66816802C9C003A3213 /* GameOverLayer.h */,
 				8583C66916802C9C003A3213 /* GameOverLayer.m */,
 				0803EEFE16EC630E00CC932B /* MainGameScene.h */,
 				0803EEFF16EC630E00CC932B /* MainGameScene.m */,
+				E5973A9A17234CD7001B948A /* MainMenuBuyBox.h */,
+				E5973A9B17234CD8001B948A /* MainMenuBuyBox.m */,
+				E5973A421720EE8C001B948A /* MainMenuHelpBox.h */,
+				E5973A431720EE8C001B948A /* MainMenuHelpBox.m */,
+				E5973A3C1720EE8C001B948A /* MainMenuRecommendBox.h */,
+				E5973A3D1720EE8C001B948A /* MainMenuRecommendBox.m */,
+				E5973A4C1720F4E5001B948A /* MainMenuScene.h */,
+				E5973A4B1720F4E4001B948A /* MainMenuScene.m */,
+				E5973A3E1720EE8C001B948A /* MainMenuScoreBox.h */,
+				E5973A3F1720EE8C001B948A /* MainMenuScoreBox.m */,
+				E5973AA017234E08001B948A /* MainMenuSettingsBox.h */,
+				E5973AA117234E08001B948A /* MainMenuSettingsBox.m */,
+				E5973A9D17234DB2001B948A /* MainMenuSocialBox.h */,
+				E5973A9E17234DB3001B948A /* MainMenuSocialBox.m */,
+				E5973A401720EE8C001B948A /* MenuBox.h */,
+				E5973A411720EE8C001B948A /* MenuBox.m */,
 				8503011216A9FF790035D7C1 /* Missile.h */,
 				8503011316A9FF790035D7C1 /* Missile.m */,
 				852E3DB017123300006EC44A /* Multiplier.h */,
@@ -2640,6 +2670,16 @@
 				E5973A9717234A28001B948A /* MainMenuBuyBox.ccbi in Resources */,
 				E5973A9817234A28001B948A /* MainMenuSettingsBox.ccbi in Resources */,
 				E5973A9917234A28001B948A /* MainMenuSocialBox.ccbi in Resources */,
+				853F15AE172C9C20004E33B6 /* parts_bomb_invincible.png in Resources */,
+				853F15AF172C9C20004E33B6 /* parts_bomb_invincible-hd.png in Resources */,
+				853F15B0172C9C20004E33B6 /* parts_coin_invincible.png in Resources */,
+				853F15B1172C9C20004E33B6 /* parts_coin_invincible-hd.png in Resources */,
+				853F15B2172C9C20004E33B6 /* parts_player_invincible-hd.png in Resources */,
+				853F15B3172C9C20004E33B6 /* parts_player_invinvible.png in Resources */,
+				853F15B4172C9C20004E33B6 /* parts_record_invincible.png in Resources */,
+				853F15B5172C9C20004E33B6 /* parts_record_invincible-hd.png in Resources */,
+				853F15B6172C9C20004E33B6 /* parts_shield_invincible.png in Resources */,
+				853F15B7172C9C20004E33B6 /* parts_shield_invincible-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
