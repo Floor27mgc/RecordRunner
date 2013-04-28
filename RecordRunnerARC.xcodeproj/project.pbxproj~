@@ -377,7 +377,6 @@
 		08A372A316C822B9006819E3 /* ZipUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A371D916C822B9006819E3 /* ZipUtils.m */; };
 		08C86DC11674552F0082DBE5 /* tuffy_bold_italic-charmap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DC01674552F0082DBE5 /* tuffy_bold_italic-charmap.plist */; };
 		08C86DF716745C3F0082DBE5 /* tuffy_bold_italic-charmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DF616745C3F0082DBE5 /* tuffy_bold_italic-charmap.png */; };
-		08DA1F861698BD240059439D /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 08DA1F851698BD240059439D /* MainMenuScene.m */; };
 		850300ED16A63FBA0035D7C1 /* PowerIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 850300EC16A63FBA0035D7C1 /* PowerIcon.m */; };
 		850300F116A640E50035D7C1 /* Power.m in Sources */ = {isa = PBXBuildFile; fileRef = 850300F016A640E50035D7C1 /* Power.m */; };
 		850300F416A661290035D7C1 /* PowerFireMissle.m in Sources */ = {isa = PBXBuildFile; fileRef = 850300F316A661280035D7C1 /* PowerFireMissle.m */; };
@@ -477,13 +476,23 @@
 		850CF31E16F9652100B292DE /* StatisticsTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 850CF31D16F9652100B292DE /* StatisticsTracker.m */; };
 		850FAD1016BD9D8F00EBF5FF /* PowerShield.m in Sources */ = {isa = PBXBuildFile; fileRef = 850FAD0F16BD9D8F00EBF5FF /* PowerShield.m */; };
 		851C65B616DEB28D00B9BDB5 /* SoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = 851C65B516DEB28D00B9BDB5 /* SoundController.m */; };
+		852E3DB217123300006EC44A /* Multiplier.m in Sources */ = {isa = PBXBuildFile; fileRef = 852E3DB117123300006EC44A /* Multiplier.m */; };
+		853F15AE172C9C20004E33B6 /* parts_bomb_invincible.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15A4172C9C20004E33B6 /* parts_bomb_invincible.png */; };
+		853F15AF172C9C20004E33B6 /* parts_bomb_invincible-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15A5172C9C20004E33B6 /* parts_bomb_invincible-hd.png */; };
+		853F15B0172C9C20004E33B6 /* parts_coin_invincible.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15A6172C9C20004E33B6 /* parts_coin_invincible.png */; };
+		853F15B1172C9C20004E33B6 /* parts_coin_invincible-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15A7172C9C20004E33B6 /* parts_coin_invincible-hd.png */; };
+		853F15B2172C9C20004E33B6 /* parts_player_invincible-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15A8172C9C20004E33B6 /* parts_player_invincible-hd.png */; };
+		853F15B3172C9C20004E33B6 /* parts_player_invinvible.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15A9172C9C20004E33B6 /* parts_player_invinvible.png */; };
+		853F15B4172C9C20004E33B6 /* parts_record_invincible.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15AA172C9C20004E33B6 /* parts_record_invincible.png */; };
+		853F15B5172C9C20004E33B6 /* parts_record_invincible-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15AB172C9C20004E33B6 /* parts_record_invincible-hd.png */; };
+		853F15B6172C9C20004E33B6 /* parts_shield_invincible.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15AC172C9C20004E33B6 /* parts_shield_invincible.png */; };
+		853F15B7172C9C20004E33B6 /* parts_shield_invincible-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15AD172C9C20004E33B6 /* parts_shield_invincible-hd.png */; };
 		8583C66A16802C9C003A3213 /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8583C66916802C9C003A3213 /* GameOverLayer.m */; };
 		859EC13C16B60FB7003BFF41 /* PowerSlowDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 859EC13B16B60FB7003BFF41 /* PowerSlowDown.m */; };
 		85A671361651D14000499BF7 /* Bomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671351651D14000499BF7 /* Bomb.m */; };
 		85A6713A1651D16000499BF7 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671391651D16000499BF7 /* Coin.m */; };
 		85A6714C1655A6CC00499BF7 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A6714B1655A6CB00499BF7 /* Queue.m */; };
 		85B53BAD1673C5CC001163F7 /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B53BAC1673C5CC001163F7 /* Score.m */; };
-		85DA23FA170AA5FB000CC35C /* gameObjectPlayer.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 85DA23F9170AA5FB000CC35C /* gameObjectPlayer.ccbi */; };
 		DC0C49F6154AB4DD00B4B727 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0C49F5154AB4DD00B4B727 /* QuartzCore.framework */; };
 		DC0C49F8154AB4DD00B4B727 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0C49F7154AB4DD00B4B727 /* OpenGLES.framework */; };
 		DC0C49FA154AB4DD00B4B727 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0C49F9154AB4DD00B4B727 /* OpenAL.framework */; };
@@ -543,15 +552,35 @@
 		DC0C4D60154AB59800B4B727 /* vec2.c in Sources */ = {isa = PBXBuildFile; fileRef = DC0C4C7E154AB59800B4B727 /* vec2.c */; };
 		DC0C4D61154AB59800B4B727 /* vec3.c in Sources */ = {isa = PBXBuildFile; fileRef = DC0C4C7F154AB59800B4B727 /* vec3.c */; };
 		DC0C4D62154AB59800B4B727 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = DC0C4C80154AB59800B4B727 /* vec4.c */; };
-		E5B95B491701606B00CF7463 /* DebugMenuNode.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5B95B3F1701606B00CF7463 /* DebugMenuNode.ccbi */; };
-		E5B95B4A1701606B00CF7463 /* GameModeMenu.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5B95B401701606B00CF7463 /* GameModeMenu.ccbi */; };
-		E5B95B4B1701606B00CF7463 /* gameObjectBomb.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5B95B411701606B00CF7463 /* gameObjectBomb.ccbi */; };
-		E5B95B4C1701606B00CF7463 /* gameObjectCoin.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5B95B421701606B00CF7463 /* gameObjectCoin.ccbi */; };
-		E5B95B4D1701606B00CF7463 /* GameObjectShield.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5B95B431701606B00CF7463 /* GameObjectShield.ccbi */; };
-		E5B95B4E1701606B00CF7463 /* GameOverLayerBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5B95B441701606B00CF7463 /* GameOverLayerBox.ccbi */; };
-		E5B95B4F1701606B00CF7463 /* MainGameLayer.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5B95B451701606B00CF7463 /* MainGameLayer.ccbi */; };
-		E5B95B501701606B00CF7463 /* MainGameScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5B95B461701606B00CF7463 /* MainGameScene.ccbi */; };
-		E5B95B511701606B00CF7463 /* MainMenuScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5B95B471701606B00CF7463 /* MainMenuScene.ccbi */; };
+		E54E158B172C7A2A0022DACE /* bannerRed.png in Resources */ = {isa = PBXBuildFile; fileRef = E54E1589172C7A2A0022DACE /* bannerRed.png */; };
+		E54E158C172C7A2A0022DACE /* bannerRed-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E54E158A172C7A2A0022DACE /* bannerRed-hd.png */; };
+		E58F3A25172C13DE00C00E9C /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = E58F3A23172C13DE00C00E9C /* spark.png */; };
+		E58F3A26172C13DE00C00E9C /* spark-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E58F3A24172C13DE00C00E9C /* spark-hd.png */; };
+		E5973A441720EE8C001B948A /* MainMenuRecommendBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5973A3D1720EE8C001B948A /* MainMenuRecommendBox.m */; };
+		E5973A451720EE8C001B948A /* MainMenuScoreBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5973A3F1720EE8C001B948A /* MainMenuScoreBox.m */; };
+		E5973A461720EE8C001B948A /* MenuBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5973A411720EE8C001B948A /* MenuBox.m */; };
+		E5973A471720EE8C001B948A /* MainMenuHelpBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5973A431720EE8C001B948A /* MainMenuHelpBox.m */; };
+		E5973A4D1720F4E6001B948A /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E5973A4B1720F4E4001B948A /* MainMenuScene.m */; };
+		E5973A861720FAD9001B948A /* DebugMenuNode.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5973A781720FAD9001B948A /* DebugMenuNode.ccbi */; };
+		E5973A871720FAD9001B948A /* GameModeMenu.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5973A791720FAD9001B948A /* GameModeMenu.ccbi */; };
+		E5973A881720FAD9001B948A /* gameObjectBomb.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5973A7A1720FAD9001B948A /* gameObjectBomb.ccbi */; };
+		E5973A891720FAD9001B948A /* gameObjectCoin.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5973A7B1720FAD9001B948A /* gameObjectCoin.ccbi */; };
+		E5973A8A1720FAD9001B948A /* gameObjectPlayer.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5973A7C1720FAD9001B948A /* gameObjectPlayer.ccbi */; };
+		E5973A8B1720FAD9001B948A /* GameObjectShield.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5973A7D1720FAD9001B948A /* GameObjectShield.ccbi */; };
+		E5973A8C1720FAD9001B948A /* GameOverLayerBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5973A7E1720FAD9001B948A /* GameOverLayerBox.ccbi */; };
+		E5973A8D1720FAD9001B948A /* MainGameLayer.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5973A7F1720FAD9001B948A /* MainGameLayer.ccbi */; };
+		E5973A8E1720FAD9001B948A /* MainGameScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5973A801720FAD9001B948A /* MainGameScene.ccbi */; };
+		E5973A8F1720FAD9001B948A /* MainMenuHelpBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5973A811720FAD9001B948A /* MainMenuHelpBox.ccbi */; };
+		E5973A901720FAD9001B948A /* MainMenuRecommendBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5973A821720FAD9001B948A /* MainMenuRecommendBox.ccbi */; };
+		E5973A911720FAD9001B948A /* MainMenuScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5973A831720FAD9001B948A /* MainMenuScene.ccbi */; };
+		E5973A921720FAD9001B948A /* MainMenuScoreBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5973A841720FAD9001B948A /* MainMenuScoreBox.ccbi */; };
+		E5973A931720FAD9001B948A /* multiplier.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5973A851720FAD9001B948A /* multiplier.ccbi */; };
+		E5973A9717234A28001B948A /* MainMenuBuyBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5973A9417234A27001B948A /* MainMenuBuyBox.ccbi */; };
+		E5973A9817234A28001B948A /* MainMenuSettingsBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5973A9517234A27001B948A /* MainMenuSettingsBox.ccbi */; };
+		E5973A9917234A28001B948A /* MainMenuSocialBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5973A9617234A28001B948A /* MainMenuSocialBox.ccbi */; };
+		E5973A9C17234CD8001B948A /* MainMenuBuyBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5973A9B17234CD8001B948A /* MainMenuBuyBox.m */; };
+		E5973A9F17234DB3001B948A /* MainMenuSocialBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5973A9E17234DB3001B948A /* MainMenuSocialBox.m */; };
+		E5973AA217234E0A001B948A /* MainMenuSettingsBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5973AA117234E08001B948A /* MainMenuSettingsBox.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -943,8 +972,6 @@
 		08C86E2A1674EA550082DBE5 /* tuffy_bold_italic-charmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tuffy_bold_italic-charmap.png"; path = "Resources/Fonts/tuffy_bold_italic-charmap.png"; sourceTree = SOURCE_ROOT; };
 		08C86E2B1674EA550082DBE5 /* west_england-64.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "west_england-64.fnt"; path = "Resources/Fonts/west_england-64.fnt"; sourceTree = SOURCE_ROOT; };
 		08C86E2C1674EA550082DBE5 /* west_england-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "west_england-64.png"; path = "Resources/Fonts/west_england-64.png"; sourceTree = SOURCE_ROOT; };
-		08DA1F841698BD240059439D /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
-		08DA1F851698BD240059439D /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
 		850300EB16A63FBA0035D7C1 /* PowerIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerIcon.h; path = sources/PowerIcon.h; sourceTree = SOURCE_ROOT; };
 		850300EC16A63FBA0035D7C1 /* PowerIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowerIcon.m; path = sources/PowerIcon.m; sourceTree = SOURCE_ROOT; };
 		850300EF16A640E50035D7C1 /* Power.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Power.h; path = sources/Power.h; sourceTree = SOURCE_ROOT; };
@@ -1055,6 +1082,18 @@
 		850FAD0F16BD9D8F00EBF5FF /* PowerShield.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowerShield.m; path = sources/PowerShield.m; sourceTree = SOURCE_ROOT; };
 		851C65B416DEB28D00B9BDB5 /* SoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundController.h; path = sources/SoundController.h; sourceTree = SOURCE_ROOT; };
 		851C65B516DEB28D00B9BDB5 /* SoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SoundController.m; path = sources/SoundController.m; sourceTree = SOURCE_ROOT; };
+		852E3DB017123300006EC44A /* Multiplier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Multiplier.h; path = sources/Multiplier.h; sourceTree = SOURCE_ROOT; };
+		852E3DB117123300006EC44A /* Multiplier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Multiplier.m; path = sources/Multiplier.m; sourceTree = SOURCE_ROOT; };
+		853F15A4172C9C20004E33B6 /* parts_bomb_invincible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_bomb_invincible.png; path = Resources/Graphics/parts_bomb_invincible.png; sourceTree = SOURCE_ROOT; };
+		853F15A5172C9C20004E33B6 /* parts_bomb_invincible-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_bomb_invincible-hd.png"; path = "Resources/Graphics/parts_bomb_invincible-hd.png"; sourceTree = SOURCE_ROOT; };
+		853F15A6172C9C20004E33B6 /* parts_coin_invincible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_coin_invincible.png; path = Resources/Graphics/parts_coin_invincible.png; sourceTree = SOURCE_ROOT; };
+		853F15A7172C9C20004E33B6 /* parts_coin_invincible-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_coin_invincible-hd.png"; path = "Resources/Graphics/parts_coin_invincible-hd.png"; sourceTree = SOURCE_ROOT; };
+		853F15A8172C9C20004E33B6 /* parts_player_invincible-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_player_invincible-hd.png"; path = "Resources/Graphics/parts_player_invincible-hd.png"; sourceTree = SOURCE_ROOT; };
+		853F15A9172C9C20004E33B6 /* parts_player_invinvible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_player_invinvible.png; path = Resources/Graphics/parts_player_invinvible.png; sourceTree = SOURCE_ROOT; };
+		853F15AA172C9C20004E33B6 /* parts_record_invincible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_record_invincible.png; path = Resources/Graphics/parts_record_invincible.png; sourceTree = SOURCE_ROOT; };
+		853F15AB172C9C20004E33B6 /* parts_record_invincible-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_record_invincible-hd.png"; path = "Resources/Graphics/parts_record_invincible-hd.png"; sourceTree = SOURCE_ROOT; };
+		853F15AC172C9C20004E33B6 /* parts_shield_invincible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_shield_invincible.png; path = Resources/Graphics/parts_shield_invincible.png; sourceTree = SOURCE_ROOT; };
+		853F15AD172C9C20004E33B6 /* parts_shield_invincible-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_shield_invincible-hd.png"; path = "Resources/Graphics/parts_shield_invincible-hd.png"; sourceTree = SOURCE_ROOT; };
 		8583C66816802C9C003A3213 /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverLayer.h; path = sources/GameOverLayer.h; sourceTree = SOURCE_ROOT; };
 		8583C66916802C9C003A3213 /* GameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverLayer.m; path = sources/GameOverLayer.m; sourceTree = SOURCE_ROOT; };
 		859EC13A16B60FB7003BFF41 /* PowerSlowDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerSlowDown.h; path = sources/PowerSlowDown.h; sourceTree = SOURCE_ROOT; };
@@ -1068,7 +1107,6 @@
 		85A6714B1655A6CB00499BF7 /* Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Queue.m; path = sources/Queue.m; sourceTree = SOURCE_ROOT; };
 		85B53BAB1673C5CC001163F7 /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Score.h; path = sources/Score.h; sourceTree = SOURCE_ROOT; };
 		85B53BAC1673C5CC001163F7 /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Score.m; path = sources/Score.m; sourceTree = SOURCE_ROOT; };
-		85DA23F9170AA5FB000CC35C /* gameObjectPlayer.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = gameObjectPlayer.ccbi; path = "CocosBuilder/CCB_files/Published-iOS/gameObjectPlayer.ccbi"; sourceTree = SOURCE_ROOT; };
 		DC0C49F1154AB4DD00B4B727 /* RecordRunnerARC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordRunnerARC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0C49F5154AB4DD00B4B727 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DC0C49F7154AB4DD00B4B727 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1137,15 +1175,43 @@
 		DC0C4C81154AB59800B4B727 /* LICENSE_cocos2d.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_cocos2d.txt; sourceTree = "<group>"; };
 		DC0C4C82154AB59800B4B727 /* LICENSE_CocosDenshion.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_CocosDenshion.txt; sourceTree = "<group>"; };
 		DC0C4C83154AB59800B4B727 /* LICENSE_Kazmath.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_Kazmath.txt; sourceTree = "<group>"; };
-		E5B95B3F1701606B00CF7463 /* DebugMenuNode.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = DebugMenuNode.ccbi; path = CocosBuilder/CCBI_files/DebugMenuNode.ccbi; sourceTree = SOURCE_ROOT; };
-		E5B95B401701606B00CF7463 /* GameModeMenu.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameModeMenu.ccbi; path = CocosBuilder/CCBI_files/GameModeMenu.ccbi; sourceTree = SOURCE_ROOT; };
-		E5B95B411701606B00CF7463 /* gameObjectBomb.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = gameObjectBomb.ccbi; path = CocosBuilder/CCBI_files/gameObjectBomb.ccbi; sourceTree = SOURCE_ROOT; };
-		E5B95B421701606B00CF7463 /* gameObjectCoin.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = gameObjectCoin.ccbi; path = CocosBuilder/CCBI_files/gameObjectCoin.ccbi; sourceTree = SOURCE_ROOT; };
-		E5B95B431701606B00CF7463 /* GameObjectShield.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameObjectShield.ccbi; path = CocosBuilder/CCBI_files/GameObjectShield.ccbi; sourceTree = SOURCE_ROOT; };
-		E5B95B441701606B00CF7463 /* GameOverLayerBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameOverLayerBox.ccbi; path = CocosBuilder/CCBI_files/GameOverLayerBox.ccbi; sourceTree = SOURCE_ROOT; };
-		E5B95B451701606B00CF7463 /* MainGameLayer.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainGameLayer.ccbi; path = CocosBuilder/CCBI_files/MainGameLayer.ccbi; sourceTree = SOURCE_ROOT; };
-		E5B95B461701606B00CF7463 /* MainGameScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainGameScene.ccbi; path = CocosBuilder/CCBI_files/MainGameScene.ccbi; sourceTree = SOURCE_ROOT; };
-		E5B95B471701606B00CF7463 /* MainMenuScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainMenuScene.ccbi; path = CocosBuilder/CCBI_files/MainMenuScene.ccbi; sourceTree = SOURCE_ROOT; };
+		E54E1589172C7A2A0022DACE /* bannerRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bannerRed.png; path = Resources/Graphics/bannerRed.png; sourceTree = SOURCE_ROOT; };
+		E54E158A172C7A2A0022DACE /* bannerRed-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bannerRed-hd.png"; path = "Resources/Graphics/bannerRed-hd.png"; sourceTree = SOURCE_ROOT; };
+		E58F3A23172C13DE00C00E9C /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = Resources/Graphics/spark.png; sourceTree = SOURCE_ROOT; };
+		E58F3A24172C13DE00C00E9C /* spark-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spark-hd.png"; path = "Resources/Graphics/spark-hd.png"; sourceTree = SOURCE_ROOT; };
+		E5973A3C1720EE8C001B948A /* MainMenuRecommendBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuRecommendBox.h; sourceTree = "<group>"; };
+		E5973A3D1720EE8C001B948A /* MainMenuRecommendBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuRecommendBox.m; sourceTree = "<group>"; };
+		E5973A3E1720EE8C001B948A /* MainMenuScoreBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScoreBox.h; sourceTree = "<group>"; };
+		E5973A3F1720EE8C001B948A /* MainMenuScoreBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScoreBox.m; sourceTree = "<group>"; };
+		E5973A401720EE8C001B948A /* MenuBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuBox.h; sourceTree = "<group>"; };
+		E5973A411720EE8C001B948A /* MenuBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuBox.m; sourceTree = "<group>"; };
+		E5973A421720EE8C001B948A /* MainMenuHelpBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuHelpBox.h; sourceTree = "<group>"; };
+		E5973A431720EE8C001B948A /* MainMenuHelpBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuHelpBox.m; sourceTree = "<group>"; };
+		E5973A4B1720F4E4001B948A /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuScene.m; path = sources/MainMenuScene.m; sourceTree = SOURCE_ROOT; };
+		E5973A4C1720F4E5001B948A /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuScene.h; path = sources/MainMenuScene.h; sourceTree = SOURCE_ROOT; };
+		E5973A781720FAD9001B948A /* DebugMenuNode.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = DebugMenuNode.ccbi; path = CocosBuilder/CCBI_files/DebugMenuNode.ccbi; sourceTree = SOURCE_ROOT; };
+		E5973A791720FAD9001B948A /* GameModeMenu.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameModeMenu.ccbi; path = CocosBuilder/CCBI_files/GameModeMenu.ccbi; sourceTree = SOURCE_ROOT; };
+		E5973A7A1720FAD9001B948A /* gameObjectBomb.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = gameObjectBomb.ccbi; path = CocosBuilder/CCBI_files/gameObjectBomb.ccbi; sourceTree = SOURCE_ROOT; };
+		E5973A7B1720FAD9001B948A /* gameObjectCoin.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = gameObjectCoin.ccbi; path = CocosBuilder/CCBI_files/gameObjectCoin.ccbi; sourceTree = SOURCE_ROOT; };
+		E5973A7C1720FAD9001B948A /* gameObjectPlayer.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = gameObjectPlayer.ccbi; path = CocosBuilder/CCBI_files/gameObjectPlayer.ccbi; sourceTree = SOURCE_ROOT; };
+		E5973A7D1720FAD9001B948A /* GameObjectShield.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameObjectShield.ccbi; path = CocosBuilder/CCBI_files/GameObjectShield.ccbi; sourceTree = SOURCE_ROOT; };
+		E5973A7E1720FAD9001B948A /* GameOverLayerBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameOverLayerBox.ccbi; path = CocosBuilder/CCBI_files/GameOverLayerBox.ccbi; sourceTree = SOURCE_ROOT; };
+		E5973A7F1720FAD9001B948A /* MainGameLayer.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainGameLayer.ccbi; path = CocosBuilder/CCBI_files/MainGameLayer.ccbi; sourceTree = SOURCE_ROOT; };
+		E5973A801720FAD9001B948A /* MainGameScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainGameScene.ccbi; path = CocosBuilder/CCBI_files/MainGameScene.ccbi; sourceTree = SOURCE_ROOT; };
+		E5973A811720FAD9001B948A /* MainMenuHelpBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainMenuHelpBox.ccbi; path = CocosBuilder/CCBI_files/MainMenuHelpBox.ccbi; sourceTree = SOURCE_ROOT; };
+		E5973A821720FAD9001B948A /* MainMenuRecommendBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainMenuRecommendBox.ccbi; path = CocosBuilder/CCBI_files/MainMenuRecommendBox.ccbi; sourceTree = SOURCE_ROOT; };
+		E5973A831720FAD9001B948A /* MainMenuScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainMenuScene.ccbi; path = CocosBuilder/CCBI_files/MainMenuScene.ccbi; sourceTree = SOURCE_ROOT; };
+		E5973A841720FAD9001B948A /* MainMenuScoreBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainMenuScoreBox.ccbi; path = CocosBuilder/CCBI_files/MainMenuScoreBox.ccbi; sourceTree = SOURCE_ROOT; };
+		E5973A851720FAD9001B948A /* multiplier.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = multiplier.ccbi; path = CocosBuilder/CCBI_files/multiplier.ccbi; sourceTree = SOURCE_ROOT; };
+		E5973A9417234A27001B948A /* MainMenuBuyBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainMenuBuyBox.ccbi; path = CocosBuilder/CCBI_files/MainMenuBuyBox.ccbi; sourceTree = SOURCE_ROOT; };
+		E5973A9517234A27001B948A /* MainMenuSettingsBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainMenuSettingsBox.ccbi; path = CocosBuilder/CCBI_files/MainMenuSettingsBox.ccbi; sourceTree = SOURCE_ROOT; };
+		E5973A9617234A28001B948A /* MainMenuSocialBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainMenuSocialBox.ccbi; path = CocosBuilder/CCBI_files/MainMenuSocialBox.ccbi; sourceTree = SOURCE_ROOT; };
+		E5973A9A17234CD7001B948A /* MainMenuBuyBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuBuyBox.h; path = sources/MainMenuBuyBox.h; sourceTree = SOURCE_ROOT; };
+		E5973A9B17234CD8001B948A /* MainMenuBuyBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuBuyBox.m; path = sources/MainMenuBuyBox.m; sourceTree = SOURCE_ROOT; };
+		E5973A9D17234DB2001B948A /* MainMenuSocialBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuSocialBox.h; path = sources/MainMenuSocialBox.h; sourceTree = SOURCE_ROOT; };
+		E5973A9E17234DB3001B948A /* MainMenuSocialBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuSocialBox.m; path = sources/MainMenuSocialBox.m; sourceTree = SOURCE_ROOT; };
+		E5973AA017234E08001B948A /* MainMenuSettingsBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuSettingsBox.h; sourceTree = "<group>"; };
+		E5973AA117234E08001B948A /* MainMenuSettingsBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuSettingsBox.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1223,6 +1289,10 @@
 		0840D593163F435E003D5FE6 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				E54E1589172C7A2A0022DACE /* bannerRed.png */,
+				E54E158A172C7A2A0022DACE /* bannerRed-hd.png */,
+				E58F3A23172C13DE00C00E9C /* spark.png */,
+				E58F3A24172C13DE00C00E9C /* spark-hd.png */,
 				083B08F4170AB0EC00EF0DB0 /* banner.png */,
 				083B08F5170AB0EC00EF0DB0 /* blank-hd.png */,
 				083B08F6170AB0EC00EF0DB0 /* blank.png */,
@@ -1259,14 +1329,24 @@
 				083B0915170AB0EC00EF0DB0 /* no.png */,
 				083B0916170AB0EC00EF0DB0 /* parts_bomb-hd.png */,
 				083B0917170AB0EC00EF0DB0 /* parts_bomb.png */,
+				853F15A5172C9C20004E33B6 /* parts_bomb_invincible-hd.png */,
+				853F15A4172C9C20004E33B6 /* parts_bomb_invincible.png */,
 				083B0918170AB0EC00EF0DB0 /* parts_coin-hd.png */,
 				083B0919170AB0EC00EF0DB0 /* parts_coin.png */,
+				853F15A7172C9C20004E33B6 /* parts_coin_invincible-hd.png */,
+				853F15A6172C9C20004E33B6 /* parts_coin_invincible.png */,
 				083B091A170AB0EC00EF0DB0 /* parts_player-hd.png */,
 				083B091B170AB0EC00EF0DB0 /* parts_player.png */,
+				853F15A8172C9C20004E33B6 /* parts_player_invincible-hd.png */,
+				853F15A9172C9C20004E33B6 /* parts_player_invinvible.png */,
 				083B091C170AB0EC00EF0DB0 /* parts_record-hd.png */,
 				083B091D170AB0EC00EF0DB0 /* parts_record.png */,
+				853F15AB172C9C20004E33B6 /* parts_record_invincible-hd.png */,
+				853F15AA172C9C20004E33B6 /* parts_record_invincible.png */,
 				083B091E170AB0EC00EF0DB0 /* parts_shield-hd.png */,
 				083B091F170AB0EC00EF0DB0 /* parts_shield.png */,
+				853F15AD172C9C20004E33B6 /* parts_shield_invincible-hd.png */,
+				853F15AC172C9C20004E33B6 /* parts_shield_invincible.png */,
 				083B0920170AB0EC00EF0DB0 /* player_with_shield.jpg */,
 				083B0921170AB0EC00EF0DB0 /* Unticked-hd.png */,
 				083B0922170AB0EC00EF0DB0 /* Unticked.png */,
@@ -1324,10 +1404,26 @@
 				8583C66916802C9C003A3213 /* GameOverLayer.m */,
 				0803EEFE16EC630E00CC932B /* MainGameScene.h */,
 				0803EEFF16EC630E00CC932B /* MainGameScene.m */,
-				08DA1F841698BD240059439D /* MainMenuScene.h */,
-				08DA1F851698BD240059439D /* MainMenuScene.m */,
+				E5973A9A17234CD7001B948A /* MainMenuBuyBox.h */,
+				E5973A9B17234CD8001B948A /* MainMenuBuyBox.m */,
+				E5973A421720EE8C001B948A /* MainMenuHelpBox.h */,
+				E5973A431720EE8C001B948A /* MainMenuHelpBox.m */,
+				E5973A3C1720EE8C001B948A /* MainMenuRecommendBox.h */,
+				E5973A3D1720EE8C001B948A /* MainMenuRecommendBox.m */,
+				E5973A4C1720F4E5001B948A /* MainMenuScene.h */,
+				E5973A4B1720F4E4001B948A /* MainMenuScene.m */,
+				E5973A3E1720EE8C001B948A /* MainMenuScoreBox.h */,
+				E5973A3F1720EE8C001B948A /* MainMenuScoreBox.m */,
+				E5973AA017234E08001B948A /* MainMenuSettingsBox.h */,
+				E5973AA117234E08001B948A /* MainMenuSettingsBox.m */,
+				E5973A9D17234DB2001B948A /* MainMenuSocialBox.h */,
+				E5973A9E17234DB3001B948A /* MainMenuSocialBox.m */,
+				E5973A401720EE8C001B948A /* MenuBox.h */,
+				E5973A411720EE8C001B948A /* MenuBox.m */,
 				8503011216A9FF790035D7C1 /* Missile.h */,
 				8503011316A9FF790035D7C1 /* Missile.m */,
+				852E3DB017123300006EC44A /* Multiplier.h */,
+				852E3DB117123300006EC44A /* Multiplier.m */,
 				082018341679577D000A3F8D /* pattern.c */,
 				0820183616795ADE000A3F8D /* pattern.h */,
 				850300EF16A640E50035D7C1 /* Power.h */,
@@ -1724,20 +1820,23 @@
 		08A372A416C8A69C006819E3 /* CocosBuilder */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				85DA23F9170AA5FB000CC35C /* gameObjectPlayer.ccbi */,
-				E5B95B3E1701606B00CF7463 /* DebugMenuNode copy.ccbi */,
-=======
->>>>>>> max21226/collisionRedo
-				E5B95B3F1701606B00CF7463 /* DebugMenuNode.ccbi */,
-				E5B95B401701606B00CF7463 /* GameModeMenu.ccbi */,
-				E5B95B411701606B00CF7463 /* gameObjectBomb.ccbi */,
-				E5B95B421701606B00CF7463 /* gameObjectCoin.ccbi */,
-				E5B95B431701606B00CF7463 /* GameObjectShield.ccbi */,
-				E5B95B441701606B00CF7463 /* GameOverLayerBox.ccbi */,
-				E5B95B451701606B00CF7463 /* MainGameLayer.ccbi */,
-				E5B95B461701606B00CF7463 /* MainGameScene.ccbi */,
-				E5B95B471701606B00CF7463 /* MainMenuScene.ccbi */,
+				E5973A781720FAD9001B948A /* DebugMenuNode.ccbi */,
+				E5973A791720FAD9001B948A /* GameModeMenu.ccbi */,
+				E5973A7A1720FAD9001B948A /* gameObjectBomb.ccbi */,
+				E5973A7B1720FAD9001B948A /* gameObjectCoin.ccbi */,
+				E5973A7C1720FAD9001B948A /* gameObjectPlayer.ccbi */,
+				E5973A7D1720FAD9001B948A /* GameObjectShield.ccbi */,
+				E5973A7E1720FAD9001B948A /* GameOverLayerBox.ccbi */,
+				E5973A7F1720FAD9001B948A /* MainGameLayer.ccbi */,
+				E5973A801720FAD9001B948A /* MainGameScene.ccbi */,
+				E5973A811720FAD9001B948A /* MainMenuHelpBox.ccbi */,
+				E5973A821720FAD9001B948A /* MainMenuRecommendBox.ccbi */,
+				E5973A831720FAD9001B948A /* MainMenuScene.ccbi */,
+				E5973A9417234A27001B948A /* MainMenuBuyBox.ccbi */,
+				E5973A9517234A27001B948A /* MainMenuSettingsBox.ccbi */,
+				E5973A9617234A28001B948A /* MainMenuSocialBox.ccbi */,
+				E5973A841720FAD9001B948A /* MainMenuScoreBox.ccbi */,
+				E5973A851720FAD9001B948A /* multiplier.ccbi */,
 			);
 			name = CocosBuilder;
 			sourceTree = "<group>";
@@ -2516,18 +2615,6 @@
 				850CF31616ED974400B292DE /* Flurry_AppSpot_Publisher_Platform_TOS.pdf in Resources */,
 				850CF31716ED974400B292DE /* Jansson-LICENSE.txt in Resources */,
 				850CF31816ED974400B292DE /* ProjectApiKey.txt in Resources */,
-				E5B95B491701606B00CF7463 /* DebugMenuNode.ccbi in Resources */,
-				E5B95B4A1701606B00CF7463 /* GameModeMenu.ccbi in Resources */,
-				E5B95B4B1701606B00CF7463 /* gameObjectBomb.ccbi in Resources */,
-				E5B95B4C1701606B00CF7463 /* gameObjectCoin.ccbi in Resources */,
-				E5B95B4D1701606B00CF7463 /* GameObjectShield.ccbi in Resources */,
-				E5B95B4E1701606B00CF7463 /* GameOverLayerBox.ccbi in Resources */,
-				E5B95B4F1701606B00CF7463 /* MainGameLayer.ccbi in Resources */,
-				E5B95B501701606B00CF7463 /* MainGameScene.ccbi in Resources */,
-				E5B95B511701606B00CF7463 /* MainMenuScene.ccbi in Resources */,
-<<<<<<< HEAD
-				85DA23FA170AA5FB000CC35C /* gameObjectPlayer.ccbi in Resources */,
-=======
 				083B0926170AB0EC00EF0DB0 /* banner.png in Resources */,
 				083B0927170AB0EC00EF0DB0 /* blank-hd.png in Resources */,
 				083B0928170AB0EC00EF0DB0 /* blank.png in Resources */,
@@ -2578,7 +2665,40 @@
 				083B0955170AB0EC00EF0DB0 /* upButton-hd.png in Resources */,
 				083B0956170AB0EC00EF0DB0 /* upButton.png in Resources */,
 				083B0957170AB0EC00EF0DB0 /* Yes.png in Resources */,
->>>>>>> max21226/collisionRedo
+				E5973A861720FAD9001B948A /* DebugMenuNode.ccbi in Resources */,
+				E5973A871720FAD9001B948A /* GameModeMenu.ccbi in Resources */,
+				E5973A881720FAD9001B948A /* gameObjectBomb.ccbi in Resources */,
+				E5973A891720FAD9001B948A /* gameObjectCoin.ccbi in Resources */,
+				E5973A8A1720FAD9001B948A /* gameObjectPlayer.ccbi in Resources */,
+				E5973A8B1720FAD9001B948A /* GameObjectShield.ccbi in Resources */,
+				E5973A8C1720FAD9001B948A /* GameOverLayerBox.ccbi in Resources */,
+				E5973A8D1720FAD9001B948A /* MainGameLayer.ccbi in Resources */,
+				E5973A8E1720FAD9001B948A /* MainGameScene.ccbi in Resources */,
+				E5973A8F1720FAD9001B948A /* MainMenuHelpBox.ccbi in Resources */,
+				E5973A901720FAD9001B948A /* MainMenuRecommendBox.ccbi in Resources */,
+				E5973A911720FAD9001B948A /* MainMenuScene.ccbi in Resources */,
+				E5973A921720FAD9001B948A /* MainMenuScoreBox.ccbi in Resources */,
+				E5973A931720FAD9001B948A /* multiplier.ccbi in Resources */,
+				E5973A9717234A28001B948A /* MainMenuBuyBox.ccbi in Resources */,
+				E5973A9817234A28001B948A /* MainMenuSettingsBox.ccbi in Resources */,
+				E5973A9917234A28001B948A /* MainMenuSocialBox.ccbi in Resources */,
+<<<<<<< HEAD
+				853F15AE172C9C20004E33B6 /* parts_bomb_invincible.png in Resources */,
+				853F15AF172C9C20004E33B6 /* parts_bomb_invincible-hd.png in Resources */,
+				853F15B0172C9C20004E33B6 /* parts_coin_invincible.png in Resources */,
+				853F15B1172C9C20004E33B6 /* parts_coin_invincible-hd.png in Resources */,
+				853F15B2172C9C20004E33B6 /* parts_player_invincible-hd.png in Resources */,
+				853F15B3172C9C20004E33B6 /* parts_player_invinvible.png in Resources */,
+				853F15B4172C9C20004E33B6 /* parts_record_invincible.png in Resources */,
+				853F15B5172C9C20004E33B6 /* parts_record_invincible-hd.png in Resources */,
+				853F15B6172C9C20004E33B6 /* parts_shield_invincible.png in Resources */,
+				853F15B7172C9C20004E33B6 /* parts_shield_invincible-hd.png in Resources */,
+=======
+				E58F3A25172C13DE00C00E9C /* spark.png in Resources */,
+				E58F3A26172C13DE00C00E9C /* spark-hd.png in Resources */,
+				E54E158B172C7A2A0022DACE /* bannerRed.png in Resources */,
+				E54E158C172C7A2A0022DACE /* bannerRed-hd.png in Resources */,
+>>>>>>> zukalous/mainGameoverMenu
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2601,7 +2721,6 @@
 				082018321678479B000A3F8D /* GameObjectInjector.m in Sources */,
 				082018351679577D000A3F8D /* pattern.c in Sources */,
 				8583C66A16802C9C003A3213 /* GameOverLayer.m in Sources */,
-				08DA1F861698BD240059439D /* MainMenuScene.m in Sources */,
 				850300ED16A63FBA0035D7C1 /* PowerIcon.m in Sources */,
 				850300F116A640E50035D7C1 /* Power.m in Sources */,
 				850300F416A661290035D7C1 /* PowerFireMissle.m in Sources */,
@@ -2620,6 +2739,15 @@
 				850CF31E16F9652100B292DE /* StatisticsTracker.m in Sources */,
 				0803EF0016EC630F00CC932B /* MainGameScene.m in Sources */,
 				0803EF0716F047DE00CC932B /* GameDebugMenu.m in Sources */,
+				852E3DB217123300006EC44A /* Multiplier.m in Sources */,
+				E5973A441720EE8C001B948A /* MainMenuRecommendBox.m in Sources */,
+				E5973A451720EE8C001B948A /* MainMenuScoreBox.m in Sources */,
+				E5973A461720EE8C001B948A /* MenuBox.m in Sources */,
+				E5973A471720EE8C001B948A /* MainMenuHelpBox.m in Sources */,
+				E5973A4D1720F4E6001B948A /* MainMenuScene.m in Sources */,
+				E5973A9C17234CD8001B948A /* MainMenuBuyBox.m in Sources */,
+				E5973A9F17234DB3001B948A /* MainMenuSocialBox.m in Sources */,
+				E5973AA217234E0A001B948A /* MainMenuSettingsBox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2768,8 +2896,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (NS2DXUE59G)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (NS2DXUE59G)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2781,8 +2909,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				PROVISIONING_PROFILE = "AD807EE2-C503-4606-8F15-463812B27D18";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AD807EE2-C503-4606-8F15-463812B27D18";
+				PROVISIONING_PROFILE = "BF7A02AA-8BD8-46DF-84D3-28BF7AA80356";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BF7A02AA-8BD8-46DF-84D3-28BF7AA80356";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2793,7 +2921,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (NS2DXUE59G)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -2804,7 +2932,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AD807EE2-C503-4606-8F15-463812B27D18";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BF7A02AA-8BD8-46DF-84D3-28BF7AA80356";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

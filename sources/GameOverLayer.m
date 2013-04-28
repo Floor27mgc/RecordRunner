@@ -9,6 +9,8 @@
 #import "GameLayer.h"
 #import "GameOverLayer.h"
 #import "CCBAnimationManager.h"
+#import "CCBReader.h"
+
 @implementation GameOverLayer
 @synthesize finalScore;
 /*
@@ -159,8 +161,12 @@
 
 - (void) pressedNO:(id) sender
 {
+    NSLog(@"pressed no!");
+    
     exit(0);
+
 }
+
 - (void) pressedYES:(id) sender
 {
     CCBAnimationManager* animationManager = self.userObject;
@@ -170,6 +176,19 @@
     [[GameLayer sharedGameLayer] cleanUpPlayField];
     [[GameLayer sharedGameLayer].score setScoreValue:0];
 }
+
+
+- (void) pressedHome:(id) sender
+{
+    NSLog(@"pressed HOME!");
+
+    // Load the mainMenu scene
+    CCScene* mainMenuScene = [CCBReader sceneWithNodeGraphFromFile:@"MainMenuScene.ccbi"];
+    
+    // Go to the game scene
+    [[CCDirector sharedDirector] replaceScene:mainMenuScene];
+}
+
 
 - (void) didLoadFromCCB
 {
