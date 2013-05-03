@@ -28,7 +28,7 @@
 #define MIN_NUM_POWER_ICONS_PER_TRACK 5
 #define MAX_NUM_TRACK                 4
 #define MAX_NUM_BOUNCING_COINS        7
-#define kBombSpawnRate 10
+#define kBombSpawnRate 30
 #define kCoinSpawnRate 50
 #define kShieldSpawnRate 1
 

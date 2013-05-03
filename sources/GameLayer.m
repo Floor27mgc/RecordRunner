@@ -56,11 +56,6 @@ static GameLayer *sharedGameLayer;
 
 /*
 @synthesize background;
-
-
-
-
-
 @synthesize powerPool = _powerPool;
 @synthesize powerIconFreePool = _powerIconFreePool;
 @synthesize powerIconUsedPool = _powerIconUsedPool;
@@ -186,7 +181,8 @@ static GameLayer *sharedGameLayer;
             // enable sounds
             _soundController = [SoundController init];
         } else {
-            [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"JewelBeat - Follow The Beat.wav"];
+/*
+            [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"JewelBeat - Follow The Beat.wav"];*/
         }
 
         // Create Game Object injector to inject Bomb, coins, etc
@@ -224,7 +220,7 @@ static GameLayer *sharedGameLayer;
         [_highScore setScoreValue:tempHighScore];
         [_highScore prepareScore:@"High Score"];
     
-        // Create score
+        // Create the actual score label
         _score = [Score initWithGameLayer:self
                             imageFileName:@""
                               objectSpeed:0];

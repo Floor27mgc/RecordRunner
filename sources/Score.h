@@ -37,6 +37,6 @@
 //- (void) decrementMultiplier:(int) amount;
 
 
-- (NSString *) generateScoreString;
+//- (NSString *) generateScoreString;
 
 @end
