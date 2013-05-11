@@ -11,8 +11,6 @@
 
 @implementation GameObjectInjector
 
-//@synthesize mainGameLayer;
-
 @synthesize injectorHitBoxPath;
 @synthesize dummyInjectorBox;
 
@@ -90,6 +88,18 @@
             return nil;
     }
 
+    if (_gameObjectType == BOMB_TYPE)
+    {
+        if ([self isAnybodyNearMeWithInAngleRange:ANGULAR_SPACING_BETWEEN_BOMBS_DEG
+                                          myAngle:insertionAngle
+                                       inUsedPool:usedPool
+                                          OnTrack:trackNum])
+        {
+//            NSLog(@"Sombody nears me");
+            return nil;
+        }
+    }
+        
     // Check to see if we can insert this one without overlapping
     for (int i=0; i<POOL_OBJ_COUNT_ON_TRACK([GameLayer sharedGameLayer].coinUsedPool, trackNum); i++)
     {
@@ -222,5 +232,33 @@
     }
  
     return newObject;
+}
+
+- (Boolean) isAnybodyNearMeWithInAngleRange: (float) angleRange
+                                    myAngle: (float) _myAngle
+                                 inUsedPool: (Queue *)_usedPool
+                                    OnTrack: (int) trackNum
+{
+    int myAngleNormalized = (NORMALIZE_ANGLE(_myAngle));
+    int angleRangeNormalized = (NORMALIZE_ANGLE(angleRange));
+    GameObjectBase *gameObject;
+    
+    for (int trackNum = 0; trackNum < MAX_NUM_TRACK; trackNum++)
+    {
+        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_usedPool, trackNum); ++i) {
+            gameObject = POOL_OBJS_ON_TRACK(_usedPool, trackNum)[i];
+//            NSLog(@"_myAngle = %f angleRange = %f N_myAngle = %d N_angleRange = %d angleRotated = %f, N_angleRotated = %d", _myAngle, angleRange, myAngleNormalized, angleRangeNormalized, gameObject.angleRotated, NORMALIZE_ANGLE(gameObject.angleRotated));
+            if (((myAngleNormalized + angleRangeNormalized) >
+                 NORMALIZE_ANGLE(gameObject.angleRotated)) &&
+                ((myAngleNormalized - angleRangeNormalized) <
+                 NORMALIZE_ANGLE(gameObject.angleRotated)))
+            {
+                return true;
+            }
+        }
+    }
+    
+    return false;
+    
 }
 @end
