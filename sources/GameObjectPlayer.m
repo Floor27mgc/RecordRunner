@@ -126,6 +126,48 @@
 }
 
 // -----------------------------------------------------------------------------------
+- (BOOL) willHitBomb
+{
+    Queue * bombTracks = [GameLayer sharedGameLayer].bombUsedPool;
+    
+    for (int i = 0; i < MAX_NUM_TRACK; ++i) {
+        NSMutableArray * curTrack = [bombTracks getObjectArray:i];
+        
+        for (int j = 0; j < curTrack.count; ++j) {
+            Bomb * thisBomb = [curTrack objectAtIndex:j];
+        
+            // "55" needs to be either 55 or 28 depending on hd or not
+            if ([self spriteInPath:thisBomb.angleRotated withWidth:55]) {
+                return YES;
+            }
+        }
+    }
+    
+    return NO;
+}
+
+// -----------------------------------------------------------------------------------
+- (BOOL) spriteInPath:(int)angle withWidth:(int)width
+{
+    // "55" needs to be 55 or 28 depending on whether hd or not
+    int playerStartAngle = self.playerFacingAngle - (55 / 2);
+    int playerEndAngle = self.playerFacingAngle + (55 / 2);
+    
+    // when player is near 360 segment
+    if (playerStartAngle < 0) {
+        playerStartAngle = 360 + playerStartAngle;
+    }
+    
+    if ((angle > playerStartAngle || angle < playerEndAngle) ||
+        (angle + (width / 2) > playerStartAngle) ||
+        (angle - (width / 2) < playerEndAngle)) {
+        return YES;
+    }
+    
+    return NO;
+}
+
+// -----------------------------------------------------------------------------------
 - (void) blink
 {
     NSLog(@"animation manager: %p", self.animationManager);

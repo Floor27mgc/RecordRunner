@@ -44,6 +44,8 @@
 @synthesize highScore = _highScore;
 @synthesize scoreLabel;
 @synthesize invincibleRecord;
+@synthesize pendingTaps;
+@synthesize tapDelay;// = _tapDelay;
 //@synthesize multiplierLabel;
 
 
@@ -232,6 +234,9 @@ static GameLayer *sharedGameLayer;
         [self addChild:_multiplier z:10];
         _multiplier.position = ccp(100, 455);
         
+        // input buffering structures
+        pendingTaps = 0;
+        self.tapDelay = [NSDate distantFuture];
     }
 /*
     [self schedule: @selector(update:)]; */
@@ -276,7 +281,11 @@ static GameLayer *sharedGameLayer;
 // -----------------------------------------------------------------------------------
 - (void) update:(ccTime) dt
 {
-   
+    // input buffering for player movement
+    if ([self moveThePlayer]) {
+        [self.player changeDirection];
+    }
+    
     // generate Game Objectsrandomly
     if (arc4random() % RANDOM_MAX <= coinSpawnRate) {
         [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:COIN_TYPE effectType:kRotation]; 
@@ -565,12 +574,53 @@ static GameLayer *sharedGameLayer;
     }
 }
 */
+
+// -----------------------------------------------------------------------------------
+- (BOOL) moveThePlayer
+{
+    if (pendingTaps <= 0) {
+        return NO;
+    }
+    
+    BOOL move = YES;
+    
+    // move if we have the shield
+    if (self.player.hasShield) {
+        // do nothing
+    } else if (tapDelay != [NSDate distantFuture]) {
+        
+        // move if the tap delay exceeds the maximum delay
+        double elapsedMilliseconds = [tapDelay timeIntervalSinceNow] * -1000.0;
+        //NSLog(@"delay time %f", elapsedMilliseconds);
+        if (elapsedMilliseconds <= TAP_DELAY_THRESHOLD_MSEC) {
+            move = NO;
+        }
+    } else if ([self.player willHitBomb]) {
+        //NSLog(@"player will hit bomb");
+        // delay tap processing if the player will hit a bomb
+        if (tapDelay == [NSDate distantFuture]) {
+            tapDelay = [NSDate date];
+        }
+        
+        move = NO;
+    }
+    
+    if (move) {
+        tapDelay = [NSDate distantFuture];
+        --pendingTaps;
+    } else {
+        NSLog(@"delaying tap");
+    }
+    
+    return move;
+}
+
 // -----------------------------------------------------------------------------------
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer at:TAPS_STATS] tick];
     
-	[self.player changeDirection];
+    ++pendingTaps;
     
 /*CCNode* explosion = [CCBReader nodeGraphFromFile:@"Explosion.ccbi"];
     explosion.position = self.position;

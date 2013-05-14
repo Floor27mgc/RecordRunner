@@ -32,6 +32,10 @@ typedef enum
 
 - (void) blink;
 
+- (BOOL) willHitBomb;
+- (BOOL) spriteInPath: (int) angle
+         withWidth:(int) width;
+
 @property (nonatomic) direction_t direction;
 @property (nonatomic) int playerRadialSpeed; // How fast the player zips between center and
                                              // outer most circle

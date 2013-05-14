@@ -75,8 +75,8 @@
                              nil];
     
 
-    NSLog(@"Average: %f total: %d count: %d min %d max %d",
-          average, total, count, min, max);
+    /*NSLog(@"Average: %f total: %d count: %d min %d max %d",
+          average, total, count, min, max);*/
 
     return params;
 }

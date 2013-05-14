@@ -31,6 +31,7 @@
 #define kBombSpawnRate 30
 #define kCoinSpawnRate 50
 #define kShieldSpawnRate 1
+#define TAP_DELAY_THRESHOLD_MSEC 125
 
 #define kGameModeNoRotation 0
 #define kGameModeRotation   1
@@ -117,6 +118,7 @@ typedef enum {
 -(void) setHittingObjByTrackNum:(int) trackNum hittingObj:(id) obj;
 -(id) getHittingObjByTrackNum:(int) trackNum;
 -(void) openDebugMenu;
+-(BOOL) moveThePlayer;
 
 @property (nonatomic, strong) GameObjectPlayer *player;
 @property (nonatomic, strong) Queue * coinFreePool;
@@ -135,6 +137,8 @@ typedef enum {
 @property (nonatomic, assign) int coinSpawnRate;
 @property (nonatomic, assign) int shieldSpawnRate;
 @property (nonatomic, assign) BOOL isDebugMode;
+@property (nonatomic, assign) int pendingTaps;
+@property (nonatomic) NSDate * tapDelay;
 
 /*
 @property (nonatomic, strong) CCSprite *background;*/

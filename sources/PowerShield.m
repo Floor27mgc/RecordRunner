@@ -40,7 +40,6 @@
         [GameLayer sharedGameLayer].invincibleRecord.visible = YES;
     }*/
 
-    NSLog(@"elapsed: %f elapsedMS: %f", elapsed, elapsedMilliseconds);
     // toggle first invincible record
     if (!_startedBlink) {
         [GameLayer sharedGameLayer].invincibleRecord.visible = YES;

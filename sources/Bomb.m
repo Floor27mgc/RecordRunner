@@ -33,7 +33,6 @@
     //[self moveBy:ccp(0, self.gameObjectSpeed)];
     [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER,self.radius,self.angleRotated)];
     self.angleRotated = self.angleRotated + self.gameObjectAngularVelocity;
-
     gameObjectUpdateTick++;
     
     // Determine if this Bomb has been obsolute.  If yes, we need to clear this
