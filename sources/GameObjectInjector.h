@@ -23,7 +23,8 @@ typedef enum {
     _location.y = ((int) (_location.y / COMMON_GRID_HEIGHT) * COMMON_GRID_HEIGHT) + (COMMON_GRID_HEIGHT/2); \
 } while (0)
 
-
+#define NORMALIZE_ANGLE(_angle) (((int)_angle)%360)
+#define ANGULAR_SPACING_BETWEEN_BOMBS_DEG 35
 @interface GameObjectInjector : NSObject
 
 //@property (nonatomic,assign) GameLayer *mainGameLayer;
@@ -35,6 +36,12 @@ typedef enum {
                                  atAngle: (int) insertionAngle
                           gameObjectType: (game_object_t)_gameObjectType
                               effectType: (effect_type_t) _effectType;
+
+- (Boolean) isAnybodyNearMeWithInAngleRange: (float) angleRange
+                                    myAngle: (float) _myAngle
+                                 inUsedPool: (Queue *)_usedPool
+                                    OnTrack: (int) trackNum;
+
 //- (bool) isLastObjectOnScreen;
 
 @end

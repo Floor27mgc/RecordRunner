@@ -8,7 +8,7 @@
 
 #import "GameObjectBase.h"
 #define BOMB_START_POSITION ccp(100,0)
-#define BOMB_NUM_ROUNDS_BEFORE_RECYCLE 2
+#define BOMB_NUM_ROUNDS_BEFORE_RECYCLE 10
 @interface Bomb : GameObjectBase
 {
     
