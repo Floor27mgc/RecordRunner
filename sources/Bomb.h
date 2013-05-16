@@ -18,4 +18,6 @@
 // this gameObject update() in gamelayer has called this
 // gameObject's showNextFrame();
 @property (nonatomic, assign) int gameObjectUpdateTick;
+@property (nonatomic) BOOL hadCloseCall;
+
 @end

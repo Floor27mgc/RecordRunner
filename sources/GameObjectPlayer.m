@@ -101,19 +101,12 @@
 
 // -----------------------------------------------------------------------------------
 - (void) setSheilded:(BOOL)trigger
-{
-    //[[GameLayer sharedGameLayer] removeChild:self.gameObjectSprite cleanup:YES];
-    
+{    
     if (trigger) {
         hasShield = YES;
-        //self.gameObjectSprite = [CCSprite spriteWithFile:@"player_with_shield.jpg"];
     } else {
         hasShield = NO;
-        //self.gameObjectSprite = [CCSprite spriteWithFile:@"player-hd.png"];
     }
-    
-    //self.gameObjectSprite.anchorPoint = ccp(0.5,0.5);
-   // [[GameLayer sharedGameLayer] addChild:self.gameObjectSprite];
 }
 
 // -----------------------------------------------------------------------------------

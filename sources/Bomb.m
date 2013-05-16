@@ -13,12 +13,15 @@
 
 @implementation Bomb
 @synthesize gameObjectUpdateTick;
+@synthesize hadCloseCall;
+
 // -----------------------------------------------------------------------------------
 - (id) init
 {
     if( (self=[super init]) )
     {
         gameObjectUpdateTick = 0;
+        hadCloseCall = NO;
         self.radiusHitBox = (COMMON_GRID_WIDTH/4);
     }
     return (self);
@@ -45,6 +48,22 @@
         return;
     }
     [self encounterWithPlayer];
+    
+    // detect a "close call" with a bomb
+    float distance = ccpDistance([GameLayer sharedGameLayer].player.position,
+                                 self.position);
+    
+    // increment the score muliplier if we had a close call
+    if (abs(distance - self.radiusHitBox) < CLOSE_HIT_THRESHOLD_PIXEL &&
+        !hadCloseCall) {
+        [[GameLayer sharedGameLayer].multiplier incrementMultiplier:1];
+        hadCloseCall = YES;
+    }
+
+    // reset close call flag when on other side of 
+    if (hadCloseCall && ((int)distance > 180 && (int)distance < 200)) {
+        hadCloseCall = NO;
+    }
 }
 
 // -----------------------------------------------------------------------------------

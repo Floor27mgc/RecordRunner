@@ -66,10 +66,6 @@
         }
     }
     
-    if (_scoreValue % 5 == 0) {
-        [[GameLayer sharedGameLayer].multiplier incrementMultiplier:1];
-    }
-    
     [[GameLayer sharedGameLayer].scoreLabel
         setString:[NSString stringWithFormat:@"%d", _scoreValue]];
 }
@@ -94,14 +90,6 @@
     }
 }
 
-// -----------------------------------------------------------------------------------
-/*
-- (void) moveBy:(CGPoint)relativePoint
-{
-    int newX = _score.position.x + relativePoint.x;
-    int newY = _score.position.y + relativePoint.y;
-    _score.position = ccp(newX, newY);
-}*/
 
 // -----------------------------------------------------------------------------------
 - (int) getScore
@@ -129,51 +117,9 @@
 - (void) showNextFrame
 {   
     if (_prevScore != _scoreValue) {
-    //    NSString * scoreString = [self generateScoreString];
-      //  [_score setString:scoreString];
         _prevScore = _scoreValue;
     }
 }
-
-// -----------------------------------------------------------------------------------
-/*- (void) incrementMultiplier:(int)amount
-{
-    _multiplier += amount;
-    
-    _timerLifeInSec += MULTIPLIER_LIFE_TIME_SEC;
-
-    if (_multiplierTime == [NSDate distantFuture]) {
-        _multiplierTime = [NSDate date];
-    }
-    
-    [[GameLayer sharedGameLayer].multiplierLabel
-     setString:[NSString stringWithFormat:@"x %d", _multiplier]];
-    
-    ccColor3B currentColor = [GameLayer sharedGameLayer].multiplierLabel.color;
-    currentColor.r += 50;
-    [[GameLayer sharedGameLayer].multiplierLabel setColor:currentColor];
-    
-    CCBAnimationManager * multiplierAM =
-        [GameLayer sharedGameLayer].multiplierLabel.userObject;
-    [multiplierAM runAnimationsForSequenceNamed:@"bounce_multiplier"];
-}
-
-// -----------------------------------------------------------------------------------
-- (void) decrementMultiplier:(int)amount
-{
-    if (amount >= _multiplier) {
-        _multiplier = 1;
-    } else {
-        _multiplier -= amount;
-    }
-    
-    ccColor3B currentColor = [GameLayer sharedGameLayer].multiplierLabel.color;
-    currentColor.r -= 50;
-    [[GameLayer sharedGameLayer].multiplierLabel setColor:currentColor];
-    
-    [[GameLayer sharedGameLayer].multiplierLabel
-     setString:[NSString stringWithFormat:@"x %d", _multiplier]];
-}*/
 
 // -----------------------------------------------------------------------------------
 - (void) resetObject
