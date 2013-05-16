@@ -31,7 +31,7 @@
 #define kBombSpawnRate 30
 #define kCoinSpawnRate 50
 #define kShieldSpawnRate 1
-#define TAP_DELAY_THRESHOLD_MSEC 125
+#define TAP_DELAY_THRESHOLD_MSEC 62//125
 
 #define kGameModeNoRotation 0
 #define kGameModeRotation   1

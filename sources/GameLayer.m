@@ -584,19 +584,23 @@ static GameLayer *sharedGameLayer;
     
     BOOL move = YES;
     
+    BOOL playerWillHitBomb = [self.player willHitBomb];
+    
     // move if we have the shield
     if (self.player.hasShield) {
+        // do nothing
+    } else if (!playerWillHitBomb) {
         // do nothing
     } else if (tapDelay != [NSDate distantFuture]) {
         
         // move if the tap delay exceeds the maximum delay
         double elapsedMilliseconds = [tapDelay timeIntervalSinceNow] * -1000.0;
-        //NSLog(@"delay time %f", elapsedMilliseconds);
+        
         if (elapsedMilliseconds <= TAP_DELAY_THRESHOLD_MSEC) {
             move = NO;
         }
-    } else if ([self.player willHitBomb]) {
-        //NSLog(@"player will hit bomb");
+    } else {
+        
         // delay tap processing if the player will hit a bomb
         if (tapDelay == [NSDate distantFuture]) {
             tapDelay = [NSDate date];
