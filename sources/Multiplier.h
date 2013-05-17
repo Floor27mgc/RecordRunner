@@ -23,6 +23,7 @@
 - (void) incrementMultiplier:(int) amount;
 - (void) decrementMultiplier:(int) amount;
 - (void) showNextFrame;
--(void) prepare;
+- (void) prepare;
+- (int) getMultiplier;
 
 @end

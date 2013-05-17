@@ -13,6 +13,7 @@
 
 @synthesize score = _score;
 @synthesize scoreValue = _scoreValue;
+@synthesize multiplierValue = _multiplierValue;
 @synthesize prevScore = _prevScore;
 //@synthesize label = _label;
 /*@synthesize multiplier = _multiplier;
@@ -108,6 +109,7 @@
 {
     return _scoreValue;
 }
+
 
 // -----------------------------------------------------------------------------------
 - (void) setScoreValue:(int)newScore

@@ -22,6 +22,7 @@
 @property (nonatomic) int scoreValue;
 @property (nonatomic) int prevScore;
 @property (nonatomic) NSString * label;
+@property  (nonatomic) int multiplierValue;
 /*@property (nonatomic) int multiplier;
 @property (nonatomic) int timerLifeInSec;
 @property (nonatomic) NSDate * multiplierTime;*/
@@ -32,6 +33,7 @@
 - (void) decrementScore:(int) amount;
 - (void) setScoreValue:(int) newScore;
 - (int) getScore;
+- (int) getMultiplier;
 - (void) setHighScore;
 //- (void) incrementMultiplier:(int) amount;
 //- (void) decrementMultiplier:(int) amount;

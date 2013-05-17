@@ -205,7 +205,7 @@
             {
                 if (!eachButton.beenAdded)
                 {
-                    [self addChild:eachButton z:11];
+                    [self addChild:eachButton z:15];
                     eachButton.position = COMMON_SCREEN_CENTER;
                     eachButton.beenAdded = YES;
                 }

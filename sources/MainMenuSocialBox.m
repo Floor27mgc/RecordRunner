@@ -7,8 +7,87 @@
 //
 
 #import "MainMenuSocialBox.h"
+#import <MessageUI/MFMailComposeViewController.h>
 
 @implementation MainMenuSocialBox
+
+- (void) pressedFacebook: (id)sender
+{
+    
+    NSLog(@"open facebook");
+    
+    //play the animation for the reaction
+    CCBAnimationManager* animationManager = self.userObject;
+    [animationManager runAnimationsForSequenceNamed:@"facebookButtonReaction"];
+   
+}
+
+
+- (void) pressedTwitter: (id)sender
+{
+    
+    //play the animation for the reaction
+    CCBAnimationManager* animationManager = self.userObject;
+    [animationManager runAnimationsForSequenceNamed:@"twitterButtonReaction"];
+    
+    
+}
+
+- (void) pressedEmail: (id)sender
+{
+    
+    //play the animation for the reaction
+    CCBAnimationManager* animationManager = self.userObject;
+    [animationManager runAnimationsForSequenceNamed:@"emailButtonReaction"];
+    
+}
+
+//This monitors when animations complete.
+//When one is complete, then it calls the action that it should.
+- (void) completedAnimationSequenceNamed:(NSString *)name
+{
+    NSLog(@"%@",name);
+    if ([name compare:@"facebookButtonReaction"] == NSOrderedSame) {
+        
+        
+        NSURL *urlApp = [NSURL URLWithString:@"fb://profile/160525450781718"];
+        
+        //Check if the Facebook app exists on the phone.
+        if ([[UIApplication sharedApplication] canOpenURL:urlApp])
+        {
+            //Then open it in the app
+            [[UIApplication sharedApplication] openURL:urlApp];
+        }
+    }
+    else if( [name compare:@"emailButtonReaction"] == NSOrderedSame)
+    {
+        
+        NSLog(@"open email");
+        /*
+        MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+        mailViewController.mailComposeDelegate = self;
+        [mailViewController setSubject:@"SUBJECT_HERE"];
+        [mailViewController setMessageBody:@"MESSAGE_HERE" isHTML:NO];
+        
+        [self presentModalViewController:mailViewController animated:YES];
+        [mailViewController release];*/
+    
+    }
+    else if( [name compare:@"twitterButtonReaction"] == NSOrderedSame)
+    {
+        
+        NSLog(@"open twitter");
+               
+        
+        NSURL *twitterUrlApp = [NSURL URLWithString:@"twitter://Floor27Industry"];
+        
+        if ([[UIApplication sharedApplication] canOpenURL:twitterUrlApp])
+        {
+            [[UIApplication sharedApplication] openURL:twitterUrlApp];
+        }
+
+    }
+}
 
 
 @end
