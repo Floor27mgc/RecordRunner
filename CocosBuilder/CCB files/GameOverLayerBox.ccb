@@ -235,7 +235,7 @@
 						<key>displayName</key>
 						<string>CCLabelTTF</string>
 						<key>memberVarAssignmentName</key>
-						<string>finalScore</string>
+						<string>finalScoreLabel</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
@@ -477,7 +477,7 @@
 								<key>type</key>
 								<string>Text</string>
 								<key>value</key>
-								<string>round complete</string>
+								<string>cycle complete</string>
 							</dict>
 						</array>
 					</dict>
@@ -496,9 +496,9 @@
 								<key>displayName</key>
 								<string>CCLabelTTF</string>
 								<key>memberVarAssignmentName</key>
-								<string></string>
+								<string>finalMultiplierLabel</string>
 								<key>memberVarAssignmentType</key>
-								<integer>0</integer>
+								<integer>1</integer>
 								<key>properties</key>
 								<array>
 									<dict>
@@ -509,7 +509,7 @@
 										<key>value</key>
 										<array>
 											<real>33</real>
-											<real>35</real>
+											<real>36</real>
 											<integer>0</integer>
 										</array>
 									</dict>
@@ -610,7 +610,7 @@
 										<key>type</key>
 										<string>Text</string>
 										<key>value</key>
-										<string>x17</string>
+										<string>x1</string>
 									</dict>
 								</array>
 							</dict>
