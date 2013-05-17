@@ -39,6 +39,7 @@
     multiplierLabel.color = ccMAGENTA;
 }
 
+
 // -----------------------------------------------------------------------------------
 - (void) incrementMultiplier:(int)amount
 {
@@ -74,6 +75,12 @@
     
     [self.multiplierLabel setString:[NSString stringWithFormat:@"x %d",
                                      multiplierValue]];
+}
+
+// -----------------------------------------------------------------------------------
+- (int) getMultiplier
+{
+    return multiplierValue;
 }
 
 // -----------------------------------------------------------------------------------

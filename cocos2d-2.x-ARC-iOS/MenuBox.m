@@ -74,12 +74,12 @@
     self.isOpen = YES;
 }
 
+
 - (void) didLoadFromCCB
 {
-    /*
-     // Setup a delegate method for the animationManager of the explosion
-     CCBAnimationManager* animationManager = self.userObject;
-     animationManager.delegate = self;*/
+    // Setup a delegate method for the animationManager of the explosion
+    CCBAnimationManager* animationManager = self.userObject;
+    animationManager.delegate = self;
 }
 
 - (void) completedAnimationSequenceNamed:(NSString *)name

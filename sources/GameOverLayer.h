@@ -27,7 +27,10 @@
 - (void) resetTapped:(id) sender; */
 - (void) pressedNO:(id) sender;
 - (void) pressedYES:(id) sender;
+- (void) setMenuData:(int) finalMultiplier finalScore:(int) myFinalScore;
 
-@property (nonatomic, strong) CCLabelTTF * finalScore;
+
+@property (nonatomic, strong) CCLabelTTF * finalScoreLabel;
+@property (nonatomic, strong) CCLabelTTF * finalMultiplierLabel;
 
 @end

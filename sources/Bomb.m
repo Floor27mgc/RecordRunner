@@ -94,8 +94,16 @@
             GameOverLayer * gameOverLayer =
                 (GameOverLayer *) [CCBReader nodeGraphFromFile:@"GameOverLayerBox.ccbi"];
             gameOverLayer.position = COMMON_SCREEN_CENTER;
-            [gameOverLayer.finalScore setString:[NSString stringWithFormat:@"%d",
-                                                 [[GameLayer sharedGameLayer].score getScore]]];
+            
+            
+//            [[[GameLayer sharedGameLayer] multiplier] multiplierValue]
+  ///          [[GameLayer sharedGameLayer].score getScore]]
+     
+            
+            //This sets the menu data for the final menu
+            [gameOverLayer setMenuData: [[GameLayer sharedGameLayer].multiplier getMultiplier]
+                             finalScore:[[GameLayer sharedGameLayer].score getScore]];
+            
             
             [[GameLayer sharedGameLayer] addChild:gameOverLayer z:11];
         }
