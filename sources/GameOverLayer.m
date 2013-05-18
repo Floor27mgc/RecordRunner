@@ -14,7 +14,7 @@
 @implementation GameOverLayer
 @synthesize finalScoreLabel;
 @synthesize finalMultiplierLabel;
-
+@synthesize highScoreLabel;
 
 - (void) pressedNO:(id) sender
 {
@@ -38,6 +38,7 @@
 //This method is used to set the labels in the Game Over Menu.
 //For example, before G.O. Menu is shown, call this method to set those two values
 - (void) setMenuData:(int) finalMultiplier finalScore:(int)myFinalScore
+           highScore:(int) myHighScore
 {
     NSLog(@"value of finalScoreLabel: %@", self.finalScoreLabel.string);
     
@@ -45,7 +46,8 @@
                                          myFinalScore]];
     [self.finalMultiplierLabel setString:[NSString stringWithFormat:@"x%d",
                                      finalMultiplier]];
-    
+    [self.highScoreLabel setString:[NSString stringWithFormat:@"%d",
+                                    myHighScore]];
 }
 
 - (void) pressedHome:(id) sender
