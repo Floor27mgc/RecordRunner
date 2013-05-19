@@ -377,6 +377,7 @@
 		08A372A316C822B9006819E3 /* ZipUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A371D916C822B9006819E3 /* ZipUtils.m */; };
 		08C86DC11674552F0082DBE5 /* tuffy_bold_italic-charmap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DC01674552F0082DBE5 /* tuffy_bold_italic-charmap.plist */; };
 		08C86DF716745C3F0082DBE5 /* tuffy_bold_italic-charmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DF616745C3F0082DBE5 /* tuffy_bold_italic-charmap.png */; };
+		08F7A8EB174879CC00FB7923 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F7A8EA174879CC00FB7923 /* MessageUI.framework */; };
 		850300ED16A63FBA0035D7C1 /* PowerIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 850300EC16A63FBA0035D7C1 /* PowerIcon.m */; };
 		850300F116A640E50035D7C1 /* Power.m in Sources */ = {isa = PBXBuildFile; fileRef = 850300F016A640E50035D7C1 /* Power.m */; };
 		850300F416A661290035D7C1 /* PowerFireMissle.m in Sources */ = {isa = PBXBuildFile; fileRef = 850300F316A661280035D7C1 /* PowerFireMissle.m */; };
@@ -972,6 +973,7 @@
 		08C86E2A1674EA550082DBE5 /* tuffy_bold_italic-charmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tuffy_bold_italic-charmap.png"; path = "Resources/Fonts/tuffy_bold_italic-charmap.png"; sourceTree = SOURCE_ROOT; };
 		08C86E2B1674EA550082DBE5 /* west_england-64.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "west_england-64.fnt"; path = "Resources/Fonts/west_england-64.fnt"; sourceTree = SOURCE_ROOT; };
 		08C86E2C1674EA550082DBE5 /* west_england-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "west_england-64.png"; path = "Resources/Fonts/west_england-64.png"; sourceTree = SOURCE_ROOT; };
+		08F7A8EA174879CC00FB7923 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		850300EB16A63FBA0035D7C1 /* PowerIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerIcon.h; path = sources/PowerIcon.h; sourceTree = SOURCE_ROOT; };
 		850300EC16A63FBA0035D7C1 /* PowerIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowerIcon.m; path = sources/PowerIcon.m; sourceTree = SOURCE_ROOT; };
 		850300EF16A640E50035D7C1 /* Power.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Power.h; path = sources/Power.h; sourceTree = SOURCE_ROOT; };
@@ -1219,6 +1221,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08F7A8EB174879CC00FB7923 /* MessageUI.framework in Frameworks */,
 				DC0C4A06154AB4DD00B4B727 /* GameKit.framework in Frameworks */,
 				850CF25C16ED920D00B292DE /* MediaPlayer.framework in Frameworks */,
 				850CF25A16ED8F6900B292DE /* SystemConfiguration.framework in Frameworks */,
@@ -2054,6 +2057,7 @@
 		DC0C49E6154AB4DD00B4B727 = {
 			isa = PBXGroup;
 			children = (
+				08F7A8EA174879CC00FB7923 /* MessageUI.framework */,
 				85A6714816546D4800499BF7 /* Default-568h@2x.png */,
 				DC0C4A07154AB4DD00B4B727 /* RecordRunnerARC */,
 				DC0C49F4154AB4DD00B4B727 /* Frameworks */,

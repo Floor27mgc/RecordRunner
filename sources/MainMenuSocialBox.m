@@ -8,8 +8,10 @@
 
 #import "MainMenuSocialBox.h"
 #import <MessageUI/MFMailComposeViewController.h>
-
-@implementation MainMenuSocialBox
+#import "common.h"
+@implementation MainMenuSocialBox 
+@synthesize emailView;
+@synthesize emailViewController;
 
 - (void) pressedFacebook: (id)sender
 {
@@ -63,14 +65,20 @@
     {
         
         NSLog(@"open email");
-        /*
+        
         MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
         mailViewController.mailComposeDelegate = self;
-        [mailViewController setSubject:@"SUBJECT_HERE"];
-        [mailViewController setMessageBody:@"MESSAGE_HERE" isHTML:NO];
+        [mailViewController setSubject:@"Rotato feedback"];
+        [mailViewController setToRecipients:[NSArray arrayWithObject:@"contact@floor27industries.com"]];
         
-        [self presentModalViewController:mailViewController animated:YES];
-        [mailViewController release];*/
+        [mailViewController setMessageBody:@"Comment:\n" isHTML:NO];
+
+        emailViewController = [[UIViewController alloc]init];
+        emailView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, COMMON_SCREEN_WIDTH, COMMON_SCREEN_HEIGHT)];
+        emailViewController.view = emailView;
+        [[[CCDirector sharedDirector] view] addSubview:emailView];
+        [emailViewController presentViewController:mailViewController animated:YES completion:nil];
+
     
     }
     else if( [name compare:@"twitterButtonReaction"] == NSOrderedSame)
@@ -89,5 +97,13 @@
     }
 }
 
-
+-(void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [emailViewController dismissViewControllerAnimated:YES completion:nil];
+    //[[[CCDirector sharedDirector] view] addSubview:emailView];
+    [emailView removeFromSuperview];
+    emailView = nil;
+    emailViewController = nil;
+    
+}
 @end
