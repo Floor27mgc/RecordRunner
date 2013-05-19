@@ -246,6 +246,14 @@
 						<array>
 							<dict>
 								<key>name</key>
+								<string>visible</string>
+								<key>type</key>
+								<string>Check</string>
+								<key>value</key>
+								<false/>
+							</dict>
+							<dict>
+								<key>name</key>
 								<string>anchorPoint</string>
 								<key>type</key>
 								<string>Point</string>
@@ -293,7 +301,7 @@
 								<key>type</key>
 								<string>Check</string>
 								<key>value</key>
-								<true/>
+								<false/>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -329,6 +337,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>
@@ -510,8 +520,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
