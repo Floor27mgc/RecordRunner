@@ -58,6 +58,14 @@
         !hadCloseCall) {
         [[GameLayer sharedGameLayer].multiplier incrementMultiplier:1];
         hadCloseCall = YES;
+        if ([GameLayer sharedGameLayer].player.direction == kMoveInToOut)
+        {
+            [self.animationManager runAnimationsForSequenceNamed:@"CounterClockWiseRotation"];
+        }
+        else
+        {
+            [self.animationManager runAnimationsForSequenceNamed:@"ClockWiseRotation"];
+        }
     }
 
     // reset close call flag when on other side of 

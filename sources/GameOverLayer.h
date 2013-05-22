@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-
-@interface GameOverLayer : CCNode <CCBAnimationManagerDelegate>
+#import <MessageUI/MFMailComposeViewController.h>
+@interface GameOverLayer : CCNode <CCBAnimationManagerDelegate,MFMailComposeViewControllerDelegate>
 /*
 @property (nonatomic, assign) GameLayer * parentGameLayer;
 @property (nonatomic, assign) CCMenuItem * noButton;
@@ -29,10 +29,11 @@
 - (void) pressedYES:(id) sender;
 - (void) setMenuData:(int) finalMultiplier finalScore:(int) myFinalScore
            highScore:(int) myHighScore;
-
+- (void) pressedFeedback:(id)sender;
 
 @property (nonatomic, strong) CCLabelTTF * finalScoreLabel;
 @property (nonatomic, strong) CCLabelTTF * finalMultiplierLabel;
 @property (nonatomic, strong) CCLabelTTF * highScoreLabel;
-
+@property (nonatomic, strong) UIView *emailView;
+@property (nonatomic, strong) UIViewController *emailViewController;
 @end

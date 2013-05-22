@@ -15,7 +15,8 @@
 @synthesize finalScoreLabel;
 @synthesize finalMultiplierLabel;
 @synthesize highScoreLabel;
-
+@synthesize emailView;
+@synthesize emailViewController;
 - (void) pressedNO:(id) sender
 {
     NSLog(@"pressed no!");
@@ -61,6 +62,21 @@
     [[CCDirector sharedDirector] replaceScene:mainMenuScene];
 }
 
+- (void) pressedFeedback:(id)sender
+{
+    MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+    mailViewController.mailComposeDelegate = self;
+    [mailViewController setSubject:@"Rotato feedback"];
+    [mailViewController setToRecipients:[NSArray arrayWithObject:@"contact@floor27industries.com"]];
+    
+    [mailViewController setMessageBody:@"Comment:\n" isHTML:NO];
+    
+    emailViewController = [[UIViewController alloc]init];
+    emailView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, COMMON_SCREEN_WIDTH, COMMON_SCREEN_HEIGHT)];
+    emailViewController.view = emailView;
+    [[[CCDirector sharedDirector] view] addSubview:emailView];
+    [emailViewController presentViewController:mailViewController animated:YES completion:nil];
+}
 
 - (void) didLoadFromCCB
 {
@@ -77,5 +93,14 @@
     }
 //    [[GameLayer sharedGameLayer] unschedule:@selector(update:)];
 //    [[CCDirector sharedDirector] pause];
+}
+-(void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [emailViewController dismissViewControllerAnimated:YES completion:nil];
+    //[[[CCDirector sharedDirector] view] addSubview:emailView];
+    [emailView removeFromSuperview];
+    emailView = nil;
+    emailViewController = nil;
+    
 }
 @end

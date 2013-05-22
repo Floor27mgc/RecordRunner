@@ -39,8 +39,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "106"
          endingLineNumber = "106"
-         landmarkName = "-init"
-         landmarkType = "5">
+         landmarkName = "@implementation GameLayer"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -622,7 +622,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "56"
          endingLineNumber = "56"
-         landmarkName = "-handleCollision"
+         landmarkName = "-showNextFrame"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -752,7 +752,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "123"
          endingLineNumber = "123"
-         landmarkName = "-changeDirection"
+         landmarkName = "-willHitBomb"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -830,7 +830,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "136"
          endingLineNumber = "136"
-         landmarkName = "-onEnter"
+         landmarkName = "-willHitBomb"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -856,7 +856,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "130"
          endingLineNumber = "130"
-         landmarkName = "-blink"
+         landmarkName = "-willHitBomb"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -869,7 +869,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "131"
          endingLineNumber = "131"
-         landmarkName = "-blink"
+         landmarkName = "-willHitBomb"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1215,26 +1215,22 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameOverLayer.m"
-         timestampString = "386319642.10041"
+         timestampString = "390877354.550617"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "183"
-         endingLineNumber = "183"
-         landmarkName = "-pressedHome:"
-         landmarkType = "5">
+         startingLineNumber = "208"
+         endingLineNumber = "208">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameOverLayer.m"
-         timestampString = "386319642.10041"
+         timestampString = "390877354.550617"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "177"
-         endingLineNumber = "177"
-         landmarkName = "-pressedYES:"
-         landmarkType = "5">
+         startingLineNumber = "202"
+         endingLineNumber = "202">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -1254,24 +1250,22 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameOverLayer.m"
-         timestampString = "384477978.971492"
+         timestampString = "390877354.550617"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "165"
-         endingLineNumber = "165"
-         landmarkName = "-pressedNO:"
-         landmarkType = "5">
+         startingLineNumber = "190"
+         endingLineNumber = "190">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/Bomb.m"
-         timestampString = "386397807.12827"
+         timestampString = "390876411.583812"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "76"
-         endingLineNumber = "76"
+         startingLineNumber = "84"
+         endingLineNumber = "84"
          landmarkName = "-handleCollision"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1280,12 +1274,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/Bomb.m"
-         timestampString = "386397807.12827"
+         timestampString = "390876411.583812"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "66"
-         endingLineNumber = "66"
-         landmarkName = "-handleCollision"
+         startingLineNumber = "74"
+         endingLineNumber = "74"
+         landmarkName = "-showNextFrame"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1293,11 +1287,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/Bomb.m"
-         timestampString = "386397807.12827"
+         timestampString = "390876411.583812"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "72"
-         endingLineNumber = "72"
+         startingLineNumber = "80"
+         endingLineNumber = "80"
          landmarkName = "-handleCollision"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1363,8 +1357,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "274"
          endingLineNumber = "274"
-         landmarkName = "@implementation GameLayer"
-         landmarkType = "3">
+         landmarkName = "-dealloc"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -1532,8 +1526,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "268"
          endingLineNumber = "268"
-         landmarkName = "-dealloc"
-         landmarkType = "5">
+         landmarkName = "@implementation GameLayer"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -1610,21 +1604,19 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "459"
          endingLineNumber = "459"
-         landmarkName = "-triggerPowerIcons"
-         landmarkType = "5">
+         landmarkName = "@implementation GameLayer"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameOverLayer.m"
-         timestampString = "386316583.920356"
+         timestampString = "390877354.550617"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "167"
-         endingLineNumber = "167"
-         landmarkName = "-pressedNO:"
-         landmarkType = "5">
+         startingLineNumber = "192"
+         endingLineNumber = "192">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
