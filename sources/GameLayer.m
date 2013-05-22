@@ -232,7 +232,7 @@ static GameLayer *sharedGameLayer;
         _multiplier = (Multiplier *) [CCBReader nodeGraphFromFile:@"multiplier.ccbi"];
         [_multiplier prepare];
         [self addChild:_multiplier z:10];
-        _multiplier.position = ccp(100, 455);
+        _multiplier.position = ccp(160, 240);
         
         // input buffering structures
         pendingTaps = 0;

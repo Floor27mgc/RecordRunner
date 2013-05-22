@@ -36,7 +36,7 @@
     self.multiplierValue = 1;
     self.timerLifeInSec = 0;
     self.multiplierTime = [NSDate distantFuture];
-    multiplierLabel.color = ccMAGENTA;
+    multiplierLabel.color = ccWHITE;//ccMAGENTA;
 }
 
 
