@@ -54,15 +54,16 @@
                                  self.position);
     
     // increment the score muliplier if we had a close call
+    // But don't increment if the shield is active.
     if (abs(distance - self.radiusHitBox) < CLOSE_HIT_THRESHOLD_PIXEL &&
-        !hadCloseCall) {
+        !hadCloseCall && ![GameLayer sharedGameLayer].player.hasShield) {
         [[GameLayer sharedGameLayer].multiplier incrementMultiplier:1];
         hadCloseCall = YES;
         if ([GameLayer sharedGameLayer].player.direction == kMoveInToOut)
         {
             [self.animationManager runAnimationsForSequenceNamed:@"CounterClockWiseRotation"];
         }
-        else
+        else 
         {
             [self.animationManager runAnimationsForSequenceNamed:@"ClockWiseRotation"];
         }
