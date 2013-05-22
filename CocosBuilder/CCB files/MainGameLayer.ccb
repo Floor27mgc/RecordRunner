@@ -116,8 +116,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>206</real>
-							<real>418</real>
+							<real>159.13888549804688</real>
+							<real>442.9444580078125</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -128,8 +128,8 @@
 						<string>Point</string>
 						<key>value</key>
 						<array>
-							<real>-1.5804214477539062</real>
-							<real>-0.83156251907348633</real>
+							<real>0.5</real>
+							<real>0.5</real>
 						</array>
 					</dict>
 					<dict>
@@ -179,9 +179,9 @@
 						<string>Color3</string>
 						<key>value</key>
 						<array>
-							<integer>24</integer>
-							<integer>57</integer>
-							<integer>255</integer>
+							<integer>31</integer>
+							<integer>30</integer>
+							<integer>30</integer>
 						</array>
 					</dict>
 					<dict>
@@ -337,8 +337,6 @@
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 						<key>seqExpanded</key>
 						<true/>
 					</dict>

@@ -469,8 +469,6 @@
 						<false/>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>baseClass</key>
@@ -494,8 +492,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>160.57870483398438</real>
-							<real>328</real>
+							<real>165.57870483398438</real>
+							<real>322</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -546,7 +544,7 @@
 						<string>FloatScale</string>
 						<key>value</key>
 						<array>
-							<real>90</real>
+							<real>45</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -596,7 +594,7 @@
 						<key>type</key>
 						<string>Text</string>
 						<key>value</key>
-						<string>rotato</string>
+						<string>R O T A T O</string>
 					</dict>
 				</array>
 			</dict>
