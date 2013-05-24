@@ -27,7 +27,7 @@
 #define TRACKNUM_FROM_RADIUS (((self.radius - (COMMON_GRID_WIDTH/2))/COMMON_GRID_WIDTH)-1)
 //#define TRACKNUM_FROM_RADIUS (self.radius/COMMON_GRID_WIDTH - 1)
 #define COIN_POWER_FREQUENCY 11
-#define CLOSE_HIT_THRESHOLD_PIXEL 10
+#define CLOSE_HIT_THRESHOLD_PIXEL 20
 /*
 #define COMMON_GET_NEW_RADIAL_POINT(_originPoint) \
     CGPointMake(floor(self.radius * cos((double) CC_DEGREES_TO_RADIANS(self.angleRotated)) + _originPoint.x), \

@@ -99,7 +99,7 @@
                (int)_lastToggle < 4000) {
         toggle = NO;
         _lastToggle = 4000;
-    } else if (elapsedMilliseconds > 3750 &&
+    } /*else if (elapsedMilliseconds > 3750 &&
                (int)_lastToggle < 3750) {
         toggle = YES;
         _lastToggle = 3750;
@@ -123,7 +123,7 @@
                (int)_lastToggle < 1000) {
         toggle = NO;
         _lastToggle = 1000;
-    }
+    }*/
     
     [GameLayer sharedGameLayer].invincibleRecord.visible = toggle;
 }
