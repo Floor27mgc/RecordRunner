@@ -61,7 +61,8 @@
         hadCloseCall = YES;
         if ([GameLayer sharedGameLayer].player.direction == kMoveInToOut)
         {
-            [self.animationManager runAnimationsForSequenceNamed:@"CounterClockWiseRotation"];
+            
+           [self.animationManager runAnimationsForSequenceNamed:@"CounterClockWiseRotation"];
         }
         else 
         {
