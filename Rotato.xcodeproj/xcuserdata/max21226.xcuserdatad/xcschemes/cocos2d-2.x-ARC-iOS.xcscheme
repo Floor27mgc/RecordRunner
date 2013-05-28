@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DC0C49F0154AB4DD00B4B727"
-               BuildableName = "RecordRunnerARC.app"
-               BlueprintName = "RecordRunnerARC"
-               ReferencedContainer = "container:RecordRunnerARC.xcodeproj">
+               BuildableName = "Rotato.app"
+               BlueprintName = "Rotato"
+               ReferencedContainer = "container:Rotato.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DC0C49F0154AB4DD00B4B727"
-            BuildableName = "RecordRunnerARC.app"
-            BlueprintName = "RecordRunnerARC"
-            ReferencedContainer = "container:RecordRunnerARC.xcodeproj">
+            BuildableName = "Rotato.app"
+            BlueprintName = "Rotato"
+            ReferencedContainer = "container:Rotato.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DC0C49F0154AB4DD00B4B727"
-            BuildableName = "RecordRunnerARC.app"
-            BlueprintName = "RecordRunnerARC"
-            ReferencedContainer = "container:RecordRunnerARC.xcodeproj">
+            BuildableName = "Rotato.app"
+            BlueprintName = "Rotato"
+            ReferencedContainer = "container:Rotato.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DC0C49F0154AB4DD00B4B727"
-            BuildableName = "RecordRunnerARC.app"
-            BlueprintName = "RecordRunnerARC"
-            ReferencedContainer = "container:RecordRunnerARC.xcodeproj">
+            BuildableName = "Rotato.app"
+            BlueprintName = "Rotato"
+            ReferencedContainer = "container:Rotato.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

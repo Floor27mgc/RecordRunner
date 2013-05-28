@@ -1109,7 +1109,7 @@
 		85A6714B1655A6CB00499BF7 /* Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Queue.m; path = sources/Queue.m; sourceTree = SOURCE_ROOT; };
 		85B53BAB1673C5CC001163F7 /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Score.h; path = sources/Score.h; sourceTree = SOURCE_ROOT; };
 		85B53BAC1673C5CC001163F7 /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Score.m; path = sources/Score.m; sourceTree = SOURCE_ROOT; };
-		DC0C49F1154AB4DD00B4B727 /* RecordRunnerARC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordRunnerARC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC0C49F1154AB4DD00B4B727 /* Rotato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rotato.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0C49F5154AB4DD00B4B727 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DC0C49F7154AB4DD00B4B727 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		DC0C49F9154AB4DD00B4B727 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -2068,7 +2068,7 @@
 		DC0C49F2154AB4DD00B4B727 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DC0C49F1154AB4DD00B4B727 /* RecordRunnerARC.app */,
+				DC0C49F1154AB4DD00B4B727 /* Rotato.app */,
 				DC0C4B87154AB55A00B4B727 /* libcocos2d-library.a */,
 			);
 			name = Products;
@@ -2405,9 +2405,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		DC0C49F0154AB4DD00B4B727 /* RecordRunnerARC */ = {
+		DC0C49F0154AB4DD00B4B727 /* Rotato */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DC0C4B80154AB4DF00B4B727 /* Build configuration list for PBXNativeTarget "RecordRunnerARC" */;
+			buildConfigurationList = DC0C4B80154AB4DF00B4B727 /* Build configuration list for PBXNativeTarget "Rotato" */;
 			buildPhases = (
 				DC0C49ED154AB4DD00B4B727 /* Sources */,
 				DC0C49EE154AB4DD00B4B727 /* Frameworks */,
@@ -2417,9 +2417,9 @@
 			);
 			dependencies = (
 			);
-			name = RecordRunnerARC;
+			name = Rotato;
 			productName = "cocos2d-2.x-ARC-iOS";
-			productReference = DC0C49F1154AB4DD00B4B727 /* RecordRunnerARC.app */;
+			productReference = DC0C49F1154AB4DD00B4B727 /* Rotato.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DC0C4B86154AB55A00B4B727 /* cocos2d-library */ = {
@@ -2447,7 +2447,7 @@
 			attributes = {
 				LastUpgradeCheck = 0450;
 			};
-			buildConfigurationList = DC0C49EB154AB4DD00B4B727 /* Build configuration list for PBXProject "RecordRunnerARC" */;
+			buildConfigurationList = DC0C49EB154AB4DD00B4B727 /* Build configuration list for PBXProject "Rotato" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -2459,7 +2459,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DC0C49F0154AB4DD00B4B727 /* RecordRunnerARC */,
+				DC0C49F0154AB4DD00B4B727 /* Rotato */,
 				DC0C4B86154AB55A00B4B727 /* cocos2d-library */,
 			);
 		};
@@ -2897,8 +2897,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2910,8 +2910,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				PROVISIONING_PROFILE = "BF7A02AA-8BD8-46DF-84D3-28BF7AA80356";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BF7A02AA-8BD8-46DF-84D3-28BF7AA80356";
+				PROVISIONING_PROFILE = "E7B1A516-5A40-4334-A42D-E5D8CA14B1AE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E7B1A516-5A40-4334-A42D-E5D8CA14B1AE";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2921,8 +2921,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -2932,8 +2932,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BF7A02AA-8BD8-46DF-84D3-28BF7AA80356";
+				PROVISIONING_PROFILE = "E7B1A516-5A40-4334-A42D-E5D8CA14B1AE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E7B1A516-5A40-4334-A42D-E5D8CA14B1AE";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2944,8 +2944,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2962,9 +2962,9 @@
 					"-lz",
 					"-ObjC",
 				);
-				PRODUCT_NAME = RecordRunnerARC;
-				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				PRODUCT_NAME = Rotato;
+				PROVISIONING_PROFILE = "E7B1A516-5A40-4334-A42D-E5D8CA14B1AE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E7B1A516-5A40-4334-A42D-E5D8CA14B1AE";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -2975,8 +2975,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2d-2.x-ARC-iOS/Prefix.pch";
@@ -2992,9 +2992,9 @@
 					"-lz",
 					"-ObjC",
 				);
-				PRODUCT_NAME = RecordRunnerARC;
-				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				PRODUCT_NAME = Rotato;
+				PROVISIONING_PROFILE = "E7B1A516-5A40-4334-A42D-E5D8CA14B1AE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E7B1A516-5A40-4334-A42D-E5D8CA14B1AE";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -3040,7 +3040,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DC0C49EB154AB4DD00B4B727 /* Build configuration list for PBXProject "RecordRunnerARC" */ = {
+		DC0C49EB154AB4DD00B4B727 /* Build configuration list for PBXProject "Rotato" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC0C4B7E154AB4DF00B4B727 /* Debug */,
@@ -3049,7 +3049,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DC0C4B80154AB4DF00B4B727 /* Build configuration list for PBXNativeTarget "RecordRunnerARC" */ = {
+		DC0C4B80154AB4DF00B4B727 /* Build configuration list for PBXNativeTarget "Rotato" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC0C4B81154AB4DF00B4B727 /* Debug */,

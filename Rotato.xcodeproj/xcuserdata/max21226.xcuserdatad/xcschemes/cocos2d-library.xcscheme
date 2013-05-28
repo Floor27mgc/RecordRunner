@@ -17,7 +17,7 @@
                BlueprintIdentifier = "DC0C4B86154AB55A00B4B727"
                BuildableName = "libcocos2d-library.a"
                BlueprintName = "cocos2d-library"
-               ReferencedContainer = "container:RecordRunnerARC.xcodeproj">
+               ReferencedContainer = "container:Rotato.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
