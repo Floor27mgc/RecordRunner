@@ -20,7 +20,7 @@
 #import "MainMenuHelpBox.h"
 
 #import "common.h"
-
+#import <GameKit/GameKit.h>
 @implementation MainMenuScene
 
 @synthesize mainMenuRecommend;
@@ -50,6 +50,22 @@
         
         
         buttonArray = [NSArray arrayWithObjects:mainMenuRecommend, mainMenuScore, mainMenuBuy, mainMenuSocial, mainMenuSettings, mainMenuHelp, nil];
+        
+        GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
+        localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){
+            /*            if (viewController != nil) {
+             leaderBoardViewController = [[UIViewController alloc]init];
+             leaderBoardView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, COMMON_SCREEN_WIDTH, COMMON_SCREEN_HEIGHT)];
+             leaderBoardViewController.view = leaderBoardView;
+             [[[CCDirector sharedDirector] view] addSubview:leaderBoardView];
+             [leaderBoardViewController presentViewController:viewController animated:YES completion:nil];
+             //            } else if (instance.player.isAuthenticated) {
+             //Your handler will be called a second time once the user authenticates GC
+             //using the view controller above ^^^^^
+             } else if (error != nil) {
+             //If all else fails, you'll have an error. Handle it
+             }*/
+        };
     }
     return (self);
 }

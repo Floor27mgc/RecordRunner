@@ -139,7 +139,8 @@ typedef enum {
 @property (nonatomic, assign) BOOL isDebugMode;
 @property (nonatomic, assign) int pendingTaps;
 @property (nonatomic) NSDate * tapDelay;
-
+@property (nonatomic, strong) UIView *leaderBoardView;
+@property (nonatomic, strong) UIViewController *leaderBoardViewController;
 /*
 @property (nonatomic, strong) CCSprite *background;*/
 @property (nonatomic, strong) CCLabelTTF * scoreLabel;

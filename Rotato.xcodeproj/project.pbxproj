@@ -1221,8 +1221,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08F7A8EB174879CC00FB7923 /* MessageUI.framework in Frameworks */,
 				DC0C4A06154AB4DD00B4B727 /* GameKit.framework in Frameworks */,
+				08F7A8EB174879CC00FB7923 /* MessageUI.framework in Frameworks */,
 				850CF25C16ED920D00B292DE /* MediaPlayer.framework in Frameworks */,
 				850CF25A16ED8F6900B292DE /* SystemConfiguration.framework in Frameworks */,
 				DC0C4B92154AB57C00B4B727 /* libcocos2d-library.a in Frameworks */,

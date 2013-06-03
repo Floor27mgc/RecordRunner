@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import <MessageUI/MFMailComposeViewController.h>
+#import <GameKit/GameKit.h>
 @interface GameOverLayer : CCNode <CCBAnimationManagerDelegate,MFMailComposeViewControllerDelegate>
 /*
 @property (nonatomic, assign) GameLayer * parentGameLayer;

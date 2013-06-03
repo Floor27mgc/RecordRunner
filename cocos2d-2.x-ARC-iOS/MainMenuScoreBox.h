@@ -10,12 +10,15 @@
 
 
 #import <Foundation/Foundation.h>
+#import <GameKit/GameKit.h>
 #import "cocos2d.h"
 #import "MenuBox.h"
 
-@interface MainMenuScoreBox : MenuBox
+@interface MainMenuScoreBox : MenuBox <GKLeaderboardViewControllerDelegate>
 {
     
 }
-
+- (void) pressedGameCenter: (id)sender;
+@property (nonatomic, strong) UIView *gameCenterView;
+@property (nonatomic, strong) UIViewController *gameCenterViewController;
 @end

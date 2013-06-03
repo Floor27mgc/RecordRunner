@@ -10,6 +10,7 @@
 #import "GameOverLayer.h"
 #import "CCBAnimationManager.h"
 #import "CCBReader.h"
+#import <GameKit/GameKit.h>
 
 @implementation GameOverLayer
 @synthesize finalScoreLabel;
@@ -49,6 +50,18 @@
                                      finalMultiplier]];
     [self.highScoreLabel setString:[NSString stringWithFormat:@"%d",
                                     myHighScore]];
+    
+    GKScore *myScoreValue = [[GKScore alloc] initWithCategory:@"RotatoLeaderBoard"];
+    myScoreValue.value = myFinalScore;
+    
+    [myScoreValue reportScoreWithCompletionHandler:^(NSError *error){
+        if(error != nil){
+            NSLog(@"Score Submission Failed");
+        } else {
+            NSLog(@"Score Submitted");
+        }
+        
+    }];
 }
 
 - (void) pressedHome:(id) sender
@@ -76,6 +89,7 @@
     emailViewController.view = emailView;
     [[[CCDirector sharedDirector] view] addSubview:emailView];
     [emailViewController presentViewController:mailViewController animated:YES completion:nil];
+    
 }
 
 - (void) didLoadFromCCB
@@ -103,4 +117,5 @@
     emailViewController = nil;
     
 }
+
 @end

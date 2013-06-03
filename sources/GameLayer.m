@@ -21,6 +21,8 @@
 #import "CCBReader.h"
 #import "GameInfoGlobal.h"
 #import "GameDebugMenu.h"
+#import <GameKit/GameKit.h>
+#import <UIKit/UIKit.h>
 
 #pragma mark - GameLayer
 
@@ -46,6 +48,8 @@
 @synthesize invincibleRecord;
 @synthesize pendingTaps;
 @synthesize tapDelay;// = _tapDelay;
+@synthesize leaderBoardView;
+@synthesize leaderBoardViewController;
 //@synthesize multiplierLabel;
 
 
@@ -236,7 +240,7 @@ static GameLayer *sharedGameLayer;
         
         // input buffering structures
         pendingTaps = 0;
-        self.tapDelay = [NSDate distantFuture];
+        self.tapDelay = [NSDate distantFuture];        
     }
 /*
     [self schedule: @selector(update:)]; */
