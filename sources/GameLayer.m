@@ -46,6 +46,7 @@
 @synthesize invincibleRecord;
 @synthesize pendingTaps;
 @synthesize tapDelay;// = _tapDelay;
+@synthesize achievementContainer;
 //@synthesize multiplierLabel;
 
 
@@ -237,6 +238,9 @@ static GameLayer *sharedGameLayer;
         // input buffering structures
         pendingTaps = 0;
         self.tapDelay = [NSDate distantFuture];
+        
+        // achievement monitoring structures
+        achievementContainer = [[AchievementContainer alloc] init];
     }
 /*
     [self schedule: @selector(update:)]; */
@@ -340,7 +344,7 @@ static GameLayer *sharedGameLayer;
     [_multiplier showNextFrame];
     
     // check if new Power up has been triggered
-//    [self triggerPowerIcons];
+    //    [self triggerPowerIcons];
     
     // update all PowerIcons
     for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
@@ -355,6 +359,11 @@ static GameLayer *sharedGameLayer;
         for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_powerPool, trackNum); ++i) {
             [POOL_OBJS_ON_TRACK(_powerPool, trackNum)[i] runPower];
         }
+    }
+    
+    // check for accomplished achievements and log if any achieved
+    if ([achievementContainer CheckCurrentAchievements]) {
+        [achievementContainer LogAchievements];
     }
     
     // Move player to a new location

@@ -1,0 +1,48 @@
+/* 
+  achievement_strings.strings
+  RecordRunnerARC
+
+  Created by Matt Cleveland on 6/2/13.
+
+*/
+
+"NUMBER_OF_ACHIEVEMENTS" = "14";
+"ACHIEVEMENTS_PER_RANK" = "3";
+
+/* Rank 1 */
+"DESC_1" = "Go 10 Laps in a single life.";
+"COND_1" = "";
+"DESC_2" = "Collect 50 coins in a single life.";
+"COND_2" = "";
+"DESC_3" = "Skim past 3 “X’s” in a single life.";
+"COND_3" = "";
+
+/* Rank 2 */
+"DESC_4" = "Collect 3 coins in a single scratch.";
+"COND_4" = "";
+"DESC_5" = "Get a score of 200.";
+"COND_5" = "";
+"DESC_6" = "Survive for 60 seconds without dying.";
+"COND_6" = "";
+
+/* Rank 3 */
+"DESC_7" = "Kill 4 bombs with a shield.";
+"COND_7" = "";
+"DESC_8" = "Spin the same bomb Clockwise then immediately Counter clockwise.";
+"COND_8" = "";
+"DESC_9" = "Get a score of 1000.";
+"COND_9" = "";
+
+/* Rank 4 */
+"DESC_10" = "Go 30 laps in a single life.";
+"COND_10" = "";
+"DESC_11" = "In a single life get a x10 multiplier then drop it to x1.";
+"COND_11" = "";
+"DESC_12" = "Maintain a multiplier of at least x10 for 2 minutes.";
+"COND_12" = "";
+
+/* Rank 5 */
+"DESC_13" = "In a single life, spend a total of 2 minutes in the outer ring.";
+"COND_13" = "";
+"DESC_14" = "Scratch 40 times in a single revolution.";
+"COND_14" = "";

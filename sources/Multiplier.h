@@ -11,6 +11,7 @@
 #import "CCBAnimationManager.h"
 
 #define MULTIPLIER_LIFE_TIME_SEC   5
+#define MAX_MULTIPLIER_VALUE      10
 
 @interface Multiplier : CCNode
 

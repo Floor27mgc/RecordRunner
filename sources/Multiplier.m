@@ -30,6 +30,7 @@
     return self;
 }
 
+// -----------------------------------------------------------------------------------
 - (void) prepare
 {
     self.animationManager = self.userObject;
@@ -43,21 +44,22 @@
 // -----------------------------------------------------------------------------------
 - (void) incrementMultiplier:(int)amount
 {
-    multiplierValue += amount;
+    if (multiplierValue < MAX_MULTIPLIER_VALUE) {
+        multiplierValue += amount;
     
-    timerLifeInSec += MULTIPLIER_LIFE_TIME_SEC;
+        timerLifeInSec += MULTIPLIER_LIFE_TIME_SEC;
     
-    if (multiplierTime == [NSDate distantFuture]) {
-        multiplierTime = [NSDate date];
+        if (multiplierTime == [NSDate distantFuture]) {
+            multiplierTime = [NSDate date];
+        }
+        
+        [self.multiplierLabel setString:[NSString stringWithFormat:@"x %d",
+                                        multiplierValue]];
+        
+        ccColor3B currentColor = multiplierLabel.color;
+        [self.multiplierLabel setColor:currentColor];
+        [self.animationManager runAnimationsForSequenceNamed:@"bounce_multiplier"];
     }
-    
-    [self.multiplierLabel setString:[NSString stringWithFormat:@"x %d",
-                                    multiplierValue]];
-    
-    ccColor3B currentColor = multiplierLabel.color;
-//    currentColor.r += 50;
-    [self.multiplierLabel setColor:currentColor];
-    [self.animationManager runAnimationsForSequenceNamed:@"bounce_multiplier"];
 }
 
 // -----------------------------------------------------------------------------------

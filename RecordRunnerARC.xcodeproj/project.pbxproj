@@ -488,7 +488,10 @@
 		853F15B5172C9C20004E33B6 /* parts_record_invincible-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15AB172C9C20004E33B6 /* parts_record_invincible-hd.png */; };
 		853F15B6172C9C20004E33B6 /* parts_shield_invincible.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15AC172C9C20004E33B6 /* parts_shield_invincible.png */; };
 		853F15B7172C9C20004E33B6 /* parts_shield_invincible-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15AD172C9C20004E33B6 /* parts_shield_invincible-hd.png */; };
+		8583968D175C04660060DA02 /* achievement_map.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8583968C175C04660060DA02 /* achievement_map.strings */; };
 		8583C66A16802C9C003A3213 /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8583C66916802C9C003A3213 /* GameOverLayer.m */; };
+		8597D9A3175BB96400A8F8DA /* Achievement.m in Sources */ = {isa = PBXBuildFile; fileRef = 8597D9A2175BB96400A8F8DA /* Achievement.m */; };
+		8597D9A6175BB97500A8F8DA /* AchievementContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8597D9A5175BB97500A8F8DA /* AchievementContainer.m */; };
 		859EC13C16B60FB7003BFF41 /* PowerSlowDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 859EC13B16B60FB7003BFF41 /* PowerSlowDown.m */; };
 		85A671361651D14000499BF7 /* Bomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671351651D14000499BF7 /* Bomb.m */; };
 		85A6713A1651D16000499BF7 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671391651D16000499BF7 /* Coin.m */; };
@@ -1096,8 +1099,13 @@
 		853F15AB172C9C20004E33B6 /* parts_record_invincible-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_record_invincible-hd.png"; path = "Resources/Graphics/parts_record_invincible-hd.png"; sourceTree = SOURCE_ROOT; };
 		853F15AC172C9C20004E33B6 /* parts_shield_invincible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_shield_invincible.png; path = Resources/Graphics/parts_shield_invincible.png; sourceTree = SOURCE_ROOT; };
 		853F15AD172C9C20004E33B6 /* parts_shield_invincible-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_shield_invincible-hd.png"; path = "Resources/Graphics/parts_shield_invincible-hd.png"; sourceTree = SOURCE_ROOT; };
+		8583968C175C04660060DA02 /* achievement_map.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = achievement_map.strings; sourceTree = "<group>"; };
 		8583C66816802C9C003A3213 /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverLayer.h; path = sources/GameOverLayer.h; sourceTree = SOURCE_ROOT; };
 		8583C66916802C9C003A3213 /* GameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverLayer.m; path = sources/GameOverLayer.m; sourceTree = SOURCE_ROOT; };
+		8597D9A1175BB96400A8F8DA /* Achievement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Achievement.h; path = sources/Achievement.h; sourceTree = SOURCE_ROOT; };
+		8597D9A2175BB96400A8F8DA /* Achievement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Achievement.m; path = sources/Achievement.m; sourceTree = SOURCE_ROOT; };
+		8597D9A4175BB97500A8F8DA /* AchievementContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AchievementContainer.h; path = sources/AchievementContainer.h; sourceTree = SOURCE_ROOT; };
+		8597D9A5175BB97500A8F8DA /* AchievementContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AchievementContainer.m; path = sources/AchievementContainer.m; sourceTree = SOURCE_ROOT; };
 		859EC13A16B60FB7003BFF41 /* PowerSlowDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerSlowDown.h; path = sources/PowerSlowDown.h; sourceTree = SOURCE_ROOT; };
 		859EC13B16B60FB7003BFF41 /* PowerSlowDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowerSlowDown.m; path = sources/PowerSlowDown.m; sourceTree = SOURCE_ROOT; };
 		85A671341651D13F00499BF7 /* Bomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bomb.h; path = sources/Bomb.h; sourceTree = SOURCE_ROOT; };
@@ -1382,6 +1390,11 @@
 		0840D5AC163F50FF003D5FE6 /* game */ = {
 			isa = PBXGroup;
 			children = (
+				8597D9A1175BB96400A8F8DA /* Achievement.h */,
+				8597D9A2175BB96400A8F8DA /* Achievement.m */,
+				8583968C175C04660060DA02 /* achievement_map.strings */,
+				8597D9A4175BB97500A8F8DA /* AchievementContainer.h */,
+				8597D9A5175BB97500A8F8DA /* AchievementContainer.m */,
 				85A671341651D13F00499BF7 /* Bomb.h */,
 				85A671351651D14000499BF7 /* Bomb.m */,
 				85A671381651D16000499BF7 /* Coin.h */,
@@ -2700,6 +2713,7 @@
 				E58F3A26172C13DE00C00E9C /* spark-hd.png in Resources */,
 				E54E158B172C7A2A0022DACE /* bannerRed.png in Resources */,
 				E54E158C172C7A2A0022DACE /* bannerRed-hd.png in Resources */,
+				8583968D175C04660060DA02 /* achievement_map.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2749,6 +2763,8 @@
 				E5973A9C17234CD8001B948A /* MainMenuBuyBox.m in Sources */,
 				E5973A9F17234DB3001B948A /* MainMenuSocialBox.m in Sources */,
 				E5973AA217234E0A001B948A /* MainMenuSettingsBox.m in Sources */,
+				8597D9A3175BB96400A8F8DA /* Achievement.m in Sources */,
+				8597D9A6175BB97500A8F8DA /* AchievementContainer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
