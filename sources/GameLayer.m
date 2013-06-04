@@ -45,8 +45,8 @@
 @synthesize scoreLabel;
 @synthesize invincibleRecord;
 @synthesize pendingTaps;
-@synthesize tapDelay;// = _tapDelay;
-//@synthesize multiplierLabel;
+@synthesize tapDelay;
+@synthesize achievementContainer;
 
 
 static GameLayer *sharedGameLayer;
@@ -237,6 +237,9 @@ static GameLayer *sharedGameLayer;
         // input buffering structures
         pendingTaps = 0;
         self.tapDelay = [NSDate distantFuture];
+        
+        // achievement monitoring structures
+        achievementContainer = [[AchievementContainer alloc] init];
     }
 /*
     [self schedule: @selector(update:)]; */
@@ -340,7 +343,7 @@ static GameLayer *sharedGameLayer;
     [_multiplier showNextFrame];
     
     // check if new Power up has been triggered
-//    [self triggerPowerIcons];
+    //    [self triggerPowerIcons];
     
     // update all PowerIcons
     for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
@@ -355,6 +358,18 @@ static GameLayer *sharedGameLayer;
         for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_powerPool, trackNum); ++i) {
             [POOL_OBJS_ON_TRACK(_powerPool, trackNum)[i] runPower];
         }
+    }
+    
+    // update game rotation data
+    [GameInfoGlobal sharedGameInfoGlobal].numDegreesRotated += kDefaultGameObjectAngularVelocityInDegree;
+    if ([GameInfoGlobal sharedGameInfoGlobal].numDegreesRotated > 360) {
+        [GameInfoGlobal sharedGameInfoGlobal].numRotations++;
+        [GameInfoGlobal sharedGameInfoGlobal].numDegreesRotated -= 360;
+    }
+    
+    // check for accomplished achievements and log if any achieved
+    if ([achievementContainer CheckCurrentAchievements]) {
+        [achievementContainer LogAchievements];
     }
     
     // Move player to a new location
@@ -612,8 +627,6 @@ static GameLayer *sharedGameLayer;
     if (move) {
         tapDelay = [NSDate distantFuture];
         --pendingTaps;
-    } else {
-        NSLog(@"delaying tap");
     }
     
     return move;

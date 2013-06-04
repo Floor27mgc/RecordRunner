@@ -8,6 +8,7 @@
 
 #import "Score.h"
 #import "GameLayer.h"
+#import "GameInfoGlobal.h"
 
 @implementation Score
 
@@ -57,6 +58,8 @@
     
     _scoreValue += (multAmt * amount);
     
+    [GameInfoGlobal sharedGameInfoGlobal].score = _scoreValue;
+    
     int newScoreLevel = _scoreValue / kSpeedUpScoreInterval;
     
     if (newScoreLevel < kSpeedUpScoreLevelCeiling)
@@ -80,6 +83,9 @@
     } else {
         _scoreValue -= amount;
     }
+    
+    [GameInfoGlobal sharedGameInfoGlobal].score = _scoreValue;
+    
     int newScoreLevel = _scoreValue / kSpeedUpScoreInterval;
     
     if (newScoreLevel >= 0)

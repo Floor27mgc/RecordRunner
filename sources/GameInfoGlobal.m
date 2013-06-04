@@ -16,6 +16,11 @@
 @synthesize bombSpawnRate;
 @synthesize coinSpawnRate;
 @synthesize shieldSpawnRate;
+@synthesize numRotations;
+@synthesize numDegreesRotated;
+@synthesize numCoins;
+@synthesize closeCalls;
+@synthesize score;
 
 static GameInfoGlobal *sharedGameInfoGlobal;
 
@@ -32,6 +37,16 @@ static GameInfoGlobal *sharedGameInfoGlobal;
     {
         sharedGameInfoGlobal = self;
         gameMode = kGameModeNormal;
+        
+        // game rotation data
+        numRotations = 0;
+        numDegreesRotated = 0;
+        
+        numCoins = 0;
+        
+        closeCalls = 0;
+        
+        score = 0;
         
         statsContainer = [[StatisticsContainer alloc] init];
     }

@@ -25,4 +25,10 @@ typedef enum {
 @property (nonatomic,assign) int bombSpawnRate;
 @property (nonatomic,assign) int coinSpawnRate;
 @property (nonatomic,assign) int shieldSpawnRate;
+@property (nonatomic, assign) int numRotations;
+@property (nonatomic, assign) int numDegreesRotated;
+@property (nonatomic, assign) int numCoins;
+@property (nonatomic, assign) int closeCalls;
+@property (nonatomic, assign) int score;
+
 @end
