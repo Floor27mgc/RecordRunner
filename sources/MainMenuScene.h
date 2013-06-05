@@ -14,9 +14,9 @@
 #import "MainMenuSocialBox.h"
 #import "MainMenuSettingsBox.h"
 #import "MainMenuHelpBox.h"
+#import <GameKit/GameKit.h>
 
-
-@interface MainMenuScene : CCLayer
+@interface MainMenuScene : CCLayer <GKGameCenterControllerDelegate>
 
 @property (nonatomic,assign) BOOL menuExpanded;
 
@@ -29,7 +29,8 @@
 
 @property  (nonatomic, strong) NSArray * buttonArray;
 
-
+@property (nonatomic, strong) UIView *gameCenterView;
+@property (nonatomic, strong) UIViewController *gameCenterViewController;
 typedef NS_ENUM (NSUInteger, MainMenuButtons) {
     BUTTON_RECOMMEND,
     BUTTON_SCORE,
@@ -38,6 +39,5 @@ typedef NS_ENUM (NSUInteger, MainMenuButtons) {
     BUTTON_SETTINGS,
     BUTTON_HELP
 };
-
 
 @end

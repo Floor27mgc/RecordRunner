@@ -31,6 +31,9 @@
 @synthesize mainMenuHelp;
 
 @synthesize buttonArray;
+@synthesize gameCenterViewController;
+@synthesize gameCenterView;
+
 
 - (id) init
 {
@@ -51,25 +54,37 @@
         
         buttonArray = [NSArray arrayWithObjects:mainMenuRecommend, mainMenuScore, mainMenuBuy, mainMenuSocial, mainMenuSettings, mainMenuHelp, nil];
         
-        GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
+        GKLocalPlayer __unsafe_unretained *localPlayer = [GKLocalPlayer localPlayer];
         localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){
-            /*            if (viewController != nil) {
-             leaderBoardViewController = [[UIViewController alloc]init];
-             leaderBoardView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, COMMON_SCREEN_WIDTH, COMMON_SCREEN_HEIGHT)];
-             leaderBoardViewController.view = leaderBoardView;
-             [[[CCDirector sharedDirector] view] addSubview:leaderBoardView];
-             [leaderBoardViewController presentViewController:viewController animated:YES completion:nil];
-             //            } else if (instance.player.isAuthenticated) {
-             //Your handler will be called a second time once the user authenticates GC
-             //using the view controller above ^^^^^
-             } else if (error != nil) {
-             //If all else fails, you'll have an error. Handle it
-             }*/
+            if (viewController != nil)
+            {
+                gameCenterViewController = [[UIViewController alloc]init];
+                gameCenterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, COMMON_SCREEN_WIDTH, COMMON_SCREEN_HEIGHT)];
+                gameCenterViewController.view = gameCenterView;
+                [[[CCDirector sharedDirector] view] addSubview:gameCenterView];
+                [gameCenterViewController presentViewController:viewController animated:YES completion:nil];
+
+            }
+            else if (localPlayer.isAuthenticated)
+            {
+                //[self authenticatedPlayer: localPlayer];
+            }
+            else
+            {
+                //[self disableGameCenter];
+            }
         };
     }
     return (self);
 }
 
+- (void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)gameCenterViewController1
+{
+    [gameCenterViewController dismissViewControllerAnimated:YES completion:nil];
+    [gameCenterView removeFromSuperview];
+    gameCenterView = nil;
+    gameCenterViewController = nil;
+}
 - (void) pressedPlay:(id)sender
 {
     //Only open the game if the menu is closed
