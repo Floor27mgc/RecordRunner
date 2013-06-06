@@ -17,6 +17,7 @@
 #import "Power.h"
 #import "SoundController.h"
 #import "Multiplier.h"
+#import "AchievementContainer.h"
 
 #define NUM_OBSTACLES                20
 #define NUM_REWARDS                  20
@@ -141,6 +142,8 @@ typedef enum {
 @property (nonatomic) NSDate * tapDelay;
 @property (nonatomic, strong) UIView *leaderBoardView;
 @property (nonatomic, strong) UIViewController *leaderBoardViewController;
+@property (nonatomic, strong) AchievementContainer * achievementContainer;
+
 /*
 @property (nonatomic, strong) CCSprite *background;*/
 @property (nonatomic, strong) CCLabelTTF * scoreLabel;

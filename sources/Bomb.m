@@ -59,6 +59,9 @@
         !hadCloseCall && ![GameLayer sharedGameLayer].player.hasShield) {
         [[GameLayer sharedGameLayer].multiplier incrementMultiplier:1];
         hadCloseCall = YES;
+        
+        [GameInfoGlobal sharedGameInfoGlobal].closeCalls++;
+
         if ([GameLayer sharedGameLayer].player.direction == kMoveInToOut)
         {
             
