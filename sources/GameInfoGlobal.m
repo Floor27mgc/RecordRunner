@@ -16,11 +16,15 @@
 @synthesize bombSpawnRate;
 @synthesize coinSpawnRate;
 @synthesize shieldSpawnRate;
-@synthesize numRotations;
-@synthesize numDegreesRotated;
-@synthesize numCoins;
-@synthesize closeCalls;
+@synthesize numRotationsThisLife;
+@synthesize numDegreesRotatedThisLife;
+@synthesize numCoinsThisLife;
+@synthesize closeCallsThisLife;
 @synthesize score;
+@synthesize scratchesThisRevolution;
+@synthesize coinsThisScratch;
+@synthesize bombsKilledThisShield;
+@synthesize timeInOuterRingThisLife;
 
 static GameInfoGlobal *sharedGameInfoGlobal;
 
@@ -29,6 +33,7 @@ static GameInfoGlobal *sharedGameInfoGlobal;
     return sharedGameInfoGlobal;
 }
 
+// -----------------------------------------------------------------------------------
 -(id) init
 {
 	// always call "super" init
@@ -39,18 +44,29 @@ static GameInfoGlobal *sharedGameInfoGlobal;
         gameMode = kGameModeNormal;
         
         // game rotation data
-        numRotations = 0;
-        numDegreesRotated = 0;
-        
-        numCoins = 0;
-        
-        closeCalls = 0;
-        
+        [self resetPerLifeStatistics];
+
         score = 0;
+        
+        scratchesThisRevolution = 0;
+        
+        coinsThisScratch = 0;
+        
+        bombsKilledThisShield = 0;
         
         statsContainer = [[StatisticsContainer alloc] init];
     }
     return self;
+}
+
+// -----------------------------------------------------------------------------------
+- (void) resetPerLifeStatistics
+{
+    numDegreesRotatedThisLife = 0;
+    numRotationsThisLife = 0;
+    timeInOuterRingThisLife = 0;
+    numCoinsThisLife = 0;
+    closeCallsThisLife = 0;
 }
 
 @end

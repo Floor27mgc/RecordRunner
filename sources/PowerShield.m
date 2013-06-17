@@ -22,6 +22,7 @@
     [[GameLayer sharedGameLayer].player setSheilded:YES];
     _startedBlink = NO;
     _lastToggle = 0;
+    [GameInfoGlobal sharedGameInfoGlobal].bombsKilledThisShield = 0;
     [super addPower];
     
     [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer at:SHIELD_STATS] tick];

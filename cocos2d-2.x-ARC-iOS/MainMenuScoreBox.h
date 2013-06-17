@@ -14,11 +14,14 @@
 #import "cocos2d.h"
 #import "MenuBox.h"
 
-@interface MainMenuScoreBox : MenuBox <GKLeaderboardViewControllerDelegate>
+@interface MainMenuScoreBox : MenuBox <GKLeaderboardViewControllerDelegate,
+    GKAchievementViewControllerDelegate>
 {
     
 }
 - (void) pressedGameCenter: (id)sender;
+- (void) pressedGameCenterAchievements: (id)sender;
+
 @property (nonatomic, strong) UIView *gameCenterView;
 @property (nonatomic, strong) UIViewController *gameCenterViewController;
 @end

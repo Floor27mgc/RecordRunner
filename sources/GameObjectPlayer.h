@@ -42,5 +42,6 @@ typedef enum
 @property (nonatomic) int playerFacingAngle; // What angle is the player facing
 
 @property (nonatomic) BOOL hasShield;
+@property (nonatomic) NSDate * arrivedAtOuterTrack;
 
 @end

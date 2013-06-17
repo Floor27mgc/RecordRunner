@@ -58,8 +58,9 @@
     [self recycleObjectWithUsedPool:[GameLayer sharedGameLayer].coinUsedPool
                            freePool:[GameLayer sharedGameLayer].coinFreePool];
     // increment score
-    [GameInfoGlobal sharedGameInfoGlobal].numCoins++;
+    [GameInfoGlobal sharedGameInfoGlobal].numCoinsThisLife++;
     [[GameLayer sharedGameLayer].score incrementScore:1];
+    [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch++;
     [[SimpleAudioEngine sharedEngine] playEffect:@"pickup_coin.wav"];
 }
 
