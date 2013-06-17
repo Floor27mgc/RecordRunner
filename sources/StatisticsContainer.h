@@ -38,6 +38,9 @@ typedef enum {
 // return string value of types in stats type struct
 - (NSString *) statsTypeToString: (statistics_types_t) type;
 
+// return the time of the current game
+- (int) getCurrentGameTimeElapsed;
+
 @property (nonatomic, strong) NSMutableArray * container;
 @property (nonatomic, strong) NSDate * gameStartTime;
 @property (nonatomic, strong) NSDate * sessionStartTime;

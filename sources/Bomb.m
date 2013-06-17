@@ -91,10 +91,14 @@
     // if the player has a shield, act accordingly
     if ([GameLayer sharedGameLayer].player.hasShield) {
         [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer at:BOMB_STATS] tick];
+        [GameInfoGlobal sharedGameInfoGlobal].bombsKilledThisShield++;
         NSLog(@"Bomb absorbed by player's shield!");
     } else {
         // update end-of-game statistics
         [[[GameInfoGlobal sharedGameInfoGlobal] statsContainer] writeStats];
+        
+        // reset any per-game data tracking
+        [[GameInfoGlobal sharedGameInfoGlobal] resetPerLifeStatistics];
         
         if ([GameLayer sharedGameLayer].gameOverLayer != nil)
         {

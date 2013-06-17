@@ -18,8 +18,11 @@
 @property (nonatomic) CCBAnimationManager * animationManager;
 @property (nonatomic) int multiplierValue;
 @property (nonatomic) int timerLifeInSec;
+@property (nonatomic) int highestMultiplierValueEarned;
+@property (nonatomic) NSDate * timeAboveTen;
 @property (nonatomic) NSDate * multiplierTime;
 
+- (int) secondsAbove10x;
 - (void) incrementMultiplier:(int) amount;
 - (void) decrementMultiplier:(int) amount;
 - (void) showNextFrame;

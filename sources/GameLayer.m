@@ -255,7 +255,7 @@ static GameLayer *sharedGameLayer;
     return self;
 }
 
-
+// -----------------------------------------------------------------------------------
 - (void) onEnter
 {
     [super onEnter];
@@ -267,6 +267,7 @@ static GameLayer *sharedGameLayer;
     
 }
 
+// -----------------------------------------------------------------------------------
 - (void) onExit
 {
     [super onExit];
@@ -274,6 +275,7 @@ static GameLayer *sharedGameLayer;
     // Remove the scheduled selector
     [self unscheduleAllSelectors];
 }
+
 // -----------------------------------------------------------------------------------
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
@@ -293,6 +295,12 @@ static GameLayer *sharedGameLayer;
     // input buffering for player movement
     if ([self moveThePlayer]) {
         [self.player changeDirection];
+        
+        // reset the coin per scratch counter
+        [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch = 0;
+        
+        // tick the scratches per revolution counter
+        [GameInfoGlobal sharedGameInfoGlobal].scratchesThisRevolution++;
     }
     
     // generate Game Objectsrandomly
@@ -367,10 +375,11 @@ static GameLayer *sharedGameLayer;
     }
     
     // update game rotation data
-    [GameInfoGlobal sharedGameInfoGlobal].numDegreesRotated += kDefaultGameObjectAngularVelocityInDegree;
-    if ([GameInfoGlobal sharedGameInfoGlobal].numDegreesRotated > 360) {
-        [GameInfoGlobal sharedGameInfoGlobal].numRotations++;
-        [GameInfoGlobal sharedGameInfoGlobal].numDegreesRotated -= 360;
+    [GameInfoGlobal sharedGameInfoGlobal].numDegreesRotatedThisLife += kDefaultGameObjectAngularVelocityInDegree;
+    if ([GameInfoGlobal sharedGameInfoGlobal].numDegreesRotatedThisLife > 360) {
+        [GameInfoGlobal sharedGameInfoGlobal].numRotationsThisLife++;
+        [GameInfoGlobal sharedGameInfoGlobal].numDegreesRotatedThisLife -= 360;
+        [GameInfoGlobal sharedGameInfoGlobal].scratchesThisRevolution = 0;
     }
     
     // check for accomplished achievements and log if any achieved
@@ -382,6 +391,7 @@ static GameLayer *sharedGameLayer;
     [player showNextFrame];
 }
 
+// -----------------------------------------------------------------------------------
 -(float) changeGameAngularVelocityByDegree:(float) byDegree
 {
     for (int trackNum = 0; trackNum < MAX_NUM_TRACK; trackNum++)

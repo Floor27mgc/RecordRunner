@@ -45,6 +45,12 @@
 }
 
 // -----------------------------------------------------------------------------------
+- (int) getCurrentGameTimeElapsed
+{
+    return (_abs([_gameStartTime timeIntervalSinceNow]));
+}
+
+// -----------------------------------------------------------------------------------
 - (void) resetGameTimer
 {
     _gameStartTime = [NSDate date];

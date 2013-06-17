@@ -16,6 +16,7 @@
 @synthesize playerRadialSpeed;
 @synthesize playerFacingAngle;
 @synthesize hasShield;
+@synthesize arrivedAtOuterTrack;
 
 
 // -----------------------------------------------------------------------------------
@@ -35,8 +36,21 @@
         // Player is not moving.  Either it's in the inner most track
         // or in the outermost track
         self.angleRotated = self.angleRotated - self.gameObjectAngularVelocity;
-        [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER,self.radius,self.angleRotated)];
+        [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER,
+                                                 self.radius, self.angleRotated)];
         self.rotation = self.angleRotated - (self.radius == PLAYER_RADIUS_INNER_MOST?0:180);
+        
+        // if player is on the outer track, increment the timer for tracking this
+        if (self.radius == PLAYER_RADIUS_OUTER_MOST) {
+            if (arrivedAtOuterTrack == [NSDate distantFuture]) {
+                arrivedAtOuterTrack = [NSDate date];
+            } else {
+                int elapsed = [arrivedAtOuterTrack timeIntervalSinceNow];
+                [GameInfoGlobal sharedGameInfoGlobal].timeInOuterRing += elapsed;
+                arrivedAtOuterTrack = [NSDate date];
+            }
+            
+        }
     }
     else
     {
@@ -94,6 +108,8 @@
             self.gameObjectAngularVelocity = 0;
         }
         
+        self.arrivedAtOuterTrack = [NSDate distantFuture];
+        
         self.hasShield = NO;
     }
     return (self);
@@ -116,6 +132,9 @@
         return;
     direction = (direction == kMoveInToOut) ? kMoveOutToIn : kMoveInToOut;
     self.playerRadialSpeed = kPlayerRadialSpeed;
+    
+    // reset the outer track timer
+    arrivedAtOuterTrack = [NSDate distantFuture];
 }
 
 // -----------------------------------------------------------------------------------
@@ -167,12 +186,15 @@
     [self.animationManager runAnimationsForSequenceNamed:@"blink_player"];
 }
 
+// -----------------------------------------------------------------------------------
 - (void) onEnter
 {
     // Setup a delegate method for the animationManager of the explosion
 //    CCBAnimationManager* animationManager = self.userObject;
 //    animationManager.delegate = self;
 }
+
+// -----------------------------------------------------------------------------------
 - (void) completedAnimationSequenceNamed:(NSString *)name
 {
     // Remove the explosion object after the animation has finished

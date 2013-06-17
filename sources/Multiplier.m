@@ -16,6 +16,8 @@
 @synthesize multiplierValue;
 @synthesize timerLifeInSec;
 @synthesize multiplierTime;
+@synthesize highestMultiplierValueEarned;
+@synthesize timeAboveTen;
 
 // -----------------------------------------------------------------------------------
 - (id) init
@@ -23,13 +25,16 @@
     if (self = [super init]) {
         self.animationManager = self.userObject;
         self.multiplierValue = 1;
+        self.highestMultiplierValueEarned = 1;
         self.timerLifeInSec = 0;
+        self.timeAboveTen = [NSDate distantFuture];
         self.multiplierTime = [NSDate distantFuture];
     }
         
     return self;
 }
 
+// -----------------------------------------------------------------------------------
 - (void) prepare
 {
     self.animationManager = self.userObject;
@@ -45,6 +50,17 @@
 {
     multiplierValue += amount;
     
+    // set highest multiplier seen
+    if (multiplierValue > highestMultiplierValueEarned) {
+        highestMultiplierValueEarned = multiplierValue;
+    }
+    
+    // start timing if we have exceeded 10x
+    if (multiplierValue >= 10) {
+        timeAboveTen = [NSDate date];
+    }
+    
+    // perform multiplier timing operations
     timerLifeInSec += MULTIPLIER_LIFE_TIME_SEC;
     
     if (multiplierTime == [NSDate distantFuture]) {
@@ -55,7 +71,7 @@
                                     multiplierValue]];
     
     ccColor3B currentColor = multiplierLabel.color;
-//    currentColor.r += 50;
+    //    currentColor.r += 50;
     [self.multiplierLabel setColor:currentColor];
     [self.animationManager runAnimationsForSequenceNamed:@"bounce_multiplier"];
 }
@@ -69,12 +85,26 @@
         multiplierValue -= amount;
     }
     
+    // stop timing if we're below 10x
+    if (multiplierValue < 10) {
+        timeAboveTen = [NSDate distantFuture];
+    }
+    
     ccColor3B currentColor = multiplierLabel.color;
-    //    currentColor.r -= 50;
     [self.multiplierLabel setColor:currentColor];
     
     [self.multiplierLabel setString:[NSString stringWithFormat:@"x %d",
                                      multiplierValue]];
+}
+
+// -----------------------------------------------------------------------------------
+- (int) secondsAbove10x
+{
+    if (timeAboveTen == [NSDate distantFuture]) {
+        return 0;
+    }
+    
+    return [timeAboveTen timeIntervalSinceNow];
 }
 
 // -----------------------------------------------------------------------------------

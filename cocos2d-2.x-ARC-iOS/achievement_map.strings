@@ -6,47 +6,127 @@
 
 */
 
-"NUMBER_OF_ACHIEVEMENTS" = "14";
+"NUMBER_OF_ACHIEVEMENTS" = "22";
+"NUMBER_OF_RANKS" = "5";
 "ACHIEVEMENTS_PER_RANK" = "3";
 
 /* Rank 1 */
-"DESC_1" = "Go 10 Laps in a single life.";
-"COND_1" = "[GameInfoGlobal sharedGameInfoGlobal].numRotations > 10";
+"RANK_1_DESC_1" = "Go 10 Laps in a single life.";
+"RANK_1_COND_1" = "[GameInfoGlobal sharedGameInfoGlobal].numRotations > 10";
 
-"DESC_2" = "Collect 50 coins in a single life.";
+"RANK_1_DESC_2" = "Collect 50 coins in a single life.";
 "COND_2" = "[GameInfoGlobal sharedGameInfoGlobal].numCoins >= 50";
 
-"DESC_3" = "Skim past 3 “X’s” in a single life.";
-"COND_3" = "[GameInfoGlobal sharedGameInfoGlobal].closeCalls >= 3";
+"RANK_1_DESC_3" = "Skim past 3 “X’s” in a single life.";
+"RANK_1_COND_3" = "[GameInfoGlobal sharedGameInfoGlobal].closeCalls >= 3";
 
 /* Rank 2 */
-"DESC_4" = "Collect 3 coins in a single scratch.";
-"COND_4" = "";
+"RANK_2_DESC_1" = "Collect 3 coins in a single scratch.";
+"RANK_2_COND_1" = "";
 
-"DESC_5" = "Get a score of 200.";
-"COND_5" = "[GameInfoGlobal sharedGameInfoGlobal].score >= 200";
+"RANK_2_DESC_2" = "Get a score of 200.";
+"RANK_2_COND_2" = "[GameInfoGlobal sharedGameInfoGlobal].score >= 200";
 
-"DESC_6" = "Survive for 60 seconds without dying.";
-"COND_6" = "";
+"RANK_2_DESC_3" = "Survive for 60 seconds without dying.";
+"RANK_2_COND_3" = "";
 
 /* Rank 3 */
-"DESC_7" = "Kill 4 bombs with a shield.";
-"COND_7" = "";
-"DESC_8" = "Spin the same bomb Clockwise then immediately Counter clockwise.";
-"COND_8" = "";
-"DESC_9" = "Get a score of 1000.";
-"COND_9" = "[GameInfoGlobal sharedGameInfoGlobal].score >= 1000";
+"RANK_3_DESC_1" = "Kill 4 bombs with a shield.";
+"RANK_3_COND_1" = "";
+"RANK_3_DESC_2" = "Spin the same bomb Clockwise then immediately Counter clockwise.";
+"RANK_3_COND_2" = "";
+"RANK_3_DESC_3" = "Get a score of 1000.";
+"RANK_3_COND_3" = "[GameInfoGlobal sharedGameInfoGlobal].score >= 1000";
 
 /* Rank 4 */
-"DESC_10" = "Go 30 laps in a single life.";
-"COND_10" = "[GameInfoGlobal sharedGameInfoGlobal].numRotations >= 30";
-"DESC_11" = "In a single life get a x10 multiplier then drop it to x1.";
-"COND_11" = "";
-"DESC_12" = "Maintain a multiplier of at least x10 for 2 minutes.";
-"COND_12" = "";
+"RANK_4_DESC_1" = "Go 30 laps in a single life.";
+"RANK_4_COND_1" = "[GameInfoGlobal sharedGameInfoGlobal].numRotations >= 30";
+"RANK_4_DESC_2" = "In a single life get a x10 multiplier then drop it to x1.";
+"RANK_4_COND_2" = "";
+"RANK_4_DESC_3" = "Maintain a multiplier of at least x10 for 2 minutes.";
+"RANK_4_COND_3" = "";
 
 /* Rank 5 */
-"DESC_13" = "In a single life, spend a total of 2 minutes in the outer ring.";
-"COND_13" = "";
-"DESC_14" = "Scratch 40 times in a single revolution.";
-"COND_14" = "";
+"RANK_5_DESC_1" = "In a single life, spend a total of 2 minutes in the outer ring.";
+"RANK_5_COND_1" = "";
+"RANK_5_DESC_2" = "Scratch 40 times in a single revolution.";
+"RANK_5_COND_2" = "";
+"RANK_5_DESC_3" = "Scratch 40 times in a single revolution.";
+"RANK_5_COND_3" = "";
+
+/* any time achievements */
+"DESC_1" = "Rank 1";
+"COND_1" = "Complete the goals to earn Rank 1";
+
+"DESC_2" = "Rank 2";
+"COND_2" = "Complete the goals to earn Rank 2";
+
+"DESC_3" = "Rank 3";
+"COND_3" = "Complete the goals to earn Rank 3";
+
+"DESC_4" = "Rank 4";
+"COND_4" = "Complete the goals to earn Rank 4";
+
+"DESC_5" = "Rank 5";
+"COND_5" = "Complete the goals to earn Rank 5";
+
+"DESC_6" = "Rank rewind";
+"COND_6" = "After earning rank 5, cash out and start over";
+
+"DESC_7" = "Rank 5 again";
+"COND_7" = "After cashing out, earn rank 5 again";
+
+"DESC_8" = "Wedding DJ";
+"COND_8" = "Play 15 rounds of rotato";
+
+"DESC_9" = "Club DJ";
+"COND_9" = "Go 1000 total revolutions";
+
+"DESC_10" = "Numismatist apprentice";
+"COND_10" = "Collect 1000 coins";
+
+"DESC_11" = "Numismatist";
+"COND_11" = "Collect 5000 coins";
+
+"DESC_12" = "McDuck";
+"COND_12" = "Collect 1000000 coins";
+
+"DESC_13" = "Yo-yo";
+"COND_13" = "Go 40 revolutions in a single life";
+
+"DESC_14" = "Washing machine";
+"COND_14" = "Go 70 revolutions in a single life";
+
+"DESC_15" = "Centrifuge";
+"COND_15" = "Go 100 revolutions in a single life";
+
+"DESC_16" = "Artful dodger";
+"COND_16" = "Get a multiplier of 10";
+
+"DESC_17" = "Gifted dodger";
+"COND_17" = "Get a multiplier of 20";
+
+"DESC_18" = "Masterful dodger";
+"COND_18" = "Get a multiplier of 30";
+
+"DESC_19" = "Minesweeper";
+"COND_19" = "Kill x bombs with a single shield";
+
+"DESC_20" = "Minesweeper colonel";
+"COND_20" = "Kill x +5 bombs with a single shield";
+
+"DESC_21" = "Minesweeper general";
+"COND_21" = "Kill x + 7 bombs with a single shield";
+
+
+
+
+
+
+
+
+
+
+
+
+
