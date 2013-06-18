@@ -59,8 +59,8 @@
         !hadCloseCall && ![GameLayer sharedGameLayer].player.hasShield) {
         [[GameLayer sharedGameLayer].multiplier incrementMultiplier:1];
         hadCloseCall = YES;
-        
-        [GameInfoGlobal sharedGameInfoGlobal].closeCalls++;
+       
+        [GameInfoGlobal sharedGameInfoGlobal].closeCallsThisLife++;
 
         if ([GameLayer sharedGameLayer].player.direction == kMoveInToOut)
         {
@@ -96,9 +96,6 @@
     } else {
         // update end-of-game statistics
         [[[GameInfoGlobal sharedGameInfoGlobal] statsContainer] writeStats];
-        
-        // reset any per-game data tracking
-        [[GameInfoGlobal sharedGameInfoGlobal] resetPerLifeStatistics];
         
         if ([GameLayer sharedGameLayer].gameOverLayer != nil)
         {

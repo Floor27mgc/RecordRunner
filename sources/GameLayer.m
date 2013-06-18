@@ -380,6 +380,7 @@ static GameLayer *sharedGameLayer;
         [GameInfoGlobal sharedGameInfoGlobal].numRotationsThisLife++;
         [GameInfoGlobal sharedGameInfoGlobal].numDegreesRotatedThisLife -= 360;
         [GameInfoGlobal sharedGameInfoGlobal].scratchesThisRevolution = 0;
+        [GameInfoGlobal sharedGameInfoGlobal].lifetimeRevolutions++;
     }
     
     // check for accomplished achievements and log if any achieved
@@ -450,20 +451,6 @@ static GameLayer *sharedGameLayer;
     }
     
     return NO;
-}
-
-// -----------------------------------------------------------------------------------
-- (int) depositCoinsToBank
-{
-    int bankBalance = [[NSUserDefaults standardUserDefaults] integerForKey:@"coinBank"];
-
-    bankBalance += [_score getScore];
-    
-    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
-    [standardUserDefaults setInteger:bankBalance forKey:@"coinBank"];
-    [standardUserDefaults synchronize];
-    
-    return bankBalance;
 }
 
 // -----------------------------------------------------------------------------------

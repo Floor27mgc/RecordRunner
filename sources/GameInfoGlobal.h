@@ -18,6 +18,7 @@ typedef enum {
 @interface GameInfoGlobal : NSObject
 
 - (void) resetPerLifeStatistics;
+- (void) logLifeTimeAchievements;
 
 + (GameInfoGlobal *) sharedGameInfoGlobal;
 @property (nonatomic,assign) ENUM_GAME_MODE_T gameMode;
@@ -36,5 +37,8 @@ typedef enum {
 @property (nonatomic, assign) int coinsThisScratch;
 @property (nonatomic, assign) int bombsKilledThisShield;
 @property (nonatomic, assign) int timeInOuterRingThisLife;
+@property (nonatomic, assign) int coinsInBank;
+@property (nonatomic, assign) int lifetimeRevolutions;
+@property (nonatomic, assign) int lifetimeRoundsPlayed;
 
 @end

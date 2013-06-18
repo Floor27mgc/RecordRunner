@@ -76,7 +76,7 @@ typedef enum {
 
 // reset high score to zero
 - (void) resetHighScore;
-
+ 
 // add coins to persistent coin bank
 - (int) depositCoinsToBank;
 

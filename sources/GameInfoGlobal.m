@@ -25,6 +25,9 @@
 @synthesize coinsThisScratch;
 @synthesize bombsKilledThisShield;
 @synthesize timeInOuterRingThisLife;
+@synthesize coinsInBank;
+@synthesize lifetimeRevolutions;
+@synthesize lifetimeRoundsPlayed;
 
 static GameInfoGlobal *sharedGameInfoGlobal;
 
@@ -54,10 +57,41 @@ static GameInfoGlobal *sharedGameInfoGlobal;
         
         bombsKilledThisShield = 0;
         
+        coinsInBank = [[NSUserDefaults standardUserDefaults] integerForKey:@"coinBank"];
+        
+        lifetimeRevolutions =
+            [[NSUserDefaults standardUserDefaults] integerForKey:@"lifetimeRevolutions"];
+        
+        lifetimeRoundsPlayed =
+            [[NSUserDefaults standardUserDefaults] integerForKey:@"lifetimeRoundsPlayed"];
+        
+        NSLog(@"Coin bank %d lifetimeRevolutions %d lifetimeRoundsPlayed %d", coinsInBank,
+              lifetimeRevolutions, lifetimeRoundsPlayed);
+        
         statsContainer = [[StatisticsContainer alloc] init];
     }
     return self;
 }
+
+// -----------------------------------------------------------------------------------
+- (void) logLifeTimeAchievements
+{
+    // deposit the coins
+    [GameInfoGlobal sharedGameInfoGlobal].coinsInBank +=
+        [GameInfoGlobal sharedGameInfoGlobal].numCoinsThisLife;
+    
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    [standardUserDefaults setInteger:coinsInBank forKey:@"coinBank"];
+    
+    // update the lifetime revolution
+    [standardUserDefaults setInteger:lifetimeRevolutions forKey:@"lifetimeRevolutions"];
+    
+    // update the lifetime revolution
+    [standardUserDefaults setInteger:lifetimeRoundsPlayed forKey:@"lifetimeRoundsPlayed"];
+
+    [standardUserDefaults synchronize];
+}
+
 
 // -----------------------------------------------------------------------------------
 - (void) resetPerLifeStatistics

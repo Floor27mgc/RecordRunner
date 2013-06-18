@@ -56,7 +56,7 @@
     
     switch (condIndex) {
             // Go 10 Laps in a single life.
-        case 1:
+        /*case 1:
             achieved = ([GameInfoGlobal sharedGameInfoGlobal].numRotationsThisLife
                         >= 10);
             break;
@@ -132,54 +132,78 @@
             
             // UNKNOWN
         case 15:
-            break;
+            break;*/
             
             // Rank 1
         case 16:
+            achieved = ([GameInfoGlobal sharedGameInfoGlobal].numRotationsThisLife >= 10) &&
+                        ([GameInfoGlobal sharedGameInfoGlobal].numCoinsThisLife >= 50) &&
+                        ([GameInfoGlobal sharedGameInfoGlobal].closeCallsThisLife >= 3);
             break;
             
             // Rank 2
         case 17:
+            achieved = ([GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch >= 3) &&
+                        ([GameInfoGlobal sharedGameInfoGlobal].score >= 200) &&
+                        ([[GameInfoGlobal sharedGameInfoGlobal].statsContainer
+                         getCurrentGameTimeElapsed] > 60);
             break;
             
             // Rank 3
         case 18:
+            achieved = ([GameInfoGlobal sharedGameInfoGlobal].bombsKilledThisShield >=4) &&
+                        ([GameInfoGlobal sharedGameInfoGlobal].score >= 1000);
             break;
             
             // Rank 4
         case 19:
+            achieved = ([GameInfoGlobal sharedGameInfoGlobal].numRotationsThisLife
+                        >= 30) &&
+                        (([[GameLayer sharedGameLayer].multiplier highestMultiplierValueEarned]
+                          >= 10)
+                         && [[GameLayer sharedGameLayer].multiplier getMultiplier] == 1) &&
+                        ([[GameLayer sharedGameLayer].multiplier secondsAbove10x] > 120);
             break;
             
             // Rank 5
         case 20:
+            achieved = ([GameInfoGlobal sharedGameInfoGlobal].timeInOuterRingThisLife >= 120) &&
+                        ([GameInfoGlobal sharedGameInfoGlobal].scratchesThisRevolution >= 40);
             break;
             
             // After earning rank 5, cash out and start over
         case 21:
+            // MECHANISMS NOT IN PLACE -- HIDDEN ON GAME CENTER
             break;
             
             // After cashing out, earn rank 5 again
         case 22:
+            // MECHANISMS NOT IN PLACE -- HIDDEN ON GAME CENTER
             break;
             
             // Play 15 rounds of rotato
         case 23:
+            achieved = ([GameInfoGlobal sharedGameInfoGlobal].lifetimeRoundsPlayed >= 15);
             break;
             
             // Go 1000 total revolutions
         case 24:
+            achieved = ([GameInfoGlobal sharedGameInfoGlobal].lifetimeRevolutions >= 1000);
             break;
             
             // Collect 1000 coins
         case 25:
+            achieved = ([GameInfoGlobal sharedGameInfoGlobal].coinsInBank >= 1000);
             break;
             
             // Collect 5000 coins
         case 26:
+            achieved = ([GameInfoGlobal sharedGameInfoGlobal].coinsInBank >= 5000);
             break;
             
             // Collect 1000000 coins
         case 27:
+            achieved = ([GameInfoGlobal sharedGameInfoGlobal].coinsInBank >= 1000000);
             break;
             
             // Go 40 revolutions in a single life
@@ -244,30 +268,6 @@
     }
     
     return achieved;
-    
-    //NSLog(@"%@ - %d", achievementCondition, [achievementCondition boolValue]);
-    //return (previouslyAchieved || [achievementCondition boolValue]);
-  //  NSPredicate * pred = [NSPredicate predicateWithFormat:achievementCondition];
-    //NSPredicate * pred = [NSPredicate predicateWithFormat:@"[GameInfoGlobal sharedGameInfoGlobal].closeCalls >= 3"];
-    //return ([pred evaluateWithObject:nil]);
-/*    NSPredicate *predicate1=[NSPredicate predicateWithFormat:@"1>0"];
-    NSPredicate *predicate2=[NSPredicate predicateWithFormat:@"1<0"];
-    BOOL    ok1=[predicate1 evaluateWithObject:nil];
-    BOOL    ok2=[predicate2 evaluateWithObject:nil];
-    NSLog(@"ok1: %d  ok2: %d",ok1,ok2);*/
-    //NSLog(@"%@", achievementCondition);
-    
-    /*NSString * obj1 = @"[GameInfoGlobal sharedGameInfoGlobal].closeCalls";
-    NSString * obj2 = @"3";
-    NSPredicate * pred = [NSPredicate predicateWithFormat:@"%@ >= %@",obj1,obj2];*/
-    //NSExpression * expr = [NSExpression expressionWithFormat:achievementCondition];
-    //id exprVal = [expr expressionValueWithObject:nil context:nil];
-    //NSLog(@"exprVal %@", exprVal);
-    /*BOOL bv = [pred evaluateWithObject:nil];
-    NSLog(@"pred bv is %d", bv);
-    return !bv;*/
-    //return ([pred evaluateWithObject:nil]);
-    //return ([GameInfoGlobal sharedGameInfoGlobal].closeCalls >= 3);
 }
 
 // -----------------------------------------------------------------------------------
@@ -275,6 +275,8 @@
 {
     if (!alreadyLogged) {
         if (isGCAchievement) {
+            NSLog(@"logging GC achievement %@ with percent complete %f",
+                  achievementDescription, gcAchievement.percentComplete);
             [gcAchievement reportAchievementWithCompletionHandler:^(NSError *error)
              {
                  if (error != nil)

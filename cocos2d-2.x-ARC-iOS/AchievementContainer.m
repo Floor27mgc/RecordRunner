@@ -59,9 +59,9 @@
              }
          }];
         
-        int conditionIndex = 1;
+        int conditionIndex = 16;
         // load the inner-rank achievements
-        for (int i = 1; i <= intNumRanks; ++i) {
+        /*for (int i = 1; i <= intNumRanks; ++i) {
             for (int j = 1; j <= numAchievementsPerRank; ++j) {
                 NSString * curRankDesc = [NSString stringWithFormat:@"%@%d%@%d",
                                        @"RANK_", i, @"_DESC_", j];
@@ -77,7 +77,7 @@
                 [allAchievements addObject:newAchievement];
                 ++conditionIndex;
             }
-        }
+        }*/
         
         // load all the non-rank achievements
         for (int i = 1; i <= totalNumAchievements; ++i) {
@@ -112,7 +112,7 @@
         }
         
         // load up the current rank's achievements
-        [self LoadCurrentRankAchievements];
+        //[self LoadCurrentRankAchievements];
         
     }
     
@@ -151,7 +151,7 @@
 // -----------------------------------------------------------------------------------
 - (void) LoadCurrentRankAchievements
 {
-    GKAchievement * ach = [achievementsDictionary objectForKey:@"1"];
+    GKAchievement * ach = [achievementsDictionary objectForKey:@"16"];
     if (ach.percentComplete < 100) {
         NSLog(@"loading rank 1");
         [self LoadRankAchievements:1];
@@ -159,28 +159,28 @@
         return;
     }
     
-    ach = [achievementsDictionary objectForKey:@"2"];
+    ach = [achievementsDictionary objectForKey:@"17"];
     if (ach.percentComplete < 100) {
         [self LoadRankAchievements:2];
         currentRank = 2;
         return;
     }
     
-    ach = [achievementsDictionary objectForKey:@"3"];
+    ach = [achievementsDictionary objectForKey:@"18"];
     if (ach.percentComplete < 100) {
         [self LoadRankAchievements:3];
         currentRank = 3;
         return;
     }
     
-    ach = [achievementsDictionary objectForKey:@"4"];
+    ach = [achievementsDictionary objectForKey:@"19"];
     if (ach.percentComplete < 100) {
         [self LoadRankAchievements:4];
         currentRank = 4;
         return;
     }
     
-    ach = [achievementsDictionary objectForKey:@"5"];
+    ach = [achievementsDictionary objectForKey:@"20"];
     if (ach.percentComplete < 100) {
         [self LoadRankAchievements:5];
         currentRank = 5;
@@ -196,19 +196,19 @@
 - (BOOL) CheckCurrentAchievements
 {
     
-    NSLog(@"there are %d current and %d currentRank achievements",
-          [currentAchievements count], [currentRankAchievements count]);
+    //NSLog(@"there are %d current and %d currentRank achievements",
+    //      [currentAchievements count], [currentRankAchievements count]);
     for (Achievement * achievement in currentAchievements) {
         if ([achievement Achieved]) {
             return YES;
         }
     }
-    
+    /*
     for (Achievement * achievement in currentRankAchievements) {
         if ([achievement Achieved]) {
             return YES;
         }
-    }
+    }*/
     
     return NO;
 }
@@ -224,7 +224,7 @@
     }
     
     // log current ranked achievements
-    int numRankAchieved = 0;
+    /*int numRankAchieved = 0;
     for (Achievement * ach in currentRankAchievements) {
         if ([ach Achieved]) {
             numRankAchieved++;
@@ -250,7 +250,7 @@
         [ach Log];
         
         [self LoadCurrentRankAchievements];
-    }
+    }*/
 }
 
 @end

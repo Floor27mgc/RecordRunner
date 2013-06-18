@@ -47,7 +47,7 @@
 // -----------------------------------------------------------------------------------
 - (int) getCurrentGameTimeElapsed
 {
-    return (_abs([_gameStartTime timeIntervalSinceNow]));
+    return (abs([_gameStartTime timeIntervalSinceNow]));
 }
 
 // -----------------------------------------------------------------------------------

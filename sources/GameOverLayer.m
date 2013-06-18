@@ -7,6 +7,7 @@
 //
 
 #import "GameLayer.h"
+#import "GameInfoGlobal.h"
 #import "GameOverLayer.h"
 #import "CCBAnimationManager.h"
 #import "CCBReader.h"
@@ -43,6 +44,10 @@
            highScore:(int) myHighScore
 {
     NSLog(@"value of finalScoreLabel: %@", self.finalScoreLabel.string);
+    
+    [GameInfoGlobal sharedGameInfoGlobal].lifetimeRoundsPlayed++;
+    [[GameInfoGlobal sharedGameInfoGlobal] logLifeTimeAchievements];
+    [[GameInfoGlobal sharedGameInfoGlobal] resetPerLifeStatistics];
     
     [self.finalScoreLabel setString:[NSString stringWithFormat:@"%d",
                                          myFinalScore]];

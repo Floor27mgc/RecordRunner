@@ -46,7 +46,7 @@
                 arrivedAtOuterTrack = [NSDate date];
             } else {
                 int elapsed = [arrivedAtOuterTrack timeIntervalSinceNow];
-                [GameInfoGlobal sharedGameInfoGlobal].timeInOuterRing += elapsed;
+                [GameInfoGlobal sharedGameInfoGlobal].timeInOuterRingThisLife += elapsed;
                 arrivedAtOuterTrack = [NSDate date];
             }
             
@@ -98,7 +98,7 @@
 {
     if( (self=[super init]) )
     {
-        NSLog(@"init anim man: %p, user obj: %p", self.animationManager, self.userObject);
+        //NSLog(@"init anim man: %p, user obj: %p", self.animationManager, self.userObject);
         direction = kMoveStill;
         self.radius = PLAYER_RADIUS_INNER_MOST;
 
