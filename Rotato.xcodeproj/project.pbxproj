@@ -556,6 +556,8 @@
 		DC0C4D60154AB59800B4B727 /* vec2.c in Sources */ = {isa = PBXBuildFile; fileRef = DC0C4C7E154AB59800B4B727 /* vec2.c */; };
 		DC0C4D61154AB59800B4B727 /* vec3.c in Sources */ = {isa = PBXBuildFile; fileRef = DC0C4C7F154AB59800B4B727 /* vec3.c */; };
 		DC0C4D62154AB59800B4B727 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = DC0C4C80154AB59800B4B727 /* vec4.c */; };
+		E54C884117766B8200D546F2 /* parts_record_inner.png in Resources */ = {isa = PBXBuildFile; fileRef = E54C883F17766B8200D546F2 /* parts_record_inner.png */; };
+		E54C884217766B8200D546F2 /* parts_record_inner-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E54C884017766B8200D546F2 /* parts_record_inner-hd.png */; };
 		E54E158B172C7A2A0022DACE /* bannerRed.png in Resources */ = {isa = PBXBuildFile; fileRef = E54E1589172C7A2A0022DACE /* bannerRed.png */; };
 		E54E158C172C7A2A0022DACE /* bannerRed-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E54E158A172C7A2A0022DACE /* bannerRed-hd.png */; };
 		E58F3A25172C13DE00C00E9C /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = E58F3A23172C13DE00C00E9C /* spark.png */; };
@@ -1185,6 +1187,8 @@
 		DC0C4C81154AB59800B4B727 /* LICENSE_cocos2d.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_cocos2d.txt; sourceTree = "<group>"; };
 		DC0C4C82154AB59800B4B727 /* LICENSE_CocosDenshion.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_CocosDenshion.txt; sourceTree = "<group>"; };
 		DC0C4C83154AB59800B4B727 /* LICENSE_Kazmath.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_Kazmath.txt; sourceTree = "<group>"; };
+		E54C883F17766B8200D546F2 /* parts_record_inner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_record_inner.png; path = Resources/Graphics/parts_record_inner.png; sourceTree = SOURCE_ROOT; };
+		E54C884017766B8200D546F2 /* parts_record_inner-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_record_inner-hd.png"; path = "Resources/Graphics/parts_record_inner-hd.png"; sourceTree = SOURCE_ROOT; };
 		E54E1589172C7A2A0022DACE /* bannerRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bannerRed.png; path = Resources/Graphics/bannerRed.png; sourceTree = SOURCE_ROOT; };
 		E54E158A172C7A2A0022DACE /* bannerRed-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bannerRed-hd.png"; path = "Resources/Graphics/bannerRed-hd.png"; sourceTree = SOURCE_ROOT; };
 		E58F3A23172C13DE00C00E9C /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = Resources/Graphics/spark.png; sourceTree = SOURCE_ROOT; };
@@ -1304,6 +1308,8 @@
 				E54E158A172C7A2A0022DACE /* bannerRed-hd.png */,
 				E54E1589172C7A2A0022DACE /* bannerRed.png */,
 				083B08F5170AB0EC00EF0DB0 /* blank-hd.png */,
+				E54C883F17766B8200D546F2 /* parts_record_inner.png */,
+				E54C884017766B8200D546F2 /* parts_record_inner-hd.png */,
 				083B08F6170AB0EC00EF0DB0 /* blank.png */,
 				083B08F7170AB0EC00EF0DB0 /* bug.png */,
 				083B08F8170AB0EC00EF0DB0 /* checkbox_tick-hd.png */,
@@ -2714,6 +2720,8 @@
 				E54E158B172C7A2A0022DACE /* bannerRed.png in Resources */,
 				E54E158C172C7A2A0022DACE /* bannerRed-hd.png in Resources */,
 				859E2A94175D45E000EE7916 /* achievement_map.strings in Resources */,
+				E54C884117766B8200D546F2 /* parts_record_inner.png in Resources */,
+				E54C884217766B8200D546F2 /* parts_record_inner-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2970,8 +2978,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2989,8 +2997,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Rotato;
-				PROVISIONING_PROFILE = "F2D48914-4000-4E0B-931E-39C5990D2988";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F2D48914-4000-4E0B-931E-39C5990D2988";
+				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DCB72B6-CF7B-441A-811C-871D021488BB";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -3001,8 +3009,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2d-2.x-ARC-iOS/Prefix.pch";
@@ -3019,8 +3027,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Rotato;
-				PROVISIONING_PROFILE = "F2D48914-4000-4E0B-931E-39C5990D2988";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F2D48914-4000-4E0B-931E-39C5990D2988";
+				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BF7A02AA-8BD8-46DF-84D3-28BF7AA80356";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
