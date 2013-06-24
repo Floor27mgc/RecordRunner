@@ -596,6 +596,13 @@ static GameLayer *sharedGameLayer;
 // -----------------------------------------------------------------------------------
 - (BOOL) moveThePlayer
 {
+    if (player.playerRadialSpeed == 0 && pendingTaps > 0) {
+        --pendingTaps;
+        return YES;
+    } else {
+        return NO;
+    }
+    /*
     if (pendingTaps <= 0) {
         return NO;
     }
@@ -632,7 +639,7 @@ static GameLayer *sharedGameLayer;
         --pendingTaps;
     }
     
-    return move;
+    return move;*/
 }
 
 // -----------------------------------------------------------------------------------
@@ -640,7 +647,17 @@ static GameLayer *sharedGameLayer;
 {
     [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer at:TAPS_STATS] tick];
     
-    ++pendingTaps;
+    // the player is moving
+    if (player.playerRadialSpeed != 0) {
+
+        // buffer the tap, if not already registered
+        if (pendingTaps == 0) {
+            ++pendingTaps;
+        }
+    } else {
+        // player is not moving
+        ++pendingTaps;
+    }
     
 /*CCNode* explosion = [CCBReader nodeGraphFromFile:@"Explosion.ccbi"];
     explosion.position = self.position;
