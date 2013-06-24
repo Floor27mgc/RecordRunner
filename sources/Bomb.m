@@ -13,7 +13,8 @@
 
 @implementation Bomb
 @synthesize gameObjectUpdateTick;
-@synthesize hadCloseCall;
+@synthesize closeCallAbove;
+@synthesize closeCallBelow;
 
 // -----------------------------------------------------------------------------------
 - (id) init
@@ -21,7 +22,8 @@
     if( (self=[super init]) )
     {
         gameObjectUpdateTick = 0;
-        hadCloseCall = NO;
+        closeCallAbove = NO;
+        closeCallBelow = NO;
         self.radiusHitBox = (COMMON_GRID_WIDTH/4);
     }
     return (self);
@@ -47,35 +49,61 @@
                                freePool:[GameLayer sharedGameLayer].bombFreePool];
         return;
     }
-    [self encounterWithPlayer];
     
-    // detect a "close call" with a bomb
-    float distance = ccpDistance([GameLayer sharedGameLayer].player.position,
-                                 self.position);
-    
-    // increment the score muliplier if we had a close call
-    // But don't increment if the shield is active.
-    if (abs(distance - self.radiusHitBox) < CLOSE_HIT_THRESHOLD_PIXEL &&
-        !hadCloseCall && ![GameLayer sharedGameLayer].player.hasShield) {
-        [[GameLayer sharedGameLayer].multiplier incrementMultiplier:1];
-        hadCloseCall = YES;
-       
-        [GameInfoGlobal sharedGameInfoGlobal].closeCallsThisLife++;
-
-        if ([GameLayer sharedGameLayer].player.direction == kMoveInToOut)
-        {
+    // if we do not hit the player now and the player is moving, see if we
+    // have a "close call"
+    if (![self encounterWithPlayer] &&
+        ([GameLayer sharedGameLayer].player.playerRadialSpeed > 0)) {
+        
+        float distance = ccpDistance([GameLayer sharedGameLayer].player.position,
+                                     self.position);
+        
+        // increment the score muliplier if we had a close call
+        // But don't increment if the shield is active.
+        if (abs(distance - self.radiusHitBox) < CLOSE_HIT_THRESHOLD_PIXEL &&
+            ![GameLayer sharedGameLayer].player.hasShield) {
             
-           [self.animationManager runAnimationsForSequenceNamed:@"CounterClockWiseRotation"];
-        }
-        else 
-        {
-            [self.animationManager runAnimationsForSequenceNamed:@"ClockWiseRotation"];
-        }
-    }
+            // see if we are above or below the player
+            int angleRelation = (int)self.angleRotated % 360;
+            
+            BOOL uniqueHit = NO;
+            if (angleRelation > (360 - CLOSE_HIT_THRESHOLD_PIXEL)) {
+                if (!closeCallAbove) {
+                    closeCallAbove = YES;
+                    uniqueHit = YES;
+                }
+            } else {
+                if (!closeCallBelow) {
+                    closeCallBelow = YES;
+                    uniqueHit = YES;
+                }
+            }
+            
+            // only update multiplier and run animations if this is the first time
+            // we've triggered the close call on this side
+            if (uniqueHit) {
+                [[GameLayer sharedGameLayer].multiplier incrementMultiplier:1];
+                
+                [GameInfoGlobal sharedGameInfoGlobal].closeCallsThisLife++;
 
-    // reset close call flag when on other side of 
-    if (hadCloseCall && ((int)distance > 180 && (int)distance < 200)) {
-        hadCloseCall = NO;
+                if ([GameLayer sharedGameLayer].player.direction == kMoveInToOut)
+                {
+                    
+                   [self.animationManager runAnimationsForSequenceNamed:@"CounterClockWiseRotation"];
+                }
+                else 
+                {
+                    [self.animationManager runAnimationsForSequenceNamed:@"ClockWiseRotation"];
+                }
+            }
+        }
+
+        // reset close call flag when on other side of 
+        if ((closeCallBelow || closeCallAbove) &&
+            ((int)distance > 180 && (int)distance < 200)) {
+            closeCallAbove = NO;
+            closeCallBelow = NO;
+        }
     }
 }
 
