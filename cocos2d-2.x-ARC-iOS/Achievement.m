@@ -260,6 +260,8 @@
     if (achieved) {
         NSLog(@"achieved %@!", achievementDescription);
         
+        //$$$ACHIEVE THIS ONE/////
+        
         if (isGCAchievement) {
             gcAchievement.percentComplete = 100.0;
         }

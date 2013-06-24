@@ -32,6 +32,8 @@
            highScore:(int) myHighScore;
 - (void) pressedFeedback:(id)sender;
 
+
+@property BOOL isQuitting;
 @property (nonatomic, strong) CCLabelTTF * finalScoreLabel;
 @property (nonatomic, strong) CCLabelTTF * finalMultiplierLabel;
 @property (nonatomic, strong) CCLabelTTF * highScoreLabel;
