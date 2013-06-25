@@ -31,7 +31,7 @@
 {
     // this is a negative movement down the Y-axis, the Coin is falling
     // from the top of the screen
-    [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER, self.radius,
+    [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_RECORD_CENTER, self.radius,
                                              self.angleRotated)];
     self.angleRotated = self.angleRotated + self.gameObjectAngularVelocity;
     

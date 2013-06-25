@@ -57,7 +57,7 @@
 {
     [GameLayer sharedGameLayer].player.gameObjectAngularVelocity = 0;
     [GameLayer sharedGameLayer].player.angleRotated = 0;
-    [[GameLayer sharedGameLayer].player moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER,
+    [[GameLayer sharedGameLayer].player moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_RECORD_CENTER,
                                              [GameLayer sharedGameLayer].player.radius,
                                              [GameLayer sharedGameLayer].player.angleRotated)];
 }

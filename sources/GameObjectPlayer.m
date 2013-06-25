@@ -36,7 +36,7 @@
         // Player is not moving.  Either it's in the inner most track
         // or in the outermost track
         self.angleRotated = self.angleRotated - self.gameObjectAngularVelocity;
-        [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER,
+        [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_RECORD_CENTER,
                                                  self.radius, self.angleRotated)];
         self.rotation = self.angleRotated - (self.radius == PLAYER_RADIUS_INNER_MOST?0:180);
         
@@ -67,7 +67,7 @@
             self.radius = PLAYER_RADIUS_INNER_MOST;
         }
 
-        [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_SCREEN_CENTER,
+        [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_RECORD_CENTER,
                                                  self.radius,
                                                  self.angleRotated)];
         

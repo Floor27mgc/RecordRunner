@@ -78,8 +78,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "96"
          endingLineNumber = "96"
-         landmarkName = "-init"
-         landmarkType = "5">
+         landmarkName = "@implementation GameObjectPlayer"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -91,7 +91,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "87"
          endingLineNumber = "87"
-         landmarkName = "-init"
+         landmarkName = "-showNextFrame"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -104,7 +104,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "83"
          endingLineNumber = "83"
-         landmarkName = "-init"
+         landmarkName = "-showNextFrame"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -117,7 +117,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "109"
          endingLineNumber = "109"
-         landmarkName = "-setSheilded:"
+         landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -271,7 +271,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "265"
          endingLineNumber = "265"
-         landmarkName = "-onExit"
+         landmarkName = "-onEnter"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -492,7 +492,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "105"
          endingLineNumber = "105"
-         landmarkName = "-setSheilded:"
+         landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -505,7 +505,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "104"
          endingLineNumber = "104"
-         landmarkName = "-setSheilded:"
+         landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -752,7 +752,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "123"
          endingLineNumber = "123"
-         landmarkName = "-willHitBomb"
+         landmarkName = "-setSheilded:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -830,7 +830,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "136"
          endingLineNumber = "136"
-         landmarkName = "-willHitBomb"
+         landmarkName = "-changeDirection"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -856,7 +856,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "130"
          endingLineNumber = "130"
-         landmarkName = "-willHitBomb"
+         landmarkName = "-changeDirection"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -869,7 +869,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "131"
          endingLineNumber = "131"
-         landmarkName = "-willHitBomb"
+         landmarkName = "-changeDirection"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -908,7 +908,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "276"
          endingLineNumber = "276"
-         landmarkName = "-dealloc"
+         landmarkName = "-onExit"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1266,7 +1266,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "84"
          endingLineNumber = "84"
-         landmarkName = "-handleCollision"
+         landmarkName = "-showNextFrame"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1292,7 +1292,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "80"
          endingLineNumber = "80"
-         landmarkName = "-handleCollision"
+         landmarkName = "-showNextFrame"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1357,8 +1357,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "278"
          endingLineNumber = "278"
-         landmarkName = "-dealloc"
-         landmarkType = "5">
+         landmarkName = "@implementation GameLayer"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -1526,8 +1526,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "272"
          endingLineNumber = "272"
-         landmarkName = "@implementation GameLayer"
-         landmarkType = "3">
+         landmarkName = "-onExit"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"

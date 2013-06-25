@@ -237,7 +237,7 @@ static GameLayer *sharedGameLayer;
         _multiplier = (Multiplier *) [CCBReader nodeGraphFromFile:@"multiplier.ccbi"];
         [_multiplier prepare];
         [self addChild:_multiplier z:10];
-        _multiplier.position = ccp(160, 240);
+        _multiplier.position = ccp(COMMON_RECORD_CENTER_X, COMMON_RECORD_CENTER_Y);
         
         // input buffering structures
         pendingTaps = 0;
@@ -260,8 +260,8 @@ static GameLayer *sharedGameLayer;
 {
     [super onEnter];
     
-    player.position = ccp(COMMON_SCREEN_CENTER_X + PLAYER_RADIUS_INNER_MOST,
-                          COMMON_SCREEN_CENTER_Y);
+    player.position = ccp(COMMON_RECORD_CENTER_X + PLAYER_RADIUS_INNER_MOST,
+                          COMMON_RECORD_CENTER_Y);
     // Schedule a selector that is called every frame
     [self schedule:@selector(update:)];
     

@@ -39,7 +39,7 @@
                              -((COMMON_GRID_HEIGHT/2)));
         CGPathCloseSubpath(injectorHitBoxPath);
         dummyInjectorBox = [[CCNode alloc]init];
-        dummyInjectorBox.position = COMMON_SCREEN_CENTER;
+        dummyInjectorBox.position = COMMON_RECORD_CENTER;
     }
     return (self);
 }
@@ -57,9 +57,9 @@
     GameObjectBase * newObject = nil;
     int maxlimit;
     
-    CGPoint preferredLocation = ccp ((COMMON_SCREEN_CENTER_X +
+    CGPoint preferredLocation = ccp ((COMMON_RECORD_CENTER_X +
                                       RADIUS_FROM_TRACKNUM(trackNum)*cos(CC_DEGREES_TO_RADIANS(insertionAngle))),
-                                     (COMMON_SCREEN_CENTER_Y +
+                                     (COMMON_RECORD_CENTER_Y +
                                       RADIUS_FROM_TRACKNUM(trackNum)*sin(CC_DEGREES_TO_RADIANS(insertionAngle))));
     
     // If we happen to insert to where player is currently at,
