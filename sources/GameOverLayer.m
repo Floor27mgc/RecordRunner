@@ -19,6 +19,8 @@
 @synthesize highScoreLabel;
 @synthesize emailView;
 @synthesize emailViewController;
+@synthesize isQuitting;
+
 - (void) pressedNO:(id) sender
 {
     NSLog(@"pressed no!");
@@ -29,12 +31,15 @@
 
 - (void) pressedYES:(id) sender
 {
+    self.isQuitting = NO;
+    
     CCBAnimationManager* animationManager = self.userObject;
     NSLog(@"animationManager: %@", animationManager);
     [[GameLayer sharedGameLayer] resumeSchedulerAndActions];
     [animationManager runAnimationsForSequenceNamed:@"Pop out"];
     [[GameLayer sharedGameLayer] cleanUpPlayField];
     [[GameLayer sharedGameLayer].score setScoreValue:0];
+    
 }
 
 
@@ -69,15 +74,20 @@
     }];
 }
 
+//This quits the game
 - (void) pressedHome:(id) sender
 {
     NSLog(@"pressed HOME!");
-
-    // Load the mainMenu scene
-    CCScene* mainMenuScene = [CCBReader sceneWithNodeGraphFromFile:@"MainMenuScene.ccbi"];
+    self.isQuitting = YES;
     
-    // Go to the game scene
-    [[CCDirector sharedDirector] replaceScene:mainMenuScene];
+    
+    CCBAnimationManager* animationManager = self.userObject;
+    NSLog(@"animationManager: %@", animationManager);
+    [[GameLayer sharedGameLayer] resumeSchedulerAndActions];
+    [animationManager runAnimationsForSequenceNamed:@"Pop out"];
+    [[GameLayer sharedGameLayer] cleanUpPlayField];
+    [[GameLayer sharedGameLayer].score setScoreValue:0];
+    
 }
 
 - (void) pressedFeedback:(id)sender
@@ -107,7 +117,19 @@
 - (void) completedAnimationSequenceNamed:(NSString *)name
 {
     NSLog(@"%@",name);
+    
     if ([name compare:@"Pop out"] == NSOrderedSame) {
+        
+        //If the player pressed quit then you need to go to the main menu
+        if (isQuitting)
+        {
+            NSLog(@"POST ANIMATION: RUN THE QUIT!");
+            // Load the mainMenu scene
+            CCScene* mainMenuScene = [CCBReader sceneWithNodeGraphFromFile:@"MainMenuScene.ccbi"];
+            
+            // Go to the game scene
+            [[CCDirector sharedDirector] replaceScene:mainMenuScene];
+        }        
         self.visible = NO;
     }
 //    [[GameLayer sharedGameLayer] unschedule:@selector(update:)];

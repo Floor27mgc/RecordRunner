@@ -315,7 +315,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>gui_icon_player.png</string>
+							<string>parts_player.png</string>
 						</array>
 					</dict>
 					<dict>
