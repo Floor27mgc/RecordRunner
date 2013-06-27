@@ -24,11 +24,8 @@
 {
     if (self = [super init]) {
         self.animationManager = self.userObject;
-        self.multiplierValue = 1;
-        self.highestMultiplierValueEarned = 1;
-        self.timerLifeInSec = 0;
-        self.timeAboveTen = [NSDate distantFuture];
-        self.multiplierTime = [NSDate distantFuture];
+
+        [self reset];
     }
         
     return self;
@@ -38,10 +35,9 @@
 - (void) prepare
 {
     self.animationManager = self.userObject;
-    self.multiplierValue = 1;
-    self.timerLifeInSec = 0;
-    self.multiplierTime = [NSDate distantFuture];
-    multiplierLabel.color = ccWHITE;//ccMAGENTA;
+    multiplierLabel.color = ccWHITE;
+    
+    [self reset];
 }
 
 
@@ -60,13 +56,6 @@
         timeAboveTen = [NSDate date];
     }
     
-    // perform multiplier timing operations
-    timerLifeInSec += MULTIPLIER_LIFE_TIME_SEC;
-    
-    if (multiplierTime == [NSDate distantFuture]) {
-        multiplierTime = [NSDate date];
-    }
-    
     // increase speed if multiplier is above thresholds
     if (multiplierValue == SPEED_THRESHOLD_1 ||
         multiplierValue == SPEED_THRESHOLD_2 ||
@@ -83,6 +72,14 @@
     //    currentColor.r += 50;
     [self.multiplierLabel setColor:currentColor];
     [self.animationManager runAnimationsForSequenceNamed:@"bounce_multiplier"];
+
+    //timerLifeInSec += MULTIPLIER_LIFE_TIME_SEC;
+    timerLifeInSec = MULTIPLIER_LIFE_TIME_SEC;
+    
+    // perform multiplier timing operations
+    if (multiplierTime == [NSDate distantFuture]) {
+        multiplierTime = [NSDate date];
+    }
 }
 
 // -----------------------------------------------------------------------------------
@@ -92,6 +89,19 @@
         multiplierValue = 1;
     } else {
         multiplierValue -= amount;
+    }
+    
+    // reset the timer
+    if (multiplierValue > 1) {
+        [self.animationManager runAnimationsForSequenceNamed:@"bounce_multiplier"];
+        timerLifeInSec = MULTIPLIER_LIFE_TIME_SEC;
+        
+        // perform multiplier timing operations
+        if (multiplierTime == [NSDate distantFuture]) {
+            multiplierTime = [NSDate date];
+        }
+    } else {
+        timerLifeInSec = 0;
     }
     
     // stop timing if we're below 10x
@@ -129,6 +139,16 @@
 - (int) getMultiplier
 {
     return multiplierValue;
+}
+
+// -----------------------------------------------------------------------------------
+- (void) reset
+{
+    multiplierValue = 1;
+    highestMultiplierValueEarned = 1;
+    timerLifeInSec = 0;
+    timeAboveTen = [NSDate distantFuture];
+    multiplierTime = [NSDate distantFuture];
 }
 
 // -----------------------------------------------------------------------------------

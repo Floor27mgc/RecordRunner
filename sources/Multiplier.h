@@ -32,5 +32,6 @@
 - (void) showNextFrame;
 - (void) prepare;
 - (int) getMultiplier;
+- (void) reset;
 
 @end

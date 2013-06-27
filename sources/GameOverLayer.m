@@ -54,6 +54,9 @@
     [[GameInfoGlobal sharedGameInfoGlobal] logLifeTimeAchievements];
     [[GameInfoGlobal sharedGameInfoGlobal] resetPerLifeStatistics];
     
+    // reset the multiplier
+    [[GameLayer sharedGameLayer].multiplier reset];
+    
     [self.finalScoreLabel setString:[NSString stringWithFormat:@"%d",
                                          myFinalScore]];
     [self.finalMultiplierLabel setString:[NSString stringWithFormat:@"x%d",
