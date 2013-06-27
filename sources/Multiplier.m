@@ -67,6 +67,15 @@
         multiplierTime = [NSDate date];
     }
     
+    // increase speed if multiplier is above thresholds
+    if (multiplierValue == SPEED_THRESHOLD_1 ||
+        multiplierValue == SPEED_THRESHOLD_2 ||
+        multiplierValue == SPEED_THRESHOLD_3) {
+        
+        [[GameLayer sharedGameLayer] changeGameAngularVelocityByDegree:
+            SPEED_INCREASE_AMOUNT];
+    }
+    
     [self.multiplierLabel setString:[NSString stringWithFormat:@"x %d",
                                     multiplierValue]];
     
@@ -88,6 +97,15 @@
     // stop timing if we're below 10x
     if (multiplierValue < 10) {
         timeAboveTen = [NSDate distantFuture];
+    }
+    
+    // decrease speed if multiplier is drops below thresholds
+    if (multiplierValue == SPEED_THRESHOLD_1 - 1 ||
+        multiplierValue == SPEED_THRESHOLD_2 - 1 ||
+        multiplierValue == SPEED_THRESHOLD_3 - 1) {
+
+        [[GameLayer sharedGameLayer] changeGameAngularVelocityByDegree:
+            (-SPEED_INCREASE_AMOUNT)];
     }
     
     ccColor3B currentColor = multiplierLabel.color;

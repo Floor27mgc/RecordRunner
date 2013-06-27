@@ -426,7 +426,7 @@ static GameLayer *sharedGameLayer;
             [POOL_OBJS_ON_TRACK(_powerIconFreePool, trackNum)[i] changeAngularVelocityByDegree:byDegree];
         }
     }
-    
+    NSLog(@"speed is now %f", [self getGameAngularVelocityInDegree]);
     return [self getGameAngularVelocityInDegree];
 
 }
