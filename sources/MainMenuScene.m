@@ -55,6 +55,7 @@
         buttonArray = [NSArray arrayWithObjects:mainMenuRecommend, mainMenuScore, mainMenuBuy, mainMenuSocial, mainMenuSettings, mainMenuHelp, nil];
         
         GKLocalPlayer __unsafe_unretained *localPlayer = [GKLocalPlayer localPlayer];
+        //[self loadAchievements];
         localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){
             if (viewController != nil)
             {
@@ -67,6 +68,8 @@
             }
             else if (localPlayer.isAuthenticated)
             {
+                NSLog (@"We are in ");
+                //[self loadAchievements];
                 //[self authenticatedPlayer: localPlayer];
             }
             else
@@ -74,9 +77,30 @@
                 //[self disableGameCenter];
             }
         };
+        
+
     }
     return (self);
 }
+
+
+- (void) loadAchievements
+{
+    NSMutableDictionary * achievementsDictionary = [[NSMutableDictionary alloc] init];
+    
+    [GKAchievement loadAchievementsWithCompletionHandler:^(NSArray *achievements, NSError *error)
+     {
+         if (error == nil)
+         {
+             for (GKAchievement* achievement in achievements)
+                 [achievementsDictionary setObject: achievement forKey: achievement.identifier];
+         }
+     }];
+    
+    
+    NSLog(@"achievements size %d", achievementsDictionary.count);
+}
+
 
 - (void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)gameCenterViewController1
 {

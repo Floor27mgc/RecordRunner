@@ -18,6 +18,8 @@
 
 @interface MainMenuScene : CCLayer <GKGameCenterControllerDelegate>
 
+- (void) loadAchievements;
+
 @property (nonatomic,assign) BOOL menuExpanded;
 
 @property (nonatomic, strong) MainMenuRecommendBox * mainMenuRecommend;

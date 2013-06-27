@@ -29,36 +29,40 @@
                                                                 @"achievement_map",
                                                                 nil);
         totalNumAchievements = [numAchievements integerValue];
-        NSLog(@"Number of achievements %d", totalNumAchievements);
+
         allAchievements = [[NSMutableArray alloc] initWithCapacity: totalNumAchievements];
         
         // load number of achievements per rank
         NSString * achievementsPerRank = NSLocalizedStringFromTable(@"ACHIEVEMENTS_PER_RANK",
                                                                     @"achievement_map",                                                            nil);
         numAchievementsPerRank = [achievementsPerRank integerValue];
-        NSLog(@"Achievements per rank %d", numAchievementsPerRank);
+
         currentAchievements = [[NSMutableArray alloc] initWithCapacity:
                                numAchievementsPerRank];
         
-        // load number of ranks
-        NSString * numRanks = NSLocalizedStringFromTable(@"NUMBER_OF_RANKS",
-                                                         @"achievement_map",                                                            nil);
-        int intNumRanks = [numRanks integerValue];
-        NSLog(@"Number of ranks %d", intNumRanks);
-             
         // load up all the achievement progress from game center
+        achievementsDictionary = [[NSMutableDictionary alloc] init];
+        
         [GKAchievement loadAchievementsWithCompletionHandler:^(NSArray * achievements,
                                                                NSError * error)
          {
-             if (error == nil)
+             if (error != nil)
              {
-                 for (GKAchievement * achievement in achievements) {
-                     [achievementsDictionary setObject: achievement forKey:
-                        achievement.identifier];
-                 }
+                 NSLog(@"ERROR is %@", [error localizedDescription]);
              }
+             
+             NSLog(@"inner ach size is %d", achievements.count);
+             
+             for (GKAchievement * achievement in achievements) {
+                    [achievementsDictionary setObject: achievement forKey:
+                    achievement.identifier];
+                 NSLog(@"registering achievement with id %@", achievement.identifier);
+             }
+             
+             NSLog(@"Achievements size %d", achievementsDictionary.count);
          }];
         
+       
         int conditionIndex = 16;
         // load the inner-rank achievements
         /*for (int i = 1; i <= intNumRanks; ++i) {
@@ -85,12 +89,13 @@
             NSString * desc = NSLocalizedStringFromTable(curDesc,
                                                          @"achievement_map",
                                                          nil);
-           
+            NSString * identifier = [NSString stringWithFormat:@"%d", conditionIndex];
+            
             // load the game center achievement, creating it if necessary
-            GKAchievement * curAch = [achievementsDictionary objectForKey:desc];
+            GKAchievement * curAch = [achievementsDictionary objectForKey:identifier];
             
             if (curAch == nil) {
-                curAch = [[GKAchievement alloc] initWithIdentifier:desc];
+                curAch = [[GKAchievement alloc] initWithIdentifier:identifier];
                 [achievementsDictionary setObject:curAch
                                            forKey:curAch.identifier];
             }

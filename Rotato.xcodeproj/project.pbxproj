@@ -2984,6 +2984,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2d-2.x-ARC-iOS/Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "\"cocos2d-2.x-ARC-iOS/libs/kazmath/include\"";
 				INFOPLIST_FILE = "cocos2d-2.x-ARC-iOS/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -3014,6 +3015,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2d-2.x-ARC-iOS/Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "\"cocos2d-2.x-ARC-iOS/libs/kazmath/include\"";
 				INFOPLIST_FILE = "cocos2d-2.x-ARC-iOS/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
