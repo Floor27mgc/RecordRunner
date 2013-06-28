@@ -247,7 +247,7 @@
     {
         for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_usedPool, trackNum); ++i) {
             gameObject = POOL_OBJS_ON_TRACK(_usedPool, trackNum)[i];
-//            NSLog(@"_myAngle = %f angleRange = %f N_myAngle = %d N_angleRange = %d angleRotated = %f, N_angleRotated = %d", _myAngle, angleRange, myAngleNormalized, angleRangeNormalized, gameObject.angleRotated, NORMALIZE_ANGLE(gameObject.angleRotated));
+
             if (((myAngleNormalized + angleRangeNormalized) >
                  NORMALIZE_ANGLE(gameObject.angleRotated)) &&
                 ((myAngleNormalized - angleRangeNormalized) <
