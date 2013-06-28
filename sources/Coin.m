@@ -59,8 +59,10 @@
                            freePool:[GameLayer sharedGameLayer].coinFreePool];
     // increment score
     [GameInfoGlobal sharedGameInfoGlobal].numCoinsThisLife++;
-    [[GameLayer sharedGameLayer].score incrementScore:1];
     [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch++;
+    [[GameLayer sharedGameLayer].score incrementScore:
+        [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch];
+
     [[SimpleAudioEngine sharedEngine] playEffect:@"pickup_coin.wav"];
 }
 
