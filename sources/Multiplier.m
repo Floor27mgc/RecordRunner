@@ -18,6 +18,7 @@
 @synthesize multiplierTime;
 @synthesize highestMultiplierValueEarned;
 @synthesize timeAboveTen;
+@synthesize speedDifference;
 
 // -----------------------------------------------------------------------------------
 - (id) init
@@ -63,6 +64,8 @@
         
         [[GameLayer sharedGameLayer] changeGameAngularVelocityByDegree:
             SPEED_INCREASE_AMOUNT];
+        
+        ++speedDifference;
     }
     
     [self.multiplierLabel setString:[NSString stringWithFormat:@"x %d",
@@ -116,6 +119,7 @@
 
         [[GameLayer sharedGameLayer] changeGameAngularVelocityByDegree:
             (-SPEED_INCREASE_AMOUNT)];
+        --speedDifference;
     }
     
     ccColor3B currentColor = multiplierLabel.color;
@@ -144,9 +148,15 @@
 // -----------------------------------------------------------------------------------
 - (void) reset
 {
+    for (int i = 0; i < speedDifference; ++i) {
+        [[GameLayer sharedGameLayer] changeGameAngularVelocityByDegree:
+            (-SPEED_INCREASE_AMOUNT)];
+    }
+    
     multiplierValue = 1;
     highestMultiplierValueEarned = 1;
     timerLifeInSec = 0;
+    speedDifference = 0;
     timeAboveTen = [NSDate distantFuture];
     multiplierTime = [NSDate distantFuture];
 }

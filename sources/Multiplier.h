@@ -25,6 +25,7 @@
 @property (nonatomic) int highestMultiplierValueEarned;
 @property (nonatomic) NSDate * timeAboveTen;
 @property (nonatomic) NSDate * multiplierTime;
+@property (nonatomic) int speedDifference;
 
 - (int) secondsAbove10x;
 - (void) incrementMultiplier:(int) amount;
