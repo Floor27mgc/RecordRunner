@@ -83,13 +83,8 @@
     NSLog(@"pressed HOME!");
     self.isQuitting = YES;
     
-    
     CCBAnimationManager* animationManager = self.userObject;
-    NSLog(@"animationManager: %@", animationManager);
-    [[GameLayer sharedGameLayer] resumeSchedulerAndActions];
     [animationManager runAnimationsForSequenceNamed:@"Pop out"];
-    [[GameLayer sharedGameLayer] cleanUpPlayField];
-    [[GameLayer sharedGameLayer].score setScoreValue:0];
     
 }
 

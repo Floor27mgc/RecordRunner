@@ -30,7 +30,7 @@
 #define MAX_NUM_TRACK                 4
 #define MAX_NUM_BOUNCING_COINS        7
 #define kBombSpawnRate 30
-#define kCoinSpawnRate 50
+#define kCoinSpawnRate 38
 #define kShieldSpawnRate 1
 #define TAP_DELAY_THRESHOLD_MSEC 62//125
 

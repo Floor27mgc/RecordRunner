@@ -45,6 +45,27 @@
     if (!_startedBlink) {
         [GameLayer sharedGameLayer].invincibleRecord.visible = YES;
         _startedBlink = YES;
+        
+        // So we just got the shield, we want to make the Bomb
+        // easier to collect.  We are changing the radius hit box for
+        // bomb to be between coin and regular bomb hitbox size.
+        for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
+            
+            NSArray *objectsUsed = POOL_OBJS_ON_TRACK([GameLayer sharedGameLayer].bombUsedPool, trackNum);
+            NSArray *objectsFree = POOL_OBJS_ON_TRACK([GameLayer sharedGameLayer].bombFreePool, trackNum);
+            
+            for (int i=0; i<[objectsUsed count]; i++)
+            {
+                GameObjectBase *gameObject = [objectsUsed objectAtIndex:i];
+                gameObject.radiusHitBox = COMMON_GRID_WIDTH/3;
+            }
+            
+            for (int i=0; i<[objectsFree count]; i++)
+            {
+                GameObjectBase *gameObject = [objectsFree objectAtIndex:i];
+                gameObject.radiusHitBox = COMMON_GRID_WIDTH/3;
+            }
+        }
     } else {
         [self toggleInvincibleRecord:(int)elapsedMilliseconds];
     }
@@ -55,6 +76,28 @@
         [GameLayer sharedGameLayer].invincibleRecord.visible = NO;
         _startedBlink = NO;
         _lastToggle = 0;
+        
+        // Shield is going away.  We are reset the hit box for bombs
+        // back to the original size.
+        for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
+        
+            NSArray *objectsUsed = POOL_OBJS_ON_TRACK([GameLayer sharedGameLayer].bombUsedPool, trackNum);
+            NSArray *objectsFree = POOL_OBJS_ON_TRACK([GameLayer sharedGameLayer].bombFreePool, trackNum);
+            
+            for (int i=0; i<[objectsUsed count]; i++)
+            {
+                GameObjectBase *gameObject = [objectsUsed objectAtIndex:i];
+                gameObject.radiusHitBox = COMMON_GRID_WIDTH/4;
+            }
+            
+            for (int i=0; i<[objectsFree count]; i++)
+            {
+                GameObjectBase *gameObject = [objectsFree objectAtIndex:i];
+                gameObject.radiusHitBox = COMMON_GRID_WIDTH/4;
+            }                
+        }
+
+
         [super resetPower];
     }
 }
