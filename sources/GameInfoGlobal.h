@@ -40,5 +40,6 @@ typedef enum {
 @property (nonatomic, assign) int coinsInBank;
 @property (nonatomic, assign) int lifetimeRevolutions;
 @property (nonatomic, assign) int lifetimeRoundsPlayed;
+@property (nonatomic, assign) BOOL hit40scratchesInSingleRevolution;
 
 @end

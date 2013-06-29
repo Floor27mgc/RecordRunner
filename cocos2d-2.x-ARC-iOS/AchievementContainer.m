@@ -18,11 +18,14 @@
 @synthesize achievementsDictionary;
 @synthesize currentRankAchievements;
 @synthesize currentRank;
+@synthesize achievementsLoaded;
 
 // -----------------------------------------------------------------------------------
 - (id) init
 {
     if (self = [super init]) {
+        
+        achievementsLoaded = NO;
         
         // load the number of achievements
         NSString * numAchievements = NSLocalizedStringFromTable(@"NUMBER_OF_ACHIEVEMENTS",
@@ -51,77 +54,57 @@
                  NSLog(@"ERROR is %@", [error localizedDescription]);
              }
              
-             NSLog(@"inner ach size is %d", achievements.count);
-             
              for (GKAchievement * achievement in achievements) {
                     [achievementsDictionary setObject: achievement forKey:
                     achievement.identifier];
                  NSLog(@"registering achievement with id %@", achievement.identifier);
              }
-             
-             NSLog(@"Achievements size %d", achievementsDictionary.count);
          }];
         
-       
-        int conditionIndex = 16;
-        // load the inner-rank achievements
-        /*for (int i = 1; i <= intNumRanks; ++i) {
-            for (int j = 1; j <= numAchievementsPerRank; ++j) {
-                NSString * curRankDesc = [NSString stringWithFormat:@"%@%d%@%d",
-                                       @"RANK_", i, @"_DESC_", j];
-                NSString * rankDesc = NSLocalizedStringFromTable(curRankDesc,
-                                                                 @"achievement_map",                                                            nil);
-                // load up all the achievements
-                Achievement * newAchievement = [[Achievement alloc]
-                                                initWithCondition:conditionIndex
-                                                description:rankDesc
-                                                gameCenterAchievement:nil
-                                                isGCAchievement:NO];
-                
-                [allAchievements addObject:newAchievement];
-                ++conditionIndex;
-            }
-        }*/
-        
-        // load all the non-rank achievements
-        for (int i = 1; i <= totalNumAchievements; ++i) {
-            NSString * curDesc = [NSString stringWithFormat:@"%@%d", @"DESC_", i];
-            NSString * desc = NSLocalizedStringFromTable(curDesc,
-                                                         @"achievement_map",
-                                                         nil);
-            NSString * identifier = [NSString stringWithFormat:@"%d", conditionIndex];
-            
-            // load the game center achievement, creating it if necessary
-            GKAchievement * curAch = [achievementsDictionary objectForKey:identifier];
-            
-            if (curAch == nil) {
-                curAch = [[GKAchievement alloc] initWithIdentifier:identifier];
-                [achievementsDictionary setObject:curAch
-                                           forKey:curAch.identifier];
-            }
-            
-            // load up all the achievements
-            Achievement * newAchievement = [[Achievement alloc]
-                                            initWithCondition:conditionIndex
-                                            description:desc
-                                            gameCenterAchievement:curAch
-                                            isGCAchievement:YES];
+        achievementsLoaded = NO;
+    }
+    return  self;
+}
 
-            [allAchievements addObject:newAchievement];
-            ++conditionIndex;
-            
-            // load into current, if achievement not already achieved
-            if (curAch.percentComplete < 100) {
-                [currentAchievements addObject:newAchievement];
-            }
+// -----------------------------------------------------------------------------------
+- (void) LoadInternalAchievements
+{    
+    int conditionIndex = 16;
+    
+    // load all the non-rank achievements
+    for (int i = 1; i <= totalNumAchievements; ++i) {
+        NSString * curDesc = [NSString stringWithFormat:@"%@%d", @"DESC_", i];
+        NSString * desc = NSLocalizedStringFromTable(curDesc,
+                                                     @"achievement_map",
+                                                     nil);
+        NSString * identifier = [NSString stringWithFormat:@"%d", conditionIndex];
+        
+        // load the game center achievement, creating it if necessary
+        GKAchievement * curAch = [achievementsDictionary objectForKey:identifier];
+        
+        if (curAch == nil) {
+            NSLog(@"creating new GC ach for id %@", identifier);
+            curAch = [[GKAchievement alloc] initWithIdentifier:identifier];
+            [achievementsDictionary setObject:curAch
+                                       forKey:curAch.identifier];
+            curAch.showsCompletionBanner = YES;
         }
         
-        // load up the current rank's achievements
-        //[self LoadCurrentRankAchievements];
+        // load up all the achievements
+        Achievement * newAchievement = [[Achievement alloc]
+                                        initWithCondition:conditionIndex
+                                        description:desc
+                                        gameCenterAchievement:curAch
+                                        isGCAchievement:YES];
         
+        [allAchievements addObject:newAchievement];
+        ++conditionIndex;
+        
+        // load into current, if achievement not already achieved
+        if (curAch.percentComplete < 100) {
+            [currentAchievements addObject:newAchievement];
+        }
     }
-    
-    return (self);
 }
 
 // -----------------------------------------------------------------------------------
@@ -200,21 +183,17 @@
 // -----------------------------------------------------------------------------------
 - (BOOL) CheckCurrentAchievements
 {
+    if (!achievementsLoaded) {
+        [self LoadInternalAchievements];
+        achievementsLoaded = YES;
+    }
     
-    //NSLog(@"there are %d current and %d currentRank achievements",
-    //      [currentAchievements count], [currentRankAchievements count]);
     for (Achievement * achievement in currentAchievements) {
         if ([achievement Achieved]) {
             return YES;
         }
     }
-    /*
-    for (Achievement * achievement in currentRankAchievements) {
-        if ([achievement Achieved]) {
-            return YES;
-        }
-    }*/
-    
+
     return NO;
 }
 
@@ -227,35 +206,6 @@
             [achievement Log];
         }
     }
-    
-    // log current ranked achievements
-    /*int numRankAchieved = 0;
-    for (Achievement * ach in currentRankAchievements) {
-        if ([ach Achieved]) {
-            numRankAchieved++;
-        }
-    }
-    
-    // reload the current achievements if all current have been achieved
-    if (numRankAchieved == [currentRankAchievements count]) {
-        
-        NSLog(@"Rank of achievements cleared!");
-       
-        [currentRankAchievements removeAllObjects];
-
-        // register achievement completion with game center
-        NSString * curRankDesc = [NSString stringWithFormat:@"%@%d",
-                                  @"DESC_", currentRank];
-        NSString * rankDesc = NSLocalizedStringFromTable(curRankDesc,
-                                                         @"achievement_map",
-                                                         nil);
-        
-        Achievement * ach = [self GetAchievementByDescription:rankDesc];
-        ach.gcAchievement.percentComplete = 100;
-        [ach Log];
-        
-        [self LoadCurrentRankAchievements];
-    }*/
 }
 
 @end

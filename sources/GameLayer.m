@@ -120,6 +120,9 @@ static GameLayer *sharedGameLayer;
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) )
     {
+        // achievement monitoring structures
+        achievementContainer = [[AchievementContainer alloc] init];
+        
         isGameReadyToStart = FALSE;
         sharedGameLayer = self;
         
@@ -244,8 +247,9 @@ static GameLayer *sharedGameLayer;
 
         self.tapDelay = [NSDate distantFuture];
         
-        // achievement monitoring structures
-        achievementContainer = [[AchievementContainer alloc] init];
+        // set up internal achievement tracking mechanisms
+        //[achievementContainer LoadInternalAchievements];
+
     }
 /*
     [self schedule: @selector(update:)]; */
@@ -301,6 +305,10 @@ static GameLayer *sharedGameLayer;
         
         // tick the scratches per revolution counter
         [GameInfoGlobal sharedGameInfoGlobal].scratchesThisRevolution++;
+        
+        if ([GameInfoGlobal sharedGameInfoGlobal].scratchesThisRevolution >= 40) {
+            [GameInfoGlobal sharedGameInfoGlobal].hit40scratchesInSingleRevolution = YES;
+        }
     }
     
     // generate Game Objectsrandomly

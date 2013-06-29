@@ -168,7 +168,7 @@
             // Rank 5
         case 20:
             achieved = ([GameInfoGlobal sharedGameInfoGlobal].timeInOuterRingThisLife >= 120) &&
-                        ([GameInfoGlobal sharedGameInfoGlobal].scratchesThisRevolution >= 40);
+                        ([GameInfoGlobal sharedGameInfoGlobal].hit40scratchesInSingleRevolution);
             break;
             
             // After earning rank 5, cash out and start over
@@ -188,7 +188,7 @@
             
             // Go 1000 total revolutions
         case 24:
-            achieved = ([GameInfoGlobal sharedGameInfoGlobal].lifetimeRevolutions >= 1000);
+            achieved = YES;//([GameInfoGlobal sharedGameInfoGlobal].lifetimeRevolutions >= 1000);
             break;
             
             // Collect 1000 coins
@@ -279,10 +279,10 @@
         if (isGCAchievement) {
             NSLog(@"logging GC achievement %@ with percent complete %f",
                   achievementDescription, gcAchievement.percentComplete);
+            
             [gcAchievement reportAchievementWithCompletionHandler:^(NSError *error)
              {
-                 if (error != nil)
-                 {
+                 if (error != nil) {
                      NSLog(@"Error in reporting achievement: %@", error);
                  }
              }];

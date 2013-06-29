@@ -16,6 +16,7 @@
 - (void) LoadCurrentRankAchievements;
 - (BOOL) CheckCurrentAchievements;
 - (void) LogAchievements;
+- (void) LoadInternalAchievements;
 
 @property (nonatomic, strong) NSMutableArray * allAchievements;
 @property (nonatomic, strong) NSMutableArray * currentAchievements;
@@ -24,5 +25,6 @@
 @property (nonatomic, assign) int totalNumAchievements;
 @property (nonatomic, assign) int currentRank;
 @property (nonatomic, strong) NSMutableDictionary * achievementsDictionary;
+@property (nonatomic, assign) BOOL achievementsLoaded;
 
 @end

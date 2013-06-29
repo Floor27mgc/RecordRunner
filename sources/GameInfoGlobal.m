@@ -28,6 +28,7 @@
 @synthesize coinsInBank;
 @synthesize lifetimeRevolutions;
 @synthesize lifetimeRoundsPlayed;
+@synthesize hit40scratchesInSingleRevolution;
 
 static GameInfoGlobal *sharedGameInfoGlobal;
 
@@ -54,6 +55,8 @@ static GameInfoGlobal *sharedGameInfoGlobal;
         scratchesThisRevolution = 0;
         
         coinsThisScratch = 0;
+        
+        hit40scratchesInSingleRevolution = NO;
         
         bombsKilledThisShield = 0;
         
