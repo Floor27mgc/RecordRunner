@@ -8,7 +8,8 @@
 
 #import "SoundController.h"
 #import "GameObjectBase.h"
-
+#import "Coin.h"
+#import "Bomb.h"
 @implementation SoundController
 @synthesize currentSongTitle;
 @synthesize audioEngine;
@@ -17,6 +18,14 @@
 @synthesize subsetCurrentRepeatCount;
 @synthesize subsetMaxRepeatCount;
 @synthesize previousSubset;
+@synthesize soundFileNameContainer;
+
+static SoundController *SoundControllerSingleton;
+
++ (SoundController *) sharedSoundController
+{
+    return SoundControllerSingleton;
+}
 
 // -----------------------------------------------------------------------------------
 +(id) init
@@ -24,7 +33,7 @@
     SoundController * objCreated = [[self alloc] init];
     objCreated.currentSongTitle = @"JewelBeat - Follow The Beat.wav";
     objCreated.audioEngine = [SimpleAudioEngine sharedEngine];
-    [objCreated.audioEngine playBackgroundMusic:objCreated.currentSongTitle];
+//    [objCreated.audioEngine playBackgroundMusic:objCreated.currentSongTitle];
 
     objCreated.audioPlayer = [CDAudioManager sharedManager].backgroundMusic.audioSourcePlayer;
     objCreated.audioPlayer.meteringEnabled = YES;
@@ -32,6 +41,7 @@
     objCreated.previousSubset = 0;
     objCreated.subsetCurrentRepeatCount = 0;
     objCreated.subsetMaxRepeatCount = arc4random() % 10 + 1;
+    SoundControllerSingleton = objCreated;
     return objCreated;
 }
 
@@ -39,8 +49,36 @@
 -(id) init
 {
         if (self = [super init]) {
+            // Fill in filenames into the soundFileContainer
+            NSArray *coinSoundFiles = [[NSArray alloc] initWithObjects:
+                                       @"popup.m4a",           // SOUND_FILENAME_IDX_COIN_POPUP
+                                       @"pickup_coin.wav",     // SOUND_FILENAME_IDX_COIN_PICKUP
+                                       nil];
+            NSArray *bombSoundFiles = [[NSArray alloc] initWithObjects:
+                                       @"popup.m4a",           // SOUND_FILENAME_IDX_BOMB_POPUP
+                                       @"pickup_coin.wav",     // SOUND_FILENAME_IDX_BOMB_PICKUP
+                                       nil];
+            soundFileNameContainer = [[NSArray alloc]initWithObjects:
+                                      coinSoundFiles, // SOUND_CONTAINER_IDX_COIN
+                                      bombSoundFiles, // SOUND_CONTAINER_IDX_BOMB
+                                      nil];
         }
         return self;
+}
+
+-(void) playSoundIdx:(int) soundIdx fromObject:(id) senderObject
+{
+    NSArray *soundFileNames = nil;
+    
+    if ([senderObject isKindOfClass:[Coin class]]) {
+        soundFileNames = [soundFileNameContainer objectAtIndex:SOUND_CONTAINER_IDX_COIN];
+    }
+    
+    if ([senderObject isKindOfClass:[Bomb class]]) {
+        soundFileNames = [soundFileNameContainer objectAtIndex:SOUND_CONTAINER_IDX_BOMB];
+    }
+        
+    [[SimpleAudioEngine sharedEngine] playEffect:soundFileNames[soundIdx]];
 }
 
 // -----------------------------------------------------------------------------------

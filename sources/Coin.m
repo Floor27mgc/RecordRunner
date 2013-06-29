@@ -10,6 +10,7 @@
 #import "GameLayer.h"
 #import "SimpleAudioEngine.h"
 #import "GameInfoGlobal.h"
+#import "SoundController.h"
 
 @implementation Coin
 
@@ -64,6 +65,25 @@
         [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch];
 
     [[SimpleAudioEngine sharedEngine] playEffect:@"pickup_coin.wav"];
+
+
+    int soundIdxToPlay;
+    switch (TRACKNUM_FROM_RADIUS)
+    {
+        case 0: soundIdxToPlay = SOUND_FILENAME_IDX_COIN_PICKUP;
+            break;
+        case 1: soundIdxToPlay = SOUND_FILENAME_IDX_COIN_PICKUP;
+            break;
+        case 2: soundIdxToPlay = SOUND_FILENAME_IDX_COIN_PICKUP;
+            break;
+        case 3: soundIdxToPlay = SOUND_FILENAME_IDX_COIN_PICKUP;
+            break;
+        default:
+            soundIdxToPlay = SOUND_FILENAME_IDX_COIN_PICKUP;
+            break;
+    }
+    
+    [[SoundController sharedSoundController] playSoundIdx:soundIdxToPlay fromObject:self];
 }
 
 // -----------------------------------------------------------------------------------

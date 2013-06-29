@@ -132,6 +132,8 @@ static GameLayer *sharedGameLayer;
         shieldSpawnRate = kShieldSpawnRate;
         isDebugMode = NO;
 
+        _soundController = [SoundController init];
+        
         // create the player
         player = (GameObjectPlayer *)[CCBReader nodeGraphFromFile:@"gameObjectPlayer.ccbi"
                                                              owner:player];
@@ -187,13 +189,15 @@ static GameLayer *sharedGameLayer;
             }
         }
         
-        if ([GameInfoGlobal sharedGameInfoGlobal].gameMode == kGameModeBouncyMusic) {
+ 
+        
+/*        if ([GameInfoGlobal sharedGameInfoGlobal].gameMode == kGameModeBouncyMusic) {
             // enable sounds
             _soundController = [SoundController init];
         } else {
-/*
-            [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"JewelBeat - Follow The Beat.wav"];*/
-        }
+
+            [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"JewelBeat - Follow The Beat.wav"];
+        }*/
 
         // Create Game Object injector to inject Bomb, coins, etc
         gameObjectInjector = [[GameObjectInjector alloc ]init];

@@ -221,11 +221,13 @@
         newObject.visible = 1;
         if ([newObject isKindOfClass:[Bomb class]]) {
             [newObject.animationManager runAnimationsForSequenceNamed:@"Spawn"];
+            [[SoundController sharedSoundController] playSoundIdx:SOUND_FILENAME_IDX_BOMB_POPUP fromObject:newObject];
         }
         if ([newObject isKindOfClass:[Coin class]]) {
             [newObject.animationManager runAnimationsForSequenceNamed:@"Spawn"];
+            [[SoundController sharedSoundController] playSoundIdx:SOUND_FILENAME_IDX_COIN_POPUP fromObject:newObject];
         }
-        [[SimpleAudioEngine sharedEngine] playEffect:@"popup.m4a"];
+
         [usedPool addObject:newObject toTrack:trackNum];
     } else {
         NSLog(@"out of object");
