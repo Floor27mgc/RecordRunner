@@ -63,7 +63,24 @@
     [[GameLayer sharedGameLayer].score incrementScore:1];
     [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch++;
 
-    [[SoundController sharedSoundController] playSoundIdx:SOUND_FILENAME_IDX_COIN_PICKUP fromObject:self];
+
+    int soundIdxToPlay;
+    switch (TRACKNUM_FROM_RADIUS)
+    {
+        case 0: soundIdxToPlay = SOUND_FILENAME_IDX_COIN_PICKUP;
+            break;
+        case 1: soundIdxToPlay = SOUND_FILENAME_IDX_COIN_PICKUP;
+            break;
+        case 2: soundIdxToPlay = SOUND_FILENAME_IDX_COIN_PICKUP;
+            break;
+        case 3: soundIdxToPlay = SOUND_FILENAME_IDX_COIN_PICKUP;
+            break;
+        default:
+            soundIdxToPlay = SOUND_FILENAME_IDX_COIN_PICKUP;
+            break;
+    }
+    
+    [[SoundController sharedSoundController] playSoundIdx:soundIdxToPlay fromObject:self];
 }
 
 // -----------------------------------------------------------------------------------
