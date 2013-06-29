@@ -115,14 +115,20 @@
 -(void) applicationWillResignActive:(UIApplication *)application
 {
 	if( [navController_ visibleViewController] == director_ )
+    {
+        [gameInfoGlobal evaluateSoundPrefrence];
 		[director_ pause];
+    }
 }
 
 // call got rejected
 -(void) applicationDidBecomeActive:(UIApplication *)application
 {
 	if( [navController_ visibleViewController] == director_ )
+    {
+        [gameInfoGlobal evaluateSoundPrefrence];
 		[director_ resume];
+    }
 }
 
 -(void) applicationDidEnterBackground:(UIApplication*)application

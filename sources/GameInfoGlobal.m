@@ -7,7 +7,7 @@
 //
 
 #import "GameInfoGlobal.h"
-
+#import <AudioToolbox/AudioSession.h>
 @implementation GameInfoGlobal
 @synthesize gameMode;
 @synthesize statsContainer;
@@ -28,6 +28,8 @@
 @synthesize coinsInBank;
 @synthesize lifetimeRevolutions;
 @synthesize lifetimeRoundsPlayed;
+@synthesize isBackgroundMusicOn;
+@synthesize isSoundEffectOn;
 
 static GameInfoGlobal *sharedGameInfoGlobal;
 
@@ -69,6 +71,10 @@ static GameInfoGlobal *sharedGameInfoGlobal;
               lifetimeRevolutions, lifetimeRoundsPlayed);
         
         statsContainer = [[StatisticsContainer alloc] init];
+        
+        AudioSessionInitialize(NULL,NULL,NULL,NULL);
+        [self evaluateSoundPrefrence];
+
     }
     return self;
 }
@@ -101,6 +107,26 @@ static GameInfoGlobal *sharedGameInfoGlobal;
     timeInOuterRingThisLife = 0;
     numCoinsThisLife = 0;
     closeCallsThisLife = 0;
+}
+
+-(void) evaluateSoundPrefrence
+{
+    UInt32 propertySize, audioIsAlreadyPlaying=0;
+    propertySize = sizeof(UInt32);
+    AudioSessionGetProperty(kAudioSessionProperty_OtherAudioIsPlaying, &propertySize, &audioIsAlreadyPlaying);
+    
+    if (audioIsAlreadyPlaying)
+    {
+        // if something else is playing the sound, we are muting the game.
+        isSoundEffectOn = 0;
+        isBackgroundMusicOn = 0;
+    }
+    else
+    {
+        // Matt, please fix this.  Need to set it based on persistence area.
+        isSoundEffectOn = 1;
+        isBackgroundMusicOn = 1;
+    }
 }
 
 @end
