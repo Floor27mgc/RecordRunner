@@ -10,6 +10,7 @@
 #import "GameLayer.h"
 #import "SimpleAudioEngine.h"
 #import "GameInfoGlobal.h"
+#import "SoundController.h"
 
 @implementation Coin
 
@@ -61,7 +62,8 @@
     [GameInfoGlobal sharedGameInfoGlobal].numCoinsThisLife++;
     [[GameLayer sharedGameLayer].score incrementScore:1];
     [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch++;
-    [[SimpleAudioEngine sharedEngine] playEffect:@"pickup_coin.wav"];
+
+    [[SoundController sharedSoundController] playSoundIdx:SOUND_FILENAME_IDX_COIN_PICKUP fromObject:self];
 }
 
 // -----------------------------------------------------------------------------------
