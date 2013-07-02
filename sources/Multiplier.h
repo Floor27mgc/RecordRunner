@@ -14,7 +14,7 @@
 #define SPEED_THRESHOLD_1      4
 #define SPEED_THRESHOLD_2      7
 #define SPEED_THRESHOLD_3     10
-#define SPEED_INCREASE_AMOUNT .4
+#define SPEED_INCREASE_AMOUNT .1
 
 @interface Multiplier : CCNode
 
