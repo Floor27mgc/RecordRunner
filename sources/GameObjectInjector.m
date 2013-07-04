@@ -221,11 +221,33 @@
         newObject.visible = 1;
         if ([newObject isKindOfClass:[Bomb class]]) {
             [newObject.animationManager runAnimationsForSequenceNamed:@"Spawn"];
-            [[SoundController sharedSoundController] playSoundIdx:SOUND_FILENAME_IDX_BOMB_POPUP fromObject:newObject];
+            [[SoundController sharedSoundController] playSoundIdx:SOUND_BOMB_POPUP fromObject:newObject];
         }
         if ([newObject isKindOfClass:[Coin class]]) {
             [newObject.animationManager runAnimationsForSequenceNamed:@"Spawn"];
-            [[SoundController sharedSoundController] playSoundIdx:SOUND_FILENAME_IDX_COIN_POPUP fromObject:newObject];
+            
+            int soundIdxToPlay;
+            switch (trackNum)
+            {
+                case 0: soundIdxToPlay = SOUND_FILENAME_TRK_0_COIN_POPUP;
+                    break;
+                case 1: soundIdxToPlay = SOUND_FILENAME_TRK_1_COIN_POPUP;
+                    break;
+                case 2: soundIdxToPlay = SOUND_FILENAME_TRK_2_COIN_POPUP;
+                    break;
+                case 3: soundIdxToPlay = SOUND_FILENAME_TRK_3_COIN_POPUP;
+                    break;
+                case 4: soundIdxToPlay = SOUND_FILENAME_TRK_4_COIN_POPUP;
+                    break;
+                case 5: soundIdxToPlay = SOUND_FILENAME_TRK_4_COIN_POPUP;
+                    break;
+                default:
+                    soundIdxToPlay = SOUND_FILENAME_TRK_0_COIN_POPUP;
+                    break;
+            }
+
+            
+            [[SoundController sharedSoundController] playSoundIdx:soundIdxToPlay fromObject:newObject];
         }
 
         [usedPool addObject:newObject toTrack:trackNum];

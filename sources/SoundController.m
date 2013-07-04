@@ -10,6 +10,8 @@
 #import "GameObjectBase.h"
 #import "Coin.h"
 #import "Bomb.h"
+#import "MenuBox.h"
+#import "GameObjectPlayer.h"
 @implementation SoundController
 @synthesize currentSongTitle;
 @synthesize audioEngine;
@@ -51,16 +53,41 @@ static SoundController *SoundControllerSingleton;
         if (self = [super init]) {
             // Fill in filenames into the soundFileContainer
             NSArray *coinSoundFiles = [[NSArray alloc] initWithObjects:
-                                       @"popup.m4a",           // SOUND_FILENAME_IDX_COIN_POPUP
-                                       @"pickup_coin.wav",     // SOUND_FILENAME_IDX_COIN_PICKUP
+                                       @"popin1.wav",   // SOUND_FILENAME_TRK_0_COIN_POPUP
+                                       @"popin2.wav",   // SOUND_FILENAME_TRK_1_COIN_POPUP
+                                       @"popin3.wav",   // SOUND_FILENAME_TRK_2_COIN_POPUP
+                                       @"popin4.wav",   // SOUND_FILENAME_TRK_3_COIN_POPUP
+                                       @"popin5.wav",   // SOUND_FILENAME_TRK_4_COIN_POPUP
+                                       @"popin5.wav",   // SOUND_FILENAME_TRK_5_COIN_POPUP
+                                       @"hihat1.wav",     // SOUND_TRK_0_COIN_PICKUP
+                                       @"hihat2.wav",     // SOUND_TRK_1_COIN_PICKUP
+                                       @"hihat3.wav",     // SOUND_TRK_2_COIN_PICKUP
+                                       @"hihat4.wav",     // SOUND_TRK_3_COIN_PICKUP
+                                       @"hihat5.wav",     // SOUND_TRK_4_COIN_PICKUP
+                                       @"hihatmulti.wav", // SOUND_MULTI_COIN_PICKUP
                                        nil];
             NSArray *bombSoundFiles = [[NSArray alloc] initWithObjects:
-                                       @"popup.m4a",           // SOUND_FILENAME_IDX_BOMB_POPUP
-                                       @"pickup_coin.wav",     // SOUND_FILENAME_IDX_BOMB_PICKUP
+                                       @"kicker.wav",   // SOUND_FILENAME_IDX_BOMB_POPUP
+                                       @"chime.wav",    // SOUND_FILENAME_IDX_BOMB_PICKUP
+                                       @"clap.wav",     //SOUND_BOMB_SKIM
+                                       @"clap2.wav",    //SOUND_BOMB_SKIM2
                                        nil];
+            
+            NSArray *playerSoundFiles = [[NSArray alloc] initWithObjects:
+                                         @"swipe.wav", //SOUND_CONTAINER_IDX_PLAYER
+                                         nil];
+            
+            NSArray *menuSoundEffects = [[NSArray alloc] initWithObjects:
+                                         @"swipe.wav", //SOUND_MENU_OPEN
+                                         @"swipe.wav", //SOUND_MENU_CLOSE
+                                         @"swipe.wav", //SOUND_MENU_CLICK
+                                         nil];
+            
             soundFileNameContainer = [[NSArray alloc]initWithObjects:
                                       coinSoundFiles, // SOUND_CONTAINER_IDX_COIN
                                       bombSoundFiles, // SOUND_CONTAINER_IDX_BOMB
+                                      playerSoundFiles, //SOUND_CONTAINER_IDX_PLAYER
+                                      menuSoundEffects, //SOUND_CONTAINER_IDX_MENU
                                       nil];
         }
         return self;
@@ -76,6 +103,15 @@ static SoundController *SoundControllerSingleton;
     
     if ([senderObject isKindOfClass:[Bomb class]]) {
         soundFileNames = [soundFileNameContainer objectAtIndex:SOUND_CONTAINER_IDX_BOMB];
+    }
+    
+    if ([senderObject isKindOfClass:[GameObjectPlayer class]]) {
+        soundFileNames = [soundFileNameContainer objectAtIndex:SOUND_CONTAINER_IDX_PLAYER];
+    }
+    
+    if ([senderObject isKindOfClass:[MenuBox class]])
+    {
+        soundFileNames = [soundFileNameContainer objectAtIndex: SOUND_CONTAINER_IDX_MENU];
     }
         
     [[SimpleAudioEngine sharedEngine] playEffect:soundFileNames[soundIdx]];
@@ -128,6 +164,7 @@ static SoundController *SoundControllerSingleton;
     [gameObject scaleMe:((gameObject.tag % subsetIdx == 0)?soundLevel:0)];
     
 }
+
 
 @end
 

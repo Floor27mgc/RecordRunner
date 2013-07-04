@@ -60,30 +60,38 @@
                            freePool:[GameLayer sharedGameLayer].coinFreePool];
     // increment score
     [GameInfoGlobal sharedGameInfoGlobal].numCoinsThisLife++;
-    [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch++;
     [[GameLayer sharedGameLayer].score incrementScore:
         [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch];
 
-    [[SimpleAudioEngine sharedEngine] playEffect:@"pickup_coin.wav"];
-
+    //increment coins this scratch if you have started the scratch
+    if ([GameLayer sharedGameLayer].player.playerRadialSpeed > 0)
+    {
+        [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch++;
+    }    
 
     int soundIdxToPlay;
     switch (TRACKNUM_FROM_RADIUS)
     {
-        case 0: soundIdxToPlay = SOUND_FILENAME_IDX_COIN_PICKUP;
+        case 0: soundIdxToPlay = SOUND_TRK_0_COIN_PICKUP;
             break;
-        case 1: soundIdxToPlay = SOUND_FILENAME_IDX_COIN_PICKUP;
+        case 1: soundIdxToPlay = SOUND_TRK_1_COIN_PICKUP;
             break;
-        case 2: soundIdxToPlay = SOUND_FILENAME_IDX_COIN_PICKUP;
+        case 2: soundIdxToPlay = SOUND_TRK_2_COIN_PICKUP;
             break;
-        case 3: soundIdxToPlay = SOUND_FILENAME_IDX_COIN_PICKUP;
+        case 3: soundIdxToPlay = SOUND_TRK_3_COIN_PICKUP;
             break;
         default:
-            soundIdxToPlay = SOUND_FILENAME_IDX_COIN_PICKUP;
+            soundIdxToPlay = SOUND_TRK_0_COIN_PICKUP;
             break;
     }
     
     [[SoundController sharedSoundController] playSoundIdx:soundIdxToPlay fromObject:self];
+    
+    //Play a sound if collect more than one coin in a pass
+    if ([GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch >= 3)
+    {
+        [[SoundController sharedSoundController] playSoundIdx:SOUND_MULTI_COIN_PICKUP fromObject:self];
+    }
 }
 
 // -----------------------------------------------------------------------------------

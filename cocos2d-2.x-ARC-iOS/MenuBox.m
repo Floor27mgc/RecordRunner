@@ -50,6 +50,8 @@
     
     [animationManager runAnimationsForSequenceNamed:@"popIn"];
     
+    [[SoundController sharedSoundController] playSoundIdx:SOUND_MENU_OPEN fromObject:self];
+        
     self.isOpen = YES;
 }
 - (void) closeTab:(id) sender

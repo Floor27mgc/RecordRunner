@@ -15,9 +15,10 @@
 #import "Score.h"
 #import "GameOverLayer.h"
 #import "Power.h"
-#import "SoundController.h"
 #import "Multiplier.h"
 #import "AchievementContainer.h"
+#import "SoundController.h"
+#import "SimpleAudioEngine.h"
 
 #define NUM_OBSTACLES                20
 #define NUM_REWARDS                  20

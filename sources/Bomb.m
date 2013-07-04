@@ -63,6 +63,7 @@
         if (abs(distance - self.radiusHitBox) < CLOSE_HIT_THRESHOLD_PIXEL &&
             ![GameLayer sharedGameLayer].player.hasShield) {
             
+            
             // see if we are above or below the player
             int angleRelation = (int)self.angleRotated % 360;
             
@@ -71,11 +72,17 @@
                 if (!closeCallAbove) {
                     closeCallAbove = YES;
                     uniqueHit = YES;
+                    
+                    //Play sound effect
+                    [[SoundController sharedSoundController] playSoundIdx:SOUND_BOMB_SKIM fromObject:self];
                 }
             } else {
                 if (!closeCallBelow) {
                     closeCallBelow = YES;
                     uniqueHit = YES;
+                    
+                    //Play sound effect
+                    [[SoundController sharedSoundController] playSoundIdx:SOUND_BOMB_SKIM2 fromObject:self];
                 }
             }
             
@@ -122,6 +129,11 @@
         [GameInfoGlobal sharedGameInfoGlobal].bombsKilledThisShield++;
         NSLog(@"Bomb absorbed by player's shield!");
     } else {
+        
+        //Stop the music because player is dead
+        [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+
+        
         // update end-of-game statistics
         [[[GameInfoGlobal sharedGameInfoGlobal] statsContainer] writeStats];
         

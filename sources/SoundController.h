@@ -20,6 +20,9 @@
 //---------------------------------
 #define SOUND_CONTAINER_IDX_COIN 0
 #define SOUND_CONTAINER_IDX_BOMB 1
+#define SOUND_CONTAINER_IDX_PLAYER 2
+#define SOUND_CONTAINER_IDX_MENU 3 
+
 
 //---------------------------
 // Sound file indexes
@@ -27,11 +30,29 @@
 // for each game object type
 //---------------------------
 // --- Coin ----
-#define SOUND_FILENAME_IDX_COIN_POPUP  0
-#define SOUND_FILENAME_IDX_COIN_PICKUP 1
+#define SOUND_FILENAME_TRK_0_COIN_POPUP 0
+#define SOUND_FILENAME_TRK_1_COIN_POPUP 1
+#define SOUND_FILENAME_TRK_2_COIN_POPUP 2
+#define SOUND_FILENAME_TRK_3_COIN_POPUP 3
+#define SOUND_FILENAME_TRK_4_COIN_POPUP 4
+#define SOUND_FILENAME_TRK_5_COIN_POPUP 5
+#define SOUND_TRK_0_COIN_PICKUP 6
+#define SOUND_TRK_1_COIN_PICKUP 7
+#define SOUND_TRK_2_COIN_PICKUP 8
+#define SOUND_TRK_3_COIN_PICKUP 9
+#define SOUND_TRK_4_COIN_PICKUP 10
+#define SOUND_MULTI_COIN_PICKUP 11
 // --- Bomb ----
-#define SOUND_FILENAME_IDX_BOMB_POPUP  0
-#define SOUND_FILENAME_IDX_BOMB_PICKUP 1
+#define SOUND_BOMB_POPUP  0
+#define SOUND_BOMB_PICKUP 1
+#define SOUND_BOMB_SKIM 2
+#define SOUND_BOMB_SKIM2 3
+// --- PLAYER ---
+#define SOUND_PLAYER_SWIPE 0
+// --- MENUS ----
+#define SOUND_MENU_OPEN 0
+#define SOUND_MENU_CLOSE 1
+#define SOUND_MENU_CLICK 2
 
 +(id) init;
 -(id) init;

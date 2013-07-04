@@ -15,9 +15,9 @@
 #import "GameObjectInjector.h"
 #import "pattern.h"
 #import "GameOverLayer.h"
-#import "SimpleAudioEngine.h"
 #import "common.h"
 #import "PowerIcon.h"
+#import "SoundController.h"
 #import "CCBReader.h"
 #import "GameInfoGlobal.h"
 #import "GameDebugMenu.h"
@@ -188,16 +188,7 @@ static GameLayer *sharedGameLayer;
                 [self addChild: _bomb z:10];
             }
         }
-        
- 
-        
-/*        if ([GameInfoGlobal sharedGameInfoGlobal].gameMode == kGameModeBouncyMusic) {
-            // enable sounds
-            _soundController = [SoundController init];
-        } else {
-
-            [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"JewelBeat - Follow The Beat.wav"];
-        }*/
+                
 
         // Create Game Object injector to inject Bomb, coins, etc
         gameObjectInjector = [[GameObjectInjector alloc ]init];
@@ -270,6 +261,11 @@ static GameLayer *sharedGameLayer;
     
     player.position = ccp(COMMON_RECORD_CENTER_X + PLAYER_RADIUS_INNER_MOST,
                           COMMON_RECORD_CENTER_Y);
+    
+    
+   
+    [self startTheMusic];
+    
     // Schedule a selector that is called every frame
     [self schedule:@selector(update:)];
     
@@ -614,6 +610,7 @@ static GameLayer *sharedGameLayer;
     } else {
         return NO;
     }
+    
     /*
     if (pendingTaps <= 0) {
         return NO;
@@ -848,6 +845,8 @@ static GameLayer *sharedGameLayer;
         [self setHittingObjByTrackNum:trackNum hittingObj:nil];
     }
     [self.multiplier decrementMultiplier:self.multiplier.multiplierValue-1];
+    
+    [self startTheMusic];
 }
 
 -(bool) getIsHitStateByTrackNum:(int) trackNum
@@ -873,4 +872,16 @@ static GameLayer *sharedGameLayer;
 {
     return ((trackNum < MAX_NUM_TRACK)?whatHitTrack[trackNum]:nil);
 }
+
+-(void) startTheMusic
+{
+    //Start the music for the game, the player is starting.
+    if ([GameInfoGlobal sharedGameInfoGlobal].gameMode == kGameModeBouncyMusic) {
+        // enable sounds
+        _soundController = [SoundController init];
+    } else {
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"loop1.wav"];
+    }
+}
+
 @end
