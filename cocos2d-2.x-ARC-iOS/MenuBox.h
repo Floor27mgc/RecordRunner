@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "CCBAnimationManager.h"
+#import "SoundController.h"
 
 @interface MenuBox : CCNode <CCBAnimationManagerDelegate>
 {

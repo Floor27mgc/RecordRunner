@@ -9,8 +9,10 @@
 #import "GameObjectPlayer.h"
 #import "GameLayer.h"
 #import "common.h"
-#import "GameObjectInjector.h"
+#import "GameObjectInjector.h"b
 #import "GameInfoGlobal.h"
+#import "SoundController.h"
+
 @implementation GameObjectPlayer
 @synthesize direction;
 @synthesize playerRadialSpeed;
@@ -77,6 +79,9 @@
             (self.radius == PLAYER_RADIUS_INNER_MOST))
         {
             self.playerRadialSpeed = 0;
+        
+            //Reset the number of coins collected in one pass when you hit the other side.
+            [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch++;
         }
     }
     
@@ -128,6 +133,8 @@
 // -----------------------------------------------------------------------------------
 - (void) changeDirection
 {
+    [[SoundController sharedSoundController] playSoundIdx:SOUND_PLAYER_SWIPE fromObject:self];
+    
     if ([GameLayer sharedGameLayer].isDebugMode == YES)
         return;
     direction = (direction == kMoveInToOut) ? kMoveOutToIn : kMoveInToOut;

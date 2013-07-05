@@ -34,7 +34,7 @@
     self.isQuitting = NO;
     
     CCBAnimationManager* animationManager = self.userObject;
-    NSLog(@"animationManager: %@", animationManager);
+    
     [[GameLayer sharedGameLayer] resumeSchedulerAndActions];
     [animationManager runAnimationsForSequenceNamed:@"Pop out"];
     [[GameLayer sharedGameLayer] cleanUpPlayField];

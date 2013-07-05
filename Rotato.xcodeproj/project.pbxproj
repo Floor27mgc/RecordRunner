@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0801C92716DA92C800ED1A1B /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0801C92616DA92C700ED1A1B /* Explosion.m */; };
-		0801C92A16DC7ABA00ED1A1B /* pickup_coin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0801C92916DC7ABA00ED1A1B /* pickup_coin.wav */; };
-		0801C92C16DC7B1900ED1A1B /* JewelBeat - Follow The Beat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0801C92B16DC7B1900ED1A1B /* JewelBeat - Follow The Beat.wav */; };
 		0803EEC716E3D1E500CC932B /* CCUIViewWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803EEC516E3D1A000CC932B /* CCUIViewWrapper.m */; };
-		0803EEC916E3D24A00CC932B /* popup.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0803EEC016E331CD00CC932B /* popup.m4a */; };
 		0803EECC16E3D29100CC932B /* GameInfoGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803EECB16E3D29000CC932B /* GameInfoGlobal.m */; };
 		0803EECF16E4212600CC932B /* GameModeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803EECE16E4212600CC932B /* GameModeMenu.m */; };
 		0803EF0016EC630F00CC932B /* MainGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803EEFF16EC630E00CC932B /* MainGameScene.m */; };
@@ -560,6 +557,23 @@
 		E54C884217766B8200D546F2 /* parts_record_inner-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E54C884017766B8200D546F2 /* parts_record_inner-hd.png */; };
 		E54E158B172C7A2A0022DACE /* bannerRed.png in Resources */ = {isa = PBXBuildFile; fileRef = E54E1589172C7A2A0022DACE /* bannerRed.png */; };
 		E54E158C172C7A2A0022DACE /* bannerRed-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E54E158A172C7A2A0022DACE /* bannerRed-hd.png */; };
+		E55D11B41785CCBA0072B6AC /* popin1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E55D11AE1785CCBA0072B6AC /* popin1.wav */; };
+		E55D11B51785CCBA0072B6AC /* popin2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E55D11AF1785CCBA0072B6AC /* popin2.wav */; };
+		E55D11B61785CCBA0072B6AC /* popin3.wav in Resources */ = {isa = PBXBuildFile; fileRef = E55D11B01785CCBA0072B6AC /* popin3.wav */; };
+		E55D11B71785CCBA0072B6AC /* popin4.wav in Resources */ = {isa = PBXBuildFile; fileRef = E55D11B11785CCBA0072B6AC /* popin4.wav */; };
+		E55D11B81785CCBA0072B6AC /* popin5.wav in Resources */ = {isa = PBXBuildFile; fileRef = E55D11B21785CCBA0072B6AC /* popin5.wav */; };
+		E55D11B91785CCBA0072B6AC /* wah_wah.wav in Resources */ = {isa = PBXBuildFile; fileRef = E55D11B31785CCBA0072B6AC /* wah_wah.wav */; };
+		E58AD2D7178522F300CEB970 /* clap.wav in Resources */ = {isa = PBXBuildFile; fileRef = E58AD2D4178522F100CEB970 /* clap.wav */; };
+		E58AD2D8178522F300CEB970 /* swipe.wav in Resources */ = {isa = PBXBuildFile; fileRef = E58AD2D5178522F200CEB970 /* swipe.wav */; };
+		E58AD2D9178522F300CEB970 /* wall_hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = E58AD2D6178522F200CEB970 /* wall_hit.wav */; };
+		E58AD2DB1785290E00CEB970 /* clap2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E58AD2DA1785290D00CEB970 /* clap2.wav */; };
+		E58AD2E317852F8500CEB970 /* clap3.wav in Resources */ = {isa = PBXBuildFile; fileRef = E58AD2DC17852F7F00CEB970 /* clap3.wav */; };
+		E58AD2E417852F8500CEB970 /* hihat1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E58AD2DD17852F8000CEB970 /* hihat1.wav */; };
+		E58AD2E517852F8500CEB970 /* hihat2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E58AD2DE17852F8000CEB970 /* hihat2.wav */; };
+		E58AD2E617852F8500CEB970 /* hihat3.wav in Resources */ = {isa = PBXBuildFile; fileRef = E58AD2DF17852F8100CEB970 /* hihat3.wav */; };
+		E58AD2E717852F8500CEB970 /* hihat4.wav in Resources */ = {isa = PBXBuildFile; fileRef = E58AD2E017852F8200CEB970 /* hihat4.wav */; };
+		E58AD2E817852F8500CEB970 /* hihat5.wav in Resources */ = {isa = PBXBuildFile; fileRef = E58AD2E117852F8400CEB970 /* hihat5.wav */; };
+		E58AD2E917852F8500CEB970 /* hihatmulti.wav in Resources */ = {isa = PBXBuildFile; fileRef = E58AD2E217852F8400CEB970 /* hihatmulti.wav */; };
 		E58F3A25172C13DE00C00E9C /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = E58F3A23172C13DE00C00E9C /* spark.png */; };
 		E58F3A26172C13DE00C00E9C /* spark-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E58F3A24172C13DE00C00E9C /* spark-hd.png */; };
 		E5973A441720EE8C001B948A /* MainMenuRecommendBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5973A3D1720EE8C001B948A /* MainMenuRecommendBox.m */; };
@@ -587,14 +601,33 @@
 		E5973A9C17234CD8001B948A /* MainMenuBuyBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5973A9B17234CD8001B948A /* MainMenuBuyBox.m */; };
 		E5973A9F17234DB3001B948A /* MainMenuSocialBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5973A9E17234DB3001B948A /* MainMenuSocialBox.m */; };
 		E5973AA217234E0A001B948A /* MainMenuSettingsBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5973AA117234E08001B948A /* MainMenuSettingsBox.m */; };
+		E5A80D2A1783134B007CF469 /* chime.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D141783134B007CF469 /* chime.wav */; };
+		E5A80D2B1783134B007CF469 /* chime2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D151783134B007CF469 /* chime2.wav */; };
+		E5A80D2C1783134B007CF469 /* chime3.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D161783134B007CF469 /* chime3.wav */; };
+		E5A80D2D1783134B007CF469 /* high_hat.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D171783134B007CF469 /* high_hat.wav */; };
+		E5A80D2E1783134B007CF469 /* JewelBeat - Follow The Beat.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D181783134B007CF469 /* JewelBeat - Follow The Beat.wav */; };
+		E5A80D2F1783134B007CF469 /* kalimba1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D191783134B007CF469 /* kalimba1.wav */; };
+		E5A80D301783134B007CF469 /* kalimba2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D1A1783134B007CF469 /* kalimba2.wav */; };
+		E5A80D311783134B007CF469 /* kalimba3.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D1B1783134B007CF469 /* kalimba3.wav */; };
+		E5A80D321783134B007CF469 /* kicker.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D1C1783134B007CF469 /* kicker.wav */; };
+		E5A80D331783134B007CF469 /* loop1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D1D1783134B007CF469 /* loop1.wav */; };
+		E5A80D341783134B007CF469 /* loop2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D1E1783134B007CF469 /* loop2.wav */; };
+		E5A80D351783134B007CF469 /* loop3.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D1F1783134B007CF469 /* loop3.wav */; };
+		E5A80D361783134B007CF469 /* loop4.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D201783134B007CF469 /* loop4.wav */; };
+		E5A80D371783134B007CF469 /* loop5.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D211783134B007CF469 /* loop5.wav */; };
+		E5A80D381783134B007CF469 /* loop6.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D221783134B007CF469 /* loop6.wav */; };
+		E5A80D391783134B007CF469 /* loop7.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D231783134B007CF469 /* loop7.wav */; };
+		E5A80D3A1783134B007CF469 /* loop8.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D241783134B007CF469 /* loop8.wav */; };
+		E5A80D3B1783134B007CF469 /* marimba_f.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D251783134B007CF469 /* marimba_f.wav */; };
+		E5A80D3C1783134B007CF469 /* piano_a3.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D261783134B007CF469 /* piano_a3.wav */; };
+		E5A80D3D1783134B007CF469 /* pickup_coin.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D271783134B007CF469 /* pickup_coin.wav */; };
+		E5A80D3E1783134B007CF469 /* pickup_coin1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D281783134B007CF469 /* pickup_coin1.wav */; };
+		E5A80D3F1783134B007CF469 /* popup.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E5A80D291783134B007CF469 /* popup.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0801C92516DA92C700ED1A1B /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Explosion.h; path = sources/Explosion.h; sourceTree = SOURCE_ROOT; };
 		0801C92616DA92C700ED1A1B /* Explosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Explosion.m; path = sources/Explosion.m; sourceTree = SOURCE_ROOT; };
-		0801C92916DC7ABA00ED1A1B /* pickup_coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = pickup_coin.wav; path = ../Resources/Sound/pickup_coin.wav; sourceTree = "<group>"; };
-		0801C92B16DC7B1900ED1A1B /* JewelBeat - Follow The Beat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "JewelBeat - Follow The Beat.wav"; path = "../Resources/Sound/JewelBeat - Follow The Beat.wav"; sourceTree = "<group>"; };
-		0803EEC016E331CD00CC932B /* popup.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = popup.m4a; path = ../Resources/Sound/popup.m4a; sourceTree = "<group>"; };
 		0803EEC416E3D19F00CC932B /* CCUIViewWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCUIViewWrapper.h; path = sources/CCUIViewWrapper.h; sourceTree = SOURCE_ROOT; };
 		0803EEC516E3D1A000CC932B /* CCUIViewWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCUIViewWrapper.m; path = sources/CCUIViewWrapper.m; sourceTree = SOURCE_ROOT; };
 		0803EECA16E3D29000CC932B /* GameInfoGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameInfoGlobal.h; path = sources/GameInfoGlobal.h; sourceTree = SOURCE_ROOT; };
@@ -1191,6 +1224,23 @@
 		E54C884017766B8200D546F2 /* parts_record_inner-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_record_inner-hd.png"; path = "Resources/Graphics/parts_record_inner-hd.png"; sourceTree = SOURCE_ROOT; };
 		E54E1589172C7A2A0022DACE /* bannerRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bannerRed.png; path = Resources/Graphics/bannerRed.png; sourceTree = SOURCE_ROOT; };
 		E54E158A172C7A2A0022DACE /* bannerRed-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bannerRed-hd.png"; path = "Resources/Graphics/bannerRed-hd.png"; sourceTree = SOURCE_ROOT; };
+		E55D11AE1785CCBA0072B6AC /* popin1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = popin1.wav; path = Resources/Sound/popin1.wav; sourceTree = SOURCE_ROOT; };
+		E55D11AF1785CCBA0072B6AC /* popin2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = popin2.wav; path = Resources/Sound/popin2.wav; sourceTree = SOURCE_ROOT; };
+		E55D11B01785CCBA0072B6AC /* popin3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = popin3.wav; path = Resources/Sound/popin3.wav; sourceTree = SOURCE_ROOT; };
+		E55D11B11785CCBA0072B6AC /* popin4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = popin4.wav; path = Resources/Sound/popin4.wav; sourceTree = SOURCE_ROOT; };
+		E55D11B21785CCBA0072B6AC /* popin5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = popin5.wav; path = Resources/Sound/popin5.wav; sourceTree = SOURCE_ROOT; };
+		E55D11B31785CCBA0072B6AC /* wah_wah.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wah_wah.wav; path = Resources/Sound/wah_wah.wav; sourceTree = SOURCE_ROOT; };
+		E58AD2D4178522F100CEB970 /* clap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = clap.wav; path = Resources/Sound/clap.wav; sourceTree = SOURCE_ROOT; };
+		E58AD2D5178522F200CEB970 /* swipe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = swipe.wav; path = Resources/Sound/swipe.wav; sourceTree = SOURCE_ROOT; };
+		E58AD2D6178522F200CEB970 /* wall_hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = wall_hit.wav; path = Resources/Sound/wall_hit.wav; sourceTree = SOURCE_ROOT; };
+		E58AD2DA1785290D00CEB970 /* clap2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = clap2.wav; path = Resources/Sound/clap2.wav; sourceTree = SOURCE_ROOT; };
+		E58AD2DC17852F7F00CEB970 /* clap3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = clap3.wav; path = Resources/Sound/clap3.wav; sourceTree = SOURCE_ROOT; };
+		E58AD2DD17852F8000CEB970 /* hihat1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hihat1.wav; path = Resources/Sound/hihat1.wav; sourceTree = SOURCE_ROOT; };
+		E58AD2DE17852F8000CEB970 /* hihat2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hihat2.wav; path = Resources/Sound/hihat2.wav; sourceTree = SOURCE_ROOT; };
+		E58AD2DF17852F8100CEB970 /* hihat3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hihat3.wav; path = Resources/Sound/hihat3.wav; sourceTree = SOURCE_ROOT; };
+		E58AD2E017852F8200CEB970 /* hihat4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hihat4.wav; path = Resources/Sound/hihat4.wav; sourceTree = SOURCE_ROOT; };
+		E58AD2E117852F8400CEB970 /* hihat5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hihat5.wav; path = Resources/Sound/hihat5.wav; sourceTree = SOURCE_ROOT; };
+		E58AD2E217852F8400CEB970 /* hihatmulti.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hihatmulti.wav; path = Resources/Sound/hihatmulti.wav; sourceTree = SOURCE_ROOT; };
 		E58F3A23172C13DE00C00E9C /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = Resources/Graphics/spark.png; sourceTree = SOURCE_ROOT; };
 		E58F3A24172C13DE00C00E9C /* spark-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spark-hd.png"; path = "Resources/Graphics/spark-hd.png"; sourceTree = SOURCE_ROOT; };
 		E5973A3C1720EE8C001B948A /* MainMenuRecommendBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuRecommendBox.h; sourceTree = "<group>"; };
@@ -1226,6 +1276,28 @@
 		E5973A9E17234DB3001B948A /* MainMenuSocialBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuSocialBox.m; path = sources/MainMenuSocialBox.m; sourceTree = SOURCE_ROOT; };
 		E5973AA017234E08001B948A /* MainMenuSettingsBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuSettingsBox.h; sourceTree = "<group>"; };
 		E5973AA117234E08001B948A /* MainMenuSettingsBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuSettingsBox.m; sourceTree = "<group>"; };
+		E5A80D141783134B007CF469 /* chime.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = chime.wav; path = Resources/Sound/chime.wav; sourceTree = SOURCE_ROOT; };
+		E5A80D151783134B007CF469 /* chime2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = chime2.wav; path = Resources/Sound/chime2.wav; sourceTree = SOURCE_ROOT; };
+		E5A80D161783134B007CF469 /* chime3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = chime3.wav; path = Resources/Sound/chime3.wav; sourceTree = SOURCE_ROOT; };
+		E5A80D171783134B007CF469 /* high_hat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = high_hat.wav; path = Resources/Sound/high_hat.wav; sourceTree = SOURCE_ROOT; };
+		E5A80D181783134B007CF469 /* JewelBeat - Follow The Beat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "JewelBeat - Follow The Beat.wav"; path = "Resources/Sound/JewelBeat - Follow The Beat.wav"; sourceTree = SOURCE_ROOT; };
+		E5A80D191783134B007CF469 /* kalimba1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = kalimba1.wav; path = Resources/Sound/kalimba1.wav; sourceTree = SOURCE_ROOT; };
+		E5A80D1A1783134B007CF469 /* kalimba2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = kalimba2.wav; path = Resources/Sound/kalimba2.wav; sourceTree = SOURCE_ROOT; };
+		E5A80D1B1783134B007CF469 /* kalimba3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = kalimba3.wav; path = Resources/Sound/kalimba3.wav; sourceTree = SOURCE_ROOT; };
+		E5A80D1C1783134B007CF469 /* kicker.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = kicker.wav; path = Resources/Sound/kicker.wav; sourceTree = SOURCE_ROOT; };
+		E5A80D1D1783134B007CF469 /* loop1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = loop1.wav; path = Resources/Sound/loop1.wav; sourceTree = SOURCE_ROOT; };
+		E5A80D1E1783134B007CF469 /* loop2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = loop2.wav; path = Resources/Sound/loop2.wav; sourceTree = SOURCE_ROOT; };
+		E5A80D1F1783134B007CF469 /* loop3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = loop3.wav; path = Resources/Sound/loop3.wav; sourceTree = SOURCE_ROOT; };
+		E5A80D201783134B007CF469 /* loop4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = loop4.wav; path = Resources/Sound/loop4.wav; sourceTree = SOURCE_ROOT; };
+		E5A80D211783134B007CF469 /* loop5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = loop5.wav; path = Resources/Sound/loop5.wav; sourceTree = SOURCE_ROOT; };
+		E5A80D221783134B007CF469 /* loop6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = loop6.wav; path = Resources/Sound/loop6.wav; sourceTree = SOURCE_ROOT; };
+		E5A80D231783134B007CF469 /* loop7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = loop7.wav; path = Resources/Sound/loop7.wav; sourceTree = SOURCE_ROOT; };
+		E5A80D241783134B007CF469 /* loop8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = loop8.wav; path = Resources/Sound/loop8.wav; sourceTree = SOURCE_ROOT; };
+		E5A80D251783134B007CF469 /* marimba_f.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = marimba_f.wav; path = Resources/Sound/marimba_f.wav; sourceTree = SOURCE_ROOT; };
+		E5A80D261783134B007CF469 /* piano_a3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = piano_a3.wav; path = Resources/Sound/piano_a3.wav; sourceTree = SOURCE_ROOT; };
+		E5A80D271783134B007CF469 /* pickup_coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = pickup_coin.wav; path = Resources/Sound/pickup_coin.wav; sourceTree = SOURCE_ROOT; };
+		E5A80D281783134B007CF469 /* pickup_coin1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = pickup_coin1.wav; path = Resources/Sound/pickup_coin1.wav; sourceTree = SOURCE_ROOT; };
+		E5A80D291783134B007CF469 /* popup.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = popup.m4a; path = Resources/Sound/popup.m4a; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1265,9 +1337,45 @@
 		0801C92816DC7A9900ED1A1B /* Sound */ = {
 			isa = PBXGroup;
 			children = (
-				0801C92B16DC7B1900ED1A1B /* JewelBeat - Follow The Beat.wav */,
-				0803EEC016E331CD00CC932B /* popup.m4a */,
-				0801C92916DC7ABA00ED1A1B /* pickup_coin.wav */,
+				E58AD2DC17852F7F00CEB970 /* clap3.wav */,
+				E58AD2DD17852F8000CEB970 /* hihat1.wav */,
+				E58AD2DE17852F8000CEB970 /* hihat2.wav */,
+				E58AD2DF17852F8100CEB970 /* hihat3.wav */,
+				E58AD2E017852F8200CEB970 /* hihat4.wav */,
+				E58AD2E117852F8400CEB970 /* hihat5.wav */,
+				E58AD2E217852F8400CEB970 /* hihatmulti.wav */,
+				E58AD2D4178522F100CEB970 /* clap.wav */,
+				E58AD2D5178522F200CEB970 /* swipe.wav */,
+				E58AD2D6178522F200CEB970 /* wall_hit.wav */,
+				E5A80D141783134B007CF469 /* chime.wav */,
+				E58AD2DA1785290D00CEB970 /* clap2.wav */,
+				E5A80D151783134B007CF469 /* chime2.wav */,
+				E5A80D161783134B007CF469 /* chime3.wav */,
+				E5A80D171783134B007CF469 /* high_hat.wav */,
+				E5A80D181783134B007CF469 /* JewelBeat - Follow The Beat.wav */,
+				E5A80D191783134B007CF469 /* kalimba1.wav */,
+				E5A80D1A1783134B007CF469 /* kalimba2.wav */,
+				E5A80D1B1783134B007CF469 /* kalimba3.wav */,
+				E55D11AE1785CCBA0072B6AC /* popin1.wav */,
+				E55D11AF1785CCBA0072B6AC /* popin2.wav */,
+				E55D11B01785CCBA0072B6AC /* popin3.wav */,
+				E55D11B11785CCBA0072B6AC /* popin4.wav */,
+				E55D11B21785CCBA0072B6AC /* popin5.wav */,
+				E55D11B31785CCBA0072B6AC /* wah_wah.wav */,
+				E5A80D1C1783134B007CF469 /* kicker.wav */,
+				E5A80D1D1783134B007CF469 /* loop1.wav */,
+				E5A80D1E1783134B007CF469 /* loop2.wav */,
+				E5A80D1F1783134B007CF469 /* loop3.wav */,
+				E5A80D201783134B007CF469 /* loop4.wav */,
+				E5A80D211783134B007CF469 /* loop5.wav */,
+				E5A80D221783134B007CF469 /* loop6.wav */,
+				E5A80D231783134B007CF469 /* loop7.wav */,
+				E5A80D241783134B007CF469 /* loop8.wav */,
+				E5A80D251783134B007CF469 /* marimba_f.wav */,
+				E5A80D261783134B007CF469 /* piano_a3.wav */,
+				E5A80D271783134B007CF469 /* pickup_coin.wav */,
+				E5A80D281783134B007CF469 /* pickup_coin1.wav */,
+				E5A80D291783134B007CF469 /* popup.m4a */,
 			);
 			name = Sound;
 			path = ..;
@@ -2552,9 +2660,6 @@
 				085E9740167597A800A50284 /* tuffy_bold_italic-charmap-hd.png in Resources */,
 				085E9742167597A800A50284 /* west_england-64.fnt in Resources */,
 				085E9743167597A800A50284 /* west_england-64.png in Resources */,
-				0801C92A16DC7ABA00ED1A1B /* pickup_coin.wav in Resources */,
-				0801C92C16DC7B1900ED1A1B /* JewelBeat - Follow The Beat.wav in Resources */,
-				0803EEC916E3D24A00CC932B /* popup.m4a in Resources */,
 				850CF2C116ED974400B292DE /* annotated.html in Resources */,
 				850CF2C216ED974400B292DE /* bc_s.png in Resources */,
 				850CF2C316ED974400B292DE /* class_flurry-members.html in Resources */,
@@ -2722,6 +2827,45 @@
 				859E2A94175D45E000EE7916 /* achievement_map.strings in Resources */,
 				E54C884117766B8200D546F2 /* parts_record_inner.png in Resources */,
 				E54C884217766B8200D546F2 /* parts_record_inner-hd.png in Resources */,
+				E5A80D2A1783134B007CF469 /* chime.wav in Resources */,
+				E5A80D2B1783134B007CF469 /* chime2.wav in Resources */,
+				E5A80D2C1783134B007CF469 /* chime3.wav in Resources */,
+				E5A80D2D1783134B007CF469 /* high_hat.wav in Resources */,
+				E5A80D2E1783134B007CF469 /* JewelBeat - Follow The Beat.wav in Resources */,
+				E5A80D2F1783134B007CF469 /* kalimba1.wav in Resources */,
+				E5A80D301783134B007CF469 /* kalimba2.wav in Resources */,
+				E5A80D311783134B007CF469 /* kalimba3.wav in Resources */,
+				E5A80D321783134B007CF469 /* kicker.wav in Resources */,
+				E5A80D331783134B007CF469 /* loop1.wav in Resources */,
+				E5A80D341783134B007CF469 /* loop2.wav in Resources */,
+				E5A80D351783134B007CF469 /* loop3.wav in Resources */,
+				E5A80D361783134B007CF469 /* loop4.wav in Resources */,
+				E5A80D371783134B007CF469 /* loop5.wav in Resources */,
+				E5A80D381783134B007CF469 /* loop6.wav in Resources */,
+				E5A80D391783134B007CF469 /* loop7.wav in Resources */,
+				E5A80D3A1783134B007CF469 /* loop8.wav in Resources */,
+				E5A80D3B1783134B007CF469 /* marimba_f.wav in Resources */,
+				E5A80D3C1783134B007CF469 /* piano_a3.wav in Resources */,
+				E5A80D3D1783134B007CF469 /* pickup_coin.wav in Resources */,
+				E5A80D3E1783134B007CF469 /* pickup_coin1.wav in Resources */,
+				E5A80D3F1783134B007CF469 /* popup.m4a in Resources */,
+				E58AD2D7178522F300CEB970 /* clap.wav in Resources */,
+				E58AD2D8178522F300CEB970 /* swipe.wav in Resources */,
+				E58AD2D9178522F300CEB970 /* wall_hit.wav in Resources */,
+				E58AD2DB1785290E00CEB970 /* clap2.wav in Resources */,
+				E58AD2E317852F8500CEB970 /* clap3.wav in Resources */,
+				E58AD2E417852F8500CEB970 /* hihat1.wav in Resources */,
+				E58AD2E517852F8500CEB970 /* hihat2.wav in Resources */,
+				E58AD2E617852F8500CEB970 /* hihat3.wav in Resources */,
+				E58AD2E717852F8500CEB970 /* hihat4.wav in Resources */,
+				E58AD2E817852F8500CEB970 /* hihat5.wav in Resources */,
+				E58AD2E917852F8500CEB970 /* hihatmulti.wav in Resources */,
+				E55D11B41785CCBA0072B6AC /* popin1.wav in Resources */,
+				E55D11B51785CCBA0072B6AC /* popin2.wav in Resources */,
+				E55D11B61785CCBA0072B6AC /* popin3.wav in Resources */,
+				E55D11B71785CCBA0072B6AC /* popin4.wav in Resources */,
+				E55D11B81785CCBA0072B6AC /* popin5.wav in Resources */,
+				E55D11B91785CCBA0072B6AC /* wah_wah.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2978,8 +3122,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2998,8 +3142,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Rotato;
-				PROVISIONING_PROFILE = "E0279E6A-ED64-4F50-81C8-661C89123479";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E0279E6A-ED64-4F50-81C8-661C89123479";
+				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DCB72B6-CF7B-441A-811C-871D021488BB";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -3010,8 +3154,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2d-2.x-ARC-iOS/Prefix.pch";
@@ -3029,8 +3173,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Rotato;
-				PROVISIONING_PROFILE = "E0279E6A-ED64-4F50-81C8-661C89123479";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E0279E6A-ED64-4F50-81C8-661C89123479";
+				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DCB72B6-CF7B-441A-811C-871D021488BB";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
