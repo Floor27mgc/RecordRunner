@@ -83,7 +83,6 @@
         GKAchievement * curAch = [achievementsDictionary objectForKey:identifier];
         
         if (curAch == nil) {
-            NSLog(@"creating new GC ach for id %@", identifier);
             curAch = [[GKAchievement alloc] initWithIdentifier:identifier];
             [achievementsDictionary setObject:curAch
                                        forKey:curAch.identifier];
@@ -108,6 +107,26 @@
 }
 
 // -----------------------------------------------------------------------------------
+- (Achievement *) GetAchievementByIdentifier:(int)identifier
+{
+    int totalAchievementCount = totalNumAchievements +
+        (NUM_RANKS * ACHIEVEMENTS_PER_RANK);
+    
+    // sanity check
+    if (identifier < 1 || identifier > totalAchievementCount) {
+        return nil;
+    }
+    
+    for (Achievement * ach in allAchievements) {
+        if (ach.condIndex == identifier) {
+            return ach;
+        }
+    }
+    
+    return nil;
+}
+
+// -----------------------------------------------------------------------------------
 - (Achievement *) GetAchievementByDescription:(NSString *)desc
 {
     for (int i = 0; i < [allAchievements count]; ++i) {
@@ -120,6 +139,35 @@
     
     return nil;
 }
+
+// -----------------------------------------------------------------------------------
+- (void) LoadInternalRankAchievements
+{
+    int conditionIndex = 1;
+    
+    // load all the rank achievements
+    for (int i = 1; i <= NUM_RANKS; ++i) {
+        
+        for (int j = 1; j <= ACHIEVEMENTS_PER_RANK; ++j) {
+            
+            NSString * curRankDesc = [NSString stringWithFormat:@"%@%d%@%d",
+                                      @"RANK_", i, @"_DESC_", j];
+            NSString * rankDesc = NSLocalizedStringFromTable(curRankDesc,
+                                                             @"achievement_map",                                                            nil);
+            
+            // load up all the achievements
+            Achievement * newAchievement = [[Achievement alloc]
+                                            initWithCondition:conditionIndex
+                                            description:rankDesc
+                                            gameCenterAchievement:nil
+                                            isGCAchievement:NO];
+            
+            [allAchievements addObject:newAchievement];
+            ++conditionIndex;
+        }
+    }
+}
+
 
 // -----------------------------------------------------------------------------------
 - (void) LoadRankAchievements:(int)rank
@@ -184,6 +232,7 @@
 - (BOOL) CheckCurrentAchievements
 {
     if (!achievementsLoaded) {
+        [self LoadInternalRankAchievements];
         [self LoadInternalAchievements];
         achievementsLoaded = YES;
     }

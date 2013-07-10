@@ -13,20 +13,16 @@
 /* Rank 1 */
 "RANK_1_DESC_1" = "Go 10 Laps in a single life.";
 "RANK_1_COND_1" = "[GameInfoGlobal sharedGameInfoGlobal].numRotations > 10";
-
 "RANK_1_DESC_2" = "Collect 50 coins in a single life.";
-"COND_2" = "[GameInfoGlobal sharedGameInfoGlobal].numCoins >= 50";
-
+"RANK_1_COND_2" = "[GameInfoGlobal sharedGameInfoGlobal].numCoins >= 50";
 "RANK_1_DESC_3" = "Skim past 3 “X’s” in a single life.";
 "RANK_1_COND_3" = "[GameInfoGlobal sharedGameInfoGlobal].closeCalls >= 3";
 
 /* Rank 2 */
 "RANK_2_DESC_1" = "Collect 3 coins in a single scratch.";
 "RANK_2_COND_1" = "";
-
 "RANK_2_DESC_2" = "Get a score of 200.";
 "RANK_2_COND_2" = "[GameInfoGlobal sharedGameInfoGlobal].score >= 200";
-
 "RANK_2_DESC_3" = "Survive for 60 seconds without dying.";
 "RANK_2_COND_3" = "";
 

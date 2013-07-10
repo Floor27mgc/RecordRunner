@@ -9,14 +9,19 @@
 #import <Foundation/Foundation.h>
 #import "Achievement.h"
 
+#define ACHIEVEMENTS_PER_RANK 3
+#define NUM_RANKS             5
+
 @interface AchievementContainer : NSObject
 
 - (void) LoadRankAchievements: (int) rank;
 - (Achievement *) GetAchievementByDescription: (NSString *) desc;
+- (Achievement *) GetAchievementByIdentifier: (int) identifier;
 - (void) LoadCurrentRankAchievements;
 - (BOOL) CheckCurrentAchievements;
 - (void) LogAchievements;
 - (void) LoadInternalAchievements;
+- (void) LoadInternalRankAchievements;
 
 @property (nonatomic, strong) NSMutableArray * allAchievements;
 @property (nonatomic, strong) NSMutableArray * currentAchievements;
