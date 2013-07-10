@@ -56,7 +56,7 @@
     
     switch (condIndex) {
             // Go 10 Laps in a single life.
-        /*case 1:
+        case 1:
             achieved = ([GameInfoGlobal sharedGameInfoGlobal].numRotationsThisLife
                         >= 10);
             break;
@@ -132,7 +132,7 @@
             
             // UNKNOWN
         case 15:
-            break;*/
+            break;
             
             // Rank 1
         case 16:
@@ -259,6 +259,9 @@
     // once achieved, set the flag
     if (achieved) {
         NSLog(@"achieved %@!", achievementDescription);
+        
+        // record that this achievement was achieved this round
+        [[GameInfoGlobal sharedGameInfoGlobal].achievedThisRound addObject:self];
         
         //$$$ACHIEVE THIS ONE/////
         

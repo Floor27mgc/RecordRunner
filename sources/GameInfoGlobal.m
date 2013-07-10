@@ -31,6 +31,7 @@
 @synthesize hit40scratchesInSingleRevolution;
 @synthesize isBackgroundMusicOn;
 @synthesize isSoundEffectOn;
+@synthesize achievedThisRound;
 
 static GameInfoGlobal *sharedGameInfoGlobal;
 
@@ -48,9 +49,6 @@ static GameInfoGlobal *sharedGameInfoGlobal;
     {
         sharedGameInfoGlobal = self;
         gameMode = kGameModeNormal;
-        
-        // game rotation data
-        [self resetPerLifeStatistics];
 
         score = 0;
         
@@ -73,11 +71,15 @@ static GameInfoGlobal *sharedGameInfoGlobal;
         NSLog(@"Coin bank %d lifetimeRevolutions %d lifetimeRoundsPlayed %d", coinsInBank,
               lifetimeRevolutions, lifetimeRoundsPlayed);
         
+        achievedThisRound = [[NSMutableArray alloc] init];
+        
         statsContainer = [[StatisticsContainer alloc] init];
         
         AudioSessionInitialize(NULL,NULL,NULL,NULL);
         [self evaluateSoundPrefrence];
-
+        
+        // game rotation data
+        [self resetPerLifeStatistics];
     }
     return self;
 }
@@ -110,8 +112,10 @@ static GameInfoGlobal *sharedGameInfoGlobal;
     timeInOuterRingThisLife = 0;
     numCoinsThisLife = 0;
     closeCallsThisLife = 0;
+    [achievedThisRound removeAllObjects];
 }
 
+// -----------------------------------------------------------------------------------
 -(void) evaluateSoundPrefrence
 {
     UInt32 propertySize, audioIsAlreadyPlaying=0;
