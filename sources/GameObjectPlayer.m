@@ -79,9 +79,6 @@
             (self.radius == PLAYER_RADIUS_INNER_MOST))
         {
             self.playerRadialSpeed = 0;
-        
-            //Reset the number of coins collected in one pass when you hit the other side.
-            [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch++;
         }
     }
     

@@ -56,6 +56,8 @@
 
     int multAmt = [GameLayer sharedGameLayer].multiplier.multiplierValue;
     
+    NSLog(@"Incrementing score %d with multiplier %d", amount, multAmt);
+    
     _scoreValue += (multAmt * amount);
     
     [GameInfoGlobal sharedGameInfoGlobal].score = _scoreValue;

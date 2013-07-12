@@ -73,11 +73,20 @@
         
         NSString *scoreText = @"";
         
+        //increment coins this scratch if you have started the scratch
+        if ([GameLayer sharedGameLayer].player.playerRadialSpeed > 0)
+        {
+            [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch++;
+        }
+        
+        // if we aren't moving then coinsThisScratch is zero, we should still register
+        // this coin as 1
+        int coinsToCount = ([GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch == 0 ?
+                            1 : [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch);
+                
         // increment score
         [GameInfoGlobal sharedGameInfoGlobal].numCoinsThisLife++;
-        [[GameLayer sharedGameLayer].score incrementScore:
-         [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch];
-        
+        [[GameLayer sharedGameLayer].score incrementScore: coinsToCount];
         
         //Show the different colored explosions depending on howmany collected in one chain.
         switch ([GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch)
@@ -120,12 +129,6 @@
         
         //Show those ghost score text above the bomb.
         [[GameLayer sharedGameLayer] showScoreOnTrack:TRACKNUM_FROM_RADIUS message: scoreText];
-        
-        //increment coins this scratch if you have started the scratch
-        if ([GameLayer sharedGameLayer].player.playerRadialSpeed > 0)
-        {
-            [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch++;
-        }
         
         int soundIdxToPlay;
         switch (TRACKNUM_FROM_RADIUS)
