@@ -38,6 +38,9 @@
     self.animationManager = self.userObject;
     multiplierLabel.color = ccWHITE;
     
+    
+    [self.animationManager runAnimationsForSequenceNamed:@"appear"];
+    
     [self reset];
 }
 
@@ -55,17 +58,6 @@
     // start timing if we have exceeded 10x
     if (multiplierValue >= 10) {
         timeAboveTen = [NSDate date];
-    }
-    
-    // increase speed if multiplier is above thresholds
-    if (multiplierValue == SPEED_THRESHOLD_1 ||
-        multiplierValue == SPEED_THRESHOLD_2 ||
-        multiplierValue == SPEED_THRESHOLD_3) {
-        
-        [[GameLayer sharedGameLayer] changeGameAngularVelocityByDegree:
-            SPEED_INCREASE_AMOUNT];
-        
-        ++speedDifference;
     }
     
     [self.multiplierLabel setString:[NSString stringWithFormat:@"x %d",
@@ -112,16 +104,6 @@
         timeAboveTen = [NSDate distantFuture];
     }
     
-    // decrease speed if multiplier is drops below thresholds
-    if (multiplierValue == SPEED_THRESHOLD_1 - 1 ||
-        multiplierValue == SPEED_THRESHOLD_2 - 1 ||
-        multiplierValue == SPEED_THRESHOLD_3 - 1) {
-
-        [[GameLayer sharedGameLayer] changeGameAngularVelocityByDegree:
-            (-SPEED_INCREASE_AMOUNT)];
-        --speedDifference;
-    }
-    
     ccColor3B currentColor = multiplierLabel.color;
     [self.multiplierLabel setColor:currentColor];
     
@@ -148,11 +130,6 @@
 // -----------------------------------------------------------------------------------
 - (void) reset
 {
-    for (int i = 0; i < speedDifference; ++i) {
-        [[GameLayer sharedGameLayer] changeGameAngularVelocityByDegree:
-            (-SPEED_INCREASE_AMOUNT)];
-    }
-    
     multiplierValue = 1;
     highestMultiplierValueEarned = 1;
     timerLifeInSec = 0;

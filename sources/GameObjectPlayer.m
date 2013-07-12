@@ -9,7 +9,7 @@
 #import "GameObjectPlayer.h"
 #import "GameLayer.h"
 #import "common.h"
-#import "GameObjectInjector.h"b
+#import "GameObjectInjector.h"
 #import "GameInfoGlobal.h"
 #import "SoundController.h"
 
@@ -199,6 +199,12 @@
     // Setup a delegate method for the animationManager of the explosion
 //    CCBAnimationManager* animationManager = self.userObject;
 //    animationManager.delegate = self;
+}
+
+//Called by the bomb object when handlecollision finds they ran into each other
+- (void) killYourself
+{
+    [[SoundController sharedSoundController] playSoundIdx:SOUND_PLAYER_DIE fromObject:self];
 }
 
 // -----------------------------------------------------------------------------------

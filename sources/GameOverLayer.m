@@ -15,11 +15,13 @@
 
 @implementation GameOverLayer
 @synthesize finalScoreLabel;
-@synthesize finalMultiplierLabel;
-@synthesize highScoreLabel;
 @synthesize emailView;
 @synthesize emailViewController;
 @synthesize isQuitting;
+@synthesize rankLabel;
+@synthesize yesButton;
+@synthesize yesButtonEnabled;
+@synthesize homeButtonEnabled;
 
 - (void) pressedNO:(id) sender
 {
@@ -31,7 +33,11 @@
 
 - (void) pressedYES:(id) sender
 {
+    if (yesButtonEnabled)
+    {
     self.isQuitting = NO;
+    
+    [self turnOffButtons];
     
     CCBAnimationManager* animationManager = self.userObject;
     
@@ -39,16 +45,16 @@
     [animationManager runAnimationsForSequenceNamed:@"Pop out"];
     [[GameLayer sharedGameLayer] cleanUpPlayField];
     [[GameLayer sharedGameLayer].score setScoreValue:0];
-    
+    }
 }
 
 
 //This method is used to set the labels in the Game Over Menu.
 //For example, before G.O. Menu is shown, call this method to set those two values
-- (void) setMenuData:(int) finalMultiplier finalScore:(int)myFinalScore
-           highScore:(int) myHighScore
+- (void) setMenuData:(int) myFinalScore
+           rankLevel:(int) rankScore
+
 {
-    NSLog(@"value of finalScoreLabel: %@", self.finalScoreLabel.string);
     
     [GameInfoGlobal sharedGameInfoGlobal].lifetimeRoundsPlayed++;
     [[GameInfoGlobal sharedGameInfoGlobal] logLifeTimeAchievements];
@@ -59,10 +65,9 @@
     
     [self.finalScoreLabel setString:[NSString stringWithFormat:@"%d",
                                          myFinalScore]];
-    [self.finalMultiplierLabel setString:[NSString stringWithFormat:@"x%d",
-                                     finalMultiplier]];
-    [self.highScoreLabel setString:[NSString stringWithFormat:@"%d",
-                                    myHighScore]];
+    
+    [self.rankLabel setString:[NSString stringWithFormat:@"%d",
+                                     rankScore]];
     
     GKScore *myScoreValue = [[GKScore alloc] initWithCategory:@"RotatoLeaderBoard"];
     myScoreValue.value = myFinalScore;
@@ -80,12 +85,17 @@
 //This quits the game
 - (void) pressedHome:(id) sender
 {
-    NSLog(@"pressed HOME!");
-    self.isQuitting = YES;
-    
-    CCBAnimationManager* animationManager = self.userObject;
-    [animationManager runAnimationsForSequenceNamed:@"Pop out"];
-    
+    if (homeButtonEnabled)
+    {
+        NSLog(@"pressed HOME!");
+        self.isQuitting = YES;        
+        
+        [self turnOffButtons];
+        
+        CCBAnimationManager* animationManager = self.userObject;
+        [animationManager runAnimationsForSequenceNamed:@"Pop out"];
+
+    }
 }
 
 - (void) pressedFeedback:(id)sender
@@ -110,6 +120,9 @@
     // Setup a delegate method for the animationManager of the explosion
     CCBAnimationManager* animationManager = self.userObject;
     animationManager.delegate = self;
+    
+    yesButtonEnabled = YES;
+    homeButtonEnabled = YES;
 }
 
 - (void) completedAnimationSequenceNamed:(NSString *)name
@@ -133,6 +146,17 @@
 //    [[GameLayer sharedGameLayer] unschedule:@selector(update:)];
 //    [[CCDirector sharedDirector] pause];
 }
+
+//Buttons can accept continuing input after they have been pushed. This will prevent them from being pushed again
+- (void) turnOffButtons
+{
+    
+    //TODO: Figure out how to turn off the play button. It can be pressed repeatedly.
+    yesButtonEnabled = NO;
+    homeButtonEnabled = NO;
+    
+}
+
 -(void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     [emailViewController dismissViewControllerAnimated:YES completion:nil];

@@ -13,10 +13,13 @@
 #import "Bomb.h"
 #import "Queue.h"
 #import "Score.h"
+#import "scoreMini.h"
 #import "GameOverLayer.h"
+#import "RankLayerBox.h"
 #import "Power.h"
 #import "Multiplier.h"
 #import "AchievementContainer.h"
+#import "CCBAnimationManager.h"
 #import "SoundController.h"
 #import "SimpleAudioEngine.h"
 
@@ -27,6 +30,7 @@
 #define COIN_CREATION_THRESHOLD      90
 #define MIN_NUM_BOMBS_PER_TRACK       5
 #define MIN_NUM_COINS_PER_TRACK       5
+#define MIN_NUM_SCORES_PER_TRACK      5
 #define MIN_NUM_POWER_ICONS_PER_TRACK 5
 #define MAX_NUM_TRACK                 4
 #define MAX_NUM_BOUNCING_COINS        7
@@ -35,6 +39,8 @@
 #define kShieldSpawnRate 1
 #define TAP_DELAY_THRESHOLD_MSEC 62//125
 
+#define SPEED_INCREASE_AMOUNT .2
+
 #define kGameModeNoRotation 0
 #define kGameModeRotation   1
 typedef enum {
@@ -42,7 +48,8 @@ typedef enum {
     BOMB_TYPE,
     COIN_TYPE,
     POWER_ICON_TYPE,
-    POWER_TYPE
+    POWER_TYPE,
+    SCORE_TYPE
 } game_object_t;
 
 typedef enum {
@@ -52,7 +59,7 @@ typedef enum {
 
 @class GameObjectInjector;
 // GameLayer
-@interface GameLayer : CCLayer
+@interface GameLayer : CCLayer  <CCBAnimationManagerDelegate>
 {
 //    GameObjectPlayer *player;
     BOOL isTrackHit[MAX_NUM_TRACK];
@@ -60,6 +67,10 @@ typedef enum {
 }
 
 + (GameLayer *) sharedGameLayer;
+
+
+// handle game over scenario
+- (void) gameOver;
 
 /*
 // returns a CCScene that contains the GameLayer as the only child
@@ -121,6 +132,7 @@ typedef enum {
 -(id) getHittingObjByTrackNum:(int) trackNum;
 -(void) openDebugMenu;
 -(BOOL) moveThePlayer;
+-(void) showScoreOnTrack: (int) trackNum message:(NSString *) scoreText;
 
 @property (nonatomic, strong) GameObjectPlayer *player;
 @property (nonatomic, strong) Queue * coinFreePool;
@@ -133,7 +145,10 @@ typedef enum {
 @property (nonatomic, strong) Queue * powerPool;
 @property (nonatomic, strong) Queue * powerIconFreePool;
 @property (nonatomic, strong) Queue * powerIconUsedPool;
+@property (nonatomic, strong) Queue * scoreFreePool;
+@property (nonatomic, strong) Queue * scoreUsedPool;
 @property (nonatomic, strong) GameOverLayer * gameOverLayer;
+@property (nonatomic, strong) RankLayerBox * rankLayer;
 @property (nonatomic, strong) Multiplier * multiplier;
 @property (nonatomic, assign) int bombSpawnRate;
 @property (nonatomic, assign) int coinSpawnRate;

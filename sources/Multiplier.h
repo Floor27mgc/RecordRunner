@@ -11,10 +11,6 @@
 #import "CCBAnimationManager.h"
 
 #define MULTIPLIER_LIFE_TIME_SEC   5
-#define SPEED_THRESHOLD_1      4
-#define SPEED_THRESHOLD_2      7
-#define SPEED_THRESHOLD_3     10
-#define SPEED_INCREASE_AMOUNT .4
 
 @interface Multiplier : CCNode
 
