@@ -31,6 +31,7 @@ typedef enum
 - (void) setSheilded: (BOOL) trigger;
 
 - (void) blink;
+- (void) killYourself;
 
 - (BOOL) willHitBomb;
 - (BOOL) spriteInPath: (int) angle

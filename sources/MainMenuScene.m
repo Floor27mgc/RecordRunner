@@ -33,6 +33,7 @@
 @synthesize buttonArray;
 @synthesize gameCenterViewController;
 @synthesize gameCenterView;
+@synthesize clickedStart;
 
 
 - (id) init
@@ -53,6 +54,9 @@
         
         
         buttonArray = [NSArray arrayWithObjects:mainMenuRecommend, mainMenuScore, mainMenuBuy, mainMenuSocial, mainMenuSettings, mainMenuHelp, nil];
+        
+        //Click start makes sure we dont keep running the start animation.
+        clickedStart = NO;
         
         GKLocalPlayer __unsafe_unretained *localPlayer = [GKLocalPlayer localPlayer];
         //[self loadAchievements];
@@ -84,6 +88,15 @@
 }
 
 
+- (void) didLoadFromCCB
+{
+    // Setup a delegate method for the animationManager of the explosion
+    CCBAnimationManager* animationManager = self.userObject;
+    animationManager.delegate = self;
+    
+}
+
+
 - (void) loadAchievements
 {
     NSMutableDictionary * achievementsDictionary = [[NSMutableDictionary alloc] init];
@@ -112,13 +125,12 @@
 - (void) pressedPlay:(id)sender
 {
     //Only open the game if the menu is closed
-    if ([self anyAnyMenusOpen] == NO)
+    if ([self anyAnyMenusOpen] == NO && clickedStart == NO)
     {
-        // Load the game scene
-        CCScene* gameScene = [CCBReader sceneWithNodeGraphFromFile:@"MainGameScene.ccbi"];
-    
-        // Go to the game scene
-        [[CCDirector sharedDirector] replaceScene:gameScene];
+        CCBAnimationManager* animationManager = self.userObject;
+        clickedStart = YES;
+        [animationManager runAnimationsForSequenceNamed:@"ClickedStart"];        
+       
     }
 }
 
@@ -229,8 +241,6 @@
     return NO;
 }
 
-
-
 - (void) openMenus: (MainMenuButtons) openThisMenu
 {
     NSLog(@"============= open %d ===================", openThisMenu);
@@ -282,6 +292,19 @@
     
 }
 
-
+- (void) completedAnimationSequenceNamed:(NSString *)name
+{
+    NSLog(@"%@",name);
+    
+    if ([name compare:@"ClickedStart"] == NSOrderedSame) {
+        
+        // Load the game scene
+        CCScene* gameScene = [CCBReader sceneWithNodeGraphFromFile:@"MainGameScene.ccbi"];
+        
+        // Go to the game scene
+        [[CCDirector sharedDirector] replaceScene:gameScene];
+        
+    }
+}
 
 @end

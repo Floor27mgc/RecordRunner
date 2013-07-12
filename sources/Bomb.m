@@ -10,6 +10,7 @@
 #import "Bomb.h"
 #import "CCBReader.h"
 #import "GameInfoGlobal.h"
+#import "GameObjectPlayer.h"
 
 @implementation Bomb
 @synthesize gameObjectUpdateTick;
@@ -75,6 +76,9 @@
                     
                     //Play sound effect
                     [[SoundController sharedSoundController] playSoundIdx:SOUND_BOMB_SKIM fromObject:self];
+                    
+                    //Show those ghost score text above the bomb.
+                    [[GameLayer sharedGameLayer] showScoreOnTrack:TRACKNUM_FROM_RADIUS message: @"+1"];
                 }
             } else {
                 if (!closeCallBelow) {
@@ -83,6 +87,8 @@
                     
                     //Play sound effect
                     [[SoundController sharedSoundController] playSoundIdx:SOUND_BOMB_SKIM2 fromObject:self];
+                    [[GameLayer sharedGameLayer] showScoreOnTrack:TRACKNUM_FROM_RADIUS message: @"+1"];
+
                 }
             }
             
@@ -130,38 +136,8 @@
         NSLog(@"Bomb absorbed by player's shield!");
     } else {
         
-        //Stop the music because player is dead
-        [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
-
-        
-        // update end-of-game statistics
-        [[[GameInfoGlobal sharedGameInfoGlobal] statsContainer] writeStats];
-        
-        if ([GameLayer sharedGameLayer].gameOverLayer != nil)
-        {
-            CCBAnimationManager* animationManager =
-                [GameLayer sharedGameLayer].gameOverLayer.userObject;
-            NSLog(@"animationManager: %@", animationManager);
-
-            [animationManager runAnimationsForSequenceNamed:@"Pop in"];
-        } else {
-            GameOverLayer * gameOverLayer =
-                (GameOverLayer *) [CCBReader nodeGraphFromFile:@"GameOverLayerBox.ccbi"];
-            gameOverLayer.position = COMMON_SCREEN_CENTER;
-            
-            //This sets the menu data for the final menu
-            [gameOverLayer setMenuData:
-                [[GameLayer sharedGameLayer].multiplier getMultiplier]
-                    finalScore:[[GameLayer sharedGameLayer].score getScore]
-                        highScore:[[GameLayer sharedGameLayer].highScore getScore]];
-            
-            
-            [[GameLayer sharedGameLayer] addChild:gameOverLayer z:11];
-        }
-        
-        [[GameLayer sharedGameLayer] pauseSchedulerAndActions];
-        
-        [[[GameInfoGlobal sharedGameInfoGlobal] statsContainer] resetGameTimer];
+        //PLAYER DIES -------------------------
+        [[GameLayer sharedGameLayer] gameOver];
     }
 }
 

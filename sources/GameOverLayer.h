@@ -10,33 +10,23 @@
 #import "cocos2d.h"
 #import <MessageUI/MFMailComposeViewController.h>
 #import <GameKit/GameKit.h>
-@interface GameOverLayer : CCNode <CCBAnimationManagerDelegate,MFMailComposeViewControllerDelegate>
-/*
-@property (nonatomic, assign) GameLayer * parentGameLayer;
-@property (nonatomic, assign) CCMenuItem * noButton;
-@property (nonatomic, assign) CCMenuItem * yesButton;
-@property (nonatomic, assign) CCMenuItem * resetButton;
+#import "CCControlButton.h"
 
-+ (id)initWithScoreString:(NSString *) score
-                  winSize:(CGSize) winSize
-                gameLayer:(GameLayer *) gamelayer
-                highScore:(bool) won
-                 bankSize:(int)coinsInBank;
-- (id) init;
-- (void) yesTapped:(id) sender;
-- (void) noTapped:(id) sender;
-- (void) resetTapped:(id) sender; */
+@interface GameOverLayer : CCNode <CCBAnimationManagerDelegate,MFMailComposeViewControllerDelegate>
+
 - (void) pressedNO:(id) sender;
 - (void) pressedYES:(id) sender;
-- (void) setMenuData:(int) finalMultiplier finalScore:(int) myFinalScore
-           highScore:(int) myHighScore;
+- (void) setMenuData: (int) myFinalScore
+           rankLevel:(int) rankScore;
 - (void) pressedFeedback:(id)sender;
 
 
 @property BOOL isQuitting;
 @property (nonatomic, strong) CCLabelTTF * finalScoreLabel;
-@property (nonatomic, strong) CCLabelTTF * finalMultiplierLabel;
-@property (nonatomic, strong) CCLabelTTF * highScoreLabel;
+@property (nonatomic, strong) CCLabelTTF * rankLabel;
+@property (nonatomic, strong) CCControlButton * yesButton;
 @property (nonatomic, strong) UIView *emailView;
 @property (nonatomic, strong) UIViewController *emailViewController;
+@property BOOL yesButtonEnabled;
+@property BOOL homeButtonEnabled;
 @end

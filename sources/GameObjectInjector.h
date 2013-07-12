@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "GameLayer.h"
+
 //@class GameLayer;
 typedef enum {
     kPatternDiamond,
@@ -31,6 +32,9 @@ typedef enum {
 //@property (nonatomic,assign) GameObjectBase *lastObject;
 @property CGMutablePathRef injectorHitBoxPath;
 @property (nonatomic, strong) CCNode *dummyInjectorBox;
+
+- (GameObjectBase *) showScoreObject: (int)trackNum
+                             message: (NSString *) message;
 
 - (GameObjectBase *) injectObjectToTrack: (int) trackNum
                                  atAngle: (int) insertionAngle

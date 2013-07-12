@@ -49,6 +49,7 @@
 #define SOUND_BOMB_SKIM2 3
 // --- PLAYER ---
 #define SOUND_PLAYER_SWIPE 0
+#define SOUND_PLAYER_DIE 1
 // --- MENUS ----
 #define SOUND_MENU_OPEN 0
 #define SOUND_MENU_CLOSE 1

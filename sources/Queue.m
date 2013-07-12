@@ -77,7 +77,6 @@
 {
     id objectArray = [self getObjectArray:trackNum];
 
-    
     if (objectArray != nil) {
         id object = nil;
         
@@ -85,9 +84,17 @@
             //object = [[objects objectAtIndex:0] autorelease];
             object = [objectArray objectAtIndex:0];
             [objectArray removeObjectAtIndex:0];
+            return object;
         }
-        return object;
+        else
+        {
+            //There was nothing left in the array at that track so you get nothing back.
+            NSLog(@"There are 0 elements in the free pool: return nothing");
+            
+            return nil;
+        }
     }
+    
     return nil;
 }
 

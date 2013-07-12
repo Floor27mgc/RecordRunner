@@ -15,6 +15,7 @@
 #import "GameObjectInjector.h"
 #import "pattern.h"
 #import "GameOverLayer.h"
+#import "RankLayerBox.h"
 #import "common.h"
 #import "PowerIcon.h"
 #import "SoundController.h"
@@ -23,6 +24,7 @@
 #import "GameDebugMenu.h"
 #import <GameKit/GameKit.h>
 #import <UIKit/UIKit.h>
+#import "CCBAnimationManager.h"
 
 #pragma mark - GameLayer
 
@@ -33,11 +35,14 @@
 @synthesize coinUsedPool = _coinUsedPool;
 @synthesize bombFreePool = _bombFreePool;
 @synthesize bombUsedPool = _bombUsedPool;
+@synthesize scoreFreePool = _scoreFreePool;
+@synthesize scoreUsedPool = _scoreUsedPool;
 @synthesize multiplier = _multiplier;
 @synthesize gameObjectInjector;
 @synthesize isGameReadyToStart;
 @synthesize soundController = _soundController;
 @synthesize gameOverLayer;
+@synthesize rankLayer;
 @synthesize bombSpawnRate;
 @synthesize coinSpawnRate;
 @synthesize shieldSpawnRate;
@@ -62,52 +67,52 @@ static GameLayer *sharedGameLayer;
 }
 
 /*
-@synthesize background;
-@synthesize powerPool = _powerPool;
-@synthesize powerIconFreePool = _powerIconFreePool;
-@synthesize powerIconUsedPool = _powerIconUsedPool;
-
-@synthesize gameOverLayer = _gameOverLayer;
-
-
-@synthesize playerOnFireEmitter;
-// -----------------------------------------------------------------------------------
-// Helper class method that creates a Scene with the GameLayer as the only child.
-+(CCScene *) sceneWithMode:(int) gameMode
-{
-    
-	// 'scene' is an autorelease object.
-	CCScene *scene = [CCScene node];
-	
-	// 'layer' is an autorelease object.
-	GameLayer *layer = [GameLayer nodeWithGameMode:gameMode];
-	
-	// add layer as a child to scene
-	[scene addChild: layer];
-	
-	// return the scene
-	return scene;
-}
-
-// -----------------------------------------------------------------------------------
-// on Create the node with game mode.
-+(id) nodeWithGameMode:(int) gameMode
-{
-    GameLayer *layer = [GameLayer node];
-    switch (gameMode)
-    {
-        case kGameModeNoRotation:
-            layer.player.gameObjectAngularVelocity = 0;
-            break;
-        case kGameModeRotation:
-            layer.player.gameObjectAngularVelocity = kDefaultGameObjectAngularVelocityInDegree;
-            break;
-        default:
-            NSLog(@"Invalid game mode being passed in");
-    }
-    return layer;
-}
-*/
+ @synthesize background;
+ @synthesize powerPool = _powerPool;
+ @synthesize powerIconFreePool = _powerIconFreePool;
+ @synthesize powerIconUsedPool = _powerIconUsedPool;
+ 
+ @synthesize gameOverLayer = _gameOverLayer;
+ 
+ 
+ @synthesize playerOnFireEmitter;
+ // -----------------------------------------------------------------------------------
+ // Helper class method that creates a Scene with the GameLayer as the only child.
+ +(CCScene *) sceneWithMode:(int) gameMode
+ {
+ 
+ // 'scene' is an autorelease object.
+ CCScene *scene = [CCScene node];
+ 
+ // 'layer' is an autorelease object.
+ GameLayer *layer = [GameLayer nodeWithGameMode:gameMode];
+ 
+ // add layer as a child to scene
+ [scene addChild: layer];
+ 
+ // return the scene
+ return scene;
+ }
+ 
+ // -----------------------------------------------------------------------------------
+ // on Create the node with game mode.
+ +(id) nodeWithGameMode:(int) gameMode
+ {
+ GameLayer *layer = [GameLayer node];
+ switch (gameMode)
+ {
+ case kGameModeNoRotation:
+ layer.player.gameObjectAngularVelocity = 0;
+ break;
+ case kGameModeRotation:
+ layer.player.gameObjectAngularVelocity = kDefaultGameObjectAngularVelocityInDegree;
+ break;
+ default:
+ NSLog(@"Invalid game mode being passed in");
+ }
+ return layer;
+ }
+ */
 // -----------------------------------------------------------------------------------
 // on "init" you need to initialize your instance
 -(id) init
@@ -127,16 +132,17 @@ static GameLayer *sharedGameLayer;
         sharedGameLayer = self;
         
         gameOverLayer = nil;
+        rankLayer = nil;
         bombSpawnRate = kBombSpawnRate;
         coinSpawnRate = kCoinSpawnRate;
         shieldSpawnRate = kShieldSpawnRate;
         isDebugMode = NO;
-
+        
         _soundController = [SoundController init];
         
         // create the player
         player = (GameObjectPlayer *)[CCBReader nodeGraphFromFile:@"gameObjectPlayer.ccbi"
-                                                             owner:player];
+                                                            owner:player];
         player.visible = 1;
         player.animationManager = player.userObject;
         player.gameObjectAngularVelocity = 0;//kDefaultGameObjectAngularVelocityInDegree;
@@ -153,7 +159,7 @@ static GameLayer *sharedGameLayer;
         for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
             for (int i=0; i<(trackNum+1) * MIN_NUM_BOMBS_PER_TRACK; i++) {
                 Coin *_coin = (Coin*)[CCBReader nodeGraphFromFile:@"gameObjectCoin.ccbi"
-                                      owner:_coin];
+                                                            owner:_coin];
                 NSLog(@"%p",_coin.userObject);
                 _coin.tag = gameObjectTag;
                 _coin.visible = 0;
@@ -165,13 +171,21 @@ static GameLayer *sharedGameLayer;
                 [self addChild: _coin z:10];
             }
         }
-
-
+        
+        
         // Create bomb free pool (queue)
         _bombFreePool = [Queue initWithMinSize:MIN_NUM_BOMBS_PER_TRACK];
         
         // Create bomb used pool (queue)
         _bombUsedPool = [Queue initWithMinSize:MIN_NUM_BOMBS_PER_TRACK];
+        
+        
+        // Create score free pool (queue)
+        _scoreFreePool = [Queue initWithMinSize:MIN_NUM_SCORES_PER_TRACK];
+        
+        // Create score used pool (queue)
+        _scoreUsedPool = [Queue initWithMinSize:MIN_NUM_SCORES_PER_TRACK];
+        
         
         // Create NUM_OBSTACLES bombs and add them to the free pool
         gameObjectTag = 0;
@@ -188,11 +202,25 @@ static GameLayer *sharedGameLayer;
                 [self addChild: _bomb z:10];
             }
         }
-                
-
+        
+        // Create scores and add them to the free pool
+        gameObjectTag = 0;
+        for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
+            for (int i=0; i < MIN_NUM_SCORES_PER_TRACK; i++) {
+                scoreMini *_myScore = (scoreMini *)[CCBReader nodeGraphFromFile:@"scoreMini.ccbi"];
+                _myScore.visible = 0;
+                _myScore.gameObjectAngularVelocity = 0;
+                _myScore.animationManager = _myScore.userObject;
+                [_scoreFreePool addObject:_myScore toTrack:trackNum];
+                gameObjectTag++;
+                // add bomb to GameLayer
+                [self addChild: _myScore z:10];
+            }
+        }
+        
         // Create Game Object injector to inject Bomb, coins, etc
         gameObjectInjector = [[GameObjectInjector alloc ]init];
-
+        
         // Create Power Pool
         _powerPool = [Queue initWithMinSize:1];
         
@@ -221,17 +249,17 @@ static GameLayer *sharedGameLayer;
         // Create and load high score
         _highScore = [Score initWithGameLayer:self imageFileName:@"" objectSpeed:0];
         int tempHighScore =
-            [[NSUserDefaults standardUserDefaults] integerForKey:@"highScore"];
+        [[NSUserDefaults standardUserDefaults] integerForKey:@"highScore"];
         [_highScore setScoreValue:tempHighScore];
         [_highScore prepareScore:@"High Score"];
-    
+        
         // Create the actual score label
         _score = [Score initWithGameLayer:self
                             imageFileName:@""
                               objectSpeed:0];
         [_score prepareScore:@"Score"];
         [_score moveBy:ccp(0, -20)];
-
+        
         _multiplier = (Multiplier *) [CCBReader nodeGraphFromFile:@"multiplier.ccbi"];
         [_multiplier prepare];
         [self addChild:_multiplier z:10];
@@ -239,20 +267,29 @@ static GameLayer *sharedGameLayer;
         
         // input buffering structures
         pendingTaps = 0;
-
+        
         self.tapDelay = [NSDate distantFuture];
         
         // set up internal achievement tracking mechanisms
         //[achievementContainer LoadInternalAchievements];
-
+        
     }
-/*
-    [self schedule: @selector(update:)]; */
+    /*
+     [self schedule: @selector(update:)]; */
     
-//    [gameObjectInjector injectObjectToTrack:0 atAngle:45 gameObjectType:COIN_TYPE effectType:kRotation];
-
+    //    [gameObjectInjector injectObjectToTrack:0 atAngle:45 gameObjectType:COIN_TYPE effectType:kRotation];
+    
     return self;
 }
+
+
+- (void) didLoadFromCCB
+{
+    // Setup a delegate method for the animationManager of the explosion
+    CCBAnimationManager* animationManager = self.userObject;
+    animationManager.delegate = self;
+}
+
 
 // -----------------------------------------------------------------------------------
 - (void) onEnter
@@ -262,8 +299,9 @@ static GameLayer *sharedGameLayer;
     player.position = ccp(COMMON_RECORD_CENTER_X + PLAYER_RADIUS_INNER_MOST,
                           COMMON_RECORD_CENTER_Y);
     
+    CCBAnimationManager* animationManager = self.userObject;
+    [animationManager runAnimationsForSequenceNamed:@"start_game"];
     
-   
     [self startTheMusic];
     
     // Schedule a selector that is called every frame
@@ -289,7 +327,7 @@ static GameLayer *sharedGameLayer;
 	// cocos2d will automatically release all the children (Label)
 	
 	// don't forget to call "super dealloc"
-
+    
 }
 
 
@@ -313,9 +351,9 @@ static GameLayer *sharedGameLayer;
     
     // generate Game Objectsrandomly
     if (arc4random() % RANDOM_MAX <= coinSpawnRate) {
-        [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:COIN_TYPE effectType:kRotation]; 
+        [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:COIN_TYPE effectType:kRotation];
     }
-
+    
     // generate Game Objectsrandomly
     if (arc4random() % RANDOM_MAX <= bombSpawnRate) {
         [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:BOMB_TYPE effectType:kRotation];
@@ -346,11 +384,11 @@ static GameLayer *sharedGameLayer;
     //      b. If no, check if the object is off screen
     //         1. If yes, hide the object and recycle the
     //            object.
-    //         2. If no, no op 
+    //         2. If no, no op
     for (int trackNum = 0; trackNum < MAX_NUM_TRACK; trackNum++)
     {
         for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_coinUsedPool, trackNum); ++i) {
-            [POOL_OBJS_ON_TRACK(_coinUsedPool, trackNum)[i] showNextFrame];            
+            [POOL_OBJS_ON_TRACK(_coinUsedPool, trackNum)[i] showNextFrame];
         }
         
         for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_bombUsedPool, trackNum); ++i) {
@@ -436,7 +474,7 @@ static GameLayer *sharedGameLayer;
     }
     
     return [self getGameAngularVelocityInDegree];
-
+    
 }
 
 // -----------------------------------------------------------------------------------
@@ -469,29 +507,29 @@ static GameLayer *sharedGameLayer;
     [_highScore showNextFrame];
 }
 /*
-// -----------------------------------------------------------------------------------
-- (void) addPower:(id)newPower
-{
-    [_powerPool addObject:newPower];
-}
-
-// -----------------------------------------------------------------------------------
-- (CGPoint) generateRandomTrackCoords
-{ 
-    CGPoint randomTrackCoords;
-    
-    randomTrackCoords.x = COMMON_SCREEN_CENTER_X +
-        (COMMON_GRID_WIDTH * (arc4random()%4));
-    randomTrackCoords.y = COMMON_SCREEN_CENTER_Y;
-    PATTERN_ALIGN_TO_GRID(randomTrackCoords);
-    randomTrackCoords.x += COMMON_GRID_WIDTH;
-
-    return randomTrackCoords;
-}
-*/
+ // -----------------------------------------------------------------------------------
+ - (void) addPower:(id)newPower
+ {
+ [_powerPool addObject:newPower];
+ }
+ 
+ // -----------------------------------------------------------------------------------
+ - (CGPoint) generateRandomTrackCoords
+ {
+ CGPoint randomTrackCoords;
+ 
+ randomTrackCoords.x = COMMON_SCREEN_CENTER_X +
+ (COMMON_GRID_WIDTH * (arc4random()%4));
+ randomTrackCoords.y = COMMON_SCREEN_CENTER_Y;
+ PATTERN_ALIGN_TO_GRID(randomTrackCoords);
+ randomTrackCoords.x += COMMON_GRID_WIDTH;
+ 
+ return randomTrackCoords;
+ }
+ */
 // -----------------------------------------------------------------------------------
 - (void) triggerPowerIcons
-{ 
+{
     if ([_powerIconUsedPool getObjectCount] == 0) {
         NSLog(@"Triggering Power Icon!");
         
@@ -506,100 +544,155 @@ static GameLayer *sharedGameLayer;
     //CCNode* gameDebugLayer = [CCBReader nodeGraphFromFile:@"DebugMenuNode.ccbi"];
     GameDebugMenu * debugMenu = (GameDebugMenu *) [CCBReader nodeGraphFromFile:@"DebugMenuNode.ccbi"];
     debugMenu.position = ccp(COMMON_SCREEN_CENTER_X,COMMON_SCREEN_CENTER_Y);
- 
+    
     [GameLayer sharedGameLayer].isDebugMode = YES;
     [self addChild:debugMenu z:12];
 }
 
- /*
-// -----------------------------------------------------------------------------------
 - (void) gameOver
 {
-    // update high score, if necessary
-    [self updateHighScore];
+    NSLog(@"Current Rank: %d", (achievementContainer.currentRank));
     
-    // cash in coins collected from this round
-    int bankSize = [self depositCoinsToBank];
+    [player killYourself];
     
-    NSString * score = [_score generateScoreString];
-    CGSize mainSize = [[CCDirector sharedDirector] winSize];
+    //Stop the music because player is dead
+    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
     
-    bool didWin = ([_score getScore] >= [_highScore getScore]);
+    // update end-of-game statistics
+    [[[GameInfoGlobal sharedGameInfoGlobal] statsContainer] writeStats];
     
-    _gameOverLayer = [GameOverLayer initWithScoreString:score
-                                                winSize:mainSize
-                                                    gameLayer:self
-                                                    highScore:didWin
-                                                    bankSize:bankSize];
-
-    // set game over layer's display actions
-    id zoomIn  = [CCScaleTo actionWithDuration:0.2 scale:1.25];
-    id zoomOut = [CCScaleTo actionWithDuration:0.1 scale:1.0];
-       
-    // execute the game over layer
-    [self addChild:_gameOverLayer z:1];
+    
+    //Load the game Over screen.
+    
+    //TODO: If you have unlocked a new mission, load the rankLayer and show the, you got a new rank animation. Otherwise just show the game over screen.
+    
+    //Here is the ranklayer for when that happens:
+    
+    /*
+     RankLayerBox * myRankLayer =
+     (RankLayerBox *) [CCBReader nodeGraphFromFile:@"RankLayerBox.ccbi"];
+     myRankLayer.position = COMMON_SCREEN_CENTER;
+     
+     [myRankLayer setMenuData: achievementContainer.currentRankAchievements currentRank: achievementContainer.currentRank];
+     
+     [self addChild: myRankLayer z:11];
+     */
+    
+    if (gameOverLayer != nil)
+    {
+        CCBAnimationManager* animationManager = gameOverLayer.userObject;
+        NSLog(@"animationManager: %@", animationManager);
+        
+        [animationManager runAnimationsForSequenceNamed:@"Pop in"];
+    } else {
+        GameOverLayer * gameOverLayer =
+        (GameOverLayer *) [CCBReader nodeGraphFromFile:@"GameOverLayerBox.ccbi"];
+        gameOverLayer.position = COMMON_SCREEN_CENTER;
+        
+        //This sets the menu data for the final menu
+        [gameOverLayer setMenuData: [[GameLayer sharedGameLayer].score getScore]
+                         rankLevel:achievementContainer.currentRank];
+        
+        
+        [[GameLayer sharedGameLayer] addChild:gameOverLayer z:11];
+        
+    }
+    
     [self pauseSchedulerAndActions];
     
-    [_gameOverLayer runAction:[CCSequence actions:zoomIn, zoomOut, nil]];
+    [[[GameInfoGlobal sharedGameInfoGlobal] statsContainer] resetGameTimer];
+    
 }
 
-// -----------------------------------------------------------------------------------
-- (void) startOver
-{
-    // clear PowerIcon pool
-    [self resetPoolsWithUsedPool:_powerIconUsedPool freePool:_powerIconFreePool];
-    
-    // clear Power pool
-    [self resetPool:_powerPool];
-    
-    // reset bomb pools
-    [self resetPoolsWithUsedPool:_bombUsedPool freePool:_bombFreePool];
-    
-    // reset coin pools
-    [self resetPoolsWithUsedPool:_coinUsedPool freePool:_coinFreePool];
-    
-    // remove gameOverLayer
-    id zoomWayOut = [CCScaleTo actionWithDuration:1 scale:0.1];
-    [_gameOverLayer runAction:[CCSequence actions: zoomWayOut, nil]];
-    
-    [self resumeSchedulerAndActions];
-}
-
-// -----------------------------------------------------------------------------------
-- (void) resetPool:(Queue *)pool
-{
-    for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
-        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(pool, trackNum); ++i) {
-            if ([POOL_OBJS_ON_TRACK(pool, trackNum)[i] respondsToSelector:@selector(resetObject)]) {
-                [POOL_OBJS_ON_TRACK(pool, trackNum)[i] resetObject];
-            } else if ([POOL_OBJS_ON_TRACK(pool, trackNum)[i]
-                        respondsToSelector:@selector(resetPower)]) {
-                [POOL_OBJS_ON_TRACK(pool, trackNum)[i] resetPower];
-            }
-        }
-    }
-    
-    [pool clearTracks];
-}
-
-// -----------------------------------------------------------------------------------
-- (void) resetPoolsWithUsedPool:(Queue *)usedPool freePool:(Queue *)freePool
-{
-    for (int trackNum = 0; trackNum < MAX_NUM_TRACK; trackNum++)
-    {
-        for (int i = 0; i <  POOL_OBJ_COUNT_ON_TRACK(usedPool, trackNum); ++i) {
-            GameObjectBase * newObject = nil;
-            if (POOL_OBJ_COUNT_ON_TRACK(usedPool, trackNum) < MIN_NUM_BOMBS_PER_TRACK) {
-                newObject = [freePool takeObjectFromTrack:trackNum];
-                if (newObject != nil) {
-                    [freePool addObject:newObject toTrack:trackNum];
-                    [newObject resetObject];
-                }
-            }
-        }
-    }
-}
-*/
+/*
+ // -----------------------------------------------------------------------------------
+ - (void) gameOver
+ {
+ // update high score, if necessary
+ [self updateHighScore];
+ 
+ // cash in coins collected from this round
+ int bankSize = [self depositCoinsToBank];
+ 
+ NSString * score = [_score generateScoreString];
+ CGSize mainSize = [[CCDirector sharedDirector] winSize];
+ 
+ bool didWin = ([_score getScore] >= [_highScore getScore]);
+ 
+ _gameOverLayer = [GameOverLayer initWithScoreString:score
+ winSize:mainSize
+ gameLayer:self
+ highScore:didWin
+ bankSize:bankSize];
+ 
+ // set game over layer's display actions
+ id zoomIn  = [CCScaleTo actionWithDuration:0.2 scale:1.25];
+ id zoomOut = [CCScaleTo actionWithDuration:0.1 scale:1.0];
+ 
+ // execute the game over layer
+ [self addChild:_gameOverLayer z:1];
+ [self pauseSchedulerAndActions];
+ 
+ [_gameOverLayer runAction:[CCSequence actions:zoomIn, zoomOut, nil]];
+ }
+ 
+ // -----------------------------------------------------------------------------------
+ - (void) startOver
+ {
+ // clear PowerIcon pool
+ [self resetPoolsWithUsedPool:_powerIconUsedPool freePool:_powerIconFreePool];
+ 
+ // clear Power pool
+ [self resetPool:_powerPool];
+ 
+ // reset bomb pools
+ [self resetPoolsWithUsedPool:_bombUsedPool freePool:_bombFreePool];
+ 
+ // reset coin pools
+ [self resetPoolsWithUsedPool:_coinUsedPool freePool:_coinFreePool];
+ 
+ // remove gameOverLayer
+ id zoomWayOut = [CCScaleTo actionWithDuration:1 scale:0.1];
+ [_gameOverLayer runAction:[CCSequence actions: zoomWayOut, nil]];
+ 
+ [self resumeSchedulerAndActions];
+ }
+ 
+ // -----------------------------------------------------------------------------------
+ - (void) resetPool:(Queue *)pool
+ {
+ for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
+ for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(pool, trackNum); ++i) {
+ if ([POOL_OBJS_ON_TRACK(pool, trackNum)[i] respondsToSelector:@selector(resetObject)]) {
+ [POOL_OBJS_ON_TRACK(pool, trackNum)[i] resetObject];
+ } else if ([POOL_OBJS_ON_TRACK(pool, trackNum)[i]
+ respondsToSelector:@selector(resetPower)]) {
+ [POOL_OBJS_ON_TRACK(pool, trackNum)[i] resetPower];
+ }
+ }
+ }
+ 
+ [pool clearTracks];
+ }
+ 
+ // -----------------------------------------------------------------------------------
+ - (void) resetPoolsWithUsedPool:(Queue *)usedPool freePool:(Queue *)freePool
+ {
+ for (int trackNum = 0; trackNum < MAX_NUM_TRACK; trackNum++)
+ {
+ for (int i = 0; i <  POOL_OBJ_COUNT_ON_TRACK(usedPool, trackNum); ++i) {
+ GameObjectBase * newObject = nil;
+ if (POOL_OBJ_COUNT_ON_TRACK(usedPool, trackNum) < MIN_NUM_BOMBS_PER_TRACK) {
+ newObject = [freePool takeObjectFromTrack:trackNum];
+ if (newObject != nil) {
+ [freePool addObject:newObject toTrack:trackNum];
+ [newObject resetObject];
+ }
+ }
+ }
+ }
+ }
+ */
 
 // -----------------------------------------------------------------------------------
 - (BOOL) moveThePlayer
@@ -612,44 +705,51 @@ static GameLayer *sharedGameLayer;
     }
     
     /*
-    if (pendingTaps <= 0) {
-        return NO;
-    }
-    
-    BOOL move = YES;
-    
-    BOOL playerWillHitBomb = [self.player willHitBomb];
-    
-    // move if we have the shield
-    if (self.player.hasShield) {
-        // do nothing
-    } else if (!playerWillHitBomb) {
-        // do nothing
-    } else if (tapDelay != [NSDate distantFuture]) {
-        
-        // move if the tap delay exceeds the maximum delay
-        double elapsedMilliseconds = [tapDelay timeIntervalSinceNow] * -1000.0;
-        
-        if (elapsedMilliseconds <= TAP_DELAY_THRESHOLD_MSEC) {
-            move = NO;
-        }
-    } else {
-        
-        // delay tap processing if the player will hit a bomb
-        if (tapDelay == [NSDate distantFuture]) {
-            tapDelay = [NSDate date];
-        }
-        
-        move = NO;
-    }
-    
-    if (move) {
-        tapDelay = [NSDate distantFuture];
-        --pendingTaps;
-    }
-    
-    return move;*/
+     if (pendingTaps <= 0) {
+     return NO;
+     }
+     
+     BOOL move = YES;
+     
+     BOOL playerWillHitBomb = [self.player willHitBomb];
+     
+     // move if we have the shield
+     if (self.player.hasShield) {
+     // do nothing
+     } else if (!playerWillHitBomb) {
+     // do nothing
+     } else if (tapDelay != [NSDate distantFuture]) {
+     
+     // move if the tap delay exceeds the maximum delay
+     double elapsedMilliseconds = [tapDelay timeIntervalSinceNow] * -1000.0;
+     
+     if (elapsedMilliseconds <= TAP_DELAY_THRESHOLD_MSEC) {
+     move = NO;
+     }
+     } else {
+     
+     // delay tap processing if the player will hit a bomb
+     if (tapDelay == [NSDate distantFuture]) {
+     tapDelay = [NSDate date];
+     }
+     
+     move = NO;
+     }
+     
+     if (move) {
+     tapDelay = [NSDate distantFuture];
+     --pendingTaps;
+     }
+     
+     return move;*/
 }
+
+//This is called by any object that wants to show a score on the board.
+- (void) showScoreOnTrack: (int)track message:(NSString *) scoreText
+{
+    [gameObjectInjector showScoreObject:track message: scoreText];
+}
+
 
 // -----------------------------------------------------------------------------------
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -658,7 +758,7 @@ static GameLayer *sharedGameLayer;
     
     // the player is moving
     if (player.playerRadialSpeed != 0) {
-
+        
         // buffer the tap, if not already registered
         if (pendingTaps == 0) {
             ++pendingTaps;
@@ -668,82 +768,82 @@ static GameLayer *sharedGameLayer;
         ++pendingTaps;
     }
     
-/*CCNode* explosion = [CCBReader nodeGraphFromFile:@"Explosion.ccbi"];
-    explosion.position = self.position;
-    [self.parent addChild:explosion]; */
+    /*CCNode* explosion = [CCBReader nodeGraphFromFile:@"Explosion.ccbi"];
+     explosion.position = self.position;
+     [self.parent addChild:explosion]; */
 }
 /*
-// -----------------------------------------------------------------------------------
-- (void) changeGameObjectsSpeed:(Queue *)pool up:(BOOL)speedUp speed:(int)factor
-{
-    if (factor <= 0) {
-        return;
-    }
-    
-    for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
-        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(pool, trackNum); ++i) {
-            GameObjectBase * tempObj = POOL_OBJS_ON_TRACK(pool, trackNum)[i];
-            
-            if (speedUp) {
-                tempObj.gameObjectAngularVelocity++;
-            } else {
-                tempObj.gameObjectAngularVelocity--;
-                
-                if (tempObj.gameObjectAngularVelocity == 0) {
-                    tempObj.gameObjectAngularVelocity = 1;
-                }
-            }
-        }
-    }
-}
-
-- (void) speedUpGame
-{
-    [self changeGameObjectsSpeed:self.bombUsedPool
-                              up:YES speed:1];
-    
-    [self changeGameObjectsSpeed:self.bombFreePool
-                              up:YES speed:1];
-    
-    [self changeGameObjectsSpeed:self.coinUsedPool
-                              up:YES speed:1];
-    
-    [self changeGameObjectsSpeed:self.coinFreePool
-                              up:YES speed:1];
-    
-    [self changeGameObjectsSpeed:self.powerIconUsedPool
-                              up:YES speed:1];
-    
-    [self changeGameObjectsSpeed:self.powerIconFreePool
-                              up:YES speed:1];
-}
-
-- (void) slowDownGame
-{
-    [self changeGameObjectsSpeed:self.bombUsedPool
-                              up:NO speed:1];
-    
-    [self changeGameObjectsSpeed:self.bombFreePool
-                              up:NO speed:1];
-    
-    [self changeGameObjectsSpeed:self.coinUsedPool
-                              up:NO speed:1];
-    
-    [self changeGameObjectsSpeed:self.coinFreePool
-                              up:NO speed:1];
-    
-    [self changeGameObjectsSpeed:self.powerIconUsedPool
-                              up:NO speed:1];
-    
-    [self changeGameObjectsSpeed:self.powerIconFreePool
-                              up:NO speed:1];
-} */
+ // -----------------------------------------------------------------------------------
+ - (void) changeGameObjectsSpeed:(Queue *)pool up:(BOOL)speedUp speed:(int)factor
+ {
+ if (factor <= 0) {
+ return;
+ }
+ 
+ for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
+ for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(pool, trackNum); ++i) {
+ GameObjectBase * tempObj = POOL_OBJS_ON_TRACK(pool, trackNum)[i];
+ 
+ if (speedUp) {
+ tempObj.gameObjectAngularVelocity++;
+ } else {
+ tempObj.gameObjectAngularVelocity--;
+ 
+ if (tempObj.gameObjectAngularVelocity == 0) {
+ tempObj.gameObjectAngularVelocity = 1;
+ }
+ }
+ }
+ }
+ }
+ 
+ - (void) speedUpGame
+ {
+ [self changeGameObjectsSpeed:self.bombUsedPool
+ up:YES speed:1];
+ 
+ [self changeGameObjectsSpeed:self.bombFreePool
+ up:YES speed:1];
+ 
+ [self changeGameObjectsSpeed:self.coinUsedPool
+ up:YES speed:1];
+ 
+ [self changeGameObjectsSpeed:self.coinFreePool
+ up:YES speed:1];
+ 
+ [self changeGameObjectsSpeed:self.powerIconUsedPool
+ up:YES speed:1];
+ 
+ [self changeGameObjectsSpeed:self.powerIconFreePool
+ up:YES speed:1];
+ }
+ 
+ - (void) slowDownGame
+ {
+ [self changeGameObjectsSpeed:self.bombUsedPool
+ up:NO speed:1];
+ 
+ [self changeGameObjectsSpeed:self.bombFreePool
+ up:NO speed:1];
+ 
+ [self changeGameObjectsSpeed:self.coinUsedPool
+ up:NO speed:1];
+ 
+ [self changeGameObjectsSpeed:self.coinFreePool
+ up:NO speed:1];
+ 
+ [self changeGameObjectsSpeed:self.powerIconUsedPool
+ up:NO speed:1];
+ 
+ [self changeGameObjectsSpeed:self.powerIconFreePool
+ up:NO speed:1];
+ } */
 
 -(void) soundBounceGameObjectUsedPool:(Queue *)gameObjectUsedPool
 {
     static int subsetIdx = 1;
     double soundLevel = 0;
-
+    
     // update sound-related items
     soundLevel = [_soundController updateMeterSamples];
     
@@ -826,19 +926,25 @@ static GameLayer *sharedGameLayer;
         numObjToCleanup = POOL_OBJ_COUNT_ON_TRACK(_coinUsedPool, trackNum);
         for (int i = 0; i < numObjToCleanup; i++) {
             [[POOL_OBJS_ON_TRACK(_coinUsedPool, trackNum) lastObject] recycleObjectWithUsedPool:_coinUsedPool
-                                                                             freePool:_coinFreePool];
+                                                                                       freePool:_coinFreePool];
         }
         
         numObjToCleanup = POOL_OBJ_COUNT_ON_TRACK(_bombUsedPool, trackNum);
         for (int i = 0; i < numObjToCleanup; i++) {
             [[POOL_OBJS_ON_TRACK(_bombUsedPool, trackNum) lastObject] recycleObjectWithUsedPool:_bombUsedPool
-                                                                             freePool:_bombFreePool];
+                                                                                       freePool:_bombFreePool];
+        }
+        
+        numObjToCleanup = POOL_OBJ_COUNT_ON_TRACK(_scoreUsedPool, trackNum);
+        for (int i = 0; i < numObjToCleanup; i++) {
+            [[POOL_OBJS_ON_TRACK(_scoreUsedPool, trackNum) lastObject] recycleObjectWithUsedPool:_scoreUsedPool
+                                                                                        freePool:_scoreFreePool];
         }
         
         numObjToCleanup = POOL_OBJ_COUNT_ON_TRACK(_powerIconUsedPool, trackNum);
         for (int i = 0; i < numObjToCleanup; i++) {
             [[POOL_OBJS_ON_TRACK(_powerIconUsedPool, trackNum) lastObject] recycleObjectWithUsedPool:_powerIconUsedPool
-                                                                             freePool:_powerIconFreePool];
+                                                                                            freePool:_powerIconFreePool];
         }
         
         [self setIsHitStateByTrackNum:trackNum toState:NO];
@@ -881,6 +987,16 @@ static GameLayer *sharedGameLayer;
         _soundController = [SoundController init];
     } else {
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"loop1.wav"];
+    }
+}
+
+- (void) completedAnimationSequenceNamed:(NSString *)name
+{
+    NSLog(@"GAMELAYER: animation completed!");
+    if ([name compare:@"start_game"])
+    {
+        NSLog(@"start game");
+        //        [self startTheGame];
     }
 }
 

@@ -8,6 +8,7 @@
 
 #import "GameObjectInjector.h"
 #import "pattern.h"
+#import "scoreMini.h"
 
 @implementation GameObjectInjector
 
@@ -45,6 +46,61 @@
 }
 
 // -----------------------------------------------------------------------------------
+//Score objects are those small numbers that float after collecting something.
+//They are a bit different than objects because they don't rotate on the track, so I created a second method for them.
+- (GameObjectBase *) showScoreObject: (int) trackNum message:(NSString *) message
+{
+    Queue * usedPool;
+    Queue * freePool;
+    GameObjectBase * newObject = nil;
+    int maxlimit;
+    
+    
+    CGPoint preferredLocation = ccp ((COMMON_RECORD_CENTER_X +
+                                      RADIUS_FROM_TRACKNUM(trackNum)*cos(CC_DEGREES_TO_RADIANS(0))),
+                                     (COMMON_RECORD_CENTER_Y +
+                                      RADIUS_FROM_TRACKNUM(trackNum)*sin(CC_DEGREES_TO_RADIANS(0))));
+    
+    
+    usedPool = [GameLayer sharedGameLayer].scoreUsedPool;
+    freePool = [GameLayer sharedGameLayer].scoreFreePool;
+    maxlimit = (MIN_NUM_COINS_PER_TRACK * (trackNum + 1));
+    
+    
+    newObject = [freePool takeObjectFromTrack:trackNum];
+    
+    //Verify we get something back. If we get back nil then we know there is nothing left in the pool.
+    
+    if (newObject != nil) {
+        
+        //Cast the object to a score object.
+        NSAssert([newObject isKindOfClass: [scoreMini class]], @"Return value is not of type scoreMini");
+        scoreMini * newScoreObject = (scoreMini *) newObject;
+        
+        
+        newScoreObject.anchorPoint = ccp(0.5,0.5);
+        newScoreObject.radius = RADIUS_FROM_TRACKNUM(trackNum);
+        [newScoreObject moveTo:preferredLocation];
+        newScoreObject.visible = 1;
+        [newScoreObject setScoreText: message];
+        
+        [newScoreObject.animationManager runAnimationsForSequenceNamed:@"show_score"];
+        
+        //Add the score to the used pools
+        [usedPool addObject:newScoreObject toTrack:trackNum];
+        
+        return newScoreObject;
+    }
+    else{
+        //No Objects remain in the pool. Clear it out.
+        NSLog(@"out of objects");
+        return nil;
+    }
+        
+  
+}
+
+// -----------------------------------------------------------------------------------
 - (GameObjectBase *) injectObjectToTrack: (int) trackNum
                                  atAngle: (int) insertionAngle
                           gameObjectType: (game_object_t)_gameObjectType
@@ -63,7 +119,7 @@
                                       RADIUS_FROM_TRACKNUM(trackNum)*sin(CC_DEGREES_TO_RADIANS(insertionAngle))));
     
     // If we happen to insert to where player is currently at,
-    // we bails.
+    // we bail.
     dummyInjectorBox.rotation = insertionAngle;
 
     switch (_gameObjectType)
@@ -85,7 +141,9 @@
             break;
         case SPACE_TYPE:
         case POWER_TYPE:
-            return nil;
+        case SCORE_TYPE:
+        //Note SCORE_TYPE is not here because it is injected using the showScoreObject
+        return nil;
     }
 
     if (_gameObjectType == BOMB_TYPE)
@@ -252,7 +310,8 @@
 
         [usedPool addObject:newObject toTrack:trackNum];
     } else {
-        NSLog(@"out of object");
+        //No Objects remain in the pool. Don't post anything to the record.
+        NSLog(@"out of objects");
     }
  
     return newObject;

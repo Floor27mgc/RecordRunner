@@ -7,9 +7,11 @@
 //
 
 #import "GameObjectBase.h"
+#import "CCBAnimationManager.h"
+
 #define COIN_START_POSITION ccp(200,0)
 
-@interface Coin : GameObjectBase
+@interface Coin : GameObjectBase <CCBAnimationManagerDelegate>
 {
     
 }
@@ -19,5 +21,6 @@
 
 @property (nonatomic, assign) CCParticleSystemQuad *emitter;
 @property (nonatomic) BOOL bouncing;
+@property (nonatomic) BOOL isDead;
 
 @end

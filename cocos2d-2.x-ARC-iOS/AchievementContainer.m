@@ -12,11 +12,11 @@
 @implementation AchievementContainer
 
 @synthesize allAchievements;
-@synthesize currentAchievements;
-@synthesize numAchievementsPerRank;
+@synthesize currentAchievements;    //??deprecated??
+@synthesize numAchievementsPerRank; //The count of num achievements per rank.
 @synthesize totalNumAchievements;
 @synthesize achievementsDictionary;
-@synthesize currentRankAchievements;
+@synthesize currentRankAchievements; //The 3 achievements in the current rank you are trying to achieve
 @synthesize currentRank;
 @synthesize achievementsLoaded;
 
@@ -41,6 +41,9 @@
         numAchievementsPerRank = [achievementsPerRank integerValue];
 
         currentAchievements = [[NSMutableArray alloc] initWithCapacity:
+                               numAchievementsPerRank];
+        
+        currentRankAchievements = [[NSMutableArray alloc] initWithCapacity:
                                numAchievementsPerRank];
         
         // load up all the achievement progress from game center
@@ -68,7 +71,7 @@
 
 // -----------------------------------------------------------------------------------
 - (void) LoadInternalAchievements
-{    
+{
     int conditionIndex = 16;
     
     // load all the non-rank achievements
@@ -89,7 +92,7 @@
             curAch.showsCompletionBanner = YES;
         }
         
-        // load up all the achievements
+        // add the achivement to the allAchivement List.
         Achievement * newAchievement = [[Achievement alloc]
                                         initWithCondition:conditionIndex
                                         description:desc
@@ -103,7 +106,11 @@
         if (curAch.percentComplete < 100) {
             [currentAchievements addObject:newAchievement];
         }
+        
     }
+    
+    //Set the current rank number
+    [self LoadCurrentRankAchievements];    
 }
 
 // -----------------------------------------------------------------------------------
@@ -127,6 +134,7 @@
 }
 
 // -----------------------------------------------------------------------------------
+// Parses all the achievements looking for the ones with a specific name.
 - (Achievement *) GetAchievementByDescription:(NSString *)desc
 {
     for (int i = 0; i < [allAchievements count]; ++i) {
@@ -170,21 +178,50 @@
 
 
 // -----------------------------------------------------------------------------------
+// Called from LoadCurrentRankAchievements, creates a 3 array based on current rank.
+// These are not GC achivements so you have to do a custom making of them.
 - (void) LoadRankAchievements:(int)rank
 {
+    int conditionIndex  = 16;
+    
     for (int i = 1; i <= numAchievementsPerRank; ++i) {
+        
+        //Rank Condition
+        NSString * rankConditionTag = [NSString stringWithFormat:@"%@%d%@%d",
+                                       @"RANK_", rank, @"_COND_", i];
+        NSString * rankCond = NSLocalizedStringFromTable(rankConditionTag,
+                                                         @"achievement_map",                                                            nil);
+        
+        //Descuription
         NSString * curRankDesc = [NSString stringWithFormat:@"%@%d%@%d",
                                   @"RANK_", rank, @"_DESC_", i];
         NSString * rankDesc = NSLocalizedStringFromTable(curRankDesc,
                                                          @"achievement_map",                                                            nil);
         
-        [currentRankAchievements addObject:[self GetAchievementByDescription:rankDesc]];
+              
+        
+        Achievement * newAchievement = [[Achievement alloc]
+                                        initWithCondition:1
+                                        description:rankDesc
+                                        gameCenterAchievement:nil
+                                        isGCAchievement:NO];
+        
+        [currentRankAchievements addObject:newAchievement];
+
+        
+        
+  // $$$ The following returns nil because it is searching allachievements list for rankDesc. However, the non-gc achievements (those sub rank-achievements) are not in the allachivements list
+        
+//        So I think this method should just create a 3-part array. here.
+        
+//        [currentRankAchievements addObject:[self GetAchievementByDescription:rankDesc]];
     }
     
     return;
 }
 
-// -----------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------
+// Sets your current rank based on what percent complete you are with the rank achievements.
 - (void) LoadCurrentRankAchievements
 {
     GKAchievement * ach = [achievementsDictionary objectForKey:@"16"];

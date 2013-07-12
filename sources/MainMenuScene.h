@@ -15,8 +15,9 @@
 #import "MainMenuSettingsBox.h"
 #import "MainMenuHelpBox.h"
 #import <GameKit/GameKit.h>
+#import "CCBAnimationManager.h"
 
-@interface MainMenuScene : CCLayer <GKGameCenterControllerDelegate>
+@interface MainMenuScene : CCLayer <CCBAnimationManagerDelegate, GKGameCenterControllerDelegate>
 
 - (void) loadAchievements;
 
@@ -30,7 +31,7 @@
 @property (nonatomic, strong) MainMenuHelpBox * mainMenuHelp;
 
 @property  (nonatomic, strong) NSArray * buttonArray;
-
+@property BOOL clickedStart;
 @property (nonatomic, strong) UIView *gameCenterView;
 @property (nonatomic, strong) UIViewController *gameCenterViewController;
 typedef NS_ENUM (NSUInteger, MainMenuButtons) {
