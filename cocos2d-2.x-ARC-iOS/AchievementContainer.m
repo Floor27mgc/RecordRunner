@@ -110,7 +110,7 @@
     }
     
     //Set the current rank number
-    [self LoadCurrentRankAchievements];    
+    //[self LoadCurrentRankAchievements];
 }
 
 // -----------------------------------------------------------------------------------
@@ -180,7 +180,7 @@
 // -----------------------------------------------------------------------------------
 // Called from LoadCurrentRankAchievements, creates a 3 array based on current rank.
 // These are not GC achivements so you have to do a custom making of them.
-- (void) LoadRankAchievements:(int)rank
+/*- (void) LoadRankAchievements:(int)rank
 {
     int conditionIndex  = 16;
     
@@ -218,11 +218,11 @@
     }
     
     return;
-}
+}*/
 
 // ----------------------------------------------------------------------------------
 // Sets your current rank based on what percent complete you are with the rank achievements.
-- (void) LoadCurrentRankAchievements
+/*- (void) LoadCurrentRankAchievements
 {
     GKAchievement * ach = [achievementsDictionary objectForKey:@"16"];
     if (ach.percentComplete < 100) {
@@ -263,7 +263,7 @@
     currentRank = 0;
     
     return;
-}
+}*/
 
 // -----------------------------------------------------------------------------------
 - (BOOL) CheckCurrentAchievements

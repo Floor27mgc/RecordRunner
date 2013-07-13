@@ -94,6 +94,7 @@
             
             // Spin the same bomb Clockwise then immediately Counter clockwise.
         case 8:
+            achieved = YES;
             break;
             
             // Get a score of 1000.
@@ -132,43 +133,86 @@
             
             // UNKNOWN
         case 15:
+            achieved = YES;
             break;
             
             // Rank 1
         case 16:
-            achieved = ([GameInfoGlobal sharedGameInfoGlobal].numRotationsThisLife >= 10) &&
-                        ([GameInfoGlobal sharedGameInfoGlobal].numCoinsThisLife >= 50) &&
-                        ([GameInfoGlobal sharedGameInfoGlobal].closeCallsThisLife >= 3);
+            achieved =
+                ([[[GameLayer sharedGameLayer].achievementContainer      GetAchievementByIdentifier:1] Achieved]) &&
+            
+                ([[[GameLayer sharedGameLayer].achievementContainer
+                   GetAchievementByIdentifier:2] Achieved]) &&
+            
+                ([[[GameLayer sharedGameLayer].achievementContainer
+                   GetAchievementByIdentifier:3] Achieved]);
+            
             break;
             
             // Rank 2
         case 17:
-            achieved = ([GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch >= 3) &&
-                        ([GameInfoGlobal sharedGameInfoGlobal].score >= 200) &&
-                        ([[GameInfoGlobal sharedGameInfoGlobal].statsContainer
-                         getCurrentGameTimeElapsed] > 60);
+            achieved =
+                ([[[GameLayer sharedGameLayer].achievementContainer
+                   GetAchievementByIdentifier:16] Achieved]) &&
+            
+                ([[[GameLayer sharedGameLayer].achievementContainer
+                   GetAchievementByIdentifier:4] Achieved]) &&
+            
+                ([[[GameLayer sharedGameLayer].achievementContainer
+                   GetAchievementByIdentifier:5] Achieved]) &&
+            
+                ([[[GameLayer sharedGameLayer].achievementContainer
+                   GetAchievementByIdentifier:6] Achieved]);
             break;
             
             // Rank 3
         case 18:
-            achieved = ([GameInfoGlobal sharedGameInfoGlobal].bombsKilledThisShield >=4) &&
-                        ([GameInfoGlobal sharedGameInfoGlobal].score >= 1000);
+            achieved =
+                ([[[GameLayer sharedGameLayer].achievementContainer
+                   GetAchievementByIdentifier:17] Achieved]) &&
+            
+                ([[[GameLayer sharedGameLayer].achievementContainer
+                   GetAchievementByIdentifier:7] Achieved]) &&
+            
+                ([[[GameLayer sharedGameLayer].achievementContainer
+                   GetAchievementByIdentifier:8] Achieved]) &&
+            
+                ([[[GameLayer sharedGameLayer].achievementContainer
+                   GetAchievementByIdentifier:9] Achieved]);
             break;
             
             // Rank 4
         case 19:
-            achieved = ([GameInfoGlobal sharedGameInfoGlobal].numRotationsThisLife
-                        >= 30) &&
-                        (([[GameLayer sharedGameLayer].multiplier highestMultiplierValueEarned]
-                          >= 10)
-                         && [[GameLayer sharedGameLayer].multiplier getMultiplier] == 1) &&
-                        ([[GameLayer sharedGameLayer].multiplier secondsAbove10x] > 120);
+            achieved =
+                ([[[GameLayer sharedGameLayer].achievementContainer
+                   GetAchievementByIdentifier:18] Achieved]) &&
+            
+                ([[[GameLayer sharedGameLayer].achievementContainer
+                   GetAchievementByIdentifier:10] Achieved]) &&
+            
+                ([[[GameLayer sharedGameLayer].achievementContainer
+                   GetAchievementByIdentifier:11] Achieved]) &&
+            
+                ([[[GameLayer sharedGameLayer].achievementContainer
+                   GetAchievementByIdentifier:12] Achieved]);
+
             break;
             
             // Rank 5
         case 20:
-            achieved = ([GameInfoGlobal sharedGameInfoGlobal].timeInOuterRingThisLife >= 120) &&
-                        ([GameInfoGlobal sharedGameInfoGlobal].hit40scratchesInSingleRevolution);
+            achieved =
+                ([[[GameLayer sharedGameLayer].achievementContainer
+                   GetAchievementByIdentifier:19] Achieved]) &&
+            
+                ([[[GameLayer sharedGameLayer].achievementContainer
+                   GetAchievementByIdentifier:13] Achieved]) &&
+            
+                ([[[GameLayer sharedGameLayer].achievementContainer
+                   GetAchievementByIdentifier:14] Achieved]) &&
+            
+                ([[[GameLayer sharedGameLayer].achievementContainer
+                   GetAchievementByIdentifier:15] Achieved]);
+            
             break;
             
             // After earning rank 5, cash out and start over

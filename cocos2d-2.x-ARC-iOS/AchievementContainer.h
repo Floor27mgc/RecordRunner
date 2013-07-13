@@ -14,10 +14,10 @@
 
 @interface AchievementContainer : NSObject
 
-- (void) LoadRankAchievements: (int) rank;
+//- (void) LoadRankAchievements: (int) rank;
 - (Achievement *) GetAchievementByDescription: (NSString *) desc;
 - (Achievement *) GetAchievementByIdentifier: (int) identifier;
-- (void) LoadCurrentRankAchievements;
+//- (void) LoadCurrentRankAchievements;
 - (BOOL) CheckCurrentAchievements;
 - (void) LogAchievements;
 - (void) LoadInternalAchievements;
