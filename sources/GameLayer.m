@@ -25,7 +25,7 @@
 #import <GameKit/GameKit.h>
 #import <UIKit/UIKit.h>
 #import "CCBAnimationManager.h"
-
+#import "NewsDownloader.h"
 #pragma mark - GameLayer
 
 // GameLayer implementation
@@ -78,6 +78,10 @@ static GameLayer *sharedGameLayer;
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) )
     {
+/*        NewsDownloader *downloader = [[NewsDownloader alloc]initWithURL:@"http://localhost/~max21226/test.xml"];
+        int status = [downloader hasUnreadNews];
+        NSLog(@"%d",status);
+        [downloader setNewsUnreadStatus:FALSE]; */
         // achievement monitoring structures
         achievementContainer = [[AchievementContainer alloc] init];
         

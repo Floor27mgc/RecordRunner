@@ -13,6 +13,7 @@
 		0803EECF16E4212600CC932B /* GameModeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803EECE16E4212600CC932B /* GameModeMenu.m */; };
 		0803EF0016EC630F00CC932B /* MainGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803EEFF16EC630E00CC932B /* MainGameScene.m */; };
 		0803EF0716F047DE00CC932B /* GameDebugMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803EF0616F047DD00CC932B /* GameDebugMenu.m */; };
+		0813D05217911A36002B3625 /* NewsDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0813D05117911A36002B3625 /* NewsDownloader.m */; };
 		082018321678479B000A3F8D /* GameObjectInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 082018311678479B000A3F8D /* GameObjectInjector.m */; };
 		082018351679577D000A3F8D /* pattern.c in Sources */ = {isa = PBXBuildFile; fileRef = 082018341679577D000A3F8D /* pattern.c */; };
 		083B0926170AB0EC00EF0DB0 /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 083B08F4170AB0EC00EF0DB0 /* banner.png */; };
@@ -660,6 +661,8 @@
 		0803EEFF16EC630E00CC932B /* MainGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainGameScene.m; path = sources/MainGameScene.m; sourceTree = SOURCE_ROOT; };
 		0803EF0516F047DD00CC932B /* GameDebugMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameDebugMenu.h; path = sources/GameDebugMenu.h; sourceTree = SOURCE_ROOT; };
 		0803EF0616F047DD00CC932B /* GameDebugMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameDebugMenu.m; path = sources/GameDebugMenu.m; sourceTree = SOURCE_ROOT; };
+		0813D05017911A36002B3625 /* NewsDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsDownloader.h; path = sources/NewsDownloader.h; sourceTree = SOURCE_ROOT; };
+		0813D05117911A36002B3625 /* NewsDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsDownloader.m; path = sources/NewsDownloader.m; sourceTree = SOURCE_ROOT; };
 		082018301678479B000A3F8D /* GameObjectInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjectInjector.h; path = sources/GameObjectInjector.h; sourceTree = SOURCE_ROOT; };
 		082018311678479B000A3F8D /* GameObjectInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectInjector.m; path = sources/GameObjectInjector.m; sourceTree = SOURCE_ROOT; };
 		082018341679577D000A3F8D /* pattern.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pattern.c; path = ../sources/pattern.c; sourceTree = "<group>"; };
@@ -1644,6 +1647,8 @@
 				850CF31A16F9618E00B292DE /* StatisticsContainer.m */,
 				850CF31C16F9652100B292DE /* StatisticsTracker.h */,
 				850CF31D16F9652100B292DE /* StatisticsTracker.m */,
+				0813D05017911A36002B3625 /* NewsDownloader.h */,
+				0813D05117911A36002B3625 /* NewsDownloader.m */,
 			);
 			name = game;
 			sourceTree = "<group>";
@@ -3009,6 +3014,7 @@
 				859E2A92175D434800EE7916 /* AchievementContainer.m in Sources */,
 				E55D11C2178736690072B6AC /* scoreMini.m in Sources */,
 				E5F1506F1789D61B006923DD /* RankLayerBox.m in Sources */,
+				0813D05217911A36002B3625 /* NewsDownloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
