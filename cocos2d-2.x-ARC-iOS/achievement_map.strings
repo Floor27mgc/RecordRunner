@@ -15,7 +15,7 @@
 "RANK_1_COND_1" = "Go 10 revolutions in one life";
 
 "RANK_1_DESC_2" = "Rank 1 Mission 2";
-"COND_2" = "Collect 50 coins in a single life.";
+"RANK_1_COND_2" = "Collect 50 coins in a single life.";
 
 "RANK_1_DESC_3" = "Rank 1 Mission 3";
 "RANK_1_COND_3" = "Skim past 3 “X’s” in a single life.";
@@ -35,7 +35,7 @@
 "RANK_3_COND_1" = "Kill 4 bombs with a shield.";
 
 "RANK_3_DESC_2" = "Rank 3 Mission 2";
-"RANK_3_COND_2" = "Spin the same bomb Clockwise then immediately Counter clockwise.";
+"RANK_3_COND_2" = "Spin a bomb clockwise then counter clockwise.";
 
 "RANK_3_DESC_3" = "Rank 3 Mission 3";
 "RANK_3_COND_3" = "Get a score of 1000.";
@@ -45,14 +45,14 @@
 "RANK_4_COND_1" = "Go 30 laps in a single life.";
 
 "RANK_4_DESC_2" = "Rank 4 Mission 2";
-"RANK_4_COND_2" = "In a single life get a x10 multiplier then drop it to x1.";
+"RANK_4_COND_2" = "Get a x10 multiplier then drop it to x1.";
 
 "RANK_4_DESC_3" = "Rank 4 Mission 3";
-"RANK_4_COND_3" = "Maintain a multiplier of at least x10 for 2 minutes.";
+"RANK_4_COND_3" = "Maintain at least x10 for 2 minutes.";
 
 /* Rank 5 */
 "RANK_5_DESC_1" = "Rank 5 Mission 1";
-"RANK_5_COND_1" = "In a single life, spend a total of 2 minutes in the outer ring.";
+"RANK_5_COND_1" = "Spend a total of 2 minutes in the outer ring.";
 
 "RANK_5_DESC_2" = "Rank 5 Mission 2";
 "RANK_5_COND_2" = "Scratch 40 times in a single revolution.";

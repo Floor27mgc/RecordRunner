@@ -70,6 +70,7 @@
 }
 
 // -----------------------------------------------------------------------------------
+//Called every update. Internal achivements are all of them.
 - (void) LoadInternalAchievements
 {
     int conditionIndex = 16;
@@ -81,6 +82,13 @@
                                                      @"achievement_map",
                                                      nil);
         NSString * identifier = [NSString stringWithFormat:@"%d", conditionIndex];
+        
+        
+        
+        NSString * rankConditionTag = [NSString stringWithFormat:@"%@%d%@%d",
+                                       @"RANK_", i, @"_COND_", i];
+        NSString * rankCond = NSLocalizedStringFromTable(rankConditionTag,
+                                                         @"achievement_map",                                                            nil);
         
         // load the game center achievement, creating it if necessary
         GKAchievement * curAch = [achievementsDictionary objectForKey:identifier];
@@ -95,6 +103,7 @@
         // add the achivement to the allAchivement List.
         Achievement * newAchievement = [[Achievement alloc]
                                         initWithCondition:conditionIndex
+                                        condition: rankCond
                                         description:desc
                                         gameCenterAchievement:curAch
                                         isGCAchievement:YES];
@@ -110,10 +119,13 @@
     }
     
     //Set the current rank number
+
     //[self LoadCurrentRankAchievements];
+    //And adds all the achievements that are need for that rank to the array currentRankAchievements
 }
 
 // -----------------------------------------------------------------------------------
+//Gives you an achievement when you give it an identifier
 - (Achievement *) GetAchievementByIdentifier:(int)identifier
 {
     int totalAchievementCount = totalNumAchievements +
@@ -149,6 +161,7 @@
 }
 
 // -----------------------------------------------------------------------------------
+// This is called every update loop
 - (void) LoadInternalRankAchievements
 {
     int conditionIndex = 1;
@@ -163,9 +176,17 @@
             NSString * rankDesc = NSLocalizedStringFromTable(curRankDesc,
                                                              @"achievement_map",                                                            nil);
             
+            
+            NSString * rankConditionTag = [NSString stringWithFormat:@"%@%d%@%d",
+                                           @"RANK_", i, @"_COND_", i];
+            NSString * rankCond = NSLocalizedStringFromTable(rankConditionTag,
+                                                             @"achievement_map",                                                            nil);
+            
+            //$$$
             // load up all the achievements
             Achievement * newAchievement = [[Achievement alloc]
                                             initWithCondition:conditionIndex
+                                            condition:rankCond
                                             description:rankDesc
                                             gameCenterAchievement:nil
                                             isGCAchievement:NO];
@@ -192,37 +213,42 @@
         NSString * rankCond = NSLocalizedStringFromTable(rankConditionTag,
                                                          @"achievement_map",                                                            nil);
         
-        //Descuription
+        //Description
         NSString * curRankDesc = [NSString stringWithFormat:@"%@%d%@%d",
                                   @"RANK_", rank, @"_DESC_", i];
         NSString * rankDesc = NSLocalizedStringFromTable(curRankDesc,
                                                          @"achievement_map",                                                            nil);
         
-              
+        
         
         Achievement * newAchievement = [[Achievement alloc]
                                         initWithCondition:1
+                                        condition: rankCond
                                         description:rankDesc
                                         gameCenterAchievement:nil
                                         isGCAchievement:NO];
         
         [currentRankAchievements addObject:newAchievement];
-
         
         
-  // $$$ The following returns nil because it is searching allachievements list for rankDesc. However, the non-gc achievements (those sub rank-achievements) are not in the allachivements list
         
-//        So I think this method should just create a 3-part array. here.
+        // $$$ The following returns nil because it is searching allachievements list for rankDesc. However, the non-gc achievements (those sub rank-achievements) are not in the allachivements list
         
-//        [currentRankAchievements addObject:[self GetAchievementByDescription:rankDesc]];
+        //        So I think this method should just create a 3-part array. here.
+        
+        //        [currentRankAchievements addObject:[self GetAchievementByDescription:rankDesc]];
     }
     
     return;
 }*/
 
+
 // ----------------------------------------------------------------------------------
 // Sets your current rank based on what percent complete you are with the rank achievements.
+
 /*- (void) LoadCurrentRankAchievements
+// Also populates the rank achievements
+- (void) LoadCurrentRankAchievements
 {
     GKAchievement * ach = [achievementsDictionary objectForKey:@"16"];
     if (ach.percentComplete < 100) {
@@ -266,6 +292,7 @@
 }*/
 
 // -----------------------------------------------------------------------------------
+// Called on every update in GameLayer.
 - (BOOL) CheckCurrentAchievements
 {
     if (!achievementsLoaded) {
