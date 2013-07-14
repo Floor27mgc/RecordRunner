@@ -10,6 +10,13 @@
 #import "pattern.h"
 #import "scoreMini.h"
 
+@interface GameObjectInjector ()
+{
+    BOOL isInjectorPause;
+}
+@end
+
+
 @implementation GameObjectInjector
 
 @synthesize injectorHitBoxPath;
@@ -41,6 +48,7 @@
         CGPathCloseSubpath(injectorHitBoxPath);
         dummyInjectorBox = [[CCNode alloc]init];
         dummyInjectorBox.position = COMMON_RECORD_CENTER;
+        isInjectorPause = TRUE;
     }
     return (self);
 }
@@ -112,6 +120,12 @@
 
     GameObjectBase * newObject = nil;
     int maxlimit;
+    
+    // Check if injector is in pause mode.
+    if (isInjectorPause)
+    {
+        return nil;
+    }
     
     CGPoint preferredLocation = ccp ((COMMON_RECORD_CENTER_X +
                                       RADIUS_FROM_TRACKNUM(trackNum)*cos(CC_DEGREES_TO_RADIANS(insertionAngle))),
@@ -344,4 +358,15 @@
     return false;
     
 }
+
+- (void) startInjector
+{
+    isInjectorPause = FALSE;
+}
+
+- (void) stopInjector
+{
+    isInjectorPause = TRUE;
+}
+
 @end

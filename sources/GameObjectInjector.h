@@ -45,6 +45,8 @@ typedef enum {
                                     myAngle: (float) _myAngle
                                  inUsedPool: (Queue *)_usedPool
                                     OnTrack: (int) trackNum;
+- (void) startInjector;
+- (void) stopInjector;
 
 //- (bool) isLastObjectOnScreen;
 
