@@ -12,7 +12,7 @@
 
 @implementation Achievement
 
-//@synthesize achievementCondition;
+@synthesize achievementCondition;
 @synthesize achievementDescription;
 @synthesize previouslyAchieved;
 @synthesize condIndex;
@@ -22,12 +22,13 @@
 
 // -----------------------------------------------------------------------------------
 - (id) initWithCondition:(int)index
+               condition:(NSString *)cond
              description:(NSString *)desc
                 gameCenterAchievement:(GKAchievement *)gcAch
                     isGCAchievement:(BOOL) isGCAch
 {
     if (self=[super init]) {
-        //achievementCondition = cond;
+        achievementCondition = cond;
         condIndex = index;
         achievementDescription = desc;
         gcAchievement = gcAch;

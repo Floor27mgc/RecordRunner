@@ -25,6 +25,10 @@
 @property (nonatomic, strong) CCLabelTTF * finalScoreLabel;
 @property (nonatomic, strong) CCLabelTTF * rankLabel;
 @property (nonatomic, strong) CCControlButton * yesButton;
+@property (nonatomic, strong) CCLabelTTF * goal1;
+@property (nonatomic, strong) CCLabelTTF * goal2;
+@property (nonatomic, strong) CCLabelTTF * goal3;
+
 @property (nonatomic, strong) UIView *emailView;
 @property (nonatomic, strong) UIViewController *emailViewController;
 @property BOOL yesButtonEnabled;

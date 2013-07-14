@@ -22,6 +22,10 @@
 @synthesize yesButton;
 @synthesize yesButtonEnabled;
 @synthesize homeButtonEnabled;
+@synthesize goal1;
+@synthesize goal2;
+@synthesize goal3;
+
 
 - (void) pressedNO:(id) sender
 {
@@ -68,6 +72,31 @@
     
     [self.rankLabel setString:[NSString stringWithFormat:@"%d",
                                      rankScore]];
+    
+    NSMutableArray * rankAchievements = [[GameLayer sharedGameLayer].achievementContainer currentRankAchievements];
+        
+    //70 is good but not perfect
+    //float xPosition = [self.goal1 position].x;
+    float textHeight = [self.goal1 dimensions].height;
+    
+    [self.goal1 setDimensions:CGSizeMake(220,65)];
+    [self.goal1 setPosition:CGPointMake(160, 183)]; 
+    
+    [self.goal2 setDimensions:CGSizeMake(220,65)];
+    [self.goal2 setPosition:CGPointMake(160, 120)]; 
+    
+    [self.goal3 setDimensions:CGSizeMake(220,65)];
+    [self.goal3 setPosition:CGPointMake(160, 60)]; 
+
+    
+    [self.goal1 setString:[NSString stringWithFormat:@"%@",
+                           [(Achievement *)[rankAchievements objectAtIndex: 0] achievementCondition]]];
+     [self.goal2 setString:[NSString stringWithFormat:@"%@",
+     [(Achievement *)[rankAchievements objectAtIndex: 1] achievementCondition]]];
+     
+     [self.goal3 setString:[NSString stringWithFormat:@"%@",
+     [(Achievement *)[rankAchievements objectAtIndex: 2] achievementCondition]]];
+       
     
     GKScore *myScoreValue = [[GKScore alloc] initWithCategory:@"RotatoLeaderBoard"];
     myScoreValue.value = myFinalScore;
@@ -123,6 +152,7 @@
     
     yesButtonEnabled = YES;
     homeButtonEnabled = YES;
+    
 }
 
 - (void) completedAnimationSequenceNamed:(NSString *)name

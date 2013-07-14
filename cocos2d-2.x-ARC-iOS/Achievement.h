@@ -12,6 +12,7 @@
 @interface Achievement : NSObject
 
 - (id) initWithCondition:(int) index
+               condition: (NSString *) cond
              description:(NSString *) desc
    gameCenterAchievement:(GKAchievement *) gcAch
          isGCAchievement:(BOOL) gcAch;
@@ -19,7 +20,7 @@
 - (void) Log;
 
 
-//@property (nonatomic, strong) NSString * achievementCondition;
+@property (nonatomic, strong) NSString * achievementCondition;
 @property (nonatomic, strong) NSString * achievementDescription;
 @property (nonatomic) BOOL previouslyAchieved;
 @property (nonatomic) BOOL alreadyLogged;
