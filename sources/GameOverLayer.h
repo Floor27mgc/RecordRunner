@@ -19,7 +19,7 @@
 - (void) setMenuData: (int) myFinalScore
            rankLevel:(int) rankScore;
 - (void) pressedFeedback:(id)sender;
-
+- (void) pressedFB:(id) sender;
 
 @property BOOL isQuitting;
 @property (nonatomic, strong) CCLabelTTF * finalScoreLabel;
