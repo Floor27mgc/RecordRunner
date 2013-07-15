@@ -1163,22 +1163,26 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameOverLayer.m"
-         timestampString = "394074206.895861"
+         timestampString = "395560504.608506"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "218"
-         endingLineNumber = "218">
+         startingLineNumber = "273"
+         endingLineNumber = "273"
+         landmarkName = "-pressedFB:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameOverLayer.m"
-         timestampString = "394074206.895861"
+         timestampString = "395560504.608506"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "212"
-         endingLineNumber = "212">
+         startingLineNumber = "267"
+         endingLineNumber = "267"
+         landmarkName = "-pressedFB:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -1198,11 +1202,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameOverLayer.m"
-         timestampString = "394074206.895861"
+         timestampString = "395560504.608506"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "200"
-         endingLineNumber = "200">
+         startingLineNumber = "255"
+         endingLineNumber = "255"
+         landmarkName = "-pressedFB:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -1560,11 +1566,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameOverLayer.m"
-         timestampString = "394074206.895861"
+         timestampString = "395560504.608506"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "202"
-         endingLineNumber = "202">
+         startingLineNumber = "257"
+         endingLineNumber = "257"
+         landmarkName = "-pressedFB:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -1844,11 +1852,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "cocos2d-2.x-ARC-iOS/AppDelegate.m"
-         timestampString = "394241442.926005"
+         timestampString = "395558833.395243"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "129"
-         endingLineNumber = "129"
+         startingLineNumber = "130"
+         endingLineNumber = "130"
          landmarkName = "-applicationDidBecomeActive:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -2009,7 +2017,7 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/GameLayer.m"

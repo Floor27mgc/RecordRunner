@@ -14,6 +14,7 @@
 		0803EF0016EC630F00CC932B /* MainGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803EEFF16EC630E00CC932B /* MainGameScene.m */; };
 		0803EF0716F047DE00CC932B /* GameDebugMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803EF0616F047DD00CC932B /* GameDebugMenu.m */; };
 		0813D05217911A36002B3625 /* NewsDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0813D05117911A36002B3625 /* NewsDownloader.m */; };
+		0813D05417931D90002B3625 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0813D05317931D90002B3625 /* Social.framework */; };
 		082018321678479B000A3F8D /* GameObjectInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 082018311678479B000A3F8D /* GameObjectInjector.m */; };
 		082018351679577D000A3F8D /* pattern.c in Sources */ = {isa = PBXBuildFile; fileRef = 082018341679577D000A3F8D /* pattern.c */; };
 		083B0926170AB0EC00EF0DB0 /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 083B08F4170AB0EC00EF0DB0 /* banner.png */; };
@@ -663,6 +664,7 @@
 		0803EF0616F047DD00CC932B /* GameDebugMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameDebugMenu.m; path = sources/GameDebugMenu.m; sourceTree = SOURCE_ROOT; };
 		0813D05017911A36002B3625 /* NewsDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsDownloader.h; path = sources/NewsDownloader.h; sourceTree = SOURCE_ROOT; };
 		0813D05117911A36002B3625 /* NewsDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsDownloader.m; path = sources/NewsDownloader.m; sourceTree = SOURCE_ROOT; };
+		0813D05317931D90002B3625 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		082018301678479B000A3F8D /* GameObjectInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjectInjector.h; path = sources/GameObjectInjector.h; sourceTree = SOURCE_ROOT; };
 		082018311678479B000A3F8D /* GameObjectInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectInjector.m; path = sources/GameObjectInjector.m; sourceTree = SOURCE_ROOT; };
 		082018341679577D000A3F8D /* pattern.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pattern.c; path = ../sources/pattern.c; sourceTree = "<group>"; };
@@ -1354,6 +1356,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0813D05417931D90002B3625 /* Social.framework in Frameworks */,
 				DC0C4A06154AB4DD00B4B727 /* GameKit.framework in Frameworks */,
 				08F7A8EB174879CC00FB7923 /* MessageUI.framework in Frameworks */,
 				850CF25C16ED920D00B292DE /* MediaPlayer.framework in Frameworks */,
@@ -2259,7 +2262,6 @@
 		DC0C49E6154AB4DD00B4B727 = {
 			isa = PBXGroup;
 			children = (
-				08F7A8EA174879CC00FB7923 /* MessageUI.framework */,
 				85A6714816546D4800499BF7 /* Default-568h@2x.png */,
 				DC0C4A07154AB4DD00B4B727 /* RecordRunnerARC */,
 				DC0C49F4154AB4DD00B4B727 /* Frameworks */,
@@ -2279,6 +2281,8 @@
 		DC0C49F4154AB4DD00B4B727 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0813D05317931D90002B3625 /* Social.framework */,
+				08F7A8EA174879CC00FB7923 /* MessageUI.framework */,
 				850CF25B16ED920D00B292DE /* MediaPlayer.framework */,
 				850CF25916ED8F6900B292DE /* SystemConfiguration.framework */,
 				DC0C49F5154AB4DD00B4B727 /* QuartzCore.framework */,

@@ -44,6 +44,6 @@ typedef enum {
 @property (nonatomic, assign) int isBackgroundMusicOn;
 @property (nonatomic, assign) int isSoundEffectOn;
 @property (nonatomic, strong) NSMutableArray * achievedThisRound;
-
+@property (nonatomic) UIWindow *window;
 
 @end
