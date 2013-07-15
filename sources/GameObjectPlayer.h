@@ -27,6 +27,8 @@ typedef enum
     CCMotionStreak *playerStreak;
 }
 - (void) changeDirection;
+- (void) startPlayer;
+- (void) stopPlayer;
 
 - (void) setSheilded: (BOOL) trigger;
 
@@ -44,5 +46,6 @@ typedef enum
 
 @property (nonatomic) BOOL hasShield;
 @property (nonatomic) NSDate * arrivedAtOuterTrack;
+@property (nonatomic) BOOL canMove;
 
 @end

@@ -50,6 +50,7 @@
 // --- PLAYER ---
 #define SOUND_PLAYER_SWIPE 0
 #define SOUND_PLAYER_DIE 1
+#define SOUND_PLAYER_START 2
 // --- MENUS ----
 #define SOUND_MENU_OPEN 0
 #define SOUND_MENU_CLOSE 1

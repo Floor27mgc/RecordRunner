@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -1618,8 +1618,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>159</real>
-							<real>229.19999694824219</real>
+							<real>160</real>
+							<real>-181</real>
 							<integer>1</integer>
 						</array>
 					</dict>
@@ -1783,7 +1783,7 @@
 									<key>value</key>
 									<array>
 										<real>83.817001342773438</real>
-										<real>132.39999389648438</real>
+										<real>102</real>
 									</array>
 								</dict>
 								<dict>
@@ -1801,7 +1801,7 @@
 									<key>value</key>
 									<array>
 										<real>-65.943016052246094</real>
-										<real>132.39999389648438</real>
+										<real>102</real>
 									</array>
 								</dict>
 							</array>
@@ -2096,7 +2096,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>72.2969970703125</real>
+							<real>-65.943016052246094</real>
 							<real>102</real>
 							<integer>0</integer>
 						</array>
@@ -2133,7 +2133,7 @@
 						<key>type</key>
 						<string>Degrees</string>
 						<key>value</key>
-						<real>0.0</real>
+						<real>-100</real>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -2247,7 +2247,7 @@
 									<key>value</key>
 									<array>
 										<real>287.39999389648438</real>
-										<real>136.80000305175781</real>
+										<real>102</real>
 									</array>
 								</dict>
 								<dict>
@@ -2265,7 +2265,7 @@
 									<key>value</key>
 									<array>
 										<real>485</real>
-										<real>136.80000305175781</real>
+										<real>102</real>
 									</array>
 								</dict>
 							</array>
@@ -2583,7 +2583,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>287.424072265625</real>
+							<real>485</real>
 							<real>102</real>
 							<integer>0</integer>
 						</array>
@@ -3215,7 +3215,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.96666663885116577</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
