@@ -19,6 +19,7 @@
 @synthesize playerFacingAngle;
 @synthesize hasShield;
 @synthesize arrivedAtOuterTrack;
+@synthesize canMove;
 
 
 // -----------------------------------------------------------------------------------
@@ -102,7 +103,7 @@
     {
         //NSLog(@"init anim man: %p, user obj: %p", self.animationManager, self.userObject);
         direction = kMoveStill;
-        self.radius = PLAYER_RADIUS_INNER_MOST;
+        self.radius = PLAYER_RADIUS_OUTER_MOST;
 
         if ([GameInfoGlobal sharedGameInfoGlobal].gameMode == kGameModeRotatingPlayer) {
             self.gameObjectAngularVelocity = kDefaultGameObjectAngularVelocityInDegree;
@@ -111,10 +112,37 @@
         }
         
         self.arrivedAtOuterTrack = [NSDate distantFuture];
-        
+        self.visible = 0;
+        self.canMove = NO;
         self.hasShield = NO;
     }
     return (self);
+}
+
+//After death the player should be hidden and moved to the outside.
+- (void) stopPlayer
+{
+    direction = kMoveStill;
+    self.radius = PLAYER_RADIUS_OUTER_MOST;
+    self.arrivedAtOuterTrack = [NSDate distantFuture];
+    self.visible = 0;
+    self.canMove = NO;
+    self.hasShield = NO;
+}
+
+//Makes the player visible and so that clicking will move him and sets him on the center of the record. Called after the intro animation plays.
+- (void) startPlayer
+{
+    
+    self.visible = 1;
+    self.canMove = YES;
+    self.radius = PLAYER_RADIUS_OUTER_MOST;
+    self.playerRadialSpeed = 0;
+    self.direction = kMoveInToOut;
+    
+    
+    [[SoundController sharedSoundController] playSoundIdx:SOUND_PLAYER_START fromObject:self];
+    
 }
 
 // -----------------------------------------------------------------------------------
@@ -130,15 +158,18 @@
 // -----------------------------------------------------------------------------------
 - (void) changeDirection
 {
-    [[SoundController sharedSoundController] playSoundIdx:SOUND_PLAYER_SWIPE fromObject:self];
-    
-    if ([GameLayer sharedGameLayer].isDebugMode == YES)
-        return;
-    direction = (direction == kMoveInToOut) ? kMoveOutToIn : kMoveInToOut;
-    self.playerRadialSpeed = kPlayerRadialSpeed;
-    
-    // reset the outer track timer
-    arrivedAtOuterTrack = [NSDate distantFuture];
+    if (canMove)
+    {
+        [[SoundController sharedSoundController] playSoundIdx:SOUND_PLAYER_SWIPE fromObject:self];
+        
+        if ([GameLayer sharedGameLayer].isDebugMode == YES)
+            return;
+        direction = (direction == kMoveInToOut) ? kMoveOutToIn : kMoveInToOut;
+        self.playerRadialSpeed = kPlayerRadialSpeed;
+        
+        // reset the outer track timer
+        arrivedAtOuterTrack = [NSDate distantFuture];
+    }
 }
 
 // -----------------------------------------------------------------------------------
@@ -207,7 +238,6 @@
 // -----------------------------------------------------------------------------------
 - (void) completedAnimationSequenceNamed:(NSString *)name
 {
-    // Remove the explosion object after the animation has finished
-    [GameLayer sharedGameLayer].isGameReadyToStart = TRUE;
+        [GameLayer sharedGameLayer].isGameReadyToStart = TRUE;
 }
 @end

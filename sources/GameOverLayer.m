@@ -150,8 +150,8 @@
     CCBAnimationManager* animationManager = self.userObject;
     animationManager.delegate = self;
     
-    yesButtonEnabled = YES;
-    homeButtonEnabled = YES;
+    yesButtonEnabled = NO;
+    homeButtonEnabled = NO;
     
 }
 
@@ -173,6 +173,11 @@
         }        
         self.visible = NO;
     }
+    else if ([name compare:@"Pop in"] == NSOrderedSame)
+    {
+        //Turn on the buttons after the menu finishes coming in.
+        [self turnOnButtons];
+    }
 //    [[GameLayer sharedGameLayer] unschedule:@selector(update:)];
 //    [[CCDirector sharedDirector] pause];
 }
@@ -184,6 +189,16 @@
     //TODO: Figure out how to turn off the play button. It can be pressed repeatedly.
     yesButtonEnabled = NO;
     homeButtonEnabled = NO;
+    
+}
+
+//Buttons can accept continuing input after they have been pushed. This will prevent them from being pushed again
+- (void) turnOnButtons
+{
+    
+    //TODO: Figure out how to turn off the play button. It can be pressed repeatedly.
+    yesButtonEnabled = YES;
+    homeButtonEnabled = YES;
     
 }
 

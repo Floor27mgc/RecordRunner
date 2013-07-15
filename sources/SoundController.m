@@ -76,8 +76,9 @@ static SoundController *SoundControllerSingleton;
                                    nil];
         
         NSArray *playerSoundFiles = [[NSArray alloc] initWithObjects:
-                                     @"swipe.wav", //SOUND_CONTAINER_IDX_PLAYER
+                                     @"swipe.wav", //SOUND_PLAYER_SWIPE
                                      @"scratch_backspin.wav", //SOUND_PLAYER_DIE
+                                     @"record_drop.mp3", //SOUND_PLAYER_START
                                      nil];
         
         NSArray *menuSoundEffects = [[NSArray alloc] initWithObjects:

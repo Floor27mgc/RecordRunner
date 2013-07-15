@@ -135,7 +135,6 @@
         [GameInfoGlobal sharedGameInfoGlobal].bombsKilledThisShield++;
         NSLog(@"Bomb absorbed by player's shield!");
     } else {
-        
         //PLAYER DIES -------------------------
         [[GameLayer sharedGameLayer] gameOver];
     }

@@ -100,7 +100,6 @@ static GameLayer *sharedGameLayer;
         // create the player
         player = (GameObjectPlayer *)[CCBReader nodeGraphFromFile:@"gameObjectPlayer.ccbi"
                                                             owner:player];
-        player.visible = 1;
         player.animationManager = player.userObject;
         player.gameObjectAngularVelocity = 0;//kDefaultGameObjectAngularVelocityInDegree;
         [self addChild: player z:10];
@@ -257,8 +256,6 @@ static GameLayer *sharedGameLayer;
     
     CCBAnimationManager* animationManager = self.userObject;
     [animationManager runAnimationsForSequenceNamed:@"start_game"];
-    
-    [self startTheMusic];
     
     // Schedule a selector that is called every frame
     [self schedule:@selector(update:)];
@@ -514,13 +511,8 @@ static GameLayer *sharedGameLayer;
      [self addChild: myRankLayer z:11];
      */
     
-    if (gameOverLayer != nil)
-    {
-        CCBAnimationManager* animationManager = gameOverLayer.userObject;
-        NSLog(@"animationManager: %@", animationManager);
-        
-        [animationManager runAnimationsForSequenceNamed:@"Pop in"];
-    } else {
+    //$$CZ why do this, why not create a new game over layer each time.
+    //There was an old if != nil
         gameOverLayer =
         (GameOverLayer *) [CCBReader nodeGraphFromFile:@"GameOverLayerBox.ccbi"];
         gameOverLayer.position = COMMON_SCREEN_CENTER;
@@ -529,12 +521,11 @@ static GameLayer *sharedGameLayer;
         [gameOverLayer setMenuData: [[GameLayer sharedGameLayer].score getScore]
                          rankLevel:achievementContainer.currentRank];
         
-        
         [[GameLayer sharedGameLayer] addChild:gameOverLayer z:11];
         
-    }
     
     [self pauseSchedulerAndActions];
+    [self.player stopPlayer];
     
     [[[GameInfoGlobal sharedGameInfoGlobal] statsContainer] resetGameTimer];
     
@@ -692,7 +683,11 @@ static GameLayer *sharedGameLayer;
     }
     [self.multiplier decrementMultiplier:self.multiplier.multiplierValue-1];
     
-    [self startTheMusic];
+    [[GameLayer sharedGameLayer].gameObjectInjector stopInjector];
+    
+    CCBAnimationManager* animationManager = self.userObject;
+    [animationManager runAnimationsForSequenceNamed:@"start_game"];
+    
 }
 
 -(bool) getIsHitStateByTrackNum:(int) trackNum
@@ -730,15 +725,28 @@ static GameLayer *sharedGameLayer;
     }
 }
 
+
 - (void) completedAnimationSequenceNamed:(NSString *)name
 {
-    NSLog(@"GAMELAYER: animation completed!");
-    if ([name compare:@"start_game"])
+    
+    //After the starting animation completes, hide the fall fake player:
+    if ([name compare:@"player_fall"] == NSOrderedSame)
     {
         NSLog(@"start game");
-        [self.gameObjectInjector startInjector];
-        //        [self startTheGame];
+        [self.player startPlayer];
+
+       
+        //This is a little hack to hide the fake player animation that shows at the start of the game.  
+        CCBAnimationManager* animationManager = self.userObject;
+        [animationManager runAnimationsForSequenceNamed:@"player_fall_hide"];
     }
+    if ([name compare:@"player_fall_hide"] == NSOrderedSame)
+    {
+        //This will give a few seconds just to let the players realize what is happening before we start injecting. If you want to make this longer, add time to player_fall_hide
+        [self.gameObjectInjector startInjector];
+        [self startTheMusic];
+    }
+    
 }
 
 @end
