@@ -27,5 +27,6 @@
 @property (nonatomic) BOOL isGCAchievement;
 @property (nonatomic, assign) int condIndex;
 @property (nonatomic, strong) GKAchievement * gcAchievement;
+@property (nonatomic, assign) double percentAchieved;
 
 @end

@@ -19,6 +19,7 @@
 @synthesize alreadyLogged;
 @synthesize gcAchievement;
 @synthesize isGCAchievement;
+@synthesize percentAchieved;
 
 // -----------------------------------------------------------------------------------
 - (id) initWithCondition:(int)index
@@ -33,6 +34,7 @@
         achievementDescription = desc;
         gcAchievement = gcAch;
         isGCAchievement = isGCAch;
+        percentAchieved = -1.0;
         
         if (isGCAchievement && gcAchievement.percentComplete == 100.0) {
             previouslyAchieved = YES;
@@ -54,6 +56,8 @@
     }
     
     BOOL achieved = NO;
+    double currentPercentAchieved = -1.0;
+    BOOL partialAchievement = NO;
     
     switch (condIndex) {
             // Go 10 Laps in a single life.
@@ -228,26 +232,46 @@
             
             // Play 15 rounds of rotato
         case 23:
+            partialAchievement = YES;
+            currentPercentAchieved =
+                ((double)[GameInfoGlobal sharedGameInfoGlobal].lifetimeRevolutions / 15.0)
+                    * 100.0;
             achieved = ([GameInfoGlobal sharedGameInfoGlobal].lifetimeRoundsPlayed >= 15);
             break;
             
             // Go 1000 total revolutions
         case 24:
-            achieved = YES;//([GameInfoGlobal sharedGameInfoGlobal].lifetimeRevolutions >= 1000);
+            partialAchievement = YES;
+            currentPercentAchieved =
+                ((double)[GameInfoGlobal sharedGameInfoGlobal].lifetimeRevolutions / 1000.0)
+                    * 100.0;
+            achieved = ([GameInfoGlobal sharedGameInfoGlobal].lifetimeRevolutions >= 1000);
             break;
             
             // Collect 1000 coins
         case 25:
+            partialAchievement = YES;
+            currentPercentAchieved =
+                ((double)[GameInfoGlobal sharedGameInfoGlobal].lifetimeRevolutions / 1000.0)
+                    * 100.0;
             achieved = ([GameInfoGlobal sharedGameInfoGlobal].coinsInBank >= 1000);
             break;
             
             // Collect 5000 coins
         case 26:
+            partialAchievement = YES;
+            currentPercentAchieved =
+                ((double)[GameInfoGlobal sharedGameInfoGlobal].lifetimeRevolutions / 5000.0)
+                    * 100.0;
             achieved = ([GameInfoGlobal sharedGameInfoGlobal].coinsInBank >= 5000);
             break;
             
             // Collect 1000000 coins
         case 27:
+            partialAchievement = YES;
+            currentPercentAchieved =
+                ((double)[GameInfoGlobal sharedGameInfoGlobal].lifetimeRevolutions / 1000000.0)
+                    * 100.0;
             achieved = ([GameInfoGlobal sharedGameInfoGlobal].coinsInBank >= 1000000);
             break;
             
@@ -308,13 +332,25 @@
         // record that this achievement was achieved this round
         [[GameInfoGlobal sharedGameInfoGlobal].achievedThisRound addObject:self];
         
-        //$$$ACHIEVE THIS ONE/////
-        
         if (isGCAchievement) {
             gcAchievement.percentComplete = 100.0;
         }
         
         previouslyAchieved = YES;
+        
+    // log partial achievement, if applicable
+    } else if (partialAchievement && isGCAchievement &&
+               (currentPercentAchieved > percentAchieved)) {
+        
+        gcAchievement.percentComplete = percentAchieved;
+        percentAchieved = currentPercentAchieved;
+        
+        [gcAchievement reportAchievementWithCompletionHandler:^(NSError *error)
+         {
+             if (error != nil) {
+                 NSLog(@"Error in reporting achievement: %@", error);
+             }
+         }];
     }
     
     return achieved;
