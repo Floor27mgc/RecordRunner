@@ -21,6 +21,8 @@
 @synthesize goal2;
 @synthesize goal3;
 
+
+// -----------------------------------------------------------------------------------
 //This method is used to set the labels in the Game Over Menu.
 //For example, before G.O. Menu is shown, call this method to set those two values
 - (void) setMenuData: (NSMutableArray *) rankRequirements currentRank: (int) ranklevel;
@@ -30,20 +32,10 @@
     [self.rankLabel setString:[NSString stringWithFormat:@"%d",
                                ranklevel]];
     
-    /*
-     [self.goal1 setString:[NSString stringWithFormat:@"%d",
-     [rankRequirements objectAtIndex: 0]]];
-     
-     [self.goal2 setString:[NSString stringWithFormat:@"%d",
-     ranklevel]];
-     
-     [self.goal3 setString:[NSString stringWithFormat:@"%d",
-     ranklevel]];
-     */
     NSLog(@"Requirements: %@", rankRequirements);
 }
 
-
+// -----------------------------------------------------------------------------------
 - (void) pressedYES:(id) sender
 {
     self.isQuitting = YES;
@@ -53,6 +45,7 @@
     
 }
 
+// -----------------------------------------------------------------------------------
 - (void) didLoadFromCCB
 {
     
@@ -62,6 +55,7 @@
     animationManager.delegate = self;
 }
 
+// -----------------------------------------------------------------------------------
 - (void) completedAnimationSequenceNamed:(NSString *)name
 {
     NSLog(@"RankLayerBox %@",name);
@@ -81,8 +75,6 @@
         [[GameLayer sharedGameLayer] addChild:gameOverLayer z:11];
         
     }
-    
-    
-    
 }
+
 @end

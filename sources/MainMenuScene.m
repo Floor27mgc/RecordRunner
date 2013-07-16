@@ -35,7 +35,7 @@
 @synthesize gameCenterView;
 @synthesize clickedStart;
 
-
+// -----------------------------------------------------------------------------------
 - (id) init
 {
     if( (self=[super init]) )
@@ -73,12 +73,9 @@
             else if (localPlayer.isAuthenticated)
             {
                 NSLog (@"We are in ");
-                //[self loadAchievements];
-                //[self authenticatedPlayer: localPlayer];
             }
             else
             {
-                //[self disableGameCenter];
             }
         };
         
@@ -87,7 +84,7 @@
     return (self);
 }
 
-
+// -----------------------------------------------------------------------------------
 - (void) didLoadFromCCB
 {
     // Setup a delegate method for the animationManager of the explosion
@@ -96,7 +93,7 @@
     
 }
 
-
+// -----------------------------------------------------------------------------------
 - (void) loadAchievements
 {
     NSMutableDictionary * achievementsDictionary = [[NSMutableDictionary alloc] init];
@@ -114,7 +111,7 @@
     NSLog(@"achievements size %d", achievementsDictionary.count);
 }
 
-
+// -----------------------------------------------------------------------------------
 - (void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)gameCenterViewController1
 {
     [gameCenterViewController dismissViewControllerAnimated:YES completion:nil];
@@ -122,6 +119,8 @@
     gameCenterView = nil;
     gameCenterViewController = nil;
 }
+
+// -----------------------------------------------------------------------------------
 - (void) pressedPlay:(id)sender
 {
     //Only open the game if the menu is closed
@@ -134,6 +133,7 @@
     }
 }
 
+// -----------------------------------------------------------------------------------
 - (void) pressedExpandButton: (id)sender
 {
     
@@ -152,6 +152,7 @@
     }
 }
 
+// -----------------------------------------------------------------------------------
 - (void) pressedRecommended: (id)sender
 {
     if (self.menuExpanded)
@@ -161,7 +162,7 @@
     }
 }
 
-
+// -----------------------------------------------------------------------------------
 - (void) pressedHelp: (id)sender
 {
     
@@ -172,6 +173,7 @@
     }
 }
 
+// -----------------------------------------------------------------------------------
 - (void) pressedScore: (id)sender
 {
     
@@ -182,6 +184,7 @@
     }
 }
 
+// -----------------------------------------------------------------------------------
 - (void) pressedBuy: (id)sender
 {
     
@@ -192,7 +195,7 @@
     }
 }
 
-
+// -----------------------------------------------------------------------------------
 - (void) pressedSocial: (id)sender
 {
     
@@ -203,7 +206,7 @@
     }
 }
 
-
+// -----------------------------------------------------------------------------------
 - (void) pressedSettings: (id)sender
 {
     
@@ -214,6 +217,7 @@
     }
 }
 
+// -----------------------------------------------------------------------------------
 - (void) closeAllMenus
 {
     for (MenuBox *eachButton in buttonArray)
@@ -225,8 +229,7 @@
     }
 }
 
-
-
+// -----------------------------------------------------------------------------------
 //This is used by the rotato start button. We don't want to start the game if you have another menu open
 - (BOOL) anyAnyMenusOpen
 {
@@ -241,6 +244,7 @@
     return NO;
 }
 
+// -----------------------------------------------------------------------------------
 - (void) openMenus: (MainMenuButtons) openThisMenu
 {
     NSLog(@"============= open %d ===================", openThisMenu);
@@ -292,6 +296,7 @@
     
 }
 
+// -----------------------------------------------------------------------------------
 - (void) completedAnimationSequenceNamed:(NSString *)name
 {
     NSLog(@"MainMenuScene %@",name);

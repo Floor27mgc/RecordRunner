@@ -35,11 +35,6 @@
     
     // convert time elapsed to milliseconds
     double elapsedMilliseconds = [_startTime timeIntervalSinceNow] * -1000.0;
-    /*if (!_startedBlink && elapsed > SHIELD_LIFETIME_SEC - BLINK_WHEN_REMAINING) {
-        NSLog(@"blinking player");
-        _startedBlink = YES;
-        [GameLayer sharedGameLayer].invincibleRecord.visible = YES;
-    }*/
 
     // toggle first invincible record
     if (!_startedBlink) {

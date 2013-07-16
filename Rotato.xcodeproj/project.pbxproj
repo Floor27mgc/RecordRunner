@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0801C92716DA92C800ED1A1B /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0801C92616DA92C700ED1A1B /* Explosion.m */; };
 		0803EEC716E3D1E500CC932B /* CCUIViewWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803EEC516E3D1A000CC932B /* CCUIViewWrapper.m */; };
 		0803EECC16E3D29100CC932B /* GameInfoGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803EECB16E3D29000CC932B /* GameInfoGlobal.m */; };
 		0803EECF16E4212600CC932B /* GameModeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0803EECE16E4212600CC932B /* GameModeMenu.m */; };
@@ -16,7 +15,6 @@
 		0813D05217911A36002B3625 /* NewsDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0813D05117911A36002B3625 /* NewsDownloader.m */; };
 		0813D05417931D90002B3625 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0813D05317931D90002B3625 /* Social.framework */; };
 		082018321678479B000A3F8D /* GameObjectInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 082018311678479B000A3F8D /* GameObjectInjector.m */; };
-		082018351679577D000A3F8D /* pattern.c in Sources */ = {isa = PBXBuildFile; fileRef = 082018341679577D000A3F8D /* pattern.c */; };
 		083B0926170AB0EC00EF0DB0 /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 083B08F4170AB0EC00EF0DB0 /* banner.png */; };
 		083B0927170AB0EC00EF0DB0 /* blank-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 083B08F5170AB0EC00EF0DB0 /* blank-hd.png */; };
 		083B0928170AB0EC00EF0DB0 /* blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 083B08F6170AB0EC00EF0DB0 /* blank.png */; };
@@ -379,8 +377,6 @@
 		08F7A8EB174879CC00FB7923 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F7A8EA174879CC00FB7923 /* MessageUI.framework */; };
 		850300ED16A63FBA0035D7C1 /* PowerIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 850300EC16A63FBA0035D7C1 /* PowerIcon.m */; };
 		850300F116A640E50035D7C1 /* Power.m in Sources */ = {isa = PBXBuildFile; fileRef = 850300F016A640E50035D7C1 /* Power.m */; };
-		850300F416A661290035D7C1 /* PowerFireMissle.m in Sources */ = {isa = PBXBuildFile; fileRef = 850300F316A661280035D7C1 /* PowerFireMissle.m */; };
-		8503011416A9FF790035D7C1 /* Missile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8503011316A9FF790035D7C1 /* Missile.m */; };
 		850CF25A16ED8F6900B292DE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850CF25916ED8F6900B292DE /* SystemConfiguration.framework */; };
 		850CF25C16ED920D00B292DE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850CF25B16ED920D00B292DE /* MediaPlayer.framework */; };
 		850CF2C016ED974400B292DE /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 850CF26016ED974400B292DE /* libFlurry.a */; };
@@ -488,7 +484,6 @@
 		853F15B6172C9C20004E33B6 /* parts_shield_invincible.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15AC172C9C20004E33B6 /* parts_shield_invincible.png */; };
 		853F15B7172C9C20004E33B6 /* parts_shield_invincible-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15AD172C9C20004E33B6 /* parts_shield_invincible-hd.png */; };
 		8583C66A16802C9C003A3213 /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8583C66916802C9C003A3213 /* GameOverLayer.m */; };
-		859EC13C16B60FB7003BFF41 /* PowerSlowDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 859EC13B16B60FB7003BFF41 /* PowerSlowDown.m */; };
 		85A671361651D14000499BF7 /* Bomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671351651D14000499BF7 /* Bomb.m */; };
 		85A6713A1651D16000499BF7 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671391651D16000499BF7 /* Coin.m */; };
 		85A6714C1655A6CC00499BF7 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A6714B1655A6CB00499BF7 /* Queue.m */; };
@@ -655,8 +650,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0801C92516DA92C700ED1A1B /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Explosion.h; path = sources/Explosion.h; sourceTree = SOURCE_ROOT; };
-		0801C92616DA92C700ED1A1B /* Explosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Explosion.m; path = sources/Explosion.m; sourceTree = SOURCE_ROOT; };
 		0803EEC416E3D19F00CC932B /* CCUIViewWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCUIViewWrapper.h; path = sources/CCUIViewWrapper.h; sourceTree = SOURCE_ROOT; };
 		0803EEC516E3D1A000CC932B /* CCUIViewWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCUIViewWrapper.m; path = sources/CCUIViewWrapper.m; sourceTree = SOURCE_ROOT; };
 		0803EECA16E3D29000CC932B /* GameInfoGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameInfoGlobal.h; path = sources/GameInfoGlobal.h; sourceTree = SOURCE_ROOT; };
@@ -672,8 +665,6 @@
 		0813D05317931D90002B3625 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		082018301678479B000A3F8D /* GameObjectInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjectInjector.h; path = sources/GameObjectInjector.h; sourceTree = SOURCE_ROOT; };
 		082018311678479B000A3F8D /* GameObjectInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectInjector.m; path = sources/GameObjectInjector.m; sourceTree = SOURCE_ROOT; };
-		082018341679577D000A3F8D /* pattern.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pattern.c; path = ../sources/pattern.c; sourceTree = "<group>"; };
-		0820183616795ADE000A3F8D /* pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pattern.h; path = sources/pattern.h; sourceTree = SOURCE_ROOT; };
 		083B08F4170AB0EC00EF0DB0 /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banner.png; path = Resources/Graphics/banner.png; sourceTree = SOURCE_ROOT; };
 		083B08F5170AB0EC00EF0DB0 /* blank-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blank-hd.png"; path = "Resources/Graphics/blank-hd.png"; sourceTree = SOURCE_ROOT; };
 		083B08F6170AB0EC00EF0DB0 /* blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blank.png; path = Resources/Graphics/blank.png; sourceTree = SOURCE_ROOT; };
@@ -1048,10 +1039,6 @@
 		850300EC16A63FBA0035D7C1 /* PowerIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowerIcon.m; path = sources/PowerIcon.m; sourceTree = SOURCE_ROOT; };
 		850300EF16A640E50035D7C1 /* Power.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Power.h; path = sources/Power.h; sourceTree = SOURCE_ROOT; };
 		850300F016A640E50035D7C1 /* Power.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Power.m; path = sources/Power.m; sourceTree = SOURCE_ROOT; };
-		850300F216A661280035D7C1 /* PowerFireMissle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerFireMissle.h; path = sources/PowerFireMissle.h; sourceTree = SOURCE_ROOT; };
-		850300F316A661280035D7C1 /* PowerFireMissle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowerFireMissle.m; path = sources/PowerFireMissle.m; sourceTree = SOURCE_ROOT; };
-		8503011216A9FF790035D7C1 /* Missile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Missile.h; path = sources/Missile.h; sourceTree = SOURCE_ROOT; };
-		8503011316A9FF790035D7C1 /* Missile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Missile.m; path = sources/Missile.m; sourceTree = SOURCE_ROOT; };
 		850CF25916ED8F6900B292DE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		850CF25B16ED920D00B292DE /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		850CF25F16ED974400B292DE /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
@@ -1168,8 +1155,6 @@
 		853F15AD172C9C20004E33B6 /* parts_shield_invincible-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_shield_invincible-hd.png"; path = "Resources/Graphics/parts_shield_invincible-hd.png"; sourceTree = SOURCE_ROOT; };
 		8583C66816802C9C003A3213 /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverLayer.h; path = sources/GameOverLayer.h; sourceTree = SOURCE_ROOT; };
 		8583C66916802C9C003A3213 /* GameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverLayer.m; path = sources/GameOverLayer.m; sourceTree = SOURCE_ROOT; };
-		859EC13A16B60FB7003BFF41 /* PowerSlowDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerSlowDown.h; path = sources/PowerSlowDown.h; sourceTree = SOURCE_ROOT; };
-		859EC13B16B60FB7003BFF41 /* PowerSlowDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowerSlowDown.m; path = sources/PowerSlowDown.m; sourceTree = SOURCE_ROOT; };
 		85A671341651D13F00499BF7 /* Bomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bomb.h; path = sources/Bomb.h; sourceTree = SOURCE_ROOT; };
 		85A671351651D14000499BF7 /* Bomb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = Bomb.m; path = sources/Bomb.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		85A671381651D16000499BF7 /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Coin.h; path = sources/Coin.h; sourceTree = SOURCE_ROOT; };
@@ -1596,8 +1581,6 @@
 				85A671381651D16000499BF7 /* Coin.h */,
 				85A671391651D16000499BF7 /* Coin.m */,
 				08B6D63A169548B000608ACF /* common.h */,
-				0801C92516DA92C700ED1A1B /* Explosion.h */,
-				0801C92616DA92C700ED1A1B /* Explosion.m */,
 				0803EF0516F047DD00CC932B /* GameDebugMenu.h */,
 				0803EF0616F047DD00CC932B /* GameDebugMenu.m */,
 				0803EECA16E3D29000CC932B /* GameInfoGlobal.h */,
@@ -1614,8 +1597,6 @@
 				0840D5A2163F4C2A003D5FE6 /* GameObjectPlayer.m */,
 				8583C66816802C9C003A3213 /* GameOverLayer.h */,
 				8583C66916802C9C003A3213 /* GameOverLayer.m */,
-				E5F1506D1789D61A006923DD /* RankLayerBox.h */,
-				E5F1506E1789D61A006923DD /* RankLayerBox.m */,
 				0803EEFE16EC630E00CC932B /* MainGameScene.h */,
 				0803EEFF16EC630E00CC932B /* MainGameScene.m */,
 				E5973A9A17234CD7001B948A /* MainMenuBuyBox.h */,
@@ -1629,41 +1610,35 @@
 				E5F47E17179354B900504A9A /* MainMenuScoreBox.h */,
 				E5F47E18179354B900504A9A /* MainMenuScoreBox.m */,
 				E5F47E1A179354C600504A9A /* MainMenuSettingsBox.h */,
-				E5F47E1D179354D200504A9A /* MenuBox.h */,
-				E5F47E1E179354D200504A9A /* MenuBox.m */,
 				E5F47E1B179354C600504A9A /* MainMenuSettingsBox.m */,
 				E5973A9D17234DB2001B948A /* MainMenuSocialBox.h */,
 				E5973A9E17234DB3001B948A /* MainMenuSocialBox.m */,
-				8503011216A9FF790035D7C1 /* Missile.h */,
-				8503011316A9FF790035D7C1 /* Missile.m */,
+				E5F47E1D179354D200504A9A /* MenuBox.h */,
+				E5F47E1E179354D200504A9A /* MenuBox.m */,
 				852E3DB017123300006EC44A /* Multiplier.h */,
-				E55D11C0178736680072B6AC /* scoreMini.h */,
-				E55D11C1178736690072B6AC /* scoreMini.m */,
 				852E3DB117123300006EC44A /* Multiplier.m */,
-				082018341679577D000A3F8D /* pattern.c */,
-				0820183616795ADE000A3F8D /* pattern.h */,
+				0813D05017911A36002B3625 /* NewsDownloader.h */,
+				0813D05117911A36002B3625 /* NewsDownloader.m */,
 				850300EF16A640E50035D7C1 /* Power.h */,
 				850300F016A640E50035D7C1 /* Power.m */,
-				850300F216A661280035D7C1 /* PowerFireMissle.h */,
-				850300F316A661280035D7C1 /* PowerFireMissle.m */,
 				850300EB16A63FBA0035D7C1 /* PowerIcon.h */,
 				850300EC16A63FBA0035D7C1 /* PowerIcon.m */,
 				850FAD0E16BD9D8F00EBF5FF /* PowerShield.h */,
 				850FAD0F16BD9D8F00EBF5FF /* PowerShield.m */,
-				859EC13A16B60FB7003BFF41 /* PowerSlowDown.h */,
-				859EC13B16B60FB7003BFF41 /* PowerSlowDown.m */,
 				85A6714A1655A6CB00499BF7 /* Queue.h */,
 				85A6714B1655A6CB00499BF7 /* Queue.m */,
+				E5F1506D1789D61A006923DD /* RankLayerBox.h */,
+				E5F1506E1789D61A006923DD /* RankLayerBox.m */,
 				85B53BAB1673C5CC001163F7 /* Score.h */,
 				85B53BAC1673C5CC001163F7 /* Score.m */,
+				E55D11C0178736680072B6AC /* scoreMini.h */,
+				E55D11C1178736690072B6AC /* scoreMini.m */,
 				851C65B416DEB28D00B9BDB5 /* SoundController.h */,
 				851C65B516DEB28D00B9BDB5 /* SoundController.m */,
 				850CF31916F9618E00B292DE /* StatisticsContainer.h */,
 				850CF31A16F9618E00B292DE /* StatisticsContainer.m */,
 				850CF31C16F9652100B292DE /* StatisticsTracker.h */,
 				850CF31D16F9652100B292DE /* StatisticsTracker.m */,
-				0813D05017911A36002B3625 /* NewsDownloader.h */,
-				0813D05117911A36002B3625 /* NewsDownloader.m */,
 			);
 			name = game;
 			sourceTree = "<group>";
@@ -3005,15 +2980,10 @@
 				85A6714C1655A6CC00499BF7 /* Queue.m in Sources */,
 				85B53BAD1673C5CC001163F7 /* Score.m in Sources */,
 				082018321678479B000A3F8D /* GameObjectInjector.m in Sources */,
-				082018351679577D000A3F8D /* pattern.c in Sources */,
 				8583C66A16802C9C003A3213 /* GameOverLayer.m in Sources */,
 				850300ED16A63FBA0035D7C1 /* PowerIcon.m in Sources */,
 				850300F116A640E50035D7C1 /* Power.m in Sources */,
-				850300F416A661290035D7C1 /* PowerFireMissle.m in Sources */,
-				8503011416A9FF790035D7C1 /* Missile.m in Sources */,
-				859EC13C16B60FB7003BFF41 /* PowerSlowDown.m in Sources */,
 				850FAD1016BD9D8F00EBF5FF /* PowerShield.m in Sources */,
-				0801C92716DA92C800ED1A1B /* Explosion.m in Sources */,
 				851C65B616DEB28D00B9BDB5 /* SoundController.m in Sources */,
 				0803EECC16E3D29100CC932B /* GameInfoGlobal.m in Sources */,
 				0803EECF16E4212600CC932B /* GameModeMenu.m in Sources */,

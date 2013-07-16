@@ -14,7 +14,6 @@
 
 #define kSpeedUpScoreInterval     50
 #define kSpeedUpScoreLevelCeiling  3
-//#define MULTIPLIER_LIFE_TIME_SEC   5
 
 @interface Score : GameObjectBase
 
@@ -23,9 +22,7 @@
 @property (nonatomic) int prevScore;
 @property (nonatomic) NSString * label;
 @property  (nonatomic) int multiplierValue;
-/*@property (nonatomic) int multiplier;
-@property (nonatomic) int timerLifeInSec;
-@property (nonatomic) NSDate * multiplierTime;*/
+
 
 - (id) init;
 - (void) prepareScore:(NSString *) myLabel;
@@ -35,10 +32,5 @@
 - (int) getScore;
 - (int) getMultiplier;
 - (void) setHighScore;
-//- (void) incrementMultiplier:(int) amount;
-//- (void) decrementMultiplier:(int) amount;
-
-
-//- (NSString *) generateScoreString;
 
 @end

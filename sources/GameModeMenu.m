@@ -11,6 +11,8 @@
 #import "GameInfoGlobal.h"
 
 @implementation GameModeMenu
+
+// -----------------------------------------------------------------------------------
 -(id) init
 {
     // always call "super" init
@@ -19,28 +21,36 @@
     {
     }
     return self;
-} 
+}
+
+// -----------------------------------------------------------------------------------
 - (void) pressedMode1:(id)sender
 {
     [GameInfoGlobal sharedGameInfoGlobal].gameMode = kGameModeNormal;
     [[CCDirector sharedDirector] pushScene:[CCBReader sceneWithNodeGraphFromFile:@"MainGameScene.ccbi"]];
 }
+
+// -----------------------------------------------------------------------------------
 - (void) pressedMode2:(id)sender
 {
     [GameInfoGlobal sharedGameInfoGlobal].gameMode = kGameModeBouncyMusic;
     [[CCDirector sharedDirector] pushScene:[CCBReader sceneWithNodeGraphFromFile:@"MainGameScene.ccbi"]];    
 }
 
+// -----------------------------------------------------------------------------------
 - (void) pressedMode3:(id)sender
 {
     [GameInfoGlobal sharedGameInfoGlobal].gameMode = kGameModeRotatingPlayer;
     [[CCDirector sharedDirector] pushScene:[CCBReader sceneWithNodeGraphFromFile:@"MainGameScene.ccbi"]];
 
 }
+
+// -----------------------------------------------------------------------------------
 - (void) pressedMode4:(id)sender
 {
     [GameInfoGlobal sharedGameInfoGlobal].gameMode = kGameModeNormal;
     [[CCDirector sharedDirector] pushScene:[CCBReader sceneWithNodeGraphFromFile:@"MainGameScene.ccbi"]];
 
 }
+
 @end

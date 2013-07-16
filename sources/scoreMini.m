@@ -26,7 +26,7 @@
     return self;
 }
 
-
+// -----------------------------------------------------------------------------------
 - (void) didLoadFromCCB
 {
     // Setup a delegate method for the animationManager of the explosion
@@ -64,11 +64,13 @@
    
 }
 
+// -----------------------------------------------------------------------------------
 - (void) resetObject
 {
     [super resetObject];
 }
 
+// -----------------------------------------------------------------------------------
 - (void) completedAnimationSequenceNamed:(NSString *)name
 {
     [self recycleObjectWithUsedPool:[GameLayer sharedGameLayer].scoreUsedPool                  freePool:[GameLayer sharedGameLayer].scoreFreePool];

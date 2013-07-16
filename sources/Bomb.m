@@ -33,24 +33,12 @@
 // -----------------------------------------------------------------------------------
 - (void) showNextFrame
 {
-//    int numRoundsRan = 0;
     // this is a negative movement down the Y-axis, the Coin is falling
     // from the top of the screen
-    //[self moveBy:ccp(0, self.gameObjectSpeed)];
     [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_RECORD_CENTER,self.radius,self.angleRotated)];
     self.angleRotated = self.angleRotated + self.gameObjectAngularVelocity;
     gameObjectUpdateTick++;
-    
-    // Determine if this Bomb has been obsolute.  If yes, we need to clear this
-    // one out so the the user is not bored seeing the same bomb at the same place
-    // over and over again.
-/*    numRoundsRan = gameObjectUpdateTick / (360 / self.gameObjectAngularVelocity);
-    if (numRoundsRan > BOMB_NUM_ROUNDS_BEFORE_RECYCLE) {
-        [self recycleObjectWithUsedPool:[GameLayer sharedGameLayer].bombUsedPool
-                               freePool:[GameLayer sharedGameLayer].bombFreePool];
-        return;
-    } */
-    
+        
     // if we do not hit the player now and the player is moving, see if we
     // have a "close call"
     if (![self encounterWithPlayer] &&

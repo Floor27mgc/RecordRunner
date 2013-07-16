@@ -36,9 +36,6 @@
     self.angleRotated = self.angleRotated + self.gameObjectAngularVelocity;
     
     [self encounterWithPlayer];
-/*    if ([self encounterWithPlayer]) {
-        [self handleCollision];
-    }*/
 }
 
 // -----------------------------------------------------------------------------------
@@ -51,16 +48,6 @@
     
     // instantiate new Power object
     switch (type) {
-        case fire_missle:
-            NSLog(@"Creating a missle PowerUp");
-            newPower = [[PowerFireMissle alloc] initWithType:fire_missle
-                                                   gameLayer:[GameLayer sharedGameLayer]];
-            break;
-        case slow_down:
-            NSLog(@"Creating a slow down PowerUp");
-            newPower = [[PowerSlowDown alloc] initWithType:slow_down
-                                                 gameLayer:[GameLayer sharedGameLayer]];
-            break;
         case shield:
             NSLog(@"Creating a shield PowerUp");
             newPower = [[PowerShield alloc] initWithType:shield

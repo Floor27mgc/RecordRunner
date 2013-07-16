@@ -14,6 +14,8 @@
 @synthesize gameModeOptionMenu;
 @synthesize optionToTweakIdx;
 @synthesize valueLabel;
+
+// -----------------------------------------------------------------------------------
 - (void) pressedExit:(id) sender
 {
     [GameLayer sharedGameLayer].isDebugMode = NO;
@@ -21,20 +23,19 @@
     [[GameLayer sharedGameLayer] removeChild:self];
 }
 
+// -----------------------------------------------------------------------------------
 - (void) pressedGameMode:(id) sender
 {
     CCMenuItemImage *selectedItem = (CCMenuItemImage *) sender;
     CCNode *child;
     CCMenuItem *currentItem;
     
-//    CCARRAY_FOREACH(self.debugOptionMenu.children, child)
     CCARRAY_FOREACH(selectedItem.parent.children, child)
     {
         currentItem = (CCMenuItem *) child;
         [currentItem unselected];
     }
     
-//    currentItem = (CCMenuItem *) [self.debugOptionMenu getChildByTag:selectedItem.tag];
     currentItem = (CCMenuItem *) [selectedItem.parent getChildByTag:selectedItem.tag];
     [currentItem selected];
 
@@ -53,6 +54,7 @@
     [[GameLayer sharedGameLayer] cleanUpPlayField];
 }
 
+// -----------------------------------------------------------------------------------
 -(void) resetToDefaultGameMode
 {
     [GameLayer sharedGameLayer].player.gameObjectAngularVelocity = 0;
@@ -61,6 +63,8 @@
                                              [GameLayer sharedGameLayer].player.radius,
                                              [GameLayer sharedGameLayer].player.angleRotated)];
 }
+
+// -----------------------------------------------------------------------------------
 - (void) pressedDebugOption:(id) sender
 {
     CCMenuItemImage *selectedItem = (CCMenuItemImage *) sender;
@@ -98,6 +102,7 @@
     }
 }
 
+// -----------------------------------------------------------------------------------
 - (void) pressedUp:(id) sender
 {
     
@@ -129,6 +134,8 @@
     }
     [[GameLayer sharedGameLayer] cleanUpPlayField];
 }
+
+// -----------------------------------------------------------------------------------
 - (void) pressedDown:(id) sender
 {
     float angularVelocity = 0.0f;

@@ -28,7 +28,7 @@
 @synthesize downloadLinkString;
 @synthesize pictureLinkString;
 
-
+// -----------------------------------------------------------------------------------
 - (id) initWithURL:(NSString *)URL
 {
 
@@ -50,6 +50,7 @@
     return (self);
 }
 
+// -----------------------------------------------------------------------------------
 - (void) getXMLFromURLandParse
 {
     NSURL *url = [NSURL URLWithString:sourceURL];
@@ -59,18 +60,20 @@
 
 }
 
-
+// -----------------------------------------------------------------------------------
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
     return;
 }
 
+// -----------------------------------------------------------------------------------
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
     currentXMLElementString = string;
     
 }
 
+// -----------------------------------------------------------------------------------
 -(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
@@ -115,6 +118,7 @@
     
 }
 
+// -----------------------------------------------------------------------------------
 - (void) setNewsUnreadStatus:(BOOL)status
 {
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
@@ -123,6 +127,7 @@
     [userDefault synchronize];
 }
 
+// -----------------------------------------------------------------------------------
 - (BOOL) hasUnreadNews
 {
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];

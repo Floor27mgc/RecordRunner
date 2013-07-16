@@ -14,11 +14,14 @@
 @implementation MainGameScene
 @synthesize score;
 static MainGameScene *sharedGameScene;
+
+// -----------------------------------------------------------------------------------
 + (MainGameScene *) sharedGameLayer
 {
     return sharedGameScene;
 }
 
+// -----------------------------------------------------------------------------------
 -(id) init
 {    
 	// always call "super" init
@@ -30,6 +33,7 @@ static MainGameScene *sharedGameScene;
     return self;
 }
 
+// -----------------------------------------------------------------------------------
 - (void) setScore:(int) score
 {
     

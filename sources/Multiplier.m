@@ -64,11 +64,9 @@
                                     multiplierValue]];
     
     ccColor3B currentColor = multiplierLabel.color;
-    //    currentColor.r += 50;
     [self.multiplierLabel setColor:currentColor];
     [self.animationManager runAnimationsForSequenceNamed:@"bounce_multiplier"];
 
-    //timerLifeInSec += MULTIPLIER_LIFE_TIME_SEC;
     timerLifeInSec = MULTIPLIER_LIFE_TIME_SEC;
     
     // perform multiplier timing operations
@@ -159,4 +157,5 @@
         }
     }
 }
+
 @end

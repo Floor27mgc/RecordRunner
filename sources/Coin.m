@@ -29,7 +29,7 @@
     return (self);
 }
 
-
+// -----------------------------------------------------------------------------------
 - (void) didLoadFromCCB
 {
     // Setup a delegate method for the animationManager of the explosion
@@ -43,20 +43,9 @@
 {
     // this is a negative movement down the Y-axis, the Coin is falling
     // from the top of the screen
-    //[self moveBy:ccp(0, self.gameObjectSpeed)];
     [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_RECORD_CENTER,self.radius,self.angleRotated)];
     self.angleRotated = self.angleRotated + self.gameObjectAngularVelocity;
     [self encounterWithPlayer];
-    
-    /*    if ([self encounterWithPlayer])
-     {
-     [self handleCollision];
-     }
-     else
-     {
-     //        [self recycleOffScreenObjWithUsedPool:[GameLayer sharedGameLayer].coinUsedPool
-     //                                     freePool:[GameLayer sharedGameLayer].coinFreePool];
-     }*/
 }
 
 // -----------------------------------------------------------------------------------
@@ -173,17 +162,13 @@
     [super resetObject];
 }
 
+// -----------------------------------------------------------------------------------
 - (void) completedAnimationSequenceNamed:(NSString *)name
 {
-    
     if (_isDead)
     {
         [self recycleObjectWithUsedPool:[GameLayer sharedGameLayer].coinUsedPool                  freePool:[GameLayer sharedGameLayer].coinFreePool];
     }
-    
-    
-    //    [[GameLayer sharedGameLayer] unschedule:@selector(update:)];
-    //    [[CCDirector sharedDirector] pause];
 }
 
 @end

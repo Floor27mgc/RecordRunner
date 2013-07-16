@@ -26,6 +26,7 @@
 
 static SoundController *SoundControllerSingleton;
 
+// -----------------------------------------------------------------------------------
 + (SoundController *) sharedSoundController
 {
     return SoundControllerSingleton;
@@ -35,10 +36,9 @@ static SoundController *SoundControllerSingleton;
 +(id) init
 {
     SoundController * objCreated = [[self alloc] init];
+    
     objCreated.currentSongTitle = @"JewelBeat - Follow The Beat.wav";
     objCreated.audioEngine = [SimpleAudioEngine sharedEngine];
-//    [objCreated.audioEngine playBackgroundMusic:objCreated.currentSongTitle];
-
     objCreated.audioPlayer = [CDAudioManager sharedManager].backgroundMusic.audioSourcePlayer;
     objCreated.audioPlayer.meteringEnabled = YES;
     objCreated.subsetIdx = 1;
@@ -46,6 +46,7 @@ static SoundController *SoundControllerSingleton;
     objCreated.subsetCurrentRepeatCount = 0;
     objCreated.subsetMaxRepeatCount = arc4random() % 10 + 1;
     SoundControllerSingleton = objCreated;
+    
     return objCreated;
 }
 
@@ -97,6 +98,7 @@ static SoundController *SoundControllerSingleton;
     return self;
 }
 
+// -----------------------------------------------------------------------------------
 -(void) playSoundIdx:(int) soundIdx fromObject:(id) senderObject
 {
     NSArray *soundFileNames = nil;
@@ -152,6 +154,7 @@ static SoundController *SoundControllerSingleton;
 
 }
 
+// -----------------------------------------------------------------------------------
 - (void) soundBounceGameObject:(GameObjectBase *) gameObject
                      withLevel:(double) soundLevel;
 {
@@ -171,7 +174,6 @@ static SoundController *SoundControllerSingleton;
     }
 
     [gameObject scaleMe:((gameObject.tag % subsetIdx == 0)?soundLevel:0)];
-    
 }
 
 

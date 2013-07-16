@@ -16,19 +16,13 @@
 @synthesize scoreValue = _scoreValue;
 @synthesize multiplierValue = _multiplierValue;
 @synthesize prevScore = _prevScore;
-//@synthesize label = _label;
-/*@synthesize multiplier = _multiplier;
-@synthesize timerLifeInSec = _timerLifeInSec;
-@synthesize multiplierTime = _multiplierTime;*/
+
 
 // -----------------------------------------------------------------------------------
 - (id) init
 {
     _scoreValue = 0;
     _prevScore  = 0;
-/*    _multiplier = 1;
-    _timerLifeInSec = 0;
-    _multiplierTime = [NSDate distantFuture];;*/
     
     if(self = [super init]) {
 
@@ -40,12 +34,6 @@
 // -----------------------------------------------------------------------------------
 - (void) prepareScore:(NSString *) myLabel
 {
-    //_label = myLabel;
-    //_score = [CCLabelBMFont labelWithString:@"0" fntFile:@"bitmapFontTest.fnt"];
-    //NSString * scoreString = [self generateScoreString];
-    //[_score setString:scoreString];
-   // CGSize size = [[CCDirector sharedDirector] winSize];
-   // _score.position = ccp(kScorePositionX,kScorePositionY);
 }
 
 
@@ -66,7 +54,6 @@
     {
         if (currenScoreLevel < newScoreLevel)
         {
-            //[[GameLayer sharedGameLayer] speedUpGame];
         }
     }
     
@@ -92,7 +79,6 @@
     {
         if (currenScoreLevel > newScoreLevel)
         {
-            //[[GameLayer sharedGameLayer] slowDownGame];
         }
     }
 }
@@ -133,7 +119,6 @@
 - (void) resetObject
 {
     _scoreValue = 0;
-    //_multiplier = 1;
     [self showNextFrame];
 }
 

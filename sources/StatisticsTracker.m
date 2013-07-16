@@ -73,10 +73,6 @@
         [[NSNumber numberWithInt:count] stringValue],
         [typeLabel stringByAppendingString:@".count"],
                              nil];
-    
-
-    /*NSLog(@"Average: %f total: %d count: %d min %d max %d",
-          average, total, count, min, max);*/
 
     return params;
 }

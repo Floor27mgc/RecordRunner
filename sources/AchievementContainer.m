@@ -12,11 +12,12 @@
 @implementation AchievementContainer
 
 @synthesize allAchievements;
-@synthesize currentAchievements;    //??deprecated??
+@synthesize currentAchievements;
 @synthesize numAchievementsPerRank; //The count of num achievements per rank.
 @synthesize totalNumAchievements;
 @synthesize achievementsDictionary;
-@synthesize currentRankAchievements; //The 3 achievements in the current rank you are trying to achieve
+@synthesize currentRankAchievements; //The 3 achievements in the current
+                                     //rank you are trying to achieve
 @synthesize currentRank;
 @synthesize achievementsLoaded;
 
@@ -117,11 +118,6 @@
         }
         
     }
-    
-    //Set the current rank number
-
-    //[self LoadCurrentRankAchievements];
-    //And adds all the achievements that are need for that rank to the array currentRankAchievements
 }
 
 // -----------------------------------------------------------------------------------
@@ -196,100 +192,6 @@
         }
     }
 }
-
-
-// -----------------------------------------------------------------------------------
-// Called from LoadCurrentRankAchievements, creates a 3 array based on current rank.
-// These are not GC achivements so you have to do a custom making of them.
-/*- (void) LoadRankAchievements:(int)rank
-{
-    int conditionIndex  = 16;
-    
-    for (int i = 1; i <= numAchievementsPerRank; ++i) {
-        
-        //Rank Condition
-        NSString * rankConditionTag = [NSString stringWithFormat:@"%@%d%@%d",
-                                       @"RANK_", rank, @"_COND_", i];
-        NSString * rankCond = NSLocalizedStringFromTable(rankConditionTag,
-                                                         @"achievement_map",                                                            nil);
-        
-        //Description
-        NSString * curRankDesc = [NSString stringWithFormat:@"%@%d%@%d",
-                                  @"RANK_", rank, @"_DESC_", i];
-        NSString * rankDesc = NSLocalizedStringFromTable(curRankDesc,
-                                                         @"achievement_map",                                                            nil);
-        
-        
-        
-        Achievement * newAchievement = [[Achievement alloc]
-                                        initWithCondition:1
-                                        condition: rankCond
-                                        description:rankDesc
-                                        gameCenterAchievement:nil
-                                        isGCAchievement:NO];
-        
-        [currentRankAchievements addObject:newAchievement];
-        
-        
-        
-        // $$$ The following returns nil because it is searching allachievements list for rankDesc. However, the non-gc achievements (those sub rank-achievements) are not in the allachivements list
-        
-        //        So I think this method should just create a 3-part array. here.
-        
-        //        [currentRankAchievements addObject:[self GetAchievementByDescription:rankDesc]];
-    }
-    
-    return;
-}*/
-
-
-// ----------------------------------------------------------------------------------
-// Sets your current rank based on what percent complete you are with the rank achievements.
-
-/*- (void) LoadCurrentRankAchievements
-// Also populates the rank achievements
-- (void) LoadCurrentRankAchievements
-{
-    GKAchievement * ach = [achievementsDictionary objectForKey:@"16"];
-    if (ach.percentComplete < 100) {
-        NSLog(@"loading rank 1");
-        [self LoadRankAchievements:1];
-        currentRank = 1;
-        return;
-    }
-    
-    ach = [achievementsDictionary objectForKey:@"17"];
-    if (ach.percentComplete < 100) {
-        [self LoadRankAchievements:2];
-        currentRank = 2;
-        return;
-    }
-    
-    ach = [achievementsDictionary objectForKey:@"18"];
-    if (ach.percentComplete < 100) {
-        [self LoadRankAchievements:3];
-        currentRank = 3;
-        return;
-    }
-    
-    ach = [achievementsDictionary objectForKey:@"19"];
-    if (ach.percentComplete < 100) {
-        [self LoadRankAchievements:4];
-        currentRank = 4;
-        return;
-    }
-    
-    ach = [achievementsDictionary objectForKey:@"20"];
-    if (ach.percentComplete < 100) {
-        [self LoadRankAchievements:5];
-        currentRank = 5;
-        return;
-    }
-    
-    currentRank = 0;
-    
-    return;
-}*/
 
 // -----------------------------------------------------------------------------------
 // Called on every update in GameLayer.

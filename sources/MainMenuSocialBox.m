@@ -13,6 +13,7 @@
 @synthesize emailView;
 @synthesize emailViewController;
 
+// -----------------------------------------------------------------------------------
 - (void) pressedFacebook: (id)sender
 {
     
@@ -24,7 +25,7 @@
    
 }
 
-
+// -----------------------------------------------------------------------------------
 - (void) pressedTwitter: (id)sender
 {
     
@@ -35,6 +36,7 @@
     
 }
 
+// -----------------------------------------------------------------------------------
 - (void) pressedEmail: (id)sender
 {
     
@@ -44,6 +46,7 @@
     
 }
 
+// -----------------------------------------------------------------------------------
 //This monitors when animations complete.
 //When one is complete, then it calls the action that it should.
 - (void) completedAnimationSequenceNamed:(NSString *)name
@@ -97,13 +100,13 @@
     }
 }
 
+// -----------------------------------------------------------------------------------
 -(void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     [emailViewController dismissViewControllerAnimated:YES completion:nil];
-    //[[[CCDirector sharedDirector] view] addSubview:emailView];
     [emailView removeFromSuperview];
     emailView = nil;
     emailViewController = nil;
-    
 }
+
 @end

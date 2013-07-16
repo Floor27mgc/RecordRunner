@@ -31,7 +31,7 @@
 @synthesize goal2;
 @synthesize goal3;
 
-
+// -----------------------------------------------------------------------------------
 - (void) pressedNO:(id) sender
 {
     NSLog(@"pressed no!");
@@ -40,6 +40,7 @@
 
 }
 
+// -----------------------------------------------------------------------------------
 - (void) pressedYES:(id) sender
 {
     if (yesButtonEnabled)
@@ -57,7 +58,7 @@
     }
 }
 
-
+// -----------------------------------------------------------------------------------
 //This method is used to set the labels in the Game Over Menu.
 //For example, before G.O. Menu is shown, call this method to set those two values
 - (void) setMenuData:(int) myFinalScore
@@ -116,6 +117,7 @@
     }];
 }
 
+// -----------------------------------------------------------------------------------
 //This quits the game
 - (void) pressedHome:(id) sender
 {
@@ -132,6 +134,7 @@
     }
 }
 
+// -----------------------------------------------------------------------------------
 - (void) pressedFeedback:(id)sender
 {
     MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
@@ -149,6 +152,7 @@
     
 }
 
+// -----------------------------------------------------------------------------------
 - (void) didLoadFromCCB
 {
     // Setup a delegate method for the animationManager of the explosion
@@ -160,6 +164,7 @@
     
 }
 
+// -----------------------------------------------------------------------------------
 - (void) completedAnimationSequenceNamed:(NSString *)name
 {
     NSLog(@"GameOverLayer %@",name);
@@ -185,10 +190,9 @@
         //Turn on the buttons after the menu finishes coming in.
         [self turnOnButtons];
     }
-//    [[GameLayer sharedGameLayer] unschedule:@selector(update:)];
-//    [[CCDirector sharedDirector] pause];
 }
 
+// -----------------------------------------------------------------------------------
 //Buttons can accept continuing input after they have been pushed. This will prevent them from being pushed again
 - (void) turnOffButtons
 {
@@ -199,6 +203,7 @@
     
 }
 
+// -----------------------------------------------------------------------------------
 //Buttons can accept continuing input after they have been pushed. This will prevent them from being pushed again
 - (void) turnOnButtons
 {
@@ -209,16 +214,17 @@
     
 }
 
+// -----------------------------------------------------------------------------------
 -(void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     [emailViewController dismissViewControllerAnimated:YES completion:nil];
-    //[[[CCDirector sharedDirector] view] addSubview:emailView];
     [emailView removeFromSuperview];
     emailView = nil;
     emailViewController = nil;
     
 }
 
+// -----------------------------------------------------------------------------------
 -(void) pressedFB:(id)sender
 {
     // Make sure this phone is facebook capable
@@ -255,6 +261,7 @@
     
 }
 
+// -----------------------------------------------------------------------------------
 -(UIImage*) screenshotWithStartNode:(CCNode*)startNode
 {
     [CCDirector sharedDirector].nextDeltaTimeZero = YES;
@@ -269,4 +276,5 @@
     
     return [rtx getUIImage];
 }
+
 @end

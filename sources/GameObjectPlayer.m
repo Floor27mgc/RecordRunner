@@ -26,8 +26,6 @@
 - (void) showNextFrame
 {
     int track_num;
-/*    if ([GameLayer sharedGameLayer].isDebugMode == YES)
-        return;*/
 
     if ([[GameLayer sharedGameLayer] getIsHitStateByTrackNum:TRACKNUM_FROM_RADIUS] == YES)
     {
@@ -119,6 +117,7 @@
     return (self);
 }
 
+// -----------------------------------------------------------------------------------
 //After death the player should be hidden and moved to the outside.
 - (void) stopPlayer
 {
@@ -130,6 +129,7 @@
     self.hasShield = NO;
 }
 
+// -----------------------------------------------------------------------------------
 //Makes the player visible and so that clicking will move him and sets him on the center of the record. Called after the intro animation plays.
 - (void) startPlayer
 {
@@ -225,10 +225,9 @@
 - (void) onEnter
 {
     // Setup a delegate method for the animationManager of the explosion
-//    CCBAnimationManager* animationManager = self.userObject;
-//    animationManager.delegate = self;
 }
 
+// -----------------------------------------------------------------------------------
 //Called by the bomb object when handlecollision finds they ran into each other
 - (void) killYourself
 {

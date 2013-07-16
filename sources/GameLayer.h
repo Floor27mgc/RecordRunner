@@ -37,7 +37,7 @@
 #define kBombSpawnRate 30
 #define kCoinSpawnRate 38
 #define kShieldSpawnRate 1
-#define TAP_DELAY_THRESHOLD_MSEC 62//125
+#define TAP_DELAY_THRESHOLD_MSEC 62
 
 #define SPEED_INCREASE_AMOUNT .2
 
@@ -58,10 +58,9 @@ typedef enum {
 } effect_type_t;
 
 @class GameObjectInjector;
-// GameLayer
+
 @interface GameLayer : CCLayer  <CCBAnimationManagerDelegate>
 {
-//    GameObjectPlayer *player;
     BOOL isTrackHit[MAX_NUM_TRACK];
     id whatHitTrack[MAX_NUM_TRACK];
 }
@@ -70,52 +69,10 @@ typedef enum {
 
 
 // handle game over scenario
-- (void) gameOver;
+-(void) gameOver;
 
-/*
-// returns a CCScene that contains the GameLayer as the only child
-//+(CCScene *) scene;
-+(CCScene *) sceneWithMode:(int) gameMode;
-
-// handle "game over" scenario
-- (void) gameOver;
-
-// restart the game
-- (void) startOver;
-
-// check and update the high score
-- (bool) updateHighScore;
-
-// reset high score to zero
-- (void) resetHighScore;
- 
-// add coins to persistent coin bank
-- (int) depositCoinsToBank;
-
-// add Power to the layer
-- (void) addPower:(id) newPower;
-*/
 // add PowerIcon to layer, if condition has occurred
-- (void) triggerPowerIcons;
-/*
-// generate start coordinates for a random track
-- (CGPoint) generateRandomTrackCoords;
-
-// reset Used and Free pools
-- (void) resetPoolsWithUsedPool:(Queue *)usedPool
-                       freePool:(Queue *)freePool;
-
-// clear pool and reset all objects in pool
-- (void) resetPool:(Queue *) pool;
-
-// Change all game object speed all at once
-- (void) changeGameObjectsSpeed:(Queue *)pool up:(BOOL)speedUp speed:(int)factor;
-
-// Speed up the game;
-- (void) speedUpGame;
-
-// Slow down the game;
-- (void) slowDownGame; */
+-(void) triggerPowerIcons;
 -(void) soundBounceGameObjectUsedPool:(Queue *)gameObjectUsedPool;
 -(float) changeGameAngularVelocityByDegree:(float) byDegree;
 -(float) getGameAngularVelocityInDegree;
@@ -160,15 +117,9 @@ typedef enum {
 @property (nonatomic, strong) UIViewController *leaderBoardViewController;
 @property (nonatomic, strong) AchievementContainer * achievementContainer;
 
-/*
-@property (nonatomic, strong) CCSprite *background;*/
 @property (nonatomic, strong) CCLabelTTF * scoreLabel;
 @property (nonatomic, strong) Score * score;
 @property (nonatomic, strong) Score * highScore;
 @property (nonatomic, strong) CCSprite * invincibleRecord;
-//@property (nonatomic, strong) CCLabelTTF * multiplierLabel;
-/*
-@property (nonatomic, strong) GameOverLayer * gameOverLayer;
-@property (nonatomic, strong) CCParticleSystemQuad *playerOnFireEmitter; */
 
 @end

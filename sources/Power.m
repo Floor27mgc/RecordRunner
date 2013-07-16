@@ -19,7 +19,6 @@
 {
     if (self = [super init]) {
         self.powerType = type;
-        //[GameLayer sharedGameLayer] = parentLayer;
         self.myTrackNum = arc4random() % MAX_NUM_TRACK;
     }
     

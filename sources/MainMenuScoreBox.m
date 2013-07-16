@@ -43,7 +43,6 @@
 // -----------------------------------------------------------------------------------
 - (void) pressedGameCenterAchievements: (id)sender
 {
-    //GKGameCenterViewController * gcViewController = [[GKGameCenterViewController alloc] init];
     gameCenterViewController = [[UIViewController alloc] init];
     gameCenterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, COMMON_SCREEN_WIDTH,
                                                               COMMON_SCREEN_HEIGHT)];
@@ -59,19 +58,7 @@
                                        animated: YES
                                         completion:nil];
         }
-    
     }
-    /*
-    gameCenterViewController = [[UIViewController alloc]init];
-    gameCenterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, COMMON_SCREEN_WIDTH, COMMON_SCREEN_HEIGHT)];
-    gameCenterViewController.view = gameCenterView;
-    [[[CCDirector sharedDirector] view] addSubview:gameCenterView];
-    
-    GKLeaderboardViewController *lb = [[GKLeaderboardViewController alloc] init];
-    if(lb != nil){
-        lb.leaderboardDelegate = self;
-        [gameCenterViewController presentViewController:lb animated:YES completion:nil];
-    }*/
 }
 
 // -----------------------------------------------------------------------------------

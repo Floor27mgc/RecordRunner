@@ -13,7 +13,6 @@
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
 #import "GameObjectInjector.h"
-#import "pattern.h"
 #import "GameOverLayer.h"
 #import "RankLayerBox.h"
 #import "common.h"
@@ -30,7 +29,7 @@
 
 // GameLayer implementation
 @implementation GameLayer
-@synthesize player;// = _player;
+@synthesize player;
 @synthesize coinFreePool = _coinFreePool;
 @synthesize coinUsedPool = _coinUsedPool;
 @synthesize bombFreePool = _bombFreePool;
@@ -54,7 +53,6 @@
 @synthesize pendingTaps;
 @synthesize leaderBoardView;
 @synthesize leaderBoardViewController;
-//@synthesize multiplierLabel;
 @synthesize tapDelay;
 @synthesize achievementContainer;
 
@@ -78,10 +76,6 @@ static GameLayer *sharedGameLayer;
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) )
     {
-/*        NewsDownloader *downloader = [[NewsDownloader alloc]initWithURL:@"http://localhost/~max21226/test.xml"];
-        int status = [downloader hasUnreadNews];
-        NSLog(@"%d",status);
-        [downloader setNewsUnreadStatus:FALSE]; */
         // achievement monitoring structures
         achievementContainer = [[AchievementContainer alloc] init];
         
@@ -229,15 +223,10 @@ static GameLayer *sharedGameLayer;
         //[achievementContainer LoadInternalAchievements];
         
     }
-    /*
-     [self schedule: @selector(update:)]; */
-    
-    //    [gameObjectInjector injectObjectToTrack:0 atAngle:45 gameObjectType:COIN_TYPE effectType:kRotation];
-    
     return self;
 }
 
-
+// -----------------------------------------------------------------------------------
 - (void) didLoadFromCCB
 {
     // Setup a delegate method for the animationManager of the explosion
@@ -354,9 +343,6 @@ static GameLayer *sharedGameLayer;
     [_score showNextFrame];
     [_highScore showNextFrame];
     [_multiplier showNextFrame];
-    
-    // check if new Power up has been triggered
-    //    [self triggerPowerIcons];
     
     // update all PowerIcons
     for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
@@ -482,6 +468,7 @@ static GameLayer *sharedGameLayer;
     [self addChild:debugMenu z:12];
 }
 
+// -----------------------------------------------------------------------------------
 - (void) gameOver
 {
     NSLog(@"Current Rank: %d", (achievementContainer.currentRank));
@@ -493,23 +480,6 @@ static GameLayer *sharedGameLayer;
     
     // update end-of-game statistics
     [[[GameInfoGlobal sharedGameInfoGlobal] statsContainer] writeStats];
-    
-    
-    //Load the game Over screen.
-    
-    //TODO: If you have unlocked a new mission, load the rankLayer and show the, you got a new rank animation. Otherwise just show the game over screen.
-    
-    //Here is the ranklayer for when that happens:
-    
-    /*
-     RankLayerBox * myRankLayer =
-     (RankLayerBox *) [CCBReader nodeGraphFromFile:@"RankLayerBox.ccbi"];
-     myRankLayer.position = COMMON_SCREEN_CENTER;
-     
-     [myRankLayer setMenuData: achievementContainer.currentRankAchievements currentRank: achievementContainer.currentRank];
-     
-     [self addChild: myRankLayer z:11];
-     */
     
     if (gameOverLayer != nil)
     {
@@ -530,7 +500,6 @@ static GameLayer *sharedGameLayer;
     }
     
     [self pauseSchedulerAndActions];
-    //[self.player stopPlayer];
     
     [[[GameInfoGlobal sharedGameInfoGlobal] statsContainer] resetGameTimer];
     
@@ -548,6 +517,7 @@ static GameLayer *sharedGameLayer;
     
 }
 
+// -----------------------------------------------------------------------------------
 //This is called by any object that wants to show a score on the board.
 - (void) showScoreOnTrack: (int)track message:(NSString *) scoreText
 {
@@ -574,7 +544,7 @@ static GameLayer *sharedGameLayer;
     
 }
 
-
+// -----------------------------------------------------------------------------------
 -(void) soundBounceGameObjectUsedPool:(Queue *)gameObjectUsedPool
 {
     static int subsetIdx = 1;
@@ -609,6 +579,7 @@ static GameLayer *sharedGameLayer;
     }
 }
 
+// -----------------------------------------------------------------------------------
 -(int) changeBombSpawnRateBy:(int) amount
 {
     if (((bombSpawnRate + amount) != 0) ||
@@ -618,6 +589,7 @@ static GameLayer *sharedGameLayer;
     return bombSpawnRate;
 }
 
+// -----------------------------------------------------------------------------------
 -(int) changeCoinSpawnRateBy:(int) amount
 {
     if (((coinSpawnRate + amount) != 0) ||
@@ -627,16 +599,19 @@ static GameLayer *sharedGameLayer;
     return coinSpawnRate;
 }
 
+// -----------------------------------------------------------------------------------
 -(int) getCoinSpawnRate
 {
     return coinSpawnRate;
 }
 
+// -----------------------------------------------------------------------------------
 -(int) getBombSpawnRate
 {
     return bombSpawnRate;
 }
 
+// -----------------------------------------------------------------------------------
 -(int) changeShieldSpawnRateBy:(int) amount
 {
     if (((shieldSpawnRate + amount) != 0) ||
@@ -646,11 +621,13 @@ static GameLayer *sharedGameLayer;
     return shieldSpawnRate;
 }
 
+// -----------------------------------------------------------------------------------
 -(int) getShieldSpawnRate
 {
     return shieldSpawnRate;
 }
 
+// -----------------------------------------------------------------------------------
 -(void) cleanUpPlayField
 {
     int numObjToCleanup;
@@ -695,11 +672,13 @@ static GameLayer *sharedGameLayer;
     
 }
 
+// -----------------------------------------------------------------------------------
 -(bool) getIsHitStateByTrackNum:(int) trackNum
 {
     return ((trackNum < MAX_NUM_TRACK)?isTrackHit[trackNum]:NO);
 }
 
+// -----------------------------------------------------------------------------------
 -(void) setIsHitStateByTrackNum:(int) trackNum toState:(bool) state
 {
     if (trackNum < MAX_NUM_TRACK) {
@@ -707,6 +686,7 @@ static GameLayer *sharedGameLayer;
     }
 }
 
+// -----------------------------------------------------------------------------------
 -(void) setHittingObjByTrackNum:(int) trackNum hittingObj:(id) obj
 {
     if (trackNum < MAX_NUM_TRACK) {
@@ -714,11 +694,13 @@ static GameLayer *sharedGameLayer;
     }
 }
 
+// -----------------------------------------------------------------------------------
 -(id) getHittingObjByTrackNum:(int) trackNum
 {
     return ((trackNum < MAX_NUM_TRACK)?whatHitTrack[trackNum]:nil);
 }
 
+// -----------------------------------------------------------------------------------
 -(void) startTheMusic
 {
     //Start the music for the game, the player is starting.
@@ -730,7 +712,7 @@ static GameLayer *sharedGameLayer;
     }
 }
 
-
+// -----------------------------------------------------------------------------------
 - (void) completedAnimationSequenceNamed:(NSString *)name
 {
     

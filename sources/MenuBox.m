@@ -13,6 +13,8 @@
 @synthesize isOpen;
 @synthesize finalScore;
 @synthesize beenAdded;
+
+// -----------------------------------------------------------------------------------
 - (id) init
 {
     if( (self=[super init]) )
@@ -22,12 +24,13 @@
     return (self);
 }
 
-
+// -----------------------------------------------------------------------------------
 - (BOOL) isOpen:(id) sender
 {
     return self.isOpen;
 }
 
+// -----------------------------------------------------------------------------------
 - (void) toggleTab:(id) sender
 {
     
@@ -41,6 +44,7 @@
     
 }
 
+// -----------------------------------------------------------------------------------
 - (void) openTab:(id) sender
 {
     //CCBAnimationManager* animationManager = self.userObject;
@@ -54,6 +58,8 @@
         
     self.isOpen = YES;
 }
+
+// -----------------------------------------------------------------------------------
 - (void) closeTab:(id) sender
 {
     //CCBAnimationManager* animationManager = self.userObject;
@@ -66,6 +72,7 @@
     self.isOpen = NO;
 }
 
+// -----------------------------------------------------------------------------------
 - (void) bounceTab: (id) sender
 {
     
@@ -76,7 +83,7 @@
     self.isOpen = YES;
 }
 
-
+// -----------------------------------------------------------------------------------
 - (void) didLoadFromCCB
 {
     // Setup a delegate method for the animationManager of the explosion
@@ -84,14 +91,9 @@
     animationManager.delegate = self;
 }
 
+// -----------------------------------------------------------------------------------
 - (void) completedAnimationSequenceNamed:(NSString *)name
-{/*
-  NSLog(@"%@",name);
-  if ([name compare:@"Pop out"] == NSOrderedSame) {
-  self.visible = NO;
-  }
-  //    [[GameLayer sharedGameLayer] unschedule:@selector(update:)];
-  //    [[CCDirector sharedDirector] pause];
-  */
+{
 }
+
 @end

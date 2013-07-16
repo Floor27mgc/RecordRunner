@@ -7,7 +7,6 @@
 //
 
 #import "GameObjectInjector.h"
-#import "pattern.h"
 #import "scoreMini.h"
 
 @interface GameObjectInjector ()
@@ -167,7 +166,6 @@
                                        inUsedPool:usedPool
                                           OnTrack:trackNum])
         {
-//            NSLog(@"Sombody nears me");
             return nil;
         }
     }
@@ -331,6 +329,7 @@
     return newObject;
 }
 
+// -----------------------------------------------------------------------------------
 - (Boolean) isAnybodyNearMeWithInAngleRange: (float) angleRange
                                     myAngle: (float) _myAngle
                                  inUsedPool: (Queue *)_usedPool
@@ -356,14 +355,15 @@
     }
     
     return false;
-    
 }
 
+// -----------------------------------------------------------------------------------
 - (void) startInjector
 {
     isInjectorPause = FALSE;
 }
 
+// -----------------------------------------------------------------------------------
 - (void) stopInjector
 {
     isInjectorPause = TRUE;

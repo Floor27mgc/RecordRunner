@@ -93,24 +93,6 @@
     } else {
         return NO;
     }
-/*    CGPoint gameObjectPoint = [gameLayer.player convertToNodeSpace: self.position];
-    if ((abs(gameObjectPoint.y) < COMMON_GRID_HEIGHT) &&
-        (abs(gameObjectPoint.x) < COMMON_GRID_WIDTH)) */
-/*    if (CGPathContainsPoint(gameLayer.player.playerBoundingPath,
-                            NULL,
-                            gameObjectPoint,
-                            true)) */
-/*    {
-        [gameLayer setIsHitStateByTrackNum:TRACKNUM_FROM_RADIUS
-                                   toState:YES];
-        [gameLayer setHittingObjByTrackNum:TRACKNUM_FROM_RADIUS hittingObj:self];
-        return YES;
-    }
-    else
-    {
-        return NO;
-    }*/
-
 }
 
 // -----------------------------------------------------------------------------------
@@ -160,10 +142,6 @@
 
     [_freeObjPool addObject:objectToRecyle toTrack:TRACKNUM_FROM_RADIUS];
     [_usedObjPool takeObjectFromIndex:i fromTrack:TRACKNUM_FROM_RADIUS];
-    /*
-    [POOL_OBJS_ON_TRACK(_freeObjPool, TRACKNUM_FROM_RADIUS) addObject:[POOL_OBJS_ON_TRACK(_usedObjPool,TRACKNUM_FROM_RADIUS) objectAtIndex:i]];
-    [POOL_OBJS_ON_TRACK(_usedObjPool, TRACKNUM_FROM_RADIUS) removeObjectAtIndex:i]; */
-
 }
 
 // -----------------------------------------------------------------------------------
@@ -216,7 +194,7 @@
         return;
     }
     
-    double scaleFactor = factor+1;//1 + (3*factor);
+    double scaleFactor = factor+1;
 
     self.scaleX = scaleFactor;
     self.scaleY = scaleFactor;
