@@ -85,6 +85,10 @@
     //float xPosition = [self.goal1 position].x;
     float textHeight = [self.goal1 dimensions].height;
     
+    self.goal1 = [[CCLabelTTF alloc] init];
+    self.goal2 = [[CCLabelTTF alloc] init];
+    self.goal3 = [[CCLabelTTF alloc] init];
+
     [self.goal1 setDimensions:CGSizeMake(220,65)];
     [self.goal1 setPosition:CGPointMake(160, 183)]; 
     
@@ -94,15 +98,25 @@
     [self.goal3 setDimensions:CGSizeMake(220,65)];
     [self.goal3 setPosition:CGPointMake(160, 60)]; 
 
+    Achievement * curAch = [[GameLayer sharedGameLayer].achievementContainer
+                            GetAchievementByIdentifier:0];
+    if (curAch) {
+        [self.goal1 setString:[NSString stringWithFormat:@"%@",
+                               curAch.achievementCondition]];
+    }
     
-    [self.goal1 setString:[NSString stringWithFormat:@"%@",
-                           [(Achievement *)[rankAchievements objectAtIndex: 0] achievementCondition]]];
-     [self.goal2 setString:[NSString stringWithFormat:@"%@",
-     [(Achievement *)[rankAchievements objectAtIndex: 1] achievementCondition]]];
-     
-     [self.goal3 setString:[NSString stringWithFormat:@"%@",
-     [(Achievement *)[rankAchievements objectAtIndex: 2] achievementCondition]]];
-       
+    curAch = [[GameLayer sharedGameLayer].achievementContainer
+              GetAchievementByIdentifier:1];
+    if (curAch) {
+        [self.goal2 setString:[NSString stringWithFormat:@"%@",                               curAch.achievementCondition]];
+    }
+    
+    curAch = [[GameLayer sharedGameLayer].achievementContainer
+              GetAchievementByIdentifier:2];
+    if (curAch) {
+        [self.goal3 setString:[NSString stringWithFormat:@"%@",
+                               curAch.achievementCondition]];
+    }
     
     GKScore *myScoreValue = [[GKScore alloc] initWithCategory:@"RotatoLeaderBoard"];
     myScoreValue.value = myFinalScore;
