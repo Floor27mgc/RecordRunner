@@ -294,7 +294,7 @@
 
 - (void) completedAnimationSequenceNamed:(NSString *)name
 {
-    NSLog(@"%@",name);
+    NSLog(@"MainMenuScene %@",name);
     
     if ([name compare:@"ClickedStart"] == NSOrderedSame) {
         

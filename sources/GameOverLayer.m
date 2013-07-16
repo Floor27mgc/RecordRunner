@@ -40,16 +40,16 @@
 {
     if (yesButtonEnabled)
     {
-    self.isQuitting = NO;
-    
-    [self turnOffButtons];
-    
-    CCBAnimationManager* animationManager = self.userObject;
-    
-    [[GameLayer sharedGameLayer] resumeSchedulerAndActions];
-    [animationManager runAnimationsForSequenceNamed:@"Pop out"];
-    [[GameLayer sharedGameLayer] cleanUpPlayField];
-    [[GameLayer sharedGameLayer].score setScoreValue:0];
+        self.isQuitting = NO;
+        
+        [self turnOffButtons];
+        
+        CCBAnimationManager* animationManager = self.userObject;
+        
+        [[GameLayer sharedGameLayer] resumeSchedulerAndActions];
+        [animationManager runAnimationsForSequenceNamed:@"Pop out"];
+        [[GameLayer sharedGameLayer] cleanUpPlayField];
+        [[GameLayer sharedGameLayer].score setScoreValue:0];
     }
 }
 
@@ -132,7 +132,7 @@
 
 - (void) completedAnimationSequenceNamed:(NSString *)name
 {
-    NSLog(@"%@",name);
+    NSLog(@"GameOverLayer %@",name);
     
     if ([name compare:@"Pop out"] == NSOrderedSame) {
         
@@ -147,6 +147,8 @@
             [[CCDirector sharedDirector] replaceScene:mainMenuScene];
         }        
         self.visible = NO;
+        self.yesButtonEnabled = true;
+        self.homeButtonEnabled = true;
     }
 //    [[GameLayer sharedGameLayer] unschedule:@selector(update:)];
 //    [[CCDirector sharedDirector] pause];

@@ -518,7 +518,7 @@ static GameLayer *sharedGameLayer;
     {
         CCBAnimationManager* animationManager = gameOverLayer.userObject;
         NSLog(@"animationManager: %@", animationManager);
-        
+        gameOverLayer.visible = YES;
         [animationManager runAnimationsForSequenceNamed:@"Pop in"];
     } else {
         gameOverLayer =

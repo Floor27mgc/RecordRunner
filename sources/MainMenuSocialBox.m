@@ -48,7 +48,7 @@
 //When one is complete, then it calls the action that it should.
 - (void) completedAnimationSequenceNamed:(NSString *)name
 {
-    NSLog(@"%@",name);
+    NSLog(@"MainMenuSocialBox %@",name);
     if ([name compare:@"facebookButtonReaction"] == NSOrderedSame) {
         
         
