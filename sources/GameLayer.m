@@ -511,8 +511,13 @@ static GameLayer *sharedGameLayer;
      [self addChild: myRankLayer z:11];
      */
     
-    //$$CZ why do this, why not create a new game over layer each time.
-    //There was an old if != nil
+    if (gameOverLayer != nil)
+    {
+        CCBAnimationManager* animationManager = gameOverLayer.userObject;
+        NSLog(@"animationManager: %@", animationManager);
+        gameOverLayer.visible = YES;
+        [animationManager runAnimationsForSequenceNamed:@"Pop in"];
+    } else {
         gameOverLayer =
         (GameOverLayer *) [CCBReader nodeGraphFromFile:@"GameOverLayerBox.ccbi"];
         gameOverLayer.position = COMMON_SCREEN_CENTER;
@@ -522,10 +527,10 @@ static GameLayer *sharedGameLayer;
                          rankLevel:achievementContainer.currentRank];
         
         [[GameLayer sharedGameLayer] addChild:gameOverLayer z:11];
-        
+    }
     
     [self pauseSchedulerAndActions];
-    [self.player stopPlayer];
+    //[self.player stopPlayer];
     
     [[[GameInfoGlobal sharedGameInfoGlobal] statsContainer] resetGameTimer];
     

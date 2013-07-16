@@ -64,7 +64,7 @@
 
 - (void) completedAnimationSequenceNamed:(NSString *)name
 {
-    NSLog(@"%@",name);
+    NSLog(@"RankLayerBox %@",name);
     
     if ([name compare:@"Pop out"] == NSOrderedSame) { 
         
