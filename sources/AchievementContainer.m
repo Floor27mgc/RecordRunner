@@ -12,12 +12,13 @@
 @implementation AchievementContainer
 
 @synthesize allAchievements;
+@synthesize allRankGoals;
 @synthesize currentAchievements;
 @synthesize numAchievementsPerRank; //The count of num achievements per rank.
 @synthesize totalNumAchievements;
 @synthesize achievementsDictionary;
-@synthesize currentRankAchievements; //The 3 achievements in the current
-                                     //rank you are trying to achieve
+@synthesize currentRankGoals; // The 3 achievements in the current
+                              // rank you are trying to achieve
 @synthesize currentRank;
 @synthesize achievementsLoaded;
 
@@ -30,22 +31,24 @@
         
         // load the number of achievements
         NSString * numAchievements = NSLocalizedStringFromTable(@"NUMBER_OF_ACHIEVEMENTS",
-                                                                @"achievement_map",
-                                                                nil);
+                                        @"achievement_map",                                  nil);
         totalNumAchievements = [numAchievements integerValue];
 
         allAchievements = [[NSMutableArray alloc] initWithCapacity: totalNumAchievements];
         
         // load number of achievements per rank
         NSString * achievementsPerRank = NSLocalizedStringFromTable(@"ACHIEVEMENTS_PER_RANK",
-                                                                    @"achievement_map",                                                            nil);
+                                        @"achievement_map",
+                                            nil);
         numAchievementsPerRank = [achievementsPerRank integerValue];
 
-        currentAchievements = [[NSMutableArray alloc] initWithCapacity:
-                               numAchievementsPerRank];
+        currentAchievements = [[NSMutableArray alloc] init];
         
-        currentRankAchievements = [[NSMutableArray alloc] initWithCapacity:
-                               numAchievementsPerRank];
+        allRankGoals = [[NSMutableArray alloc] initWithCapacity:
+                               (GOALS_PER_RANK * NUM_RANKS)];
+        
+        currentRankGoals = [[NSMutableArray alloc] initWithCapacity:
+                               (GOALS_PER_RANK * NUM_RANKS)];
         
         // load up all the achievement progress from game center
         achievementsDictionary = [[NSMutableDictionary alloc] init];
@@ -61,7 +64,6 @@
              for (GKAchievement * achievement in achievements) {
                     [achievementsDictionary setObject: achievement forKey:
                     achievement.identifier];
-                 NSLog(@"registering achievement with id %@", achievement.identifier);
              }
          }];
         
@@ -106,8 +108,7 @@
                                         initWithCondition:conditionIndex
                                         condition: rankCond
                                         description:desc
-                                        gameCenterAchievement:curAch
-                                        isGCAchievement:YES];
+                                        gameCenterAchievement:curAch];
         
         [allAchievements addObject:newAchievement];
         ++conditionIndex;
@@ -121,11 +122,58 @@
 }
 
 // -----------------------------------------------------------------------------------
+- (void) LoadInternalRankAchievements
+{
+    int conditionIndex = 1;
+    
+    // load all the rank achievements
+    for (int i = 1; i <= NUM_RANKS; ++i) {
+        
+        for (int j = 1; j <= GOALS_PER_RANK; ++j) {
+            
+            NSString * curRankDesc = [NSString stringWithFormat:@"%@%d%@%d",
+                                      @"RANK_", i, @"_DESC_", j];
+            NSString * rankDesc = NSLocalizedStringFromTable(curRankDesc,
+                                                             @"achievement_map",                                                            nil);
+            
+            
+            NSString * rankConditionTag = [NSString stringWithFormat:@"%@%d%@%d",
+                                           @"RANK_", i, @"_COND_", j];
+            NSString * rankCond = NSLocalizedStringFromTable(rankConditionTag,
+                                                             @"achievement_map",                                                            nil);
+
+            NSString * identifier = [NSString stringWithFormat:@"%d", conditionIndex];
+            
+            // load the game center achievement, creating it if necessary
+            GKAchievement * curAch = [achievementsDictionary objectForKey:identifier];
+            
+            if (curAch == nil) {
+                curAch = [[GKAchievement alloc] initWithIdentifier:identifier];
+                [achievementsDictionary setObject:curAch
+                                           forKey:curAch.identifier];
+                curAch.showsCompletionBanner = NO;
+            }
+            
+            // add the achivement to the allAchivement List.
+            Achievement * newAchievement = [[Achievement alloc]
+                                            initWithCondition:conditionIndex
+                                            condition: rankCond
+                                            description: rankDesc
+                                            gameCenterAchievement:curAch];
+            
+            ++conditionIndex;
+            [allRankGoals addObject:newAchievement];
+            [allAchievements addObject:newAchievement];
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------------
 //Gives you an achievement when you give it an identifier
 - (Achievement *) GetAchievementByIdentifier:(int)identifier
 {
     int totalAchievementCount = totalNumAchievements +
-        (NUM_RANKS * ACHIEVEMENTS_PER_RANK);
+        (NUM_RANKS * GOALS_PER_RANK);
     
     // sanity check
     if (identifier < 1 || identifier > totalAchievementCount) {
@@ -157,49 +205,59 @@
 }
 
 // -----------------------------------------------------------------------------------
-// This is called every update loop
-- (void) LoadInternalRankAchievements
+// if useIndex is -1, find the next Achievement whose goals are not loaded, otherwise
+// load goals from "useIndex"'s goals, if useIndex is -2, then we do not load anything
+- (void) LoadCurrentRankGoals:(int) useIndex
 {
-    int conditionIndex = 1;
+    // remove the current rank's goals
+    [currentRankGoals removeAllObjects];
     
-    // load all the rank achievements
-    for (int i = 1; i <= NUM_RANKS; ++i) {
-        
-        for (int j = 1; j <= ACHIEVEMENTS_PER_RANK; ++j) {
+    // do not load anything if -2 received
+    if (useIndex == -2) {
+        return;
+    }
+    
+    // find which rank's goals to load
+    int indexToLoad = useIndex;
+    
+    if (useIndex == -1) {
+        int identifierIndex = 16;
+        for (int i = 1; i <= NUM_RANKS; ++i) {
+            Achievement * curAch = [self GetAchievementByIdentifier:identifierIndex];
+            ++identifierIndex;
             
-            NSString * curRankDesc = [NSString stringWithFormat:@"%@%d%@%d",
-                                      @"RANK_", i, @"_DESC_", j];
-            NSString * rankDesc = NSLocalizedStringFromTable(curRankDesc,
-                                                             @"achievement_map",                                                            nil);
-            
-            
-            NSString * rankConditionTag = [NSString stringWithFormat:@"%@%d%@%d",
-                                           @"RANK_", i, @"_COND_", i];
-            NSString * rankCond = NSLocalizedStringFromTable(rankConditionTag,
-                                                             @"achievement_map",                                                            nil);
-            
-            //$$$
-            // load up all the achievements
-            Achievement * newAchievement = [[Achievement alloc]
-                                            initWithCondition:conditionIndex
-                                            condition:rankCond
-                                            description:rankDesc
-                                            gameCenterAchievement:nil
-                                            isGCAchievement:NO];
-            
-            [allAchievements addObject:newAchievement];
-            ++conditionIndex;
+            if (![curAch Achieved]) {
+                indexToLoad = i;
+                break;
+            }
         }
+    }
+    
+    NSLog(@"Loading goals for rank %d", indexToLoad);
+    
+    // all ranks have been achieved
+    if (indexToLoad == -1) {
+        return;
+    }
+    
+    // populate this rank's goals
+    int startIndex = (indexToLoad - 1) * 3 + 1;
+    for (int i = 0; i < GOALS_PER_RANK; ++i) {
+        Achievement * curAch = [self GetAchievementByIdentifier:startIndex];
+        ++startIndex;
+        [currentRankGoals addObject:curAch];
     }
 }
 
 // -----------------------------------------------------------------------------------
-// Called on every update in GameLayer.
+// Called on every update in GameLayer.  Check the GC achievement status.
 - (BOOL) CheckCurrentAchievements
 {
     if (!achievementsLoaded) {
         [self LoadInternalRankAchievements];
         [self LoadInternalAchievements];
+        [self LoadCurrentRankGoals:-1];
+        
         achievementsLoaded = YES;
     }
     
@@ -222,5 +280,44 @@
         }
     }
 }
+
+// -----------------------------------------------------------------------------------
+- (BOOL) CheckRankGoals
+{
+    BOOL achievedAny = NO;
+    for (Achievement * achievement in currentRankGoals) {
+        if ([achievement Achieved]) {
+            achievedAny = YES;
+        }
+    }
+    
+    return achievedAny;
+}
+
+// -----------------------------------------------------------------------------------
+- (void) LogRankGoals
+{
+    for (Achievement * achievement in currentRankGoals) {
+        if ([achievement Achieved]) {
+            [achievement Log];
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------------
+- (void) ResetAllAchievements
+{
+    for (Achievement * achievement in allAchievements) {
+        [achievement Reset];
+    }
+    
+    [GKAchievement resetAchievementsWithCompletionHandler:^(NSError *error)
+     {
+         if (error != nil) {
+             // handle errors
+         }
+    }];
+}
+
 
 @end

@@ -18,25 +18,23 @@
 @synthesize condIndex;
 @synthesize alreadyLogged;
 @synthesize gcAchievement;
-@synthesize isGCAchievement;
 @synthesize percentAchieved;
 
 // -----------------------------------------------------------------------------------
 - (id) initWithCondition:(int)index
                condition:(NSString *)cond
              description:(NSString *)desc
-                gameCenterAchievement:(GKAchievement *)gcAch
-                    isGCAchievement:(BOOL) isGCAch
+   gameCenterAchievement:(GKAchievement *)gcAch;
 {
     if (self=[super init]) {
         achievementCondition = cond;
         condIndex = index;
         achievementDescription = desc;
         gcAchievement = gcAch;
-        isGCAchievement = isGCAch;
+        //isGCAchievement = isGCAch;
         percentAchieved = -1.0;
         
-        if (isGCAchievement && gcAchievement.percentComplete == 100.0) {
+        if (gcAchievement.percentComplete == 100.0) {
             previouslyAchieved = YES;
             alreadyLogged = YES;
         } else {
@@ -152,6 +150,12 @@
                 ([[[GameLayer sharedGameLayer].achievementContainer
                    GetAchievementByIdentifier:3] Achieved]);
             
+            // load rank 2's goals
+            if (achieved) {
+                [[GameLayer sharedGameLayer].achievementContainer
+                    LoadCurrentRankGoals:2];
+            }
+            
             break;
             
             // Rank 2
@@ -168,6 +172,13 @@
             
                 ([[[GameLayer sharedGameLayer].achievementContainer
                    GetAchievementByIdentifier:6] Achieved]);
+            
+                // load rank 3's goals
+                if (achieved) {
+                    [[GameLayer sharedGameLayer].achievementContainer
+                     LoadCurrentRankGoals:3];
+                }
+            
             break;
             
             // Rank 3
@@ -184,6 +195,13 @@
             
                 ([[[GameLayer sharedGameLayer].achievementContainer
                    GetAchievementByIdentifier:9] Achieved]);
+            
+                // load rank 4's goals
+                if (achieved) {
+                    [[GameLayer sharedGameLayer].achievementContainer
+                     LoadCurrentRankGoals:4];
+                }
+            
             break;
             
             // Rank 4
@@ -200,6 +218,12 @@
             
                 ([[[GameLayer sharedGameLayer].achievementContainer
                    GetAchievementByIdentifier:12] Achieved]);
+            
+                // load rank 5's goals
+                if (achieved) {
+                    [[GameLayer sharedGameLayer].achievementContainer
+                     LoadCurrentRankGoals:5];
+                }
 
             break;
             
@@ -217,6 +241,12 @@
             
                 ([[[GameLayer sharedGameLayer].achievementContainer
                    GetAchievementByIdentifier:15] Achieved]);
+            
+                // load rank 2's goals
+                if (achieved) {
+                    [[GameLayer sharedGameLayer].achievementContainer
+                     LoadCurrentRankGoals:-2];
+                }
             
             break;
             
@@ -332,14 +362,12 @@
         // record that this achievement was achieved this round
         [[GameInfoGlobal sharedGameInfoGlobal].achievedThisRound addObject:self];
         
-        if (isGCAchievement) {
-            gcAchievement.percentComplete = 100.0;
-        }
+        gcAchievement.percentComplete = 100.0;
         
         previouslyAchieved = YES;
         
     // log partial achievement, if applicable
-    } else if (partialAchievement && isGCAchievement &&
+    } else if (partialAchievement &&
                (currentPercentAchieved > percentAchieved)) {
         
         gcAchievement.percentComplete = percentAchieved;
@@ -360,19 +388,26 @@
 - (void) Log
 {
     if (!alreadyLogged) {
-        if (isGCAchievement) {
-            NSLog(@"logging GC achievement %@ with percent complete %f",
-                  achievementDescription, gcAchievement.percentComplete);
+        NSLog(@"logging GC achievement %@ with percent complete %f",
+                achievementDescription, gcAchievement.percentComplete);
             
-            [gcAchievement reportAchievementWithCompletionHandler:^(NSError *error)
-             {
-                 if (error != nil) {
-                     NSLog(@"Error in reporting achievement: %@", error);
-                 }
-             }];
-        }
+        [gcAchievement reportAchievementWithCompletionHandler:^(NSError *error)
+            {
+                if (error != nil) {
+                    NSLog(@"Error in reporting achievement: %@", error);
+            }
+        }];
+        
         alreadyLogged = YES;
     }
+}
+
+// -----------------------------------------------------------------------------------
+- (void) Reset
+{
+    alreadyLogged = NO;
+    previouslyAchieved = NO;
+    percentAchieved = 0.0;
 }
 
 @end

@@ -68,6 +68,15 @@
     
     [GameInfoGlobal sharedGameInfoGlobal].lifetimeRoundsPlayed++;
     [[GameInfoGlobal sharedGameInfoGlobal] logLifeTimeAchievements];
+    
+    // check the current goals before resetting the values
+    BOOL logGoals =
+        [[GameLayer sharedGameLayer].achievementContainer CheckRankGoals];
+    if (logGoals) {
+        [[GameLayer sharedGameLayer].achievementContainer LogRankGoals];
+    }
+    
+    // reset the per-life statistics
     [[GameInfoGlobal sharedGameInfoGlobal] resetPerLifeStatistics];
     
     // reset the multiplier
@@ -78,17 +87,11 @@
     
     [self.rankLabel setString:[NSString stringWithFormat:@"%d",
                                      rankScore]];
-    
-    NSMutableArray * rankAchievements = [[GameLayer sharedGameLayer].achievementContainer currentRankAchievements];
         
     //70 is good but not perfect
     //float xPosition = [self.goal1 position].x;
-    float textHeight = [self.goal1 dimensions].height;
+    //float textHeight = [self.goal1 dimensions].height;
     
-    self.goal1 = [[CCLabelTTF alloc] init];
-    self.goal2 = [[CCLabelTTF alloc] init];
-    self.goal3 = [[CCLabelTTF alloc] init];
-
     [self.goal1 setDimensions:CGSizeMake(220,65)];
     [self.goal1 setPosition:CGPointMake(160, 183)]; 
     
@@ -98,24 +101,28 @@
     [self.goal3 setDimensions:CGSizeMake(220,65)];
     [self.goal3 setPosition:CGPointMake(160, 60)]; 
 
-    Achievement * curAch = [[GameLayer sharedGameLayer].achievementContainer
-                            GetAchievementByIdentifier:0];
-    if (curAch) {
-        [self.goal1 setString:[NSString stringWithFormat:@"%@",
-                               curAch.achievementCondition]];
-    }
-    
-    curAch = [[GameLayer sharedGameLayer].achievementContainer
-              GetAchievementByIdentifier:1];
-    if (curAch) {
-        [self.goal2 setString:[NSString stringWithFormat:@"%@",                               curAch.achievementCondition]];
-    }
-    
-    curAch = [[GameLayer sharedGameLayer].achievementContainer
-              GetAchievementByIdentifier:2];
-    if (curAch) {
-        [self.goal3 setString:[NSString stringWithFormat:@"%@",
-                               curAch.achievementCondition]];
+    // load the goals
+    NSMutableArray * goals =
+        [GameLayer sharedGameLayer].achievementContainer.currentRankGoals;
+
+    if ([goals count] > 0) {
+        
+        Achievement * goal = [goals objectAtIndex:0];
+        if (goal) {
+            [self.goal1 setString:[NSString stringWithFormat:@"%@",
+                                   goal.achievementCondition]];
+        }
+        
+        goal = [goals objectAtIndex:1];
+        if (goal) {
+            [self.goal2 setString:[NSString stringWithFormat:@"%@",                               goal.achievementCondition]];
+        }
+        
+        goal = [goals objectAtIndex:2];
+        if (goal) {
+            [self.goal3 setString:[NSString stringWithFormat:@"%@",
+                                   goal.achievementCondition]];
+        }
     }
     
     GKScore *myScoreValue = [[GKScore alloc] initWithCategory:@"RotatoLeaderBoard"];

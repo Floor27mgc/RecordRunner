@@ -14,17 +14,16 @@
 - (id) initWithCondition:(int) index
                condition: (NSString *) cond
              description:(NSString *) desc
-   gameCenterAchievement:(GKAchievement *) gcAch
-         isGCAchievement:(BOOL) gcAch;
+   gameCenterAchievement:(GKAchievement *) gcAch;
 - (BOOL) Achieved;
 - (void) Log;
+- (void) Reset;
 
 
 @property (nonatomic, strong) NSString * achievementCondition;
 @property (nonatomic, strong) NSString * achievementDescription;
 @property (nonatomic) BOOL previouslyAchieved;
 @property (nonatomic) BOOL alreadyLogged;
-@property (nonatomic) BOOL isGCAchievement;
 @property (nonatomic, assign) int condIndex;
 @property (nonatomic, strong) GKAchievement * gcAchievement;
 @property (nonatomic, assign) double percentAchieved;

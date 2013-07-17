@@ -459,8 +459,8 @@ static GameLayer *sharedGameLayer;
 // -----------------------------------------------------------------------------------
 -(void) openDebugMenu
 {
-    NSLog(@"openeing debug menu");
-    //CCNode* gameDebugLayer = [CCBReader nodeGraphFromFile:@"DebugMenuNode.ccbi"];
+    NSLog(@"opening debug menu");
+
     GameDebugMenu * debugMenu = (GameDebugMenu *) [CCBReader nodeGraphFromFile:@"DebugMenuNode.ccbi"];
     debugMenu.position = ccp(COMMON_SCREEN_CENTER_X,COMMON_SCREEN_CENTER_Y);
     
