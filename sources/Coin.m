@@ -81,33 +81,25 @@
         switch ([GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch)
         {
             case 0:
+            case 1:
                 [self.animationManager runAnimationsForSequenceNamed:@"Die1"];
-                
-                /*
-                scoreText = [NSString stringWithFormat:@"%d", (1 * [GameLayer sharedGameLayer].multiplier.getMultiplier)];
-                */
-                
+            
                 scoreText = [NSString stringWithFormat:@"1"];
                 break;
-            case 1:                
+            case 2:
                 [self.animationManager runAnimationsForSequenceNamed:@"Die2"];
                 
                 scoreText = [NSString stringWithFormat:@"2"];
                 break;
-            case 2:
+            case 3:
                 [self.animationManager runAnimationsForSequenceNamed:@"Die3"];
                 
                 scoreText = [NSString stringWithFormat:@"3"];
                 break;
-            case 3:
+            case 4:
                 [self.animationManager runAnimationsForSequenceNamed:@"Die4"];
                 
                 scoreText = [NSString stringWithFormat:@"4"];
-                break;
-            case 4:
-                [self.animationManager runAnimationsForSequenceNamed:@"Die5"];
-                
-                scoreText = [NSString stringWithFormat:@"5"];
                 break;
             default:
                 [self.animationManager runAnimationsForSequenceNamed:@"Die1"];
@@ -146,12 +138,8 @@
             {
                 [[SoundController sharedSoundController] playSoundIdx:SOUND_MULTI_COIN_PICKUP fromObject:self];
             }
-            
         }
-        
-        
     }
-    
 }
 
 // -----------------------------------------------------------------------------------
