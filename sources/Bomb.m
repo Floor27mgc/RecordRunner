@@ -122,6 +122,7 @@
 
     // if the player has a shield, act accordingly
     if ([GameLayer sharedGameLayer].player.hasShield) {
+        [[SoundController sharedSoundController] playSoundIdx:SOUND_BOMB_INV_PICKUP fromObject:self];
         [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer at:BOMB_STATS] tick];
         [GameInfoGlobal sharedGameInfoGlobal].bombsKilledThisShield++;
         NSLog(@"Bomb absorbed by player's shield!");

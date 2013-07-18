@@ -555,6 +555,12 @@
 		E54E158C172C7A2A0022DACE /* bannerRed-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E54E158A172C7A2A0022DACE /* bannerRed-hd.png */; };
 		E55D0B9917964C9300443724 /* retina_home.png in Resources */ = {isa = PBXBuildFile; fileRef = E55D0B9817964C9300443724 /* retina_home.png */; };
 		E55D0B9B1796CEF100443724 /* small_home.png in Resources */ = {isa = PBXBuildFile; fileRef = E55D0B9A1796CEF100443724 /* small_home.png */; };
+		E55D0B9E17982D7600443724 /* player_inv_right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E55D0B9C17982D7600443724 /* player_inv_right.mp3 */; };
+		E55D0B9F17982D7600443724 /* player_inv_left.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E55D0B9D17982D7600443724 /* player_inv_left.mp3 */; };
+		E55D0BA117982D7D00443724 /* invincible_on.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BA017982D7D00443724 /* invincible_on.mp3 */; };
+		E55D0BA317982D8300443724 /* inv_bomb_pickup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BA217982D8300443724 /* inv_bomb_pickup.mp3 */; };
+		E55D0BA6179833BE00443724 /* player_scratch_right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BA4179833BE00443724 /* player_scratch_right.mp3 */; };
+		E55D0BA7179833BE00443724 /* player_scratch_left.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BA5179833BE00443724 /* player_scratch_left.mp3 */; };
 		E55D11B41785CCBA0072B6AC /* popin1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E55D11AE1785CCBA0072B6AC /* popin1.wav */; };
 		E55D11B51785CCBA0072B6AC /* popin2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E55D11AF1785CCBA0072B6AC /* popin2.wav */; };
 		E55D11B61785CCBA0072B6AC /* popin3.wav in Resources */ = {isa = PBXBuildFile; fileRef = E55D11B01785CCBA0072B6AC /* popin3.wav */; };
@@ -1242,6 +1248,12 @@
 		E54E158A172C7A2A0022DACE /* bannerRed-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bannerRed-hd.png"; path = "Resources/Graphics/bannerRed-hd.png"; sourceTree = SOURCE_ROOT; };
 		E55D0B9817964C9300443724 /* retina_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retina_home.png; sourceTree = "<group>"; };
 		E55D0B9A1796CEF100443724 /* small_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = small_home.png; sourceTree = "<group>"; };
+		E55D0B9C17982D7600443724 /* player_inv_right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = player_inv_right.mp3; sourceTree = "<group>"; };
+		E55D0B9D17982D7600443724 /* player_inv_left.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = player_inv_left.mp3; sourceTree = "<group>"; };
+		E55D0BA017982D7D00443724 /* invincible_on.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = invincible_on.mp3; sourceTree = "<group>"; };
+		E55D0BA217982D8300443724 /* inv_bomb_pickup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = inv_bomb_pickup.mp3; sourceTree = "<group>"; };
+		E55D0BA4179833BE00443724 /* player_scratch_right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = player_scratch_right.mp3; sourceTree = "<group>"; };
+		E55D0BA5179833BE00443724 /* player_scratch_left.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = player_scratch_left.mp3; sourceTree = "<group>"; };
 		E55D11AE1785CCBA0072B6AC /* popin1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = popin1.wav; path = Resources/Sound/popin1.wav; sourceTree = SOURCE_ROOT; };
 		E55D11AF1785CCBA0072B6AC /* popin2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = popin2.wav; path = Resources/Sound/popin2.wav; sourceTree = SOURCE_ROOT; };
 		E55D11B01785CCBA0072B6AC /* popin3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = popin3.wav; path = Resources/Sound/popin3.wav; sourceTree = SOURCE_ROOT; };
@@ -1390,6 +1402,12 @@
 			children = (
 				E58AD2DC17852F7F00CEB970 /* clap3.wav */,
 				E58AD2DD17852F8000CEB970 /* hihat1.wav */,
+				E55D0BA217982D8300443724 /* inv_bomb_pickup.mp3 */,
+				E55D0BA017982D7D00443724 /* invincible_on.mp3 */,
+				E55D0B9C17982D7600443724 /* player_inv_right.mp3 */,
+				E55D0B9D17982D7600443724 /* player_inv_left.mp3 */,
+				E55D0BA4179833BE00443724 /* player_scratch_right.mp3 */,
+				E55D0BA5179833BE00443724 /* player_scratch_left.mp3 */,
 				E58AD2DE17852F8000CEB970 /* hihat2.wav */,
 				E55D11BA178639CA0072B6AC /* scratch_backspin.wav */,
 				E5F47E821793A20400504A9A /* record_drop.mp3 */,
@@ -2968,6 +2986,12 @@
 				E5F47E831793A20400504A9A /* record_drop.mp3 in Resources */,
 				E55D0B9917964C9300443724 /* retina_home.png in Resources */,
 				E55D0B9B1796CEF100443724 /* small_home.png in Resources */,
+				E55D0B9E17982D7600443724 /* player_inv_right.mp3 in Resources */,
+				E55D0B9F17982D7600443724 /* player_inv_left.mp3 in Resources */,
+				E55D0BA117982D7D00443724 /* invincible_on.mp3 in Resources */,
+				E55D0BA317982D8300443724 /* inv_bomb_pickup.mp3 in Resources */,
+				E55D0BA6179833BE00443724 /* player_scratch_right.mp3 in Resources */,
+				E55D0BA7179833BE00443724 /* player_scratch_left.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

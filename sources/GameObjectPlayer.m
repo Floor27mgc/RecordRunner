@@ -150,6 +150,7 @@
 {    
     if (trigger) {
         hasShield = YES;
+        [[SoundController sharedSoundController] playSoundIdx:SOUND_PLAYER_GOT_INV fromObject:self];
     } else {
         hasShield = NO;
     }
@@ -160,7 +161,31 @@
 {
     if (canMove)
     {
-        [[SoundController sharedSoundController] playSoundIdx:SOUND_PLAYER_SWIPE fromObject:self];
+        //Sounds for swipes
+        if (self.hasShield )
+        {
+            //Play swipe sounds based on direction
+            if (direction == kMoveInToOut)
+            {
+                [[SoundController sharedSoundController] playSoundIdx:SOUND_PLAYER_INV_LEFT fromObject:self];
+            }
+            else
+            {
+                [[SoundController sharedSoundController] playSoundIdx:SOUND_PLAYER_INV_RIGHT fromObject:self];
+            }
+        }
+        else
+        {
+            //Play swipe sounds based on direction
+            if (direction == kMoveInToOut)
+            {
+                [[SoundController sharedSoundController] playSoundIdx:SOUND_PLAYER_SCRATCH_LEFT fromObject:self];
+            }
+            else
+            {
+                [[SoundController sharedSoundController] playSoundIdx:SOUND_PLAYER_SCRATCH_RIGHT fromObject:self];
+            }
+        }
         
         if ([GameLayer sharedGameLayer].isDebugMode == YES)
             return;

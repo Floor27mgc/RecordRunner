@@ -74,12 +74,18 @@ static SoundController *SoundControllerSingleton;
                                    @"chime.wav",    // SOUND_FILENAME_IDX_BOMB_PICKUP
                                    @"clap.wav",     //SOUND_BOMB_SKIM
                                    @"clap2.wav",    //SOUND_BOMB_SKIM2
+                                   @"inv_bomb_pickup.mp3",    //SOUND_BOMB_INV_PICKUP
                                    nil];
         
         NSArray *playerSoundFiles = [[NSArray alloc] initWithObjects:
                                      @"swipe.wav", //SOUND_PLAYER_SWIPE
                                      @"scratch_backspin.wav", //SOUND_PLAYER_DIE
                                      @"record_drop.mp3", //SOUND_PLAYER_START
+                                     @"player_inv_left.mp3", //SOUND_PLAYER_INV_LEFT
+                                     @"player_inv_right.mp3", //SOUND_PLAYER_INV_RIGHT
+                                     @"invincible_on.mp3", //SOUND_PLAYER_GOT_INV
+                                     @"player_scratch_left.mp3", //SOUND_PLAYER_SCRATCH_LEFT
+                                     @"player_scratch_right.mp3", //SOUND_PLAYER_SCRATCH_RIGHT
                                      nil];
         
         NSArray *menuSoundEffects = [[NSArray alloc] initWithObjects:
