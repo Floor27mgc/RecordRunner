@@ -178,7 +178,6 @@
             NSString * rankCond = NSLocalizedStringFromTable(rankConditionTag,
                                                              @"achievement_map",                                                            nil);
             
-            //$$$
             // load up all the achievements
             Achievement * newAchievement = [[Achievement alloc]
                                             initWithCondition:conditionIndex

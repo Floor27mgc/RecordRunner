@@ -553,6 +553,8 @@
 		E54C884217766B8200D546F2 /* parts_record_inner-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E54C884017766B8200D546F2 /* parts_record_inner-hd.png */; };
 		E54E158B172C7A2A0022DACE /* bannerRed.png in Resources */ = {isa = PBXBuildFile; fileRef = E54E1589172C7A2A0022DACE /* bannerRed.png */; };
 		E54E158C172C7A2A0022DACE /* bannerRed-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E54E158A172C7A2A0022DACE /* bannerRed-hd.png */; };
+		E55D0B9917964C9300443724 /* retina_home.png in Resources */ = {isa = PBXBuildFile; fileRef = E55D0B9817964C9300443724 /* retina_home.png */; };
+		E55D0B9B1796CEF100443724 /* small_home.png in Resources */ = {isa = PBXBuildFile; fileRef = E55D0B9A1796CEF100443724 /* small_home.png */; };
 		E55D11B41785CCBA0072B6AC /* popin1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E55D11AE1785CCBA0072B6AC /* popin1.wav */; };
 		E55D11B51785CCBA0072B6AC /* popin2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E55D11AF1785CCBA0072B6AC /* popin2.wav */; };
 		E55D11B61785CCBA0072B6AC /* popin3.wav in Resources */ = {isa = PBXBuildFile; fileRef = E55D11B01785CCBA0072B6AC /* popin3.wav */; };
@@ -1238,6 +1240,8 @@
 		E54C884017766B8200D546F2 /* parts_record_inner-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_record_inner-hd.png"; path = "Resources/Graphics/parts_record_inner-hd.png"; sourceTree = SOURCE_ROOT; };
 		E54E1589172C7A2A0022DACE /* bannerRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bannerRed.png; path = Resources/Graphics/bannerRed.png; sourceTree = SOURCE_ROOT; };
 		E54E158A172C7A2A0022DACE /* bannerRed-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bannerRed-hd.png"; path = "Resources/Graphics/bannerRed-hd.png"; sourceTree = SOURCE_ROOT; };
+		E55D0B9817964C9300443724 /* retina_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retina_home.png; sourceTree = "<group>"; };
+		E55D0B9A1796CEF100443724 /* small_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = small_home.png; sourceTree = "<group>"; };
 		E55D11AE1785CCBA0072B6AC /* popin1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = popin1.wav; path = Resources/Sound/popin1.wav; sourceTree = SOURCE_ROOT; };
 		E55D11AF1785CCBA0072B6AC /* popin2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = popin2.wav; path = Resources/Sound/popin2.wav; sourceTree = SOURCE_ROOT; };
 		E55D11B01785CCBA0072B6AC /* popin3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = popin3.wav; path = Resources/Sound/popin3.wav; sourceTree = SOURCE_ROOT; };
@@ -2252,6 +2256,8 @@
 		DC0C49E6154AB4DD00B4B727 = {
 			isa = PBXGroup;
 			children = (
+				E55D0B9A1796CEF100443724 /* small_home.png */,
+				E55D0B9817964C9300443724 /* retina_home.png */,
 				85A6714816546D4800499BF7 /* Default-568h@2x.png */,
 				DC0C4A07154AB4DD00B4B727 /* RecordRunnerARC */,
 				DC0C49F4154AB4DD00B4B727 /* Frameworks */,
@@ -2960,6 +2966,8 @@
 				E5F47E7D17935F9500504A9A /* scoreMini.ccbi in Resources */,
 				E5F47E7F17939A3900504A9A /* record-start.mp3 in Resources */,
 				E5F47E831793A20400504A9A /* record_drop.mp3 in Resources */,
+				E55D0B9917964C9300443724 /* retina_home.png in Resources */,
+				E55D0B9B1796CEF100443724 /* small_home.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,9 @@
     
 }
 
+- (void) makeInvincible;
+- (void) makeVincible;
+
 // gameObjectUpdateTick will keep track of how many time
 // this gameObject update() in gamelayer has called this
 // gameObject's showNextFrame();

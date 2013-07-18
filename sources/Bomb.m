@@ -38,7 +38,8 @@
     [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_RECORD_CENTER,self.radius,self.angleRotated)];
     self.angleRotated = self.angleRotated + self.gameObjectAngularVelocity;
     gameObjectUpdateTick++;
-        
+    
+    
     // if we do not hit the player now and the player is moving, see if we
     // have a "close call"
     if (![self encounterWithPlayer] &&
@@ -97,6 +98,8 @@
                     [self.animationManager runAnimationsForSequenceNamed:@"ClockWiseRotation"];
                 }
             }
+            
+            
         }
 
         // reset close call flag when on other side of 
@@ -126,6 +129,19 @@
         //PLAYER DIES -------------------------
         [[GameLayer sharedGameLayer] gameOver];
     }
+}
+
+
+//When the player gets the invincible start, all bombs turn colors.
+- (void) makeInvincible
+{
+    [self.animationManager runAnimationsForSequenceNamed:@"InvincibleFlip"];
+}
+
+//When the player no longer has the power.
+- (void) makeVincible
+{
+    [self.animationManager runAnimationsForSequenceNamed:@"Rotation"];
 }
 
 // -----------------------------------------------------------------------------------
