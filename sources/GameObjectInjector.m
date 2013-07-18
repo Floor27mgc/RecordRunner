@@ -303,7 +303,10 @@
                 
             }
             
-            [[SoundController sharedSoundController] playSoundIdx:SOUND_BOMB_POPUP fromObject:newObject];
+            if (![[GameLayer sharedGameLayer].player hasShield])
+            {
+                [[SoundController sharedSoundController] playSoundIdx:SOUND_BOMB_POPUP fromObject:newObject];
+            }
         }
         if ([newObject isKindOfClass:[Coin class]]) {
             [newObject.animationManager runAnimationsForSequenceNamed:@"Spawn"];
