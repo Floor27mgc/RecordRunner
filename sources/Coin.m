@@ -63,10 +63,10 @@
         NSString *scoreText = @"";
         
         //increment coins this scratch if you have started the scratch
-        if ([GameLayer sharedGameLayer].player.playerRadialSpeed > 0)
-        {
-            [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch++;
-        }
+        //if ([GameLayer sharedGameLayer].player.playerRadialSpeed > 0)
+        //{
+        [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch++;
+        //}
         
         // if we aren't moving then coinsThisScratch is zero, we should still register
         // this coin as 1
@@ -78,7 +78,7 @@
         [[GameLayer sharedGameLayer].score incrementScore: coinsToCount];
         
         //Show the different colored explosions depending on howmany collected in one chain.
-        switch ([GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch)
+        switch (coinsToCount)
         {
             case 0:
             case 1:

@@ -512,9 +512,14 @@ static GameLayer *sharedGameLayer;
         --pendingTaps;
         return YES;
     } else {
+        // reset the coins per scratch counter if we're not moving any more
+        if (player.playerRadialSpeed == 0 &&
+            player.ticksIdle > 5 &&
+            [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch > 0) {
+            [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch = 0;
+        }
         return NO;
     }
-    
 }
 
 // -----------------------------------------------------------------------------------

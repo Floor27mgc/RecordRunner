@@ -20,12 +20,15 @@
 @synthesize hasShield;
 @synthesize arrivedAtOuterTrack;
 @synthesize canMove;
+@synthesize ticksIdle;
 
 
 // -----------------------------------------------------------------------------------
 - (void) showNextFrame
 {
     int track_num;
+    
+    self.ticksIdle++;
 
     if ([[GameLayer sharedGameLayer] getIsHitStateByTrackNum:TRACKNUM_FROM_RADIUS] == YES)
     {
@@ -79,8 +82,10 @@
         {
             self.playerRadialSpeed = 0;
         }
+        
+        self.ticksIdle = 0;
     }
-    
+
     // Reset the isHit array to prepare for the next frame comparison
     for (track_num = 0; track_num < MAX_NUM_TRACK; track_num++) {
         [[GameLayer sharedGameLayer] setIsHitStateByTrackNum:track_num toState:NO];
@@ -113,6 +118,7 @@
         self.visible = 0;
         self.canMove = NO;
         self.hasShield = NO;
+        self.ticksIdle = 0;
     }
     return (self);
 }

@@ -47,5 +47,7 @@ typedef enum
 @property (nonatomic) BOOL hasShield;
 @property (nonatomic) NSDate * arrivedAtOuterTrack;
 @property (nonatomic) BOOL canMove;
+@property (nonatomic, assign) int ticksIdle; // how many ticks the player has
+                                             // been idle
 
 @end
