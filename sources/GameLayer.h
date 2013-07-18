@@ -90,6 +90,8 @@ typedef enum {
 -(void) openDebugMenu;
 -(BOOL) moveThePlayer;
 -(void) showScoreOnTrack: (int) trackNum message:(NSString *) scoreText;
+-(void) activateInvincible;
+-(void) deactivateInvincible;
 
 @property (nonatomic, strong) GameObjectPlayer *player;
 @property (nonatomic, strong) Queue * coinFreePool;

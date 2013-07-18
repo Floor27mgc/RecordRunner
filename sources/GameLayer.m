@@ -162,7 +162,7 @@ static GameLayer *sharedGameLayer;
                 _myScore.animationManager = _myScore.userObject;
                 [_scoreFreePool addObject:_myScore toTrack:trackNum];
                 gameObjectTag++;
-                // add bomb to GameLayer
+                // add scores to GameLayer
                 [self addChild: _myScore z:10];
             }
         }
@@ -625,6 +625,31 @@ static GameLayer *sharedGameLayer;
 -(int) getShieldSpawnRate
 {
     return shieldSpawnRate;
+}
+
+//This is called when player gets the star so that he is invincible
+-(void) activateInvincible
+{
+    for (int trackNum = 0; trackNum < MAX_NUM_TRACK; trackNum++)
+    {
+            //Turn on all the bombs
+            for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_bombUsedPool, trackNum); ++i) {
+        
+                [POOL_OBJS_ON_TRACK(_bombUsedPool, trackNum)[i] makeInvincible];
+            }
+    }
+}
+
+-(void) deactivateInvincible
+{
+    for (int trackNum = 0; trackNum < MAX_NUM_TRACK; trackNum++)
+    {
+        //Turn off all the bombs
+        for (int i = 0; i < POOL_OBJ_COUNT_ON_TRACK(_bombUsedPool, trackNum); ++i) {
+            
+            [POOL_OBJS_ON_TRACK(_bombUsedPool, trackNum)[i] makeVincible];
+        }
+    }
 }
 
 // -----------------------------------------------------------------------------------
