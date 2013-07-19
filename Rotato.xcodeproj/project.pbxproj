@@ -555,12 +555,54 @@
 		E54E158C172C7A2A0022DACE /* bannerRed-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E54E158A172C7A2A0022DACE /* bannerRed-hd.png */; };
 		E55D0B9917964C9300443724 /* retina_home.png in Resources */ = {isa = PBXBuildFile; fileRef = E55D0B9817964C9300443724 /* retina_home.png */; };
 		E55D0B9B1796CEF100443724 /* small_home.png in Resources */ = {isa = PBXBuildFile; fileRef = E55D0B9A1796CEF100443724 /* small_home.png */; };
-		E55D0B9E17982D7600443724 /* player_inv_right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E55D0B9C17982D7600443724 /* player_inv_right.mp3 */; };
-		E55D0B9F17982D7600443724 /* player_inv_left.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E55D0B9D17982D7600443724 /* player_inv_left.mp3 */; };
-		E55D0BA117982D7D00443724 /* invincible_on.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BA017982D7D00443724 /* invincible_on.mp3 */; };
-		E55D0BA317982D8300443724 /* inv_bomb_pickup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BA217982D8300443724 /* inv_bomb_pickup.mp3 */; };
-		E55D0BA6179833BE00443724 /* player_scratch_right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BA4179833BE00443724 /* player_scratch_right.mp3 */; };
-		E55D0BA7179833BE00443724 /* player_scratch_left.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BA5179833BE00443724 /* player_scratch_left.mp3 */; };
+		E55D0BD21799699600443724 /* wall_hit.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BA81799699100443724 /* wall_hit.caf */; };
+		E55D0BD31799699600443724 /* wah_wah.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BA91799699200443724 /* wah_wah.caf */; };
+		E55D0BD41799699600443724 /* swipe.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BAA1799699200443724 /* swipe.caf */; };
+		E55D0BD51799699600443724 /* scratch_backspin.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BAB1799699200443724 /* scratch_backspin.caf */; };
+		E55D0BD61799699600443724 /* record-start.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BAC1799699200443724 /* record-start.caf */; };
+		E55D0BD71799699600443724 /* record_drop.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BAD1799699200443724 /* record_drop.caf */; };
+		E55D0BD81799699600443724 /* popin5.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BAE1799699200443724 /* popin5.caf */; };
+		E55D0BD91799699600443724 /* popin4.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BAF1799699200443724 /* popin4.caf */; };
+		E55D0BDA1799699600443724 /* popin3.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BB01799699200443724 /* popin3.caf */; };
+		E55D0BDB1799699600443724 /* popin2.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BB11799699200443724 /* popin2.caf */; };
+		E55D0BDC1799699600443724 /* popin1.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BB21799699200443724 /* popin1.caf */; };
+		E55D0BDD1799699600443724 /* pickup_coin1.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BB31799699200443724 /* pickup_coin1.caf */; };
+		E55D0BDE1799699600443724 /* pickup_coin.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BB41799699200443724 /* pickup_coin.caf */; };
+		E55D0BDF1799699600443724 /* piano_a3.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BB51799699300443724 /* piano_a3.caf */; };
+		E55D0BE01799699600443724 /* marimba_f.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BB61799699300443724 /* marimba_f.caf */; };
+		E55D0BE11799699600443724 /* loop8.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BB71799699300443724 /* loop8.caf */; };
+		E55D0BE21799699600443724 /* loop7.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BB81799699300443724 /* loop7.caf */; };
+		E55D0BE31799699600443724 /* loop6.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BB91799699300443724 /* loop6.caf */; };
+		E55D0BE41799699600443724 /* loop5.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BBA1799699300443724 /* loop5.caf */; };
+		E55D0BE51799699600443724 /* loop4-1.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BBB1799699300443724 /* loop4-1.caf */; };
+		E55D0BE61799699600443724 /* loop3.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BBC1799699300443724 /* loop3.caf */; };
+		E55D0BE71799699600443724 /* loop2.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BBD1799699300443724 /* loop2.caf */; };
+		E55D0BE81799699600443724 /* loop1.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BBE1799699400443724 /* loop1.caf */; };
+		E55D0BE91799699600443724 /* kicker.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BBF1799699400443724 /* kicker.caf */; };
+		E55D0BEA1799699600443724 /* kalimba3.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BC01799699400443724 /* kalimba3.caf */; };
+		E55D0BEB1799699600443724 /* kalimba2.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BC11799699400443724 /* kalimba2.caf */; };
+		E55D0BEC1799699600443724 /* kalimba1.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BC21799699400443724 /* kalimba1.caf */; };
+		E55D0BED1799699600443724 /* JewelBeat - Follow The Beat.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BC31799699400443724 /* JewelBeat - Follow The Beat.caf */; };
+		E55D0BEE1799699600443724 /* hihatmulti.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BC41799699400443724 /* hihatmulti.caf */; };
+		E55D0BEF1799699600443724 /* hihat5.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BC51799699500443724 /* hihat5.caf */; };
+		E55D0BF01799699600443724 /* hihat4.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BC61799699500443724 /* hihat4.caf */; };
+		E55D0BF11799699600443724 /* hihat3.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BC71799699500443724 /* hihat3.caf */; };
+		E55D0BF21799699600443724 /* hihat2.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BC81799699500443724 /* hihat2.caf */; };
+		E55D0BF31799699600443724 /* hihat1.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BC91799699500443724 /* hihat1.caf */; };
+		E55D0BF41799699600443724 /* high_hat.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BCA1799699500443724 /* high_hat.caf */; };
+		E55D0BF51799699600443724 /* clap3.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BCB1799699500443724 /* clap3.caf */; };
+		E55D0BF61799699600443724 /* clap2.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BCC1799699500443724 /* clap2.caf */; };
+		E55D0BF71799699600443724 /* clap.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BCD1799699500443724 /* clap.caf */; };
+		E55D0BF81799699600443724 /* chime3.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BCE1799699600443724 /* chime3.caf */; };
+		E55D0BF91799699600443724 /* chime2.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BCF1799699600443724 /* chime2.caf */; };
+		E55D0BFA1799699600443724 /* chime.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BD01799699600443724 /* chime.caf */; };
+		E55D0BFB1799699600443724 /* loop4.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BD11799699600443724 /* loop4.caf */; };
+		E55D0C0217996CE300443724 /* invincible_on.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BFC17996CE300443724 /* invincible_on.caf */; };
+		E55D0C0317996CE300443724 /* player_inv_right.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BFD17996CE300443724 /* player_inv_right.caf */; };
+		E55D0C0417996CE300443724 /* player_inv_left.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BFE17996CE300443724 /* player_inv_left.caf */; };
+		E55D0C0517996CE300443724 /* player_scratch_left.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0BFF17996CE300443724 /* player_scratch_left.caf */; };
+		E55D0C0617996CE300443724 /* player_scratch_right.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0C0017996CE300443724 /* player_scratch_right.caf */; };
+		E55D0C0717996CE300443724 /* inv_bomb_pickup.caf in Resources */ = {isa = PBXBuildFile; fileRef = E55D0C0117996CE300443724 /* inv_bomb_pickup.caf */; };
 		E55D11B41785CCBA0072B6AC /* popin1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E55D11AE1785CCBA0072B6AC /* popin1.wav */; };
 		E55D11B51785CCBA0072B6AC /* popin2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E55D11AF1785CCBA0072B6AC /* popin2.wav */; };
 		E55D11B61785CCBA0072B6AC /* popin3.wav in Resources */ = {isa = PBXBuildFile; fileRef = E55D11B01785CCBA0072B6AC /* popin3.wav */; };
@@ -1248,12 +1290,54 @@
 		E54E158A172C7A2A0022DACE /* bannerRed-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bannerRed-hd.png"; path = "Resources/Graphics/bannerRed-hd.png"; sourceTree = SOURCE_ROOT; };
 		E55D0B9817964C9300443724 /* retina_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retina_home.png; sourceTree = "<group>"; };
 		E55D0B9A1796CEF100443724 /* small_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = small_home.png; sourceTree = "<group>"; };
-		E55D0B9C17982D7600443724 /* player_inv_right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = player_inv_right.mp3; sourceTree = "<group>"; };
-		E55D0B9D17982D7600443724 /* player_inv_left.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = player_inv_left.mp3; sourceTree = "<group>"; };
-		E55D0BA017982D7D00443724 /* invincible_on.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = invincible_on.mp3; sourceTree = "<group>"; };
-		E55D0BA217982D8300443724 /* inv_bomb_pickup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = inv_bomb_pickup.mp3; sourceTree = "<group>"; };
-		E55D0BA4179833BE00443724 /* player_scratch_right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = player_scratch_right.mp3; sourceTree = "<group>"; };
-		E55D0BA5179833BE00443724 /* player_scratch_left.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = player_scratch_left.mp3; sourceTree = "<group>"; };
+		E55D0BA81799699100443724 /* wall_hit.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = wall_hit.caf; path = Resources/Sound/wall_hit.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BA91799699200443724 /* wah_wah.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = wah_wah.caf; path = Resources/Sound/wah_wah.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BAA1799699200443724 /* swipe.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = swipe.caf; path = Resources/Sound/swipe.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BAB1799699200443724 /* scratch_backspin.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = scratch_backspin.caf; path = Resources/Sound/scratch_backspin.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BAC1799699200443724 /* record-start.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "record-start.caf"; path = "Resources/Sound/record-start.caf"; sourceTree = SOURCE_ROOT; };
+		E55D0BAD1799699200443724 /* record_drop.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = record_drop.caf; path = Resources/Sound/record_drop.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BAE1799699200443724 /* popin5.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = popin5.caf; path = Resources/Sound/popin5.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BAF1799699200443724 /* popin4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = popin4.caf; path = Resources/Sound/popin4.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BB01799699200443724 /* popin3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = popin3.caf; path = Resources/Sound/popin3.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BB11799699200443724 /* popin2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = popin2.caf; path = Resources/Sound/popin2.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BB21799699200443724 /* popin1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = popin1.caf; path = Resources/Sound/popin1.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BB31799699200443724 /* pickup_coin1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = pickup_coin1.caf; path = Resources/Sound/pickup_coin1.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BB41799699200443724 /* pickup_coin.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = pickup_coin.caf; path = Resources/Sound/pickup_coin.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BB51799699300443724 /* piano_a3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = piano_a3.caf; path = Resources/Sound/piano_a3.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BB61799699300443724 /* marimba_f.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = marimba_f.caf; path = Resources/Sound/marimba_f.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BB71799699300443724 /* loop8.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = loop8.caf; path = Resources/Sound/loop8.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BB81799699300443724 /* loop7.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = loop7.caf; path = Resources/Sound/loop7.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BB91799699300443724 /* loop6.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = loop6.caf; path = Resources/Sound/loop6.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BBA1799699300443724 /* loop5.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = loop5.caf; path = Resources/Sound/loop5.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BBB1799699300443724 /* loop4-1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "loop4-1.caf"; path = "Resources/Sound/loop4-1.caf"; sourceTree = SOURCE_ROOT; };
+		E55D0BBC1799699300443724 /* loop3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = loop3.caf; path = Resources/Sound/loop3.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BBD1799699300443724 /* loop2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = loop2.caf; path = Resources/Sound/loop2.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BBE1799699400443724 /* loop1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = loop1.caf; path = Resources/Sound/loop1.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BBF1799699400443724 /* kicker.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = kicker.caf; path = Resources/Sound/kicker.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BC01799699400443724 /* kalimba3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = kalimba3.caf; path = Resources/Sound/kalimba3.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BC11799699400443724 /* kalimba2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = kalimba2.caf; path = Resources/Sound/kalimba2.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BC21799699400443724 /* kalimba1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = kalimba1.caf; path = Resources/Sound/kalimba1.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BC31799699400443724 /* JewelBeat - Follow The Beat.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "JewelBeat - Follow The Beat.caf"; path = "Resources/Sound/JewelBeat - Follow The Beat.caf"; sourceTree = SOURCE_ROOT; };
+		E55D0BC41799699400443724 /* hihatmulti.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = hihatmulti.caf; path = Resources/Sound/hihatmulti.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BC51799699500443724 /* hihat5.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = hihat5.caf; path = Resources/Sound/hihat5.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BC61799699500443724 /* hihat4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = hihat4.caf; path = Resources/Sound/hihat4.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BC71799699500443724 /* hihat3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = hihat3.caf; path = Resources/Sound/hihat3.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BC81799699500443724 /* hihat2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = hihat2.caf; path = Resources/Sound/hihat2.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BC91799699500443724 /* hihat1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = hihat1.caf; path = Resources/Sound/hihat1.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BCA1799699500443724 /* high_hat.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = high_hat.caf; path = Resources/Sound/high_hat.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BCB1799699500443724 /* clap3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = clap3.caf; path = Resources/Sound/clap3.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BCC1799699500443724 /* clap2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = clap2.caf; path = Resources/Sound/clap2.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BCD1799699500443724 /* clap.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = clap.caf; path = Resources/Sound/clap.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BCE1799699600443724 /* chime3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = chime3.caf; path = Resources/Sound/chime3.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BCF1799699600443724 /* chime2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = chime2.caf; path = Resources/Sound/chime2.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BD01799699600443724 /* chime.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = chime.caf; path = Resources/Sound/chime.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BD11799699600443724 /* loop4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = loop4.caf; path = Resources/Sound/loop4.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BFC17996CE300443724 /* invincible_on.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = invincible_on.caf; path = Resources/Sound/invincible_on.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BFD17996CE300443724 /* player_inv_right.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = player_inv_right.caf; path = Resources/Sound/player_inv_right.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BFE17996CE300443724 /* player_inv_left.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = player_inv_left.caf; path = Resources/Sound/player_inv_left.caf; sourceTree = SOURCE_ROOT; };
+		E55D0BFF17996CE300443724 /* player_scratch_left.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = player_scratch_left.caf; path = Resources/Sound/player_scratch_left.caf; sourceTree = SOURCE_ROOT; };
+		E55D0C0017996CE300443724 /* player_scratch_right.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = player_scratch_right.caf; path = Resources/Sound/player_scratch_right.caf; sourceTree = SOURCE_ROOT; };
+		E55D0C0117996CE300443724 /* inv_bomb_pickup.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = inv_bomb_pickup.caf; path = Resources/Sound/inv_bomb_pickup.caf; sourceTree = SOURCE_ROOT; };
 		E55D11AE1785CCBA0072B6AC /* popin1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = popin1.wav; path = Resources/Sound/popin1.wav; sourceTree = SOURCE_ROOT; };
 		E55D11AF1785CCBA0072B6AC /* popin2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = popin2.wav; path = Resources/Sound/popin2.wav; sourceTree = SOURCE_ROOT; };
 		E55D11B01785CCBA0072B6AC /* popin3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = popin3.wav; path = Resources/Sound/popin3.wav; sourceTree = SOURCE_ROOT; };
@@ -1400,14 +1484,56 @@
 		0801C92816DC7A9900ED1A1B /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				E55D0BA81799699100443724 /* wall_hit.caf */,
+				E55D0BA91799699200443724 /* wah_wah.caf */,
+				E55D0BAA1799699200443724 /* swipe.caf */,
+				E55D0BAB1799699200443724 /* scratch_backspin.caf */,
+				E55D0BAC1799699200443724 /* record-start.caf */,
+				E55D0BAD1799699200443724 /* record_drop.caf */,
+				E55D0BAE1799699200443724 /* popin5.caf */,
+				E55D0BAF1799699200443724 /* popin4.caf */,
+				E55D0BB01799699200443724 /* popin3.caf */,
+				E55D0BB11799699200443724 /* popin2.caf */,
+				E55D0BB21799699200443724 /* popin1.caf */,
+				E55D0BB31799699200443724 /* pickup_coin1.caf */,
+				E55D0BB41799699200443724 /* pickup_coin.caf */,
+				E55D0BB51799699300443724 /* piano_a3.caf */,
+				E55D0BB61799699300443724 /* marimba_f.caf */,
+				E55D0BB71799699300443724 /* loop8.caf */,
+				E55D0BB81799699300443724 /* loop7.caf */,
+				E55D0BB91799699300443724 /* loop6.caf */,
+				E55D0BBA1799699300443724 /* loop5.caf */,
+				E55D0BBB1799699300443724 /* loop4-1.caf */,
+				E55D0BBC1799699300443724 /* loop3.caf */,
+				E55D0BBD1799699300443724 /* loop2.caf */,
+				E55D0BBE1799699400443724 /* loop1.caf */,
+				E55D0BBF1799699400443724 /* kicker.caf */,
+				E55D0BC01799699400443724 /* kalimba3.caf */,
+				E55D0BC11799699400443724 /* kalimba2.caf */,
+				E55D0BC21799699400443724 /* kalimba1.caf */,
+				E55D0BC31799699400443724 /* JewelBeat - Follow The Beat.caf */,
+				E55D0BC41799699400443724 /* hihatmulti.caf */,
+				E55D0BC51799699500443724 /* hihat5.caf */,
+				E55D0BC61799699500443724 /* hihat4.caf */,
+				E55D0BC71799699500443724 /* hihat3.caf */,
+				E55D0BC81799699500443724 /* hihat2.caf */,
+				E55D0BC91799699500443724 /* hihat1.caf */,
+				E55D0BCA1799699500443724 /* high_hat.caf */,
+				E55D0BCB1799699500443724 /* clap3.caf */,
+				E55D0BCC1799699500443724 /* clap2.caf */,
+				E55D0BCD1799699500443724 /* clap.caf */,
+				E55D0BCE1799699600443724 /* chime3.caf */,
+				E55D0BCF1799699600443724 /* chime2.caf */,
+				E55D0BD01799699600443724 /* chime.caf */,
+				E55D0BD11799699600443724 /* loop4.caf */,
+				E55D0BFC17996CE300443724 /* invincible_on.caf */,
+				E55D0BFD17996CE300443724 /* player_inv_right.caf */,
+				E55D0BFE17996CE300443724 /* player_inv_left.caf */,
+				E55D0BFF17996CE300443724 /* player_scratch_left.caf */,
+				E55D0C0017996CE300443724 /* player_scratch_right.caf */,
+				E55D0C0117996CE300443724 /* inv_bomb_pickup.caf */,
 				E58AD2DC17852F7F00CEB970 /* clap3.wav */,
 				E58AD2DD17852F8000CEB970 /* hihat1.wav */,
-				E55D0BA217982D8300443724 /* inv_bomb_pickup.mp3 */,
-				E55D0BA017982D7D00443724 /* invincible_on.mp3 */,
-				E55D0B9C17982D7600443724 /* player_inv_right.mp3 */,
-				E55D0B9D17982D7600443724 /* player_inv_left.mp3 */,
-				E55D0BA4179833BE00443724 /* player_scratch_right.mp3 */,
-				E55D0BA5179833BE00443724 /* player_scratch_left.mp3 */,
 				E58AD2DE17852F8000CEB970 /* hihat2.wav */,
 				E55D11BA178639CA0072B6AC /* scratch_backspin.wav */,
 				E5F47E821793A20400504A9A /* record_drop.mp3 */,
@@ -2986,12 +3112,54 @@
 				E5F47E831793A20400504A9A /* record_drop.mp3 in Resources */,
 				E55D0B9917964C9300443724 /* retina_home.png in Resources */,
 				E55D0B9B1796CEF100443724 /* small_home.png in Resources */,
-				E55D0B9E17982D7600443724 /* player_inv_right.mp3 in Resources */,
-				E55D0B9F17982D7600443724 /* player_inv_left.mp3 in Resources */,
-				E55D0BA117982D7D00443724 /* invincible_on.mp3 in Resources */,
-				E55D0BA317982D8300443724 /* inv_bomb_pickup.mp3 in Resources */,
-				E55D0BA6179833BE00443724 /* player_scratch_right.mp3 in Resources */,
-				E55D0BA7179833BE00443724 /* player_scratch_left.mp3 in Resources */,
+				E55D0BD21799699600443724 /* wall_hit.caf in Resources */,
+				E55D0BD31799699600443724 /* wah_wah.caf in Resources */,
+				E55D0BD41799699600443724 /* swipe.caf in Resources */,
+				E55D0BD51799699600443724 /* scratch_backspin.caf in Resources */,
+				E55D0BD61799699600443724 /* record-start.caf in Resources */,
+				E55D0BD71799699600443724 /* record_drop.caf in Resources */,
+				E55D0BD81799699600443724 /* popin5.caf in Resources */,
+				E55D0BD91799699600443724 /* popin4.caf in Resources */,
+				E55D0BDA1799699600443724 /* popin3.caf in Resources */,
+				E55D0BDB1799699600443724 /* popin2.caf in Resources */,
+				E55D0BDC1799699600443724 /* popin1.caf in Resources */,
+				E55D0BDD1799699600443724 /* pickup_coin1.caf in Resources */,
+				E55D0BDE1799699600443724 /* pickup_coin.caf in Resources */,
+				E55D0BDF1799699600443724 /* piano_a3.caf in Resources */,
+				E55D0BE01799699600443724 /* marimba_f.caf in Resources */,
+				E55D0BE11799699600443724 /* loop8.caf in Resources */,
+				E55D0BE21799699600443724 /* loop7.caf in Resources */,
+				E55D0BE31799699600443724 /* loop6.caf in Resources */,
+				E55D0BE41799699600443724 /* loop5.caf in Resources */,
+				E55D0BE51799699600443724 /* loop4-1.caf in Resources */,
+				E55D0BE61799699600443724 /* loop3.caf in Resources */,
+				E55D0BE71799699600443724 /* loop2.caf in Resources */,
+				E55D0BE81799699600443724 /* loop1.caf in Resources */,
+				E55D0BE91799699600443724 /* kicker.caf in Resources */,
+				E55D0BEA1799699600443724 /* kalimba3.caf in Resources */,
+				E55D0BEB1799699600443724 /* kalimba2.caf in Resources */,
+				E55D0BEC1799699600443724 /* kalimba1.caf in Resources */,
+				E55D0BED1799699600443724 /* JewelBeat - Follow The Beat.caf in Resources */,
+				E55D0BEE1799699600443724 /* hihatmulti.caf in Resources */,
+				E55D0BEF1799699600443724 /* hihat5.caf in Resources */,
+				E55D0BF01799699600443724 /* hihat4.caf in Resources */,
+				E55D0BF11799699600443724 /* hihat3.caf in Resources */,
+				E55D0BF21799699600443724 /* hihat2.caf in Resources */,
+				E55D0BF31799699600443724 /* hihat1.caf in Resources */,
+				E55D0BF41799699600443724 /* high_hat.caf in Resources */,
+				E55D0BF51799699600443724 /* clap3.caf in Resources */,
+				E55D0BF61799699600443724 /* clap2.caf in Resources */,
+				E55D0BF71799699600443724 /* clap.caf in Resources */,
+				E55D0BF81799699600443724 /* chime3.caf in Resources */,
+				E55D0BF91799699600443724 /* chime2.caf in Resources */,
+				E55D0BFA1799699600443724 /* chime.caf in Resources */,
+				E55D0BFB1799699600443724 /* loop4.caf in Resources */,
+				E55D0C0217996CE300443724 /* invincible_on.caf in Resources */,
+				E55D0C0317996CE300443724 /* player_inv_right.caf in Resources */,
+				E55D0C0417996CE300443724 /* player_inv_left.caf in Resources */,
+				E55D0C0517996CE300443724 /* player_scratch_left.caf in Resources */,
+				E55D0C0617996CE300443724 /* player_scratch_right.caf in Resources */,
+				E55D0C0717996CE300443724 /* inv_bomb_pickup.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
