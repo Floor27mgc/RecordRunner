@@ -37,7 +37,7 @@ static SoundController *SoundControllerSingleton;
 {
     SoundController * objCreated = [[self alloc] init];
     
-    objCreated.currentSongTitle = @"JewelBeat - Follow The Beat.wav";
+    objCreated.currentSongTitle = @"JewelBeat - Follow The Beat.caf";
     objCreated.audioEngine = [SimpleAudioEngine sharedEngine];
     objCreated.audioPlayer = [CDAudioManager sharedManager].backgroundMusic.audioSourcePlayer;
     objCreated.audioPlayer.meteringEnabled = YES;
@@ -56,42 +56,42 @@ static SoundController *SoundControllerSingleton;
     if (self = [super init]) {
         // Fill in filenames into the soundFileContainer
         NSArray *coinSoundFiles = [[NSArray alloc] initWithObjects:
-                                   @"popin1.wav",   // SOUND_FILENAME_TRK_0_COIN_POPUP
-                                   @"popin2.wav",   // SOUND_FILENAME_TRK_1_COIN_POPUP
-                                   @"popin3.wav",   // SOUND_FILENAME_TRK_2_COIN_POPUP
-                                   @"popin4.wav",   // SOUND_FILENAME_TRK_3_COIN_POPUP
-                                   @"popin5.wav",   // SOUND_FILENAME_TRK_4_COIN_POPUP
-                                   @"popin5.wav",   // SOUND_FILENAME_TRK_5_COIN_POPUP
-                                   @"hihat1.wav",     // SOUND_TRK_0_COIN_PICKUP
-                                   @"hihat2.wav",     // SOUND_TRK_1_COIN_PICKUP
-                                   @"hihat3.wav",     // SOUND_TRK_2_COIN_PICKUP
-                                   @"hihat4.wav",     // SOUND_TRK_3_COIN_PICKUP
-                                   @"hihat5.wav",     // SOUND_TRK_4_COIN_PICKUP
-                                   @"hihatmulti.wav", // SOUND_MULTI_COIN_PICKUP
+                                   @"popin1.caf",   // SOUND_FILENAME_TRK_0_COIN_POPUP
+                                   @"popin2.caf",   // SOUND_FILENAME_TRK_1_COIN_POPUP
+                                   @"popin3.caf",   // SOUND_FILENAME_TRK_2_COIN_POPUP
+                                   @"popin4.caf",   // SOUND_FILENAME_TRK_3_COIN_POPUP
+                                   @"popin5.caf",   // SOUND_FILENAME_TRK_4_COIN_POPUP
+                                   @"popin5.caf",   // SOUND_FILENAME_TRK_5_COIN_POPUP
+                                   @"hihat1.caf",     // SOUND_TRK_0_COIN_PICKUP
+                                   @"hihat2.caf",     // SOUND_TRK_1_COIN_PICKUP
+                                   @"hihat3.caf",     // SOUND_TRK_2_COIN_PICKUP
+                                   @"hihat4.caf",     // SOUND_TRK_3_COIN_PICKUP
+                                   @"hihat5.caf",     // SOUND_TRK_4_COIN_PICKUP
+                                   @"hihatmulti.caf", // SOUND_MULTI_COIN_PICKUP
                                    nil];
         NSArray *bombSoundFiles = [[NSArray alloc] initWithObjects:
-                                   @"kicker.wav",   // SOUND_FILENAME_IDX_BOMB_POPUP
-                                   @"chime.wav",    // SOUND_FILENAME_IDX_BOMB_PICKUP
-                                   @"clap.wav",     //SOUND_BOMB_SKIM
-                                   @"clap2.wav",    //SOUND_BOMB_SKIM2
-                                   @"inv_bomb_pickup.mp3",    //SOUND_BOMB_INV_PICKUP
+                                   @"kicker.caf",   // SOUND_FILENAME_IDX_BOMB_POPUP
+                                   @"chime.caf",    // SOUND_FILENAME_IDX_BOMB_PICKUP
+                                   @"clap.caf",     //SOUND_BOMB_SKIM
+                                   @"clap2.caf",    //SOUND_BOMB_SKIM2
+                                   @"inv_bomb_pickup.caf",    //SOUND_BOMB_INV_PICKUP
                                    nil];
         
         NSArray *playerSoundFiles = [[NSArray alloc] initWithObjects:
-                                     @"swipe.wav", //SOUND_PLAYER_SWIPE
-                                     @"scratch_backspin.wav", //SOUND_PLAYER_DIE
-                                     @"record_drop.mp3", //SOUND_PLAYER_START
-                                     @"player_inv_left.mp3", //SOUND_PLAYER_INV_LEFT
-                                     @"player_inv_right.mp3", //SOUND_PLAYER_INV_RIGHT
-                                     @"invincible_on.mp3", //SOUND_PLAYER_GOT_INV
-                                     @"player_scratch_left.mp3", //SOUND_PLAYER_SCRATCH_LEFT
-                                     @"player_scratch_right.mp3", //SOUND_PLAYER_SCRATCH_RIGHT
+                                     @"swipe.caf", //SOUND_PLAYER_SWIPE
+                                     @"scratch_backspin.caf", //SOUND_PLAYER_DIE
+                                     @"record_drop.caf", //SOUND_PLAYER_START
+                                     @"player_inv_left.caf", //SOUND_PLAYER_INV_LEFT
+                                     @"player_inv_right.caf", //SOUND_PLAYER_INV_RIGHT
+                                     @"invincible_on.caf", //SOUND_PLAYER_GOT_INV
+                                     @"player_scratch_left.caf", //SOUND_PLAYER_SCRATCH_LEFT
+                                     @"player_scratch_right.caf", //SOUND_PLAYER_SCRATCH_RIGHT
                                      nil];
         
         NSArray *menuSoundEffects = [[NSArray alloc] initWithObjects:
-                                     @"swipe.wav", //SOUND_MENU_OPEN
-                                     @"swipe.wav", //SOUND_MENU_CLOSE
-                                     @"swipe.wav", //SOUND_MENU_CLICK
+                                     @"swipe.caf", //SOUND_MENU_OPEN
+                                     @"swipe.caf", //SOUND_MENU_CLOSE
+                                     @"swipe.caf", //SOUND_MENU_CLICK
                                      nil];
         
         soundFileNameContainer = [[NSArray alloc]initWithObjects:

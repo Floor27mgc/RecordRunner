@@ -738,7 +738,7 @@ static GameLayer *sharedGameLayer;
         // enable sounds
         _soundController = [SoundController init];
     } else {
-        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"loop1.wav"];
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"loop1.caf"];
     }
 }
 
