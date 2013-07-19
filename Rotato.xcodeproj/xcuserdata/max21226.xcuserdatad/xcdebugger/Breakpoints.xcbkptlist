@@ -323,8 +323,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "253"
          endingLineNumber = "253"
-         landmarkName = "-onEnter"
-         landmarkType = "5">
+         landmarkName = "@implementation GameLayer"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -646,7 +646,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "256"
          endingLineNumber = "256"
-         landmarkName = "-onEnter"
+         landmarkName = "-onExit"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -867,8 +867,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "236"
          endingLineNumber = "236"
-         landmarkName = "-init"
-         landmarkType = "5">
+         landmarkName = "@implementation GameLayer"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -1010,7 +1010,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "111"
          endingLineNumber = "111"
-         landmarkName = "-updateMeterSamples"
+         landmarkName = "-playSoundIdx:fromObject:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1023,8 +1023,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "262"
          endingLineNumber = "262"
-         landmarkName = "-onEnter"
-         landmarkType = "5">
+         landmarkName = "@implementation GameLayer"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -1062,8 +1062,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "25"
          endingLineNumber = "25"
-         landmarkName = "-pressedMode1:"
-         landmarkType = "5">
+         landmarkName = "@implementation GameModeMenu"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -1088,7 +1088,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "30"
          endingLineNumber = "30"
-         landmarkName = "-pressedMode2:"
+         landmarkName = "-pressedMode1:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1101,7 +1101,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "36"
          endingLineNumber = "36"
-         landmarkName = "-pressedMode3:"
+         landmarkName = "-pressedMode2:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1114,7 +1114,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "42"
          endingLineNumber = "42"
-         landmarkName = "-pressedMode4:"
+         landmarkName = "-pressedMode3:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1140,7 +1140,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "23"
          endingLineNumber = "23"
-         landmarkName = "-pressedMode1:"
+         landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1165,7 +1165,9 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "275"
-         endingLineNumber = "275">
+         endingLineNumber = "275"
+         landmarkName = "-pressedFB:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -1176,7 +1178,9 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "269"
-         endingLineNumber = "269">
+         endingLineNumber = "269"
+         landmarkName = "-pressedFB:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -1200,7 +1204,9 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "257"
-         endingLineNumber = "257">
+         endingLineNumber = "257"
+         landmarkName = "-pressedFB:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -1303,8 +1309,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "238"
          endingLineNumber = "238"
-         landmarkName = "-init"
-         landmarkType = "5">
+         landmarkName = "@implementation GameLayer"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -1472,7 +1478,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "232"
          endingLineNumber = "232"
-         landmarkName = "-init"
+         landmarkName = "-didLoadFromCCB"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1550,7 +1556,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "423"
          endingLineNumber = "423"
-         landmarkName = "-changeGameAngularVelocityByDegree:"
+         landmarkName = "-getGameAngularVelocityInDegree"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1562,7 +1568,9 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "259"
-         endingLineNumber = "259">
+         endingLineNumber = "259"
+         landmarkName = "-pressedFB:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -1834,7 +1842,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "83"
          endingLineNumber = "83"
-         landmarkName = "-playSoundIdx:fromObject:"
+         landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -2042,7 +2050,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "539"
          endingLineNumber = "539"
-         landmarkName = "-gameOver"
+         landmarkName = "-ccTouchesBegan:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -2055,8 +2063,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "519"
          endingLineNumber = "519"
-         landmarkName = "-gameOver"
-         landmarkType = "5">
+         landmarkName = "@implementation GameLayer"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -2068,7 +2076,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "524"
          endingLineNumber = "524"
-         landmarkName = "-gameOver"
+         landmarkName = "-showScoreOnTrack:message:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -2081,7 +2089,33 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "41"
          endingLineNumber = "41"
-         landmarkName = "-pressedYES:"
+         landmarkName = "-pressedNO:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "cocos2d-2.x-ARC-iOS/libs/CocosDenshion/CDAudioManager.m"
+         timestampString = "395904804.1588"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "871"
+         endingLineNumber = "871"
+         landmarkName = "-bufferForFile:create:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "cocos2d-2.x-ARC-iOS/libs/CocosDenshion/CDAudioManager.m"
+         timestampString = "395904819.878467"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "842"
+         endingLineNumber = "842"
+         landmarkName = "-bufferForFile:create:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

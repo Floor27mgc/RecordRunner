@@ -116,11 +116,6 @@ static SoundController *SoundControllerSingleton;
     if ([senderObject isKindOfClass:[Bomb class]]) {
         soundFileNames = [soundFileNameContainer objectAtIndex:SOUND_CONTAINER_IDX_BOMB];
     }
-    
-    if ([GameInfoGlobal sharedGameInfoGlobal].isSoundEffectOn)
-    {
-        [[SimpleAudioEngine sharedEngine] playEffect:soundFileNames[soundIdx]];
-    }
 
     if ([senderObject isKindOfClass:[GameObjectPlayer class]]) {
         soundFileNames = [soundFileNameContainer objectAtIndex:SOUND_CONTAINER_IDX_PLAYER];
@@ -130,8 +125,12 @@ static SoundController *SoundControllerSingleton;
     {
         soundFileNames = [soundFileNameContainer objectAtIndex: SOUND_CONTAINER_IDX_MENU];
     }
-        
-    [[SimpleAudioEngine sharedEngine] playEffect:soundFileNames[soundIdx]];
+
+    if ([GameInfoGlobal sharedGameInfoGlobal].isSoundEffectOn)
+    {
+        [[SimpleAudioEngine sharedEngine] playEffect:soundFileNames[soundIdx]];
+    }
+
 }
 
 // -----------------------------------------------------------------------------------

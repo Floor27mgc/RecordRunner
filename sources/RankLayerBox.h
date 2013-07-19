@@ -22,6 +22,6 @@
 @property (nonatomic, strong) CCLabelTTF * goal2;
 @property (nonatomic, strong) CCLabelTTF * goal3;
 @property BOOL isQuitting;
-
+@property (nonatomic, strong) GameOverLayer *gameOverLayer;
 
 @end

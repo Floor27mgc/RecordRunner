@@ -20,7 +20,7 @@
 @synthesize goal1;
 @synthesize goal2;
 @synthesize goal3;
-
+@synthesize gameOverLayer;
 
 // -----------------------------------------------------------------------------------
 //This method is used to set the labels in the Game Over Menu.
@@ -62,18 +62,25 @@
     
     if ([name compare:@"Pop out"] == NSOrderedSame) { 
         
-        GameOverLayer * gameOverLayer =
-        (GameOverLayer *) [CCBReader nodeGraphFromFile:@"GameOverLayerBox.ccbi"];
-        gameOverLayer.position = COMMON_SCREEN_CENTER;
-        
-        //This sets the menu data for the final menu
-        [gameOverLayer setMenuData:
-                         [[GameLayer sharedGameLayer].score getScore]
-                         rankLevel: [GameLayer sharedGameLayer].achievementContainer.currentRank];
-        
-        
-        [[GameLayer sharedGameLayer] addChild:gameOverLayer z:11];
-        
+        if (gameOverLayer != nil)
+        {
+            CCBAnimationManager* animationManager = gameOverLayer.userObject;
+            NSLog(@"animationManager: %@", animationManager);
+            gameOverLayer.visible = YES;
+            [animationManager runAnimationsForSequenceNamed:@"Pop in"];
+        }
+        else
+        {
+            gameOverLayer = (GameOverLayer *) [CCBReader nodeGraphFromFile:@"GameOverLayerBox.ccbi"];
+            gameOverLayer.position = COMMON_SCREEN_CENTER;
+            
+            //This sets the menu data for the final menu
+            [gameOverLayer setMenuData:
+             [[GameLayer sharedGameLayer].score getScore]
+                             rankLevel: [GameLayer sharedGameLayer].achievementContainer.currentRank];
+            
+            [[GameLayer sharedGameLayer] addChild:gameOverLayer z:11];
+        }
     }
 }
 
