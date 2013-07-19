@@ -45,5 +45,8 @@ typedef enum {
 @property (nonatomic, assign) int isSoundEffectOn;
 @property (nonatomic, strong) NSMutableArray * achievedThisRound;
 @property (nonatomic) UIWindow *window;
+@property (nonatomic, assign) BOOL hit33rotationsThisLife;
+@property (nonatomic, assign) BOOL hit45rotationsThisLife;
+@property (nonatomic, assign) BOOL hit78rotationsThisLife;
 
 @end

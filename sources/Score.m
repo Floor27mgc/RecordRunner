@@ -83,6 +83,28 @@
     }
 }
 
+// -----------------------------------------------------------------------------------
+// simply add amount to score, do not use multiplier
+- (void) addToScore:(int)amount
+{
+    int currenScoreLevel = _scoreValue / kSpeedUpScoreInterval;
+    
+    _scoreValue += amount;
+    
+    [GameInfoGlobal sharedGameInfoGlobal].score = _scoreValue;
+    
+    int newScoreLevel = _scoreValue / kSpeedUpScoreInterval;
+    
+    if (newScoreLevel < kSpeedUpScoreLevelCeiling)
+    {
+        if (currenScoreLevel < newScoreLevel)
+        {
+        }
+    }
+    
+    [[GameLayer sharedGameLayer].scoreLabel
+     setString:[NSString stringWithFormat:@"%d", _scoreValue]];
+}
 
 // -----------------------------------------------------------------------------------
 - (int) getScore

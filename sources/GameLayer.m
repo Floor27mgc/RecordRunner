@@ -375,6 +375,9 @@ static GameLayer *sharedGameLayer;
     
     // Move player to a new location
     [player showNextFrame];
+    
+    // check for any non-achievement bonuses that may have been achieved
+    [self checkBonuses];
 }
 
 // -----------------------------------------------------------------------------------
@@ -503,6 +506,42 @@ static GameLayer *sharedGameLayer;
     
     [[[GameInfoGlobal sharedGameInfoGlobal] statsContainer] resetGameTimer];
     
+}
+
+// -----------------------------------------------------------------------------------
+- (void) checkBonuses
+{
+    int scoreBump = -1;
+
+    switch ([GameInfoGlobal sharedGameInfoGlobal].numRotationsThisLife) {
+        case 33:
+            if (![GameInfoGlobal sharedGameInfoGlobal].hit33rotationsThisLife) {
+                [GameInfoGlobal sharedGameInfoGlobal].hit33rotationsThisLife = YES;
+                scoreBump = 33;
+            }
+            break;
+        case 45:
+            if (![GameInfoGlobal sharedGameInfoGlobal].hit45rotationsThisLife) {
+                [GameInfoGlobal sharedGameInfoGlobal].hit45rotationsThisLife = YES;
+                scoreBump = 45;
+            }
+            break;
+        case 78:
+            if (![GameInfoGlobal sharedGameInfoGlobal].hit78rotationsThisLife) {
+                [GameInfoGlobal sharedGameInfoGlobal].hit78rotationsThisLife = YES;
+                scoreBump = 78;
+            }
+            break;
+        default:
+            break;
+    }
+    
+    // display RPM score bump and increment score accordingly
+    if (scoreBump != -1) {
+        NSString * rpmBump = [NSString stringWithFormat:@"+%d", scoreBump];
+        [self showScoreOnTrack:[player getPlayerTrackNum] message: rpmBump];
+        [_score addToScore:scoreBump];
+    }
 }
 
 // -----------------------------------------------------------------------------------

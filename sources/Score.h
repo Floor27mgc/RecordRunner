@@ -28,6 +28,7 @@
 - (void) prepareScore:(NSString *) myLabel;
 - (void) incrementScore:(int) amount;
 - (void) decrementScore:(int) amount;
+- (void) addToScore:(int) amount;
 - (void) setScoreValue:(int) newScore;
 - (int) getScore;
 - (int) getMultiplier;

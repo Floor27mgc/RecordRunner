@@ -92,6 +92,7 @@ typedef enum {
 -(void) showScoreOnTrack: (int) trackNum message:(NSString *) scoreText;
 -(void) activateInvincible;
 -(void) deactivateInvincible;
+-(void) checkBonuses;
 
 @property (nonatomic, strong) GameObjectPlayer *player;
 @property (nonatomic, strong) Queue * coinFreePool;

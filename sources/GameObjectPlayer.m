@@ -246,6 +246,12 @@
 }
 
 // -----------------------------------------------------------------------------------
+- (int) getPlayerTrackNum
+{
+    return TRACKNUM_FROM_RADIUS;
+}
+
+// -----------------------------------------------------------------------------------
 - (void) blink
 {
     NSLog(@"animation manager: %p", self.animationManager);

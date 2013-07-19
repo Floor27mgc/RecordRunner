@@ -32,6 +32,9 @@
 @synthesize isBackgroundMusicOn;
 @synthesize isSoundEffectOn;
 @synthesize achievedThisRound;
+@synthesize hit33rotationsThisLife;
+@synthesize hit45rotationsThisLife;
+@synthesize hit78rotationsThisLife;
 
 static GameInfoGlobal *sharedGameInfoGlobal;
 
@@ -113,6 +116,9 @@ static GameInfoGlobal *sharedGameInfoGlobal;
     numCoinsThisLife = 0;
     closeCallsThisLife = 0;
     [achievedThisRound removeAllObjects];
+    hit33rotationsThisLife = NO;
+    hit45rotationsThisLife = NO;
+    hit78rotationsThisLife = NO;
 }
 
 // -----------------------------------------------------------------------------------

@@ -40,6 +40,8 @@ typedef enum
 - (BOOL) spriteInPath: (int) angle
          withWidth:(int) width;
 
+- (int) getPlayerTrackNum;
+
 @property (nonatomic) direction_t direction;
 @property (nonatomic) int playerRadialSpeed; // How fast the player zips between center and
                                              // outer most circle
