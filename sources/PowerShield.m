@@ -125,7 +125,7 @@
     } else if (elapsedMilliseconds > 4625 &&
                (int)_lastToggle < 4625) {
         toggle = YES;
-                _lastToggle = 4625;
+        _lastToggle = 4625;
     } else if (elapsedMilliseconds > 4500 &&
                (int)_lastToggle < 4500) {
         toggle = NO;

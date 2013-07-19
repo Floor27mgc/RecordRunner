@@ -37,7 +37,6 @@
     NSLog(@"pressed no!");
     
     exit(0);
-
 }
 
 // -----------------------------------------------------------------------------------
@@ -87,11 +86,7 @@
     
     [self.rankLabel setString:[NSString stringWithFormat:@"%d",
                                      rankScore]];
-        
-    //70 is good but not perfect
-    //float xPosition = [self.goal1 position].x;
-    //float textHeight = [self.goal1 dimensions].height;
-    
+            
     [self.goal1 setDimensions:CGSizeMake(220,65)];
     [self.goal1 setPosition:CGPointMake(160, 183)]; 
     
@@ -182,7 +177,6 @@
     
     yesButtonEnabled = NO;
     homeButtonEnabled = NO;
-    
 }
 
 // -----------------------------------------------------------------------------------

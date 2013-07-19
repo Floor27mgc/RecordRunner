@@ -16,10 +16,7 @@
     
 }
 
--(void) bounce;
-
 @property (nonatomic, assign) CCParticleSystemQuad *emitter;
-@property (nonatomic) BOOL bouncing;
 @property (nonatomic) BOOL isDead;
 
 @end

@@ -30,7 +30,6 @@
 - (void) decrementScore:(int) amount;
 - (void) setScoreValue:(int) newScore;
 - (int) getScore;
-- (int) getMultiplier;
 - (void) setHighScore;
 
 @end

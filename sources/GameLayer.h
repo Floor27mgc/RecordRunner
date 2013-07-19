@@ -39,8 +39,6 @@
 #define kShieldSpawnRate 1
 #define TAP_DELAY_THRESHOLD_MSEC 62
 
-#define SPEED_INCREASE_AMOUNT .2
-
 #define kGameModeNoRotation 0
 #define kGameModeRotation   1
 typedef enum {
@@ -67,12 +65,8 @@ typedef enum {
 
 + (GameLayer *) sharedGameLayer;
 
-
 // handle game over scenario
 -(void) gameOver;
-
-// add PowerIcon to layer, if condition has occurred
--(void) triggerPowerIcons;
 -(void) soundBounceGameObjectUsedPool:(Queue *)gameObjectUsedPool;
 -(float) changeGameAngularVelocityByDegree:(float) byDegree;
 -(float) getGameAngularVelocityInDegree;
@@ -114,11 +108,9 @@ typedef enum {
 @property (nonatomic, assign) int shieldSpawnRate;
 @property (nonatomic, assign) BOOL isDebugMode;
 @property (nonatomic, assign) int pendingTaps;
-@property (nonatomic) NSDate * tapDelay;
 @property (nonatomic, strong) UIView *leaderBoardView;
 @property (nonatomic, strong) UIViewController *leaderBoardViewController;
 @property (nonatomic, strong) AchievementContainer * achievementContainer;
-
 @property (nonatomic, strong) CCLabelTTF * scoreLabel;
 @property (nonatomic, strong) Score * score;
 @property (nonatomic, strong) Score * highScore;

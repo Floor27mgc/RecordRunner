@@ -240,6 +240,8 @@
         return;
     }
     
+    currentRank = indexToLoad;
+    
     // populate this rank's goals
     int startIndex = (indexToLoad - 1) * 3 + 1;
     for (int i = 0; i < GOALS_PER_RANK; ++i) {

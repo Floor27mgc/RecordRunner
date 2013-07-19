@@ -53,7 +53,6 @@
         if (abs(distance - self.radiusHitBox) < CLOSE_HIT_THRESHOLD_PIXEL &&
             ![GameLayer sharedGameLayer].player.hasShield) {
             
-            
             // see if we are above or below the player
             int angleRelation = (int)self.angleRotated % 360;
             

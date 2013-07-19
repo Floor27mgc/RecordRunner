@@ -53,7 +53,6 @@
 @synthesize pendingTaps;
 @synthesize leaderBoardView;
 @synthesize leaderBoardViewController;
-@synthesize tapDelay;
 @synthesize achievementContainer;
 
 
@@ -216,8 +215,6 @@ static GameLayer *sharedGameLayer;
         
         // input buffering structures
         pendingTaps = 0;
-        
-        self.tapDelay = [NSDate distantFuture];
         
         // set up internal achievement tracking mechanisms
         //[achievementContainer LoadInternalAchievements];
@@ -447,16 +444,6 @@ static GameLayer *sharedGameLayer;
 }
 
 // -----------------------------------------------------------------------------------
-- (void) triggerPowerIcons
-{
-    if ([_powerIconUsedPool getObjectCount] == 0) {
-        NSLog(@"Triggering Power Icon!");
-        
-        [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:POWER_ICON_TYPE effectType:kRotation];
-    }
-}
-
-// -----------------------------------------------------------------------------------
 -(void) openDebugMenu
 {
     NSLog(@"opening debug menu");
@@ -632,6 +619,7 @@ static GameLayer *sharedGameLayer;
     return shieldSpawnRate;
 }
 
+// -----------------------------------------------------------------------------------
 //This is called when player gets the star so that he is invincible
 -(void) activateInvincible
 {
@@ -645,6 +633,7 @@ static GameLayer *sharedGameLayer;
     }
 }
 
+// -----------------------------------------------------------------------------------
 -(void) deactivateInvincible
 {
     for (int trackNum = 0; trackNum < MAX_NUM_TRACK; trackNum++)
@@ -763,7 +752,6 @@ static GameLayer *sharedGameLayer;
         [self.gameObjectInjector startInjector];
         [self startTheMusic];
     }
-    
 }
 
 @end

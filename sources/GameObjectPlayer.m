@@ -246,13 +246,6 @@
 }
 
 // -----------------------------------------------------------------------------------
-- (void) blink
-{
-    NSLog(@"animation manager: %p", self.animationManager);
-    [self.animationManager runAnimationsForSequenceNamed:@"blink_player"];
-}
-
-// -----------------------------------------------------------------------------------
 - (void) onEnter
 {
     // Setup a delegate method for the animationManager of the explosion
@@ -274,6 +267,6 @@
 // -----------------------------------------------------------------------------------
 - (void) completedAnimationSequenceNamed:(NSString *)name
 {
-        [GameLayer sharedGameLayer].isGameReadyToStart = TRUE;
+    [GameLayer sharedGameLayer].isGameReadyToStart = TRUE;
 }
 @end

@@ -15,7 +15,6 @@
 @implementation Coin
 
 @synthesize emitter=emitter_;
-@synthesize bouncing = _bouncing;
 @synthesize isDead = _isDead;
 
 // -----------------------------------------------------------------------------------
@@ -23,7 +22,6 @@
 {
     if( (self=[super init]) )
     {
-        _bouncing = NO;
         _isDead = NO;
     }
     return (self);
@@ -141,14 +139,6 @@
         }
     }
 }
-
-// -----------------------------------------------------------------------------------
--(void) bounce
-{
-    
-    [self.animationManager runAnimationsForSequenceNamed:@"QuickBounce"];
-}
-
 
 // -----------------------------------------------------------------------------------
 - (void) resetObject

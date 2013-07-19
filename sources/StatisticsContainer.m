@@ -64,7 +64,6 @@
     StatisticsTracker * gameTimeStats = [_container objectAtIndex:TIME_STATS];
     gameTimeStats.total = elapsed;
     NSLog(@"time total %d", gameTimeStats.total);
-    //[gameTimeStats refresh];
 }
 
 // -----------------------------------------------------------------------------------

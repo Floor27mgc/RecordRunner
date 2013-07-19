@@ -15,10 +15,11 @@
 
 @implementation GameObjectBase
 @synthesize gameObjectAngularVelocity=_gameObjectAngularVelocity;
-@synthesize parentGameLayer;
 @synthesize radius;
 @synthesize angleRotated;
 @synthesize animationManager;
+
+
 // -----------------------------------------------------------------------------------
 + (id) initWithGameLayer:(GameLayer *) gamelayer
            imageFileName:(NSString *) fileName
@@ -26,7 +27,6 @@
 {
     GameObjectBase *objCreated;
     objCreated = [[self alloc] init];
-    objCreated.parentGameLayer = gamelayer;
     objCreated.gameObjectSprite = [CCSprite spriteWithFile:fileName];
     objCreated.gameObjectAngularVelocity = speed;
     objCreated.gameObjectSprite.anchorPoint = ccp(0.5,0.5);

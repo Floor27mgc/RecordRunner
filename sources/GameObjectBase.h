@@ -18,7 +18,6 @@
 @interface GameObjectBase : CCSprite
 
 @property (nonatomic, assign) CCSprite *gameObjectSprite;
-@property (nonatomic, assign) GameLayer *parentGameLayer;
 @property (nonatomic) float gameObjectAngularVelocity;
 @property (nonatomic) int radius;
 @property (nonatomic) float angleRotated;
