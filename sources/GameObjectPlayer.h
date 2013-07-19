@@ -35,6 +35,7 @@ typedef enum
 - (void) blink;
 - (void) killYourself;
 
+- (BOOL) isIdle;
 - (BOOL) willHitBomb;
 - (BOOL) spriteInPath: (int) angle
          withWidth:(int) width;

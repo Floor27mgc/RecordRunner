@@ -43,7 +43,7 @@
     // if we do not hit the player now and the player is moving, see if we
     // have a "close call"
     if (![self encounterWithPlayer] &&
-        ([GameLayer sharedGameLayer].player.playerRadialSpeed > 0)) {
+        ![[GameLayer sharedGameLayer].player isIdle]) {
         
         float distance = ccpDistance([GameLayer sharedGameLayer].player.position,
                                      self.position);
@@ -132,13 +132,14 @@
     }
 }
 
-
+// -----------------------------------------------------------------------------------
 //When the player gets the invincible start, all bombs turn colors.
 - (void) makeInvincible
 {
     [self.animationManager runAnimationsForSequenceNamed:@"InvincibleFlip"];
 }
 
+// -----------------------------------------------------------------------------------
 //When the player no longer has the power.
 - (void) makeVincible
 {

@@ -259,6 +259,12 @@
 }
 
 // -----------------------------------------------------------------------------------
+- (BOOL) isIdle
+{
+    return ticksIdle > 5;
+}
+
+// -----------------------------------------------------------------------------------
 //Called by the bomb object when handlecollision finds they ran into each other
 - (void) killYourself
 {
