@@ -20,6 +20,7 @@
 @synthesize gcAchievement;
 @synthesize percentAchieved;
 @synthesize achievedThisRound; //Use this to know if this was achieved in current Life. Used by rankLayer
+@synthesize isRankAchievement;
 
 // -----------------------------------------------------------------------------------
 - (id) initWithCondition:(int)index
@@ -44,6 +45,10 @@
             alreadyLogged = NO;
             achievedThisRound = NO;
         }
+        
+        isRankAchievement = (condIndex == RANK_1 || condIndex == RANK_2 ||
+                             condIndex == RANK_3 || condIndex == RANK_4 ||
+                             condIndex == RANK_5) ? YES : NO;        
     }
     
     return (self);

@@ -31,6 +31,7 @@
 - (void) LogRankGoals;
 - (void) LoadInternalRankAchievements;
 - (void) LoadCurrentRankGoals: (int)useIndex;
+- (void) CheckRankAchievements;
 
 
 @property (nonatomic, strong) NSMutableArray * allAchievements;

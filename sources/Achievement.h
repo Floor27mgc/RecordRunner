@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <GameKit/GameKit.h>
 
+#define RANK_1 16
+#define RANK_2 17
+#define RANK_3 18
+#define RANK_4 19
+#define RANK_5 20
+
 @interface Achievement : NSObject
 
 - (id) initWithCondition:(int) index
@@ -25,6 +31,7 @@
 @property (nonatomic) BOOL previouslyAchieved;
 @property (nonatomic) BOOL achievedThisRound;
 @property (nonatomic) BOOL alreadyLogged;
+@property (nonatomic) BOOL isRankAchievement;
 @property (nonatomic, assign) int condIndex;
 @property (nonatomic, strong) GKAchievement * gcAchievement;
 @property (nonatomic, assign) double percentAchieved;

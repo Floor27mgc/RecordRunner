@@ -50,10 +50,6 @@
         currentRankGoals = [[NSMutableArray alloc] initWithCapacity:
                                (GOALS_PER_RANK * NUM_RANKS)];
         
-        //$$$I set this here just to get my code to work. However Maybe it should be updated at the start of each life.
-        //$$$We also should set currentRank on every update because I only want the rank to change after the player dies.
-        currentRank = 1;
-        
         // load up all the achievement progress from game center
         achievementsDictionary = [[NSMutableDictionary alloc] init];
         
@@ -244,6 +240,8 @@
         return;
     }
     
+    currentRank = indexToLoad;
+    
     // populate this rank's goals
     int startIndex = (indexToLoad - 1) * 3 + 1;
     for (int i = 0; i < GOALS_PER_RANK; ++i) {
@@ -253,6 +251,7 @@
     }
 }
 
+// -----------------------------------------------------------------------------------
 //This gets a 3 memeber array of the achievements that you have to get for this rank.
 //Used by the rank layer
 - (NSMutableArray *) GetAchievementsForRank: (int) myRank
@@ -273,19 +272,20 @@
 }
 
 // -----------------------------------------------------------------------------------
-// Called on every update in GameLayer.  Check the GC achievement status.
+// Called on every update in GameLayer.  Check the GC achievement status except for
+// the rank-based achievements.
 - (BOOL) CheckCurrentAchievements
 {
     if (!achievementsLoaded) {
-        [self LoadInternalRankAchievements]; //$$Should this really be called every update? It redownloads from the achievement file
-        [self LoadInternalAchievements]; //$$same with this one.
+        [self LoadInternalRankAchievements];
+        [self LoadInternalAchievements];
         [self LoadCurrentRankGoals:-1];
         
         achievementsLoaded = YES;
     }
     
     for (Achievement * achievement in currentAchievements) {
-        if ([achievement Achieved]) {
+        if (!achievement.isRankAchievement && [achievement Achieved]) {
             return YES;
         }
     }
@@ -318,6 +318,18 @@
 }
 
 // -----------------------------------------------------------------------------------
+// Check only the rank-based achievements to see if they are achieved.  If any is
+// achieved, log it.
+- (void) CheckRankAchievements
+{
+    for (Achievement * achievement in currentAchievements) {
+        if (achievement.isRankAchievement && [achievement Achieved]) {
+            [achievement Log];
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------------
 - (void) LogRankGoals
 {
     for (Achievement * achievement in currentRankGoals) {
@@ -327,6 +339,7 @@
     }
 }
 
+// -----------------------------------------------------------------------------------
 //Used by the RankLayer. After each round we need to clear out all achievements that were accomplished this round so we know which ones are new.
 - (void) clearAchievedThisRound
 {
