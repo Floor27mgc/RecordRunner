@@ -484,29 +484,68 @@ static GameLayer *sharedGameLayer;
     // update end-of-game statistics
     [[[GameInfoGlobal sharedGameInfoGlobal] statsContainer] writeStats];
     
-    if (gameOverLayer != nil)
-    {
-        CCBAnimationManager* animationManager = gameOverLayer.userObject;
-        NSLog(@"animationManager: %@", animationManager);
-        gameOverLayer.visible = YES;
-        [animationManager runAnimationsForSequenceNamed:@"Pop in"];
-    } else {
-        gameOverLayer =
-        (GameOverLayer *) [CCBReader nodeGraphFromFile:@"GameOverLayerBox.ccbi"];
-        gameOverLayer.position = COMMON_SCREEN_CENTER;
-        
-        //This sets the menu data for the final menu
-        [gameOverLayer setMenuData: [[GameLayer sharedGameLayer].score getScore]
-                         rankLevel:achievementContainer.currentRank];
-        
-        [[GameLayer sharedGameLayer] addChild:gameOverLayer z:11];
+    
+    //This is how I think should be named
+    NSMutableArray * achievementsForMyRank = [achievementContainer GetAchievementsForRank: achievementContainer.currentRank];
+    NSMutableArray * achievementsForMyNextRank = [achievementContainer GetAchievementsForRank: achievementContainer.currentRank+1];
+    
+    //$$Shouldn't this be done already because we log the achievements in real time during the update loop. I am keeping it here because it works. But just strange that we check them again.
+    // check the current goals before resetting the values
+    BOOL logGoals =
+    [[GameLayer sharedGameLayer].achievementContainer CheckRankGoals];
+    if (logGoals) {
+        [[GameLayer sharedGameLayer].achievementContainer LogRankGoals];
     }
+
+    BOOL shouldShowRankLayerBox = ([self wereAnyCurrentRankAchievedThisRound: achievementsForMyRank] ||
+                                   [self wereAllRanksGoalsAchieved: achievementsForMyRank]);
     
     [self pauseSchedulerAndActions];
     
-    [[[GameInfoGlobal sharedGameInfoGlobal] statsContainer] resetGameTimer];
+    //pick the dialog to show
+    if (shouldShowRankLayerBox)
+    {
+        [self showRankLayerBox: achievementsForMyRank
+         nextRanksAchievements:achievementsForMyNextRank
+                   currentRank:achievementContainer.currentRank
+                   promoteRank:[self wereAllRanksGoalsAchieved: achievementsForMyRank]];
+    }
+    else{
+        [self showGameOverLayer];
+    }
     
 }
+
+
+//Used to see if we need to show the rankUp Screen.
+- (BOOL)wereAnyCurrentRankAchievedThisRound: (NSMutableArray *) theAchievements
+{
+    for(Achievement * ach in theAchievements)
+    {
+        if (ach.achievedThisRound)
+        {
+            return YES;
+        }
+    }
+    
+    return NO;
+    
+}
+
+//Used to see if we need to show the rankUp Screen.
+- (BOOL) wereAllRanksGoalsAchieved: (NSMutableArray *) theAchievements
+{
+    for(Achievement * ach in theAchievements)
+    {
+        if (!ach.previouslyAchieved)
+        {
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
 
 // -----------------------------------------------------------------------------------
 - (void) checkBonuses
@@ -696,6 +735,19 @@ static GameLayer *sharedGameLayer;
     }
 }
 
+//Called after pushing "Play" on the GameOverLayer. This does all the stuff to reset the board and get it ready for the next player life
+-(void) startTheNextRound
+{
+    
+    [achievementContainer clearAchievedThisRound];
+    
+    [self resumeSchedulerAndActions];
+    [self cleanUpPlayField];
+    [self.score setScoreValue:0];
+    
+}
+
+
 // -----------------------------------------------------------------------------------
 -(void) cleanUpPlayField
 {
@@ -779,6 +831,74 @@ static GameLayer *sharedGameLayer;
     } else {
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"loop1.caf"];
     }
+}
+
+
+//Called after the game is over, if you did something show this box.
+- (void) showRankLayerBox: (NSMutableArray *) thisRanksAchievements
+    nextRanksAchievements: (NSMutableArray *) nextAchievements
+              currentRank: (int) myRank
+              promoteRank: (BOOL) goNextRank
+{
+    if (rankLayer != nil)
+    {
+        CCBAnimationManager* animationManager = rankLayer.userObject;
+        NSLog(@"animationManager: %@", animationManager);
+        
+        
+        //This sets the menu data for the final menu
+        [rankLayer setMenuData: thisRanksAchievements
+         nextRanksAchievements:nextAchievements currentRank:myRank promoteRank:goNextRank];
+        
+        
+        rankLayer.visible = YES;
+        [animationManager runAnimationsForSequenceNamed:@"Pop in"];
+    } else {
+        rankLayer =
+        (RankLayerBox *) [CCBReader nodeGraphFromFile:@"RankLayerBox.ccbi"];
+        rankLayer.position = COMMON_SCREEN_CENTER;
+        
+        //This sets the menu data for the final menu
+        [rankLayer setMenuData: thisRanksAchievements
+         nextRanksAchievements:nextAchievements currentRank:myRank promoteRank:goNextRank];
+        
+        [[GameLayer sharedGameLayer] addChild:rankLayer z:11];
+    }
+
+}
+
+//Called after the game is over, it shows the dialog. Also called after the RankLayerBox
+- (void) showGameOverLayer
+{
+    if (gameOverLayer != nil)
+    {
+        CCBAnimationManager* animationManager = gameOverLayer.userObject;
+        NSLog(@"animationManager: %@", animationManager);
+        
+        
+        //This sets the menu data for the final menu
+        [gameOverLayer setMenuData: [[GameLayer sharedGameLayer].score getScore]
+                         rankLevel:achievementContainer.currentRank];
+        
+        
+        gameOverLayer.visible = YES;
+        [animationManager runAnimationsForSequenceNamed:@"Pop in"];
+    } else {
+        gameOverLayer =
+        (GameOverLayer *) [CCBReader nodeGraphFromFile:@"GameOverLayerBox.ccbi"];
+        gameOverLayer.position = COMMON_SCREEN_CENTER;
+        
+        //This sets the menu data for the final menu
+        [gameOverLayer setMenuData: [[GameLayer sharedGameLayer].score getScore]
+                         rankLevel:achievementContainer.currentRank];
+        
+        [[GameLayer sharedGameLayer] addChild:gameOverLayer z:11];
+    }
+    
+    
+    [[[GameInfoGlobal sharedGameInfoGlobal] statsContainer] resetGameTimer];
+
+
 }
 
 // -----------------------------------------------------------------------------------

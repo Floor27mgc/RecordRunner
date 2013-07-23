@@ -16,32 +16,155 @@
 @implementation RankLayerBox
 @synthesize isQuitting;
 
+
 @synthesize rankLabel;
 @synthesize goal1;
 @synthesize goal2;
 @synthesize goal3;
-@synthesize gameOverLayer;
+
+@synthesize rankLabel_B;
+@synthesize goal1_B;
+@synthesize goal2_B;
+@synthesize goal3_B;
+
+@synthesize goal1_check;
+@synthesize goal2_check;
+@synthesize goal3_check;
+
 
 // -----------------------------------------------------------------------------------
 //This method is used to set the labels in the Game Over Menu.
 //For example, before G.O. Menu is shown, call this method to set those two values
-- (void) setMenuData: (NSMutableArray *) rankRequirements currentRank: (int) ranklevel;
+
+NSMutableArray * futureGoals;
+
+//GUI ELEMENTS
+NSMutableArray * acomplishedThisRoundCheckmarks;
+NSMutableArray * existingCheckmarks;
+BOOL rankPromotion = NO;
+int currentRankScore;
+int nextRankForThisLayer;
+
+- (void) setMenuData:(NSMutableArray *) thisRanksAchievements
+    nextRanksAchievements: (NSMutableArray *) nextAchievements
+         currentRank: (int) myRank
+        promoteRank: (BOOL) goNextRank
 {
+    currentRankScore = myRank;
+    [GameInfoGlobal sharedGameInfoGlobal].lifetimeRoundsPlayed++;
+    [[GameInfoGlobal sharedGameInfoGlobal] logLifeTimeAchievements];
     
-    NSLog(@"Rank label: %@", self.rankLabel.string);
+    // load the goals
+    NSMutableArray * goals = thisRanksAchievements;
+    rankPromotion = goNextRank;
+    nextRankForThisLayer = rankPromotion + 1;
+    futureGoals = nextAchievements;
+    
+    acomplishedThisRoundCheckmarks = [[NSMutableArray alloc] initWithCapacity:3];
+    
+    [self.goal1 setDimensions:CGSizeMake(220,65)];
+    [self.goal1 setPosition:CGPointMake(160, 183)];
+    
+    [self.goal2 setDimensions:CGSizeMake(220,65)];
+    [self.goal2 setPosition:CGPointMake(160, 120)];
+    
+    [self.goal3 setDimensions:CGSizeMake(220,65)];
+    [self.goal3 setPosition:CGPointMake(160, 60)];
+    
+    if ([goals count] > 0) {
+        
+        NSString * goalState = @"-";
+        
+        Achievement * goal = [goals objectAtIndex:0];
+        if (goal) {
+            
+            goalState = @"1 ";
+            
+            if ([goal achievedThisRound])
+            {
+                [acomplishedThisRoundCheckmarks addObject:self.goal1_check];
+            }
+            else if ([goal previouslyAchieved] && ![goal achievedThisRound])
+            {
+                goalState = [goalState stringByAppendingString:@"ACHIEVED - "];
+                [existingCheckmarks addObject:self.goal1_check];
+            }
+            
+            
+            goalState = [goalState stringByAppendingString: [NSString stringWithFormat:@"%@",
+                                                             goal.achievementCondition]];
+            
+            [self.goal1 setString:goalState];
+        }
+        
+        goal = [goals objectAtIndex:1];
+        if (goal) {
+            
+            goalState = @"2 ";
+            
+            if ([goal achievedThisRound])
+            {
+                [acomplishedThisRoundCheckmarks addObject:self.goal2_check];
+            }
+            else if ([goal previouslyAchieved] && ![goal achievedThisRound])
+            {
+                goalState = [goalState stringByAppendingString:@"ACHIEVED - "];
+                [existingCheckmarks addObject:self.goal2_check];
+            }
+            goalState = [goalState stringByAppendingString: [NSString stringWithFormat:@"%@",
+                                                             goal.achievementCondition]];
+            
+            [self.goal2 setString:goalState];
+            
+        }
+        
+        goal = [goals objectAtIndex:2];
+        if (goal) {
+            
+            
+            goalState = @"3 ";
+            
+            //Achieved this time
+            if ([goal achievedThisRound])
+            {
+                [acomplishedThisRoundCheckmarks addObject:self.goal3_check];
+            }//Achieved but not this round
+            else if ([goal previouslyAchieved] && ![goal achievedThisRound])
+            {
+                goalState = [goalState stringByAppendingString:@"ACHIEVED - "];
+                [existingCheckmarks addObject:self.goal3_check];
+            }
+            goalState =  [goalState stringByAppendingString: [NSString stringWithFormat:@"%@",
+                                                              goal.achievementCondition]];
+            
+            [self.goal3 setString:goalState];
+            
+        }
+    }
+    
     [self.rankLabel setString:[NSString stringWithFormat:@"%d",
-                               ranklevel]];
-    
-    NSLog(@"Requirements: %@", rankRequirements);
+                               currentRankScore]];
+        
 }
+
 
 // -----------------------------------------------------------------------------------
 - (void) pressedYES:(id) sender
 {
     self.isQuitting = YES;
     
-    CCBAnimationManager* animationManager = self.userObject;
-    [animationManager runAnimationsForSequenceNamed:@"Pop out"];
+    //The card looks different after a promotion so check for it
+    if (rankPromotion)
+    {        
+            
+            CCBAnimationManager* animationManager = self.userObject;
+            [animationManager runAnimationsForSequenceNamed:@"PopOutRanked"];
+            
+        } //end if rank promotion
+        else{
+            CCBAnimationManager* animationManager = self.userObject;
+            [animationManager runAnimationsForSequenceNamed:@"Pop out"];
+        }
     
 }
 
@@ -58,30 +181,118 @@
 // -----------------------------------------------------------------------------------
 - (void) completedAnimationSequenceNamed:(NSString *)name
 {
-    NSLog(@"RankLayerBox %@",name);
+    NSLog(@"RankLayerBox Animation Running %@",name);
     
-    if ([name compare:@"Pop out"] == NSOrderedSame) { 
+    if ([name compare:@"Pop out"] == NSOrderedSame ||
+        [name compare:@"PopOutRanked"] == NSOrderedSame) {
+        [[GameLayer sharedGameLayer] showGameOverLayer];
+    }
+    else if ([name compare:@"Pop in"] == NSOrderedSame) {
         
-        if (gameOverLayer != nil)
+        //Pop the first animation off, then show the next one, then the next
+        if ([existingCheckmarks count] > 0)
         {
-            CCBAnimationManager* animationManager = gameOverLayer.userObject;
-            NSLog(@"animationManager: %@", animationManager);
-            gameOverLayer.visible = YES;
-            [animationManager runAnimationsForSequenceNamed:@"Pop in"];
+            [[existingCheckmarks objectAtIndex: 0] showNewCheck];
+            
+            [existingCheckmarks removeObjectAtIndex: 0];
         }
-        else
+        
+        //Pop the first animation off, then show the next one, then the next
+        if ([acomplishedThisRoundCheckmarks count] > 0)
         {
-            gameOverLayer = (GameOverLayer *) [CCBReader nodeGraphFromFile:@"GameOverLayerBox.ccbi"];
-            gameOverLayer.position = COMMON_SCREEN_CENTER;
+            [[acomplishedThisRoundCheckmarks objectAtIndex: 0] showNewCheck];
             
-            //This sets the menu data for the final menu
-            [gameOverLayer setMenuData:
-             [[GameLayer sharedGameLayer].score getScore]
-                             rankLevel: [GameLayer sharedGameLayer].achievementContainer.currentRank];
-            
-            [[GameLayer sharedGameLayer] addChild:gameOverLayer z:11];
+            [acomplishedThisRoundCheckmarks removeObjectAtIndex: 0];
         }
     }
+    
+}
+
+
+//This is the list of checkmarks that already exist
+//Just do a little animation sequence for them.
+- (void)finishExistingCheckMarks
+{
+    //Pop the first animation off, then show the next one, then the next
+    if ([existingCheckmarks count] > 0)
+    {
+        [[existingCheckmarks objectAtIndex: 0] showExistingCheck];
+        
+        [existingCheckmarks removeObjectAtIndex: 0];
+    }
+    else if ([existingCheckmarks count] <= 0 && [acomplishedThisRoundCheckmarks count] > 0)
+    {
+        [[acomplishedThisRoundCheckmarks objectAtIndex: 0] showNewCheck];
+        
+        [acomplishedThisRoundCheckmarks removeObjectAtIndex: 0];
+    }
+    
+}
+
+//After the existing checkmark animations complete, we have to call the achievements ones that are new
+//Each Checkmark calls this to coninue going through the rest of the checkmarks.
+//Called in GameObjectCheck.m because after all the checkmarks animations have run, run this
+- (void)finishNewThisRoundCheckMarks
+{
+        //Pop the first animation off, then show the next one, then the next
+        if ([acomplishedThisRoundCheckmarks count] > 0)
+        {
+            [[acomplishedThisRoundCheckmarks objectAtIndex: 0] showNewCheck];
+            
+            [acomplishedThisRoundCheckmarks removeObjectAtIndex: 0];
+        }//Setup the RANK PROMOTION ANIMATION
+        else if ([acomplishedThisRoundCheckmarks count] <= 0 && rankPromotion)
+        {
+            CCBAnimationManager* animationManager = self.userObject;
+            
+            
+            [self.goal1_B setDimensions:CGSizeMake(220,65)];
+            [self.goal1_B setPosition:CGPointMake(160, 183)];
+            
+            [self.goal2_B setDimensions:CGSizeMake(220,65)];
+            [self.goal2_B setPosition:CGPointMake(160, 120)];
+            
+            [self.goal3_B setDimensions:CGSizeMake(220,65)];
+            [self.goal3_B setPosition:CGPointMake(160, 60)];
+            
+            [[GameLayer sharedGameLayer].achievementContainer LoadCurrentRankGoals: currentRankScore+1];
+            [self.rankLabel_B setString:[NSString stringWithFormat:@"%d", currentRankScore + 1]];
+            
+            
+            
+            
+            if ([futureGoals count] > 0) {
+                
+                Achievement * goal = [futureGoals objectAtIndex:0];
+                if (goal) {
+                    
+                    [self.goal1_B setString:[NSString stringWithFormat:@"%@",
+                                             goal.achievementCondition]];
+                }
+                
+                goal = [futureGoals objectAtIndex:1];
+                if (goal) {
+                    
+                    [self.goal2_B setString:[NSString stringWithFormat:@"%@",
+                                             goal.achievementCondition]];
+                    
+                }
+                
+                goal = [futureGoals objectAtIndex:2];
+                if (goal) {
+                    
+                    [self.goal3_B setString:[NSString stringWithFormat:@"%@",
+                                             goal.achievementCondition]];
+                    
+                }
+            }//End if future goals
+
+            
+                
+            [animationManager runAnimationsForSequenceNamed:@"RankUp"];
+                
+       }
+
 }
 
 @end

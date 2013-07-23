@@ -19,6 +19,7 @@
 @synthesize alreadyLogged;
 @synthesize gcAchievement;
 @synthesize percentAchieved;
+@synthesize achievedThisRound; //Use this to know if this was achieved in current Life. Used by rankLayer
 
 // -----------------------------------------------------------------------------------
 - (id) initWithCondition:(int)index
@@ -37,9 +38,11 @@
         if (gcAchievement.percentComplete == 100.0) {
             previouslyAchieved = YES;
             alreadyLogged = YES;
+            achievedThisRound = NO;
         } else {
             previouslyAchieved = NO;
             alreadyLogged = NO;
+            achievedThisRound = NO;
         }
     }
     
@@ -61,12 +64,13 @@
             // Go 10 Laps in a single life.
         case 1:
             achieved = ([GameInfoGlobal sharedGameInfoGlobal].numRotationsThisLife
-                        >= 10);
+                        >= 3); //$$TODOSimplified for testing, make this 10 later
             break;
             
             // Collect 50 coins in a single life.
         case 2:
-            achieved = ([GameInfoGlobal sharedGameInfoGlobal].numCoinsThisLife >= 50);
+            achieved = ([GameInfoGlobal sharedGameInfoGlobal].numCoinsThisLife >= 3);
+            //$$TODOSimplified for testing, make this 50 later
             break;
             
             // Skim past 3 “X’s” in a single life.
@@ -365,6 +369,7 @@
         gcAchievement.percentComplete = 100.0;
         
         previouslyAchieved = YES;
+        achievedThisRound = YES;
         
     // log partial achievement, if applicable
     } else if (partialAchievement &&

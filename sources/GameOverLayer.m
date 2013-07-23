@@ -49,12 +49,12 @@
         
         [self turnOffButtons];
         
+        
         CCBAnimationManager* animationManager = self.userObject;
         
-        [[GameLayer sharedGameLayer] resumeSchedulerAndActions];
+        
         [animationManager runAnimationsForSequenceNamed:@"Pop out"];
-        [[GameLayer sharedGameLayer] cleanUpPlayField];
-        [[GameLayer sharedGameLayer].score setScoreValue:0];
+        
     }
 }
 
@@ -69,12 +69,7 @@
     [GameInfoGlobal sharedGameInfoGlobal].lifetimeRoundsPlayed++;
     [[GameInfoGlobal sharedGameInfoGlobal] logLifeTimeAchievements];
     
-    // check the current goals before resetting the values
-    BOOL logGoals =
-        [[GameLayer sharedGameLayer].achievementContainer CheckRankGoals];
-    if (logGoals) {
-        [[GameLayer sharedGameLayer].achievementContainer LogRankGoals];
-    }
+    
     
     // reset the per-life statistics
     [[GameInfoGlobal sharedGameInfoGlobal] resetPerLifeStatistics];
@@ -87,43 +82,7 @@
     
     [self.rankLabel setString:[NSString stringWithFormat:@"%d",
                                      rankScore]];
-        
-    //70 is good but not perfect
-    //float xPosition = [self.goal1 position].x;
-    //float textHeight = [self.goal1 dimensions].height;
     
-    [self.goal1 setDimensions:CGSizeMake(220,65)];
-    [self.goal1 setPosition:CGPointMake(160, 183)]; 
-    
-    [self.goal2 setDimensions:CGSizeMake(220,65)];
-    [self.goal2 setPosition:CGPointMake(160, 120)]; 
-    
-    [self.goal3 setDimensions:CGSizeMake(220,65)];
-    [self.goal3 setPosition:CGPointMake(160, 60)]; 
-
-    // load the goals
-    NSMutableArray * goals =
-        [GameLayer sharedGameLayer].achievementContainer.currentRankGoals;
-
-    if ([goals count] > 0) {
-        
-        Achievement * goal = [goals objectAtIndex:0];
-        if (goal) {
-            [self.goal1 setString:[NSString stringWithFormat:@"%@",
-                                   goal.achievementCondition]];
-        }
-        
-        goal = [goals objectAtIndex:1];
-        if (goal) {
-            [self.goal2 setString:[NSString stringWithFormat:@"%@",                               goal.achievementCondition]];
-        }
-        
-        goal = [goals objectAtIndex:2];
-        if (goal) {
-            [self.goal3 setString:[NSString stringWithFormat:@"%@",
-                                   goal.achievementCondition]];
-        }
-    }
     
     GKScore *myScoreValue = [[GKScore alloc] initWithCategory:@"RotatoLeaderBoard"];
     myScoreValue.value = myFinalScore;
@@ -188,8 +147,6 @@
 // -----------------------------------------------------------------------------------
 - (void) completedAnimationSequenceNamed:(NSString *)name
 {
-    NSLog(@"GameOverLayer %@",name);
-    
     if ([name compare:@"Pop out"] == NSOrderedSame) {
         
         //If the player pressed quit then you need to go to the main menu
@@ -205,6 +162,9 @@
         self.visible = NO;
         self.yesButtonEnabled = true;
         self.homeButtonEnabled = true;
+        
+        //Game is over, start the next round
+        [[GameLayer sharedGameLayer] startTheNextRound];
     }
     else if ([name compare:@"Pop in"] == NSOrderedSame)
     {

@@ -50,6 +50,10 @@
         currentRankGoals = [[NSMutableArray alloc] initWithCapacity:
                                (GOALS_PER_RANK * NUM_RANKS)];
         
+        //$$$I set this here just to get my code to work. However Maybe it should be updated at the start of each life.
+        //$$$We also should set currentRank on every update because I only want the rank to change after the player dies.
+        currentRank = 1;
+        
         // load up all the achievement progress from game center
         achievementsDictionary = [[NSMutableDictionary alloc] init];
         
@@ -249,13 +253,32 @@
     }
 }
 
+//This gets a 3 memeber array of the achievements that you have to get for this rank.
+//Used by the rank layer
+- (NSMutableArray *) GetAchievementsForRank: (int) myRank
+{
+    NSMutableArray * tempRankAch = [[NSMutableArray alloc] initWithCapacity:GOALS_PER_RANK];
+    int lastIndex = myRank * GOALS_PER_RANK;
+    int firstIndex = lastIndex - (GOALS_PER_RANK -1);
+    
+    
+    for (int i = 0; i < GOALS_PER_RANK; i++)
+    {
+        Achievement * curAch = [self GetAchievementByIdentifier:firstIndex];
+        ++firstIndex;
+        [tempRankAch addObject:curAch];
+    }
+    
+    return tempRankAch;
+}
+
 // -----------------------------------------------------------------------------------
 // Called on every update in GameLayer.  Check the GC achievement status.
 - (BOOL) CheckCurrentAchievements
 {
     if (!achievementsLoaded) {
-        [self LoadInternalRankAchievements];
-        [self LoadInternalAchievements];
+        [self LoadInternalRankAchievements]; //$$Should this really be called every update? It redownloads from the achievement file
+        [self LoadInternalAchievements]; //$$same with this one.
         [self LoadCurrentRankGoals:-1];
         
         achievementsLoaded = YES;
@@ -304,6 +327,14 @@
     }
 }
 
+//Used by the RankLayer. After each round we need to clear out all achievements that were accomplished this round so we know which ones are new.
+- (void) clearAchievedThisRound
+{
+    for (Achievement * achievement in allAchievements) {
+        achievement.achievedThisRound = NO;
+    }
+    
+}
 // -----------------------------------------------------------------------------------
 - (void) ResetAllAchievements
 {
@@ -318,6 +349,7 @@
          }
     }];
 }
+
 
 
 @end

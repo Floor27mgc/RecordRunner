@@ -18,6 +18,7 @@
 - (Achievement *) GetAchievementByIdentifier: (int) identifier;
 
 - (void) ResetAllAchievements;
+- (void) clearAchievedThisRound; //toggles all the wasAccomplishedThis round
 
 // GC achievement methods
 - (BOOL) CheckCurrentAchievements;
@@ -25,10 +26,12 @@
 - (void) LoadInternalAchievements;
 
 // rank goals methods
+- (NSMutableArray *) GetAchievementsForRank: (int) myRank;
 - (BOOL) CheckRankGoals;
 - (void) LogRankGoals;
 - (void) LoadInternalRankAchievements;
 - (void) LoadCurrentRankGoals: (int)useIndex;
+
 
 @property (nonatomic, strong) NSMutableArray * allAchievements;
 @property (nonatomic, strong) NSMutableArray * currentAchievements;

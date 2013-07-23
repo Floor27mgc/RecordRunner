@@ -61,6 +61,28 @@
     }
 }
 
+
+
+// -----------------------------------------------------------------------------------
+- (void) pressedReset: (id)sender
+{
+        // Clear all locally saved achievement objects.
+    
+        ///$$$$ TODO run ResetAllAchievements from achievementContainer
+    
+        // Clear all progress saved on Game Center
+        [GKAchievement resetAchievementsWithCompletionHandler:^(NSError *error)
+         {
+             if (error != nil)
+             {
+                 NSLog (@"Error clearing achievements");
+             }
+         
+            }];
+
+}
+
+
 // -----------------------------------------------------------------------------------
 - (void)achievementViewControllerDidFinish:(GKGameCenterViewController *)gcViewController
 {

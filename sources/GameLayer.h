@@ -93,6 +93,8 @@ typedef enum {
 -(void) activateInvincible;
 -(void) deactivateInvincible;
 -(void) checkBonuses;
+-(void) showGameOverLayer;
+-(void) startTheNextRound;
 
 @property (nonatomic, strong) GameObjectPlayer *player;
 @property (nonatomic, strong) Queue * coinFreePool;

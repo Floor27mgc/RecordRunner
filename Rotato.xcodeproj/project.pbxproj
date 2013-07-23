@@ -549,6 +549,7 @@
 		DC0C4D62154AB59800B4B727 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = DC0C4C80154AB59800B4B727 /* vec4.c */; };
 		E5130745178D17F3000F1EE5 /* gui_circle_wedge.png in Resources */ = {isa = PBXBuildFile; fileRef = E5130743178D17F3000F1EE5 /* gui_circle_wedge.png */; };
 		E5130746178D17F3000F1EE5 /* gui_circle_wedge-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E5130744178D17F3000F1EE5 /* gui_circle_wedge-hd.png */; };
+		E530B682179E42D400A3A7FA /* GameOverLayerBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E530B681179E42D400A3A7FA /* GameOverLayerBox.ccbi */; };
 		E54C884117766B8200D546F2 /* parts_record_inner.png in Resources */ = {isa = PBXBuildFile; fileRef = E54C883F17766B8200D546F2 /* parts_record_inner.png */; };
 		E54C884217766B8200D546F2 /* parts_record_inner-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E54C884017766B8200D546F2 /* parts_record_inner-hd.png */; };
 		E54E158B172C7A2A0022DACE /* bannerRed.png in Resources */ = {isa = PBXBuildFile; fileRef = E54E1589172C7A2A0022DACE /* bannerRed.png */; };
@@ -665,6 +666,10 @@
 		E5F1506B1788E4D6006923DD /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F150691788E4D6006923DD /* checkmark.png */; };
 		E5F1506C1788E4D6006923DD /* checkmark-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F1506A1788E4D6006923DD /* checkmark-hd.png */; };
 		E5F1506F1789D61B006923DD /* RankLayerBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F1506E1789D61A006923DD /* RankLayerBox.m */; };
+		E5F2F243179C127A00EEE92A /* GameObjectCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F2F242179C127900EEE92A /* GameObjectCheck.m */; };
+		E5F2F245179C1B9B00EEE92A /* GameObjectCheck.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5F2F244179C1B9B00EEE92A /* GameObjectCheck.ccbi */; };
+		E5F2F248179C8F5500EEE92A /* DialogCardHalf.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F2F246179C8F5500EEE92A /* DialogCardHalf.png */; };
+		E5F2F249179C8F5500EEE92A /* DialogCardHalf-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F2F247179C8F5500EEE92A /* DialogCardHalf-hd.png */; };
 		E5F47E131793547F00504A9A /* MainMenuHelpBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F47E121793547F00504A9A /* MainMenuHelpBox.m */; };
 		E5F47E161793549E00504A9A /* MainMenuRecommendBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F47E151793549E00504A9A /* MainMenuRecommendBox.m */; };
 		E5F47E19179354B900504A9A /* MainMenuScoreBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F47E18179354B900504A9A /* MainMenuScoreBox.m */; };
@@ -682,7 +687,6 @@
 		E5F47E6E17935F9500504A9A /* gameObjectCoin.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5F47E5817935F9500504A9A /* gameObjectCoin.ccbi */; };
 		E5F47E6F17935F9500504A9A /* gameObjectPlayer.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5F47E5917935F9500504A9A /* gameObjectPlayer.ccbi */; };
 		E5F47E7017935F9500504A9A /* GameObjectShield.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5F47E5A17935F9500504A9A /* GameObjectShield.ccbi */; };
-		E5F47E7117935F9500504A9A /* GameOverLayerBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5F47E5B17935F9500504A9A /* GameOverLayerBox.ccbi */; };
 		E5F47E7217935F9500504A9A /* MainGameLayer.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5F47E5C17935F9500504A9A /* MainGameLayer.ccbi */; };
 		E5F47E7317935F9500504A9A /* MainGameScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5F47E5D17935F9500504A9A /* MainGameScene.ccbi */; };
 		E5F47E7417935F9500504A9A /* MainMenuBuyBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5F47E5E17935F9500504A9A /* MainMenuBuyBox.ccbi */; };
@@ -1284,6 +1288,7 @@
 		DC0C4C83154AB59800B4B727 /* LICENSE_Kazmath.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_Kazmath.txt; sourceTree = "<group>"; };
 		E5130743178D17F3000F1EE5 /* gui_circle_wedge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gui_circle_wedge.png; path = Resources/Graphics/gui_circle_wedge.png; sourceTree = SOURCE_ROOT; };
 		E5130744178D17F3000F1EE5 /* gui_circle_wedge-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gui_circle_wedge-hd.png"; path = "Resources/Graphics/gui_circle_wedge-hd.png"; sourceTree = SOURCE_ROOT; };
+		E530B681179E42D400A3A7FA /* GameOverLayerBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameOverLayerBox.ccbi; path = CocosBuilder/CCBI_files/GameOverLayerBox.ccbi; sourceTree = SOURCE_ROOT; };
 		E54C883F17766B8200D546F2 /* parts_record_inner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_record_inner.png; path = Resources/Graphics/parts_record_inner.png; sourceTree = SOURCE_ROOT; };
 		E54C884017766B8200D546F2 /* parts_record_inner-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_record_inner-hd.png"; path = "Resources/Graphics/parts_record_inner-hd.png"; sourceTree = SOURCE_ROOT; };
 		E54E1589172C7A2A0022DACE /* bannerRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bannerRed.png; path = Resources/Graphics/bannerRed.png; sourceTree = SOURCE_ROOT; };
@@ -1405,6 +1410,11 @@
 		E5F1506A1788E4D6006923DD /* checkmark-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkmark-hd.png"; path = "Resources/Graphics/checkmark-hd.png"; sourceTree = SOURCE_ROOT; };
 		E5F1506D1789D61A006923DD /* RankLayerBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RankLayerBox.h; path = sources/RankLayerBox.h; sourceTree = SOURCE_ROOT; };
 		E5F1506E1789D61A006923DD /* RankLayerBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RankLayerBox.m; path = sources/RankLayerBox.m; sourceTree = SOURCE_ROOT; };
+		E5F2F241179C127900EEE92A /* GameObjectCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjectCheck.h; path = sources/GameObjectCheck.h; sourceTree = SOURCE_ROOT; };
+		E5F2F242179C127900EEE92A /* GameObjectCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectCheck.m; path = sources/GameObjectCheck.m; sourceTree = SOURCE_ROOT; };
+		E5F2F244179C1B9B00EEE92A /* GameObjectCheck.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameObjectCheck.ccbi; path = CocosBuilder/CCBI_files/GameObjectCheck.ccbi; sourceTree = SOURCE_ROOT; };
+		E5F2F246179C8F5500EEE92A /* DialogCardHalf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DialogCardHalf.png; path = Resources/Graphics/DialogCardHalf.png; sourceTree = SOURCE_ROOT; };
+		E5F2F247179C8F5500EEE92A /* DialogCardHalf-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DialogCardHalf-hd.png"; path = "Resources/Graphics/DialogCardHalf-hd.png"; sourceTree = SOURCE_ROOT; };
 		E5F47E111793547F00504A9A /* MainMenuHelpBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuHelpBox.h; path = ../sources/MainMenuHelpBox.h; sourceTree = "<group>"; };
 		E5F47E121793547F00504A9A /* MainMenuHelpBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuHelpBox.m; path = ../sources/MainMenuHelpBox.m; sourceTree = "<group>"; };
 		E5F47E141793549E00504A9A /* MainMenuRecommendBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuRecommendBox.h; path = ../sources/MainMenuRecommendBox.h; sourceTree = "<group>"; };
@@ -1429,7 +1439,6 @@
 		E5F47E5817935F9500504A9A /* gameObjectCoin.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = gameObjectCoin.ccbi; path = CocosBuilder/CCBI_files/gameObjectCoin.ccbi; sourceTree = SOURCE_ROOT; };
 		E5F47E5917935F9500504A9A /* gameObjectPlayer.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = gameObjectPlayer.ccbi; path = CocosBuilder/CCBI_files/gameObjectPlayer.ccbi; sourceTree = SOURCE_ROOT; };
 		E5F47E5A17935F9500504A9A /* GameObjectShield.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameObjectShield.ccbi; path = CocosBuilder/CCBI_files/GameObjectShield.ccbi; sourceTree = SOURCE_ROOT; };
-		E5F47E5B17935F9500504A9A /* GameOverLayerBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameOverLayerBox.ccbi; path = CocosBuilder/CCBI_files/GameOverLayerBox.ccbi; sourceTree = SOURCE_ROOT; };
 		E5F47E5C17935F9500504A9A /* MainGameLayer.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainGameLayer.ccbi; path = CocosBuilder/CCBI_files/MainGameLayer.ccbi; sourceTree = SOURCE_ROOT; };
 		E5F47E5D17935F9500504A9A /* MainGameScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainGameScene.ccbi; path = CocosBuilder/CCBI_files/MainGameScene.ccbi; sourceTree = SOURCE_ROOT; };
 		E5F47E5E17935F9500504A9A /* MainMenuBuyBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainMenuBuyBox.ccbi; path = CocosBuilder/CCBI_files/MainMenuBuyBox.ccbi; sourceTree = SOURCE_ROOT; };
@@ -1630,6 +1639,8 @@
 				E5F1506A1788E4D6006923DD /* checkmark-hd.png */,
 				083B08FC170AB0EC00EF0DB0 /* DialogCard-hd.png */,
 				083B08FD170AB0EC00EF0DB0 /* DialogCard.png */,
+				E5F2F246179C8F5500EEE92A /* DialogCardHalf.png */,
+				E5F2F247179C8F5500EEE92A /* DialogCardHalf-hd.png */,
 				083B08FE170AB0EC00EF0DB0 /* downButton-hd.png */,
 				083B08FF170AB0EC00EF0DB0 /* downButton.png */,
 				E5825415178C4C170092259A /* gui_rings_inner.png */,
@@ -1739,6 +1750,8 @@
 				0803EECE16E4212600CC932B /* GameModeMenu.m */,
 				0840D59E163F4BF5003D5FE6 /* GameObjectBase.h */,
 				0840D59F163F4BF5003D5FE6 /* GameObjectBase.m */,
+				E5F2F241179C127900EEE92A /* GameObjectCheck.h */,
+				E5F2F242179C127900EEE92A /* GameObjectCheck.m */,
 				082018301678479B000A3F8D /* GameObjectInjector.h */,
 				082018311678479B000A3F8D /* GameObjectInjector.m */,
 				0840D5A1163F4C2A003D5FE6 /* GameObjectPlayer.h */,
@@ -2162,15 +2175,16 @@
 			isa = PBXGroup;
 			children = (
 				E5F47E5217935F9500504A9A /* DebugMenuNode.ccbi */,
+				E5F2F244179C1B9B00EEE92A /* GameObjectCheck.ccbi */,
 				E5F47E5317935F9500504A9A /* DEMO_ACHIEVEMENTS.ccbi */,
 				E5F47E5417935F9500504A9A /* DEMO_DEATH_RANKUP.ccbi */,
 				E5F47E5517935F9500504A9A /* DEMO_DEATH.ccbi */,
+				E530B681179E42D400A3A7FA /* GameOverLayerBox.ccbi */,
 				E5F47E5617935F9500504A9A /* GameModeMenu.ccbi */,
 				E5F47E5717935F9500504A9A /* gameObjectBomb.ccbi */,
 				E5F47E5817935F9500504A9A /* gameObjectCoin.ccbi */,
 				E5F47E5917935F9500504A9A /* gameObjectPlayer.ccbi */,
 				E5F47E5A17935F9500504A9A /* GameObjectShield.ccbi */,
-				E5F47E5B17935F9500504A9A /* GameOverLayerBox.ccbi */,
 				E5F47E5C17935F9500504A9A /* MainGameLayer.ccbi */,
 				E5F47E5D17935F9500504A9A /* MainGameScene.ccbi */,
 				E5F47E5E17935F9500504A9A /* MainMenuBuyBox.ccbi */,
@@ -3095,7 +3109,6 @@
 				E5F47E6E17935F9500504A9A /* gameObjectCoin.ccbi in Resources */,
 				E5F47E6F17935F9500504A9A /* gameObjectPlayer.ccbi in Resources */,
 				E5F47E7017935F9500504A9A /* GameObjectShield.ccbi in Resources */,
-				E5F47E7117935F9500504A9A /* GameOverLayerBox.ccbi in Resources */,
 				E5F47E7217935F9500504A9A /* MainGameLayer.ccbi in Resources */,
 				E5F47E7317935F9500504A9A /* MainGameScene.ccbi in Resources */,
 				E5F47E7417935F9500504A9A /* MainMenuBuyBox.ccbi in Resources */,
@@ -3160,6 +3173,10 @@
 				E55D0C0517996CE300443724 /* player_scratch_left.caf in Resources */,
 				E55D0C0617996CE300443724 /* player_scratch_right.caf in Resources */,
 				E55D0C0717996CE300443724 /* inv_bomb_pickup.caf in Resources */,
+				E5F2F245179C1B9B00EEE92A /* GameObjectCheck.ccbi in Resources */,
+				E5F2F248179C8F5500EEE92A /* DialogCardHalf.png in Resources */,
+				E5F2F249179C8F5500EEE92A /* DialogCardHalf-hd.png in Resources */,
+				E530B682179E42D400A3A7FA /* GameOverLayerBox.ccbi in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3209,6 +3226,7 @@
 				E5F47E1F179354D200504A9A /* MenuBox.m in Sources */,
 				E5F47E22179354E700504A9A /* Achievement.m in Sources */,
 				E5F47E271793550D00504A9A /* AchievementContainer.m in Sources */,
+				E5F2F243179C127A00EEE92A /* GameObjectCheck.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3414,8 +3432,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3434,8 +3452,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Rotato;
-				PROVISIONING_PROFILE = "E0279E6A-ED64-4F50-81C8-661C89123479";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E0279E6A-ED64-4F50-81C8-661C89123479";
+				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DCB72B6-CF7B-441A-811C-871D021488BB";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -3446,8 +3464,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2d-2.x-ARC-iOS/Prefix.pch";
@@ -3465,8 +3483,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Rotato;
-				PROVISIONING_PROFILE = "E0279E6A-ED64-4F50-81C8-661C89123479";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E0279E6A-ED64-4F50-81C8-661C89123479";
+				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DCB72B6-CF7B-441A-811C-871D021488BB";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
