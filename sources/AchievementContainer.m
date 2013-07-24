@@ -298,7 +298,7 @@
 {
     // log current normal achievements
     for (Achievement * achievement in currentAchievements) {
-        if ([achievement Achieved]) {
+        if (!achievement.isRankAchievement && [achievement Achieved]) {
             [achievement Log];
         }
     }
