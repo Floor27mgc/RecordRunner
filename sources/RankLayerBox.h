@@ -17,6 +17,7 @@
 
 - (void) setMenuData:(NSMutableArray *) thisRanksAchievements
 nextRanksAchievements: (NSMutableArray *) nextAchievements
+     whatWasAchieved: (NSMutableArray *) thisWasAchieved
          currentRank: (int) myRank
          promoteRank: (BOOL) goNextRank;
 

@@ -47,6 +47,7 @@ int nextRankForThisLayer;
 
 - (void) setMenuData:(NSMutableArray *) thisRanksAchievements
     nextRanksAchievements: (NSMutableArray *) nextAchievements
+     whatWasAchieved: (NSMutableArray *) thisWasAchieved
          currentRank: (int) myRank
         promoteRank: (BOOL) goNextRank
 {
@@ -80,11 +81,11 @@ int nextRankForThisLayer;
             
             goalState = @"1 ";
             
-            if ([goal achievedThisRound])
+            if ([self wasThisAchieved:goal])
             {
                 [acomplishedThisRoundCheckmarks addObject:self.goal1_check];
             }
-            else if ([goal previouslyAchieved] && ![goal achievedThisRound])
+            else if ([goal previouslyAchieved] && ![self wasThisAchieved:goal])
             {
                 goalState = [goalState stringByAppendingString:@"ACHIEVED - "];
                 [existingCheckmarks addObject:self.goal1_check];
@@ -102,11 +103,11 @@ int nextRankForThisLayer;
             
             goalState = @"2 ";
             
-            if ([goal achievedThisRound])
+            if ([self wasThisAchieved:goal])
             {
                 [acomplishedThisRoundCheckmarks addObject:self.goal2_check];
             }
-            else if ([goal previouslyAchieved] && ![goal achievedThisRound])
+            else if ([goal previouslyAchieved] && ![self wasThisAchieved:goal])
             {
                 goalState = [goalState stringByAppendingString:@"ACHIEVED - "];
                 [existingCheckmarks addObject:self.goal2_check];
@@ -125,11 +126,11 @@ int nextRankForThisLayer;
             goalState = @"3 ";
             
             //Achieved this time
-            if ([goal achievedThisRound])
+            if ([self wasThisAchieved:goal])
             {
                 [acomplishedThisRoundCheckmarks addObject:self.goal3_check];
             }//Achieved but not this round
-            else if ([goal previouslyAchieved] && ![goal achievedThisRound])
+            else if ([goal previouslyAchieved] && ![self wasThisAchieved:goal])
             {
                 goalState = [goalState stringByAppendingString:@"ACHIEVED - "];
                 [existingCheckmarks addObject:self.goal3_check];
@@ -166,6 +167,23 @@ int nextRankForThisLayer;
             [animationManager runAnimationsForSequenceNamed:@"Pop out"];
         }
     
+}
+
+// -----------------------------------------------------------------------------------
+// Used to see if an achivement was reached this round so we can do the fancy new animation
+- (BOOL) wasThisAchieved: (Achievement *) thisAchievement
+{
+    NSMutableArray * achieved = [GameInfoGlobal sharedGameInfoGlobal].achievedThisRound;
+    
+    for(Achievement * ach in achieved)
+    {
+        if (ach.condIndex == thisAchievement.condIndex)
+        {
+            return YES;
+        }
+    }
+    
+    return NO;
 }
 
 // -----------------------------------------------------------------------------------

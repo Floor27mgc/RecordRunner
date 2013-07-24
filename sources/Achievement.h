@@ -29,9 +29,9 @@
 @property (nonatomic, strong) NSString * achievementCondition;
 @property (nonatomic, strong) NSString * achievementDescription;
 @property (nonatomic) BOOL previouslyAchieved;
-@property (nonatomic) BOOL achievedThisRound;
 @property (nonatomic) BOOL alreadyLogged;
 @property (nonatomic) BOOL isRankAchievement;
+@property (nonatomic) BOOL isRankSubAchievement;
 @property (nonatomic, assign) int condIndex;
 @property (nonatomic, strong) GKAchievement * gcAchievement;
 @property (nonatomic, assign) double percentAchieved;

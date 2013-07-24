@@ -29,8 +29,12 @@
 @property (nonatomic, strong) CCLabelTTF * goal2;
 @property (nonatomic, strong) CCLabelTTF * goal3;
 
+
+
 @property (nonatomic, strong) UIView *emailView;
 @property (nonatomic, strong) UIViewController *emailViewController;
 @property BOOL yesButtonEnabled;
 @property BOOL homeButtonEnabled;
+@property BOOL closeMissionButtonEnabled;
+@property BOOL openMissionButtonEnabled;
 @end

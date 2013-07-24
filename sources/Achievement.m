@@ -19,8 +19,8 @@
 @synthesize alreadyLogged;
 @synthesize gcAchievement;
 @synthesize percentAchieved;
-@synthesize achievedThisRound; //Use this to know if this was achieved in current Life. Used by rankLayer
 @synthesize isRankAchievement;
+@synthesize isRankSubAchievement;
 
 // -----------------------------------------------------------------------------------
 - (id) initWithCondition:(int)index
@@ -39,12 +39,12 @@
         if (gcAchievement.percentComplete == 100.0) {
             previouslyAchieved = YES;
             alreadyLogged = YES;
-            achievedThisRound = NO;
         } else {
             previouslyAchieved = NO;
             alreadyLogged = NO;
-            achievedThisRound = NO;
         }
+        
+        isRankSubAchievement = (condIndex < RANK_1) ? YES : NO;
         
         isRankAchievement = (condIndex == RANK_1 || condIndex == RANK_2 ||
                              condIndex == RANK_3 || condIndex == RANK_4 ||
@@ -374,7 +374,6 @@
         gcAchievement.percentComplete = 100.0;
         
         previouslyAchieved = YES;
-        achievedThisRound = YES;
         
     // log partial achievement, if applicable
     } else if (partialAchievement &&

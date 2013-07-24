@@ -18,7 +18,6 @@
 - (Achievement *) GetAchievementByIdentifier: (int) identifier;
 
 - (void) ResetAllAchievements;
-- (void) clearAchievedThisRound; //toggles all the wasAccomplishedThis round
 
 // GC achievement methods
 - (BOOL) CheckCurrentAchievements;

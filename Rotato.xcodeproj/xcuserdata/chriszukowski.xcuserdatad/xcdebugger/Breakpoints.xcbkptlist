@@ -8,7 +8,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/Achievement.m"
-         timestampString = "396245604.272104"
+         timestampString = "396328466.570914"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "165"
@@ -34,12 +34,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/RankLayerBox.m"
-         timestampString = "396243520.585219"
+         timestampString = "396327404.391442"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "74"
-         endingLineNumber = "74"
-         landmarkName = "-setMenuData:nextRanksAchievements:currentRank:promoteRank:"
+         startingLineNumber = "75"
+         endingLineNumber = "75"
+         landmarkName = "-setMenuData:nextRanksAchievements:whatWasAchieved:currentRank:promoteRank:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -47,12 +47,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/RankLayerBox.m"
-         timestampString = "396243520.585219"
+         timestampString = "396327404.391442"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "134"
-         endingLineNumber = "134"
-         landmarkName = "-setMenuData:nextRanksAchievements:currentRank:promoteRank:"
+         startingLineNumber = "135"
+         endingLineNumber = "135"
+         landmarkName = "-setMenuData:nextRanksAchievements:whatWasAchieved:currentRank:promoteRank:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -60,12 +60,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/RankLayerBox.m"
-         timestampString = "396243520.585219"
+         timestampString = "396327404.391442"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "130"
-         endingLineNumber = "130"
-         landmarkName = "-setMenuData:nextRanksAchievements:currentRank:promoteRank:"
+         startingLineNumber = "131"
+         endingLineNumber = "131"
+         landmarkName = "-setMenuData:nextRanksAchievements:whatWasAchieved:currentRank:promoteRank:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -73,22 +73,22 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/AchievementContainer.m"
-         timestampString = "396245372.036431"
+         timestampString = "396327404.391442"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "380"
-         endingLineNumber = "380">
+         startingLineNumber = "371"
+         endingLineNumber = "371">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/AchievementContainer.m"
-         timestampString = "396245372.036431"
+         timestampString = "396327404.391442"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "383"
-         endingLineNumber = "383">
+         startingLineNumber = "374"
+         endingLineNumber = "374">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -101,6 +101,32 @@
          startingLineNumber = "260"
          endingLineNumber = "260"
          landmarkName = "-GetAchievementsForRank:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sources/RankLayerBox.m"
+         timestampString = "396327507.539381"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "176"
+         endingLineNumber = "176"
+         landmarkName = "-wasThisAchieved:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sources/RankLayerBox.m"
+         timestampString = "396328833.936777"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "182"
+         endingLineNumber = "182"
+         landmarkName = "-wasThisAchieved:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

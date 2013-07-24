@@ -27,9 +27,15 @@
 @synthesize yesButton;
 @synthesize yesButtonEnabled;
 @synthesize homeButtonEnabled;
+
+@synthesize closeMissionButtonEnabled;
+@synthesize openMissionButtonEnabled;
+
 @synthesize goal1;
 @synthesize goal2;
 @synthesize goal3;
+
+
 
 // -----------------------------------------------------------------------------------
 - (void) pressedNO:(id) sender
@@ -99,38 +105,54 @@
 
 // -----------------------------------------------------------------------------------
 //This quits the game
-- (void) pressedHome:(id) sender
+- (void) pressedMissions:(id) sender
 {
-    if (homeButtonEnabled)
+    if (openMissionButtonEnabled)
     {
-        NSLog(@"pressed HOME!");
-        self.isQuitting = YES;        
+        NSLog(@"pressed missions!");
         
         [self turnOffButtons];
         
         CCBAnimationManager* animationManager = self.userObject;
-        [animationManager runAnimationsForSequenceNamed:@"Pop out"];
+        [animationManager runAnimationsForSequenceNamed:@"MissionIn"];
 
     }
 }
 
 // -----------------------------------------------------------------------------------
-- (void) pressedFeedback:(id)sender
+//This quits the game
+- (void) pressedCloseMission:(id) sender
 {
-    MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
-    mailViewController.mailComposeDelegate = self;
-    [mailViewController setSubject:@"Rotato feedback"];
-    [mailViewController setToRecipients:[NSArray arrayWithObject:@"contact@floor27industries.com"]];
-    
-    [mailViewController setMessageBody:@"Comment:\n" isHTML:NO];
-    
-    emailViewController = [[UIViewController alloc]init];
-    emailView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, COMMON_SCREEN_WIDTH, COMMON_SCREEN_HEIGHT)];
-    emailViewController.view = emailView;
-    [[[CCDirector sharedDirector] view] addSubview:emailView];
-    [emailViewController presentViewController:mailViewController animated:NO completion:nil];
-    
+    if (closeMissionButtonEnabled)
+    {
+        NSLog(@"pressed out missions!");
+        
+        [self turnOffButtons];
+        
+        CCBAnimationManager* animationManager = self.userObject;
+        [animationManager runAnimationsForSequenceNamed:@"MissionOut"];
+        
+    }
 }
+
+
+// -----------------------------------------------------------------------------------
+//This quits the game
+- (void) pressedHome:(id) sender
+{
+    if (homeButtonEnabled)
+    {
+        NSLog(@"pressed HOME!");
+        self.isQuitting = YES;
+        
+        [self turnOffButtons];
+        
+        CCBAnimationManager* animationManager = self.userObject;
+        [animationManager runAnimationsForSequenceNamed:@"Pop out"];
+        
+    }
+}
+
 
 // -----------------------------------------------------------------------------------
 - (void) didLoadFromCCB
@@ -171,6 +193,16 @@
         //Turn on the buttons after the menu finishes coming in.
         [self turnOnButtons];
     }
+    else if ([name compare:@"MissionIn"] == NSOrderedSame)
+    {
+        //Turn on the buttons after the menu finishes coming in.
+        [self turnOnButtons];
+    }
+    else if ([name compare:@"MissionOut"] == NSOrderedSame)
+    {
+        //Turn on the buttons after the menu finishes coming in.
+        [self turnOnButtons];
+    }
 }
 
 // -----------------------------------------------------------------------------------
@@ -178,9 +210,12 @@
 - (void) turnOffButtons
 {
     
-    //TODO: Figure out how to turn off the play button. It can be pressed repeatedly.
+    //$$TODO: Figure out how to turn off the play button. It can be pressed repeatedly.
     yesButtonEnabled = NO;
     homeButtonEnabled = NO;
+    
+    closeMissionButtonEnabled = NO;
+    openMissionButtonEnabled = NO;
     
 }
 
@@ -193,6 +228,9 @@
     yesButtonEnabled = YES;
     homeButtonEnabled = YES;
     
+    
+    closeMissionButtonEnabled = YES;
+    openMissionButtonEnabled = YES;
 }
 
 // -----------------------------------------------------------------------------------

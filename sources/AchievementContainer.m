@@ -340,15 +340,6 @@
 }
 
 // -----------------------------------------------------------------------------------
-//Used by the RankLayer. After each round we need to clear out all achievements that were accomplished this round so we know which ones are new.
-- (void) clearAchievedThisRound
-{
-    for (Achievement * achievement in allAchievements) {
-        achievement.achievedThisRound = NO;
-    }
-    
-}
-// -----------------------------------------------------------------------------------
 - (void) ResetAllAchievements
 {
     for (Achievement * achievement in allAchievements) {

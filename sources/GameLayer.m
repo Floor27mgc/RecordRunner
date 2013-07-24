@@ -496,8 +496,8 @@ static GameLayer *sharedGameLayer;
     if (logGoals) {
         [[GameLayer sharedGameLayer].achievementContainer LogRankGoals];
     }
-
-    BOOL shouldShowRankLayerBox = ([self wereAnyCurrentRankAchievedThisRound: achievementsForMyRank] ||
+    
+    BOOL shouldShowRankLayerBox = ([self wereAnyCurrentRankAchievedThisRound] ||
                                    [self wereAllRanksGoalsAchieved: achievementsForMyRank]);
     
     [self pauseSchedulerAndActions];
@@ -516,13 +516,15 @@ static GameLayer *sharedGameLayer;
     
 }
 
-
+//----------------------------------------------------------
 //Used to see if we need to show the rankUp Screen.
-- (BOOL)wereAnyCurrentRankAchievedThisRound: (NSMutableArray *) theAchievements
+- (BOOL)wereAnyCurrentRankAchievedThisRound
 {
+    NSMutableArray * theAchievements = [GameInfoGlobal sharedGameInfoGlobal].achievedThisRound;
+    
     for(Achievement * ach in theAchievements)
     {
-        if (ach.achievedThisRound)
+        if (ach.isRankSubAchievement)
         {
             return YES;
         }
@@ -739,8 +741,6 @@ static GameLayer *sharedGameLayer;
 -(void) startTheNextRound
 {
     
-    [achievementContainer clearAchievedThisRound];
-    
     [self resumeSchedulerAndActions];
     [self cleanUpPlayField];
     [self.score setScoreValue:0];
@@ -848,7 +848,9 @@ static GameLayer *sharedGameLayer;
         
         //This sets the menu data for the final menu
         [rankLayer setMenuData: thisRanksAchievements
-         nextRanksAchievements:nextAchievements currentRank:myRank promoteRank:goNextRank];
+         nextRanksAchievements:nextAchievements
+               whatWasAchieved: [GameInfoGlobal sharedGameInfoGlobal].achievedThisRound
+                   currentRank:myRank promoteRank:goNextRank];
         
         
         rankLayer.visible = YES;
@@ -860,7 +862,9 @@ static GameLayer *sharedGameLayer;
         
         //This sets the menu data for the final menu
         [rankLayer setMenuData: thisRanksAchievements
-         nextRanksAchievements:nextAchievements currentRank:myRank promoteRank:goNextRank];
+         nextRanksAchievements:nextAchievements
+               whatWasAchieved: [GameInfoGlobal sharedGameInfoGlobal].achievedThisRound
+                   currentRank:myRank promoteRank:goNextRank];
         
         [[GameLayer sharedGameLayer] addChild:rankLayer z:11];
     }
