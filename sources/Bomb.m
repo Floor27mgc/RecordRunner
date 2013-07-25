@@ -57,7 +57,8 @@
             int angleRelation = (int)self.angleRotated % 360;
             
             BOOL uniqueHit = NO;
-            if (angleRelation > (360 - CLOSE_HIT_THRESHOLD_PIXEL)) {
+            //if (angleRelation > (360 - CLOSE_HIT_THRESHOLD_PIXEL)) {
+            if (angleRelation < 360 && angleRelation > 300) {
                 if (!closeCallAbove) {
                     closeCallAbove = YES;
                     uniqueHit = YES;
@@ -97,18 +98,16 @@
                     [self.animationManager runAnimationsForSequenceNamed:@"ClockWiseRotation"];
                 }
             }
-            
-            
         }
+    }
+    
+    // reset close call flag when on other side of the record
+    if (closeCallBelow || closeCallAbove) {
+        int location = (int)self.angleRotated % 360;
 
-        // reset close call flag when on other side of the record
-        if (closeCallBelow || closeCallAbove) {
-            int location = (int)self.angleRotated % 360;
-        
-            if (location > 180) {
-                closeCallAbove = NO;
-                closeCallBelow = NO;
-            }
+        if (location > 180 && location < 200) {
+            closeCallAbove = NO;
+            closeCallBelow = NO;
         }
     }
 }
