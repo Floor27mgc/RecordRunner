@@ -76,9 +76,7 @@
         _startedBlink = NO;
         _lastToggle = 0;
         
-        
         [[GameLayer sharedGameLayer] deactivateInvincible];
-        
         
         // Shield is going away.  We are reset the hit box for bombs
         // back to the original size.
