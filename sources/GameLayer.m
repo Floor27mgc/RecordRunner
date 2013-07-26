@@ -96,7 +96,7 @@ static GameLayer *sharedGameLayer;
                                                             owner:player];
         player.animationManager = player.userObject;
         player.gameObjectAngularVelocity = 0;//kDefaultGameObjectAngularVelocityInDegree;
-        [self addChild: player z:10];
+        [self addChild: player z:11];
         
         // Create coin free pool (queue)
         _coinFreePool = [Queue initWithMinSize:MIN_NUM_COINS_PER_TRACK];
@@ -139,7 +139,7 @@ static GameLayer *sharedGameLayer;
         // Create NUM_OBSTACLES bombs and add them to the free pool
         gameObjectTag = 0;
         for (int trackNum = 0; trackNum < MAX_NUM_TRACK; ++trackNum) {
-            for (int i=0; i<trackNum+1;i++) {
+            for (int i=0; i<trackNum+3;i++) {
                 Bomb *_bomb = (Bomb *)[CCBReader nodeGraphFromFile:@"gameObjectBomb.ccbi"];
                 _bomb.tag = gameObjectTag;
                 _bomb.visible = 0;
@@ -242,7 +242,7 @@ static GameLayer *sharedGameLayer;
     
     player.position = ccp(COMMON_RECORD_CENTER_X + PLAYER_RADIUS_INNER_MOST,
                           COMMON_RECORD_CENTER_Y);
-    
+    player.visible = false;
     CCBAnimationManager* animationManager = self.userObject;
     [animationManager runAnimationsForSequenceNamed:@"start_game"];
     
@@ -789,6 +789,7 @@ static GameLayer *sharedGameLayer;
     [[GameLayer sharedGameLayer].gameObjectInjector stopInjector];
     
     CCBAnimationManager* animationManager = self.userObject;
+    player.visible = false;
     [animationManager runAnimationsForSequenceNamed:@"start_game"];
     
 }
