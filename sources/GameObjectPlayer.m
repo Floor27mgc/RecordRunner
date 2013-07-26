@@ -32,7 +32,13 @@
 
     if ([[GameLayer sharedGameLayer] getIsHitStateByTrackNum:TRACKNUM_FROM_RADIUS] == YES)
     {
-        [[[GameLayer sharedGameLayer] getHittingObjByTrackNum:TRACKNUM_FROM_RADIUS] handleCollision];
+        GameObjectBase *currentObject = [[GameLayer sharedGameLayer] getHittingObjByTrackNum:TRACKNUM_FROM_RADIUS];
+        
+        [currentObject handleCollision];
+        
+        if ([currentObject isKindOfClass:[Bomb class]]) {
+            return;
+        }
     }
     
     if (self.playerRadialSpeed == 0)
@@ -127,7 +133,9 @@
 //After death the player should be hidden and moved to the outside.
 - (void) stopPlayer
 {
-    direction = kMoveStill;
+    direction = kMoveInToOut;
+    self.playerRadialSpeed = 0;
+    self.rotation = 0;
     self.radius = PLAYER_RADIUS_OUTER_MOST;
     self.arrivedAtOuterTrack = [NSDate distantFuture];
     self.visible = 0;
@@ -275,6 +283,7 @@
 - (void) killYourself
 {
     [[SoundController sharedSoundController] playSoundIdx:SOUND_PLAYER_DIE fromObject:self];
+    [self stopPlayer];
 }
 
 // -----------------------------------------------------------------------------------
