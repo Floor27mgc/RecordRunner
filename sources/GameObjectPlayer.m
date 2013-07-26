@@ -135,10 +135,10 @@
 {
     direction = kMoveInToOut;
     self.playerRadialSpeed = 0;
-    self.rotation = 0;
+//    self.rotation = 0;
     self.radius = PLAYER_RADIUS_OUTER_MOST;
     self.arrivedAtOuterTrack = [NSDate distantFuture];
-    self.visible = 0;
+//    self.visible = 0;
     self.canMove = NO;
     self.hasShield = NO;
 }

@@ -242,7 +242,7 @@ static GameLayer *sharedGameLayer;
     
     player.position = ccp(COMMON_RECORD_CENTER_X + PLAYER_RADIUS_INNER_MOST,
                           COMMON_RECORD_CENTER_Y);
-    
+    player.visible = false;
     CCBAnimationManager* animationManager = self.userObject;
     [animationManager runAnimationsForSequenceNamed:@"start_game"];
     
@@ -789,6 +789,7 @@ static GameLayer *sharedGameLayer;
     [[GameLayer sharedGameLayer].gameObjectInjector stopInjector];
     
     CCBAnimationManager* animationManager = self.userObject;
+    player.visible = false;
     [animationManager runAnimationsForSequenceNamed:@"start_game"];
     
 }
