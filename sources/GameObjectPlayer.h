@@ -14,7 +14,7 @@
 #define kPlayerRadialSpeed 32
 #define kPlayerHitBoxSegmentWidth kPlayerSpeed
 #define PLAYER_IDLE_TICKS  15
-
+#define OUTER_RING_IDLE_THRESHOLD 120.0
 
 typedef enum
 {
@@ -49,6 +49,7 @@ typedef enum
                                              // outer most circle
 @property (nonatomic) int playerFacingAngle; // What angle is the player facing
 
+@property (nonatomic, assign) double consecutiveSecInOuterTrack;
 @property (nonatomic) BOOL hasShield;
 @property (nonatomic) NSDate * arrivedAtOuterTrack;
 @property (nonatomic) BOOL canMove;

@@ -121,6 +121,33 @@
 }
 
 // -----------------------------------------------------------------------------------
+- (int) getNumObjectsOnTrack:(int)trackNum
+{
+    if (trackNum < 0 || trackNum > 3) {
+        return -1;
+    }
+    
+    switch (trackNum) {
+        case 0:
+            return [objectsOnTrack0 count];
+            break;
+        case 1:
+            return [objectsOnTrack1 count];
+            break;
+        case 2:
+            return [objectsOnTrack2 count];
+            break;
+        case 3:
+            return [objectsOnTrack3 count];
+            break;
+        default:
+            break;
+    }
+
+    return -1;
+}
+
+// -----------------------------------------------------------------------------------
 - (BOOL) contains:(id)object
 {
     return ([objectsOnTrack0 containsObject:object] ||

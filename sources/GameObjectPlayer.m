@@ -21,6 +21,7 @@
 @synthesize arrivedAtOuterTrack;
 @synthesize canMove;
 @synthesize ticksIdle;
+@synthesize consecutiveSecInOuterTrack;
 
 
 // -----------------------------------------------------------------------------------
@@ -59,12 +60,21 @@
         if (self.radius == PLAYER_RADIUS_OUTER_MOST) {
             if (arrivedAtOuterTrack == [NSDate distantFuture]) {
                 arrivedAtOuterTrack = [NSDate date];
+                consecutiveSecInOuterTrack = 0;
             } else {
-                int elapsed = [arrivedAtOuterTrack timeIntervalSinceNow];
+                NSTimeInterval elapsed = fabs([arrivedAtOuterTrack timeIntervalSinceNow]);
+                consecutiveSecInOuterTrack += elapsed;
                 [GameInfoGlobal sharedGameInfoGlobal].timeInOuterRingThisLife += elapsed;
                 arrivedAtOuterTrack = [NSDate date];
+                
+                // trigger a bomb if the player has been on the outer track for more
+                // than 2 minutes consecutively
+                if (consecutiveSecInOuterTrack > OUTER_RING_IDLE_THRESHOLD &&
+                    [[GameLayer sharedGameLayer].bombUsedPool getNumObjectsOnTrack:3] == 0) {
+                    [[GameLayer sharedGameLayer].gameObjectInjector injectObjectToTrack:3 atAngle:45 gameObjectType:BOMB_TYPE
+                        effectType:kRotation];
+                }
             }
-            
         }
     }
     else
@@ -130,6 +140,7 @@
         self.canMove = NO;
         self.hasShield = NO;
         self.ticksIdle = 0;
+        self.consecutiveSecInOuterTrack = 0;
     }
     return (self);
 }

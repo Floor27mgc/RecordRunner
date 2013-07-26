@@ -30,5 +30,6 @@
 - (void) removeObjectFromTrack:(int) trackNum withObject:(id)object;
 - (int) getObjectCount;
 - (void) clearTracks;
+- (int) getNumObjectsOnTrack: (int) trackNum;
 
 @end
