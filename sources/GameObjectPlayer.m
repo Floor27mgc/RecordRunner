@@ -37,6 +37,11 @@
         [currentObject handleCollision];
         
         if ([currentObject isKindOfClass:[Bomb class]]) {
+            // Reset the isHit array to prepare for the next frame comparison
+            for (track_num = 0; track_num < MAX_NUM_TRACK; track_num++) {
+                [[GameLayer sharedGameLayer] setIsHitStateByTrackNum:track_num toState:NO];
+                [[GameLayer sharedGameLayer] setHittingObjByTrackNum:track_num hittingObj:nil];
+            }
             return;
         }
     }
