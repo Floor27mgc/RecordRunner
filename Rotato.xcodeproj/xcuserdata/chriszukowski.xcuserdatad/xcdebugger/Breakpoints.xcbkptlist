@@ -108,11 +108,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/RankLayerBox.m"
-         timestampString = "396327507.539381"
+         timestampString = "396415828.038749"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "176"
-         endingLineNumber = "176"
+         startingLineNumber = "177"
+         endingLineNumber = "177"
          landmarkName = "-wasThisAchieved:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -121,12 +121,90 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/RankLayerBox.m"
-         timestampString = "396328833.936777"
+         timestampString = "396415828.038749"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "182"
-         endingLineNumber = "182"
+         startingLineNumber = "183"
+         endingLineNumber = "183"
          landmarkName = "-wasThisAchieved:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sources/RankLayerSubBox.m"
+         timestampString = "396503842.827179"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "74"
+         endingLineNumber = "74"
+         landmarkName = "-setMenuData:whatWasAchieved:currentRank:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sources/RankLayerSubBox.m"
+         timestampString = "396503842.827179"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "58"
+         endingLineNumber = "58"
+         landmarkName = "-setMenuData:whatWasAchieved:currentRank:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sources/GameOverLayer.m"
+         timestampString = "396455447.782587"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "125"
+         endingLineNumber = "125"
+         landmarkName = "-pressedMissions:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sources/RankLayerSubBox.m"
+         timestampString = "396503842.827179"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "43"
+         endingLineNumber = "43"
+         landmarkName = "-didLoadFromCCB"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sources/RankLayerSubBox.m"
+         timestampString = "396503842.827179"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "31"
+         endingLineNumber = "31"
+         landmarkName = "-init"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sources/GameOverLayer.m"
+         timestampString = "396455425.664215"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "122"
+         endingLineNumber = "122"
+         landmarkName = "-pressedMissions:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

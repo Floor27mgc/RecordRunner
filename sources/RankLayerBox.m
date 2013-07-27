@@ -28,7 +28,7 @@
 @synthesize goal3_B;
 
 @synthesize goal1_check;
-@synthesize goal2_check;
+@synthesize goal2_check;	
 @synthesize goal3_check;
 
 
@@ -156,8 +156,9 @@ int nextRankForThisLayer;
     
     //The card looks different after a promotion so check for it
     if (rankPromotion)
-    {        
-            
+    {
+        
+            [[GameLayer sharedGameLayer].achievementContainer CheckRankAchievements];
             CCBAnimationManager* animationManager = self.userObject;
             [animationManager runAnimationsForSequenceNamed:@"PopOutRanked"];
             
