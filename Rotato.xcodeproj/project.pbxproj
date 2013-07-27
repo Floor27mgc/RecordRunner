@@ -550,6 +550,8 @@
 		E5130745178D17F3000F1EE5 /* gui_circle_wedge.png in Resources */ = {isa = PBXBuildFile; fileRef = E5130743178D17F3000F1EE5 /* gui_circle_wedge.png */; };
 		E5130746178D17F3000F1EE5 /* gui_circle_wedge-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E5130744178D17F3000F1EE5 /* gui_circle_wedge-hd.png */; };
 		E530B682179E42D400A3A7FA /* GameOverLayerBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E530B681179E42D400A3A7FA /* GameOverLayerBox.ccbi */; };
+		E530B68917A0D6E900A3A7FA /* RankLayerSubBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E530B68817A0D6E900A3A7FA /* RankLayerSubBox.m */; };
+		E530B68B17A16B0B00A3A7FA /* RankLayerSubBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E530B68A17A16B0B00A3A7FA /* RankLayerSubBox.ccbi */; };
 		E54C884117766B8200D546F2 /* parts_record_inner.png in Resources */ = {isa = PBXBuildFile; fileRef = E54C883F17766B8200D546F2 /* parts_record_inner.png */; };
 		E54C884217766B8200D546F2 /* parts_record_inner-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E54C884017766B8200D546F2 /* parts_record_inner-hd.png */; };
 		E54E158B172C7A2A0022DACE /* bannerRed.png in Resources */ = {isa = PBXBuildFile; fileRef = E54E1589172C7A2A0022DACE /* bannerRed.png */; };
@@ -1289,6 +1291,9 @@
 		E5130743178D17F3000F1EE5 /* gui_circle_wedge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gui_circle_wedge.png; path = Resources/Graphics/gui_circle_wedge.png; sourceTree = SOURCE_ROOT; };
 		E5130744178D17F3000F1EE5 /* gui_circle_wedge-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gui_circle_wedge-hd.png"; path = "Resources/Graphics/gui_circle_wedge-hd.png"; sourceTree = SOURCE_ROOT; };
 		E530B681179E42D400A3A7FA /* GameOverLayerBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameOverLayerBox.ccbi; path = CocosBuilder/CCBI_files/GameOverLayerBox.ccbi; sourceTree = SOURCE_ROOT; };
+		E530B68717A0D6E800A3A7FA /* RankLayerSubBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RankLayerSubBox.h; path = sources/RankLayerSubBox.h; sourceTree = SOURCE_ROOT; };
+		E530B68817A0D6E900A3A7FA /* RankLayerSubBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RankLayerSubBox.m; path = sources/RankLayerSubBox.m; sourceTree = SOURCE_ROOT; };
+		E530B68A17A16B0B00A3A7FA /* RankLayerSubBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = RankLayerSubBox.ccbi; path = CocosBuilder/CCBI_files/RankLayerSubBox.ccbi; sourceTree = SOURCE_ROOT; };
 		E54C883F17766B8200D546F2 /* parts_record_inner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_record_inner.png; path = Resources/Graphics/parts_record_inner.png; sourceTree = SOURCE_ROOT; };
 		E54C884017766B8200D546F2 /* parts_record_inner-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_record_inner-hd.png"; path = "Resources/Graphics/parts_record_inner-hd.png"; sourceTree = SOURCE_ROOT; };
 		E54E1589172C7A2A0022DACE /* bannerRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bannerRed.png; path = Resources/Graphics/bannerRed.png; sourceTree = SOURCE_ROOT; };
@@ -1790,6 +1795,8 @@
 				85A6714B1655A6CB00499BF7 /* Queue.m */,
 				E5F1506D1789D61A006923DD /* RankLayerBox.h */,
 				E5F1506E1789D61A006923DD /* RankLayerBox.m */,
+				E530B68717A0D6E800A3A7FA /* RankLayerSubBox.h */,
+				E530B68817A0D6E900A3A7FA /* RankLayerSubBox.m */,
 				85B53BAB1673C5CC001163F7 /* Score.h */,
 				85B53BAC1673C5CC001163F7 /* Score.m */,
 				E55D11C0178736680072B6AC /* scoreMini.h */,
@@ -2174,6 +2181,7 @@
 		08A372A416C8A69C006819E3 /* CocosBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				E530B68A17A16B0B00A3A7FA /* RankLayerSubBox.ccbi */,
 				E5F47E5217935F9500504A9A /* DebugMenuNode.ccbi */,
 				E5F2F244179C1B9B00EEE92A /* GameObjectCheck.ccbi */,
 				E5F47E5317935F9500504A9A /* DEMO_ACHIEVEMENTS.ccbi */,
@@ -3177,6 +3185,7 @@
 				E5F2F248179C8F5500EEE92A /* DialogCardHalf.png in Resources */,
 				E5F2F249179C8F5500EEE92A /* DialogCardHalf-hd.png in Resources */,
 				E530B682179E42D400A3A7FA /* GameOverLayerBox.ccbi in Resources */,
+				E530B68B17A16B0B00A3A7FA /* RankLayerSubBox.ccbi in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3227,6 +3236,7 @@
 				E5F47E22179354E700504A9A /* Achievement.m in Sources */,
 				E5F47E271793550D00504A9A /* AchievementContainer.m in Sources */,
 				E5F2F243179C127A00EEE92A /* GameObjectCheck.m in Sources */,
+				E530B68917A0D6E900A3A7FA /* RankLayerSubBox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
