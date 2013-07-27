@@ -378,6 +378,57 @@ static GameLayer *sharedGameLayer;
     
     // check for any non-achievement bonuses that may have been achieved
     [self checkBonuses];
+    
+    // speed up rotation speed, as necessary, never exceeding the max
+    if ([self getGameAngularVelocityInDegree] < MAX_GAME_SPEED) {
+        [self doTimeBasedGameSpeedUp];
+    }
+}
+
+// -----------------------------------------------------------------------------------
+- (void) doTimeBasedGameSpeedUp
+{
+    NSTimeInterval elapsed = [[GameInfoGlobal sharedGameInfoGlobal].statsContainer
+                              getCurrentGameTimeElapsed];
+    int intElapsed = (int) elapsed;
+
+    // if we've hit an interval, increase the speed accordingly
+    if (intElapsed % SPEED_INCREASE_INTERVAL == 0) {
+        
+        // this will be triggered multiple times per second, make sure to only
+        // tick the speed once per interval encountered
+        BOOL increaseSpeed = NO;
+        
+        switch ([GameInfoGlobal sharedGameInfoGlobal].speedUpsThisLife) {
+            case 0:
+                if (intElapsed == SPEED_INCREASE_INTERVAL) {
+                    increaseSpeed = YES;
+                }
+                break;
+            case 1:
+                if (intElapsed == SPEED_INCREASE_INTERVAL * 2) {
+                    increaseSpeed = YES;
+                }
+                break;
+            case 2:
+                if (intElapsed == SPEED_INCREASE_INTERVAL * 3) {
+                    increaseSpeed = YES;
+                }
+                break;
+            case 3:
+                if (intElapsed == SPEED_INCREASE_INTERVAL * 4) {
+                    increaseSpeed = YES;
+                }
+                break;
+            default:
+                break;
+        }
+        
+        if (increaseSpeed) {
+            [self changeGameAngularVelocityByDegree:SPEED_INCREASE_AMOUNT];
+            [GameInfoGlobal sharedGameInfoGlobal].speedUpsThisLife++;
+        }
+    }
 }
 
 // -----------------------------------------------------------------------------------
@@ -484,6 +535,14 @@ static GameLayer *sharedGameLayer;
     // update end-of-game statistics
     [[[GameInfoGlobal sharedGameInfoGlobal] statsContainer] writeStats];
     
+    // reset the game speed
+    if ([GameInfoGlobal sharedGameInfoGlobal].speedUpsThisLife > 0) {
+        for (int i = 0;
+             i < [GameInfoGlobal sharedGameInfoGlobal].speedUpsThisLife;
+             ++i) {
+            [self changeGameAngularVelocityByDegree:-(SPEED_INCREASE_AMOUNT)];
+        }
+    }
     
     //This is how I think should be named
     NSMutableArray * achievementsForMyRank = [achievementContainer GetAchievementsForRank: achievementContainer.currentRank];

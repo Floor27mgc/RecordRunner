@@ -45,7 +45,7 @@
 }
 
 // -----------------------------------------------------------------------------------
-- (int) getCurrentGameTimeElapsed
+- (NSTimeInterval) getCurrentGameTimeElapsed
 {
     return (abs([_gameStartTime timeIntervalSinceNow]));
 }
@@ -70,7 +70,7 @@
 // -----------------------------------------------------------------------------------
 - (void) writeStats
 {
-    NSTimeInterval totalTimeElapsed = abs([_gameStartTime timeIntervalSinceNow]);
+    NSTimeInterval totalTimeElapsed = abs([_sessionStartTime timeIntervalSinceNow]);
     [self updateGameTimeStats];
     
     // log statistics for all the tracked objects

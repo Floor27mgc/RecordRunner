@@ -35,6 +35,7 @@
 @synthesize hit33rotationsThisLife;
 @synthesize hit45rotationsThisLife;
 @synthesize hit78rotationsThisLife;
+@synthesize speedUpsThisLife;
 
 static GameInfoGlobal *sharedGameInfoGlobal;
 
@@ -115,6 +116,7 @@ static GameInfoGlobal *sharedGameInfoGlobal;
     timeInOuterRingThisLife = 0;
     numCoinsThisLife = 0;
     closeCallsThisLife = 0;
+    speedUpsThisLife = 0;
     [achievedThisRound removeAllObjects];
     hit33rotationsThisLife = NO;
     hit45rotationsThisLife = NO;

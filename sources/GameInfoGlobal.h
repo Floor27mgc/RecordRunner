@@ -48,5 +48,6 @@ typedef enum {
 @property (nonatomic, assign) BOOL hit33rotationsThisLife;
 @property (nonatomic, assign) BOOL hit45rotationsThisLife;
 @property (nonatomic, assign) BOOL hit78rotationsThisLife;
+@property (nonatomic, assign) int speedUpsThisLife;
 
 @end

@@ -39,7 +39,7 @@ typedef enum {
 - (NSString *) statsTypeToString: (statistics_types_t) type;
 
 // return the time of the current game
-- (int) getCurrentGameTimeElapsed;
+- (NSTimeInterval) getCurrentGameTimeElapsed;
 
 @property (nonatomic, strong) NSMutableArray * container;
 @property (nonatomic, strong) NSDate * gameStartTime;
