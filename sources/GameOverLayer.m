@@ -12,6 +12,7 @@
 #import "CCBAnimationManager.h"
 #import "CCBReader.h"
 #import <GameKit/GameKit.h>
+#import "RankLayerSubBox.h"
 #import <Social/Social.h>
 
 @interface GameOverLayer ()
@@ -25,16 +26,18 @@
 @synthesize isQuitting;
 @synthesize rankLabel;
 @synthesize yesButton;
+@synthesize closeMissionButton;
+
 @synthesize yesButtonEnabled;
 @synthesize homeButtonEnabled;
+@synthesize rankBox;
 
 @synthesize closeMissionButtonEnabled;
 @synthesize openMissionButtonEnabled;
 
-@synthesize goal1;
-@synthesize goal2;
-@synthesize goal3;
-
+int myRank;
+NSMutableArray * myCompletedGoals;
+NSMutableArray * myGoals;
 
 
 // -----------------------------------------------------------------------------------
@@ -69,13 +72,15 @@
 //For example, before G.O. Menu is shown, call this method to set those two values
 - (void) setMenuData:(int) myFinalScore
            rankLevel:(int) rankScore
-
+    rankAchievements:(NSMutableArray *) theGoals
+      completedGoals:(NSMutableArray *) theCompletedGoals
 {
+    myRank = rankScore;
+    myCompletedGoals = theCompletedGoals;
+    myGoals = theGoals;
     
     [GameInfoGlobal sharedGameInfoGlobal].lifetimeRoundsPlayed++;
     [[GameInfoGlobal sharedGameInfoGlobal] logLifeTimeAchievements];
-    
-    
     
     // reset the per-life statistics
     [[GameInfoGlobal sharedGameInfoGlobal] resetPerLifeStatistics];
@@ -112,6 +117,14 @@
         NSLog(@"pressed missions!");
         
         [self turnOffButtons];
+        
+        
+        [self.rankBox testMethod];
+        
+        //This sets the menu data for the final menu
+        [self.rankBox setMenuData: myGoals
+                  whatWasAchieved: myCompletedGoals
+                      currentRank: myRank];
         
         CCBAnimationManager* animationManager = self.userObject;
         [animationManager runAnimationsForSequenceNamed:@"MissionIn"];
@@ -195,6 +208,7 @@
     }
     else if ([name compare:@"MissionIn"] == NSOrderedSame)
     {
+        
         //Turn on the buttons after the menu finishes coming in.
         [self turnOnButtons];
     }

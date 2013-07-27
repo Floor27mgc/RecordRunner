@@ -1205,7 +1205,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "257"
          endingLineNumber = "257"
-         landmarkName = "-pressedFB:"
+         landmarkName = "-mailComposeController:didFinishWithResult:error:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1569,8 +1569,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "259"
          endingLineNumber = "259"
-         landmarkName = "-pressedFB:"
-         landmarkType = "5">
+         landmarkName = "@implementation GameOverLayer"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -2089,11 +2089,11 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "41"
          endingLineNumber = "41"
-         landmarkName = "-pressedNO:"
-         landmarkType = "5">
+         landmarkName = "@implementation GameOverLayer"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "cocos2d-2.x-ARC-iOS/libs/CocosDenshion/CDAudioManager.m"
@@ -2106,7 +2106,7 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "cocos2d-2.x-ARC-iOS/libs/CocosDenshion/CDAudioManager.m"
@@ -2116,6 +2116,19 @@
          startingLineNumber = "842"
          endingLineNumber = "842"
          landmarkName = "-bufferForFile:create:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sources/GameOverLayer.m"
+         timestampString = "396598366.950045"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "125"
+         endingLineNumber = "125"
+         landmarkName = "-pressedMissions:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

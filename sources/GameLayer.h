@@ -93,7 +93,10 @@ typedef enum {
 -(void) activateInvincible;
 -(void) deactivateInvincible;
 -(void) checkBonuses;
--(void) showGameOverLayer;
+-(void) showGameOverLayer:(int) score
+      theRankAchievements: (NSMutableArray *) thisRanksAchievements
+theRankAchievementsComplete: (NSMutableArray *) thisRanksAchievementsComplete
+              currentRank: (int) myRank;
 -(void) startTheNextRound;
 
 @property (nonatomic, strong) GameObjectPlayer *player;

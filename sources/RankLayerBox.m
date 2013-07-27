@@ -28,7 +28,7 @@
 @synthesize goal3_B;
 
 @synthesize goal1_check;
-@synthesize goal2_check;
+@synthesize goal2_check;	
 @synthesize goal3_check;
 
 
@@ -41,6 +41,7 @@ NSMutableArray * futureGoals;
 //GUI ELEMENTS
 NSMutableArray * acomplishedThisRoundCheckmarks;
 NSMutableArray * existingCheckmarks;
+NSMutableArray * goals;
 BOOL rankPromotion = NO;
 int currentRankScore;
 int nextRankForThisLayer;
@@ -56,7 +57,7 @@ int nextRankForThisLayer;
     [[GameInfoGlobal sharedGameInfoGlobal] logLifeTimeAchievements];
     
     // load the goals
-    NSMutableArray * goals = thisRanksAchievements;
+    goals = thisRanksAchievements;
     rankPromotion = goNextRank;
     nextRankForThisLayer = rankPromotion + 1;
     futureGoals = nextAchievements;
@@ -156,8 +157,9 @@ int nextRankForThisLayer;
     
     //The card looks different after a promotion so check for it
     if (rankPromotion)
-    {        
-            
+    {
+        
+            [[GameLayer sharedGameLayer].achievementContainer CheckRankAchievements];
             CCBAnimationManager* animationManager = self.userObject;
             [animationManager runAnimationsForSequenceNamed:@"PopOutRanked"];
             
@@ -203,7 +205,15 @@ int nextRankForThisLayer;
     
     if ([name compare:@"Pop out"] == NSOrderedSame ||
         [name compare:@"PopOutRanked"] == NSOrderedSame) {
-        [[GameLayer sharedGameLayer] showGameOverLayer];
+        
+        
+        [[GameLayer sharedGameLayer] showGameOverLayer: [[GameLayer sharedGameLayer].score getScore]
+                                            theRankAchievements:goals
+                                    theRankAchievementsComplete:[GameInfoGlobal sharedGameInfoGlobal].achievedThisRound
+                                                    currentRank:currentRankScore
+                                         ];
+        
+        
     }
     else if ([name compare:@"Pop in"] == NSOrderedSame) {
         

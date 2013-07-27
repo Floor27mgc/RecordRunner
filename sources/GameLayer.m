@@ -511,14 +511,18 @@ static GameLayer *sharedGameLayer;
                    promoteRank:[self wereAllRanksGoalsAchieved: achievementsForMyRank]];
     }
     else{
-        [self showGameOverLayer];
+        
+        [self showGameOverLayer: [[GameLayer sharedGameLayer].score getScore]
+            theRankAchievements:achievementsForMyRank
+    theRankAchievementsComplete:[GameInfoGlobal sharedGameInfoGlobal].achievedThisRound
+                    currentRank:achievementContainer.currentRank
+         ];
     }
-    
 }
 
 //----------------------------------------------------------
 //Used to see if we need to show the rankUp Screen.
-- (BOOL)wereAnyCurrentRankAchievedThisRound
+- (BOOL) wereAnyCurrentRankAchievedThisRound
 {
     NSMutableArray * theAchievements = [GameInfoGlobal sharedGameInfoGlobal].achievedThisRound;
     
@@ -872,8 +876,12 @@ static GameLayer *sharedGameLayer;
 }
 
 //Called after the game is over, it shows the dialog. Also called after the RankLayerBox
-- (void) showGameOverLayer
+- (void) showGameOverLayer: (int) score
+       theRankAchievements: (NSMutableArray *) thisRanksAchievements
+theRankAchievementsComplete: (NSMutableArray *) thisRanksAchievementsComplete
+                currentRank: (int) myRank
 {
+    
     if (gameOverLayer != nil)
     {
         CCBAnimationManager* animationManager = gameOverLayer.userObject;
@@ -881,10 +889,12 @@ static GameLayer *sharedGameLayer;
         
         
         //This sets the menu data for the final menu
-        [gameOverLayer setMenuData: [[GameLayer sharedGameLayer].score getScore]
-                         rankLevel:achievementContainer.currentRank];
-        
-        
+        [gameOverLayer setMenuData: score
+                         rankLevel: myRank
+                  rankAchievements: thisRanksAchievements
+                    completedGoals: thisRanksAchievementsComplete];
+         
+         
         gameOverLayer.visible = YES;
         [animationManager runAnimationsForSequenceNamed:@"Pop in"];
     } else {
@@ -893,8 +903,10 @@ static GameLayer *sharedGameLayer;
         gameOverLayer.position = COMMON_SCREEN_CENTER;
         
         //This sets the menu data for the final menu
-        [gameOverLayer setMenuData: [[GameLayer sharedGameLayer].score getScore]
-                         rankLevel:achievementContainer.currentRank];
+        [gameOverLayer setMenuData: score
+                         rankLevel: myRank
+                  rankAchievements: thisRanksAchievements
+                    completedGoals: thisRanksAchievementsComplete];
         
         [[GameLayer sharedGameLayer] addChild:gameOverLayer z:11];
     }
