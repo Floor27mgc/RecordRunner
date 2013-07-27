@@ -85,7 +85,7 @@
             
             // Collect 3 coins in a single scratch.
         case 4:
-            achieved = ([GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch >= 3);
+            achieved = ([GameInfoGlobal sharedGameInfoGlobal].maxCoinsPerScratch >= 3);
             break;
             
             // Get a score of 200.
@@ -106,7 +106,7 @@
             
             // Spin the same bomb Clockwise then immediately Counter clockwise.
         case 8:
-            achieved = YES;
+            achieved = [GameInfoGlobal sharedGameInfoGlobal].clockwiseThenCounterclockwise;
             break;
             
             // Get a score of 1000.

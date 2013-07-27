@@ -87,6 +87,12 @@
                 [[GameLayer sharedGameLayer].multiplier incrementMultiplier:1];
                 
                 [GameInfoGlobal sharedGameInfoGlobal].closeCallsThisLife++;
+                
+                if (![GameInfoGlobal sharedGameInfoGlobal].clockwiseThenCounterclockwise &&
+                    closeCallAbove && closeCallBelow) {
+                    
+                    [GameInfoGlobal sharedGameInfoGlobal].clockwiseThenCounterclockwise = YES;
+                }
 
                 if ([GameLayer sharedGameLayer].player.direction == kMoveInToOut)
                 {

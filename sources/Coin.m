@@ -62,12 +62,16 @@
         
         NSString *scoreText = @"";
         
-        //increment coins this scratch if you have started the scratch
-        //if ([GameLayer sharedGameLayer].player.playerRadialSpeed > 0)
-        //{
+        // increment coins this scratch if you have started the scratch
+        // and update max accordingly
         [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch++;
-        //}
-        
+        if ([GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch >
+            [GameInfoGlobal sharedGameInfoGlobal].maxCoinsPerScratch) {
+
+            [GameInfoGlobal sharedGameInfoGlobal].maxCoinsPerScratch =
+                [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch;
+        }
+
         // if we aren't moving then coinsThisScratch is zero, we should still register
         // this coin as 1
         int coinsToCount = ([GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch == 0 ?

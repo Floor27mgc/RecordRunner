@@ -36,6 +36,8 @@
 @synthesize hit45rotationsThisLife;
 @synthesize hit78rotationsThisLife;
 @synthesize speedUpsThisLife;
+@synthesize maxCoinsPerScratch;
+@synthesize clockwiseThenCounterclockwise;
 
 static GameInfoGlobal *sharedGameInfoGlobal;
 
@@ -62,7 +64,11 @@ static GameInfoGlobal *sharedGameInfoGlobal;
         
         hit40scratchesInSingleRevolution = NO;
         
+        clockwiseThenCounterclockwise = NO;
+        
         bombsKilledThisShield = 0;
+        
+        maxCoinsPerScratch = 0;
         
         coinsInBank = [[NSUserDefaults standardUserDefaults] integerForKey:@"coinBank"];
         

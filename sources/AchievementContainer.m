@@ -240,6 +240,9 @@
         return;
     }
     
+    // reset any statistics that may be involved in the next goal list
+    [GameInfoGlobal sharedGameInfoGlobal].clockwiseThenCounterclockwise = NO;
+    
     currentRank = indexToLoad;
     
     // populate this rank's goals
