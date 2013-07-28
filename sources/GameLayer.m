@@ -941,6 +941,7 @@ static GameLayer *sharedGameLayer;
 theRankAchievementsComplete: (NSMutableArray *) thisRanksAchievementsComplete
                 currentRank: (int) myRank
 {
+    
     if (gameOverLayer != nil)
     {
         CCBAnimationManager* animationManager = gameOverLayer.userObject;

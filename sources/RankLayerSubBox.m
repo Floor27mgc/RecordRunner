@@ -60,7 +60,9 @@ NSMutableArray * existingCheckmarks;
     // load the goals
     NSMutableArray * goals = thisRanksAchievements;
     
+    existingCheckmarks = [[NSMutableArray alloc] initWithCapacity:3];
     acomplishedThisRoundCheckmarks = [[NSMutableArray alloc] initWithCapacity:3];
+    
     
     [self.goal1 setDimensions:CGSizeMake(220,65)];
     [self.goal1 setPosition:CGPointMake(160, 183)];
@@ -142,6 +144,14 @@ NSMutableArray * existingCheckmarks;
         }
     }
     
+    
+    
+    for (GameObjectCheck * check in existingCheckmarks)
+    {
+        [check showExistingCheck];
+    }
+
+    
     [self.rankLabel setString:[NSString stringWithFormat:@"%d",
                                currentRankScore]];
     
@@ -167,20 +177,6 @@ NSMutableArray * existingCheckmarks;
 - (void) testMethod
 {
     NSLog(@"testMethod in RankLayerSubBox");
-}
-
-// -----------------------------------------------------------------------------------
-- (void) completedAnimationSequenceNamed:(NSString *)name
-{
-    //After $$.
-    if ([name compare:@"Blip"] == NSOrderedSame) {
-        
-    }//Go $$$$
-    else if ([name compare:@"AlreadyAchieved"] == NSOrderedSame)
-    {
-        
-        
-    }
 }
 
 

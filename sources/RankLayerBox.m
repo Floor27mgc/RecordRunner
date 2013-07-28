@@ -41,6 +41,7 @@ NSMutableArray * futureGoals;
 //GUI ELEMENTS
 NSMutableArray * acomplishedThisRoundCheckmarks;
 NSMutableArray * existingCheckmarks;
+NSMutableArray * goals;
 BOOL rankPromotion = NO;
 int currentRankScore;
 int nextRankForThisLayer;
@@ -56,7 +57,7 @@ int nextRankForThisLayer;
     [[GameInfoGlobal sharedGameInfoGlobal] logLifeTimeAchievements];
     
     // load the goals
-    NSMutableArray * goals = thisRanksAchievements;
+    goals = thisRanksAchievements;
     rankPromotion = goNextRank;
     nextRankForThisLayer = rankPromotion + 1;
     futureGoals = nextAchievements;
@@ -204,7 +205,15 @@ int nextRankForThisLayer;
     
     if ([name compare:@"Pop out"] == NSOrderedSame ||
         [name compare:@"PopOutRanked"] == NSOrderedSame) {
-        [[GameLayer sharedGameLayer] showGameOverLayer];
+        
+        
+        [[GameLayer sharedGameLayer] showGameOverLayer: [[GameLayer sharedGameLayer].score getScore]
+                                            theRankAchievements:goals
+                                    theRankAchievementsComplete:[GameInfoGlobal sharedGameInfoGlobal].achievedThisRound
+                                                    currentRank:currentRankScore
+                                         ];
+        
+        
     }
     else if ([name compare:@"Pop in"] == NSOrderedSame) {
         

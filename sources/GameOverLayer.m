@@ -30,7 +30,7 @@
 
 @synthesize yesButtonEnabled;
 @synthesize homeButtonEnabled;
-//@synthesize rankBox;
+@synthesize rankBox;
 
 @synthesize closeMissionButtonEnabled;
 @synthesize openMissionButtonEnabled;

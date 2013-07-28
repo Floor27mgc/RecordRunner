@@ -2566,7 +2566,7 @@
 				<key>displayName</key>
 				<string>RankLayerBox</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>rankBox</string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -3257,7 +3257,7 @@
 			<key>name</key>
 			<string>MissionIn</string>
 			<key>offset</key>
-			<real>0.0</real>
+			<real>0.30924487113952637</real>
 			<key>position</key>
 			<real>1.6666667461395264</real>
 			<key>resolution</key>
