@@ -39,9 +39,9 @@
 #define kShieldSpawnRate 1
 #define TAP_DELAY_THRESHOLD_MSEC 62
 
-#define SPEED_INCREASE_AMOUNT   .1
+#define SPEED_INCREASE_AMOUNT   .2
 #define SPEED_INCREASE_INTERVAL 22
-#define MAX_GAME_SPEED          2.0
+#define MAX_GAME_SPEED          2.6
 
 #define kGameModeNoRotation 0
 #define kGameModeRotation   1

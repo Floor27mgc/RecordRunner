@@ -14,7 +14,7 @@
 #define kPlayerRadialSpeed 32
 #define kPlayerHitBoxSegmentWidth kPlayerSpeed
 #define PLAYER_IDLE_TICKS  15
-#define OUTER_RING_IDLE_THRESHOLD 120.0
+#define OUTER_RING_IDLE_THRESHOLD 6.0
 
 typedef enum
 {
