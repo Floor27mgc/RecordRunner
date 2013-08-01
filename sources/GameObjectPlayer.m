@@ -19,9 +19,11 @@
 @synthesize playerFacingAngle;
 @synthesize hasShield;
 @synthesize arrivedAtOuterTrack;
+@synthesize arrivedAtInnerTrack;
 @synthesize canMove;
 @synthesize ticksIdle;
 @synthesize consecutiveSecInOuterTrack;
+@synthesize consecutiveSecInInnerTrack;
 
 
 // -----------------------------------------------------------------------------------
@@ -66,13 +68,33 @@
                 consecutiveSecInOuterTrack += elapsed;
                 [GameInfoGlobal sharedGameInfoGlobal].timeInOuterRingThisLife += elapsed;
                 arrivedAtOuterTrack = [NSDate date];
-                
+
                 // trigger a bomb if the player has been on the outer track for more
                 // than 2 minutes consecutively
-                if (consecutiveSecInOuterTrack > OUTER_RING_IDLE_THRESHOLD &&
+                if (consecutiveSecInOuterTrack > EXTREMITY_RING_IDLE_THRESHOLD &&
                     [[GameLayer sharedGameLayer].bombUsedPool getNumObjectsOnTrack:3] == 0) {
                     [[GameLayer sharedGameLayer].gameObjectInjector injectObjectToTrack:3 atAngle:45 gameObjectType:BOMB_TYPE
                         effectType:kRotation];
+                }
+            }
+        } else if (self.radius == PLAYER_RADIUS_INNER_MOST) {
+            // check to see if the player has been sitting idle in the inner track for
+            // too long
+            if (arrivedAtInnerTrack == [NSDate distantFuture]) {
+                arrivedAtInnerTrack = [NSDate date];
+                consecutiveSecInInnerTrack = 0;
+            } else {
+                NSTimeInterval elapsed = fabs([arrivedAtInnerTrack timeIntervalSinceNow]);
+                consecutiveSecInInnerTrack += elapsed;
+                arrivedAtInnerTrack = [NSDate date];
+
+                // trigger a bomb if the player has been on the inner track for more
+                // than 2 minutes consecutively
+                if (consecutiveSecInInnerTrack > EXTREMITY_RING_IDLE_THRESHOLD &&
+                    [[GameLayer sharedGameLayer].bombUsedPool getNumObjectsOnTrack:0] == 0) {
+                    [[GameLayer sharedGameLayer].gameObjectInjector
+                        injectObjectToTrack:0 atAngle:45 gameObjectType:BOMB_TYPE
+                            effectType:kRotation];
                 }
             }
         }
@@ -136,11 +158,13 @@
         }
         
         self.arrivedAtOuterTrack = [NSDate distantFuture];
+        self.arrivedAtInnerTrack = [NSDate distantFuture];
         self.visible = 0;
         self.canMove = NO;
         self.hasShield = NO;
         self.ticksIdle = 0;
         self.consecutiveSecInOuterTrack = 0;
+        self.consecutiveSecInInnerTrack = 0;
     }
     return (self);
 }
@@ -154,6 +178,9 @@
 //    self.rotation = 0;
     self.radius = PLAYER_RADIUS_OUTER_MOST;
     self.arrivedAtOuterTrack = [NSDate distantFuture];
+    self.arrivedAtInnerTrack = [NSDate distantFuture];
+    self.consecutiveSecInInnerTrack = 0;
+    self.consecutiveSecInOuterTrack = 0;
 //    self.visible = 0;
     self.canMove = NO;
     self.hasShield = NO;

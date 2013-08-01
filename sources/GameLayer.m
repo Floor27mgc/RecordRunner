@@ -297,9 +297,9 @@ static GameLayer *sharedGameLayer;
     }
     
     // generate Game Objectsrandomly
-    if (arc4random() % RANDOM_MAX <= bombSpawnRate) {
+/*    if (arc4random() % RANDOM_MAX <= bombSpawnRate) {
         [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:BOMB_TYPE effectType:kRotation];
-    }
+    }*/
     
     // generate Game Objectsrandomly
     int ran = (arc4random() % RANDOM_MAX);
