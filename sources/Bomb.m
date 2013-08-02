@@ -43,7 +43,8 @@
     // if we do not hit the player now and the player is moving, see if we
     // have a "close call"
     if (![self encounterWithPlayer] &&
-        ![[GameLayer sharedGameLayer].player isIdle]) {
+        (![[GameLayer sharedGameLayer].player isIdle] ||
+         [[GameLayer sharedGameLayer].player justStartedMoving])) {
         
         float distance = ccpDistance([GameLayer sharedGameLayer].player.position,
                                      self.position);

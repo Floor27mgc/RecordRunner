@@ -22,6 +22,7 @@
 @synthesize arrivedAtInnerTrack;
 @synthesize canMove;
 @synthesize ticksIdle;
+@synthesize ticksSinceButtonPressed;
 @synthesize consecutiveSecInOuterTrack;
 @synthesize consecutiveSecInInnerTrack;
 
@@ -32,6 +33,7 @@
     int track_num;
     
     self.ticksIdle++;
+    self.ticksSinceButtonPressed++;
 
     if ([[GameLayer sharedGameLayer] getIsHitStateByTrackNum:TRACKNUM_FROM_RADIUS] == YES)
     {
@@ -163,6 +165,7 @@
         self.canMove = NO;
         self.hasShield = NO;
         self.ticksIdle = 0;
+        self.ticksSinceButtonPressed = 0;
         self.consecutiveSecInOuterTrack = 0;
         self.consecutiveSecInInnerTrack = 0;
     }
@@ -181,6 +184,8 @@
     self.arrivedAtInnerTrack = [NSDate distantFuture];
     self.consecutiveSecInInnerTrack = 0;
     self.consecutiveSecInOuterTrack = 0;
+    self.ticksIdle = 0;
+    self.ticksSinceButtonPressed = 0;
 //    self.visible = 0;
     self.canMove = NO;
     self.hasShield = NO;
@@ -190,16 +195,14 @@
 //Makes the player visible and so that clicking will move him and sets him on the center of the record. Called after the intro animation plays.
 - (void) startPlayer
 {
-    
     self.visible = 1;
     self.canMove = YES;
     self.radius = PLAYER_RADIUS_OUTER_MOST;
     self.playerRadialSpeed = 0;
     self.direction = kMoveInToOut;
-    
+    self.ticksIdle = 0;
     
     [[SoundController sharedSoundController] playSoundIdx:SOUND_PLAYER_START fromObject:self];
-    
 }
 
 // -----------------------------------------------------------------------------------
@@ -251,6 +254,9 @@
         
         // reset the outer track timer
         arrivedAtOuterTrack = [NSDate distantFuture];
+        
+        // tick counter for close misses when *starting* from inner/outer track
+        self.ticksSinceButtonPressed = 0;
     }
 }
 
@@ -313,6 +319,12 @@
 - (void) onEnter
 {
     // Setup a delegate method for the animationManager of the explosion
+}
+
+// -----------------------------------------------------------------------------------
+- (BOOL) justStartedMoving
+{
+    return ticksSinceButtonPressed < JUST_STARTED_MOVING_THRESHOLD;
 }
 
 // -----------------------------------------------------------------------------------
