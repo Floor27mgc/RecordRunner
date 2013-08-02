@@ -618,22 +618,22 @@ static GameLayer *sharedGameLayer;
     int scoreBump = -1;
 
     switch ([GameInfoGlobal sharedGameInfoGlobal].numRotationsThisLife) {
-        case 33:
+        case REVOLUTION_BUMP_1:
             if (![GameInfoGlobal sharedGameInfoGlobal].hit33rotationsThisLife) {
                 [GameInfoGlobal sharedGameInfoGlobal].hit33rotationsThisLife = YES;
-                scoreBump = 33;
+                scoreBump = REVOLUTION_BUMP_1;
             }
             break;
-        case 45:
+        case REVOLUTION_BUMP_2:
             if (![GameInfoGlobal sharedGameInfoGlobal].hit45rotationsThisLife) {
                 [GameInfoGlobal sharedGameInfoGlobal].hit45rotationsThisLife = YES;
-                scoreBump = 45;
+                scoreBump = REVOLUTION_BUMP_2;
             }
             break;
-        case 78:
+        case REVOLUTION_BUMP_3:
             if (![GameInfoGlobal sharedGameInfoGlobal].hit78rotationsThisLife) {
                 [GameInfoGlobal sharedGameInfoGlobal].hit78rotationsThisLife = YES;
-                scoreBump = 78;
+                scoreBump = REVOLUTION_BUMP_3;
             }
             break;
         default:
@@ -642,8 +642,10 @@ static GameLayer *sharedGameLayer;
     
     // display RPM score bump and increment score accordingly
     if (scoreBump != -1) {
-        NSString * rpmBump = [NSString stringWithFormat:@"+%d", scoreBump];
-        [self showScoreOnTrack:[player getPlayerTrackNum] message: rpmBump];
+        NSString * rpmBump = [NSString stringWithFormat:@"%d revolutions!!!",
+                              scoreBump];
+        
+        [gameObjectInjector showScoreObject:3 message: rpmBump xVal:270 yVal:270];
         [_score addToScore:scoreBump];
     }
 }
@@ -669,7 +671,7 @@ static GameLayer *sharedGameLayer;
 //This is called by any object that wants to show a score on the board.
 - (void) showScoreOnTrack: (int)track message:(NSString *) scoreText
 {
-    [gameObjectInjector showScoreObject:track message: scoreText];
+    [gameObjectInjector showScoreObject:track message: scoreText xVal:0 yVal:0];
 }
 
 

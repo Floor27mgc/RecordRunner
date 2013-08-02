@@ -56,6 +56,7 @@
 //Score objects are those small numbers that float after collecting something.
 //They are a bit different than objects because they don't rotate on the track, so I created a second method for them.
 - (GameObjectBase *) showScoreObject: (int) trackNum message:(NSString *) message
+                                xVal:(int)x yVal:(int)y
 {
     Queue * usedPool;
     Queue * freePool;
@@ -64,9 +65,9 @@
     
     
     CGPoint preferredLocation = ccp ((COMMON_RECORD_CENTER_X +
-                                      RADIUS_FROM_TRACKNUM(trackNum)*cos(CC_DEGREES_TO_RADIANS(0))),
+                                      RADIUS_FROM_TRACKNUM(trackNum)*cos(CC_DEGREES_TO_RADIANS(x))),
                                      (COMMON_RECORD_CENTER_Y +
-                                      RADIUS_FROM_TRACKNUM(trackNum)*sin(CC_DEGREES_TO_RADIANS(0))));
+                                      RADIUS_FROM_TRACKNUM(trackNum)*sin(CC_DEGREES_TO_RADIANS(y))));
     
     
     usedPool = [GameLayer sharedGameLayer].scoreUsedPool;

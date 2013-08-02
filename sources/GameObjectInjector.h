@@ -22,7 +22,9 @@
 @property (nonatomic, strong) CCNode *dummyInjectorBox;
 
 - (GameObjectBase *) showScoreObject: (int)trackNum
-                             message: (NSString *) message;
+                             message: (NSString *) message
+                                xVal:(int)x
+                                yVal:(int)y;
 
 - (GameObjectBase *) injectObjectToTrack: (int) trackNum
                                  atAngle: (int) insertionAngle

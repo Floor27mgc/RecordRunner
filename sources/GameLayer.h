@@ -31,13 +31,16 @@
 #define MIN_NUM_BOMBS_PER_TRACK       5
 #define MIN_NUM_COINS_PER_TRACK       5
 #define MIN_NUM_SCORES_PER_TRACK      5
-#define MIN_NUM_POWER_ICONS_PER_TRACK 5
+#define MIN_NUM_POWER_ICONS_PER_TRACK 1
 #define MAX_NUM_TRACK                 4
 #define MAX_NUM_BOUNCING_COINS        7
 #define kBombSpawnRate 30
 #define kCoinSpawnRate 38
 #define kShieldSpawnRate 1
 #define TAP_DELAY_THRESHOLD_MSEC 62
+#define REVOLUTION_BUMP_1 33
+#define REVOLUTION_BUMP_2 45
+#define REVOLUTION_BUMP_3 78
 
 #define SPEED_INCREASE_AMOUNT   .1
 #define SPEED_INCREASE_INTERVAL 22

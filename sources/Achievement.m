@@ -309,9 +309,9 @@
         case 27:
             partialAchievement = YES;
             currentPercentAchieved =
-                ((double)[GameInfoGlobal sharedGameInfoGlobal].lifetimeRevolutions / 1000000.0)
+                ((double)[GameInfoGlobal sharedGameInfoGlobal].lifetimeRevolutions / 10000.0)
                     * 100.0;
-            achieved = ([GameInfoGlobal sharedGameInfoGlobal].coinsInBank >= 1000000);
+            achieved = ([GameInfoGlobal sharedGameInfoGlobal].coinsInBank >= 10000);
             break;
             
             // Go 40 revolutions in a single life
@@ -349,14 +349,14 @@
             achieved = ([GameInfoGlobal sharedGameInfoGlobal].bombsKilledThisShield >= 5);
             break;
             
-            // Kill 10 bombs with a single shield
+            // Kill 8 bombs with a single shield
         case 35:
-            achieved = ([GameInfoGlobal sharedGameInfoGlobal].bombsKilledThisShield >= 10);
+            achieved = ([GameInfoGlobal sharedGameInfoGlobal].bombsKilledThisShield >= 8);
             break;
             
-            // Kill 15 bombs with a single shield
+            // Kill 15 bombs with a single shield -- THIS IS DISABLED
         case 36:
-            achieved = ([GameInfoGlobal sharedGameInfoGlobal].bombsKilledThisShield >= 15);
+            achieved = NO;
             break;
 
         default:
