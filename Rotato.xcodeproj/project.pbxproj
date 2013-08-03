@@ -625,6 +625,13 @@
 		E5973A4D1720F4E6001B948A /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E5973A4B1720F4E4001B948A /* MainMenuScene.m */; };
 		E5973A9C17234CD8001B948A /* MainMenuBuyBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5973A9B17234CD8001B948A /* MainMenuBuyBox.m */; };
 		E5973A9F17234DB3001B948A /* MainMenuSocialBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5973A9E17234DB3001B948A /* MainMenuSocialBox.m */; };
+		E5C5A39D17A6B12C00B58FEC /* guiObjectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C5A39C17A6B12B00B58FEC /* guiObjectButton.m */; };
+		E5C5A3A017A76CE100B58FEC /* guiObjectButton.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5C5A39E17A76CE100B58FEC /* guiObjectButton.ccbi */; };
+		E5C5A3A317A76DD400B58FEC /* MainMenuSettingsBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5C5A3A217A76DD400B58FEC /* MainMenuSettingsBox.ccbi */; };
+		E5DD15DB17A7F48E00A16CEC /* gui_circle-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E5DD15D917A7F48E00A16CEC /* gui_circle-hd.png */; };
+		E5DD15DC17A7F48E00A16CEC /* gui_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = E5DD15DA17A7F48E00A16CEC /* gui_circle.png */; };
+		E5DD15DF17A7F53700A16CEC /* gui_icon_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = E5DD15DD17A7F53700A16CEC /* gui_icon_circle.png */; };
+		E5DD15E017A7F53700A16CEC /* gui_icon_circle-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E5DD15DE17A7F53700A16CEC /* gui_icon_circle-hd.png */; };
 		E5F1506B1788E4D6006923DD /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F150691788E4D6006923DD /* checkmark.png */; };
 		E5F1506C1788E4D6006923DD /* checkmark-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E5F1506A1788E4D6006923DD /* checkmark-hd.png */; };
 		E5F1506F1789D61B006923DD /* RankLayerBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F1506E1789D61A006923DD /* RankLayerBox.m */; };
@@ -656,7 +663,6 @@
 		E5F47E7617935F9500504A9A /* MainMenuRecommendBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5F47E6017935F9500504A9A /* MainMenuRecommendBox.ccbi */; };
 		E5F47E7717935F9500504A9A /* MainMenuScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5F47E6117935F9500504A9A /* MainMenuScene.ccbi */; };
 		E5F47E7817935F9500504A9A /* MainMenuScoreBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5F47E6217935F9500504A9A /* MainMenuScoreBox.ccbi */; };
-		E5F47E7917935F9500504A9A /* MainMenuSettingsBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5F47E6317935F9500504A9A /* MainMenuSettingsBox.ccbi */; };
 		E5F47E7A17935F9500504A9A /* MainMenuSocialBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5F47E6417935F9500504A9A /* MainMenuSocialBox.ccbi */; };
 		E5F47E7B17935F9500504A9A /* multiplier.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5F47E6517935F9500504A9A /* multiplier.ccbi */; };
 		E5F47E7C17935F9500504A9A /* RankLayerBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5F47E6617935F9500504A9A /* RankLayerBox.ccbi */; };
@@ -1369,6 +1375,14 @@
 		E5A80D271783134B007CF469 /* pickup_coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = pickup_coin.wav; path = Resources/Sound/pickup_coin.wav; sourceTree = SOURCE_ROOT; };
 		E5A80D281783134B007CF469 /* pickup_coin1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = pickup_coin1.wav; path = Resources/Sound/pickup_coin1.wav; sourceTree = SOURCE_ROOT; };
 		E5A80D291783134B007CF469 /* popup.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = popup.m4a; path = Resources/Sound/popup.m4a; sourceTree = SOURCE_ROOT; };
+		E5C5A39B17A6B12B00B58FEC /* guiObjectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = guiObjectButton.h; path = sources/guiObjectButton.h; sourceTree = SOURCE_ROOT; };
+		E5C5A39C17A6B12B00B58FEC /* guiObjectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = guiObjectButton.m; path = sources/guiObjectButton.m; sourceTree = SOURCE_ROOT; };
+		E5C5A39E17A76CE100B58FEC /* guiObjectButton.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = guiObjectButton.ccbi; path = CocosBuilder/CCBI_files/guiObjectButton.ccbi; sourceTree = SOURCE_ROOT; };
+		E5C5A3A217A76DD400B58FEC /* MainMenuSettingsBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainMenuSettingsBox.ccbi; path = CocosBuilder/CCBI_files/MainMenuSettingsBox.ccbi; sourceTree = SOURCE_ROOT; };
+		E5DD15D917A7F48E00A16CEC /* gui_circle-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gui_circle-hd.png"; path = "Resources/Graphics/gui_circle-hd.png"; sourceTree = SOURCE_ROOT; };
+		E5DD15DA17A7F48E00A16CEC /* gui_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gui_circle.png; path = Resources/Graphics/gui_circle.png; sourceTree = SOURCE_ROOT; };
+		E5DD15DD17A7F53700A16CEC /* gui_icon_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gui_icon_circle.png; path = Resources/Graphics/gui_icon_circle.png; sourceTree = SOURCE_ROOT; };
+		E5DD15DE17A7F53700A16CEC /* gui_icon_circle-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gui_icon_circle-hd.png"; path = "Resources/Graphics/gui_icon_circle-hd.png"; sourceTree = SOURCE_ROOT; };
 		E5F150691788E4D6006923DD /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkmark.png; path = Resources/Graphics/checkmark.png; sourceTree = SOURCE_ROOT; };
 		E5F1506A1788E4D6006923DD /* checkmark-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkmark-hd.png"; path = "Resources/Graphics/checkmark-hd.png"; sourceTree = SOURCE_ROOT; };
 		E5F1506D1789D61A006923DD /* RankLayerBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RankLayerBox.h; path = sources/RankLayerBox.h; sourceTree = SOURCE_ROOT; };
@@ -1409,7 +1423,6 @@
 		E5F47E6017935F9500504A9A /* MainMenuRecommendBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainMenuRecommendBox.ccbi; path = CocosBuilder/CCBI_files/MainMenuRecommendBox.ccbi; sourceTree = SOURCE_ROOT; };
 		E5F47E6117935F9500504A9A /* MainMenuScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainMenuScene.ccbi; path = CocosBuilder/CCBI_files/MainMenuScene.ccbi; sourceTree = SOURCE_ROOT; };
 		E5F47E6217935F9500504A9A /* MainMenuScoreBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainMenuScoreBox.ccbi; path = CocosBuilder/CCBI_files/MainMenuScoreBox.ccbi; sourceTree = SOURCE_ROOT; };
-		E5F47E6317935F9500504A9A /* MainMenuSettingsBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainMenuSettingsBox.ccbi; path = CocosBuilder/CCBI_files/MainMenuSettingsBox.ccbi; sourceTree = SOURCE_ROOT; };
 		E5F47E6417935F9500504A9A /* MainMenuSocialBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainMenuSocialBox.ccbi; path = CocosBuilder/CCBI_files/MainMenuSocialBox.ccbi; sourceTree = SOURCE_ROOT; };
 		E5F47E6517935F9500504A9A /* multiplier.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = multiplier.ccbi; path = CocosBuilder/CCBI_files/multiplier.ccbi; sourceTree = SOURCE_ROOT; };
 		E5F47E6617935F9500504A9A /* RankLayerBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = RankLayerBox.ccbi; path = CocosBuilder/CCBI_files/RankLayerBox.ccbi; sourceTree = SOURCE_ROOT; };
@@ -1614,6 +1627,10 @@
 				E582541A178C4C170092259A /* gui_rings_outer-hd.png */,
 				083B0900170AB0EC00EF0DB0 /* gui_banner-hd.png */,
 				083B0901170AB0EC00EF0DB0 /* gui_banner.png */,
+				E5DD15D917A7F48E00A16CEC /* gui_circle-hd.png */,
+				E5DD15DD17A7F53700A16CEC /* gui_icon_circle.png */,
+				E5DD15DE17A7F53700A16CEC /* gui_icon_circle-hd.png */,
+				E5DD15DA17A7F48E00A16CEC /* gui_circle.png */,
 				083B0902170AB0EC00EF0DB0 /* gui_icon_buy-hd.png */,
 				083B0903170AB0EC00EF0DB0 /* gui_icon_buy.png */,
 				083B0904170AB0EC00EF0DB0 /* gui_icon_help-hd.png */,
@@ -1695,6 +1712,8 @@
 			children = (
 				E5F47E20179354E700504A9A /* Achievement.h */,
 				E5F47E21179354E700504A9A /* Achievement.m */,
+				E5C5A39B17A6B12B00B58FEC /* guiObjectButton.h */,
+				E5C5A39C17A6B12B00B58FEC /* guiObjectButton.m */,
 				E5F47E231793550100504A9A /* achievement_map.strings */,
 				E5F47E251793550D00504A9A /* AchievementContainer.h */,
 				E5F47E261793550D00504A9A /* AchievementContainer.m */,
@@ -2140,6 +2159,7 @@
 			isa = PBXGroup;
 			children = (
 				E530B68A17A16B0B00A3A7FA /* RankLayerSubBox.ccbi */,
+				E5C5A3A217A76DD400B58FEC /* MainMenuSettingsBox.ccbi */,
 				E5F47E5217935F9500504A9A /* DebugMenuNode.ccbi */,
 				E5F2F244179C1B9B00EEE92A /* GameObjectCheck.ccbi */,
 				E5F47E5317935F9500504A9A /* DEMO_ACHIEVEMENTS.ccbi */,
@@ -2158,7 +2178,7 @@
 				E5F47E6017935F9500504A9A /* MainMenuRecommendBox.ccbi */,
 				E5F47E6117935F9500504A9A /* MainMenuScene.ccbi */,
 				E5F47E6217935F9500504A9A /* MainMenuScoreBox.ccbi */,
-				E5F47E6317935F9500504A9A /* MainMenuSettingsBox.ccbi */,
+				E5C5A39E17A76CE100B58FEC /* guiObjectButton.ccbi */,
 				E5F47E6417935F9500504A9A /* MainMenuSocialBox.ccbi */,
 				E5F47E6517935F9500504A9A /* multiplier.ccbi */,
 				E5F47E6617935F9500504A9A /* RankLayerBox.ccbi */,
@@ -3042,7 +3062,6 @@
 				E5F47E7617935F9500504A9A /* MainMenuRecommendBox.ccbi in Resources */,
 				E5F47E7717935F9500504A9A /* MainMenuScene.ccbi in Resources */,
 				E5F47E7817935F9500504A9A /* MainMenuScoreBox.ccbi in Resources */,
-				E5F47E7917935F9500504A9A /* MainMenuSettingsBox.ccbi in Resources */,
 				E5F47E7A17935F9500504A9A /* MainMenuSocialBox.ccbi in Resources */,
 				E5F47E7B17935F9500504A9A /* multiplier.ccbi in Resources */,
 				E5F47E7C17935F9500504A9A /* RankLayerBox.ccbi in Resources */,
@@ -3102,6 +3121,12 @@
 				E5F2F249179C8F5500EEE92A /* DialogCardHalf-hd.png in Resources */,
 				E530B682179E42D400A3A7FA /* GameOverLayerBox.ccbi in Resources */,
 				E530B68B17A16B0B00A3A7FA /* RankLayerSubBox.ccbi in Resources */,
+				E5C5A3A017A76CE100B58FEC /* guiObjectButton.ccbi in Resources */,
+				E5C5A3A317A76DD400B58FEC /* MainMenuSettingsBox.ccbi in Resources */,
+				E5DD15DB17A7F48E00A16CEC /* gui_circle-hd.png in Resources */,
+				E5DD15DC17A7F48E00A16CEC /* gui_circle.png in Resources */,
+				E5DD15DF17A7F53700A16CEC /* gui_icon_circle.png in Resources */,
+				E5DD15E017A7F53700A16CEC /* gui_icon_circle-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3153,6 +3178,7 @@
 				E5F47E271793550D00504A9A /* AchievementContainer.m in Sources */,
 				E5F2F243179C127A00EEE92A /* GameObjectCheck.m in Sources */,
 				E530B68917A0D6E900A3A7FA /* RankLayerSubBox.m in Sources */,
+				E5C5A39D17A6B12C00B58FEC /* guiObjectButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

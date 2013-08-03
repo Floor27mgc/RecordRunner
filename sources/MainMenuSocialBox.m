@@ -9,9 +9,43 @@
 #import "MainMenuSocialBox.h"
 #import <MessageUI/MFMailComposeViewController.h>
 #import "common.h"
+#import "CCBAnimationManager.h"
+
+#import "CCBReader.h"
+
+
 @implementation MainMenuSocialBox 
 @synthesize emailView;
 @synthesize emailViewController;
+@synthesize emailButton;
+@synthesize twitterButton;
+@synthesize facebookButton;
+
+
+
+// -----------------------------------------------------------------------------------
+- (id) init
+{
+    self = [super init];
+    
+    if (!self) return NULL;
+    
+    
+    return self;
+    
+}
+
+// -----------------------------------------------------------------------------------
+- (void) didLoadFromCCB
+{
+    // Setup a delegate method for the animationManager of the explosion
+    CCBAnimationManager* animationManager = self.userObject;
+    animationManager.delegate = self;
+       
+    
+    
+}
+
 
 // -----------------------------------------------------------------------------------
 - (void) pressedFacebook: (id)sender

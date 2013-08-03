@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>3</integer>
+	<integer>0</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -455,7 +455,7 @@
 								<string>ScaleLock</string>
 								<key>value</key>
 								<array>
-									<real>0.0</real>
+									<real>1</real>
 									<real>1</real>
 									<false/>
 									<integer>0</integer>
@@ -724,7 +724,7 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.0</real>
+							<real>1</real>
 							<real>1</real>
 							<false/>
 							<integer>0</integer>
@@ -832,7 +832,7 @@
 									<integer>3</integer>
 									<key>value</key>
 									<array>
-										<real>413.74072265625</real>
+										<real>486.70001220703125</real>
 										<real>70</real>
 									</array>
 								</dict>
@@ -850,7 +850,7 @@
 									<integer>3</integer>
 									<key>value</key>
 									<array>
-										<real>172.99998474121094</real>
+										<real>247.99998474121094</real>
 										<real>70</real>
 									</array>
 								</dict>
@@ -871,7 +871,7 @@
 									<key>easing</key>
 									<dict>
 										<key>type</key>
-										<integer>1</integer>
+										<integer>13</integer>
 									</dict>
 									<key>name</key>
 									<string>position</string>
@@ -881,7 +881,7 @@
 									<integer>3</integer>
 									<key>value</key>
 									<array>
-										<real>173.57868957519531</real>
+										<real>248</real>
 										<real>70</real>
 									</array>
 								</dict>
@@ -894,12 +894,12 @@
 									<key>name</key>
 									<string>position</string>
 									<key>time</key>
-									<real>0.23333333432674408</real>
+									<real>0.56666666269302368</real>
 									<key>type</key>
 									<integer>3</integer>
 									<key>value</key>
 									<array>
-										<real>409.111083984375</real>
+										<real>486.70001220703125</real>
 										<real>70</real>
 									</array>
 								</dict>
@@ -930,7 +930,7 @@
 									<integer>3</integer>
 									<key>value</key>
 									<array>
-										<real>418.74072265625</real>
+										<real>486.70001220703125</real>
 										<real>70</real>
 									</array>
 								</dict>
@@ -948,7 +948,7 @@
 									<integer>3</integer>
 									<key>value</key>
 									<array>
-										<real>482.74072265625</real>
+										<real>574.74072265625</real>
 										<real>70</real>
 									</array>
 								</dict>
@@ -977,119 +977,6 @@
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>CCMenuItemImage</string>
-								<key>memberVarAssignmentName</key>
-								<string></string>
-								<key>memberVarAssignmentType</key>
-								<integer>0</integer>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>-201.96759033203125</real>
-											<real>0.19290117919445038</real>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>anchorPoint</string>
-										<key>type</key>
-										<string>Point</string>
-										<key>value</key>
-										<array>
-											<real>0.5</real>
-											<real>0.5</real>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>1</real>
-											<real>1</real>
-											<false/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ignoreAnchorPointForPosition</string>
-										<key>type</key>
-										<string>Check</string>
-										<key>value</key>
-										<false/>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>block</string>
-										<key>type</key>
-										<string>Block</string>
-										<key>value</key>
-										<array>
-											<string>pressedRecommended:</string>
-											<integer>1</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>isEnabled</string>
-										<key>type</key>
-										<string>Check</string>
-										<key>value</key>
-										<true/>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>normalSpriteFrame</string>
-										<key>type</key>
-										<string>SpriteFrame</string>
-										<key>value</key>
-										<array>
-											<string></string>
-											<string>gui_icon_recommend.png</string>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>selectedSpriteFrame</string>
-										<key>type</key>
-										<string>SpriteFrame</string>
-										<key>value</key>
-										<array>
-											<string></string>
-											<string>gui_icon_recommend.png</string>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>disabledSpriteFrame</string>
-										<key>type</key>
-										<string>SpriteFrame</string>
-										<key>value</key>
-										<array>
-											<string></string>
-											<string>gui_icon_recommend.png</string>
-										</array>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>baseClass</key>
-								<string>CCMenuItemImage</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
 								<string>Social</string>
 								<key>memberVarAssignmentName</key>
 								<string></string>
@@ -1104,7 +991,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>-88.541664123535156</real>
+											<real>-132</real>
 											<real>0.19290117919445038</real>
 											<integer>0</integer>
 										</array>
@@ -1217,7 +1104,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>-46.875</real>
+											<real>-69</real>
 											<real>0.19290117919445038</real>
 											<integer>0</integer>
 										</array>
@@ -1316,119 +1203,6 @@
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>Buy</string>
-								<key>memberVarAssignmentName</key>
-								<string></string>
-								<key>memberVarAssignmentType</key>
-								<integer>0</integer>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>-126.73610687255859</real>
-											<real>0.19290117919445038</real>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>anchorPoint</string>
-										<key>type</key>
-										<string>Point</string>
-										<key>value</key>
-										<array>
-											<real>0.5</real>
-											<real>0.5</real>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>1</real>
-											<real>1</real>
-											<false/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ignoreAnchorPointForPosition</string>
-										<key>type</key>
-										<string>Check</string>
-										<key>value</key>
-										<false/>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>block</string>
-										<key>type</key>
-										<string>Block</string>
-										<key>value</key>
-										<array>
-											<string>pressedBuy:</string>
-											<integer>1</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>isEnabled</string>
-										<key>type</key>
-										<string>Check</string>
-										<key>value</key>
-										<true/>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>normalSpriteFrame</string>
-										<key>type</key>
-										<string>SpriteFrame</string>
-										<key>value</key>
-										<array>
-											<string></string>
-											<string>gui_icon_buy.png</string>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>selectedSpriteFrame</string>
-										<key>type</key>
-										<string>SpriteFrame</string>
-										<key>value</key>
-										<array>
-											<string></string>
-											<string>gui_icon_buy.png</string>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>disabledSpriteFrame</string>
-										<key>type</key>
-										<string>SpriteFrame</string>
-										<key>value</key>
-										<array>
-											<string></string>
-											<string>gui_icon_buy.png</string>
-										</array>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>baseClass</key>
-								<string>CCMenuItemImage</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
 								<string>High Score</string>
 								<key>memberVarAssignmentName</key>
 								<string></string>
@@ -1443,7 +1217,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>-166.08795166015625</real>
+											<real>-195.08795166015625</real>
 											<real>0.19290117919445038</real>
 											<integer>0</integer>
 										</array>
@@ -1669,7 +1443,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>0.0</real>
+											<real>-6</real>
 											<real>0.19290117919445038</real>
 											<integer>0</integer>
 										</array>
@@ -2483,7 +2257,7 @@
 					<dict>
 						<key>baseValue</key>
 						<array>
-							<real>418.74072265625</real>
+							<real>486.74072265625</real>
 							<real>70</real>
 						</array>
 						<key>name</key>
@@ -2492,7 +2266,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>482.74072265625</real>
+							<real>486.74072265625</real>
 							<real>70</real>
 							<integer>0</integer>
 						</array>
@@ -2674,7 +2448,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>1</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
