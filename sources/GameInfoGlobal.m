@@ -139,15 +139,27 @@ static GameInfoGlobal *sharedGameInfoGlobal;
     if (audioIsAlreadyPlaying)
     {
         // if something else is playing the sound, we are muting the game.
-        isSoundEffectOn = 0;
-        isBackgroundMusicOn = 0;
+        isSoundEffectOn = NO;
+        isBackgroundMusicOn = NO;
     }
     else
     {
         // Matt, please fix this.  Need to set it based on persistence area.
-        isSoundEffectOn = 1;
-        isBackgroundMusicOn = 1;
+        isSoundEffectOn = YES;
+        isBackgroundMusicOn = YES;
     }
 }
+
+-(void) setMusic: (BOOL) musicSetting
+{
+    isBackgroundMusicOn = musicSetting;
+}
+
+
+- (void) setSound: (BOOL) soundSetting
+{
+    isSoundEffectOn = soundSetting;
+}
+
 
 @end

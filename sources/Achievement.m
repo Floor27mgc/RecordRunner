@@ -63,19 +63,18 @@
     
     BOOL achieved = NO;
     double currentPercentAchieved = -1.0;
-    BOOL partialAchievement = NO;
+    BOOL 	partialAchievement = NO;
     
     switch (condIndex) {
             // Go 10 Laps in a single life.
         case 1:
             achieved = ([GameInfoGlobal sharedGameInfoGlobal].numRotationsThisLife
-                        >= 3); //$$TODOSimplified for testing, make this 10 later
+                        >= 10); 
             break;
             
             // Collect 50 coins in a single life.
         case 2:
-            achieved = ([GameInfoGlobal sharedGameInfoGlobal].numCoinsThisLife >= 3);
-            //$$TODOSimplified for testing, make this 50 later
+            achieved = ([GameInfoGlobal sharedGameInfoGlobal].numCoinsThisLife >= 50);
             break;
             
             // Skim past 3 “X’s” in a single life.

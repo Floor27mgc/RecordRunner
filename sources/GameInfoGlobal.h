@@ -20,6 +20,8 @@ typedef enum {
 - (void) resetPerLifeStatistics;
 - (void) logLifeTimeAchievements;
 - (void) evaluateSoundPrefrence;
+- (void) setMusic: (BOOL) musicSetting;
+- (void) setSound: (BOOL) soundSetting;
 + (GameInfoGlobal *) sharedGameInfoGlobal;
 @property (nonatomic,assign) ENUM_GAME_MODE_T gameMode;
 @property (nonatomic, strong) StatisticsContainer * statsContainer;
@@ -42,8 +44,8 @@ typedef enum {
 @property (nonatomic, assign) int lifetimeRevolutions;
 @property (nonatomic, assign) int lifetimeRoundsPlayed;
 @property (nonatomic, assign) BOOL hit40scratchesInSingleRevolution;
-@property (nonatomic, assign) int isBackgroundMusicOn;
-@property (nonatomic, assign) int isSoundEffectOn;
+@property (nonatomic, assign) BOOL isBackgroundMusicOn;
+@property (nonatomic, assign) BOOL isSoundEffectOn;
 @property (nonatomic, strong) NSMutableArray * achievedThisRound;
 @property (nonatomic) UIWindow *window;
 @property (nonatomic, assign) BOOL hit33rotationsThisLife;

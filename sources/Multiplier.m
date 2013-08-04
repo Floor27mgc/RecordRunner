@@ -80,7 +80,11 @@
 {
     if (amount >= multiplierValue) {
         multiplierValue = 1;
-    } else {
+    } else if (amount == -1)
+    {   //This is sent if we want to do the full multiplier reset when time runs out.
+        multiplierValue = 1;
+    }
+    else {
         multiplierValue -= amount;
     }
     
@@ -151,9 +155,9 @@
             }
         
             //Decrement the multiplier if time runs out and player is NOT invincible
-            if (timerLifeInSec % MULTIPLIER_LIFE_TIME_SEC == 0) {/* &&
-                ![GameLayer sharedGameLayer].player.hasShield) {*/
-                [self decrementMultiplier:1];
+            if (timerLifeInSec % MULTIPLIER_LIFE_TIME_SEC == 0 &&
+                ![GameLayer sharedGameLayer].player.hasShield ) {
+                [self decrementMultiplier:-1];
             }
         }
     }

@@ -84,8 +84,8 @@ static SoundController *SoundControllerSingleton;
                                      @"player_inv_left.caf", //SOUND_PLAYER_INV_LEFT
                                      @"player_inv_right.caf", //SOUND_PLAYER_INV_RIGHT
                                      @"invincible_on.caf", //SOUND_PLAYER_GOT_INV
-                                     @"player_scratch_left.caf", //SOUND_PLAYER_SCRATCH_LEFT
-                                     @"player_scratch_right.caf", //SOUND_PLAYER_SCRATCH_RIGHT
+                                     @"swipe.caf", //SOUND_PLAYER_SCRATCH_LEFT
+                                     @"swipe.caf", //SOUND_PLAYER_SCRATCH_RIGHT
                                      nil];
         
         NSArray *menuSoundEffects = [[NSArray alloc] initWithObjects:

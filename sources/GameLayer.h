@@ -42,9 +42,9 @@
 #define REVOLUTION_BUMP_2 45
 #define REVOLUTION_BUMP_3 78
 
-#define SPEED_INCREASE_AMOUNT   .1
+#define SPEED_INCREASE_AMOUNT   .2
 #define SPEED_INCREASE_INTERVAL 22
-#define MAX_GAME_SPEED          2.0
+#define MAX_GAME_SPEED          2.6
 
 #define kGameModeNoRotation 0
 #define kGameModeRotation   1

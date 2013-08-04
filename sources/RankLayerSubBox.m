@@ -18,7 +18,6 @@
 @synthesize goal2;
 @synthesize goal3;
 
-
 @synthesize goal1_check;
 @synthesize goal2_check;
 @synthesize goal3_check;
