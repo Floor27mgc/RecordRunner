@@ -93,6 +93,7 @@
 // -----------------------------------------------------------------------------------
 - (void) resume
 {
+    timerLifeInSec = MULTIPLIER_LIFE_TIME_SEC;
     [self.actionManager resumeTarget:self];
 }
 
