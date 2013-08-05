@@ -39,10 +39,19 @@
     multiplierLabel.color = ccWHITE;
     
     
-    [self.animationManager runAnimationsForSequenceNamed:@"appear"];
-    
     [self reset];
 }
+
+// -----------------------------------------------------------------------------------
+//This is called after the shield time is up so that we can continue counting down.
+- (void) resumeMultiCountdown
+{
+    //Reset time back to 0
+    timerLifeInSec = MULTIPLIER_LIFE_TIME_SEC;
+    
+    [self.animationManager runAnimationsForSequenceNamed:@"bounce_multiplier"];
+}
+
 
 
 // -----------------------------------------------------------------------------------
@@ -130,6 +139,14 @@
 }
 
 // -----------------------------------------------------------------------------------
+//Called when the player dies it just clears out the animation 
+- (void) die
+{
+    
+    [self.animationManager runAnimationsForSequenceNamed:@"disappear"];
+}
+
+// -----------------------------------------------------------------------------------
 - (void) reset
 {
     multiplierValue = 1;
@@ -138,22 +155,29 @@
     speedDifference = 0;
     timeAboveTen = [NSDate distantFuture];
     multiplierTime = [NSDate distantFuture];
+    
+    [self.multiplierLabel setString:[NSString stringWithFormat:@"x %d",
+                                     multiplierValue]];
+    
+    [self.animationManager runAnimationsForSequenceNamed:@"appear"];
+    
 }
+
 
 // -----------------------------------------------------------------------------------
 - (void) showNextFrame
 {
     if (multiplierValue > 1) {
         int elapsed = [multiplierTime timeIntervalSinceNow];
-    
+        
         if (elapsed < 0) {
             timerLifeInSec += elapsed;
             multiplierTime = [NSDate date];
-        
+            
             if (timerLifeInSec == 0) {
                 multiplierTime = [NSDate distantFuture];
             }
-        
+            
             //Decrement the multiplier if time runs out and player is NOT invincible
             if (timerLifeInSec % MULTIPLIER_LIFE_TIME_SEC == 0 &&
                 ![GameLayer sharedGameLayer].player.hasShield ) {
@@ -161,6 +185,15 @@
             }
         }
     }
+}
+
+
+// -----------------------------------------------------------------------------------
+//If the player has a shield, turn on the shield icon in the middle.
+//Called by game layer
+- (void) setShield
+{
+    [self.animationManager runAnimationsForSequenceNamed:@"invincible_active"];
 }
 
 @end

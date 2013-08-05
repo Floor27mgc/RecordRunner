@@ -71,12 +71,9 @@
     //After all the existing are animated. Here are the ones that were not.
     if ([name compare:@"Blip"] == NSOrderedSame) {
         
-        [ [GameLayer sharedGameLayer].rankLayer finishNewThisRoundCheckMarks];
-
     }//Go through and finish animating all the ones that were done. This is first
     else if ([name compare:@"AlreadyAchieved"] == NSOrderedSame)
     {
-        [ [GameLayer sharedGameLayer].rankLayer finishExistingCheckMarks];
         
     }
 }

@@ -24,7 +24,8 @@
 - (GameObjectBase *) showScoreObject: (int)trackNum
                              message: (NSString *) message
                                 xVal:(int)x
-                                yVal:(int)y;
+                                yVal:(int)y
+                       displayEffect: (display_effect) effect;
 
 - (GameObjectBase *) injectObjectToTrack: (int) trackNum
                                  atAngle: (int) insertionAngle

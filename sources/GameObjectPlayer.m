@@ -147,6 +147,7 @@
 // -----------------------------------------------------------------------------------
 - (id) init
 {
+    
     if( (self=[super init]) )
     {
         //NSLog(@"init anim man: %p, user obj: %p", self.animationManager, self.userObject);
@@ -202,6 +203,7 @@
     self.direction = kMoveInToOut;
     self.ticksIdle = 0;
     
+    
     [[SoundController sharedSoundController] playSoundIdx:SOUND_PLAYER_START fromObject:self];
 }
 
@@ -221,9 +223,13 @@
 {
     if (canMove)
     {
+        [self.animationManager runAnimationsForSequenceNamed:@"scratch"];
+        
         //Sounds for swipes
         if (self.hasShield )
         {
+            
+            
             //Play swipe sounds based on direction
             if (direction == kMoveInToOut)
             {

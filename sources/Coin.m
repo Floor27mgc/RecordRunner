@@ -76,44 +76,62 @@
         // this coin as 1
         int coinsToCount = ([GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch == 0 ?
                             1 : [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch);
+        
+        //This is the pre-multiplier count of the coins. This goes off a fibinacci sequence
+        //1 coin = 1
+        //2 coins = 2+1
+        //3 coins = 4 + 2 + 1
+        //4 coins = 8 + 4 + 2 + 1 
+        int fibNumber = 1;
+        display_effect scoreSize = small;
                 
-        // increment score
-        [GameInfoGlobal sharedGameInfoGlobal].numCoinsThisLife++;
-        [[GameLayer sharedGameLayer].score incrementScore: coinsToCount];
+        
         
         //Show the different colored explosions depending on howmany collected in one chain.
         switch (coinsToCount)
         {
             case 0:
             case 1:
+                
                 [self.animationManager runAnimationsForSequenceNamed:@"Die1"];
-            
-                scoreText = [NSString stringWithFormat:@"1"];
+                
+                scoreText = [NSString stringWithFormat:@""];
                 break;
             case 2:
                 [self.animationManager runAnimationsForSequenceNamed:@"Die2"];
                 
-                scoreText = [NSString stringWithFormat:@"2"];
+                fibNumber = 2;
+                scoreText = [NSString stringWithFormat:@"%d", fibNumber * [GameLayer sharedGameLayer].multiplier.multiplierValue ];
                 break;
             case 3:
                 [self.animationManager runAnimationsForSequenceNamed:@"Die3"];
                 
-                scoreText = [NSString stringWithFormat:@"3"];
+                
+                fibNumber = 4;
+                scoreText = [NSString stringWithFormat:@"%d", fibNumber * [GameLayer sharedGameLayer].multiplier.multiplierValue];
+                scoreSize = large;
                 break;
             case 4:
                 [self.animationManager runAnimationsForSequenceNamed:@"Die4"];
                 
-                scoreText = [NSString stringWithFormat:@"4"];
+                fibNumber = 8;
+                scoreText = [NSString stringWithFormat:@"%d", fibNumber * [GameLayer sharedGameLayer].multiplier.multiplierValue];
+                scoreSize = large;
                 break;
             default:
                 [self.animationManager runAnimationsForSequenceNamed:@"Die1"];
                 
+                fibNumber = 1;
                 scoreText = [NSString stringWithFormat:@"1"];
                 break;
         }
         
+        // increment score
+        [GameInfoGlobal sharedGameInfoGlobal].numCoinsThisLife++;
+        [[GameLayer sharedGameLayer].score incrementScore: fibNumber]; //Send them the fibinacci number
+        
         //Show those ghost score text above the bomb.
-        [[GameLayer sharedGameLayer] showScoreOnTrack:TRACKNUM_FROM_RADIUS message: scoreText];
+        [[GameLayer sharedGameLayer] showScoreOnTrack:TRACKNUM_FROM_RADIUS message: scoreText displayEffect:scoreSize];
         
         //Only play the sound if the player is NOT invincible
         if (![[GameLayer sharedGameLayer].player hasShield])

@@ -15,7 +15,6 @@
 #import "Score.h"
 #import "scoreMini.h"
 #import "GameOverLayer.h"
-#import "RankLayerBox.h"
 #import "Power.h"
 #import "Multiplier.h"
 #import "AchievementContainer.h"
@@ -57,6 +56,13 @@ typedef enum {
     SCORE_TYPE
 } game_object_t;
 
+
+typedef enum {
+    small,
+    medium,
+    large
+} display_effect;
+
 typedef enum {
     kRotation,
     kHeartPumping
@@ -94,14 +100,11 @@ typedef enum {
 -(id) getHittingObjByTrackNum:(int) trackNum;
 -(void) openDebugMenu;
 -(BOOL) moveThePlayer;
--(void) showScoreOnTrack: (int) trackNum message:(NSString *) scoreText;
+-(void) showScoreOnTrack: (int) trackNum message:(NSString *) scoreText displayEffect: (display_effect)dispSize;
 -(void) activateInvincible;
 -(void) deactivateInvincible;
 -(void) checkBonuses;
--(void) showGameOverLayer:(int) score
-      theRankAchievements: (NSMutableArray *) thisRanksAchievements
-theRankAchievementsComplete: (NSMutableArray *) thisRanksAchievementsComplete
-              currentRank: (int) myRank;
+-(void) showGameOverLayer:(int) score;
 -(void) startTheNextRound;
 -(void) doTimeBasedGameSpeedUp;
 
@@ -119,7 +122,6 @@ theRankAchievementsComplete: (NSMutableArray *) thisRanksAchievementsComplete
 @property (nonatomic, strong) Queue * scoreFreePool;
 @property (nonatomic, strong) Queue * scoreUsedPool;
 @property (nonatomic, strong) GameOverLayer * gameOverLayer;
-@property (nonatomic, strong) RankLayerBox * rankLayer;
 @property (nonatomic, strong) Multiplier * multiplier;
 @property (nonatomic, assign) int bombSpawnRate;
 @property (nonatomic, assign) int coinSpawnRate;

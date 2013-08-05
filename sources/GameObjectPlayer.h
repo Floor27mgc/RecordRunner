@@ -9,17 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "common.h"
 #import "GameObjectBase.h"
-#import "CCBAnimationManager.h"
 
 #define kPlayerRadialSpeed 32
 #define kPlayerHitBoxSegmentWidth kPlayerSpeed
 #define PLAYER_IDLE_TICKS  15
-<<<<<<< HEAD
 #define JUST_STARTED_MOVING_THRESHOLD 10
-#define EXTREMITY_RING_IDLE_THRESHOLD 120.0
-=======
-#define OUTER_RING_IDLE_THRESHOLD 6.0
->>>>>>> zukalous/menuCleanup
+#define EXTREMITY_RING_IDLE_THRESHOLD 6.0
 
 typedef enum
 {

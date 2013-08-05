@@ -12,7 +12,6 @@
 #import "CCBAnimationManager.h"
 #import "CCBReader.h"
 #import <GameKit/GameKit.h>
-#import "RankLayerSubBox.h"
 #import <Social/Social.h>
 
 @interface GameOverLayer ()
@@ -24,20 +23,12 @@
 @synthesize emailView;
 @synthesize emailViewController;
 @synthesize isQuitting;
-@synthesize rankLabel;
 @synthesize yesButton;
-@synthesize closeMissionButton;
 
 @synthesize yesButtonEnabled;
 @synthesize homeButtonEnabled;
-@synthesize rankBox;
 
-@synthesize closeMissionButtonEnabled;
-@synthesize openMissionButtonEnabled;
 
-int myRank;
-NSMutableArray * myCompletedGoals;
-NSMutableArray * myGoals;
 
 
 // -----------------------------------------------------------------------------------
@@ -71,14 +62,7 @@ NSMutableArray * myGoals;
 //This method is used to set the labels in the Game Over Menu.
 //For example, before G.O. Menu is shown, call this method to set those two values
 - (void) setMenuData:(int) myFinalScore
-           rankLevel:(int) rankScore
-    rankAchievements:(NSMutableArray *) theGoals
-      completedGoals:(NSMutableArray *) theCompletedGoals
 {
-    myRank = rankScore;
-    myCompletedGoals = theCompletedGoals;
-    myGoals = theGoals;
-    
     [GameInfoGlobal sharedGameInfoGlobal].lifetimeRoundsPlayed++;
     [[GameInfoGlobal sharedGameInfoGlobal] logLifeTimeAchievements];
     
@@ -86,13 +70,11 @@ NSMutableArray * myGoals;
     [[GameInfoGlobal sharedGameInfoGlobal] resetPerLifeStatistics];
     
     // reset the multiplier
-    [[GameLayer sharedGameLayer].multiplier reset];
+    //[[GameLayer sharedGameLayer].multiplier reset];
     
     [self.finalScoreLabel setString:[NSString stringWithFormat:@"%d",
                                          myFinalScore]];
     
-    [self.rankLabel setString:[NSString stringWithFormat:@"%d",
-                                     rankScore]];
     
     
     GKScore *myScoreValue = [[GKScore alloc] initWithCategory:@"RotatoLeaderBoard"];
@@ -108,45 +90,6 @@ NSMutableArray * myGoals;
     }];
 }
 
-// -----------------------------------------------------------------------------------
-//This quits the game
-- (void) pressedMissions:(id) sender
-{
-    if (openMissionButtonEnabled)
-    {
-        NSLog(@"pressed missions!");
-        
-        [self turnOffButtons];
-        
-        
-        [self.rankBox testMethod];
-        
-        //This sets the menu data for the final menu
-        [self.rankBox setMenuData: myGoals
-                  whatWasAchieved: myCompletedGoals
-                      currentRank: myRank];
-        
-        CCBAnimationManager* animationManager = self.userObject;
-        [animationManager runAnimationsForSequenceNamed:@"MissionIn"];
-
-    }
-}
-
-// -----------------------------------------------------------------------------------
-//This quits the game
-- (void) pressedCloseMission:(id) sender
-{
-    if (closeMissionButtonEnabled)
-    {
-        NSLog(@"pressed out missions!");
-        
-        [self turnOffButtons];
-        
-        CCBAnimationManager* animationManager = self.userObject;
-        [animationManager runAnimationsForSequenceNamed:@"MissionOut"];
-        
-    }
-}
 
 
 // -----------------------------------------------------------------------------------
@@ -206,31 +149,14 @@ NSMutableArray * myGoals;
         //Turn on the buttons after the menu finishes coming in.
         [self turnOnButtons];
     }
-    else if ([name compare:@"MissionIn"] == NSOrderedSame)
-    {
-        
-        //Turn on the buttons after the menu finishes coming in.
-        [self turnOnButtons];
-    }
-    else if ([name compare:@"MissionOut"] == NSOrderedSame)
-    {
-        //Turn on the buttons after the menu finishes coming in.
-        [self turnOnButtons];
-    }
 }
 
 // -----------------------------------------------------------------------------------
 //Buttons can accept continuing input after they have been pushed. This will prevent them from being pushed again
 - (void) turnOffButtons
 {
-    
-    //$$TODO: Figure out how to turn off the play button. It can be pressed repeatedly.
     yesButtonEnabled = NO;
     homeButtonEnabled = NO;
-    
-    closeMissionButtonEnabled = NO;
-    openMissionButtonEnabled = NO;
-    
 }
 
 // -----------------------------------------------------------------------------------
@@ -242,9 +168,6 @@ NSMutableArray * myGoals;
     yesButtonEnabled = YES;
     homeButtonEnabled = YES;
     
-    
-    closeMissionButtonEnabled = YES;
-    openMissionButtonEnabled = YES;
 }
 
 // -----------------------------------------------------------------------------------

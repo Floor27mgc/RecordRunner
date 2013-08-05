@@ -14,7 +14,6 @@
 #import "AppDelegate.h"
 #import "GameObjectInjector.h"
 #import "GameOverLayer.h"
-#import "RankLayerBox.h"
 #import "common.h"
 #import "PowerIcon.h"
 #import "SoundController.h"
@@ -41,7 +40,6 @@
 @synthesize isGameReadyToStart;
 @synthesize soundController = _soundController;
 @synthesize gameOverLayer;
-@synthesize rankLayer;
 @synthesize bombSpawnRate;
 @synthesize coinSpawnRate;
 @synthesize shieldSpawnRate;
@@ -83,7 +81,6 @@ static GameLayer *sharedGameLayer;
         sharedGameLayer = self;
         
         gameOverLayer = nil;
-        rankLayer = nil;
         bombSpawnRate = kBombSpawnRate;
         coinSpawnRate = kCoinSpawnRate;
         shieldSpawnRate = kShieldSpawnRate;
@@ -527,6 +524,7 @@ static GameLayer *sharedGameLayer;
 {
     NSLog(@"Current Rank: %d", (achievementContainer.currentRank));
     
+    [self.multiplier die];
     [player killYourself];
     
     //Stop the music because player is dead
@@ -544,71 +542,11 @@ static GameLayer *sharedGameLayer;
         }
     }
     
-    //This is how I think should be named
-    NSMutableArray * achievementsForMyRank = [achievementContainer GetAchievementsForRank: achievementContainer.currentRank];
-    NSMutableArray * achievementsForMyNextRank = [achievementContainer GetAchievementsForRank: achievementContainer.currentRank+1];
-    
-    //$$Shouldn't this be done already because we log the achievements in real time during the update loop. I am keeping it here because it works. But just strange that we check them again.
-    // check the current goals before resetting the values
-    BOOL logGoals =
-    [[GameLayer sharedGameLayer].achievementContainer CheckRankGoals];
-    if (logGoals) {
-        [[GameLayer sharedGameLayer].achievementContainer LogRankGoals];
-    }
-    
-    BOOL shouldShowRankLayerBox = ([self wereAnyCurrentRankAchievedThisRound] ||
-                                   [self wereAllRanksGoalsAchieved: achievementsForMyRank]);
-    
     [self pauseSchedulerAndActions];
     
-    //pick the dialog to show
-    if (shouldShowRankLayerBox)
-    {
-        [self showRankLayerBox: achievementsForMyRank
-         nextRanksAchievements:achievementsForMyNextRank
-                   currentRank:achievementContainer.currentRank
-                   promoteRank:[self wereAllRanksGoalsAchieved: achievementsForMyRank]];
-    }
-    else{
-        
-        [self showGameOverLayer: [[GameLayer sharedGameLayer].score getScore]
-            theRankAchievements:achievementsForMyRank
-    theRankAchievementsComplete:[GameInfoGlobal sharedGameInfoGlobal].achievedThisRound
-                    currentRank:achievementContainer.currentRank
-         ];
-    }
-}
-
-//----------------------------------------------------------
-//Used to see if we need to show the rankUp Screen.
-- (BOOL) wereAnyCurrentRankAchievedThisRound
-{
-    NSMutableArray * theAchievements = [GameInfoGlobal sharedGameInfoGlobal].achievedThisRound;
+    NSLog(@"score %d", [[GameLayer sharedGameLayer].score getScore] );
     
-    for(Achievement * ach in theAchievements)
-    {
-        if (ach.isRankSubAchievement)
-        {
-            return YES;
-        }
-    }
-    
-    return NO;
-    
-}
-
-//Used to see if we need to show the rankUp Screen.
-- (BOOL) wereAllRanksGoalsAchieved: (NSMutableArray *) theAchievements
-{
-    for(Achievement * ach in theAchievements)
-    {
-        if (!ach.previouslyAchieved)
-        {
-            return NO;
-        }
-    }
-    
-    return YES;
+    [self showGameOverLayer: [[GameLayer sharedGameLayer].score getScore] ];
 }
 
 
@@ -645,7 +583,7 @@ static GameLayer *sharedGameLayer;
         NSString * rpmBump = [NSString stringWithFormat:@"%d revolutions!!!",
                               scoreBump];
         
-        [gameObjectInjector showScoreObject:3 message: rpmBump xVal:270 yVal:270];
+        [gameObjectInjector showScoreObject:3 message: rpmBump xVal:270 yVal:270 displayEffect:small];
         [_score addToScore:scoreBump];
     }
 }
@@ -669,9 +607,9 @@ static GameLayer *sharedGameLayer;
 
 // -----------------------------------------------------------------------------------
 //This is called by any object that wants to show a score on the board.
-- (void) showScoreOnTrack: (int)track message:(NSString *) scoreText
+- (void) showScoreOnTrack: (int)track message:(NSString *) scoreText displayEffect: (display_effect)dispSize
 {
-    [gameObjectInjector showScoreObject:track message: scoreText xVal:0 yVal:0];
+    [gameObjectInjector showScoreObject:track message: scoreText xVal:0 yVal:0 displayEffect:dispSize];
 }
 
 
@@ -788,6 +726,10 @@ static GameLayer *sharedGameLayer;
                 [POOL_OBJS_ON_TRACK(_bombUsedPool, trackNum)[i] makeInvincible];
             }
     }
+    
+    //Start the countdown
+    [self.multiplier setShield];
+    
 }
 
 -(void) deactivateInvincible
@@ -800,6 +742,8 @@ static GameLayer *sharedGameLayer;
             [POOL_OBJS_ON_TRACK(_bombUsedPool, trackNum)[i] makeVincible];
         }
     }
+
+    [self.multiplier resumeMultiCountdown];
 }
 
 //Called after pushing "Play" on the GameOverLayer. This does all the stuff to reset the board and get it ready for the next player life
@@ -849,12 +793,16 @@ static GameLayer *sharedGameLayer;
         [self setIsHitStateByTrackNum:trackNum toState:NO];
         [self setHittingObjByTrackNum:trackNum hittingObj:nil];
     }
-    [self.multiplier decrementMultiplier:self.multiplier.multiplierValue-1];
+    
+    [self.multiplier reset];
+
     
     [[GameLayer sharedGameLayer].gameObjectInjector stopInjector];
     
     CCBAnimationManager* animationManager = self.userObject;
     player.visible = false;
+    
+    
     [animationManager runAnimationsForSequenceNamed:@"start_game"];
     
 }
@@ -904,48 +852,10 @@ static GameLayer *sharedGameLayer;
 }
 
 
-//Called after the game is over, if you did something show this box.
-- (void) showRankLayerBox: (NSMutableArray *) thisRanksAchievements
-    nextRanksAchievements: (NSMutableArray *) nextAchievements
-              currentRank: (int) myRank
-              promoteRank: (BOOL) goNextRank
-{
-    if (rankLayer != nil)
-    {
-        CCBAnimationManager* animationManager = rankLayer.userObject;
-        NSLog(@"animationManager: %@", animationManager);
-        
-        
-        //This sets the menu data for the final menu
-        [rankLayer setMenuData: thisRanksAchievements
-         nextRanksAchievements:nextAchievements
-               whatWasAchieved: [GameInfoGlobal sharedGameInfoGlobal].achievedThisRound
-                   currentRank:myRank promoteRank:goNextRank];
-        
-        
-        rankLayer.visible = YES;
-        [animationManager runAnimationsForSequenceNamed:@"Pop in"];
-    } else {
-        rankLayer =
-        (RankLayerBox *) [CCBReader nodeGraphFromFile:@"RankLayerBox.ccbi"];
-        rankLayer.position = COMMON_SCREEN_CENTER;
-        
-        //This sets the menu data for the final menu
-        [rankLayer setMenuData: thisRanksAchievements
-         nextRanksAchievements:nextAchievements
-               whatWasAchieved: [GameInfoGlobal sharedGameInfoGlobal].achievedThisRound
-                   currentRank:myRank promoteRank:goNextRank];
-        
-        [[GameLayer sharedGameLayer] addChild:rankLayer z:11];
-    }
 
-}
 
 //Called after the game is over, it shows the dialog. Also called after the RankLayerBox
 - (void) showGameOverLayer: (int) score
-       theRankAchievements: (NSMutableArray *) thisRanksAchievements
-theRankAchievementsComplete: (NSMutableArray *) thisRanksAchievementsComplete
-                currentRank: (int) myRank
 {
     
     if (gameOverLayer != nil)
@@ -955,10 +865,7 @@ theRankAchievementsComplete: (NSMutableArray *) thisRanksAchievementsComplete
         
         
         //This sets the menu data for the final menu
-        [gameOverLayer setMenuData: score
-                         rankLevel: myRank
-                  rankAchievements: thisRanksAchievements
-                    completedGoals: thisRanksAchievementsComplete];
+        [gameOverLayer setMenuData: score];
          
          
         gameOverLayer.visible = YES;
@@ -969,17 +876,13 @@ theRankAchievementsComplete: (NSMutableArray *) thisRanksAchievementsComplete
         gameOverLayer.position = COMMON_SCREEN_CENTER;
         
         //This sets the menu data for the final menu
-        [gameOverLayer setMenuData: score
-                         rankLevel: myRank
-                  rankAchievements: thisRanksAchievements
-                    completedGoals: thisRanksAchievementsComplete];
+        [gameOverLayer setMenuData: score];
         
         [[GameLayer sharedGameLayer] addChild:gameOverLayer z:11];
     }
     
     
     [[[GameInfoGlobal sharedGameInfoGlobal] statsContainer] resetGameTimer];
-
 
 }
 

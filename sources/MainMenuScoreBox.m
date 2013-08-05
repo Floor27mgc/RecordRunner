@@ -75,7 +75,7 @@
 clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 1) {
         
-        ///$$$$ TODO run ResetAllAchievements from achievementContainer
+        ///$$ TODO run ResetAllAchievements from achievementContainer
         
         // Clear all progress saved on Game Center
         [GKAchievement resetAchievementsWithCompletionHandler:^(NSError *error)

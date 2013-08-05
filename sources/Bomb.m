@@ -68,7 +68,7 @@
                     [[SoundController sharedSoundController] playSoundIdx:SOUND_BOMB_SKIM fromObject:self];
                     
                     //Show those ghost score text above the bomb.
-                    [[GameLayer sharedGameLayer] showScoreOnTrack:TRACKNUM_FROM_RADIUS message: @"+1"];
+                    [[GameLayer sharedGameLayer] showScoreOnTrack:TRACKNUM_FROM_RADIUS message: @"x1" displayEffect:small];
                 }
             } else {
                 if (!closeCallBelow) {
@@ -77,7 +77,9 @@
                     
                     //Play sound effect
                     [[SoundController sharedSoundController] playSoundIdx:SOUND_BOMB_SKIM2 fromObject:self];
-                    [[GameLayer sharedGameLayer] showScoreOnTrack:TRACKNUM_FROM_RADIUS message: @"+1"];
+                    
+                    //Show the multiplier
+                    [[GameLayer sharedGameLayer] showScoreOnTrack:TRACKNUM_FROM_RADIUS message: @"x1" displayEffect:small];
 
                 }
             }

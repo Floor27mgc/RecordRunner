@@ -207,11 +207,7 @@ int nextRankForThisLayer;
         [name compare:@"PopOutRanked"] == NSOrderedSame) {
         
         
-        [[GameLayer sharedGameLayer] showGameOverLayer: [[GameLayer sharedGameLayer].score getScore]
-                                            theRankAchievements:goals
-                                    theRankAchievementsComplete:[GameInfoGlobal sharedGameInfoGlobal].achievedThisRound
-                                                    currentRank:currentRankScore
-                                         ];
+        [[GameLayer sharedGameLayer] showGameOverLayer: [[GameLayer sharedGameLayer].score getScore]];
         
         
     }

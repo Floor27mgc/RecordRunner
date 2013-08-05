@@ -56,7 +56,9 @@
 //Score objects are those small numbers that float after collecting something.
 //They are a bit different than objects because they don't rotate on the track, so I created a second method for them.
 - (GameObjectBase *) showScoreObject: (int) trackNum message:(NSString *) message
-                                xVal:(int)x yVal:(int)y
+                                xVal:(int)x
+                                yVal:(int)y
+                          displayEffect: (display_effect) effect
 {
     Queue * usedPool;
     Queue * freePool;
@@ -91,8 +93,16 @@
         [newScoreObject moveTo:preferredLocation];
         newScoreObject.visible = 1;
         [newScoreObject setScoreText: message];
+         
+        if (effect == small || effect == medium)
+        {
+            [newScoreObject.animationManager runAnimationsForSequenceNamed:@"show_score"];
+        }
+        else if (effect == large)
+        {
+            [newScoreObject.animationManager runAnimationsForSequenceNamed:@"show_score_big"];
+        }
         
-        [newScoreObject.animationManager runAnimationsForSequenceNamed:@"show_score"];
         
         //Add the score to the used pools
         [usedPool addObject:newScoreObject toTrack:trackNum];
