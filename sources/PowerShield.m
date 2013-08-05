@@ -29,6 +29,8 @@
     [GameInfoGlobal sharedGameInfoGlobal].bombsKilledThisShield = 0;
     [super addPower];
     
+    [[GameLayer sharedGameLayer].multiplier pause];
+    
     [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer at:SHIELD_STATS] tick];
 }
 
@@ -75,6 +77,8 @@
         [GameLayer sharedGameLayer].invincibleRecord.visible = NO;
         _startedBlink = NO;
         _lastToggle = 0;
+        
+        [[GameLayer sharedGameLayer].multiplier resume];
         
         [[GameLayer sharedGameLayer] deactivateInvincible];
         

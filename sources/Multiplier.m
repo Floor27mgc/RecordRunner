@@ -85,6 +85,18 @@
 }
 
 // -----------------------------------------------------------------------------------
+- (void) pause
+{
+    [self.actionManager pauseAllRunningActions];
+}
+
+// -----------------------------------------------------------------------------------
+- (void) resume
+{
+    [self.actionManager resumeTarget:self];
+}
+
+// -----------------------------------------------------------------------------------
 - (void) decrementMultiplier:(int)amount
 {
     if (amount >= multiplierValue) {
