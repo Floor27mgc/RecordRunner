@@ -194,7 +194,7 @@
             //Decrement the multiplier if time runs out and player is NOT invincible
             if (timerLifeInSec % MULTIPLIER_LIFE_TIME_SEC == 0 &&
                 ![GameLayer sharedGameLayer].player.hasShield ) {
-                [self decrementMultiplier:-1];
+                [self decrementMultiplier:1];
             }
         }
     }
