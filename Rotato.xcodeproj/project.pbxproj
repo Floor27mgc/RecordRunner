@@ -68,6 +68,7 @@
 		0840D59D163F4BCC003D5FE6 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0840D59C163F4BCC003D5FE6 /* GameLayer.m */; };
 		0840D5A0163F4BF5003D5FE6 /* GameObjectBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0840D59F163F4BF5003D5FE6 /* GameObjectBase.m */; };
 		0840D5A3163F4C2A003D5FE6 /* GameObjectPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0840D5A2163F4C2A003D5FE6 /* GameObjectPlayer.m */; };
+		085A7B2E17AF859100805022 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85A6714816546D4800499BF7 /* Default-568h@2x.png */; };
 		085E9710167596E000A50284 /* bitmapFontTest.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E001674EA540082DBE5 /* bitmapFontTest.fnt */; };
 		085E9711167596E500A50284 /* bitmapFontTest.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E011674EA540082DBE5 /* bitmapFontTest.png */; };
 		085E9712167597A800A50284 /* A Damn Mess.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DF81674EA540082DBE5 /* A Damn Mess.ttf */; };
@@ -3139,6 +3140,7 @@
 				E593E57817AEFF8800858E06 /* Default.png in Resources */,
 				E593E57917AF026D00858E06 /* Default.png in Resources */,
 				E593E57A17AF050F00858E06 /* Default-568h@2x.png in Resources */,
+				085A7B2E17AF859100805022 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

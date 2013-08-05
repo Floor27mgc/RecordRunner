@@ -16,6 +16,8 @@
 #define JUST_STARTED_MOVING_THRESHOLD 10
 #define EXTREMITY_RING_IDLE_THRESHOLD 6.0
 
+#define OUTER_RING_IDLE_THRESHOLD 6.0
+
 typedef enum
 {
     kMoveOutToIn  = -1,
