@@ -94,6 +94,7 @@
 - (void) resume
 {
     timerLifeInSec = MULTIPLIER_LIFE_TIME_SEC;
+    multiplierTime = [NSDate date];
     [self.actionManager resumeTarget:self];
 }
 
