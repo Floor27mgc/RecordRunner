@@ -9,7 +9,7 @@
 #import "MainMenuScoreBox.h"
 #import "common.h"
 #import "GameInfoGlobal.h"
-
+#import "GameLayer.h"
 
 #import <UIKit/UIKit.h>
 
@@ -50,12 +50,9 @@
 // -----------------------------------------------------------------------------------
 - (void) pressedReset: (id)sender
 {
-        // Clear all locally saved achievement objects.
-    
-        CCBAnimationManager* animationManager = self.userObject;
-        [animationManager runAnimationsForSequenceNamed:@"ResetPressed"];
-    
-
+    // Clear all locally saved achievement objects.
+    CCBAnimationManager* animationManager = self.userObject;
+    [animationManager runAnimationsForSequenceNamed:@"ResetPressed"];
 }
 
 
@@ -75,7 +72,7 @@
 clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 1) {
         
-        ///$$ TODO run ResetAllAchievements from achievementContainer
+        [[GameInfoGlobal sharedGameInfoGlobal] ResetLifetimeAchievementData];
         
         // Clear all progress saved on Game Center
         [GKAchievement resetAchievementsWithCompletionHandler:^(NSError *error)
@@ -144,7 +141,6 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
                               cancelButtonTitle:@"No"
                               otherButtonTitles:@"Yes", nil];
         [alert show];
-       
     }
 }
 

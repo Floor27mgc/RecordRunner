@@ -1719,8 +1719,6 @@
 			children = (
 				E5F47E20179354E700504A9A /* Achievement.h */,
 				E5F47E21179354E700504A9A /* Achievement.m */,
-				E5C5A39B17A6B12B00B58FEC /* guiObjectButton.h */,
-				E5C5A39C17A6B12B00B58FEC /* guiObjectButton.m */,
 				E5F47E231793550100504A9A /* achievement_map.strings */,
 				E5F47E251793550D00504A9A /* AchievementContainer.h */,
 				E5F47E261793550D00504A9A /* AchievementContainer.m */,
@@ -1747,6 +1745,8 @@
 				0840D5A2163F4C2A003D5FE6 /* GameObjectPlayer.m */,
 				8583C66816802C9C003A3213 /* GameOverLayer.h */,
 				8583C66916802C9C003A3213 /* GameOverLayer.m */,
+				E5C5A39B17A6B12B00B58FEC /* guiObjectButton.h */,
+				E5C5A39C17A6B12B00B58FEC /* guiObjectButton.m */,
 				0803EEFE16EC630E00CC932B /* MainGameScene.h */,
 				0803EEFF16EC630E00CC932B /* MainGameScene.m */,
 				E5973A9A17234CD7001B948A /* MainMenuBuyBox.h */,

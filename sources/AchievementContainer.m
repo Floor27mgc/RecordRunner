@@ -76,7 +76,7 @@
 //Called every update. Internal achivements are all of them.
 - (void) LoadInternalAchievements
 {
-    int conditionIndex = 1;
+    int conditionIndex = 16;
     
     // load all the non-rank achievements
     for (int i = 1; i <= totalNumAchievements; ++i) {
@@ -88,14 +88,14 @@
         
         
         
-        NSString * rankConditionTag = [NSString stringWithFormat:@"%@%d%@%d",
-                                       @"RANK_", i, @"_COND_", i];
+        NSString * rankConditionTag = [NSString stringWithFormat:@"%@%d",
+                                       @"COND_", i];
         NSString * rankCond = NSLocalizedStringFromTable(rankConditionTag,
                                                          @"achievement_map",                                                            nil);
         
         // load the game center achievement, creating it if necessary
         GKAchievement * curAch = [achievementsDictionary objectForKey:identifier];
-        
+
         if (curAch == nil) {
             curAch = [[GKAchievement alloc] initWithIdentifier:identifier];
             [achievementsDictionary setObject:curAch
@@ -117,7 +117,6 @@
         if (curAch.percentComplete < 100) {
             [currentAchievements addObject:newAchievement];
         }
-        
     }
 }
 
@@ -146,12 +145,12 @@
             
             // load the game center achievement, creating it if necessary
             GKAchievement * curAch = [achievementsDictionary objectForKey:identifier];
-            
+
             if (curAch == nil) {
                 curAch = [[GKAchievement alloc] initWithIdentifier:identifier];
                 [achievementsDictionary setObject:curAch
                                            forKey:curAch.identifier];
-                curAch.showsCompletionBanner = NO;
+                curAch.showsCompletionBanner = YES;
             }
             
             // add the achivement to the allAchivement List.
@@ -162,8 +161,12 @@
                                             gameCenterAchievement:curAch];
             
             ++conditionIndex;
-            [allRankGoals addObject:newAchievement];
             [allAchievements addObject:newAchievement];
+            
+            // load into current, if achievement not already achieved
+            if (curAch.percentComplete < 100) {
+                [currentAchievements addObject:newAchievement];
+            }
         }
     }
 }
@@ -207,7 +210,7 @@
 // -----------------------------------------------------------------------------------
 // if useIndex is -1, find the next Achievement whose goals are not loaded, otherwise
 // load goals from "useIndex"'s goals, if useIndex is -2, then we do not load anything
-- (void) LoadCurrentRankGoals:(int) useIndex
+/*- (void) LoadCurrentRankGoals:(int) useIndex
 {
     // remove the current rank's goals
     [currentRankGoals removeAllObjects];
@@ -252,7 +255,7 @@
         ++startIndex;
         [currentRankGoals addObject:curAch];
     }
-}
+}*/
 
 // -----------------------------------------------------------------------------------
 //This gets a 3 memeber array of the achievements that you have to get for this rank.
@@ -280,6 +283,7 @@
 - (BOOL) CheckCurrentAchievements
 {
     if (!achievementsLoaded) {
+        [self LoadInternalRankAchievements];
         [self LoadInternalAchievements];
 
         achievementsLoaded = YES;
@@ -299,14 +303,14 @@
 {
     // log current normal achievements
     for (Achievement * achievement in currentAchievements) {
-        if (!achievement.isRankAchievement && [achievement Achieved]) {
+        if ([achievement Achieved]) {
             [achievement Log];
         }
     }
 }
 
 // -----------------------------------------------------------------------------------
-- (BOOL) CheckRankGoals
+/*- (BOOL) CheckRankGoals
 {
     BOOL achievedAny = NO;
     for (Achievement * achievement in currentRankGoals) {
@@ -316,12 +320,12 @@
     }
     
     return achievedAny;
-}
+}*/
 
 // -----------------------------------------------------------------------------------
 // Check only the rank-based achievements to see if they are achieved.  If any is
 // achieved, log it.
-- (void) CheckRankAchievements
+/*- (void) CheckRankAchievements
 {
     for (Achievement * achievement in currentAchievements) {
         if (achievement.isRankAchievement && [achievement Achieved]) {
@@ -338,7 +342,7 @@
             [achievement Log];
         }
     }
-}
+}*/
 
 // -----------------------------------------------------------------------------------
 - (void) ResetAllAchievements
@@ -355,12 +359,6 @@
              // handle errors
          }
     }];
-}
-
-// -----------------------------------------------------------------------------------
-- (void) ResetPersistentAchievementData
-{
-    
 }
 
 @end

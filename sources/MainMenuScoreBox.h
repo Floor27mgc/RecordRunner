@@ -23,6 +23,7 @@
 - (void) pressedGameCenterAchievements: (id)sender;
 - (void)alertView:(UIAlertView *)alertView
 clickedButtonAtIndex:(NSInteger)buttonIndex;
+- (void) pressedReset: (id)sender;
 
 @property (nonatomic, strong) UIView *gameCenterView;
 @property (nonatomic, strong) UIViewController *gameCenterViewController;

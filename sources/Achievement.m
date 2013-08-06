@@ -144,13 +144,13 @@
             
             // UNKNOWN
         case 15:
-            achieved = YES;
+            achieved = NO;
             break;
             
             // Rank 1
         case 16:
-            achieved =
-                ([[[GameLayer sharedGameLayer].achievementContainer      GetAchievementByIdentifier:1] Achieved]) &&
+            achieved = NO;
+                /*([[[GameLayer sharedGameLayer].achievementContainer      GetAchievementByIdentifier:1] Achieved]) &&
             
                 ([[[GameLayer sharedGameLayer].achievementContainer
                    GetAchievementByIdentifier:2] Achieved]) &&
@@ -163,13 +163,13 @@
                 [[GameLayer sharedGameLayer].achievementContainer
                     LoadCurrentRankGoals:2];
             }
-            
+            */
             break;
             
             // Rank 2
         case 17:
-            achieved =
-                ([[[GameLayer sharedGameLayer].achievementContainer
+            achieved = NO;
+                /*([[[GameLayer sharedGameLayer].achievementContainer
                    GetAchievementByIdentifier:16] Achieved]) &&
             
                 ([[[GameLayer sharedGameLayer].achievementContainer
@@ -185,14 +185,14 @@
                 if (achieved) {
                     [[GameLayer sharedGameLayer].achievementContainer
                      LoadCurrentRankGoals:3];
-                }
+                }*/
             
             break;
             
             // Rank 3
         case 18:
-            achieved =
-                ([[[GameLayer sharedGameLayer].achievementContainer
+            achieved = NO;
+                /*([[[GameLayer sharedGameLayer].achievementContainer
                    GetAchievementByIdentifier:17] Achieved]) &&
             
                 ([[[GameLayer sharedGameLayer].achievementContainer
@@ -208,14 +208,14 @@
                 if (achieved) {
                     [[GameLayer sharedGameLayer].achievementContainer
                      LoadCurrentRankGoals:4];
-                }
+                }*/
             
             break;
             
             // Rank 4
         case 19:
-            achieved =
-                ([[[GameLayer sharedGameLayer].achievementContainer
+            achieved = NO;
+                /*([[[GameLayer sharedGameLayer].achievementContainer
                    GetAchievementByIdentifier:18] Achieved]) &&
             
                 ([[[GameLayer sharedGameLayer].achievementContainer
@@ -231,14 +231,14 @@
                 if (achieved) {
                     [[GameLayer sharedGameLayer].achievementContainer
                      LoadCurrentRankGoals:5];
-                }
+                }*/
 
             break;
             
             // Rank 5
         case 20:
-            achieved =
-                ([[[GameLayer sharedGameLayer].achievementContainer
+            achieved = NO;
+                /*([[[GameLayer sharedGameLayer].achievementContainer
                    GetAchievementByIdentifier:19] Achieved]) &&
             
                 ([[[GameLayer sharedGameLayer].achievementContainer
@@ -254,7 +254,7 @@
                 if (achieved) {
                     [[GameLayer sharedGameLayer].achievementContainer
                      LoadCurrentRankGoals:-2];
-                }
+                }*/
             
             break;
             
@@ -272,7 +272,7 @@
         case 23:
             partialAchievement = YES;
             currentPercentAchieved =
-                ((double)[GameInfoGlobal sharedGameInfoGlobal].lifetimeRevolutions / 15.0)
+                ((double)[GameInfoGlobal sharedGameInfoGlobal].lifetimeRoundsPlayed / 15.0)
                     * 100.0;
             achieved = ([GameInfoGlobal sharedGameInfoGlobal].lifetimeRoundsPlayed >= 15);
             break;
@@ -304,7 +304,7 @@
             achieved = ([GameInfoGlobal sharedGameInfoGlobal].coinsInBank >= 5000);
             break;
             
-            // Collect 1000000 coins
+            // Collect 10000 coins
         case 27:
             partialAchievement = YES;
             currentPercentAchieved =

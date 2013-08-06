@@ -159,7 +159,7 @@ int nextRankForThisLayer;
     if (rankPromotion)
     {
         
-            [[GameLayer sharedGameLayer].achievementContainer CheckRankAchievements];
+            //[[GameLayer sharedGameLayer].achievementContainer CheckRankAchievements];
             CCBAnimationManager* animationManager = self.userObject;
             [animationManager runAnimationsForSequenceNamed:@"PopOutRanked"];
             
@@ -279,7 +279,7 @@ int nextRankForThisLayer;
             [self.goal3_B setDimensions:CGSizeMake(220,65)];
             [self.goal3_B setPosition:CGPointMake(160, 60)];
             
-            [[GameLayer sharedGameLayer].achievementContainer LoadCurrentRankGoals: currentRankScore+1];
+            //[[GameLayer sharedGameLayer].achievementContainer LoadCurrentRankGoals: currentRankScore+1];
             [self.rankLabel_B setString:[NSString stringWithFormat:@"%d", currentRankScore + 1]];
             
             
