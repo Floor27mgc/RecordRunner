@@ -22,6 +22,8 @@ typedef enum {
 - (void) evaluateSoundPrefrence;
 - (void) setMusic: (BOOL) musicSetting;
 - (void) setSound: (BOOL) soundSetting;
+- (void) ResetLifetimeAchievementData;
+
 + (GameInfoGlobal *) sharedGameInfoGlobal;
 @property (nonatomic,assign) ENUM_GAME_MODE_T gameMode;
 @property (nonatomic, strong) StatisticsContainer * statsContainer;

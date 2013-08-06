@@ -113,6 +113,25 @@ static GameInfoGlobal *sharedGameInfoGlobal;
     [standardUserDefaults synchronize];
 }
 
+// -----------------------------------------------------------------------------------
+- (void) ResetLifetimeAchievementData
+{
+    // deposit the coins
+    [GameInfoGlobal sharedGameInfoGlobal].coinsInBank = 0;
+    
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    [standardUserDefaults setInteger:coinsInBank forKey:@"coinBank"];
+    
+    // update the lifetime revolution
+    [GameInfoGlobal sharedGameInfoGlobal].lifetimeRevolutions = 0;
+    [standardUserDefaults setInteger:lifetimeRevolutions forKey:@"lifetimeRevolutions"];
+    
+    // update the lifetime revolution
+    [GameInfoGlobal sharedGameInfoGlobal].lifetimeRoundsPlayed = 0;
+    [standardUserDefaults setInteger:lifetimeRoundsPlayed forKey:@"lifetimeRoundsPlayed"];
+    
+    [standardUserDefaults synchronize];
+}
 
 // -----------------------------------------------------------------------------------
 - (void) resetPerLifeStatistics

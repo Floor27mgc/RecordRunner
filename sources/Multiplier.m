@@ -85,20 +85,6 @@
 }
 
 // -----------------------------------------------------------------------------------
-- (void) pause
-{
-    [self.actionManager pauseAllRunningActions];
-}
-
-// -----------------------------------------------------------------------------------
-- (void) resume
-{
-    timerLifeInSec = MULTIPLIER_LIFE_TIME_SEC;
-    multiplierTime = [NSDate date];
-    [self.actionManager resumeTarget:self];
-}
-
-// -----------------------------------------------------------------------------------
 - (void) decrementMultiplier:(int)amount
 {
     if (amount >= multiplierValue) {

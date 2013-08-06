@@ -76,7 +76,7 @@
 //Called every update. Internal achivements are all of them.
 - (void) LoadInternalAchievements
 {
-    int conditionIndex = 16;
+    int conditionIndex = 1;
     
     // load all the non-rank achievements
     for (int i = 1; i <= totalNumAchievements; ++i) {
@@ -280,15 +280,13 @@
 - (BOOL) CheckCurrentAchievements
 {
     if (!achievementsLoaded) {
-        [self LoadInternalRankAchievements];
         [self LoadInternalAchievements];
-        [self LoadCurrentRankGoals:-1];
-        
+
         achievementsLoaded = YES;
     }
     
     for (Achievement * achievement in currentAchievements) {
-        if (!achievement.isRankAchievement && [achievement Achieved]) {
+        if ([achievement Achieved]) {
             return YES;
         }
     }
@@ -349,6 +347,8 @@
         [achievement Reset];
     }
     
+    [[GameInfoGlobal sharedGameInfoGlobal] ResetLifetimeAchievementData];
+    
     [GKAchievement resetAchievementsWithCompletionHandler:^(NSError *error)
      {
          if (error != nil) {
@@ -357,6 +357,10 @@
     }];
 }
 
-
+// -----------------------------------------------------------------------------------
+- (void) ResetPersistentAchievementData
+{
+    
+}
 
 @end
