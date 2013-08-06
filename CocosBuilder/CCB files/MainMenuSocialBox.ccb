@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>2</integer>
+	<integer>1</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -46,7 +46,7 @@
 									<key>value</key>
 									<array>
 										<real>159</real>
-										<real>671</real>
+										<real>800.5999755859375</real>
 									</array>
 								</dict>
 								<dict>
@@ -84,7 +84,7 @@
 									<key>easing</key>
 									<dict>
 										<key>type</key>
-										<integer>11</integer>
+										<integer>13</integer>
 									</dict>
 									<key>name</key>
 									<string>position</string>
@@ -104,16 +104,14 @@
 										<key>type</key>
 										<integer>1</integer>
 									</dict>
-									<key>name</key>
-									<string>position</string>
 									<key>time</key>
-									<real>0.23333333432674408</real>
+									<real>0.30000001192092896</real>
 									<key>type</key>
 									<integer>3</integer>
 									<key>value</key>
 									<array>
 										<real>160</real>
-										<real>670</real>
+										<real>800.6368408203125</real>
 									</array>
 								</dict>
 							</array>
@@ -2303,7 +2301,7 @@
 								<key>value</key>
 								<array>
 									<real>354.79998779296875</real>
-									<real>174</real>
+									<real>173</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -3159,8 +3157,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>158</real>
-							<real>284</real>
+							<real>160</real>
+							<real>800.6368408203125</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -3301,7 +3299,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.1666666716337204</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
@@ -3321,7 +3319,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>1.6666667461395264</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

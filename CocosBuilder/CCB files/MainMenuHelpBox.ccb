@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>3</integer>
+	<integer>2</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -48,7 +48,7 @@
 									<key>value</key>
 									<array>
 										<real>159</real>
-										<real>670</real>
+										<real>800.5999755859375</real>
 									</array>
 								</dict>
 								<dict>
@@ -113,7 +113,7 @@
 									<key>value</key>
 									<array>
 										<real>161</real>
-										<real>665</real>
+										<real>800.5999755859375</real>
 									</array>
 								</dict>
 							</array>
@@ -1150,8 +1150,6 @@
 								<string>Collect these:</string>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 					<dict>
 						<key>baseClass</key>
@@ -1561,8 +1559,8 @@ increases the multiplier:</string>
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>159</real>
-							<real>285</real>
+							<real>161</real>
+							<real>800.5999755859375</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -1610,6 +1608,8 @@ increases the multiplier:</string>
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -1723,7 +1723,7 @@ increases the multiplier:</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>0.3333333432674408</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
@@ -1743,7 +1743,7 @@ increases the multiplier:</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>1</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
