@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -48,7 +48,7 @@
 									<key>value</key>
 									<array>
 										<real>159</real>
-										<real>-199</real>
+										<real>800</real>
 									</array>
 								</dict>
 								<dict>
@@ -64,7 +64,7 @@
 									<key>value</key>
 									<array>
 										<real>159</real>
-										<real>229.19999694824219</real>
+										<real>250.80000305175781</real>
 									</array>
 								</dict>
 							</array>
@@ -93,7 +93,7 @@
 									<key>value</key>
 									<array>
 										<real>159</real>
-										<real>229</real>
+										<real>251</real>
 									</array>
 								</dict>
 								<dict>
@@ -111,7 +111,7 @@
 									<key>value</key>
 									<array>
 										<real>160</real>
-										<real>-181</real>
+										<real>800</real>
 									</array>
 								</dict>
 							</array>
@@ -626,7 +626,7 @@
 						<key>baseValue</key>
 						<array>
 							<real>159</real>
-							<real>-162</real>
+							<real>642</real>
 						</array>
 						<key>name</key>
 						<string>position</string>
@@ -634,9 +634,9 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>159</real>
-							<real>229.19999694824219</real>
-							<integer>1</integer>
+							<real>160</real>
+							<real>800</real>
+							<integer>0</integer>
 						</array>
 					</dict>
 					<dict>
@@ -683,6 +683,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -1112,7 +1114,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>72.2969970703125</real>
+							<real>-65.943016052246094</real>
 							<real>102</real>
 							<integer>0</integer>
 						</array>
@@ -1149,7 +1151,7 @@
 						<key>type</key>
 						<string>Degrees</string>
 						<key>value</key>
-						<real>0.0</real>
+						<real>-100</real>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -1599,7 +1601,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>368.82406616210938</real>
+							<real>565</real>
 							<real>102</real>
 							<integer>0</integer>
 						</array>
@@ -1741,7 +1743,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.96666663885116577</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
@@ -1761,7 +1763,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>1</real>
+			<real>0.66666668653488159</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
