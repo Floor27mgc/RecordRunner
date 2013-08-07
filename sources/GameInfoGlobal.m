@@ -8,6 +8,8 @@
 
 #import "GameInfoGlobal.h"
 #import <AudioToolbox/AudioSession.h>
+#import "iRate.h"
+
 @implementation GameInfoGlobal
 @synthesize gameMode;
 @synthesize statsContainer;
@@ -90,6 +92,10 @@ static GameInfoGlobal *sharedGameInfoGlobal;
         
         // game rotation data
         [self resetPerLifeStatistics];
+        
+        if (lifetimeRoundsPlayed > TRIGGER_LIKE_ME) {
+            [[iRate sharedInstance] logEvent:YES];
+        }
     }
     return self;
 }

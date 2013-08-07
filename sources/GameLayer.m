@@ -215,11 +215,7 @@ static GameLayer *sharedGameLayer;
         // input buffering structures
         pendingTaps = 0;
         
-        self.tapDelay = [NSDate distantFuture];
-        
-        // set up internal achievement tracking mechanisms
-        //[achievementContainer LoadInternalAchievements];
-        
+        self.tapDelay = [NSDate distantFuture];        
     }
     return self;
 }
