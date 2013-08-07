@@ -69,6 +69,8 @@
 		0840D5A0163F4BF5003D5FE6 /* GameObjectBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0840D59F163F4BF5003D5FE6 /* GameObjectBase.m */; };
 		0840D5A3163F4C2A003D5FE6 /* GameObjectPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0840D5A2163F4C2A003D5FE6 /* GameObjectPlayer.m */; };
 		085A7B2E17AF859100805022 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85A6714816546D4800499BF7 /* Default-568h@2x.png */; };
+		085A7B3117B1C8C900805022 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 085A7B3017B1C8C900805022 /* iRate.m */; };
+		085A7B3317B1C92800805022 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 085A7B3217B1C92800805022 /* StoreKit.framework */; };
 		085E9710167596E000A50284 /* bitmapFontTest.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E001674EA540082DBE5 /* bitmapFontTest.fnt */; };
 		085E9711167596E500A50284 /* bitmapFontTest.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E011674EA540082DBE5 /* bitmapFontTest.png */; };
 		085E9712167597A800A50284 /* A Damn Mess.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DF81674EA540082DBE5 /* A Damn Mess.ttf */; };
@@ -746,6 +748,9 @@
 		0840D59F163F4BF5003D5FE6 /* GameObjectBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectBase.m; path = sources/GameObjectBase.m; sourceTree = SOURCE_ROOT; };
 		0840D5A1163F4C2A003D5FE6 /* GameObjectPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjectPlayer.h; path = sources/GameObjectPlayer.h; sourceTree = SOURCE_ROOT; };
 		0840D5A2163F4C2A003D5FE6 /* GameObjectPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectPlayer.m; path = sources/GameObjectPlayer.m; sourceTree = SOURCE_ROOT; };
+		085A7B2F17B1C8C900805022 /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iRate.h; path = sources/iRate.h; sourceTree = SOURCE_ROOT; };
+		085A7B3017B1C8C900805022 /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iRate.m; path = sources/iRate.m; sourceTree = SOURCE_ROOT; };
+		085A7B3217B1C92800805022 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		08A3709916C821BD006819E3 /* CCBAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBAnimationManager.h; sourceTree = "<group>"; };
 		08A3709A16C821BD006819E3 /* CCBAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBAnimationManager.m; sourceTree = "<group>"; };
 		08A3709B16C821BD006819E3 /* CCBKeyframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBKeyframe.h; sourceTree = "<group>"; };
@@ -1443,6 +1448,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				085A7B3317B1C92800805022 /* StoreKit.framework in Frameworks */,
 				0813D05417931D90002B3625 /* Social.framework in Frameworks */,
 				DC0C4A06154AB4DD00B4B727 /* GameKit.framework in Frameworks */,
 				08F7A8EB174879CC00FB7923 /* MessageUI.framework in Frameworks */,
@@ -1791,6 +1797,8 @@
 				850CF31A16F9618E00B292DE /* StatisticsContainer.m */,
 				850CF31C16F9652100B292DE /* StatisticsTracker.h */,
 				850CF31D16F9652100B292DE /* StatisticsTracker.m */,
+				085A7B2F17B1C8C900805022 /* iRate.h */,
+				085A7B3017B1C8C900805022 /* iRate.m */,
 			);
 			name = game;
 			sourceTree = "<group>";
@@ -2430,6 +2438,7 @@
 		DC0C49F4154AB4DD00B4B727 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				085A7B3217B1C92800805022 /* StoreKit.framework */,
 				0813D05317931D90002B3625 /* Social.framework */,
 				08F7A8EA174879CC00FB7923 /* MessageUI.framework */,
 				850CF25B16ED920D00B292DE /* MediaPlayer.framework */,
@@ -3193,6 +3202,7 @@
 				E5F2F243179C127A00EEE92A /* GameObjectCheck.m in Sources */,
 				E530B68917A0D6E900A3A7FA /* RankLayerSubBox.m in Sources */,
 				E5C5A39D17A6B12C00B58FEC /* guiObjectButton.m in Sources */,
+				085A7B3117B1C8C900805022 /* iRate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

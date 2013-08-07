@@ -12,7 +12,7 @@
 #import "GameLayer.h"
 #import "MainMenuScene.h"
 #import "CCBReader.h"
-
+#import "iRate.h"
 @implementation AppController
 
 @synthesize window=window_, navController=navController_, director=director_;
@@ -37,7 +37,7 @@
 	director_.wantsFullScreenLayout = YES;
 
 	// Display FSP and SPF
-	[director_ setDisplayStats:YES];
+	[director_ setDisplayStats:NO];
 
 	// set FPS at 60
 	[director_ setAnimationInterval:1.0/60];
@@ -101,6 +101,11 @@
 
     // start the Flurry statistics tracking session
     [Flurry startSession:@"Z3MMTK2F4CB9CNK5ZDWB"];
+    
+    // Set up the Rate me engine
+    [iRate sharedInstance].eventsUntilPrompt = 1;
+    [iRate sharedInstance].promptAgainForEachNewVersion = NO;
+    [iRate sharedInstance].remindPeriod = 5;
     
     return YES;
 }

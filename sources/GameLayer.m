@@ -24,6 +24,7 @@
 #import <UIKit/UIKit.h>
 #import "CCBAnimationManager.h"
 #import "NewsDownloader.h"
+#import "iRate.h"
 #pragma mark - GameLayer
 
 // GameLayer implementation
