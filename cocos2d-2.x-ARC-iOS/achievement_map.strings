@@ -11,50 +11,50 @@
 "ACHIEVEMENTS_PER_RANK" = "3";
 
 /* Rank 1 */
-"RANK_1_DESC_1" = "Rank 1 Mission 1";
+"RANK_1_DESC_1" = "Roundabout";
 "RANK_1_COND_1" = "Go 10 revolutions in one life";
 
-"RANK_1_DESC_2" = "Rank 1 Mission 2";
+"RANK_1_DESC_2" = "Pocket Change";
 "RANK_1_COND_2" = "Collect 50 coins in a single life.";
 
-"RANK_1_DESC_3" = "Rank 1 Mission 3";
+"RANK_1_DESC_3" = "Skimming";
 "RANK_1_COND_3" = "Skim past 3 “X’s” in a single life.";
 
 /* Rank 2 */
-"RANK_2_DESC_1" = "Rank 2 Mission 1";
+"RANK_2_DESC_1" = "Triple";
 "RANK_2_COND_1" = "Collect 3 coins in a single scratch.";
 
-"RANK_2_DESC_2" = "Rank 2 Mission 2";
+"RANK_2_DESC_2" = "200";
 "RANK_2_COND_2" = "Get a score of 200.";
 
-"RANK_2_DESC_3" = "Rank 2 Mission 3";
+"RANK_2_DESC_3" = "1 minute hero";
 "RANK_2_COND_3" = "Survive for 60 seconds without dying.";
 
 /* Rank 3 */
-"RANK_3_DESC_1" = "Rank 3 Mission 1";
+"RANK_3_DESC_1" = "Jr. Minesweeper";
 "RANK_3_COND_1" = "Kill 4 bombs with a shield.";
 
-"RANK_3_DESC_2" = "Rank 3 Mission 2";
+"RANK_3_DESC_2" = "Whiplash";
 "RANK_3_COND_2" = "Spin a bomb clockwise then counter clockwise.";
 
-"RANK_3_DESC_3" = "Rank 3 Mission 3";
+"RANK_3_DESC_3" = "Grand";
 "RANK_3_COND_3" = "Get a score of 1000.";
 
 /* Rank 4 */
-"RANK_4_DESC_1" = "Rank 4 Mission 1";
+"RANK_4_DESC_1" = "Around the block";
 "RANK_4_COND_1" = "Go 30 laps in a single life.";
 
-"RANK_4_DESC_2" = "Rank 4 Mission 2";
+"RANK_4_DESC_2" = "X OUT";
 "RANK_4_COND_2" = "Get a x10 multiplier then drop it to x1.";
 
-"RANK_4_DESC_3" = "Rank 4 Mission 3";
+"RANK_4_DESC_3" = "Top 10";
 "RANK_4_COND_3" = "Maintain at least x10 for 2 minutes.";
 
 /* Rank 5 */
-"RANK_5_DESC_1" = "Rank 5 Mission 1";
+"RANK_5_DESC_1" = "Outer limits";
 "RANK_5_COND_1" = "Spend a total of 2 minutes in the outer ring.";
 
-"RANK_5_DESC_2" = "Rank 5 Mission 2";
+"RANK_5_DESC_2" = "40";
 "RANK_5_COND_2" = "Scratch 40 times in a single revolution.";
 
 "RANK_5_DESC_3" = "Rank 5 Mission 3";
