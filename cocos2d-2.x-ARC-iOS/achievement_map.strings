@@ -57,9 +57,10 @@
 "RANK_5_DESC_2" = "40";
 "RANK_5_COND_2" = "Scratch 40 times in a single revolution.";
 
+/*
 "RANK_5_DESC_3" = "Rank 5 Mission 3";
 "RANK_5_COND_3" = "Scratch 40 times in a single revolution.";
-
+*/
 /* any time achievements */
 "DESC_1" = "Rank 1";
 "COND_1" = "Complete the goals to earn Rank 1";

@@ -107,6 +107,7 @@ typedef enum {
 -(void) showGameOverLayer:(int) score;
 -(void) startTheNextRound;
 -(void) doTimeBasedGameSpeedUp;
+-(void) ConvertBombsToCoins;
 
 @property (nonatomic, strong) GameObjectPlayer *player;
 @property (nonatomic, strong) Queue * coinFreePool;

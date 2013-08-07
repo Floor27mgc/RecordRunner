@@ -374,13 +374,13 @@ static GameLayer *sharedGameLayer;
     // Move player to a new location
     [player showNextFrame];
     
-    // check for any non-achievement bonuses that may have been achieved
-    [self checkBonuses];
-    
     // speed up rotation speed, as necessary, never exceeding the max
     if ([self getGameAngularVelocityInDegree] < MAX_GAME_SPEED) {
         [self doTimeBasedGameSpeedUp];
     }
+    
+    // check for any non-achievement bonuses that may have been achieved
+    [self checkBonuses];
 }
 
 // -----------------------------------------------------------------------------------
@@ -586,6 +586,9 @@ static GameLayer *sharedGameLayer;
         
         [gameObjectInjector showScoreObject:3 message: rpmBump xVal:270 yVal:270 displayEffect:small];
         [_score addToScore:scoreBump];
+        
+        // convert all bombs to coins
+        [self ConvertBombsToCoins];
     }
 }
 
@@ -757,6 +760,29 @@ static GameLayer *sharedGameLayer;
     
 }
 
+// -----------------------------------------------------------------------------------
+- (void) ConvertBombsToCoins
+{
+    // grab bombs from all tracks
+    for (int i = 0; i < MAX_NUM_TRACK; ++i) {
+        NSMutableArray * track = [_bombUsedPool getObjectArray:i];
+        
+        // add the angle from each bomb on this track
+        for (int j = 0; j < [track count]; ++j) {
+            Bomb * bomb = [track objectAtIndex:j];
+            if (bomb != nil) {
+                float angle = (float)((int)bomb.angleRotated % 360);
+                
+                // recycle the bomb to the free pool
+                [bomb recycleObjectWithUsedPool:_bombUsedPool freePool:_bombFreePool];
+                
+                // insert the coin
+                [gameObjectInjector injectObjectToTrack:i atAngle:angle
+                                         gameObjectType:COIN_TYPE effectType:kRotation];
+            }
+        }
+    }
+}
 
 // -----------------------------------------------------------------------------------
 -(void) cleanUpPlayField

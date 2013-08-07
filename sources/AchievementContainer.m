@@ -130,42 +130,45 @@
         
         for (int j = 1; j <= GOALS_PER_RANK; ++j) {
             
-            NSString * curRankDesc = [NSString stringWithFormat:@"%@%d%@%d",
-                                      @"RANK_", i, @"_DESC_", j];
-            NSString * rankDesc = NSLocalizedStringFromTable(curRankDesc,
-                                                             @"achievement_map",                                                            nil);
-            
-            
-            NSString * rankConditionTag = [NSString stringWithFormat:@"%@%d%@%d",
-                                           @"RANK_", i, @"_COND_", j];
-            NSString * rankCond = NSLocalizedStringFromTable(rankConditionTag,
-                                                             @"achievement_map",                                                            nil);
-
-            NSString * identifier = [NSString stringWithFormat:@"%d", conditionIndex];
-            
-            // load the game center achievement, creating it if necessary
-            GKAchievement * curAch = [achievementsDictionary objectForKey:identifier];
-
-            if (curAch == nil) {
-                curAch = [[GKAchievement alloc] initWithIdentifier:identifier];
-                [achievementsDictionary setObject:curAch
-                                           forKey:curAch.identifier];
-                curAch.showsCompletionBanner = YES;
-            }
-            
-            // add the achivement to the allAchivement List.
-            Achievement * newAchievement = [[Achievement alloc]
-                                            initWithCondition:conditionIndex
-                                            condition: rankCond
-                                            description: rankDesc
-                                            gameCenterAchievement:curAch];
-            
-            ++conditionIndex;
-            [allAchievements addObject:newAchievement];
-            
-            // load into current, if achievement not already achieved
-            if (curAch.percentComplete < 100) {
-                [currentAchievements addObject:newAchievement];
+            // skip rank 5, goal 3
+            if (!(i == NUM_RANKS && j == GOALS_PER_RANK)) {
+                NSString * curRankDesc = [NSString stringWithFormat:@"%@%d%@%d",
+                                          @"RANK_", i, @"_DESC_", j];
+                NSString * rankDesc = NSLocalizedStringFromTable(curRankDesc,
+                                                                 @"achievement_map",                                                            nil);
+                
+                
+                NSString * rankConditionTag = [NSString stringWithFormat:@"%@%d%@%d",
+                                               @"RANK_", i, @"_COND_", j];
+                NSString * rankCond = NSLocalizedStringFromTable(rankConditionTag,
+                                                                 @"achievement_map",                                                            nil);
+                
+                NSString * identifier = [NSString stringWithFormat:@"%d", conditionIndex];
+                
+                // load the game center achievement, creating it if necessary
+                GKAchievement * curAch = [achievementsDictionary objectForKey:identifier];
+                
+                if (curAch == nil) {
+                    curAch = [[GKAchievement alloc] initWithIdentifier:identifier];
+                    [achievementsDictionary setObject:curAch
+                                               forKey:curAch.identifier];
+                    curAch.showsCompletionBanner = YES;
+                }
+                
+                // add the achivement to the allAchivement List.
+                Achievement * newAchievement = [[Achievement alloc]
+                                                initWithCondition:conditionIndex
+                                                condition: rankCond
+                                                description: rankDesc
+                                                gameCenterAchievement:curAch];
+                
+                ++conditionIndex;
+                [allAchievements addObject:newAchievement];
+                
+                // load into current, if achievement not already achieved
+                if (curAch.percentComplete < 100) {
+                    [currentAchievements addObject:newAchievement];
+                }
             }
         }
     }
@@ -206,56 +209,6 @@
     
     return nil;
 }
-
-// -----------------------------------------------------------------------------------
-// if useIndex is -1, find the next Achievement whose goals are not loaded, otherwise
-// load goals from "useIndex"'s goals, if useIndex is -2, then we do not load anything
-/*- (void) LoadCurrentRankGoals:(int) useIndex
-{
-    // remove the current rank's goals
-    [currentRankGoals removeAllObjects];
-    
-    // do not load anything if -2 received
-    if (useIndex == -2) {
-        return;
-    }
-    
-    // find which rank's goals to load
-    int indexToLoad = useIndex;
-    
-    if (useIndex == -1) {
-        int identifierIndex = 16;
-        for (int i = 1; i <= NUM_RANKS; ++i) {
-            Achievement * curAch = [self GetAchievementByIdentifier:identifierIndex];
-            ++identifierIndex;
-            
-            if (![curAch Achieved]) {
-                indexToLoad = i;
-                break;
-            }
-        }
-    }
-    
-    NSLog(@"Loading goals for rank %d", indexToLoad);
-    
-    // all ranks have been achieved
-    if (indexToLoad == -1) {
-        return;
-    }
-    
-    // reset any statistics that may be involved in the next goal list
-    [GameInfoGlobal sharedGameInfoGlobal].clockwiseThenCounterclockwise = NO;
-    
-    currentRank = indexToLoad;
-    
-    // populate this rank's goals
-    int startIndex = (indexToLoad - 1) * 3 + 1;
-    for (int i = 0; i < GOALS_PER_RANK; ++i) {
-        Achievement * curAch = [self GetAchievementByIdentifier:startIndex];
-        ++startIndex;
-        [currentRankGoals addObject:curAch];
-    }
-}*/
 
 // -----------------------------------------------------------------------------------
 //This gets a 3 memeber array of the achievements that you have to get for this rank.
@@ -308,41 +261,6 @@
         }
     }
 }
-
-// -----------------------------------------------------------------------------------
-/*- (BOOL) CheckRankGoals
-{
-    BOOL achievedAny = NO;
-    for (Achievement * achievement in currentRankGoals) {
-        if ([achievement Achieved]) {
-            achievedAny = YES;
-        }
-    }
-    
-    return achievedAny;
-}*/
-
-// -----------------------------------------------------------------------------------
-// Check only the rank-based achievements to see if they are achieved.  If any is
-// achieved, log it.
-/*- (void) CheckRankAchievements
-{
-    for (Achievement * achievement in currentAchievements) {
-        if (achievement.isRankAchievement && [achievement Achieved]) {
-            [achievement Log];
-        }
-    }
-}
-
-// -----------------------------------------------------------------------------------
-- (void) LogRankGoals
-{
-    for (Achievement * achievement in currentRankGoals) {
-        if ([achievement Achieved]) {
-            [achievement Log];
-        }
-    }
-}*/
 
 // -----------------------------------------------------------------------------------
 - (void) ResetAllAchievements

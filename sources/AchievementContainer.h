@@ -23,14 +23,7 @@
 - (BOOL) CheckCurrentAchievements;
 - (void) LogAchievements;
 - (void) LoadInternalAchievements;
-
-// rank goals methods
-//- (NSMutableArray *) GetAchievementsForRank: (int) myRank;
-//- (BOOL) CheckRankGoals;
-//- (void) LogRankGoals;
 - (void) LoadInternalRankAchievements;
-//- (void) LoadCurrentRankGoals: (int)useIndex;
-//- (void) CheckRankAchievements;
 
 
 @property (nonatomic, strong) NSMutableArray * allAchievements;
