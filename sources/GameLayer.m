@@ -843,12 +843,7 @@ static GameLayer *sharedGameLayer;
     if ([GameInfoGlobal sharedGameInfoGlobal].isBackgroundMusicOn)
     {
         //Start the music for the game, the player is starting.
-        if ([GameInfoGlobal sharedGameInfoGlobal].gameMode == kGameModeBouncyMusic) {
-            // enable sounds
-            _soundController = [SoundController init];
-        } else {
-            [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"loop1.caf"];
-        }
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"loop1.caf"];
     }
 }
 
