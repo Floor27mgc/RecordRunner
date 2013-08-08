@@ -16,7 +16,7 @@
 @implementation MainMenuScoreBox
 @synthesize gameCenterView;
 @synthesize gameCenterViewController;
-
+@synthesize highScoreLabel;
 
 // -----------------------------------------------------------------------------------
 // GAMECENTER FLAG PRESSED
@@ -68,8 +68,8 @@
 
 // -----------------------------------------------------------------------------------
 // For the YES NO Button
-- (void)alertView:(UIAlertView *)alertView
-clickedButtonAtIndex:(NSInteger)buttonIndex{
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
     if (buttonIndex == 1) {
         
         [[GameInfoGlobal sharedGameInfoGlobal] ResetLifetimeAchievementData];

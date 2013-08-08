@@ -33,5 +33,5 @@
 - (int) getScore;
 - (int) getMultiplier;
 - (void) setHighScore;
-
++ (int) getHighScore;
 @end

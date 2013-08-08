@@ -18,7 +18,7 @@
 #import "MainMenuSocialBox.h"
 #import "MainMenuSettingsBox.h"
 #import "MainMenuHelpBox.h"
-
+#import "Score.h"
 #import "common.h"
 #import <GameKit/GameKit.h>
 @implementation MainMenuScene
@@ -179,8 +179,9 @@
     
     if (self.menuExpanded)
     {
-    NSLog(@"Pressed SCORE");
-    [self openMenus: BUTTON_SCORE];
+        NSLog(@"Pressed SCORE");
+        [mainMenuScore.highScoreLabel setString:[NSString stringWithFormat:@"%d",[Score getHighScore]]];
+        [self openMenus: BUTTON_SCORE];
     }
 }
 

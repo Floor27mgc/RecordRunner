@@ -21,10 +21,10 @@
 }
 - (void) pressedGameCenter: (id)sender;
 - (void) pressedGameCenterAchievements: (id)sender;
-- (void)alertView:(UIAlertView *)alertView
-clickedButtonAtIndex:(NSInteger)buttonIndex;
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 - (void) pressedReset: (id)sender;
 
 @property (nonatomic, strong) UIView *gameCenterView;
 @property (nonatomic, strong) UIViewController *gameCenterViewController;
+@property (nonatomic, strong) CCLabelTTF *highScoreLabel;
 @end

@@ -150,4 +150,9 @@
     [self showNextFrame];
 }
 
+// -----------------------------------------------------------------------------------
++ (int) getHighScore
+{
+    return [[NSUserDefaults standardUserDefaults] integerForKey:@"highScore"];
+}
 @end
