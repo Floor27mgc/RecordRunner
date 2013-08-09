@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "StatisticsContainer.h"
 
-#define TRIGGER_LIKE_ME 12
+#define NUM_ROUND_TRIGGER_LIKE_ME 12
+#define SCORE_TRIGGER_LIKE_ME     200
 
 typedef enum {
     kGameModeNormal = 0,

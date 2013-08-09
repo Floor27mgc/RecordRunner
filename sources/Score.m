@@ -59,12 +59,6 @@
     
     [[GameLayer sharedGameLayer].scoreLabel
         setString:[NSString stringWithFormat:@"%d", _scoreValue]];
-    
-    //Hin's debug code
-    [[iRate sharedInstance] logEvent:YES];  // Matt, put just this statement
-                                            // (without the if) to the appropriate
-                                            // place to trigger the rate me thing.
-    // End Hin's debug code.
 }
 
 // -----------------------------------------------------------------------------------

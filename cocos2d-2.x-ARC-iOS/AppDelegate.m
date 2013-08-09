@@ -106,6 +106,8 @@
     [iRate sharedInstance].eventsUntilPrompt = 1;
     [iRate sharedInstance].promptAgainForEachNewVersion = NO;
     [iRate sharedInstance].remindPeriod = 5;
+    [iRate sharedInstance].previewMode = NO;
+    [iRate sharedInstance].promptAtLaunch = NO;
     
     return YES;
 }

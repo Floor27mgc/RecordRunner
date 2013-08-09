@@ -9,6 +9,7 @@
 #import "GameInfoGlobal.h"
 #import <AudioToolbox/AudioSession.h>
 #import "iRate.h"
+#import "GameLayer.h"
 
 @implementation GameInfoGlobal
 @synthesize gameMode;
@@ -93,9 +94,9 @@ static GameInfoGlobal *sharedGameInfoGlobal;
         // game rotation data
         [self resetPerLifeStatistics];
         
-        if (lifetimeRoundsPlayed > TRIGGER_LIKE_ME) {
-            [[iRate sharedInstance] logEvent:YES];
-        }
+//        if (lifetimeRoundsPlayed > TRIGGER_LIKE_ME) {
+//            [[iRate sharedInstance] logEvent:NO];
+//        }
     }
     return self;
 }
@@ -117,6 +118,14 @@ static GameInfoGlobal *sharedGameInfoGlobal;
     [standardUserDefaults setInteger:lifetimeRoundsPlayed forKey:@"lifetimeRoundsPlayed"];
 
     [standardUserDefaults synchronize];
+    
+    if ((lifetimeRoundsPlayed > NUM_ROUND_TRIGGER_LIKE_ME) &&
+        ([GameLayer sharedGameLayer].score.scoreValue > SCORE_TRIGGER_LIKE_ME))
+    {
+        [iRate sharedInstance].messageTitle = @" ";
+        [iRate sharedInstance].message = [NSString stringWithFormat:@"Awesome score %d! Would you like to rate Rotato?",[GameLayer sharedGameLayer].score.scoreValue];
+        [[iRate sharedInstance] logEvent:NO];
+    }
 }
 
 // -----------------------------------------------------------------------------------
