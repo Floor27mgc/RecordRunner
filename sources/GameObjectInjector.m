@@ -172,6 +172,8 @@
 
     if (_gameObjectType == BOMB_TYPE)
     {
+        // Bomb can't overlap another bomb and also we need to give enough spacing
+        // for people to zoom across.
         if ([self isAnybodyNearMeWithInAngleRange:ANGULAR_SPACING_BETWEEN_BOMBS_DEG
                                           myAngle:insertionAngle
                                        inUsedPool:usedPool
@@ -180,42 +182,48 @@
             return nil;
         }
     }
-        
-    // Check to see if we can insert this one without overlapping
-    for (int i=0; i<POOL_OBJ_COUNT_ON_TRACK([GameLayer sharedGameLayer].coinUsedPool, trackNum); i++)
-    {
-        NSMutableArray *currentObjectArray = POOL_OBJS_ON_TRACK([GameLayer sharedGameLayer].coinUsedPool, trackNum);
-        CGPoint currentObjectPosition = ((GameObjectBase *)currentObjectArray[i]).position;
-        CGPoint gameObjectPoint = [dummyInjectorBox convertToNodeSpace: currentObjectPosition];
-        CGPoint gameObjectPoint1 = CGPointMake(gameObjectPoint.x + COMMON_GRID_WIDTH/2,
-                                               gameObjectPoint.y + COMMON_GRID_HEIGHT/2);
-        CGPoint gameObjectPoint2 = CGPointMake(gameObjectPoint.x - COMMON_GRID_WIDTH/2,
-                                               gameObjectPoint.y - COMMON_GRID_HEIGHT/2);
-        CGPoint gameObjectPoint3 = CGPointMake(gameObjectPoint.x + COMMON_GRID_WIDTH/2,
-                                               gameObjectPoint.y - COMMON_GRID_HEIGHT/2);
-        CGPoint gameObjectPoint4 = CGPointMake(gameObjectPoint.x - COMMON_GRID_WIDTH/2,
-                                               gameObjectPoint.y + COMMON_GRID_HEIGHT/2);
 
-        
-        if (CGPathContainsPoint(injectorHitBoxPath,
-                                NULL,
-                                gameObjectPoint1,
-                                true) ||
-            CGPathContainsPoint(injectorHitBoxPath,
-                                NULL,
-                                gameObjectPoint2,
-                                true) ||
-            CGPathContainsPoint(injectorHitBoxPath,
-                                NULL,
-                                gameObjectPoint3,
-                                true) ||
-            CGPathContainsPoint(injectorHitBoxPath,
-                                NULL,
-                                gameObjectPoint4,
-                                true))
+
+    // To disallow coin overlapping coin and coin overlapping bomb
+    // Allow shield overlapping coin
+    if ((_gameObjectType == COIN_TYPE) || (_gameObjectType == BOMB_TYPE))
+    {
+        // Check to see if we can insert this one without overlapping
+        for (int i=0; i<POOL_OBJ_COUNT_ON_TRACK([GameLayer sharedGameLayer].coinUsedPool, trackNum); i++)
         {
-            return nil;
-        }        
+            NSMutableArray *currentObjectArray = POOL_OBJS_ON_TRACK([GameLayer sharedGameLayer].coinUsedPool, trackNum);
+            CGPoint currentObjectPosition = ((GameObjectBase *)currentObjectArray[i]).position;
+            CGPoint gameObjectPoint = [dummyInjectorBox convertToNodeSpace: currentObjectPosition];
+            CGPoint gameObjectPoint1 = CGPointMake(gameObjectPoint.x + COMMON_GRID_WIDTH/2,
+                                                   gameObjectPoint.y + COMMON_GRID_HEIGHT/2);
+            CGPoint gameObjectPoint2 = CGPointMake(gameObjectPoint.x - COMMON_GRID_WIDTH/2,
+                                                   gameObjectPoint.y - COMMON_GRID_HEIGHT/2);
+            CGPoint gameObjectPoint3 = CGPointMake(gameObjectPoint.x + COMMON_GRID_WIDTH/2,
+                                                   gameObjectPoint.y - COMMON_GRID_HEIGHT/2);
+            CGPoint gameObjectPoint4 = CGPointMake(gameObjectPoint.x - COMMON_GRID_WIDTH/2,
+                                                   gameObjectPoint.y + COMMON_GRID_HEIGHT/2);
+            
+            
+            if (CGPathContainsPoint(injectorHitBoxPath,
+                                    NULL,
+                                    gameObjectPoint1,
+                                    true) ||
+                CGPathContainsPoint(injectorHitBoxPath,
+                                    NULL,
+                                    gameObjectPoint2,
+                                    true) ||
+                CGPathContainsPoint(injectorHitBoxPath,
+                                    NULL,
+                                    gameObjectPoint3,
+                                    true) ||
+                CGPathContainsPoint(injectorHitBoxPath,
+                                    NULL,
+                                    gameObjectPoint4,
+                                    true))
+            {
+                return nil;
+            }        
+        }
     }
 
 
@@ -293,6 +301,7 @@
         }
     }
 
+    
     newObject = [freePool takeObjectFromTrack:trackNum];
     if (newObject != nil) {
         newObject.anchorPoint = ccp(0.5,0.5);

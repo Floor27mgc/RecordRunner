@@ -25,6 +25,7 @@
 #import "CCBAnimationManager.h"
 #import "NewsDownloader.h"
 #import "iRate.h"
+
 #pragma mark - GameLayer
 
 // GameLayer implementation
@@ -54,7 +55,7 @@
 @synthesize leaderBoardViewController;
 @synthesize tapDelay;
 @synthesize achievementContainer;
-
+@synthesize lastBombInjectTime;
 
 static GameLayer *sharedGameLayer;
 
@@ -215,7 +216,8 @@ static GameLayer *sharedGameLayer;
         // input buffering structures
         pendingTaps = 0;
         
-        self.tapDelay = [NSDate distantFuture];        
+        self.tapDelay = [NSDate distantFuture];
+        lastBombInjectTime = [NSDate date];
     }
     return self;
 }
@@ -270,6 +272,7 @@ static GameLayer *sharedGameLayer;
 // -----------------------------------------------------------------------------------
 - (void) update:(ccTime) dt
 {
+    
     // input buffering for player movement
     if ([self moveThePlayer]) {
         [self.player changeDirection];
@@ -291,8 +294,20 @@ static GameLayer *sharedGameLayer;
     }
     
     // generate Game Objectsrandomly
-    if (arc4random() % RANDOM_MAX <= bombSpawnRate) {
-        [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:BOMB_TYPE effectType:kRotation];
+    if (arc4random() % RANDOM_MAX <= bombSpawnRate){
+        int elapsed = fabs([self.lastBombInjectTime timeIntervalSinceNow]);
+        NSLog(@"elapsed = %d",elapsed);
+        if (elapsed > kBombSpawnTimeInterval)
+        {
+            GameObjectBase *objectInjected = [gameObjectInjector injectObjectToTrack:(arc4random()%4)
+                                                                             atAngle:45
+                                                                      gameObjectType:BOMB_TYPE
+                                                                          effectType:kRotation];
+            if (objectInjected != nil)
+            {
+                lastBombInjectTime = [NSDate date];
+            }
+        }
     }
     
     // generate Game Objectsrandomly
@@ -388,7 +403,7 @@ static GameLayer *sharedGameLayer;
 
     // if we've hit an interval, increase the speed accordingly
     if (intElapsed % SPEED_INCREASE_INTERVAL == 0) {
-        
+        NSLog (@"%d",intElapsed);
         // this will be triggered multiple times per second, make sure to only
         // tick the speed once per interval encountered
         BOOL increaseSpeed = NO;

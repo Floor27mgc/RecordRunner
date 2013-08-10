@@ -16,6 +16,7 @@
 
 #define NORMALIZE_ANGLE(_angle) (((int)_angle)%360)
 #define ANGULAR_SPACING_BETWEEN_BOMBS_DEG 35
+
 @interface GameObjectInjector : NSObject
 
 @property CGMutablePathRef injectorHitBoxPath;
