@@ -635,6 +635,8 @@
 		E5C5A39D17A6B12C00B58FEC /* guiObjectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C5A39C17A6B12B00B58FEC /* guiObjectButton.m */; };
 		E5C5A3A017A76CE100B58FEC /* guiObjectButton.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5C5A39E17A76CE100B58FEC /* guiObjectButton.ccbi */; };
 		E5C5A3A317A76DD400B58FEC /* MainMenuSettingsBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5C5A3A217A76DD400B58FEC /* MainMenuSettingsBox.ccbi */; };
+		E5D1FBAC17B6E1D8007F7C0D /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D1FBAA17B6E1D8007F7C0D /* facebook.png */; };
+		E5D1FBAD17B6E1D8007F7C0D /* facebook-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D1FBAB17B6E1D8007F7C0D /* facebook-hd.png */; };
 		E5DD15DB17A7F48E00A16CEC /* gui_circle-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E5DD15D917A7F48E00A16CEC /* gui_circle-hd.png */; };
 		E5DD15DC17A7F48E00A16CEC /* gui_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = E5DD15DA17A7F48E00A16CEC /* gui_circle.png */; };
 		E5DD15DF17A7F53700A16CEC /* gui_icon_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = E5DD15DD17A7F53700A16CEC /* gui_icon_circle.png */; };
@@ -1391,6 +1393,8 @@
 		E5C5A39C17A6B12B00B58FEC /* guiObjectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = guiObjectButton.m; path = sources/guiObjectButton.m; sourceTree = SOURCE_ROOT; };
 		E5C5A39E17A76CE100B58FEC /* guiObjectButton.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = guiObjectButton.ccbi; path = CocosBuilder/CCBI_files/guiObjectButton.ccbi; sourceTree = SOURCE_ROOT; };
 		E5C5A3A217A76DD400B58FEC /* MainMenuSettingsBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainMenuSettingsBox.ccbi; path = CocosBuilder/CCBI_files/MainMenuSettingsBox.ccbi; sourceTree = SOURCE_ROOT; };
+		E5D1FBAA17B6E1D8007F7C0D /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebook.png; path = Resources/Graphics/facebook.png; sourceTree = SOURCE_ROOT; };
+		E5D1FBAB17B6E1D8007F7C0D /* facebook-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "facebook-hd.png"; path = "Resources/Graphics/facebook-hd.png"; sourceTree = SOURCE_ROOT; };
 		E5DD15D917A7F48E00A16CEC /* gui_circle-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gui_circle-hd.png"; path = "Resources/Graphics/gui_circle-hd.png"; sourceTree = SOURCE_ROOT; };
 		E5DD15DA17A7F48E00A16CEC /* gui_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gui_circle.png; path = Resources/Graphics/gui_circle.png; sourceTree = SOURCE_ROOT; };
 		E5DD15DD17A7F53700A16CEC /* gui_icon_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gui_icon_circle.png; path = Resources/Graphics/gui_icon_circle.png; sourceTree = SOURCE_ROOT; };
@@ -1618,6 +1622,8 @@
 				E5130743178D17F3000F1EE5 /* gui_circle_wedge.png */,
 				E5130744178D17F3000F1EE5 /* gui_circle_wedge-hd.png */,
 				E54C884017766B8200D546F2 /* parts_record_inner-hd.png */,
+				E5D1FBAA17B6E1D8007F7C0D /* facebook.png */,
+				E5D1FBAB17B6E1D8007F7C0D /* facebook-hd.png */,
 				083B08F6170AB0EC00EF0DB0 /* blank.png */,
 				083B08F7170AB0EC00EF0DB0 /* bug.png */,
 				083B08F8170AB0EC00EF0DB0 /* checkbox_tick-hd.png */,
@@ -3150,6 +3156,8 @@
 				E593E57917AF026D00858E06 /* Default.png in Resources */,
 				E593E57A17AF050F00858E06 /* Default-568h@2x.png in Resources */,
 				085A7B2E17AF859100805022 /* Default-568h@2x.png in Resources */,
+				E5D1FBAC17B6E1D8007F7C0D /* facebook.png in Resources */,
+				E5D1FBAD17B6E1D8007F7C0D /* facebook-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3355,8 +3363,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -3369,8 +3377,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				PROVISIONING_PROFILE = "E0279E6A-ED64-4F50-81C8-661C89123479";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E0279E6A-ED64-4F50-81C8-661C89123479";
+				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DCB72B6-CF7B-441A-811C-871D021488BB";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3384,8 +3392,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -3396,8 +3404,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				PROVISIONING_PROFILE = "E0279E6A-ED64-4F50-81C8-661C89123479";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E0279E6A-ED64-4F50-81C8-661C89123479";
+				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DCB72B6-CF7B-441A-811C-871D021488BB";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3408,8 +3416,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3428,8 +3436,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Rotato;
-				PROVISIONING_PROFILE = "E0279E6A-ED64-4F50-81C8-661C89123479";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E0279E6A-ED64-4F50-81C8-661C89123479";
+				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DCB72B6-CF7B-441A-811C-871D021488BB";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -3440,8 +3448,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2d-2.x-ARC-iOS/Prefix.pch";
@@ -3459,8 +3467,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Rotato;
-				PROVISIONING_PROFILE = "E0279E6A-ED64-4F50-81C8-661C89123479";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E0279E6A-ED64-4F50-81C8-661C89123479";
+				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DCB72B6-CF7B-441A-811C-871D021488BB";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

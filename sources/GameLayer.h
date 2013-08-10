@@ -33,9 +33,9 @@
 #define MIN_NUM_POWER_ICONS_PER_TRACK 1
 #define MAX_NUM_TRACK                 4
 #define MAX_NUM_BOUNCING_COINS        7
-#define kBombSpawnRate 30
-#define kCoinSpawnRate 38
-#define kShieldSpawnRate 1
+#define kBombSpawnRate 20
+#define kCoinSpawnRate 50
+#define kShieldSpawnRate 3
 #define TAP_DELAY_THRESHOLD_MSEC 62
 #define REVOLUTION_BUMP_1 33
 #define REVOLUTION_BUMP_2 45
@@ -43,7 +43,7 @@
 
 #define SPEED_INCREASE_AMOUNT   .2
 #define SPEED_INCREASE_INTERVAL 22
-#define MAX_GAME_SPEED          2.6
+#define MAX_GAME_SPEED          3.0
 
 #define kGameModeNoRotation 0
 #define kGameModeRotation   1
@@ -108,6 +108,7 @@ typedef enum {
 -(void) startTheNextRound;
 -(void) doTimeBasedGameSpeedUp;
 -(void) ConvertBombsToCoins;
+-(void) resetHighScore;
 
 @property (nonatomic, strong) GameObjectPlayer *player;
 @property (nonatomic, strong) Queue * coinFreePool;
@@ -129,6 +130,7 @@ typedef enum {
 @property (nonatomic, assign) int shieldSpawnRate;
 @property (nonatomic, assign) BOOL isDebugMode;
 @property (nonatomic, assign) int pendingTaps;
+@property (nonatomic, assign) int startingHighScore;
 @property (nonatomic) NSDate * tapDelay;
 @property (nonatomic, strong) UIView *leaderBoardView;
 @property (nonatomic, strong) UIViewController *leaderBoardViewController;

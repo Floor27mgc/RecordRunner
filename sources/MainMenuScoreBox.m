@@ -67,12 +67,19 @@
 
 
 // -----------------------------------------------------------------------------------
-// For the YES NO Button
+// For the YES NO Button 
 - (void)alertView:(UIAlertView *)alertView
 clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 1) {
         
+        
+        //Reset the highscores and stuff.
+        [NSUserDefaults resetStandardUserDefaults];
+        
         [[GameInfoGlobal sharedGameInfoGlobal] ResetLifetimeAchievementData];
+        [[GameLayer sharedGameLayer] resetHighScore];
+        
+        
         
         // Clear all progress saved on Game Center
         [GKAchievement resetAchievementsWithCompletionHandler:^(NSError *error)

@@ -50,6 +50,7 @@
 @synthesize scoreLabel;
 @synthesize invincibleRecord;
 @synthesize pendingTaps;
+@synthesize startingHighScore;
 @synthesize leaderBoardView;
 @synthesize leaderBoardViewController;
 @synthesize tapDelay;
@@ -209,7 +210,7 @@ static GameLayer *sharedGameLayer;
         
         _multiplier = (Multiplier *) [CCBReader nodeGraphFromFile:@"multiplier.ccbi"];
         [_multiplier prepare];
-        [self addChild:_multiplier z:10];
+        [self addChild:_multiplier z:3];
         _multiplier.position = ccp(COMMON_RECORD_CENTER_X, COMMON_RECORD_CENTER_Y);
         
         // input buffering structures
@@ -239,6 +240,9 @@ static GameLayer *sharedGameLayer;
     player.visible = false;
     CCBAnimationManager* animationManager = self.userObject;
     [animationManager runAnimationsForSequenceNamed:@"start_game"];
+    
+    //Reset the high score
+    startingHighScore = [[GameLayer sharedGameLayer].highScore getScore];
     
     // Schedule a selector that is called every frame
     [self schedule:@selector(update:)];
@@ -373,6 +377,9 @@ static GameLayer *sharedGameLayer;
     // speed up rotation speed, as necessary, never exceeding the max
     if ([self getGameAngularVelocityInDegree] < MAX_GAME_SPEED) {
         [self doTimeBasedGameSpeedUp];
+    }
+    else{
+        NSLog(@"MAX SPEED");
     }
     
     // check for any non-achievement bonuses that may have been achieved
@@ -583,6 +590,9 @@ static GameLayer *sharedGameLayer;
         [gameObjectInjector showScoreObject:3 message: rpmBump xVal:270 yVal:270 displayEffect:small];
         [_score addToScore:scoreBump];
         
+        //blow up
+        [self.multiplier explode];
+        
         // convert all bombs to coins
         [self ConvertBombsToCoins];
     }
@@ -780,6 +790,8 @@ static GameLayer *sharedGameLayer;
     }
 }
 
+
+
 // -----------------------------------------------------------------------------------
 -(void) cleanUpPlayField
 {
@@ -869,12 +881,11 @@ static GameLayer *sharedGameLayer;
     }
 }
 
-
-
-
 //Called after the game is over, it shows the dialog. Also called after the RankLayerBox
 - (void) showGameOverLayer: (int) score
 {
+    
+    BOOL gotHighScore = (startingHighScore < score);
     
     if (gameOverLayer != nil)
     {
@@ -882,8 +893,9 @@ static GameLayer *sharedGameLayer;
         NSLog(@"animationManager: %@", animationManager);
         
         
+        
         //This sets the menu data for the final menu
-        [gameOverLayer setMenuData: score];
+        [gameOverLayer setMenuData: score newHigh: gotHighScore];
          
          
         gameOverLayer.visible = YES;
@@ -894,7 +906,7 @@ static GameLayer *sharedGameLayer;
         gameOverLayer.position = COMMON_SCREEN_CENTER;
         
         //This sets the menu data for the final menu
-        [gameOverLayer setMenuData: score];
+        [gameOverLayer setMenuData: score newHigh: gotHighScore];
         
         [[GameLayer sharedGameLayer] addChild:gameOverLayer z:11];
     }
