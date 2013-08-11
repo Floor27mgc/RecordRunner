@@ -17,6 +17,7 @@
 @synthesize gameCenterView;
 @synthesize gameCenterViewController;
 @synthesize highScoreLabel;
+@synthesize highRotationLabel;
 
 // -----------------------------------------------------------------------------------
 // GAMECENTER FLAG PRESSED
@@ -82,8 +83,13 @@
         // reset the persistent high score value
         NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
         [standardUserDefaults setInteger:0 forKey:@"highScore"];
+        [standardUserDefaults setInteger:0 forKey:@"maxRevolutionsInALife"];
+        
         [standardUserDefaults synchronize];
         
+        [highScoreLabel setString:[NSString stringWithFormat:@"%d", [Score getHighScore]]];
+        [highRotationLabel setString:[NSString stringWithFormat:@"%d",[Score getMostRotations]]];
+
         
         // Clear all progress saved on Game Center
         [GKAchievement resetAchievementsWithCompletionHandler:^(NSError *error)

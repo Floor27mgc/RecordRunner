@@ -149,4 +149,10 @@
 {
     return [[NSUserDefaults standardUserDefaults] integerForKey:@"highScore"];
 }
+
+// -----------------------------------------------------------------------------------
++ (int) getMostRotations
+{
+    return [[NSUserDefaults standardUserDefaults] integerForKey:@"maxRevolutionsInALife"];
+}
 @end

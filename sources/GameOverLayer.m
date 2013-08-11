@@ -22,6 +22,9 @@
 @synthesize finalScoreLabel;
 @synthesize highScoreLabel;
 
+@synthesize finalLapsLabel;
+@synthesize finalLapsRecordLabel;
+
 @synthesize emailView;
 @synthesize emailViewController;
 @synthesize isQuitting;
@@ -72,30 +75,33 @@
 // -----------------------------------------------------------------------------------
 //This method is used to set the labels in the Game Over Menu.
 //For example, before G.O. Menu is shown, call this method to set those two values
-- (void) setMenuData:(int) myFinalScore newHigh:(BOOL) highScore
+- (void) setMenuData:(int) myFinalScore rotations:(int)myFinalRotations gotHigh:(BOOL) highScore
+gotMaxRotations: (BOOL)mostRotations
 {
     int highScorePoints = [GameLayer sharedGameLayer].highScore.getScore;
     
-    //Hide the banner if you didnt get a high score
-    if (!highScore)
-    {
-        //Turn off the banner because you didnt get a high score.
-        [self.scoreHighBanner setOpacity:(GLubyte)0];
-        [self.scoreHighBannerText setOpacity:(GLubyte)0];
-    }
+    int highRotations = [GameInfoGlobal sharedGameInfoGlobal].maxNumRevolutionsInALife;
+    
+    //Hide the banner if you didnt get a high score = 0, 255 = show it.
+    GLubyte shouldShowHighScoreBanner = highScore ? 255 : 0;
+    GLubyte shouldShowHighRotationBanner = mostRotations ? 255 : 0;
+    
+    
+    //Turn off the banner because you didnt get a high score.
+    [self.scoreHighBanner setOpacity: shouldShowHighScoreBanner];
+    [self.scoreHighBannerText setOpacity: shouldShowHighScoreBanner];
+    
     
     //Turn off Laps banner
-    [self.lapsHighBanner setOpacity:(GLubyte)0];
-    [self.lapsHighBannerText setOpacity:(GLubyte)0];
+    [self.lapsHighBanner setOpacity:(GLubyte)shouldShowHighRotationBanner];
+    [self.lapsHighBannerText setOpacity:(GLubyte)shouldShowHighRotationBanner];
     
-    //Hide the sharebutton if you didnt get a high score
-    if (!highScore)
-    {
-        //Turn off share button
-        self.facebookButtonEnabled = NO;
-        [self.facebookButton setOpacity:(GLubyte)0];
-        [self.shareItLabel setOpacity:(GLubyte)0];
-    }
+    
+    //Turn off/on share button
+    //Turn it on if goe either max rotations or max score
+    self.facebookButtonEnabled = highScore;
+    [self.facebookButton setOpacity: fmax(shouldShowHighScoreBanner, shouldShowHighRotationBanner) ];
+    [self.shareItLabel setOpacity: fmax(shouldShowHighScoreBanner, shouldShowHighRotationBanner) ];
     
     
     [GameInfoGlobal sharedGameInfoGlobal].lifetimeRoundsPlayed++;
@@ -115,6 +121,15 @@
     [self.highScoreLabel setString:[NSString stringWithFormat:@"%d",
                                      highScorePoints]];
 
+    
+    //Set the rotations
+    [self.finalLapsLabel setString:[NSString stringWithFormat:@"%d",
+                                     myFinalRotations]];
+    
+    
+    //Set the maxrotations
+    [self.finalLapsRecordLabel setString:[NSString stringWithFormat:@"%d",
+                                    highRotations]];
     
     
     

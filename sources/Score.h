@@ -34,4 +34,5 @@
 - (int) getMultiplier;
 - (void) setHighScore;
 + (int) getHighScore;
++ (int) getMostRotations;
 @end

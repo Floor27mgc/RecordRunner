@@ -181,6 +181,10 @@
     {
         NSLog(@"Pressed SCORE");
         [mainMenuScore.highScoreLabel setString:[NSString stringWithFormat:@"%d",[Score getHighScore]]];
+        
+        [mainMenuScore.highRotationLabel setString:[NSString stringWithFormat:@"%d",[Score getMostRotations]]];
+        
+        
         [self openMenus: BUTTON_SCORE];
     }
 }

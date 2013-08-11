@@ -51,7 +51,8 @@
 @synthesize scoreLabel;
 @synthesize invincibleRecord;
 @synthesize pendingTaps;
-@synthesize startingHighScore;
+@synthesize gotHighScore;
+@synthesize gotMostRotations;
 @synthesize leaderBoardView;
 @synthesize leaderBoardViewController;
 @synthesize tapDelay;
@@ -243,9 +244,6 @@ static GameLayer *sharedGameLayer;
     CCBAnimationManager* animationManager = self.userObject;
     [animationManager runAnimationsForSequenceNamed:@"start_game"];
     
-    //Reset the high score
-    startingHighScore = [[GameLayer sharedGameLayer].highScore getScore];
-    
     // Schedule a selector that is called every frame
     [self schedule:@selector(update:)];
     
@@ -292,11 +290,17 @@ static GameLayer *sharedGameLayer;
         }
         
         // update max revolutions in a life tracker
-        if ([GameInfoGlobal sharedGameInfoGlobal].numRotationsThisLife >
+        if ([GameInfoGlobal sharedGameInfoGlobal].numRotationsThisLife >=
             [GameInfoGlobal sharedGameInfoGlobal].maxNumRevolutionsInALife) {
 
             [GameInfoGlobal sharedGameInfoGlobal].maxNumRevolutionsInALife =
                 [GameInfoGlobal sharedGameInfoGlobal].numRotationsThisLife;
+            
+            gotMostRotations = YES;
+        }
+        else{
+            
+            gotMostRotations = NO;
         }
     }
     
@@ -360,7 +364,7 @@ static GameLayer *sharedGameLayer;
     }
     
     // update high score, if needed
-    [self updateHighScore];
+    gotHighScore = [self updateHighScore];
     [_score showNextFrame];
     [_highScore showNextFrame];
     [_multiplier showNextFrame];
@@ -505,6 +509,8 @@ static GameLayer *sharedGameLayer;
 }
 
 // -----------------------------------------------------------------------------------
+//Checks for high scores.
+//Returns true if it happened
 - (bool) updateHighScore
 {
     if ([_score getScore] >= [_highScore getScore]) {
@@ -573,7 +579,8 @@ static GameLayer *sharedGameLayer;
     
     NSLog(@"score %d", [[GameLayer sharedGameLayer].score getScore] );
     
-    [self showGameOverLayer: [[GameLayer sharedGameLayer].score getScore] ];
+    [self showGameOverLayer: [[GameLayer sharedGameLayer].score getScore]
+               numRotations:[GameInfoGlobal sharedGameInfoGlobal].numRotationsThisLife ];
 }
 
 
@@ -905,10 +912,9 @@ static GameLayer *sharedGameLayer;
 }
 
 //Called after the game is over, it shows the dialog. Also called after the RankLayerBox
-- (void) showGameOverLayer: (int) score
+- (void) showGameOverLayer: (int) score numRotations: (int) rotations
 {
     
-    BOOL gotHighScore = (startingHighScore < score);
     
     if (gameOverLayer != nil)
     {
@@ -918,7 +924,7 @@ static GameLayer *sharedGameLayer;
         
         
         //This sets the menu data for the final menu
-        [gameOverLayer setMenuData: score newHigh: gotHighScore];
+        [gameOverLayer setMenuData: score rotations:rotations gotHigh: gotHighScore gotMaxRotations: gotMostRotations];
          
          
         gameOverLayer.visible = YES;
@@ -929,7 +935,10 @@ static GameLayer *sharedGameLayer;
         gameOverLayer.position = COMMON_SCREEN_CENTER;
         
         //This sets the menu data for the final menu
-        [gameOverLayer setMenuData: score newHigh: gotHighScore];
+        [gameOverLayer setMenuData: score
+                         rotations:rotations
+                           gotHigh: gotHighScore
+                   gotMaxRotations: gotMostRotations];
         
         [[GameLayer sharedGameLayer] addChild:gameOverLayer z:11];
     }

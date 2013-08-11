@@ -27,4 +27,5 @@
 @property (nonatomic, strong) UIView *gameCenterView;
 @property (nonatomic, strong) UIViewController *gameCenterViewController;
 @property (nonatomic, strong) CCLabelTTF *highScoreLabel;
+@property (nonatomic, strong) CCLabelTTF *highRotationLabel;
 @end

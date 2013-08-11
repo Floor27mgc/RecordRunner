@@ -207,7 +207,7 @@ int nextRankForThisLayer;
         [name compare:@"PopOutRanked"] == NSOrderedSame) {
         
         
-        [[GameLayer sharedGameLayer] showGameOverLayer: [[GameLayer sharedGameLayer].score getScore]];
+        [[GameLayer sharedGameLayer] showGameOverLayer: [[GameLayer sharedGameLayer].score getScore] numRotations:[GameInfoGlobal sharedGameInfoGlobal].numRotationsThisLife ];
         
         
     }

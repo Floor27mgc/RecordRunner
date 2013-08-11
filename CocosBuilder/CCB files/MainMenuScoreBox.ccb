@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>1</integer>
+	<integer>0</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -953,7 +953,7 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>423.5</real>
+									<real>423.54998779296875</real>
 									<real>288.5</real>
 									<integer>0</integer>
 								</array>
@@ -1283,8 +1283,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>97.976661682128906</real>
-									<real>289</real>
+									<real>104</real>
+									<real>295</real>
 									<integer>3</integer>
 								</array>
 							</dict>
@@ -1385,7 +1385,7 @@
 								<key>type</key>
 								<string>Text</string>
 								<key>value</key>
-								<string>100</string>
+								<string>0</string>
 							</dict>
 						</array>
 					</dict>
@@ -1399,9 +1399,9 @@
 						<key>displayName</key>
 						<string>CCLabelTTF</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>highRotationLabel</string>
 						<key>memberVarAssignmentType</key>
-						<integer>0</integer>
+						<integer>1</integer>
 						<key>properties</key>
 						<array>
 							<dict>
@@ -1411,8 +1411,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>102.97666168212891</real>
-									<real>242</real>
+									<real>103.97666168212891</real>
+									<real>244</real>
 									<integer>3</integer>
 								</array>
 							</dict>
@@ -1513,7 +1513,7 @@
 								<key>type</key>
 								<string>Text</string>
 								<key>value</key>
-								<string>30</string>
+								<string>0</string>
 							</dict>
 						</array>
 					</dict>
@@ -2521,8 +2521,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>318</real>
-									<real>115</real>
+									<real>317.99441528320312</real>
+									<real>114.97222900390625</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -3194,7 +3194,7 @@
 								<key>value</key>
 								<array>
 									<real>318</real>
-									<real>182</real>
+									<real>182.33332824707031</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -3268,8 +3268,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>160</real>
-							<real>800.5999755859375</real>
+							<real>159</real>
+							<real>285</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -3376,8 +3376,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
@@ -3412,7 +3410,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>1</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
@@ -3432,7 +3430,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.3333333432674408</real>
+			<real>1</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

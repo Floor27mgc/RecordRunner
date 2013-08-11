@@ -107,7 +107,7 @@ typedef enum {
 -(void) activateInvincible;
 -(void) deactivateInvincible;
 -(void) checkBonuses;
--(void) showGameOverLayer:(int) score;
+-(void) showGameOverLayer:(int) score numRotations:(int) rotations;
 -(void) startTheNextRound;
 -(void) doTimeBasedGameSpeedUp;
 -(void) ConvertBombsToCoins;
@@ -133,7 +133,8 @@ typedef enum {
 @property (nonatomic, assign) int shieldSpawnRate;
 @property (nonatomic, assign) BOOL isDebugMode;
 @property (nonatomic, assign) int pendingTaps;
-@property (nonatomic, assign) int startingHighScore;
+@property (nonatomic, assign) BOOL gotHighScore;
+@property (nonatomic, assign) BOOL gotMostRotations;
 @property (nonatomic) NSDate * tapDelay;
 @property (nonatomic, strong) UIView *leaderBoardView;
 @property (nonatomic, strong) UIViewController *leaderBoardViewController;
