@@ -41,6 +41,7 @@
 @synthesize speedUpsThisLife;
 @synthesize maxCoinsPerScratch;
 @synthesize clockwiseThenCounterclockwise;
+@synthesize maxNumRevolutionsInALife;
 
 static GameInfoGlobal *sharedGameInfoGlobal;
 
@@ -81,8 +82,13 @@ static GameInfoGlobal *sharedGameInfoGlobal;
         lifetimeRoundsPlayed =
             [[NSUserDefaults standardUserDefaults] integerForKey:@"lifetimeRoundsPlayed"];
         
-        NSLog(@"Coin bank %d lifetimeRevolutions %d lifetimeRoundsPlayed %d", coinsInBank,
-              lifetimeRevolutions, lifetimeRoundsPlayed);
+        maxNumRevolutionsInALife =
+            [[NSUserDefaults standardUserDefaults] integerForKey:@"maxRevolutionsInALife"];
+        
+        NSLog(@"Coin bank %d lifetimeRevolutions %d lifetimeRoundsPlayed"
+              "%d maxRevolutionsInALife %d",
+              coinsInBank, lifetimeRevolutions, lifetimeRoundsPlayed,
+              maxNumRevolutionsInALife);
         
         achievedThisRound = [[NSMutableArray alloc] init];
         
@@ -117,6 +123,9 @@ static GameInfoGlobal *sharedGameInfoGlobal;
     // update the lifetime revolution
     [standardUserDefaults setInteger:lifetimeRoundsPlayed forKey:@"lifetimeRoundsPlayed"];
 
+    // update the max number of revolutions achieved in a life
+    [standardUserDefaults setInteger:maxNumRevolutionsInALife forKey:@"maxRevolutionsInALife"];
+    
     [standardUserDefaults synchronize];
     
     if ((lifetimeRoundsPlayed > NUM_ROUND_TRIGGER_LIKE_ME) &&
@@ -141,9 +150,13 @@ static GameInfoGlobal *sharedGameInfoGlobal;
     [GameInfoGlobal sharedGameInfoGlobal].lifetimeRevolutions = 0;
     [standardUserDefaults setInteger:lifetimeRevolutions forKey:@"lifetimeRevolutions"];
     
-    // update the lifetime revolution
+    // update the lifetime rounds played
     [GameInfoGlobal sharedGameInfoGlobal].lifetimeRoundsPlayed = 0;
     [standardUserDefaults setInteger:lifetimeRoundsPlayed forKey:@"lifetimeRoundsPlayed"];
+    
+    // update the lifetime max revolutions
+    [GameInfoGlobal sharedGameInfoGlobal].maxNumRevolutionsInALife = 0;
+    [standardUserDefaults setInteger:maxNumRevolutionsInALife forKey:@"maxRevolutionsInALife"];
     
     [standardUserDefaults synchronize];
 }

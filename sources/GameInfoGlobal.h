@@ -39,6 +39,7 @@ typedef enum {
 @property (nonatomic, assign) int numDegreesRotatedThisLife;
 @property (nonatomic, assign) int numCoinsThisLife;
 @property (nonatomic, assign) int closeCallsThisLife;
+@property (nonatomic, assign) int maxNumRevolutionsInALife;
 @property (nonatomic, assign) int score;
 @property (nonatomic, assign) int scratchesThisRevolution;
 @property (nonatomic, assign) int coinsThisScratch;

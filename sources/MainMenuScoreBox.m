@@ -79,6 +79,10 @@
         [[GameInfoGlobal sharedGameInfoGlobal] ResetLifetimeAchievementData];
         [[GameLayer sharedGameLayer] resetHighScore];
         
+        // reset the persistent high score value
+        NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+        [standardUserDefaults setInteger:0 forKey:@"highScore"];
+        [standardUserDefaults synchronize];
         
         
         // Clear all progress saved on Game Center

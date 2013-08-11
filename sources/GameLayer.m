@@ -290,6 +290,14 @@ static GameLayer *sharedGameLayer;
         if ([GameInfoGlobal sharedGameInfoGlobal].scratchesThisRevolution >= 40) {
             [GameInfoGlobal sharedGameInfoGlobal].hit40scratchesInSingleRevolution = YES;
         }
+        
+        // update max revolutions in a life tracker
+        if ([GameInfoGlobal sharedGameInfoGlobal].numRotationsThisLife >
+            [GameInfoGlobal sharedGameInfoGlobal].maxNumRevolutionsInALife) {
+
+            [GameInfoGlobal sharedGameInfoGlobal].maxNumRevolutionsInALife =
+                [GameInfoGlobal sharedGameInfoGlobal].numRotationsThisLife;
+        }
     }
     
     // generate Game Objectsrandomly
