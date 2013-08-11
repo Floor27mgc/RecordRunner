@@ -38,5 +38,7 @@
 - (void) setShield;
 - (void) resumeMultiCountdown;
 - (void) die;
+- (void) explode;
+
 
 @end

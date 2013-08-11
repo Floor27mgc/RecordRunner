@@ -16,6 +16,8 @@
 @synthesize gameObjectUpdateTick;
 @synthesize closeCallAbove;
 @synthesize closeCallBelow;
+@synthesize bombTimeLeft;
+@synthesize exploded;
 
 // -----------------------------------------------------------------------------------
 - (id) init
@@ -27,8 +29,21 @@
         closeCallBelow = NO;
         self.radiusHitBox = (COMMON_GRID_WIDTH/4);
     }
+    
+    bombTimeLeft = 100;
+    exploded = NO;
+    
     return (self);
 }
+
+
+- (void) didLoadFromCCB
+{
+    // Setup a delegate method for the animationManager of the explosion
+    CCBAnimationManager* animationManager = self.userObject;
+    animationManager.delegate = self;
+}
+
 
 // -----------------------------------------------------------------------------------
 - (void) showNextFrame
@@ -162,5 +177,15 @@
     [super resetObject];
     gameObjectUpdateTick = 0;
 }
+
+
+// -----------------------------------------------------------------------------------
+- (void) completedAnimationSequenceNamed:(NSString *)name
+{
+    
+}
+
+
+
 
 @end

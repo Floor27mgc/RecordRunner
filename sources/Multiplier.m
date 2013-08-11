@@ -52,6 +52,13 @@
     [self.animationManager runAnimationsForSequenceNamed:@"bounce_multiplier"];
 }
 
+// -----------------------------------------------------------------------------------
+// Called by the make bombs coins.
+- (void) explode
+{
+    [self.animationManager runAnimationsForSequenceNamed:@"explosion"];
+}
+
 
 
 // -----------------------------------------------------------------------------------
@@ -85,6 +92,8 @@
 }
 
 // -----------------------------------------------------------------------------------
+// Reset it to 1 if you send -1
+//Decrement by ammount otherwise
 - (void) decrementMultiplier:(int)amount
 {
     if (amount >= multiplierValue) {
@@ -181,7 +190,7 @@
             //Decrement the multiplier if time runs out and player is NOT invincible
             if (timerLifeInSec % MULTIPLIER_LIFE_TIME_SEC == 0 &&
                 ![GameLayer sharedGameLayer].player.hasShield ) {
-                [self decrementMultiplier:1];
+                [self decrementMultiplier:-1];
             }
         }
     }
