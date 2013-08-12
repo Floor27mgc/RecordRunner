@@ -330,7 +330,9 @@ static GameLayer *sharedGameLayer;
     int ran = (arc4random() % RANDOM_MAX);
     if ((ran <= shieldSpawnRate) &&
         (arc4random() % 3 == 1) &&
-        ([_powerIconUsedPool getObjectCount] == 0)) {
+        ([_powerIconUsedPool getObjectCount] == 0) &&
+        !player.hasShield) {
+
         [gameObjectInjector injectObjectToTrack:(arc4random()%4) atAngle:45 gameObjectType:POWER_ICON_TYPE effectType:kRotation];
     }
     
