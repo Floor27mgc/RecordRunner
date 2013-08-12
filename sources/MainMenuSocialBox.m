@@ -90,6 +90,7 @@
         
         
         NSURL *urlApp = [NSURL URLWithString:@"fb://profile/160525450781718"];
+//        NSURL *urlApp = [NSURL URLWithString:@"https://www.facebook.com/Floor27industries"];
         
         //Check if the Facebook app exists on the phone.
         if ([[UIApplication sharedApplication] canOpenURL:urlApp])
@@ -124,7 +125,7 @@
         NSLog(@"open twitter");
                
         
-        NSURL *twitterUrlApp = [NSURL URLWithString:@"twitter://Floor27Industry"];
+        NSURL *twitterUrlApp = [NSURL URLWithString:@"twitter://user?screen_name=floor27industry"];
         
         if ([[UIApplication sharedApplication] canOpenURL:twitterUrlApp])
         {
