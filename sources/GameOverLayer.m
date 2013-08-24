@@ -13,12 +13,16 @@
 #import "CCBReader.h"
 #import <GameKit/GameKit.h>
 #import <Social/Social.h>
+#import "BuyPowerupMenu.h"
 
 @interface GameOverLayer ()
 -(UIImage*) screenshotWithStartNode:(CCNode*)startNode;
 @end
 
 @implementation GameOverLayer
+
+@synthesize powerUpMenu;
+
 @synthesize finalScoreLabel;
 @synthesize highScoreLabel;
 
@@ -44,8 +48,6 @@
 @synthesize yesButtonEnabled;
 @synthesize homeButtonEnabled;
 @synthesize facebookButtonEnabled;
-
-
 
 // -----------------------------------------------------------------------------------
 - (void) pressedNO:(id) sender
@@ -199,7 +201,8 @@ gotMaxRotations: (BOOL)mostRotations
         self.homeButtonEnabled =YES;
         
         //Game is over, start the next round
-        [[GameLayer sharedGameLayer] startTheNextRound];
+        //[[GameLayer sharedGameLayer] startTheNextRound];
+        [self openPowerupMenu];
     }
     else if ([name compare:@"Pop in"] == NSOrderedSame)
     {
@@ -207,6 +210,32 @@ gotMaxRotations: (BOOL)mostRotations
         [self turnOnButtons];
     }
 }
+
+// -----------------------------------------------------------------------------------
+//This loads the pick powerup screen.
+-(void) openPowerupMenu
+{
+    if (powerUpMenu != nil)
+    {
+        //This sets the menu data for the final menu
+        [powerUpMenu setMenuData: 7890];
+        
+        powerUpMenu.visible = YES;
+
+        [powerUpMenu openMenu];
+        
+    } else {
+        powerUpMenu =
+        (BuyPowerupMenu *) [CCBReader nodeGraphFromFile:@"BuyPowerupMenu.ccbi"];
+        powerUpMenu.position = COMMON_SCREEN_CENTER;
+        
+        //This sets the menu data for the final menu
+        [powerUpMenu setMenuData: 7890];
+        
+        [[GameLayer sharedGameLayer] addChild:powerUpMenu z:11];
+    }
+}
+
 
 // -----------------------------------------------------------------------------------
 //Buttons can accept continuing input after they have been pushed. This will prevent them from being pushed again

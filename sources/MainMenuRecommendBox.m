@@ -1,5 +1,5 @@
 //
-//  GameOverLayer.m
+//  MainMenuRecommendBox.m
 //  RecordRunnerARC
 //
 //  Created by Matt Cleveland on 12/17/12.

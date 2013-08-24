@@ -11,6 +11,7 @@
 #import <MessageUI/MFMailComposeViewController.h>
 #import <GameKit/GameKit.h>
 #import "CCControlButton.h"
+#import "BuyPowerupMenu.h"
 #import "math.h"
 
 @interface GameOverLayer : CCNode <CCBAnimationManagerDelegate,MFMailComposeViewControllerDelegate>
@@ -21,6 +22,7 @@
            
 - (void) pressedFeedback:(id)sender;
 - (void) pressedFB:(id) sender;
+- (void) openPowerupMenu;
 
 @property BOOL isQuitting;
 @property (nonatomic, strong) CCLabelTTF * finalScoreLabel;
@@ -43,6 +45,9 @@
 
 @property (nonatomic, strong) CCSprite * facebookButton;
 @property (nonatomic, strong) CCLabelTTF * shareItLabel;
+
+@property (nonatomic, strong) BuyPowerupMenu * powerUpMenu;
+
 
 
 @property BOOL yesButtonEnabled;

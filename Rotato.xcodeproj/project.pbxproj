@@ -550,6 +550,16 @@
 		DC0C4D60154AB59800B4B727 /* vec2.c in Sources */ = {isa = PBXBuildFile; fileRef = DC0C4C7E154AB59800B4B727 /* vec2.c */; };
 		DC0C4D61154AB59800B4B727 /* vec3.c in Sources */ = {isa = PBXBuildFile; fileRef = DC0C4C7F154AB59800B4B727 /* vec3.c */; };
 		DC0C4D62154AB59800B4B727 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = DC0C4C80154AB59800B4B727 /* vec4.c */; };
+		E503F59617C4666A00BA35E2 /* gui_giant_square-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E503F59417C4666A00BA35E2 /* gui_giant_square-hd.png */; };
+		E503F59717C4666A00BA35E2 /* gui_GiantDialogCard.png in Resources */ = {isa = PBXBuildFile; fileRef = E503F59517C4666A00BA35E2 /* gui_GiantDialogCard.png */; };
+		E503F59A17C466B700BA35E2 /* BuyPowerupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E503F59917C466B700BA35E2 /* BuyPowerupMenu.m */; };
+		E503F59C17C4F4A300BA35E2 /* BuyPowerupMenu.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E503F59B17C4F4A300BA35E2 /* BuyPowerupMenu.ccbi */; };
+		E503F59F17C5BEA300BA35E2 /* BuyCoinsMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = E503F59E17C5BEA200BA35E2 /* BuyCoinsMenu.m */; };
+		E503F5A117C5C3A600BA35E2 /* BuyCoinsMenu.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E503F5A017C5C3A600BA35E2 /* BuyCoinsMenu.ccbi */; };
+		E503F5A417C5C7C600BA35E2 /* gui_long_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E503F5A217C5C7C600BA35E2 /* gui_long_button.png */; };
+		E503F5A517C5C7C600BA35E2 /* gui_long_button-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E503F5A317C5C7C600BA35E2 /* gui_long_button-hd.png */; };
+		E503F5A817C91A3D00BA35E2 /* gui_GiantDialogCard.png in Resources */ = {isa = PBXBuildFile; fileRef = E503F5A617C91A3D00BA35E2 /* gui_GiantDialogCard.png */; };
+		E503F5A917C91A3D00BA35E2 /* gui_GiantDialogCard-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E503F5A717C91A3D00BA35E2 /* gui_GiantDialogCard-hd.png */; };
 		E5130745178D17F3000F1EE5 /* gui_circle_wedge.png in Resources */ = {isa = PBXBuildFile; fileRef = E5130743178D17F3000F1EE5 /* gui_circle_wedge.png */; };
 		E5130746178D17F3000F1EE5 /* gui_circle_wedge-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E5130744178D17F3000F1EE5 /* gui_circle_wedge-hd.png */; };
 		E530B682179E42D400A3A7FA /* GameOverLayerBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E530B681179E42D400A3A7FA /* GameOverLayerBox.ccbi */; };
@@ -1263,6 +1273,18 @@
 		DC0C4C81154AB59800B4B727 /* LICENSE_cocos2d.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_cocos2d.txt; sourceTree = "<group>"; };
 		DC0C4C82154AB59800B4B727 /* LICENSE_CocosDenshion.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_CocosDenshion.txt; sourceTree = "<group>"; };
 		DC0C4C83154AB59800B4B727 /* LICENSE_Kazmath.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_Kazmath.txt; sourceTree = "<group>"; };
+		E503F59417C4666A00BA35E2 /* gui_giant_square-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gui_giant_square-hd.png"; path = "Resources/Graphics/gui_giant_square-hd.png"; sourceTree = SOURCE_ROOT; };
+		E503F59517C4666A00BA35E2 /* gui_GiantDialogCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gui_GiantDialogCard.png; path = Resources/Graphics/gui_GiantDialogCard.png; sourceTree = SOURCE_ROOT; };
+		E503F59817C466B700BA35E2 /* BuyPowerupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuyPowerupMenu.h; path = sources/BuyPowerupMenu.h; sourceTree = SOURCE_ROOT; };
+		E503F59917C466B700BA35E2 /* BuyPowerupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuyPowerupMenu.m; path = sources/BuyPowerupMenu.m; sourceTree = SOURCE_ROOT; };
+		E503F59B17C4F4A300BA35E2 /* BuyPowerupMenu.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = BuyPowerupMenu.ccbi; path = CocosBuilder/CCBI_files/BuyPowerupMenu.ccbi; sourceTree = SOURCE_ROOT; };
+		E503F59D17C5BEA200BA35E2 /* BuyCoinsMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BuyCoinsMenu.h; path = sources/BuyCoinsMenu.h; sourceTree = SOURCE_ROOT; };
+		E503F59E17C5BEA200BA35E2 /* BuyCoinsMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BuyCoinsMenu.m; path = sources/BuyCoinsMenu.m; sourceTree = SOURCE_ROOT; };
+		E503F5A017C5C3A600BA35E2 /* BuyCoinsMenu.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = BuyCoinsMenu.ccbi; path = CocosBuilder/CCBI_files/BuyCoinsMenu.ccbi; sourceTree = SOURCE_ROOT; };
+		E503F5A217C5C7C600BA35E2 /* gui_long_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gui_long_button.png; path = Resources/Graphics/gui_long_button.png; sourceTree = SOURCE_ROOT; };
+		E503F5A317C5C7C600BA35E2 /* gui_long_button-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gui_long_button-hd.png"; path = "Resources/Graphics/gui_long_button-hd.png"; sourceTree = SOURCE_ROOT; };
+		E503F5A617C91A3D00BA35E2 /* gui_GiantDialogCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gui_GiantDialogCard.png; path = Resources/Graphics/gui_GiantDialogCard.png; sourceTree = SOURCE_ROOT; };
+		E503F5A717C91A3D00BA35E2 /* gui_GiantDialogCard-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gui_GiantDialogCard-hd.png"; path = "Resources/Graphics/gui_GiantDialogCard-hd.png"; sourceTree = SOURCE_ROOT; };
 		E5130743178D17F3000F1EE5 /* gui_circle_wedge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gui_circle_wedge.png; path = Resources/Graphics/gui_circle_wedge.png; sourceTree = SOURCE_ROOT; };
 		E5130744178D17F3000F1EE5 /* gui_circle_wedge-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gui_circle_wedge-hd.png"; path = "Resources/Graphics/gui_circle_wedge-hd.png"; sourceTree = SOURCE_ROOT; };
 		E530B681179E42D400A3A7FA /* GameOverLayerBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameOverLayerBox.ccbi; path = CocosBuilder/CCBI_files/GameOverLayerBox.ccbi; sourceTree = SOURCE_ROOT; };
@@ -1614,10 +1636,14 @@
 				083B08F4170AB0EC00EF0DB0 /* banner.png */,
 				E54E158A172C7A2A0022DACE /* bannerRed-hd.png */,
 				E54E1589172C7A2A0022DACE /* bannerRed.png */,
+				E503F59417C4666A00BA35E2 /* gui_giant_square-hd.png */,
+				E503F59517C4666A00BA35E2 /* gui_GiantDialogCard.png */,
 				083B08F5170AB0EC00EF0DB0 /* blank-hd.png */,
 				E54C883F17766B8200D546F2 /* parts_record_inner.png */,
 				E55D11BC17863D620072B6AC /* explosion.png */,
 				E55D11BD17863D620072B6AC /* explosion-hd.png */,
+				E503F5A217C5C7C600BA35E2 /* gui_long_button.png */,
+				E503F5A317C5C7C600BA35E2 /* gui_long_button-hd.png */,
 				E5130743178D17F3000F1EE5 /* gui_circle_wedge.png */,
 				E5130744178D17F3000F1EE5 /* gui_circle_wedge-hd.png */,
 				E54C884017766B8200D546F2 /* parts_record_inner-hd.png */,
@@ -1655,6 +1681,8 @@
 				083B0905170AB0EC00EF0DB0 /* gui_icon_help.png */,
 				083B0906170AB0EC00EF0DB0 /* gui_icon_player-hd.png */,
 				083B0907170AB0EC00EF0DB0 /* gui_icon_player.png */,
+				E503F5A617C91A3D00BA35E2 /* gui_GiantDialogCard.png */,
+				E503F5A717C91A3D00BA35E2 /* gui_GiantDialogCard-hd.png */,
 				083B0908170AB0EC00EF0DB0 /* gui_icon_recommend-hd.png */,
 				083B0909170AB0EC00EF0DB0 /* gui_icon_recommend.png */,
 				083B090A170AB0EC00EF0DB0 /* gui_icon_score-hd.png */,
@@ -1735,6 +1763,10 @@
 				E5F47E261793550D00504A9A /* AchievementContainer.m */,
 				85A671341651D13F00499BF7 /* Bomb.h */,
 				85A671351651D14000499BF7 /* Bomb.m */,
+				E503F59D17C5BEA200BA35E2 /* BuyCoinsMenu.h */,
+				E503F59E17C5BEA200BA35E2 /* BuyCoinsMenu.m */,
+				E503F59817C466B700BA35E2 /* BuyPowerupMenu.h */,
+				E503F59917C466B700BA35E2 /* BuyPowerupMenu.m */,
 				85A671381651D16000499BF7 /* Coin.h */,
 				85A671391651D16000499BF7 /* Coin.m */,
 				08B6D63A169548B000608ACF /* common.h */,
@@ -2185,6 +2217,8 @@
 				E5F47E5317935F9500504A9A /* DEMO_ACHIEVEMENTS.ccbi */,
 				E5F47E5417935F9500504A9A /* DEMO_DEATH_RANKUP.ccbi */,
 				E5F47E5517935F9500504A9A /* DEMO_DEATH.ccbi */,
+				E503F5A017C5C3A600BA35E2 /* BuyCoinsMenu.ccbi */,
+				E503F59B17C4F4A300BA35E2 /* BuyPowerupMenu.ccbi */,
 				E530B681179E42D400A3A7FA /* GameOverLayerBox.ccbi */,
 				E5F47E5617935F9500504A9A /* GameModeMenu.ccbi */,
 				E5F47E5717935F9500504A9A /* gameObjectBomb.ccbi */,
@@ -3156,6 +3190,14 @@
 				085A7B2E17AF859100805022 /* Default-568h@2x.png in Resources */,
 				E5D1FBAC17B6E1D8007F7C0D /* facebook.png in Resources */,
 				E5D1FBAD17B6E1D8007F7C0D /* facebook-hd.png in Resources */,
+				E503F59617C4666A00BA35E2 /* gui_giant_square-hd.png in Resources */,
+				E503F59717C4666A00BA35E2 /* gui_GiantDialogCard.png in Resources */,
+				E503F59C17C4F4A300BA35E2 /* BuyPowerupMenu.ccbi in Resources */,
+				E503F5A117C5C3A600BA35E2 /* BuyCoinsMenu.ccbi in Resources */,
+				E503F5A417C5C7C600BA35E2 /* gui_long_button.png in Resources */,
+				E503F5A517C5C7C600BA35E2 /* gui_long_button-hd.png in Resources */,
+				E503F5A817C91A3D00BA35E2 /* gui_GiantDialogCard.png in Resources */,
+				E503F5A917C91A3D00BA35E2 /* gui_GiantDialogCard-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3209,6 +3251,8 @@
 				E530B68917A0D6E900A3A7FA /* RankLayerSubBox.m in Sources */,
 				E5C5A39D17A6B12C00B58FEC /* guiObjectButton.m in Sources */,
 				085A7B3117B1C8C900805022 /* iRate.m in Sources */,
+				E503F59A17C466B700BA35E2 /* BuyPowerupMenu.m in Sources */,
+				E503F59F17C5BEA300BA35E2 /* BuyCoinsMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3361,8 +3405,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -3375,8 +3419,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PROVISIONING_PROFILE = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
+				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BF7A02AA-8BD8-46DF-84D3-28BF7AA80356";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3390,8 +3434,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -3402,8 +3446,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PROVISIONING_PROFILE = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
+				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BF7A02AA-8BD8-46DF-84D3-28BF7AA80356";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3414,8 +3458,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3434,8 +3478,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Rotato;
-				PROVISIONING_PROFILE = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
+				PROVISIONING_PROFILE = "BF7A02AA-8BD8-46DF-84D3-28BF7AA80356";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BF7A02AA-8BD8-46DF-84D3-28BF7AA80356";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -3446,8 +3490,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2d-2.x-ARC-iOS/Prefix.pch";
@@ -3465,8 +3509,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Rotato;
-				PROVISIONING_PROFILE = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
+				PROVISIONING_PROFILE = "BF7A02AA-8BD8-46DF-84D3-28BF7AA80356";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BF7A02AA-8BD8-46DF-84D3-28BF7AA80356";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
