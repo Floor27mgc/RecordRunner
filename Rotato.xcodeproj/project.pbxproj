@@ -493,6 +493,8 @@
 		85A6713A1651D16000499BF7 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671391651D16000499BF7 /* Coin.m */; };
 		85A6714C1655A6CC00499BF7 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A6714B1655A6CB00499BF7 /* Queue.m */; };
 		85B53BAD1673C5CC001163F7 /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B53BAC1673C5CC001163F7 /* Score.m */; };
+		85F70FF917CA547D0031777B /* PowerUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 85F70FF817CA547D0031777B /* PowerUp.m */; };
+		85F70FFC17CA54970031777B /* PowerUpEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 85F70FFB17CA54970031777B /* PowerUpEngine.m */; };
 		DC0C49F6154AB4DD00B4B727 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0C49F5154AB4DD00B4B727 /* QuartzCore.framework */; };
 		DC0C49F8154AB4DD00B4B727 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0C49F7154AB4DD00B4B727 /* OpenGLES.framework */; };
 		DC0C49FA154AB4DD00B4B727 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0C49F9154AB4DD00B4B727 /* OpenAL.framework */; };
@@ -1211,6 +1213,10 @@
 		85A6714B1655A6CB00499BF7 /* Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Queue.m; path = sources/Queue.m; sourceTree = SOURCE_ROOT; };
 		85B53BAB1673C5CC001163F7 /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Score.h; path = sources/Score.h; sourceTree = SOURCE_ROOT; };
 		85B53BAC1673C5CC001163F7 /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Score.m; path = sources/Score.m; sourceTree = SOURCE_ROOT; };
+		85F70FF717CA547D0031777B /* PowerUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerUp.h; path = sources/PowerUp.h; sourceTree = SOURCE_ROOT; };
+		85F70FF817CA547D0031777B /* PowerUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowerUp.m; path = sources/PowerUp.m; sourceTree = SOURCE_ROOT; };
+		85F70FFA17CA54970031777B /* PowerUpEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerUpEngine.h; path = sources/PowerUpEngine.h; sourceTree = SOURCE_ROOT; };
+		85F70FFB17CA54970031777B /* PowerUpEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowerUpEngine.m; path = sources/PowerUpEngine.m; sourceTree = SOURCE_ROOT; };
 		DC0C49F1154AB4DD00B4B727 /* Rotato.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rotato.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0C49F5154AB4DD00B4B727 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DC0C49F7154AB4DD00B4B727 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1762,10 +1768,6 @@
 		0840D5AC163F50FF003D5FE6 /* game */ = {
 			isa = PBXGroup;
 			children = (
-				08331C8E17C33B04009AF30B /* IAPHelper.h */,
-				08331C8F17C33B04009AF30B /* IAPHelper.m */,
-				08331C9117C33CC9009AF30B /* RotatoIAPHelper.h */,
-				08331C9217C33CC9009AF30B /* RotatoIAPHelper.m */,
 				E5F47E20179354E700504A9A /* Achievement.h */,
 				E5F47E21179354E700504A9A /* Achievement.m */,
 				E5F47E231793550100504A9A /* achievement_map.strings */,
@@ -1800,6 +1802,10 @@
 				8583C66916802C9C003A3213 /* GameOverLayer.m */,
 				E5C5A39B17A6B12B00B58FEC /* guiObjectButton.h */,
 				E5C5A39C17A6B12B00B58FEC /* guiObjectButton.m */,
+				08331C8E17C33B04009AF30B /* IAPHelper.h */,
+				08331C8F17C33B04009AF30B /* IAPHelper.m */,
+				085A7B2F17B1C8C900805022 /* iRate.h */,
+				085A7B3017B1C8C900805022 /* iRate.m */,
 				0803EEFE16EC630E00CC932B /* MainGameScene.h */,
 				0803EEFF16EC630E00CC932B /* MainGameScene.m */,
 				E5973A9A17234CD7001B948A /* MainMenuBuyBox.h */,
@@ -1828,12 +1834,18 @@
 				850300EC16A63FBA0035D7C1 /* PowerIcon.m */,
 				850FAD0E16BD9D8F00EBF5FF /* PowerShield.h */,
 				850FAD0F16BD9D8F00EBF5FF /* PowerShield.m */,
+				85F70FF717CA547D0031777B /* PowerUp.h */,
+				85F70FF817CA547D0031777B /* PowerUp.m */,
+				85F70FFA17CA54970031777B /* PowerUpEngine.h */,
+				85F70FFB17CA54970031777B /* PowerUpEngine.m */,
 				85A6714A1655A6CB00499BF7 /* Queue.h */,
 				85A6714B1655A6CB00499BF7 /* Queue.m */,
 				E5F1506D1789D61A006923DD /* RankLayerBox.h */,
 				E5F1506E1789D61A006923DD /* RankLayerBox.m */,
 				E530B68717A0D6E800A3A7FA /* RankLayerSubBox.h */,
 				E530B68817A0D6E900A3A7FA /* RankLayerSubBox.m */,
+				08331C9117C33CC9009AF30B /* RotatoIAPHelper.h */,
+				08331C9217C33CC9009AF30B /* RotatoIAPHelper.m */,
 				85B53BAB1673C5CC001163F7 /* Score.h */,
 				85B53BAC1673C5CC001163F7 /* Score.m */,
 				E55D11C0178736680072B6AC /* scoreMini.h */,
@@ -1844,8 +1856,6 @@
 				850CF31A16F9618E00B292DE /* StatisticsContainer.m */,
 				850CF31C16F9652100B292DE /* StatisticsTracker.h */,
 				850CF31D16F9652100B292DE /* StatisticsTracker.m */,
-				085A7B2F17B1C8C900805022 /* iRate.h */,
-				085A7B3017B1C8C900805022 /* iRate.m */,
 			);
 			name = game;
 			sourceTree = "<group>";
@@ -3265,6 +3275,8 @@
 				E503F59F17C5BEA300BA35E2 /* BuyCoinsMenu.m in Sources */,
 				08331CB117C9CA42009AF30B /* RotatoIAPHelper.m in Sources */,
 				08331CB217C9CA47009AF30B /* IAPHelper.m in Sources */,
+				85F70FF917CA547D0031777B /* PowerUp.m in Sources */,
+				85F70FFC17CA54970031777B /* PowerUpEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

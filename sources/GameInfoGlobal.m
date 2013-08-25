@@ -42,6 +42,12 @@
 @synthesize maxCoinsPerScratch;
 @synthesize clockwiseThenCounterclockwise;
 @synthesize maxNumRevolutionsInALife;
+@synthesize powerEngine;
+@synthesize closeCallMultiplier;
+@synthesize playerStartsWithShield;
+@synthesize minMultVal;
+@synthesize changeGameVelocity;
+@synthesize multiplierCooldownSec;
 
 static GameInfoGlobal *sharedGameInfoGlobal;
 
@@ -99,6 +105,10 @@ static GameInfoGlobal *sharedGameInfoGlobal;
         
         // game rotation data
         [self resetPerLifeStatistics];
+        
+        // power up system initialization
+        powerEngine = [[PowerUpEngine alloc] init];
+        [powerEngine ResetPowerUps];        
         
 //        if (lifetimeRoundsPlayed > TRIGGER_LIKE_ME) {
 //            [[iRate sharedInstance] logEvent:NO];
@@ -197,16 +207,39 @@ static GameInfoGlobal *sharedGameInfoGlobal;
     }
 }
 
+// -----------------------------------------------------------------------------------
 -(void) setMusic: (BOOL) musicSetting
 {
     isBackgroundMusicOn = musicSetting;
 }
 
-
+// -----------------------------------------------------------------------------------
 - (void) setSound: (BOOL) soundSetting
 {
     isSoundEffectOn = soundSetting;
 }
 
+// -----------------------------------------------------------------------------------
+- (BOOL) WithdrawCoinsFromBank:(int)numCoins
+{
+    // sanity checks
+    if (numCoins < 0) {
+        return NO;
+    }
+    
+    if (numCoins > coinsInBank) {
+        return NO;
+    }
+    
+    // withdraw the coins from the bank and synchronize the persistent data
+    coinsInBank -= numCoins;
+    
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+        [standardUserDefaults setInteger:coinsInBank forKey:@"coinBank"];
+    
+    [standardUserDefaults synchronize];
+    
+    return YES;
+}
 
 @end

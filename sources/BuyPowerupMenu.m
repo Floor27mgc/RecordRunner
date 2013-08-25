@@ -57,31 +57,55 @@
 // -----------------------------------------------------------------------------------
 - (void) pressedTopGreen: (id) sender
 {
+    if ([[GameInfoGlobal sharedGameInfoGlobal].powerEngine IsAvaiable:TOP_GREEN]) {
+        [[GameInfoGlobal sharedGameInfoGlobal].powerEngine Purchase:TOP_GREEN];
+    }
+    
     NSLog(@"pressed pressedTopGreen!");
 }
 // -----------------------------------------------------------------------------------
 - (void) pressedBottomGreen: (id) sender
 {
+    if ([[GameInfoGlobal sharedGameInfoGlobal].powerEngine IsAvaiable:BOTTOM_GREEN]) {
+        [[GameInfoGlobal sharedGameInfoGlobal].powerEngine Purchase:BOTTOM_GREEN];
+    }
+    
     NSLog(@"pressed pressedBottomGreen!");
 }
 // -----------------------------------------------------------------------------------
 - (void) pressedTopRed: (id) sender
 {
+    if ([[GameInfoGlobal sharedGameInfoGlobal].powerEngine IsAvaiable:TOP_RED]) {
+        [[GameInfoGlobal sharedGameInfoGlobal].powerEngine Purchase:TOP_RED];
+    }
+    
     NSLog(@"pressed pressedTopRed!");
 }
 // -----------------------------------------------------------------------------------
 - (void) pressedBottomRed: (id) sender
 {
+    if ([[GameInfoGlobal sharedGameInfoGlobal].powerEngine IsAvaiable:BOTTOM_RED]) {
+        [[GameInfoGlobal sharedGameInfoGlobal].powerEngine Purchase:BOTTOM_RED];
+    }
+    
     NSLog(@"pressed pressedBottomRed!");
 }
 // -----------------------------------------------------------------------------------
 - (void) pressedTopBlue: (id) sender
 {
+    if ([[GameInfoGlobal sharedGameInfoGlobal].powerEngine IsAvaiable:TOP_BLUE]) {
+        [[GameInfoGlobal sharedGameInfoGlobal].powerEngine Purchase:TOP_BLUE];
+    }
+    
     NSLog(@"pressed pressedTopBlue!");
 }
 // -----------------------------------------------------------------------------------
 - (void) pressedBottomBlue: (id) sender
 {
+    if ([[GameInfoGlobal sharedGameInfoGlobal].powerEngine IsAvaiable:BOTTOM_BLUE]) {
+        [[GameInfoGlobal sharedGameInfoGlobal].powerEngine Purchase:BOTTOM_BLUE];
+    }
+    
     NSLog(@"pressed pressedBottomBlue!");
 }
 

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "StatisticsContainer.h"
+#import "PowerUpEngine.h"
 
 #define NUM_ROUND_TRIGGER_LIKE_ME 12
 #define SCORE_TRIGGER_LIKE_ME     1000
@@ -26,6 +27,8 @@ typedef enum {
 - (void) setMusic: (BOOL) musicSetting;
 - (void) setSound: (BOOL) soundSetting;
 - (void) ResetLifetimeAchievementData;
+- (BOOL) WithdrawCoinsFromBank: (int) numCoins;
+
 
 + (GameInfoGlobal *) sharedGameInfoGlobal;
 @property (nonatomic,assign) ENUM_GAME_MODE_T gameMode;
@@ -59,5 +62,15 @@ typedef enum {
 @property (nonatomic, assign) BOOL hit78rotationsThisLife;
 @property (nonatomic, assign) int speedUpsThisLife;
 @property (nonatomic, assign) BOOL clockwiseThenCounterclockwise;
+
+// for power up system
+@property (nonatomic, strong) PowerUpEngine * powerEngine;
+@property (nonatomic, assign) int closeCallMultiplier;
+@property (nonatomic, assign) BOOL playerStartsWithShield;
+@property (nonatomic, assign) int minMultVal;
+@property (nonatomic, assign) BOOL increasedStarSpawnRate;
+@property (nonatomic, assign) double changeGameVelocity;
+@property (nonatomic, assign) int multiplierCooldownSec;
+
 
 @end

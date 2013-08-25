@@ -87,7 +87,9 @@ static GameLayer *sharedGameLayer;
         gameOverLayer = nil;
         bombSpawnRate = kBombSpawnRate;
         coinSpawnRate = kCoinSpawnRate;
+        
         shieldSpawnRate = kShieldSpawnRate;
+
         isDebugMode = NO;
         
         _soundController = [SoundController init];
@@ -791,11 +793,26 @@ static GameLayer *sharedGameLayer;
 //Called after pushing "Play" on the GameOverLayer. This does all the stuff to reset the board and get it ready for the next player life
 -(void) startTheNextRound
 {
-    
     [self resumeSchedulerAndActions];
     [self cleanUpPlayField];
     [self.score setScoreValue:0];
     
+    // apply beginning-of-game power ups, if any
+    if ([GameInfoGlobal sharedGameInfoGlobal].playerStartsWithShield) {
+        [self activateInvincible];
+    }
+    
+    if ([GameInfoGlobal sharedGameInfoGlobal].changeGameVelocity < 0) {
+        [self changeGameAngularVelocityByDegree:
+         [GameInfoGlobal sharedGameInfoGlobal].changeGameVelocity];
+    }
+    
+    // apply star spawn rate power up, if purchased
+    if ([GameInfoGlobal sharedGameInfoGlobal].increasedStarSpawnRate) {
+        shieldSpawnRate = kShieldSpawnRate * 2;
+    } else {
+        shieldSpawnRate = kShieldSpawnRate;
+    }
 }
 
 // -----------------------------------------------------------------------------------

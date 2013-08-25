@@ -115,6 +115,9 @@ gotMaxRotations: (BOOL)mostRotations
     // reset the multiplier
     //[[GameLayer sharedGameLayer].multiplier reset];
     
+    // reset the power ups
+    [[GameInfoGlobal sharedGameInfoGlobal].powerEngine ResetPowerUps];
+    
     [self.finalScoreLabel setString:[NSString stringWithFormat:@"%d",
                                          myFinalScore]];
     

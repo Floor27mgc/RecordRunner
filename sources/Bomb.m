@@ -82,8 +82,12 @@
                     //Play sound effect
                     [[SoundController sharedSoundController] playSoundIdx:SOUND_BOMB_SKIM fromObject:self];
                     
+                    NSString * multVal =
+                        [NSString stringWithFormat:@"x%d",                                         [GameInfoGlobal sharedGameInfoGlobal].closeCallMultiplier];
+                    
                     //Show those ghost score text above the bomb.
-                    [[GameLayer sharedGameLayer] showScoreOnTrack:TRACKNUM_FROM_RADIUS message: @"x1" displayEffect:small];
+                    [[GameLayer sharedGameLayer] showScoreOnTrack:TRACKNUM_FROM_RADIUS
+                            message: multVal displayEffect:small];
                 }
             } else {
                 if (!closeCallBelow) {
@@ -94,7 +98,11 @@
                     [[SoundController sharedSoundController] playSoundIdx:SOUND_BOMB_SKIM2 fromObject:self];
                     
                     //Show the multiplier
-                    [[GameLayer sharedGameLayer] showScoreOnTrack:TRACKNUM_FROM_RADIUS message: @"x1" displayEffect:small];
+                    NSString * multVal =
+                        [NSString stringWithFormat:@"x%d",                                         [GameInfoGlobal sharedGameInfoGlobal].closeCallMultiplier];
+                    
+                    [[GameLayer sharedGameLayer] showScoreOnTrack:TRACKNUM_FROM_RADIUS
+                            message: multVal displayEffect:small];
 
                 }
             }
@@ -102,7 +110,8 @@
             // only update multiplier and run animations if this is the first time
             // we've triggered the close call on this side
             if (uniqueHit) {
-                [[GameLayer sharedGameLayer].multiplier incrementMultiplier:1];
+                [[GameLayer sharedGameLayer].multiplier incrementMultiplier:
+                    [GameInfoGlobal sharedGameInfoGlobal].closeCallMultiplier];
                 
                 [GameInfoGlobal sharedGameInfoGlobal].closeCallsThisLife++;
                 

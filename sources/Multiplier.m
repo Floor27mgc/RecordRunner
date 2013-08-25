@@ -8,6 +8,7 @@
 
 #import "Multiplier.h"
 #import "GameLayer.h"
+#import "GameInfoGlobal.h"
 
 @implementation Multiplier
 
@@ -47,7 +48,7 @@
 - (void) resumeMultiCountdown
 {
     //Reset time back to 0
-    timerLifeInSec = MULTIPLIER_LIFE_TIME_SEC;
+    timerLifeInSec = [GameInfoGlobal sharedGameInfoGlobal].multiplierCooldownSec;
     
     [self.animationManager runAnimationsForSequenceNamed:@"bounce_multiplier"];
 }
@@ -83,7 +84,7 @@
     [self.multiplierLabel setColor:currentColor];
     [self.animationManager runAnimationsForSequenceNamed:@"bounce_multiplier"];
 
-    timerLifeInSec = MULTIPLIER_LIFE_TIME_SEC;
+    timerLifeInSec = [GameInfoGlobal sharedGameInfoGlobal].multiplierCooldownSec;
     
     // perform multiplier timing operations
     if (multiplierTime == [NSDate distantFuture]) {
@@ -98,18 +99,21 @@
 {
     if (amount >= multiplierValue) {
         multiplierValue = 1;
-    } else if (amount == -1)
-    {   //This is sent if we want to do the full multiplier reset when time runs out.
+    } else if (amount == -1) {   //This is sent if we want to do the full multiplier reset when time runs out.
         multiplierValue = 1;
-    }
-    else {
+    } else {
         multiplierValue -= amount;
+    }
+    
+    // if the minimum multipler power up is active, ensure it is enforced
+    if (multiplierValue < [GameInfoGlobal sharedGameInfoGlobal].minMultVal) {
+        multiplierValue = [GameInfoGlobal sharedGameInfoGlobal].minMultVal;
     }
     
     // reset the timer
     if (multiplierValue > 1) {
         [self.animationManager runAnimationsForSequenceNamed:@"bounce_multiplier"];
-        timerLifeInSec = MULTIPLIER_LIFE_TIME_SEC;
+        timerLifeInSec = [GameInfoGlobal sharedGameInfoGlobal].multiplierCooldownSec;
         
         // perform multiplier timing operations
         if (multiplierTime == [NSDate distantFuture]) {
@@ -158,7 +162,7 @@
 // -----------------------------------------------------------------------------------
 - (void) reset
 {
-    multiplierValue = 1;
+    multiplierValue = [GameInfoGlobal sharedGameInfoGlobal].minMultVal;
     highestMultiplierValueEarned = 1;
     timerLifeInSec = 0;
     speedDifference = 0;
@@ -176,7 +180,7 @@
 // -----------------------------------------------------------------------------------
 - (void) showNextFrame
 {
-    if (multiplierValue > 1) {
+    if (multiplierValue > [GameInfoGlobal sharedGameInfoGlobal].minMultVal) {
         int elapsed = [multiplierTime timeIntervalSinceNow];
         
         if (elapsed < 0) {
@@ -188,8 +192,10 @@
             }
             
             //Decrement the multiplier if time runs out and player is NOT invincible
-            if (timerLifeInSec % MULTIPLIER_LIFE_TIME_SEC == 0 &&
+            if (timerLifeInSec %
+                [GameInfoGlobal sharedGameInfoGlobal].multiplierCooldownSec == 0 &&
                 ![GameLayer sharedGameLayer].player.hasShield ) {
+                
                 [self decrementMultiplier:-1];
             }
         }
