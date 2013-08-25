@@ -20,6 +20,8 @@
 #import "MainMenuHelpBox.h"
 #import "Score.h"
 #import "common.h"
+#import "RotatoIAPHelper.h"
+#import <StoreKit/StoreKit.h>
 #import <GameKit/GameKit.h>
 @implementation MainMenuScene
 
@@ -79,6 +81,13 @@
             }
         };
         
+        // Load up in-app purchase items
+        [[RotatoIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+            if (success) {
+                [RotatoIAPHelper sharedInstance].productsIAP = products;
+                NSLog(@"%@", ((SKProduct*)[products objectAtIndex:0]).localizedTitle);
+            }
+        }];
 
     }
     return (self);
@@ -168,8 +177,9 @@
     
     if (self.menuExpanded)
     {
-    NSLog(@"Pressed Help");
-    [self openMenus: BUTTON_HELP];
+        NSLog(@"Pressed Help");
+        [self openMenus: BUTTON_HELP];
+
     }
 }
 

@@ -11,6 +11,7 @@
 #import "BuyCoinsMenu.h"
 #import "CCBAnimationManager.h"
 #import "CCBReader.h"
+#import "RotatoIAPHelper.h"
 #import <GameKit/GameKit.h>
 #import <Social/Social.h>
 
@@ -76,6 +77,7 @@
 - (void) pressedButton1: (id) sender
 {
     NSLog(@"pressed pressedButton1!");
+    [[RotatoIAPHelper sharedInstance] buyProduct:[RotatoIAPHelper sharedInstance].productsIAP[0]];
 }
 // -----------------------------------------------------------------------------------
 - (void) pressedButton2: (id) sender

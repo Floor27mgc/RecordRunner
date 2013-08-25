@@ -15,6 +15,8 @@
 		0813D05217911A36002B3625 /* NewsDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0813D05117911A36002B3625 /* NewsDownloader.m */; };
 		0813D05417931D90002B3625 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0813D05317931D90002B3625 /* Social.framework */; };
 		082018321678479B000A3F8D /* GameObjectInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 082018311678479B000A3F8D /* GameObjectInjector.m */; };
+		08331CB117C9CA42009AF30B /* RotatoIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 08331C9217C33CC9009AF30B /* RotatoIAPHelper.m */; };
+		08331CB217C9CA47009AF30B /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 08331C8F17C33B04009AF30B /* IAPHelper.m */; };
 		083B0926170AB0EC00EF0DB0 /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 083B08F4170AB0EC00EF0DB0 /* banner.png */; };
 		083B0927170AB0EC00EF0DB0 /* blank-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 083B08F5170AB0EC00EF0DB0 /* blank-hd.png */; };
 		083B0928170AB0EC00EF0DB0 /* blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 083B08F6170AB0EC00EF0DB0 /* blank.png */; };
@@ -703,6 +705,10 @@
 		0813D05317931D90002B3625 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		082018301678479B000A3F8D /* GameObjectInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjectInjector.h; path = sources/GameObjectInjector.h; sourceTree = SOURCE_ROOT; };
 		082018311678479B000A3F8D /* GameObjectInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameObjectInjector.m; path = sources/GameObjectInjector.m; sourceTree = SOURCE_ROOT; };
+		08331C8E17C33B04009AF30B /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAPHelper.h; path = ../sources/IAPHelper.h; sourceTree = "<group>"; };
+		08331C8F17C33B04009AF30B /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAPHelper.m; path = ../sources/IAPHelper.m; sourceTree = "<group>"; };
+		08331C9117C33CC9009AF30B /* RotatoIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RotatoIAPHelper.h; path = sources/RotatoIAPHelper.h; sourceTree = SOURCE_ROOT; };
+		08331C9217C33CC9009AF30B /* RotatoIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RotatoIAPHelper.m; path = sources/RotatoIAPHelper.m; sourceTree = SOURCE_ROOT; };
 		083B08F4170AB0EC00EF0DB0 /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banner.png; path = Resources/Graphics/banner.png; sourceTree = SOURCE_ROOT; };
 		083B08F5170AB0EC00EF0DB0 /* blank-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blank-hd.png"; path = "Resources/Graphics/blank-hd.png"; sourceTree = SOURCE_ROOT; };
 		083B08F6170AB0EC00EF0DB0 /* blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blank.png; path = Resources/Graphics/blank.png; sourceTree = SOURCE_ROOT; };
@@ -1756,6 +1762,10 @@
 		0840D5AC163F50FF003D5FE6 /* game */ = {
 			isa = PBXGroup;
 			children = (
+				08331C8E17C33B04009AF30B /* IAPHelper.h */,
+				08331C8F17C33B04009AF30B /* IAPHelper.m */,
+				08331C9117C33CC9009AF30B /* RotatoIAPHelper.h */,
+				08331C9217C33CC9009AF30B /* RotatoIAPHelper.m */,
 				E5F47E20179354E700504A9A /* Achievement.h */,
 				E5F47E21179354E700504A9A /* Achievement.m */,
 				E5F47E231793550100504A9A /* achievement_map.strings */,
@@ -3253,6 +3263,8 @@
 				085A7B3117B1C8C900805022 /* iRate.m in Sources */,
 				E503F59A17C466B700BA35E2 /* BuyPowerupMenu.m in Sources */,
 				E503F59F17C5BEA300BA35E2 /* BuyCoinsMenu.m in Sources */,
+				08331CB117C9CA42009AF30B /* RotatoIAPHelper.m in Sources */,
+				08331CB217C9CA47009AF30B /* IAPHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
