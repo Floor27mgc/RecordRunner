@@ -21,6 +21,9 @@
         self.type = pType;
         
         switch (self.type) {
+            case BLANK_SPACE:
+                self.cost = 0;
+                break;
             case RECORD_SPINS_SLOWER:
                 self.cost = 500;
                 break;
@@ -92,6 +95,25 @@
     
     return YES;
 }
+
+
+// ----------------------------------------------------------------------------------
+// undo what you purchased. This occurs when you click the circle at the top to un-purchase it.
+- (BOOL) UnPurchase
+{
+    if ([self Available]) {
+        
+        [[GameInfoGlobal sharedGameInfoGlobal] AddCoinsToBank:cost];
+        
+        [self Reset];
+        
+    } else {
+        return NO;
+    }
+    
+    return YES;
+}
+
 
 // ----------------------------------------------------------------------------------
 // determine if there are enough coins to purchase this power up

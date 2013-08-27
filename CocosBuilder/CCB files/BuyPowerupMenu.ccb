@@ -3112,9 +3112,9 @@
 						<key>displayName</key>
 						<string>gui_circle</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>circleLeft</string>
 						<key>memberVarAssignmentType</key>
-						<integer>0</integer>
+						<integer>1</integer>
 						<key>properties</key>
 						<array>
 							<dict>
@@ -3184,9 +3184,9 @@
 						<key>displayName</key>
 						<string>gui_circle</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>circleMid</string>
 						<key>memberVarAssignmentType</key>
-						<integer>0</integer>
+						<integer>1</integer>
 						<key>properties</key>
 						<array>
 							<dict>
@@ -3256,9 +3256,9 @@
 						<key>displayName</key>
 						<string>gui_circle</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>circleRight</string>
 						<key>memberVarAssignmentType</key>
-						<integer>0</integer>
+						<integer>1</integer>
 						<key>properties</key>
 						<array>
 							<dict>
@@ -3341,7 +3341,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>491</real>
+							<real>159</real>
 							<real>242.60000610351562</real>
 							<integer>0</integer>
 						</array>
@@ -3830,7 +3830,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>565</real>
+							<real>343.79998779296875</real>
 							<real>60</real>
 							<integer>0</integer>
 						</array>
@@ -4233,7 +4233,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>467.32000732421875</real>
+							<real>326.20001220703125</real>
 							<real>307.20001220703125</real>
 							<integer>0</integer>
 						</array>
@@ -4395,7 +4395,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>1</real>
+			<real>0.0</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

@@ -373,8 +373,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "517"
          endingLineNumber = "517"
-         landmarkName = "-updateHighScore"
-         landmarkType = "5">
+         landmarkName = "@implementation GameLayer"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -438,8 +438,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "218"
          endingLineNumber = "218"
-         landmarkName = "-openPowerupMenu"
-         landmarkType = "5">
+         landmarkName = "@implementation GameOverLayer"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -459,12 +459,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/BuyPowerupMenu.m"
-         timestampString = "399075084.487841"
+         timestampString = "399186013.45022"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "157"
-         endingLineNumber = "157"
-         landmarkName = "-completedAnimationSequenceNamed:"
+         startingLineNumber = "209"
+         endingLineNumber = "209"
+         landmarkName = "-openBuyCoinsMenu"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -472,25 +472,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/BuyPowerupMenu.m"
-         timestampString = "399075084.487841"
+         timestampString = "399186013.45022"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "93"
-         endingLineNumber = "93"
-         landmarkName = "-pressedGetMore:"
-         landmarkType = "5">
+         startingLineNumber = "137"
+         endingLineNumber = "137"
+         landmarkName = "@implementation BuyPowerupMenu"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/BuyPowerupMenu.m"
-         timestampString = "399075084.487841"
+         timestampString = "399186013.45022"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "150"
-         endingLineNumber = "150"
-         landmarkName = "-completedAnimationSequenceNamed:"
+         startingLineNumber = "202"
+         endingLineNumber = "202"
+         landmarkName = "-openBuyCoinsMenu"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -511,12 +511,51 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/BuyPowerupMenu.m"
-         timestampString = "399073955.749941"
+         timestampString = "399173546.152463"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "53"
-         endingLineNumber = "53"
+         startingLineNumber = "81"
+         endingLineNumber = "81"
          landmarkName = "-pressedPowerButton:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sources/BuyPowerupMenu.m"
+         timestampString = "399186013.45022"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "90"
+         endingLineNumber = "90"
+         landmarkName = "-pressedTopGreen:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sources/BuyPowerupMenu.m"
+         timestampString = "399186045.617165"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "243"
+         endingLineNumber = "243"
+         landmarkName = "-updateDisplay"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sources/BuyPowerupMenu.m"
+         timestampString = "399186363.126827"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "64"
+         endingLineNumber = "64"
+         landmarkName = "-addToPowerList:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

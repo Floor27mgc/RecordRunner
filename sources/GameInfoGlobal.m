@@ -48,6 +48,7 @@
 @synthesize minMultVal;
 @synthesize changeGameVelocity;
 @synthesize multiplierCooldownSec;
+@synthesize powerList;
 
 static GameInfoGlobal *sharedGameInfoGlobal;
 
@@ -108,7 +109,10 @@ static GameInfoGlobal *sharedGameInfoGlobal;
         
         // power up system initialization
         powerEngine = [[PowerUpEngine alloc] init];
-        [powerEngine ResetPowerUps];        
+        [powerEngine ResetPowerUps];
+        
+        //Fill the power list
+        powerList = [[NSMutableArray alloc] initWithObjects: [NSNumber numberWithInt: BLANK_SPACE], [NSNumber numberWithInt: BLANK_SPACE], [NSNumber numberWithInt: BLANK_SPACE], nil];
         
 //        if (lifetimeRoundsPlayed > TRIGGER_LIKE_ME) {
 //            [[iRate sharedInstance] logEvent:NO];
@@ -218,6 +222,23 @@ static GameInfoGlobal *sharedGameInfoGlobal;
 {
     isSoundEffectOn = soundSetting;
 }
+
+// -----------------------------------------------------------------------------------
+// Called when you unpurchase something. Typically when you click the circle at the top.
+- (BOOL) AddCoinsToBank:(int)numCoins
+{
+
+    // withdraw the coins from the bank and synchronize the persistent data
+    coinsInBank += numCoins;
+    
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    [standardUserDefaults setInteger:coinsInBank forKey:@"coinBank"];
+    
+    [standardUserDefaults synchronize];
+    
+    return YES;
+}
+
 
 // -----------------------------------------------------------------------------------
 - (BOOL) WithdrawCoinsFromBank:(int)numCoins

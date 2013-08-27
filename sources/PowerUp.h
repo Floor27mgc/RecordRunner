@@ -22,7 +22,7 @@
 // these should be in order corresponding to the #defines above
 // indicating the tile order on the power up screen
 typedef enum {
-
+    BLANK_SPACE, //Used for the menu at the top.
     RECORD_SPINS_SLOWER,
     INCREASE_STAR_SPAWN_RATE,
     CLOSE_CALL_TIMES_2,

@@ -28,6 +28,7 @@ typedef enum {
 - (void) setSound: (BOOL) soundSetting;
 - (void) ResetLifetimeAchievementData;
 - (BOOL) WithdrawCoinsFromBank: (int) numCoins;
+- (BOOL) AddCoinsToBank:(int)numCoins;
 
 
 + (GameInfoGlobal *) sharedGameInfoGlobal;
@@ -71,6 +72,7 @@ typedef enum {
 @property (nonatomic, assign) BOOL increasedStarSpawnRate;
 @property (nonatomic, assign) double changeGameVelocity;
 @property (nonatomic, assign) int multiplierCooldownSec;
+@property (nonatomic, strong) NSMutableArray * powerList;
 
 
 @end
