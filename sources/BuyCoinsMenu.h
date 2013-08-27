@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "CCBAnimationManager.h"
 #import <MessageUI/MFMailComposeViewController.h>
 #import <GameKit/GameKit.h>
 #import "CCControlButton.h"
@@ -18,7 +19,7 @@
 - (void) pressedBack:(id) sender;
 - (void) setMenuData:(int) myCoinCount;
 - (void) openMenu;
-
++ (BuyCoinsMenu *) shareBuyCoinsMenu;
 @property (nonatomic, strong) CCLabelTTF * coinCountLabel;
 
 @property (nonatomic, strong) CCControlButton * backButton;

@@ -16,6 +16,9 @@
     dispatch_once(&once, ^{
         NSSet * productIdentifiers = [NSSet setWithObjects:
                                       @"coins.500",
+                                      @"coins.2700",
+                                      @"coins.5200",
+                                      @"coins.17000",
                                       nil];
         sharedInstance = [[self alloc] initWithProductIdentifiers:productIdentifiers];
     });

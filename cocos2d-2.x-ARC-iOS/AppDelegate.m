@@ -13,6 +13,7 @@
 #import "MainMenuScene.h"
 #import "CCBReader.h"
 #import "iRate.h"
+#import "RotatoIAPHelper.h"
 @implementation AppController
 
 @synthesize window=window_, navController=navController_, director=director_;
@@ -135,6 +136,12 @@
 	if( [navController_ visibleViewController] == director_ )
     {
         [gameInfoGlobal evaluateSoundPrefrence];
+/*        [[RotatoIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+            if (success) {
+                [RotatoIAPHelper sharedInstance].productsIAP = products;
+                NSLog(@"%@", ((SKProduct*)[products objectAtIndex:0]).localizedTitle);
+            }
+        }];*/
 		[director_ resume];
     }
 }

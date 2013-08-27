@@ -9,6 +9,8 @@
 // 1
 #import "IAPHelper.h"
 #import "GameInfoGlobal.h"
+#import "BuyCoinsMenu.h"
+#import "GameInfoGlobal.h"
 #import <StoreKit/StoreKit.h>
 
 NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurchasedNotification";
@@ -74,7 +76,7 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
               skProduct.localizedTitle,
               skProduct.price.floatValue);
     }
-    
+    [GameInfoGlobal sharedGameInfoGlobal].isIAPProductListLoaded = YES;
     _completionHandler(YES, skProducts);
     _completionHandler = nil;
     
@@ -114,6 +116,8 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     
     [self provideContentForProductIdentifier:transaction.payment.productIdentifier];
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+    [[BuyCoinsMenu shareBuyCoinsMenu] pressedBack:self];
+    
 }
 
 - (void)restoreTransaction:(SKPaymentTransaction *)transaction {
@@ -129,6 +133,10 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     if (transaction.error.code != SKErrorPaymentCancelled)
     {
         NSLog(@"Transaction error: %@", transaction.error.localizedDescription);
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"In App purchase error"
+                                                       message:transaction.error.localizedDescription
+                                                      delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
     }
     
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
@@ -142,10 +150,34 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     {
         NSLog (@"Adding 500 coins into your coin bank");        
         [GameInfoGlobal sharedGameInfoGlobal].coinsInBank += 500;
-        NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
-        [standardUserDefaults setInteger:[GameInfoGlobal sharedGameInfoGlobal].coinsInBank forKey:@"coinBank"];
-        [standardUserDefaults synchronize];
+
     }
+
+    if ([productIdentifier compare:@"coins.2700"] == NSOrderedSame)
+    {
+        NSLog (@"Adding 2700 coins into your coin bank");
+        [GameInfoGlobal sharedGameInfoGlobal].coinsInBank += 2700;
+        
+    }
+    
+    if ([productIdentifier compare:@"coins.5200"] == NSOrderedSame)
+    {
+        NSLog (@"Adding 5200 coins into your coin bank");
+        [GameInfoGlobal sharedGameInfoGlobal].coinsInBank += 5200;
+        
+    }
+    
+    if ([productIdentifier compare:@"coins.17000"] == NSOrderedSame)
+    {
+        NSLog (@"Adding 17000 coins into your coin bank");
+        [GameInfoGlobal sharedGameInfoGlobal].coinsInBank += 17000;
+        
+    }
+
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    [standardUserDefaults setInteger:[GameInfoGlobal sharedGameInfoGlobal].coinsInBank forKey:@"coinBank"];
+    [standardUserDefaults synchronize];
+    
     
 }
 
@@ -157,8 +189,19 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     
     NSLog(@"Buying %@...", product.productIdentifier);
     
-    SKPayment * payment = [SKPayment paymentWithProduct:product];
-    [[SKPaymentQueue defaultQueue] addPayment:payment];
-    
+    if ([GameInfoGlobal sharedGameInfoGlobal].isIAPProductListLoaded == NO)
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"In app purchase error"
+                                                       message:@"In app purchase content not loaded.  Please check your phone/WIFI connection"
+                                                      delegate:self
+                                             cancelButtonTitle:@"OK"
+                                             otherButtonTitles: nil];
+        //[[CCDirector sharedDirector].view addSubview:alert];
+        [alert show];
+    }
+    else{
+        SKPayment * payment = [SKPayment paymentWithProduct:product];
+        [[SKPaymentQueue defaultQueue] addPayment:payment];
+    }
 }
 @end

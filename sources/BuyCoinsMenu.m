@@ -22,6 +22,24 @@
 @implementation BuyCoinsMenu
 @synthesize coinCountLabel;
 
+static BuyCoinsMenu *shareBuyCoinsMenu;
+
++ (BuyCoinsMenu *) shareBuyCoinsMenu
+{
+    return shareBuyCoinsMenu;
+}
+
+-(id) init
+{
+	// always call "super" init
+	// Apple recommends to re-assign "self" with the "super's" return value
+	if( (self=[super init]) )
+    {
+        shareBuyCoinsMenu = self;
+    }
+    return self;
+}
+
 // -----------------------------------------------------------------------------------
 - (void) pressedBack:(id) sender
 {    
@@ -77,27 +95,49 @@
 - (void) pressedButton1: (id) sender
 {
     NSLog(@"pressed pressedButton1!");
-    [[RotatoIAPHelper sharedInstance] buyProduct:[RotatoIAPHelper sharedInstance].productsIAP[0]];
+    NSURL *urlApp = [NSURL URLWithString:@"fb://profile/160525450781718"];
+    
+    //Check if the Facebook app exists on the phone.
+    if ([[UIApplication sharedApplication] canOpenURL:urlApp])
+    {
+        //Then open it in the app
+        bool rc = [[UIApplication sharedApplication] openURL:urlApp];
+        
+        if (rc == YES)
+        {
+            [GameInfoGlobal sharedGameInfoGlobal].coinsInBank += 800;
+            [GameInfoGlobal sharedGameInfoGlobal].FacebookLikedAlready = YES;
+            NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+            [standardUserDefaults setInteger:[GameInfoGlobal sharedGameInfoGlobal].coinsInBank forKey:@"coinBank"];
+            [standardUserDefaults setBool:YES forKey:@"fbLiked"];
+            [standardUserDefaults synchronize];
+        }
+    }
 }
 // -----------------------------------------------------------------------------------
 - (void) pressedButton2: (id) sender
 {
     NSLog(@"pressed pressedButton2!");
+    [[RotatoIAPHelper sharedInstance] buyProduct:[RotatoIAPHelper sharedInstance].productsIAP[2]];
 }
 // -----------------------------------------------------------------------------------
 - (void) pressedButton3: (id) sender
 {
     NSLog(@"pressed pressedButton3!");
+    [[RotatoIAPHelper sharedInstance] buyProduct:[RotatoIAPHelper sharedInstance].productsIAP[1]];
 }
+
 // -----------------------------------------------------------------------------------
 - (void) pressedButton4: (id) sender
 {
     NSLog(@"pressed pressedButton4!");
+    [[RotatoIAPHelper sharedInstance] buyProduct:[RotatoIAPHelper sharedInstance].productsIAP[3]];
 }
 // -----------------------------------------------------------------------------------
 - (void) pressedButton5: (id) sender
 {
     NSLog(@"pressed pressedButton5!");
+    [[RotatoIAPHelper sharedInstance] buyProduct:[RotatoIAPHelper sharedInstance].productsIAP[0]];
 }
 
 

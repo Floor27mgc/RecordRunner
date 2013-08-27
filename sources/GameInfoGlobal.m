@@ -42,7 +42,8 @@
 @synthesize maxCoinsPerScratch;
 @synthesize clockwiseThenCounterclockwise;
 @synthesize maxNumRevolutionsInALife;
-
+@synthesize FacebookLikedAlready;
+@synthesize isIAPProductListLoaded;
 static GameInfoGlobal *sharedGameInfoGlobal;
 
 + (GameInfoGlobal *) sharedGameInfoGlobal
@@ -84,6 +85,8 @@ static GameInfoGlobal *sharedGameInfoGlobal;
         
         maxNumRevolutionsInALife =
             [[NSUserDefaults standardUserDefaults] integerForKey:@"maxRevolutionsInALife"];
+        
+        FacebookLikedAlready = [[NSUserDefaults standardUserDefaults] boolForKey:@"fbLiked"];
         
         NSLog(@"Coin bank %d lifetimeRevolutions %d lifetimeRoundsPlayed"
               "%d maxRevolutionsInALife %d",
