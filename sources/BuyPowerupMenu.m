@@ -61,18 +61,19 @@
 //This is so that you can fill in the list in order.
 - (void) addToPowerList: (PowerUpType) newPower
 {
-    NSMutableArray * globalPowerList = [GameInfoGlobal sharedGameInfoGlobal].powerList;
+    NSMutableArray * tempList = [[NSMutableArray alloc] init];
     
-    for (id __strong aPower in globalPowerList)
-    {
-        if ((PowerUpType) aPower == BLANK_SPACE)
-        {
-            aPower = [NSNumber numberWithInt: newPower];
+    for (NSNumber * pNumber in [GameInfoGlobal sharedGameInfoGlobal].powerList) {
+        PowerUpType pType = (PowerUpType)[pNumber intValue];
+        
+        if (pType == BLANK_SPACE) {
+            [tempList addObject: [NSNumber numberWithInt:(int)newPower]];
+        } else {
+            [tempList addObject: pNumber];
         }
     }
     
-    [GameInfoGlobal sharedGameInfoGlobal].powerList = globalPowerList;
-    
+    [GameInfoGlobal sharedGameInfoGlobal].powerList = tempList;
 }
 
 // -----------------------------------------------------------------------------------
