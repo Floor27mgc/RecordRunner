@@ -344,6 +344,8 @@ gotMaxRotations: (BOOL)mostRotations
     allScoresEver.range = NSMakeRange(1, NUM_FRIENDS_SCORES_TO_LOAD);
     allScoresEver.category = nil;
     
+    NSMutableArray * playerIDs = [[NSMutableArray alloc] init];
+    
     [allScoresEver loadScoresWithCompletionHandler:^(NSArray *scores, NSError *error) {
         
         // filter out distinct players, favouring scores from our leaderboard
@@ -357,9 +359,48 @@ gotMaxRotations: (BOOL)mostRotations
                 
                 GKScore * score = (GKScore *)[scores objectAtIndex:i];
                 [top3ScoresOfFriends addObject:score];
+                [GameInfoGlobal sharedGameInfoGlobal].topFriendsScores.friendScores[i].score =
+                    score.value;
+                
+                
+                [playerIDs addObject:score.playerID];
             }
+            
+            // load the player names from the Player IDs
+            [self LoadPlayerNamesFromIds:playerIDs];
         }
         
+    }];
+    
+    // log names (for testing)
+    for (int i = 0; i < NUM_FRIENDS_SCORES_TO_LOAD; ++i) {
+        NSLog(@"Friend %s -- score %d",
+              [GameInfoGlobal sharedGameInfoGlobal].topFriendsScores.friendScores[i].name,
+              [GameInfoGlobal sharedGameInfoGlobal].topFriendsScores.friendScores[i].score);
+    }
+}
+
+// -----------------------------------------------------------------------------------
+- (void) LoadPlayerNamesFromIds:(NSMutableArray *)ids
+{
+    [GKPlayer loadPlayersForIdentifiers:ids withCompletionHandler:^(NSArray *players, NSError *error) {
+        int i = 0;
+        for (GKPlayer * player in players) {
+
+            //get the aliases
+            NSString * name = player.displayName;
+            
+            // don't add yourself
+            if (![name isEqualToString:@"Me"]) {
+                NSLog(@"Found player %@", name);
+                [name getCString:
+                 [GameInfoGlobal sharedGameInfoGlobal].topFriendsScores.friendScores[i].name
+                       maxLength:MAX_NAME_LENGTH encoding:NSASCIIStringEncoding];
+                ++i;
+            } else {
+                NSLog(@"Found me!");
+            }
+        }
     }];
 }
 

@@ -51,6 +51,7 @@
 @synthesize powerList;
 @synthesize FacebookLikedAlready;
 @synthesize isIAPProductListLoaded;
+@synthesize topFriendsScores;
 
 static GameInfoGlobal *sharedGameInfoGlobal;
 
@@ -118,11 +119,19 @@ static GameInfoGlobal *sharedGameInfoGlobal;
         //Fill the power list
         powerList = [[NSMutableArray alloc] initWithObjects: [NSNumber numberWithInt: BLANK_SPACE], [NSNumber numberWithInt: BLANK_SPACE], [NSNumber numberWithInt: BLANK_SPACE], nil];
         
-//        if (lifetimeRoundsPlayed > TRIGGER_LIKE_ME) {
-//            [[iRate sharedInstance] logEvent:NO];
-//        }
+        [self ResetFriendsScores];
+        
     }
     return self;
+}
+
+// -----------------------------------------------------------------------------------
+- (void) ResetFriendsScores
+{
+    for (int i = 0; i < NUM_FRIENDS_SCORES_TO_LOAD; ++i) {
+        topFriendsScores.friendScores[i].score = 0;
+        topFriendsScores.friendScores[i].name[0] = '\0';
+    }
 }
 
 // -----------------------------------------------------------------------------------

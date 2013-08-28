@@ -12,12 +12,23 @@
 
 #define NUM_ROUND_TRIGGER_LIKE_ME 12
 #define SCORE_TRIGGER_LIKE_ME     1000
+#define MAX_NAME_LENGTH           128
+#define NUM_FRIENDS_TO_COUNT      3
 
 typedef enum {
     kGameModeNormal = 0,
     kGameModeRotatingPlayer,
     kGameModeBouncyMusic
 } ENUM_GAME_MODE_T;
+
+typedef struct {
+    char name[MAX_NAME_LENGTH];
+    int  score;
+} gameCenterFriendScore;
+
+typedef struct {
+    gameCenterFriendScore friendScores[NUM_FRIENDS_TO_COUNT];
+} topNFriends;
 
 @interface GameInfoGlobal : NSObject
 
@@ -29,6 +40,7 @@ typedef enum {
 - (void) ResetLifetimeAchievementData;
 - (BOOL) WithdrawCoinsFromBank: (int) numCoins;
 - (BOOL) AddCoinsToBank:(int)numCoins;
+- (void) ResetFriendsScores;
 
 
 + (GameInfoGlobal *) sharedGameInfoGlobal;
@@ -76,5 +88,6 @@ typedef enum {
 @property (nonatomic, assign) int multiplierCooldownSec;
 @property (nonatomic, strong) NSMutableArray * powerList;
 
+@property (nonatomic) topNFriends topFriendsScores;
 
 @end

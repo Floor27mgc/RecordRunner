@@ -28,6 +28,7 @@
 
 // for gamecenter top 3 support
 - (void) LoadTopScoresOfMyFriends;
+- (void) LoadPlayerNamesFromIds:(NSMutableArray *) ids;
 
 @property BOOL isQuitting;
 @property (nonatomic, strong) CCLabelTTF * finalScoreLabel;
