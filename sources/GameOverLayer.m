@@ -43,11 +43,11 @@
 @synthesize facebookButton;
 @synthesize shareItLabel;
 
-
-
 @synthesize yesButtonEnabled;
 @synthesize homeButtonEnabled;
 @synthesize facebookButtonEnabled;
+
+@synthesize top3ScoresOfFriends;
 
 // -----------------------------------------------------------------------------------
 - (void) pressedNO:(id) sender
@@ -149,6 +149,13 @@ gotMaxRotations: (BOOL)mostRotations
         }
         
     }];
+    
+    // set up data structure for friends' score list
+    top3ScoresOfFriends =
+        [[NSMutableArray alloc] initWithCapacity:NUM_FRIENDS_SCORES_TO_LOAD];
+    
+    // load top 3 scores of friends who play this app
+    [self LoadTopScoresOfMyFriends];
 }
 
 
@@ -327,6 +334,33 @@ gotMaxRotations: (BOOL)mostRotations
     [rtx end];
     
     return [rtx getUIImage];
+}
+
+// -----------------------------------------------------------------------------------
+- (void) LoadTopScoresOfMyFriends
+{
+    GKLeaderboard *allScoresEver = [[GKLeaderboard alloc] init];
+    allScoresEver.playerScope = GKLeaderboardPlayerScopeFriendsOnly;
+    allScoresEver.range = NSMakeRange(1, NUM_FRIENDS_SCORES_TO_LOAD);
+    allScoresEver.category = nil;
+    
+    [allScoresEver loadScoresWithCompletionHandler:^(NSArray *scores, NSError *error) {
+        
+        // filter out distinct players, favouring scores from our leaderboard
+        if (error != nil) {
+            NSLog(@"Error loading friends' top scores from GameCenter");
+        }
+        
+        // load the score data
+        if (scores != nil) {
+            for(int i = 0; i < [scores count] && i < NUM_FRIENDS_SCORES_TO_LOAD; i++) {
+                
+                GKScore * score = (GKScore *)[scores objectAtIndex:i];
+                [top3ScoresOfFriends addObject:score];
+            }
+        }
+        
+    }];
 }
 
 @end
