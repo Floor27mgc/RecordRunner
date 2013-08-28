@@ -49,6 +49,8 @@
 @synthesize changeGameVelocity;
 @synthesize multiplierCooldownSec;
 @synthesize powerList;
+@synthesize FacebookLikedAlready;
+@synthesize isIAPProductListLoaded;
 
 static GameInfoGlobal *sharedGameInfoGlobal;
 
@@ -91,6 +93,8 @@ static GameInfoGlobal *sharedGameInfoGlobal;
         
         maxNumRevolutionsInALife =
             [[NSUserDefaults standardUserDefaults] integerForKey:@"maxRevolutionsInALife"];
+        
+        FacebookLikedAlready = [[NSUserDefaults standardUserDefaults] boolForKey:@"fbLiked"];
         
         NSLog(@"Coin bank %d lifetimeRevolutions %d lifetimeRoundsPlayed"
               "%d maxRevolutionsInALife %d",

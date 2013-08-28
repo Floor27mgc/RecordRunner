@@ -63,6 +63,8 @@ typedef enum {
 @property (nonatomic, assign) BOOL hit78rotationsThisLife;
 @property (nonatomic, assign) int speedUpsThisLife;
 @property (nonatomic, assign) BOOL clockwiseThenCounterclockwise;
+@property (nonatomic, assign) BOOL FacebookLikedAlready;
+@property (nonatomic, assign) BOOL isIAPProductListLoaded;
 
 // for power up system
 @property (nonatomic, strong) PowerUpEngine * powerEngine;
