@@ -14,6 +14,8 @@
 #import "BuyPowerupMenu.h"
 #import "math.h"
 
+#define NUM_FRIENDS_SCORES_TO_LOAD 3
+
 @interface GameOverLayer : CCNode <CCBAnimationManagerDelegate,MFMailComposeViewControllerDelegate>
 
 - (void) pressedNO:(id) sender;
@@ -23,6 +25,9 @@
 - (void) pressedFeedback:(id)sender;
 - (void) pressedFB:(id) sender;
 - (void) openPowerupMenu;
+
+// for gamecenter top 3 support
+- (void) LoadTopScoresOfMyFriends;
 
 @property BOOL isQuitting;
 @property (nonatomic, strong) CCLabelTTF * finalScoreLabel;
@@ -48,7 +53,7 @@
 
 @property (nonatomic, strong) BuyPowerupMenu * powerUpMenu;
 
-
+@property (nonatomic, strong) NSMutableArray * top3ScoresOfFriends;
 
 @property BOOL yesButtonEnabled;
 @property BOOL homeButtonEnabled;
