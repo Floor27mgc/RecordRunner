@@ -11,6 +11,7 @@
 #import "GameInfoGlobal.h"
 #import "BuyCoinsMenu.h"
 #import "GameInfoGlobal.h"
+#import "SoundController.h"
 #import <StoreKit/StoreKit.h>
 
 NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurchasedNotification";
@@ -116,8 +117,16 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     
     [self provideContentForProductIdentifier:transaction.payment.productIdentifier];
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+
     [[BuyCoinsMenu shareBuyCoinsMenu] pressedBack:self];
     
+    //[[BuyCoinsMenu shareBuyCoinsMenu] pressedBack:self];
+    [[BuyCoinsMenu shareBuyCoinsMenu].coinCountLabel setString:[NSString stringWithFormat:@"%d",[GameInfoGlobal sharedGameInfoGlobal].coinsInBank]];
+    
+    CCBAnimationManager* animationManager = [BuyCoinsMenu shareBuyCoinsMenu].userObject;
+    [animationManager runAnimationsForSequenceNamed:@"coinLabelPop"];
+    [[SoundController sharedSoundController] playSoundIdx:SOUND_MENU_COIN_INCREASE
+                                               fromObject:[BuyCoinsMenu shareBuyCoinsMenu]];
 }
 
 - (void)restoreTransaction:(SKPaymentTransaction *)transaction {

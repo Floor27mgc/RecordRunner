@@ -23,5 +23,9 @@
 @property (nonatomic, strong) CCLabelTTF * coinCountLabel;
 
 @property (nonatomic, strong) CCControlButton * backButton;
-
+@property (nonatomic, assign) CCLabelTTF *price500;
+@property (nonatomic, assign) CCLabelTTF *price2700;
+@property (nonatomic, assign) CCLabelTTF *price5200;
+@property (nonatomic, assign) CCLabelTTF *price17000;
+@property (nonatomic, strong) CCLabelTTF *fbLinkText;
 @end

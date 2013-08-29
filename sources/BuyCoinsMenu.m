@@ -15,12 +15,17 @@
 #import <GameKit/GameKit.h>
 #import <Social/Social.h>
 
-@interface BuyPowerupMenu ()
+@interface BuyCoinsMenu ()
 
 @end
 
 @implementation BuyCoinsMenu
 @synthesize coinCountLabel;
+@synthesize price500;
+@synthesize price2700;
+@synthesize price5200;
+@synthesize price17000;
+@synthesize fbLinkText;
 
 static BuyCoinsMenu *shareBuyCoinsMenu;
 
@@ -36,6 +41,7 @@ static BuyCoinsMenu *shareBuyCoinsMenu;
 	if( (self=[super init]) )
     {
         shareBuyCoinsMenu = self;
+
     }
     return self;
 }
@@ -55,8 +61,17 @@ static BuyCoinsMenu *shareBuyCoinsMenu;
 - (void) setMenuData:(int) myCoinCount
 {
     
+    if ([GameInfoGlobal sharedGameInfoGlobal].FacebookLikedAlready)
+    {
+        [fbLinkText setString:@"Thanks for liking us!!"];
+    }
+    
     [self.coinCountLabel setString:[NSString stringWithFormat:@"%d",
-                                         1234]];
+                                         [GameInfoGlobal sharedGameInfoGlobal].coinsInBank]];
+    [self.price500 setString:[NSString stringWithFormat:@"$%@",((SKProduct*)[RotatoIAPHelper sharedInstance].productsIAP[2]).price.stringValue]];
+    [self.price2700 setString:[NSString stringWithFormat:@"$%@",((SKProduct*)[RotatoIAPHelper sharedInstance].productsIAP[1]).price.stringValue]];
+    [self.price5200 setString:[NSString stringWithFormat:@"$%@",((SKProduct*)[RotatoIAPHelper sharedInstance].productsIAP[3]).price.stringValue]];
+    [self.price17000 setString:[NSString stringWithFormat:@"$%@",((SKProduct*)[RotatoIAPHelper sharedInstance].productsIAP[0]).price.stringValue]];
 }
 
 // -----------------------------------------------------------------------------------
@@ -94,6 +109,11 @@ static BuyCoinsMenu *shareBuyCoinsMenu;
 // -----------------------------------------------------------------------------------
 - (void) pressedButton1: (id) sender
 {
+    if ([GameInfoGlobal sharedGameInfoGlobal].FacebookLikedAlready)
+    {
+        return;
+    }
+    
     NSLog(@"pressed pressedButton1!");
     NSURL *urlApp = [NSURL URLWithString:@"fb://profile/160525450781718"];
     
@@ -107,6 +127,8 @@ static BuyCoinsMenu *shareBuyCoinsMenu;
         {
             [GameInfoGlobal sharedGameInfoGlobal].coinsInBank += 800;
             [GameInfoGlobal sharedGameInfoGlobal].FacebookLikedAlready = YES;
+
+            [fbLinkText setString:@"Thanks for liking us!!"];
             NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
             [standardUserDefaults setInteger:[GameInfoGlobal sharedGameInfoGlobal].coinsInBank forKey:@"coinBank"];
             [standardUserDefaults setBool:YES forKey:@"fbLiked"];

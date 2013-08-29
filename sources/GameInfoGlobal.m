@@ -42,6 +42,8 @@
 @synthesize maxCoinsPerScratch;
 @synthesize clockwiseThenCounterclockwise;
 @synthesize maxNumRevolutionsInALife;
+@synthesize FacebookLikedAlready;
+@synthesize isIAPProductListLoaded;
 @synthesize powerEngine;
 @synthesize closeCallMultiplier;
 @synthesize playerStartsWithShield;
@@ -49,8 +51,6 @@
 @synthesize changeGameVelocity;
 @synthesize multiplierCooldownSec;
 @synthesize powerList;
-@synthesize FacebookLikedAlready;
-@synthesize isIAPProductListLoaded;
 @synthesize topFriendsScores;
 
 static GameInfoGlobal *sharedGameInfoGlobal;
