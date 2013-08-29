@@ -22,6 +22,7 @@
 #define SOUND_CONTAINER_IDX_BOMB 1
 #define SOUND_CONTAINER_IDX_PLAYER 2
 #define SOUND_CONTAINER_IDX_MENU 3 
+#define SOUND_CONTAINER_IDX_BUY_COIN_MENU 4
 
 
 //---------------------------
@@ -61,6 +62,8 @@
 #define SOUND_MENU_OPEN 0
 #define SOUND_MENU_CLOSE 1
 #define SOUND_MENU_CLICK 2
+// --- BUY COIN MENU ---
+#define SOUND_MENU_COIN_INCREASE 0
 
 +(id) init;
 -(id) init;

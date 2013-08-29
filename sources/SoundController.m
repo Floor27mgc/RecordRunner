@@ -13,6 +13,7 @@
 #import "GameInfoGlobal.h"
 #import "MenuBox.h"
 #import "GameObjectPlayer.h"
+#import "BuyCoinsMenu.h"
 
 @implementation SoundController
 @synthesize currentSongTitle;
@@ -93,12 +94,15 @@ static SoundController *SoundControllerSingleton;
                                      @"swipe.caf", //SOUND_MENU_CLOSE
                                      @"swipe.caf", //SOUND_MENU_CLICK
                                      nil];
-        
+        NSArray *buyCoinMenuEffect = [[NSArray alloc] initWithObjects:
+                                     @"pickup_coin1.caf", // SOUND_MENU_COIN_INCREASE
+                                     nil];
         soundFileNameContainer = [[NSArray alloc]initWithObjects:
                                   coinSoundFiles, // SOUND_CONTAINER_IDX_COIN
                                   bombSoundFiles, // SOUND_CONTAINER_IDX_BOMB
                                   playerSoundFiles, //SOUND_CONTAINER_IDX_PLAYER
                                   menuSoundEffects, //SOUND_CONTAINER_IDX_MENU
+                                  buyCoinMenuEffect, // SOUND_CONTAINER_IDX_BUY_COIN_MENU
                                   nil];
     }
     return self;
@@ -126,6 +130,10 @@ static SoundController *SoundControllerSingleton;
         soundFileNames = [soundFileNameContainer objectAtIndex: SOUND_CONTAINER_IDX_MENU];
     }
 
+    if ([senderObject isKindOfClass:[BuyCoinsMenu class]])
+    {
+        soundFileNames = [soundFileNameContainer objectAtIndex: SOUND_CONTAINER_IDX_BUY_COIN_MENU];
+    }
     if ([GameInfoGlobal sharedGameInfoGlobal].isSoundEffectOn)
     {
         [[SimpleAudioEngine sharedEngine] playEffect:soundFileNames[soundIdx]];
