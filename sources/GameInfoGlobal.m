@@ -52,6 +52,7 @@
 @synthesize multiplierCooldownSec;
 @synthesize powerList;
 @synthesize topFriendsScores;
+@synthesize lifetimeGameLaunched;
 
 static GameInfoGlobal *sharedGameInfoGlobal;
 
@@ -97,6 +98,11 @@ static GameInfoGlobal *sharedGameInfoGlobal;
         
         FacebookLikedAlready = [[NSUserDefaults standardUserDefaults] boolForKey:@"fbLiked"];
         
+        lifetimeGameLaunched = [[NSUserDefaults standardUserDefaults] integerForKey:@"lifetimeGameLaunched"];
+        lifetimeGameLaunched++;
+        [[NSUserDefaults standardUserDefaults] setInteger:lifetimeGameLaunched forKey:@"lifetimeGameLaunched"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+
         NSLog(@"Coin bank %d lifetimeRevolutions %d lifetimeRoundsPlayed"
               "%d maxRevolutionsInALife %d",
               coinsInBank, lifetimeRevolutions, lifetimeRoundsPlayed,

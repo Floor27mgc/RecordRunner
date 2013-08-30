@@ -19,4 +19,6 @@ typedef void (^RequestProductsCompletionHandler)(BOOL success, NSArray * product
 // Add two new method declarations
 - (void)buyProduct:(SKProduct *)product;
 - (BOOL)productPurchased:(NSString *)productIdentifier;
+@property (nonatomic,strong) UIActivityIndicatorView *busyWheel;
+@property (nonatomic,strong) UIAlertView *busyAlertView;
 @end

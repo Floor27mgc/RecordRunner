@@ -77,7 +77,7 @@ typedef struct {
 @property (nonatomic, assign) BOOL clockwiseThenCounterclockwise;
 @property (nonatomic, assign) BOOL FacebookLikedAlready;
 @property (nonatomic, assign) BOOL isIAPProductListLoaded;
-
+@property (nonatomic, assign) int lifetimeGameLaunched;
 // for power up system
 @property (nonatomic, strong) PowerUpEngine * powerEngine;
 @property (nonatomic, assign) int closeCallMultiplier;
