@@ -77,9 +77,7 @@
         // if we aren't moving then coinsThisScratch is zero, we should still register
         // this coin as 1
         int coinsToCount = ([GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch == 0 ?
-                            [GameInfoGlobal sharedGameInfoGlobal].coinValue :
-                            [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch *
-                            [GameInfoGlobal sharedGameInfoGlobal].coinValue);
+                            1 : [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch);
         
         //This is the pre-multiplier count of the coins. This goes off a fibinacci sequence
         //1 coin = 1
@@ -118,17 +116,6 @@
                 
                 fibNumber = 8;
                 scoreText = [NSString stringWithFormat:@"%d", fibNumber * [GameLayer sharedGameLayer].multiplier.multiplierValue];
-                scoreSize = large;
-                break;
-            
-            case 6:
-                // this can only happen when score doubler is active and this is the
-                // third coin reached on a single scratch
-                
-                fibNumber = 8;
-                [self.animationManager runAnimationsForSequenceNamed:@"Die5"];
-                scoreText = [NSString stringWithFormat:@"%d",
-                             fibNumber * [GameLayer sharedGameLayer].multiplier.multiplierValue];
                 scoreSize = large;
                 break;
                 
