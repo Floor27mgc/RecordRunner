@@ -75,7 +75,9 @@
         // if we aren't moving then coinsThisScratch is zero, we should still register
         // this coin as 1
         int coinsToCount = ([GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch == 0 ?
-                            1 : [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch);
+                            [GameInfoGlobal sharedGameInfoGlobal].coinValue :
+                            [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch *
+                            [GameInfoGlobal sharedGameInfoGlobal].coinValue);
         
         //This is the pre-multiplier count of the coins. This goes off a fibinacci sequence
         //1 coin = 1

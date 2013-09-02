@@ -29,6 +29,7 @@ typedef enum {
     MINIMUM_MULTIPLIER_OF_3,
     START_WITH_SHIELD,
     INCREASE_MULTIPLIER_COOLDOWN_BY_3,
+    COINS_WORTH_2,
     numPowerUps
 
 } PowerUpType;

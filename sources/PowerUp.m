@@ -85,6 +85,10 @@
                     MULTIPLIER_BASE_COOLDOWN_TIME_SEC + 3;
                 break;
                 
+            case COINS_WORTH_2:
+                [GameInfoGlobal sharedGameInfoGlobal].coinValue = 2;
+                break;
+                
             default:
                 break;
         }
@@ -151,6 +155,10 @@
         case INCREASE_MULTIPLIER_COOLDOWN_BY_3:
             [GameInfoGlobal sharedGameInfoGlobal].multiplierCooldownSec =
                 MULTIPLIER_BASE_COOLDOWN_TIME_SEC;
+            break;
+            
+        case COINS_WORTH_2:
+            [GameInfoGlobal sharedGameInfoGlobal].coinValue = 1;
             break;
             
         default:

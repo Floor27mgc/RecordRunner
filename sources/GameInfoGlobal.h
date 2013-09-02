@@ -86,6 +86,7 @@ typedef struct {
 @property (nonatomic, assign) BOOL increasedStarSpawnRate;
 @property (nonatomic, assign) double changeGameVelocity;
 @property (nonatomic, assign) int multiplierCooldownSec;
+@property (nonatomic, assign) int coinValue;
 @property (nonatomic, strong) NSMutableArray * powerList;
 
 @property (nonatomic) topNFriends topFriendsScores;

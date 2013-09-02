@@ -53,6 +53,7 @@
 @synthesize powerList;
 @synthesize topFriendsScores;
 @synthesize lifetimeGameLaunched;
+@synthesize coinValue;
 
 static GameInfoGlobal *sharedGameInfoGlobal;
 
