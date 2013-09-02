@@ -22,25 +22,25 @@
         
         switch (self.type) {
             case BLANK_SPACE:
-                self.cost = 0;
+                self.cost = PRICE_BLANK_SPACE;
                 break;
             case RECORD_SPINS_SLOWER:
-                self.cost = 500;
+                self.cost = PRICE_RECORD_SPINS_SLOWER;
                 break;
             case INCREASE_STAR_SPAWN_RATE:
-                self.cost = 500;
+                self.cost = PRICE_INCREASE_STAR_SPAWN_RATE;
                 break;
             case CLOSE_CALL_TIMES_2:
-                self.cost = 1000;
+                self.cost = PRICE_CLOSE_CALL_TIMES_2;
                 break;
             case MINIMUM_MULTIPLIER_OF_3:
-                self.cost = 1000;
+                self.cost = PRICE_MINIMUM_MULTIPLIER_OF_3;
                 break;
             case START_WITH_SHIELD:
-                self.cost = 1000;
+                self.cost = PRICE_START_WITH_SHIELD;
                 break;
-            case INCREASE_MULTIPLIER_COOLDOWN_BY_3:
-                self.cost = 100;
+            case DOUBLE_COINS:
+                self.cost = PRICE_DOUBLE_COINS;
                 break;
             default:
                 break;
@@ -80,13 +80,9 @@
                 [GameInfoGlobal sharedGameInfoGlobal].playerStartsWithShield = YES;
                 break;
                 
-            case INCREASE_MULTIPLIER_COOLDOWN_BY_3:
+            case DOUBLE_COINS:
                 [GameInfoGlobal sharedGameInfoGlobal].multiplierCooldownSec =
                     MULTIPLIER_BASE_COOLDOWN_TIME_SEC + 3;
-                break;
-                
-            case COINS_WORTH_2:
-                [GameInfoGlobal sharedGameInfoGlobal].coinValue = 2;
                 break;
                 
             default:
@@ -152,13 +148,9 @@
             [GameInfoGlobal sharedGameInfoGlobal].playerStartsWithShield = NO;
             break;
             
-        case INCREASE_MULTIPLIER_COOLDOWN_BY_3:
+        case DOUBLE_COINS:
             [GameInfoGlobal sharedGameInfoGlobal].multiplierCooldownSec =
                 MULTIPLIER_BASE_COOLDOWN_TIME_SEC;
-            break;
-            
-        case COINS_WORTH_2:
-            [GameInfoGlobal sharedGameInfoGlobal].coinValue = 1;
             break;
             
         default:

@@ -27,8 +27,6 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     NSSet * _productIdentifiers;
     NSMutableSet * _purchasedProductIdentifiers;
 }
-@synthesize busyAlertView;
-@synthesize busyWheel;
 
 - (id)initWithProductIdentifiers:(NSSet *)productIdentifiers {
     
@@ -129,8 +127,6 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     [animationManager runAnimationsForSequenceNamed:@"coinLabelPop"];
     [[SoundController sharedSoundController] playSoundIdx:SOUND_MENU_COIN_INCREASE
                                                fromObject:[BuyCoinsMenu shareBuyCoinsMenu]];
-    [busyWheel stopAnimating];
-    [busyAlertView dismissWithClickedButtonIndex:0 animated:YES];
 }
 
 - (void)restoreTransaction:(SKPaymentTransaction *)transaction {
@@ -138,8 +134,6 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     
     [self provideContentForProductIdentifier:transaction.originalTransaction.payment.productIdentifier];
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
-    [busyWheel stopAnimating];
-    [busyAlertView dismissWithClickedButtonIndex:0 animated:YES];
 }
 
 - (void)failedTransaction:(SKPaymentTransaction *)transaction {
@@ -155,8 +149,6 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     }
     
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
-    [busyWheel stopAnimating];
-    [busyAlertView dismissWithClickedButtonIndex:0 animated:YES];
 }
 
 // Add new method
@@ -219,12 +211,6 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     else{
         SKPayment * payment = [SKPayment paymentWithProduct:product];
         [[SKPaymentQueue defaultQueue] addPayment:payment];
-        busyAlertView = [[UIAlertView alloc] initWithTitle: @"Connecting..." message: nil delegate:self cancelButtonTitle: nil otherButtonTitles: nil];
-        busyWheel = [[UIActivityIndicatorView alloc] initWithFrame: CGRectMake(125, 50, 30, 30)];
-        busyWheel.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
-        [busyAlertView addSubview: busyWheel];
-        [busyWheel startAnimating];
-        [busyAlertView show];
     }
 }
 @end

@@ -77,7 +77,7 @@ typedef struct {
 @property (nonatomic, assign) BOOL clockwiseThenCounterclockwise;
 @property (nonatomic, assign) BOOL FacebookLikedAlready;
 @property (nonatomic, assign) BOOL isIAPProductListLoaded;
-@property (nonatomic, assign) int lifetimeGameLaunched;
+
 // for power up system
 @property (nonatomic, strong) PowerUpEngine * powerEngine;
 @property (nonatomic, assign) int closeCallMultiplier;
@@ -86,7 +86,6 @@ typedef struct {
 @property (nonatomic, assign) BOOL increasedStarSpawnRate;
 @property (nonatomic, assign) double changeGameVelocity;
 @property (nonatomic, assign) int multiplierCooldownSec;
-@property (nonatomic, assign) int coinValue;
 @property (nonatomic, strong) NSMutableArray * powerList;
 
 @property (nonatomic) topNFriends topFriendsScores;

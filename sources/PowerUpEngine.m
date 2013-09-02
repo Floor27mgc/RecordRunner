@@ -18,6 +18,9 @@
     if (self = [super init]) {
 
         PowerUps = [[NSMutableArray alloc] initWithCapacity:numPowerUps];
+        // blank_space is just for nothing so we can have a clear menu
+        PowerUp * power0 = [[PowerUp alloc] initWithType:BLANK_SPACE];
+        [PowerUps addObject:power0];
         
         // initialize each of the power up objects per its type
         PowerUp * power1 = [[PowerUp alloc] initWithType:RECORD_SPINS_SLOWER];
@@ -36,7 +39,7 @@
         [PowerUps addObject:power5];
         
         PowerUp * power6 =
-            [[PowerUp alloc] initWithType:INCREASE_MULTIPLIER_COOLDOWN_BY_3];
+            [[PowerUp alloc] initWithType:DOUBLE_COINS];
         [PowerUps addObject:power6];
     }
     

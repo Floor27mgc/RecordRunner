@@ -21,7 +21,6 @@
 #import "Score.h"
 #import "common.h"
 #import "RotatoIAPHelper.h"
-#import "NewsletterSubscription.h"
 #import <StoreKit/StoreKit.h>
 #import <GameKit/GameKit.h>
 @implementation MainMenuScene
@@ -89,11 +88,7 @@
                 NSLog(@"%@", ((SKProduct*)[products objectAtIndex:0]).localizedTitle);
             }
         }];
-        
-        if ([GameInfoGlobal sharedGameInfoGlobal].lifetimeGameLaunched == LAUNCH_TIME_THRESHOLD_FOR_SUBSCRIPTION)
-        {
-            [[[NewsletterSubscription alloc]init] showSubscriptionBox];
-        }
+
     }
     return (self);
 }

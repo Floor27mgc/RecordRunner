@@ -35,5 +35,3 @@
     CGPointMake(floor(_radius * cos((double) CC_DEGREES_TO_RADIANS(-_angle)) + _originPoint.x), \
                 floor(_radius * sin((double) CC_DEGREES_TO_RADIANS(-_angle)) + _originPoint.y))
 #endif
-
-#define LAUNCH_TIME_THRESHOLD_FOR_SUBSCRIPTION 2
