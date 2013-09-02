@@ -52,6 +52,7 @@
 @synthesize multiplierCooldownSec;
 @synthesize powerList;
 @synthesize topFriendsScores;
+@synthesize coinValue;
 
 static GameInfoGlobal *sharedGameInfoGlobal;
 

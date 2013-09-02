@@ -81,8 +81,7 @@
                 break;
                 
             case DOUBLE_COINS:
-                [GameInfoGlobal sharedGameInfoGlobal].multiplierCooldownSec =
-                    MULTIPLIER_BASE_COOLDOWN_TIME_SEC + 3;
+                [GameInfoGlobal sharedGameInfoGlobal].coinValue = 2;
                 break;
                 
             default:
@@ -149,8 +148,7 @@
             break;
             
         case DOUBLE_COINS:
-            [GameInfoGlobal sharedGameInfoGlobal].multiplierCooldownSec =
-                MULTIPLIER_BASE_COOLDOWN_TIME_SEC;
+            [GameInfoGlobal sharedGameInfoGlobal].coinValue = 1;
             break;
             
         default:
