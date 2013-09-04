@@ -25,6 +25,7 @@
 @synthesize ticksSinceButtonPressed;
 @synthesize consecutiveSecInOuterTrack;
 @synthesize consecutiveSecInInnerTrack;
+@synthesize hasBombAbsorber;
 
 
 // -----------------------------------------------------------------------------------
@@ -169,6 +170,7 @@
         self.ticksSinceButtonPressed = 0;
         self.consecutiveSecInOuterTrack = 0;
         self.consecutiveSecInInnerTrack = 0;
+        self.hasBombAbsorber = NO;
     }
     return (self);
 }
@@ -190,6 +192,7 @@
 //    self.visible = 0;
     self.canMove = NO;
     self.hasShield = NO;
+    self.hasBombAbsorber = NO;
 }
 
 // -----------------------------------------------------------------------------------
@@ -202,7 +205,6 @@
     self.playerRadialSpeed = 0;
     self.direction = kMoveInToOut;
     self.ticksIdle = 0;
-    
     
     [[SoundController sharedSoundController] playSoundIdx:SOUND_PLAYER_START fromObject:self];
 }
@@ -352,4 +354,21 @@
 {
         [GameLayer sharedGameLayer].isGameReadyToStart = TRUE;
 }
+
+// -----------------------------------------------------------------------------------
+- (void) ActivateBombShield
+{
+    self.hasBombAbsorber = YES;
+    
+    // do some stuff here to display the shield graphic in the ccbi file
+}
+
+// -----------------------------------------------------------------------------------
+- (void) DeactivateBombShield
+{
+    self.hasBombAbsorber = NO;
+    
+    // do some stuff here to remove the shield graphic in the ccbi file
+}
+
 @end

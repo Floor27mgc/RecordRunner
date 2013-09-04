@@ -26,16 +26,16 @@
         PowerUp * power1 = [[PowerUp alloc] initWithType:RECORD_SPINS_SLOWER];
         [PowerUps addObject:power1];
         
-        PowerUp * power2 = [[PowerUp alloc] initWithType:INCREASE_STAR_SPAWN_RATE];
+        PowerUp * power2 = [[PowerUp alloc] initWithType:CLOSE_CALL_TIMES_2];
         [PowerUps addObject:power2];
         
-        PowerUp * power3 = [[PowerUp alloc] initWithType:CLOSE_CALL_TIMES_2];
+        PowerUp * power3 = [[PowerUp alloc] initWithType:START_WITH_SHIELD];
         [PowerUps addObject:power3];
         
-        PowerUp * power4 = [[PowerUp alloc] initWithType:MINIMUM_MULTIPLIER_OF_3];
+        PowerUp * power4 = [[PowerUp alloc] initWithType:INCREASE_STAR_SPAWN_RATE];
         [PowerUps addObject:power4];
         
-        PowerUp * power5 = [[PowerUp alloc] initWithType:START_WITH_SHIELD];
+        PowerUp * power5 = [[PowerUp alloc] initWithType:MINIMUM_MULTIPLIER_OF_3];
         [PowerUps addObject:power5];
         
         PowerUp * power6 =

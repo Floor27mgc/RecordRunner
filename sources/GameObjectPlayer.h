@@ -45,6 +45,9 @@ typedef enum
 - (int) getPlayerTrackNum;
 - (BOOL) justStartedMoving;
 
+- (void) ActivateBombShield;
+- (void) DeactivateBombShield;
+
 @property (nonatomic) direction_t direction;
 @property (nonatomic) int playerRadialSpeed; // How fast the player zips between center and
                                              // outer most circle
@@ -62,5 +65,8 @@ typedef enum
 
 // how many ticks since the player pressed the move button
 @property (nonatomic, assign) int ticksSinceButtonPressed;
+
+// power up that absorbs a bomb
+@property (nonatomic, assign) BOOL hasBombAbsorber;
 
 @end

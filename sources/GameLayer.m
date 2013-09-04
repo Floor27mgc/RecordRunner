@@ -799,7 +799,7 @@ static GameLayer *sharedGameLayer;
     
     // apply beginning-of-game power ups, if any
     if ([GameInfoGlobal sharedGameInfoGlobal].playerStartsWithShield) {
-        [self activateInvincible];
+        [self.player ActivateBombShield];
     }
     
     if ([GameInfoGlobal sharedGameInfoGlobal].changeGameVelocity < 0) {

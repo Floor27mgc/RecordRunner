@@ -154,12 +154,19 @@
     [self recycleObjectWithUsedPool:[GameLayer sharedGameLayer].bombUsedPool
                            freePool:[GameLayer sharedGameLayer].bombFreePool];
 
-    // if the player has a shield, act accordingly
+    // if the player has a shield (invincible), act accordingly
     if ([GameLayer sharedGameLayer].player.hasShield) {
+        
         [[SoundController sharedSoundController] playSoundIdx:SOUND_BOMB_INV_PICKUP fromObject:self];
         [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer at:BOMB_STATS] tick];
         [GameInfoGlobal sharedGameInfoGlobal].bombsKilledThisShield++;
         NSLog(@"Bomb absorbed by player's shield!");
+        
+    } else if ([GameLayer sharedGameLayer].player.hasBombAbsorber) {
+        
+        // if the player has the bomb-absorbing shield, deactivate it
+        [GameLayer sharedGameLayer].player.hasBombAbsorber = NO;
+        
     } else {
         //PLAYER DIES -------------------------
         [[GameLayer sharedGameLayer] gameOver];

@@ -10,12 +10,12 @@
 
 #define MULTIPLIER_BASE_COOLDOWN_TIME_SEC   4
 
-#define TOP_GREEN    0
-#define TOP_RED      1
-#define TOP_BLUE     2
-#define BOTTOM_GREEN 3
-#define BOTTOM_RED   4
-#define BOTTOM_BLUE  5
+#define TOP_GREEN    1
+#define TOP_RED      2
+#define TOP_BLUE     3
+#define BOTTOM_GREEN 4
+#define BOTTOM_RED   5
+#define BOTTOM_BLUE  6
 
 @interface PowerUp : NSObject
 
@@ -24,10 +24,10 @@
 typedef enum {
     BLANK_SPACE, //Used for the menu at the top.
     RECORD_SPINS_SLOWER,
-    INCREASE_STAR_SPAWN_RATE,
     CLOSE_CALL_TIMES_2,
-    MINIMUM_MULTIPLIER_OF_3,
     START_WITH_SHIELD,
+    INCREASE_STAR_SPAWN_RATE,
+    MINIMUM_MULTIPLIER_OF_3,
     DOUBLE_COINS,
     numPowerUps
 

@@ -117,6 +117,9 @@ gotMaxRotations: (BOOL)mostRotations
     
     // reset the power ups
     [[GameInfoGlobal sharedGameInfoGlobal].powerEngine ResetPowerUps];
+    // this one requires special cleanup
+    [[GameLayer sharedGameLayer].player DeactivateBombShield];
+    
     
     [self.finalScoreLabel setString:[NSString stringWithFormat:@"%d",
                                          myFinalScore]];
