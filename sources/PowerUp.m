@@ -13,34 +13,34 @@
 
 @synthesize cost;
 @synthesize type;
-
+@synthesize isChoosen;
 // ----------------------------------------------------------------------------------
 - (id) initWithType:(PowerUpType)pType
 {
     if (self = [super init]) {
         self.type = pType;
-        
+        self.isChoosen = NO;
         switch (self.type) {
             case BLANK_SPACE:
-                self.cost = 0;
+                self.cost = PRICE_BLANK_SPACE;
                 break;
             case RECORD_SPINS_SLOWER:
-                self.cost = 500;
+                self.cost = PRICE_RECORD_SPINS_SLOWER;
                 break;
             case INCREASE_STAR_SPAWN_RATE:
-                self.cost = 500;
+                self.cost = PRICE_INCREASE_STAR_SPAWN_RATE;
                 break;
             case CLOSE_CALL_TIMES_2:
-                self.cost = 1000;
+                self.cost = PRICE_CLOSE_CALL_TIMES_2;
                 break;
             case MINIMUM_MULTIPLIER_OF_3:
-                self.cost = 1000;
+                self.cost = PRICE_MINIMUM_MULTIPLIER_OF_3;
                 break;
             case START_WITH_SHIELD:
-                self.cost = 1000;
+                self.cost = PRICE_START_WITH_SHIELD;
                 break;
-            case INCREASE_MULTIPLIER_COOLDOWN_BY_3:
-                self.cost = 100;
+            case DOUBLE_COINS:
+                self.cost = PRICE_DOUBLE_COINS;
                 break;
             default:
                 break;
@@ -55,10 +55,10 @@
 // changes to the game state
 - (BOOL) Purchase
 {
-    if ([self Available]) {
+    if ([self Available] == IS_AVAIL_OK) {
         
         [[GameInfoGlobal sharedGameInfoGlobal] WithdrawCoinsFromBank:cost];
-        
+        self.isChoosen = YES;
         switch (type) {
             case RECORD_SPINS_SLOWER:
                 [GameInfoGlobal sharedGameInfoGlobal].changeGameVelocity = -0.2;
@@ -80,7 +80,7 @@
                 [GameInfoGlobal sharedGameInfoGlobal].playerStartsWithShield = YES;
                 break;
                 
-            case INCREASE_MULTIPLIER_COOLDOWN_BY_3:
+            case DOUBLE_COINS:
                 [GameInfoGlobal sharedGameInfoGlobal].multiplierCooldownSec =
                     MULTIPLIER_BASE_COOLDOWN_TIME_SEC + 3;
                 break;
@@ -101,10 +101,10 @@
 // undo what you purchased. This occurs when you click the circle at the top to un-purchase it.
 - (BOOL) UnPurchase
 {
-    if ([self Available]) {
+    if (isChoosen) {
         
         [[GameInfoGlobal sharedGameInfoGlobal] AddCoinsToBank:cost];
-        
+        self.isChoosen = NO;
         [self Reset];
         
     } else {
@@ -119,14 +119,25 @@
 // determine if there are enough coins to purchase this power up
 - (BOOL) Available
 {
-    return YES;
-    return ([GameInfoGlobal sharedGameInfoGlobal].coinsInBank > cost);
+    if (self.isChoosen)
+    {
+        return IS_AVAIL_ALREADY_CHOOSEN;
+    }
+    
+    if ([GameInfoGlobal sharedGameInfoGlobal].coinsInBank < cost)
+    {
+        return IS_AVAIL_NOT_ENOUGH_MONEY;
+    }
+    
+    return IS_AVAIL_OK;
+//    return ((self.isChoosen != YES) && [GameInfoGlobal sharedGameInfoGlobal].coinsInBank > cost);
 }
 
 // ----------------------------------------------------------------------------------
 // revert the game state to the non-power up state
 - (void) Reset
 {
+
     switch (type) {
         case RECORD_SPINS_SLOWER:
             [GameInfoGlobal sharedGameInfoGlobal].changeGameVelocity = 0.0;
@@ -148,7 +159,7 @@
             [GameInfoGlobal sharedGameInfoGlobal].playerStartsWithShield = NO;
             break;
             
-        case INCREASE_MULTIPLIER_COOLDOWN_BY_3:
+        case DOUBLE_COINS:
             [GameInfoGlobal sharedGameInfoGlobal].multiplierCooldownSec =
                 MULTIPLIER_BASE_COOLDOWN_TIME_SEC;
             break;

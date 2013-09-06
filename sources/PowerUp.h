@@ -28,17 +28,43 @@ typedef enum {
     CLOSE_CALL_TIMES_2,
     MINIMUM_MULTIPLIER_OF_3,
     START_WITH_SHIELD,
-    INCREASE_MULTIPLIER_COOLDOWN_BY_3,
+    DOUBLE_COINS,
     numPowerUps
 
 } PowerUpType;
 
+typedef enum {
+    IS_AVAIL_OK = 0,
+    IS_AVAIL_NOT_ENOUGH_MONEY,
+    IS_AVAIL_ALREADY_CHOOSEN,
+    IS_AVAIL_INVALID_POWER_TYPE
+}IS_AVAIL_REASON;
+
+#define PRICE_BLANK_SPACE 0
+#define PRICE_RECORD_SPINS_SLOWER 10
+#define PRICE_INCREASE_STAR_SPAWN_RATE 20
+#define PRICE_CLOSE_CALL_TIMES_2  40
+#define PRICE_MINIMUM_MULTIPLIER_OF_3 40
+#define PRICE_START_WITH_SHIELD 20
+#define PRICE_DOUBLE_COINS 30
+
+#define DESCRIPTION_BLANK_SPACE @""
+#define DESCRIPTION_RECORD_SPINS_SLOWER @"Slow the record"
+#define DESCRIPTION_INCREASE_STAR_SPAWN_RATE @"More stars"
+#define DESCRIPTION_CLOSE_CALL_TIMES_2  @"A near miss gives x2"
+#define DESCRIPTION_MINIMUM_MULTIPLIER_OF_3 @"Minimum multiplier of x3"
+#define DESCRIPTION_START_WITH_SHIELD @"Start with a shield"
+#define DESCRIPTION_DOUBLE_COINS @"Coins doubler"
+
+
 - (id) initWithType:(PowerUpType) pType;
 - (BOOL) Purchase;
+- (BOOL) UnPurchase;
 - (BOOL) Available;
 - (void) Reset;
 
 @property (nonatomic, assign) int cost;
 @property (nonatomic, assign) PowerUpType type;
+@property (nonatomic, assign) bool isChoosen;
 
 @end

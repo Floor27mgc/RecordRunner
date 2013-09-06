@@ -18,6 +18,9 @@
     if (self = [super init]) {
 
         PowerUps = [[NSMutableArray alloc] initWithCapacity:numPowerUps];
+        // blank_space is just for nothing so we can have a clear menu
+        PowerUp * power0 = [[PowerUp alloc] initWithType:BLANK_SPACE];
+        [PowerUps addObject:power0];
         
         // initialize each of the power up objects per its type
         PowerUp * power1 = [[PowerUp alloc] initWithType:RECORD_SPINS_SLOWER];
@@ -36,7 +39,7 @@
         [PowerUps addObject:power5];
         
         PowerUp * power6 =
-            [[PowerUp alloc] initWithType:INCREASE_MULTIPLIER_COOLDOWN_BY_3];
+            [[PowerUp alloc] initWithType:DOUBLE_COINS];
         [PowerUps addObject:power6];
     }
     
@@ -45,14 +48,15 @@
 
 // -----------------------------------------------------------------------------------
 // accessor to Available method of PowerUp class
-- (BOOL) IsAvaiable:(PowerUpType)type
+- (IS_AVAIL_REASON) IsAvaiable:(PowerUpType)type
 {
     if (type >= numPowerUps) {
-        return NO;
+        return IS_AVAIL_INVALID_POWER_TYPE;
     }
     
     return [[PowerUps objectAtIndex:type] Available];
 }
+
 
 // -----------------------------------------------------------------------------------
 // accessor to Purchase method of PowerUp class
@@ -65,6 +69,18 @@
     return [[PowerUps objectAtIndex:type] Purchase];
 }
 
+
+// -----------------------------------------------------------------------------------
+// accessor to unPurchase method of PowerUp class
+- (BOOL) unPurchase:(PowerUpType)type
+{
+    if (type >= numPowerUps) {
+        return NO;
+    }
+    
+    return [[PowerUps objectAtIndex:type] UnPurchase];
+}
+
 // -----------------------------------------------------------------------------------
 // reset all the power ups
 - (void) ResetPowerUps
@@ -74,4 +90,11 @@
     }
 }
 
+- (void) setAllPowerUpUnchoosen
+{
+    for (PowerUp * p in PowerUps) {
+        p.isChoosen = NO;
+    }
+    
+}
 @end

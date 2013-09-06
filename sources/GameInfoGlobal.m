@@ -256,6 +256,8 @@ static GameInfoGlobal *sharedGameInfoGlobal;
 // -----------------------------------------------------------------------------------
 - (BOOL) WithdrawCoinsFromBank:(int)numCoins
 {
+    NSLog(@"TotalCoins-cost: %d-%d", coinsInBank, numCoins);
+    
     // sanity checks
     if (numCoins < 0) {
         return NO;

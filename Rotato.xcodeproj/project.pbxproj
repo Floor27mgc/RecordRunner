@@ -564,6 +564,21 @@
 		E503F5A517C5C7C600BA35E2 /* gui_long_button-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E503F5A317C5C7C600BA35E2 /* gui_long_button-hd.png */; };
 		E503F5A817C91A3D00BA35E2 /* gui_GiantDialogCard.png in Resources */ = {isa = PBXBuildFile; fileRef = E503F5A617C91A3D00BA35E2 /* gui_GiantDialogCard.png */; };
 		E503F5A917C91A3D00BA35E2 /* gui_GiantDialogCard-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E503F5A717C91A3D00BA35E2 /* gui_GiantDialogCard-hd.png */; };
+		E50C784A17D3BF3E00DEC22E /* gui_power_icon_shield.png in Resources */ = {isa = PBXBuildFile; fileRef = E50C784817D3BF3E00DEC22E /* gui_power_icon_shield.png */; };
+		E50C784B17D3BF3E00DEC22E /* gui_power_icon_shield-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E50C784917D3BF3E00DEC22E /* gui_power_icon_shield-hd.png */; };
+		E50C784E17D3C9BB00DEC22E /* gui_power_icon_slow.png in Resources */ = {isa = PBXBuildFile; fileRef = E50C784C17D3C9BB00DEC22E /* gui_power_icon_slow.png */; };
+		E50C784F17D3C9BB00DEC22E /* gui_power_icon_slow-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E50C784D17D3C9BB00DEC22E /* gui_power_icon_slow-hd.png */; };
+		E50C785817D3D39900DEC22E /* gui_power_icon_3x_min.png in Resources */ = {isa = PBXBuildFile; fileRef = E50C785017D3D39900DEC22E /* gui_power_icon_3x_min.png */; };
+		E50C785917D3D39900DEC22E /* gui_power_icon_3x_min-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E50C785117D3D39900DEC22E /* gui_power_icon_3x_min-hd.png */; };
+		E50C785A17D3D39900DEC22E /* gui_power_icon_close_call2.png in Resources */ = {isa = PBXBuildFile; fileRef = E50C785217D3D39900DEC22E /* gui_power_icon_close_call2.png */; };
+		E50C785B17D3D39900DEC22E /* gui_power_icon_close_call2-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E50C785317D3D39900DEC22E /* gui_power_icon_close_call2-hd.png */; };
+		E50C785C17D3D39900DEC22E /* gui_power_icon_coins.png in Resources */ = {isa = PBXBuildFile; fileRef = E50C785417D3D39900DEC22E /* gui_power_icon_coins.png */; };
+		E50C785D17D3D39900DEC22E /* gui_power_icon_coins-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E50C785517D3D39900DEC22E /* gui_power_icon_coins-hd.png */; };
+		E50C785E17D3D39900DEC22E /* gui_power_icon_stars.png in Resources */ = {isa = PBXBuildFile; fileRef = E50C785617D3D39900DEC22E /* gui_power_icon_stars.png */; };
+		E50C785F17D3D39900DEC22E /* gui_power_icon_stars-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E50C785717D3D39900DEC22E /* gui_power_icon_stars-hd.png */; };
+		E50C786517D40FB200DEC22E /* guiObjectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E50C786417D40FB100DEC22E /* guiObjectButton.m */; };
+		E50C786B17D41D1800DEC22E /* GuiPowerUpButton.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E50C786A17D41D1800DEC22E /* GuiPowerUpButton.ccbi */; };
+		E50C786E17D4205F00DEC22E /* GuiPowerUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E50C786D17D4205E00DEC22E /* GuiPowerUpButton.m */; };
 		E5130745178D17F3000F1EE5 /* gui_circle_wedge.png in Resources */ = {isa = PBXBuildFile; fileRef = E5130743178D17F3000F1EE5 /* gui_circle_wedge.png */; };
 		E5130746178D17F3000F1EE5 /* gui_circle_wedge-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E5130744178D17F3000F1EE5 /* gui_circle_wedge-hd.png */; };
 		E530B682179E42D400A3A7FA /* GameOverLayerBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E530B681179E42D400A3A7FA /* GameOverLayerBox.ccbi */; };
@@ -645,7 +660,6 @@
 		E5973A4D1720F4E6001B948A /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E5973A4B1720F4E4001B948A /* MainMenuScene.m */; };
 		E5973A9C17234CD8001B948A /* MainMenuBuyBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5973A9B17234CD8001B948A /* MainMenuBuyBox.m */; };
 		E5973A9F17234DB3001B948A /* MainMenuSocialBox.m in Sources */ = {isa = PBXBuildFile; fileRef = E5973A9E17234DB3001B948A /* MainMenuSocialBox.m */; };
-		E5C5A39D17A6B12C00B58FEC /* guiObjectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C5A39C17A6B12B00B58FEC /* guiObjectButton.m */; };
 		E5C5A3A017A76CE100B58FEC /* guiObjectButton.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5C5A39E17A76CE100B58FEC /* guiObjectButton.ccbi */; };
 		E5C5A3A317A76DD400B58FEC /* MainMenuSettingsBox.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E5C5A3A217A76DD400B58FEC /* MainMenuSettingsBox.ccbi */; };
 		E5D1FBAC17B6E1D8007F7C0D /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D1FBAA17B6E1D8007F7C0D /* facebook.png */; };
@@ -1297,6 +1311,23 @@
 		E503F5A317C5C7C600BA35E2 /* gui_long_button-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gui_long_button-hd.png"; path = "Resources/Graphics/gui_long_button-hd.png"; sourceTree = SOURCE_ROOT; };
 		E503F5A617C91A3D00BA35E2 /* gui_GiantDialogCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gui_GiantDialogCard.png; path = Resources/Graphics/gui_GiantDialogCard.png; sourceTree = SOURCE_ROOT; };
 		E503F5A717C91A3D00BA35E2 /* gui_GiantDialogCard-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gui_GiantDialogCard-hd.png"; path = "Resources/Graphics/gui_GiantDialogCard-hd.png"; sourceTree = SOURCE_ROOT; };
+		E50C784817D3BF3E00DEC22E /* gui_power_icon_shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gui_power_icon_shield.png; path = Resources/Graphics/gui_power_icon_shield.png; sourceTree = SOURCE_ROOT; };
+		E50C784917D3BF3E00DEC22E /* gui_power_icon_shield-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gui_power_icon_shield-hd.png"; path = "Resources/Graphics/gui_power_icon_shield-hd.png"; sourceTree = SOURCE_ROOT; };
+		E50C784C17D3C9BB00DEC22E /* gui_power_icon_slow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gui_power_icon_slow.png; path = Resources/Graphics/gui_power_icon_slow.png; sourceTree = SOURCE_ROOT; };
+		E50C784D17D3C9BB00DEC22E /* gui_power_icon_slow-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gui_power_icon_slow-hd.png"; path = "Resources/Graphics/gui_power_icon_slow-hd.png"; sourceTree = SOURCE_ROOT; };
+		E50C785017D3D39900DEC22E /* gui_power_icon_3x_min.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gui_power_icon_3x_min.png; path = Resources/Graphics/gui_power_icon_3x_min.png; sourceTree = SOURCE_ROOT; };
+		E50C785117D3D39900DEC22E /* gui_power_icon_3x_min-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gui_power_icon_3x_min-hd.png"; path = "Resources/Graphics/gui_power_icon_3x_min-hd.png"; sourceTree = SOURCE_ROOT; };
+		E50C785217D3D39900DEC22E /* gui_power_icon_close_call2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gui_power_icon_close_call2.png; path = Resources/Graphics/gui_power_icon_close_call2.png; sourceTree = SOURCE_ROOT; };
+		E50C785317D3D39900DEC22E /* gui_power_icon_close_call2-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gui_power_icon_close_call2-hd.png"; path = "Resources/Graphics/gui_power_icon_close_call2-hd.png"; sourceTree = SOURCE_ROOT; };
+		E50C785417D3D39900DEC22E /* gui_power_icon_coins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gui_power_icon_coins.png; path = Resources/Graphics/gui_power_icon_coins.png; sourceTree = SOURCE_ROOT; };
+		E50C785517D3D39900DEC22E /* gui_power_icon_coins-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gui_power_icon_coins-hd.png"; path = "Resources/Graphics/gui_power_icon_coins-hd.png"; sourceTree = SOURCE_ROOT; };
+		E50C785617D3D39900DEC22E /* gui_power_icon_stars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gui_power_icon_stars.png; path = Resources/Graphics/gui_power_icon_stars.png; sourceTree = SOURCE_ROOT; };
+		E50C785717D3D39900DEC22E /* gui_power_icon_stars-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gui_power_icon_stars-hd.png"; path = "Resources/Graphics/gui_power_icon_stars-hd.png"; sourceTree = SOURCE_ROOT; };
+		E50C786317D40FB000DEC22E /* guiObjectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = guiObjectButton.h; path = sources/guiObjectButton.h; sourceTree = SOURCE_ROOT; };
+		E50C786417D40FB100DEC22E /* guiObjectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = guiObjectButton.m; path = sources/guiObjectButton.m; sourceTree = SOURCE_ROOT; };
+		E50C786A17D41D1800DEC22E /* GuiPowerUpButton.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GuiPowerUpButton.ccbi; path = CocosBuilder/CCBI_files/GuiPowerUpButton.ccbi; sourceTree = SOURCE_ROOT; };
+		E50C786C17D4205C00DEC22E /* GuiPowerUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GuiPowerUpButton.h; path = sources/GuiPowerUpButton.h; sourceTree = SOURCE_ROOT; };
+		E50C786D17D4205E00DEC22E /* GuiPowerUpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GuiPowerUpButton.m; path = sources/GuiPowerUpButton.m; sourceTree = SOURCE_ROOT; };
 		E5130743178D17F3000F1EE5 /* gui_circle_wedge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gui_circle_wedge.png; path = Resources/Graphics/gui_circle_wedge.png; sourceTree = SOURCE_ROOT; };
 		E5130744178D17F3000F1EE5 /* gui_circle_wedge-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gui_circle_wedge-hd.png"; path = "Resources/Graphics/gui_circle_wedge-hd.png"; sourceTree = SOURCE_ROOT; };
 		E530B681179E42D400A3A7FA /* GameOverLayerBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameOverLayerBox.ccbi; path = CocosBuilder/CCBI_files/GameOverLayerBox.ccbi; sourceTree = SOURCE_ROOT; };
@@ -1422,8 +1453,6 @@
 		E5A80D271783134B007CF469 /* pickup_coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = pickup_coin.wav; path = Resources/Sound/pickup_coin.wav; sourceTree = SOURCE_ROOT; };
 		E5A80D281783134B007CF469 /* pickup_coin1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = pickup_coin1.wav; path = Resources/Sound/pickup_coin1.wav; sourceTree = SOURCE_ROOT; };
 		E5A80D291783134B007CF469 /* popup.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = popup.m4a; path = Resources/Sound/popup.m4a; sourceTree = SOURCE_ROOT; };
-		E5C5A39B17A6B12B00B58FEC /* guiObjectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = guiObjectButton.h; path = sources/guiObjectButton.h; sourceTree = SOURCE_ROOT; };
-		E5C5A39C17A6B12B00B58FEC /* guiObjectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = guiObjectButton.m; path = sources/guiObjectButton.m; sourceTree = SOURCE_ROOT; };
 		E5C5A39E17A76CE100B58FEC /* guiObjectButton.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = guiObjectButton.ccbi; path = CocosBuilder/CCBI_files/guiObjectButton.ccbi; sourceTree = SOURCE_ROOT; };
 		E5C5A3A217A76DD400B58FEC /* MainMenuSettingsBox.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MainMenuSettingsBox.ccbi; path = CocosBuilder/CCBI_files/MainMenuSettingsBox.ccbi; sourceTree = SOURCE_ROOT; };
 		E5D1FBAA17B6E1D8007F7C0D /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebook.png; path = Resources/Graphics/facebook.png; sourceTree = SOURCE_ROOT; };
@@ -1645,6 +1674,18 @@
 		0840D593163F435E003D5FE6 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				E50C784C17D3C9BB00DEC22E /* gui_power_icon_slow.png */,
+				E50C784D17D3C9BB00DEC22E /* gui_power_icon_slow-hd.png */,
+				E50C784817D3BF3E00DEC22E /* gui_power_icon_shield.png */,
+				E50C784917D3BF3E00DEC22E /* gui_power_icon_shield-hd.png */,
+				E50C785017D3D39900DEC22E /* gui_power_icon_3x_min.png */,
+				E50C785117D3D39900DEC22E /* gui_power_icon_3x_min-hd.png */,
+				E50C785217D3D39900DEC22E /* gui_power_icon_close_call2.png */,
+				E50C785317D3D39900DEC22E /* gui_power_icon_close_call2-hd.png */,
+				E50C785417D3D39900DEC22E /* gui_power_icon_coins.png */,
+				E50C785517D3D39900DEC22E /* gui_power_icon_coins-hd.png */,
+				E50C785617D3D39900DEC22E /* gui_power_icon_stars.png */,
+				E50C785717D3D39900DEC22E /* gui_power_icon_stars-hd.png */,
 				083B08F4170AB0EC00EF0DB0 /* banner.png */,
 				E54E158A172C7A2A0022DACE /* bannerRed-hd.png */,
 				E54E1589172C7A2A0022DACE /* bannerRed.png */,
@@ -1781,6 +1822,10 @@
 				E503F59917C466B700BA35E2 /* BuyPowerupMenu.m */,
 				85A671381651D16000499BF7 /* Coin.h */,
 				85A671391651D16000499BF7 /* Coin.m */,
+				E50C786317D40FB000DEC22E /* guiObjectButton.h */,
+				E50C786417D40FB100DEC22E /* guiObjectButton.m */,
+				E50C786C17D4205C00DEC22E /* GuiPowerUpButton.h */,
+				E50C786D17D4205E00DEC22E /* GuiPowerUpButton.m */,
 				08B6D63A169548B000608ACF /* common.h */,
 				0803EF0516F047DD00CC932B /* GameDebugMenu.h */,
 				0803EF0616F047DD00CC932B /* GameDebugMenu.m */,
@@ -1800,8 +1845,6 @@
 				0840D5A2163F4C2A003D5FE6 /* GameObjectPlayer.m */,
 				8583C66816802C9C003A3213 /* GameOverLayer.h */,
 				8583C66916802C9C003A3213 /* GameOverLayer.m */,
-				E5C5A39B17A6B12B00B58FEC /* guiObjectButton.h */,
-				E5C5A39C17A6B12B00B58FEC /* guiObjectButton.m */,
 				08331C8E17C33B04009AF30B /* IAPHelper.h */,
 				08331C8F17C33B04009AF30B /* IAPHelper.m */,
 				085A7B2F17B1C8C900805022 /* iRate.h */,
@@ -2240,6 +2283,7 @@
 				E503F5A017C5C3A600BA35E2 /* BuyCoinsMenu.ccbi */,
 				E503F59B17C4F4A300BA35E2 /* BuyPowerupMenu.ccbi */,
 				E530B681179E42D400A3A7FA /* GameOverLayerBox.ccbi */,
+				E50C786A17D41D1800DEC22E /* GuiPowerUpButton.ccbi */,
 				E5F47E5617935F9500504A9A /* GameModeMenu.ccbi */,
 				E5F47E5717935F9500504A9A /* gameObjectBomb.ccbi */,
 				E5F47E5817935F9500504A9A /* gameObjectCoin.ccbi */,
@@ -3218,6 +3262,19 @@
 				E503F5A517C5C7C600BA35E2 /* gui_long_button-hd.png in Resources */,
 				E503F5A817C91A3D00BA35E2 /* gui_GiantDialogCard.png in Resources */,
 				E503F5A917C91A3D00BA35E2 /* gui_GiantDialogCard-hd.png in Resources */,
+				E50C784A17D3BF3E00DEC22E /* gui_power_icon_shield.png in Resources */,
+				E50C784B17D3BF3E00DEC22E /* gui_power_icon_shield-hd.png in Resources */,
+				E50C784E17D3C9BB00DEC22E /* gui_power_icon_slow.png in Resources */,
+				E50C784F17D3C9BB00DEC22E /* gui_power_icon_slow-hd.png in Resources */,
+				E50C785817D3D39900DEC22E /* gui_power_icon_3x_min.png in Resources */,
+				E50C785917D3D39900DEC22E /* gui_power_icon_3x_min-hd.png in Resources */,
+				E50C785A17D3D39900DEC22E /* gui_power_icon_close_call2.png in Resources */,
+				E50C785B17D3D39900DEC22E /* gui_power_icon_close_call2-hd.png in Resources */,
+				E50C785C17D3D39900DEC22E /* gui_power_icon_coins.png in Resources */,
+				E50C785D17D3D39900DEC22E /* gui_power_icon_coins-hd.png in Resources */,
+				E50C785E17D3D39900DEC22E /* gui_power_icon_stars.png in Resources */,
+				E50C785F17D3D39900DEC22E /* gui_power_icon_stars-hd.png in Resources */,
+				E50C786B17D41D1800DEC22E /* GuiPowerUpButton.ccbi in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3269,7 +3326,6 @@
 				E5F47E271793550D00504A9A /* AchievementContainer.m in Sources */,
 				E5F2F243179C127A00EEE92A /* GameObjectCheck.m in Sources */,
 				E530B68917A0D6E900A3A7FA /* RankLayerSubBox.m in Sources */,
-				E5C5A39D17A6B12C00B58FEC /* guiObjectButton.m in Sources */,
 				085A7B3117B1C8C900805022 /* iRate.m in Sources */,
 				E503F59A17C466B700BA35E2 /* BuyPowerupMenu.m in Sources */,
 				E503F59F17C5BEA300BA35E2 /* BuyCoinsMenu.m in Sources */,
@@ -3277,6 +3333,8 @@
 				08331CB217C9CA47009AF30B /* IAPHelper.m in Sources */,
 				85F70FF917CA547D0031777B /* PowerUp.m in Sources */,
 				85F70FFC17CA54970031777B /* PowerUpEngine.m in Sources */,
+				E50C786517D40FB200DEC22E /* guiObjectButton.m in Sources */,
+				E50C786E17D4205F00DEC22E /* GuiPowerUpButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3429,8 +3487,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -3443,8 +3501,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PROVISIONING_PROFILE = "E0279E6A-ED64-4F50-81C8-661C89123479";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E0279E6A-ED64-4F50-81C8-661C89123479";
+				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DCB72B6-CF7B-441A-811C-871D021488BB";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3458,8 +3516,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -3470,8 +3528,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PROVISIONING_PROFILE = "E0279E6A-ED64-4F50-81C8-661C89123479";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E0279E6A-ED64-4F50-81C8-661C89123479";
+				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DCB72B6-CF7B-441A-811C-871D021488BB";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3482,8 +3540,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3502,8 +3560,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Rotato;
-				PROVISIONING_PROFILE = "E0279E6A-ED64-4F50-81C8-661C89123479";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E0279E6A-ED64-4F50-81C8-661C89123479";
+				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DCB72B6-CF7B-441A-811C-871D021488BB";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -3514,8 +3572,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2d-2.x-ARC-iOS/Prefix.pch";
@@ -3533,8 +3591,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Rotato;
-				PROVISIONING_PROFILE = "E0279E6A-ED64-4F50-81C8-661C89123479";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E0279E6A-ED64-4F50-81C8-661C89123479";
+				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DCB72B6-CF7B-441A-811C-871D021488BB";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
