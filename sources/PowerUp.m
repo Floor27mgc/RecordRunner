@@ -13,13 +13,13 @@
 
 @synthesize cost;
 @synthesize type;
-
+@synthesize isChoosen;
 // ----------------------------------------------------------------------------------
 - (id) initWithType:(PowerUpType)pType
 {
     if (self = [super init]) {
         self.type = pType;
-        
+        self.isChoosen = NO;
         switch (self.type) {
             case BLANK_SPACE:
                 self.cost = PRICE_BLANK_SPACE;
@@ -55,10 +55,10 @@
 // changes to the game state
 - (BOOL) Purchase
 {
-    if ([self Available]) {
+    if ([self Available] == IS_AVAIL_OK) {
         
         [[GameInfoGlobal sharedGameInfoGlobal] WithdrawCoinsFromBank:cost];
-        
+        self.isChoosen = YES;
         switch (type) {
             case RECORD_SPINS_SLOWER:
                 [GameInfoGlobal sharedGameInfoGlobal].changeGameVelocity = -0.2;
@@ -100,10 +100,10 @@
 // undo what you purchased. This occurs when you click the circle at the top to un-purchase it.
 - (BOOL) UnPurchase
 {
-    if ([self Available]) {
+    if (isChoosen) {
         
         [[GameInfoGlobal sharedGameInfoGlobal] AddCoinsToBank:cost];
-        
+        self.isChoosen = NO;
         [self Reset];
         
     } else {
@@ -118,14 +118,25 @@
 // determine if there are enough coins to purchase this power up
 - (BOOL) Available
 {
-    return YES;
-    return ([GameInfoGlobal sharedGameInfoGlobal].coinsInBank > cost);
+    if (self.isChoosen)
+    {
+        return IS_AVAIL_ALREADY_CHOOSEN;
+    }
+    
+    if ([GameInfoGlobal sharedGameInfoGlobal].coinsInBank < cost)
+    {
+        return IS_AVAIL_NOT_ENOUGH_MONEY;
+    }
+    
+    return IS_AVAIL_OK;
+//    return ((self.isChoosen != YES) && [GameInfoGlobal sharedGameInfoGlobal].coinsInBank > cost);
 }
 
 // ----------------------------------------------------------------------------------
 // revert the game state to the non-power up state
 - (void) Reset
 {
+
     switch (type) {
         case RECORD_SPINS_SLOWER:
             [GameInfoGlobal sharedGameInfoGlobal].changeGameVelocity = 0.0;

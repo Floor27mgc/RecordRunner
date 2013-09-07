@@ -576,7 +576,6 @@
 		E50C785D17D3D39900DEC22E /* gui_power_icon_coins-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E50C785517D3D39900DEC22E /* gui_power_icon_coins-hd.png */; };
 		E50C785E17D3D39900DEC22E /* gui_power_icon_stars.png in Resources */ = {isa = PBXBuildFile; fileRef = E50C785617D3D39900DEC22E /* gui_power_icon_stars.png */; };
 		E50C785F17D3D39900DEC22E /* gui_power_icon_stars-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E50C785717D3D39900DEC22E /* gui_power_icon_stars-hd.png */; };
-		E50C786517D40FB200DEC22E /* guiObjectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E50C786417D40FB100DEC22E /* guiObjectButton.m */; };
 		E50C786B17D41D1800DEC22E /* GuiPowerUpButton.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = E50C786A17D41D1800DEC22E /* GuiPowerUpButton.ccbi */; };
 		E50C786E17D4205F00DEC22E /* GuiPowerUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E50C786D17D4205E00DEC22E /* GuiPowerUpButton.m */; };
 		E5130745178D17F3000F1EE5 /* gui_circle_wedge.png in Resources */ = {isa = PBXBuildFile; fileRef = E5130743178D17F3000F1EE5 /* gui_circle_wedge.png */; };
@@ -3333,7 +3332,6 @@
 				08331CB217C9CA47009AF30B /* IAPHelper.m in Sources */,
 				85F70FF917CA547D0031777B /* PowerUp.m in Sources */,
 				85F70FFC17CA54970031777B /* PowerUpEngine.m in Sources */,
-				E50C786517D40FB200DEC22E /* guiObjectButton.m in Sources */,
 				E50C786E17D4205F00DEC22E /* GuiPowerUpButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

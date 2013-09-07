@@ -11,9 +11,11 @@
 
 @interface PowerUpEngine : NSObject
 
-- (BOOL) IsAvaiable: (PowerUpType) type;
+- (IS_AVAIL_REASON) IsAvaiable: (PowerUpType) type;
 - (BOOL) Purchase: (PowerUpType) type;
+- (BOOL) unPurchase:(PowerUpType)type;
 - (void) ResetPowerUps;
+- (void) setAllPowerUpUnchoosen;
 
 @property (nonatomic, strong) NSMutableArray * PowerUps;
 

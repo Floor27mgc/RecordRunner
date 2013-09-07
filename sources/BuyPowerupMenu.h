@@ -66,7 +66,6 @@
 @property (nonatomic, strong) CCLabelTTF * priceBlueTopButton;
 
 @property (nonatomic, strong) CCLabelTTF * powerDescription;
-
-
+@property (nonatomic, strong) CCLabelTTF * WarningLabel;
 
 @end

@@ -33,6 +33,13 @@ typedef enum {
 
 } PowerUpType;
 
+typedef enum {
+    IS_AVAIL_OK = 0,
+    IS_AVAIL_NOT_ENOUGH_MONEY,
+    IS_AVAIL_ALREADY_CHOOSEN,
+    IS_AVAIL_INVALID_POWER_TYPE
+}IS_AVAIL_REASON;
+
 #define PRICE_BLANK_SPACE 0
 #define PRICE_RECORD_SPINS_SLOWER 10
 #define PRICE_INCREASE_STAR_SPAWN_RATE 20
@@ -48,14 +55,16 @@ typedef enum {
 #define DESCRIPTION_MINIMUM_MULTIPLIER_OF_3 @"Minimum multiplier of x3"
 #define DESCRIPTION_START_WITH_SHIELD @"Start with a shield"
 #define DESCRIPTION_DOUBLE_COINS @"Coins are worth twice as much"
-
+#define DESCRIPTION_DOUBLE_COINS @"Coins doubler"
 
 - (id) initWithType:(PowerUpType) pType;
 - (BOOL) Purchase;
+- (BOOL) UnPurchase;
 - (BOOL) Available;
 - (void) Reset;
 
 @property (nonatomic, assign) int cost;
 @property (nonatomic, assign) PowerUpType type;
+@property (nonatomic, assign) bool isChoosen;
 
 @end
