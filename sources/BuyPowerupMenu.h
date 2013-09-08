@@ -13,7 +13,6 @@
 #import "CCControlButton.h"
 #import "BuyCoinsMenu.h"
 #import "math.h"
-#import "GuiPowerUpButton.h"
 
 @interface BuyPowerupMenu : CCNode <CCBAnimationManagerDelegate,MFMailComposeViewControllerDelegate>
 
@@ -40,9 +39,6 @@
 @property (nonatomic, strong) CCSprite * circleRight;
 @property (nonatomic, strong) CCSprite * circle_icon_right;
 
-//New Power Buttons
-@property (nonatomic, strong) GuiPowerUpButton * button_top_green;
-
 //SquareButtons
 @property (nonatomic, strong) CCSprite * square_green_top;
 @property (nonatomic, strong) CCSprite * square_green_bottom;
@@ -66,7 +62,7 @@
 @property (nonatomic, strong) CCLabelTTF * priceBlueTopButton;
 
 @property (nonatomic, strong) CCLabelTTF * powerDescription;
-
+@property (nonatomic, strong) CCLabelTTF * WarningLabel;
 
 
 @end

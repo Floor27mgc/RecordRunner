@@ -16,15 +16,24 @@
 #import <Social/Social.h>
 
 @interface BuyPowerupMenu ()
-
+{
+    int numSelectedPower;
+    NSArray *descriptionArray;
+/*    char *descriptionArray[] = {
+        DESCRIPTION_BLANK_SPACE,
+        DESCRIPTION_RECORD_SPINS_SLOWER,
+        DESCRIPTION_INCREASE_STAR_SPAWN_RATE,
+        DESCRIPTION_CLOSE_CALL_TIMES_2,
+        DESCRIPTION_MINIMUM_MULTIPLIER_OF_3,
+        DESCRIPTION_START_WITH_SHIELD,
+        DESCRIPTION_DOUBLE_COINS
+    };*/
+}
 @end
 
 @implementation BuyPowerupMenu
 @synthesize coinCountLabel;
 @synthesize buyCoinsMenu;
-@synthesize button_top_green;
-
-
 
 //Base Colors for the squares
 ccColor3B green_top;
@@ -52,6 +61,18 @@ ccColor3B blue_bottom;
 @synthesize square_blue_top;
 @synthesize square_blue_bottom;
 
+//@synthesize button_top_green;
+@synthesize WarningLabel;
+
+
+//Base Colors for the squares
+ccColor3B green_top;
+ccColor3B green_bottom;
+ccColor3B red_top;
+ccColor3B red_bottom;
+ccColor3B blue_top;
+ccColor3B blue_bottom;
+
 
 @synthesize powerDescription;
 
@@ -66,6 +87,23 @@ ccColor3B blue_bottom;
 
 @synthesize currentPowers;
 
+- (id) init
+{
+    if (self = [super init])
+    {
+        numSelectedPower = 0;
+        descriptionArray = [NSArray arrayWithObjects:DESCRIPTION_BLANK_SPACE,
+                            DESCRIPTION_RECORD_SPINS_SLOWER,
+                            DESCRIPTION_INCREASE_STAR_SPAWN_RATE,
+                            DESCRIPTION_CLOSE_CALL_TIMES_2,
+                            DESCRIPTION_MINIMUM_MULTIPLIER_OF_3,
+                            DESCRIPTION_START_WITH_SHIELD,
+                            DESCRIPTION_DOUBLE_COINS, nil];
+        return self;
+    }
+    return nil;
+}
+
 // -----------------------------------------------------------------------------------
 - (void) pressedPlay:(id) sender
 {
@@ -76,6 +114,13 @@ ccColor3B blue_bottom;
     CCBAnimationManager* animationManager = self.userObject;
     
     [animationManager runAnimationsForSequenceNamed:@"PowerupPopOut"];
+    [[GameInfoGlobal sharedGameInfoGlobal].powerEngine setAllPowerUpUnchoosen];
+    [self removeFromPowerList:0];
+    [self.circle_icon_left setTexture:[[CCTextureCache sharedTextureCache] addImage:@"blank.png"]];
+    [self removeFromPowerList:1];
+    [self.circle_icon_center setTexture:[[CCTextureCache sharedTextureCache] addImage:@"blank.png"]];
+    [self removeFromPowerList:2];
+    [self.circle_icon_right setTexture:[[CCTextureCache sharedTextureCache] addImage:@"blank.png"]];
 }
 
 // -----------------------------------------------------------------------------------
@@ -98,7 +143,7 @@ ccColor3B blue_bottom;
     
     
     [self.powerDescription setDimensions:CGSizeMake(220,65)];
-    [self.powerDescription setPosition:CGPointMake(130, 261)];
+    [self.powerDescription setPosition:CGPointMake(130, 252)];
     
     
     green_top = ccc3(103,216,197);
@@ -107,11 +152,6 @@ ccColor3B blue_bottom;
     red_bottom = ccc3(222,94,101);
     blue_top = ccc3(107,197,242);
     blue_bottom = ccc3(107,197,242);
-    
-    
-    self.button_top_green = (GuiPowerUpButton *)[CCBReader nodeGraphFromFile:@"GuiPowerUpButton.ccbi"];
-    [self.button_top_green setMenuData:RECORD_SPINS_SLOWER price:10];
-    
     
     [self updateDisplay];
 }
@@ -129,7 +169,6 @@ ccColor3B blue_bottom;
     [GameInfoGlobal sharedGameInfoGlobal].powerList = tempList;
 }
 
-
 // -----------------------------------------------------------------------------------
 //This is used to construct the menu items at the
 //It scans through the power list and if it finds a blank space, add the new item there.
@@ -137,7 +176,6 @@ ccColor3B blue_bottom;
 - (void) addToPowerList: (PowerUpType) newPower
 {
     NSMutableArray * tempList = [GameInfoGlobal sharedGameInfoGlobal].powerList;
-    
     int listIndex = 0;
     int insertHere = -1;
     
@@ -166,6 +204,32 @@ ccColor3B blue_bottom;
 - (void) pressedPowerButton: (id) sender
 {
     NSLog(@"pressed BUTTON!");
+    CCNode *node = (CCNode *) sender;
+    
+    IS_AVAIL_REASON reason = [[GameInfoGlobal sharedGameInfoGlobal].powerEngine IsAvaiable:node.tag];
+    self.WarningLabel.visible = false;
+    
+    switch (reason)
+    {
+        case IS_AVAIL_OK:
+            [[GameInfoGlobal sharedGameInfoGlobal].powerEngine Purchase:node.tag];
+            [self addToPowerList:node.tag];
+            break;
+        case IS_AVAIL_NOT_ENOUGH_MONEY:
+        {
+            CCBAnimationManager* animationManager = self.userObject;
+            
+            [animationManager runAnimationsForSequenceNamed:@"Warning"];
+        }
+            break;
+        default:
+            break;
+    }
+    
+    [self.powerDescription setString:[descriptionArray objectAtIndex:node.tag]];
+    [self updateDisplay];
+    
+    NSLog(@"pressed pressedTopGreen!");
 }
 
 
@@ -175,115 +239,39 @@ ccColor3B blue_bottom;
 //When you click a circle it puts a blank spot at that circle
 - (void) pressedCircleLeft: (id) sender
 {
-    [self removeFromPowerList:0];
-    [self.circle_icon_left setTexture:[[CCTextureCache sharedTextureCache] addImage:@"blank.png"]];
-    [self updateDisplay];
+    NSNumber *powerType = [GameInfoGlobal sharedGameInfoGlobal].powerList[0];
+    if (powerType.integerValue != BLANK_SPACE)
+    {
+        [[GameInfoGlobal sharedGameInfoGlobal].powerEngine unPurchase:powerType.integerValue];
+        [self removeFromPowerList:0];
+        [self.circle_icon_left setTexture:[[CCTextureCache sharedTextureCache] addImage:@"blank.png"]];
+        [self updateDisplay];
+    }
 }
 
 - (void) pressedCircleMid: (id) sender
 {
-    [self removeFromPowerList:1];
-    [self.circle_icon_center setTexture:[[CCTextureCache sharedTextureCache] addImage:@"blank.png"]];
-    [self updateDisplay];
-    
+    NSNumber *powerType = [GameInfoGlobal sharedGameInfoGlobal].powerList[1];
+    if (powerType.integerValue != BLANK_SPACE)
+    {
+        [[GameInfoGlobal sharedGameInfoGlobal].powerEngine unPurchase:powerType.integerValue];
+        [self removeFromPowerList:1];
+        [self.circle_icon_center setTexture:[[CCTextureCache sharedTextureCache] addImage:@"blank.png"]];
+        [self updateDisplay];
+    }
 }
 
 - (void) pressedCircleRight: (id) sender
 {
-    
-    [self removeFromPowerList:2];
-    [self.circle_icon_right setTexture:[[CCTextureCache sharedTextureCache] addImage:@"blank.png"]];
-    [self updateDisplay];
+    NSNumber *powerType = [GameInfoGlobal sharedGameInfoGlobal].powerList[2];
+    if (powerType.integerValue != BLANK_SPACE)
+    {
+        [[GameInfoGlobal sharedGameInfoGlobal].powerEngine unPurchase:powerType.integerValue];
+        [self removeFromPowerList:2];
+        [self.circle_icon_right setTexture:[[CCTextureCache sharedTextureCache] addImage:@"blank.png"]];
+        [self updateDisplay];
+    }
 }	
-
-
-// -----------------------------------------------------------------------------------
-//RECORD_SPINS_SLOWER
-- (void) pressedTopGreen: (id) sender
-{
-    if ([[GameInfoGlobal sharedGameInfoGlobal].powerEngine IsAvaiable:RECORD_SPINS_SLOWER]) {
-        [[GameInfoGlobal sharedGameInfoGlobal].powerEngine Purchase:RECORD_SPINS_SLOWER];
-    }
-    
-    [self addToPowerList:RECORD_SPINS_SLOWER];
-    [self.powerDescription setString: [NSString stringWithFormat: DESCRIPTION_RECORD_SPINS_SLOWER]];
-        
-    [self updateDisplay];
-    
-    NSLog(@"pressed pressedTopGreen!");
-}
-// -----------------------------------------------------------------------------------
-- (void) pressedBottomGreen: (id) sender
-{
-    if ([[GameInfoGlobal sharedGameInfoGlobal].powerEngine IsAvaiable:INCREASE_STAR_SPAWN_RATE]) {
-        [[GameInfoGlobal sharedGameInfoGlobal].powerEngine Purchase:INCREASE_STAR_SPAWN_RATE];
-    }
-    [self addToPowerList:INCREASE_STAR_SPAWN_RATE];
-    [self.powerDescription setString: [NSString stringWithFormat: DESCRIPTION_INCREASE_STAR_SPAWN_RATE]];
-    [self updateDisplay];
-    
-    NSLog(@"pressed pressedBottomGreen!");
-}
-// -----------------------------------------------------------------------------------
-- (void) pressedTopRed: (id) sender
-{
-    if ([[GameInfoGlobal sharedGameInfoGlobal].powerEngine IsAvaiable:CLOSE_CALL_TIMES_2]) {
-        [[GameInfoGlobal sharedGameInfoGlobal].powerEngine Purchase:CLOSE_CALL_TIMES_2];
-    }
-    
-    [self addToPowerList:CLOSE_CALL_TIMES_2];
-    [self.powerDescription setString: [NSString stringWithFormat: DESCRIPTION_CLOSE_CALL_TIMES_2]];
-    
-    [self updateDisplay];
-    
-    [self updateDisplay];
-    
-    NSLog(@"pressed pressedTopRed!");
-}
-// -----------------------------------------------------------------------------------
-- (void) pressedBottomRed: (id) sender
-{
-    if ([[GameInfoGlobal sharedGameInfoGlobal].powerEngine IsAvaiable:MINIMUM_MULTIPLIER_OF_3]) {
-        [[GameInfoGlobal sharedGameInfoGlobal].powerEngine Purchase:MINIMUM_MULTIPLIER_OF_3];
-    }
-    
-    [self addToPowerList:MINIMUM_MULTIPLIER_OF_3];
-    [self.powerDescription setString: [NSString stringWithFormat: DESCRIPTION_MINIMUM_MULTIPLIER_OF_3]];
-    
-    
-    [self updateDisplay];
-    
-    NSLog(@"pressed pressedBottomRed!");
-}
-// -----------------------------------------------------------------------------------
-- (void) pressedTopBlue: (id) sender
-{
-    if ([[GameInfoGlobal sharedGameInfoGlobal].powerEngine IsAvaiable:START_WITH_SHIELD]) {
-        [[GameInfoGlobal sharedGameInfoGlobal].powerEngine Purchase:START_WITH_SHIELD];
-    }
-    
-    [self addToPowerList:START_WITH_SHIELD];
-    [self.powerDescription setString: [NSString stringWithFormat: DESCRIPTION_START_WITH_SHIELD]];
-    
-    [self updateDisplay];
-    
-    NSLog(@"pressed pressedTopBlue!");
-}
-// -----------------------------------------------------------------------------------
-- (void) pressedBottomBlue: (id) sender
-{
-    if ([[GameInfoGlobal sharedGameInfoGlobal].powerEngine IsAvaiable:DOUBLE_COINS]) {
-        [[GameInfoGlobal sharedGameInfoGlobal].powerEngine Purchase:DOUBLE_COINS];
-    }
-    
-    [self addToPowerList:DOUBLE_COINS];
-    [self.powerDescription setString: [NSString stringWithFormat: DESCRIPTION_DOUBLE_COINS]];
-    
-    [self updateDisplay];
-    
-    NSLog(@"pressed pressedBottomBlue!");
-}
-
 
 // -----------------------------------------------------------------------------------
 //This quits the game
