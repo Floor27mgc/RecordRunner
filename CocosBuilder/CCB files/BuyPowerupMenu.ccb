@@ -673,7 +673,7 @@
 										<key>type</key>
 										<string>Integer</string>
 										<key>value</key>
-										<integer>4</integer>
+										<integer>5</integer>
 									</dict>
 									<dict>
 										<key>name</key>
@@ -1313,7 +1313,7 @@
 										<key>type</key>
 										<string>Integer</string>
 										<key>value</key>
-										<integer>3</integer>
+										<integer>2</integer>
 									</dict>
 									<dict>
 										<key>name</key>
@@ -1625,7 +1625,7 @@
 										<key>type</key>
 										<string>Integer</string>
 										<key>value</key>
-										<integer>5</integer>
+										<integer>3</integer>
 									</dict>
 									<dict>
 										<key>name</key>
@@ -3233,7 +3233,7 @@
 										<key>type</key>
 										<string>Integer</string>
 										<key>value</key>
-										<integer>2</integer>
+										<integer>4</integer>
 									</dict>
 									<dict>
 										<key>name</key>
@@ -3391,6 +3391,8 @@
 										</array>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 							<dict>
 								<key>baseClass</key>
@@ -3823,8 +3825,6 @@
 										</array>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>

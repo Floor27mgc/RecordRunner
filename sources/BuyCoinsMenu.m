@@ -99,6 +99,7 @@ static BuyCoinsMenu *shareBuyCoinsMenu;
     if ([name compare:@"CoinPopOut"] == NSOrderedSame) {
         
         //Game is over, start the next round
+        //[GameOverLayer openPowerupMenu];
         [[GameLayer sharedGameLayer].gameOverLayer openPowerupMenu];
         
     }

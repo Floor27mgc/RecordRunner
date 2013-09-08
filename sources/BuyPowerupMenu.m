@@ -94,10 +94,10 @@ ccColor3B blue_bottom;
         numSelectedPower = 0;
         descriptionArray = [NSArray arrayWithObjects:DESCRIPTION_BLANK_SPACE,
                             DESCRIPTION_RECORD_SPINS_SLOWER,
-                            DESCRIPTION_INCREASE_STAR_SPAWN_RATE,
                             DESCRIPTION_CLOSE_CALL_TIMES_2,
-                            DESCRIPTION_MINIMUM_MULTIPLIER_OF_3,
                             DESCRIPTION_START_WITH_SHIELD,
+                            DESCRIPTION_INCREASE_STAR_SPAWN_RATE,
+                            DESCRIPTION_MINIMUM_MULTIPLIER_OF_3,
                             DESCRIPTION_DOUBLE_COINS, nil];
         return self;
     }
