@@ -85,6 +85,8 @@ static GameInfoGlobal *sharedGameInfoGlobal;
         
         maxCoinsPerScratch = 0;
         
+        multiplierCooldownSec = MULTIPLIER_BASE_COOLDOWN_TIME_SEC;
+        
         coinsInBank = [[NSUserDefaults standardUserDefaults] integerForKey:@"coinBank"];
         
         lifetimeRevolutions =
