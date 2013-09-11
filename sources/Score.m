@@ -59,6 +59,8 @@
     
     [[GameLayer sharedGameLayer].scoreLabel
         setString:[NSString stringWithFormat:@"%d", _scoreValue]];
+    
+    
 }
 
 // -----------------------------------------------------------------------------------

@@ -60,6 +60,9 @@ typedef enum
 @property (nonatomic) NSDate * arrivedAtInnerTrack;
 @property (nonatomic) BOOL canMove;
 
+
+@property (nonatomic, strong) CCSprite * shield;
+
 // how many ticks the player has been idle
 @property (nonatomic, assign) int ticksIdle;
 

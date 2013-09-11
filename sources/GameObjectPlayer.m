@@ -26,6 +26,7 @@
 @synthesize consecutiveSecInOuterTrack;
 @synthesize consecutiveSecInInnerTrack;
 @synthesize hasBombAbsorber;
+@synthesize shield;
 
 
 // -----------------------------------------------------------------------------------
@@ -206,6 +207,12 @@
     self.direction = kMoveInToOut;
     self.ticksIdle = 0;
     
+    
+    //show shield depending if have the bomb absorber
+    int showShield  = (self.hasBombAbsorber) ? 255 : 0;
+    [self.shield setOpacity:(GLubyte)showShield];
+    
+    
     [[SoundController sharedSoundController] playSoundIdx:SOUND_PLAYER_START fromObject:self];
 }
 
@@ -356,19 +363,21 @@
 }
 
 // -----------------------------------------------------------------------------------
+// Called when you buy that shield from the powerup menu. This is not the same as the shield you get when you get the star.
 - (void) ActivateBombShield
 {
     self.hasBombAbsorber = YES;
     
-    // do some stuff here to display the shield graphic in the ccbi file
 }
 
 // -----------------------------------------------------------------------------------
 - (void) DeactivateBombShield
 {
     self.hasBombAbsorber = NO;
+    [self.shield setOpacity:(GLubyte)0];
+    [self.animationManager runAnimationsForSequenceNamed:@"shield_gone"];
     
-    // do some stuff here to remove the shield graphic in the ccbi file
+ [[SoundController sharedSoundController] playSoundIdx:SOUND_BOMB_INV_PICKUP fromObject:self];
 }
 
 @end

@@ -17,6 +17,7 @@
 @synthesize emitter=emitter_;
 @synthesize bouncing = _bouncing;
 @synthesize isDead = _isDead;
+@synthesize coinImage;
 
 // -----------------------------------------------------------------------------------
 - (id) init
@@ -25,6 +26,8 @@
     {
         _bouncing = NO;
         _isDead = NO;
+        
+        
     }
     return (self);
 }
@@ -41,11 +44,19 @@
 // -----------------------------------------------------------------------------------
 - (void) showNextFrame
 {
+    
+    //Create a red coin if coin doubler is in effect
+    ([GameInfoGlobal sharedGameInfoGlobal].coinValue > 1 ?
+     [self.coinImage setColor: ccc3(154,183,255)] : /* Bonus Color*/
+     [self.coinImage setColor: ccc3(231,218,125)]); //Normal Color
+    
+    
     // this is a negative movement down the Y-axis, the Coin is falling
     // from the top of the screen
     [self moveTo:COMMON_GET_NEW_RADIAL_POINT(COMMON_RECORD_CENTER,self.radius,self.angleRotated)];
     self.angleRotated = self.angleRotated + self.gameObjectAngularVelocity;
     [self encounterWithPlayer];
+    
 }
 
 // -----------------------------------------------------------------------------------
@@ -64,8 +75,7 @@
         
         // increment coins this scratch if you have started the scratch
         // and update max accordingly
-        [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch +=
-            [GameInfoGlobal sharedGameInfoGlobal].coinValue;
+        [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch ++;
 
         if ([GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch >
             [GameInfoGlobal sharedGameInfoGlobal].maxCoinsPerScratch) {
@@ -127,9 +137,13 @@
                 break;
         }
         
-        // increment score
+        // increment the number of coins collected
         [GameInfoGlobal sharedGameInfoGlobal].numCoinsThisLife +=
             [GameInfoGlobal sharedGameInfoGlobal].coinValue;
+        
+        //Set the coin label
+        [[GameLayer sharedGameLayer].coinLabel
+        setString:[NSString stringWithFormat:@"%d", [GameInfoGlobal sharedGameInfoGlobal].numCoinsThisLife]];
         
         [[GameLayer sharedGameLayer].score incrementScore: fibNumber]; //Send them the fibinacci number
         

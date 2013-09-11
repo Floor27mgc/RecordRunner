@@ -22,4 +22,8 @@
 @property (nonatomic) BOOL bouncing;
 @property (nonatomic) BOOL isDead;
 
+
+@property (nonatomic, strong) CCSprite * coinImage;
+
+
 @end

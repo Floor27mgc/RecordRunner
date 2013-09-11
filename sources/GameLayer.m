@@ -49,6 +49,7 @@
 @synthesize score = _score;
 @synthesize highScore = _highScore;
 @synthesize scoreLabel;
+@synthesize coinLabel;
 @synthesize invincibleRecord;
 @synthesize pendingTaps;
 @synthesize gotHighScore;
@@ -795,7 +796,11 @@ static GameLayer *sharedGameLayer;
 {
     [self resumeSchedulerAndActions];
     [self cleanUpPlayField];
+    
+    //Clear labels
     [self.score setScoreValue:0];
+    [[GameLayer sharedGameLayer].coinLabel
+     setString:[NSString stringWithFormat:@"%d", 0]];
     
     // apply beginning-of-game power ups, if any
     if ([GameInfoGlobal sharedGameInfoGlobal].playerStartsWithShield) {

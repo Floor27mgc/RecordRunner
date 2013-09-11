@@ -134,12 +134,12 @@ ccColor3B blue_bottom;
     [self.coinCountLabel setString:[NSString stringWithFormat:@"%d",
                                     coins]];
     
-    [self.priceGreenTopButton setString: [NSString stringWithFormat:@"%d",5]];
-    [self.priceGreenBottomButton setString: [NSString stringWithFormat:@"%d",0]];
-    [self.priceRedTopButton setString: [NSString stringWithFormat:@"%d",6]];
-    [self.priceRedBottomButton setString: [NSString stringWithFormat:@"%d",7]];
-    [self.priceBlueTopButton setString: [NSString stringWithFormat:@"%d",8]];
-    [self.priceBlueBottomButton setString: [NSString stringWithFormat:@"%d", 10]];
+    [self.priceGreenTopButton setString: [NSString stringWithFormat:@"%d", PRICE_RECORD_SPINS_SLOWER]];
+    [self.priceGreenBottomButton setString: [NSString stringWithFormat:@"%d", PRICE_INCREASE_STAR_SPAWN_RATE]];
+    [self.priceRedTopButton setString: [NSString stringWithFormat:@"%d", PRICE_CLOSE_CALL_TIMES_2]];
+    [self.priceRedBottomButton setString: [NSString stringWithFormat:@"%d", PRICE_MINIMUM_MULTIPLIER_OF_3]];
+    [self.priceBlueTopButton setString: [NSString stringWithFormat:@"%d", PRICE_START_WITH_SHIELD]];
+    [self.priceBlueBottomButton setString: [NSString stringWithFormat:@"%d", PRICE_DOUBLE_COINS]];
     
     
     [self.powerDescription setDimensions:CGSizeMake(220,65)];
@@ -277,7 +277,6 @@ ccColor3B blue_bottom;
 //This quits the game
 - (void) pressedGetMore:(id) sender
 {
-        NSLog(@"pressed GET MORE!");
         self.isQuitting = NO;
         
         [self turnOffButtons];
@@ -301,7 +300,7 @@ ccColor3B blue_bottom;
     if (buyCoinsMenu != nil)
     {
         //This sets the menu data for the final menu
-        [buyCoinsMenu setMenuData: 1234];
+        [buyCoinsMenu setMenuData];
         
         buyCoinsMenu.visible = YES;
         
@@ -313,7 +312,7 @@ ccColor3B blue_bottom;
         buyCoinsMenu.position = COMMON_SCREEN_CENTER;
         
         //This sets the menu data for the final menu
-        [buyCoinsMenu setMenuData: 1234];
+        [buyCoinsMenu setMenuData];
         
         [[GameLayer sharedGameLayer] addChild:buyCoinsMenu z:11];
     }

@@ -58,12 +58,12 @@ static BuyCoinsMenu *shareBuyCoinsMenu;
 // -----------------------------------------------------------------------------------
 //This method is used to set the labels in the Game Over Menu.
 //For example, before G.O. Menu is shown, call this method to set those two values
-- (void) setMenuData:(int) myCoinCount
+- (void) setMenuData
 {
     
     if ([GameInfoGlobal sharedGameInfoGlobal].FacebookLikedAlready)
     {
-        [fbLinkText setString:@"Thanks for liking us!!"];
+        [fbLinkText setString:@"Thanks for liking us!"];
     }
     
     [self.coinCountLabel setString:[NSString stringWithFormat:@"%d",
@@ -126,10 +126,10 @@ static BuyCoinsMenu *shareBuyCoinsMenu;
         
         if (rc == YES)
         {
-            [GameInfoGlobal sharedGameInfoGlobal].coinsInBank += 800;
+            [GameInfoGlobal sharedGameInfoGlobal].coinsInBank += 1000;
             [GameInfoGlobal sharedGameInfoGlobal].FacebookLikedAlready = YES;
 
-            [fbLinkText setString:@"Thanks for liking us!!"];
+            [fbLinkText setString:@"Thanks for liking us!"];
             NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
             [standardUserDefaults setInteger:[GameInfoGlobal sharedGameInfoGlobal].coinsInBank forKey:@"coinBank"];
             [standardUserDefaults setBool:YES forKey:@"fbLiked"];

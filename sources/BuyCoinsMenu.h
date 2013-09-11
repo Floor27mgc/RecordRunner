@@ -17,7 +17,7 @@
 @interface BuyCoinsMenu : CCNode <CCBAnimationManagerDelegate,MFMailComposeViewControllerDelegate>
 
 - (void) pressedBack:(id) sender;
-- (void) setMenuData:(int) myCoinCount;
+- (void) setMenuData;
 - (void) openMenu;
 + (BuyCoinsMenu *) shareBuyCoinsMenu;
 @property (nonatomic, strong) CCLabelTTF * coinCountLabel;

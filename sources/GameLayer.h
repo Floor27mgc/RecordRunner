@@ -141,6 +141,7 @@ typedef enum {
 @property (nonatomic, strong) AchievementContainer * achievementContainer;
 
 @property (nonatomic, strong) CCLabelTTF * scoreLabel;
+@property (nonatomic, strong) CCLabelTTF * coinLabel;
 @property (nonatomic, strong) Score * score;
 @property (nonatomic, strong) Score * highScore;
 @property (nonatomic, strong) CCSprite * invincibleRecord;

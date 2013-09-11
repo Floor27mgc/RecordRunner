@@ -854,7 +854,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>25</real>
+											<real>14.583333969116211</real>
 											<real>12.99061107635498</real>
 											<integer>0</integer>
 										</array>
@@ -906,7 +906,7 @@
 										<string>FloatScale</string>
 										<key>value</key>
 										<array>
-											<real>25</real>
+											<real>15</real>
 											<integer>0</integer>
 										</array>
 									</dict>
@@ -1150,7 +1150,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>25</real>
+											<real>14.004630088806152</real>
 											<real>13</real>
 											<integer>0</integer>
 										</array>
@@ -1202,7 +1202,7 @@
 										<string>FloatScale</string>
 										<key>value</key>
 										<array>
-											<real>25</real>
+											<real>15</real>
 											<integer>0</integer>
 										</array>
 									</dict>
@@ -1806,7 +1806,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>25</real>
+											<real>15.162036895751953</real>
 											<real>13</real>
 											<integer>0</integer>
 										</array>
@@ -1858,7 +1858,7 @@
 										<string>FloatScale</string>
 										<key>value</key>
 										<array>
-											<real>25</real>
+											<real>15</real>
 											<integer>0</integer>
 										</array>
 									</dict>
@@ -2318,7 +2318,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>25</real>
+											<real>15.162036895751953</real>
 											<real>13</real>
 											<integer>0</integer>
 										</array>
@@ -2370,7 +2370,7 @@
 										<string>FloatScale</string>
 										<key>value</key>
 										<array>
-											<real>25</real>
+											<real>15</real>
 											<integer>0</integer>
 										</array>
 									</dict>
@@ -2830,7 +2830,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>25</real>
+											<real>14.583333969116211</real>
 											<real>13</real>
 											<integer>0</integer>
 										</array>
@@ -2882,7 +2882,7 @@
 										<string>FloatScale</string>
 										<key>value</key>
 										<array>
-											<real>25</real>
+											<real>15</real>
 											<integer>0</integer>
 										</array>
 									</dict>
@@ -3391,8 +3391,6 @@
 										</array>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 							<dict>
 								<key>baseClass</key>
@@ -3468,7 +3466,7 @@
 										<string>FloatScale</string>
 										<key>value</key>
 										<array>
-											<real>25</real>
+											<real>15</real>
 											<integer>0</integer>
 										</array>
 									</dict>
@@ -5070,7 +5068,7 @@
 								<key>type</key>
 								<string>Text</string>
 								<key>value</key>
-								<string>Not enough $$</string>
+								<string>Need coins</string>
 							</dict>
 						</array>
 						<key>seqExpanded</key>

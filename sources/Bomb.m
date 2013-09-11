@@ -165,7 +165,7 @@
     } else if ([GameLayer sharedGameLayer].player.hasBombAbsorber) {
         
         // if the player has the bomb-absorbing shield, deactivate it
-        [GameLayer sharedGameLayer].player.hasBombAbsorber = NO;
+        [[GameLayer sharedGameLayer].player DeactivateBombShield ];
         
     } else {
         //PLAYER DIES -------------------------
