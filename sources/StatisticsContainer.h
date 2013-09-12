@@ -18,6 +18,13 @@ typedef enum {
     TAPS_STATS,       // tick during execution
     ROTATIONS_STATS,  // tick during execution -- TBD HOW
     
+    STATS_RECORD_SPINS_SLOWER,
+    STATS_CLOSE_CALL_TIMES_2,
+    STATS_START_WITH_SHIELD,
+    STATS_INCREASE_STAR_SPAWN_RATE,
+    STATS_MINIMUM_MULTIPLIER_OF_3,
+    STATS_DOUBLE_COINS,
+    
     STATS_TYPE_MAX
 } statistics_types_t;
 

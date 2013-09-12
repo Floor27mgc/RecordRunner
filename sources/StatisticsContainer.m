@@ -116,6 +116,24 @@
         case ROTATIONS_STATS:
             return @"rotations";
             break;
+        case STATS_RECORD_SPINS_SLOWER:
+            return @"slow_record";
+            break;
+        case STATS_CLOSE_CALL_TIMES_2:
+            return @"close_call_double";
+            break;
+        case STATS_START_WITH_SHIELD:
+            return @"start_with_shield";
+            break;
+        case STATS_INCREASE_STAR_SPAWN_RATE:
+            return @"increase_star_rate";
+            break;
+        case STATS_MINIMUM_MULTIPLIER_OF_3:
+            return @"mult_min_3";
+            break;
+        case STATS_DOUBLE_COINS:
+            return @"double_coin_value";
+            break;
         case STATS_TYPE_MAX:
         default:
             return @"";

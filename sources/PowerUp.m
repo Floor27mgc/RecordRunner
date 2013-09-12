@@ -62,26 +62,38 @@
         switch (type) {
             case RECORD_SPINS_SLOWER:
                 [GameInfoGlobal sharedGameInfoGlobal].changeGameVelocity = -0.2;
+                [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer
+                    at:STATS_RECORD_SPINS_SLOWER] tick];
                 break;
                 
             case INCREASE_STAR_SPAWN_RATE:
                 [GameInfoGlobal sharedGameInfoGlobal].increasedStarSpawnRate = YES;
+                [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer
+                    at:STATS_INCREASE_STAR_SPAWN_RATE] tick];
                 break;
                 
             case CLOSE_CALL_TIMES_2:
                 [GameInfoGlobal sharedGameInfoGlobal].closeCallMultiplier = 2;
+                [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer
+                    at:STATS_CLOSE_CALL_TIMES_2] tick];
                 break;
                 
             case MINIMUM_MULTIPLIER_OF_3:
                 [GameInfoGlobal sharedGameInfoGlobal].minMultVal = 3;
+                [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer
+                    at:STATS_MINIMUM_MULTIPLIER_OF_3] tick];
                 break;
                 
             case START_WITH_SHIELD:
                 [GameInfoGlobal sharedGameInfoGlobal].playerStartsWithShield = YES;
+                [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer
+                    at:STATS_START_WITH_SHIELD] tick];
                 break;
                 
             case DOUBLE_COINS:
                 [GameInfoGlobal sharedGameInfoGlobal].coinValue = 2;
+                [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer
+                    at:STATS_DOUBLE_COINS] tick];
                 break;
                 
             default:
