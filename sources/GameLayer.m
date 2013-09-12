@@ -223,6 +223,12 @@ static GameLayer *sharedGameLayer;
         
         self.tapDelay = [NSDate distantFuture];
         lastBombInjectTime = [NSDate date];
+        
+        // if this is the first game, give the player 10,000 coins
+        if ([GameInfoGlobal sharedGameInfoGlobal].lifetimeRoundsPlayed == 0) {
+            [[GameInfoGlobal sharedGameInfoGlobal]
+                AddCoinsToBank:INITIAL_COIN_BANK_VALUE];
+        }
     }
     return self;
 }

@@ -33,6 +33,7 @@
 #define MIN_NUM_POWER_ICONS_PER_TRACK 1
 #define MAX_NUM_TRACK                 4
 #define MAX_NUM_BOUNCING_COINS        7
+#define INITIAL_COIN_BANK_VALUE   10000
 
 #define kBombSpawnRate 20
 #define kBombSpawnTimeInterval 5
