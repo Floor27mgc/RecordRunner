@@ -303,7 +303,7 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>132.60000610351562</real>
+									<real>150</real>
 									<real>396</real>
 									<integer>0</integer>
 								</array>
@@ -408,6 +408,8 @@
 								<string>C O I N S</string>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>animatedProperties</key>
@@ -805,8 +807,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>31.769607543945312</real>
-											<real>23.49290657043457</real>
+											<real>36.769607543945312</real>
+											<real>21.49290657043457</real>
 											<integer>0</integer>
 										</array>
 									</dict>
@@ -907,7 +909,7 @@
 										<key>type</key>
 										<string>Text</string>
 										<key>value</key>
-										<string>800</string>
+										<string>1000</string>
 									</dict>
 								</array>
 							</dict>
@@ -1118,8 +1120,6 @@
 										</array>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
@@ -1356,8 +1356,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>31.769607543945312</real>
-											<real>23.49290657043457</real>
+											<real>40.769607543945312</real>
+											<real>25.49290657043457</real>
 											<integer>0</integer>
 										</array>
 									</dict>
@@ -1458,7 +1458,7 @@
 										<key>type</key>
 										<string>Text</string>
 										<key>value</key>
-										<string>500</string>
+										<string>7000</string>
 									</dict>
 								</array>
 							</dict>
@@ -1905,7 +1905,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>40.102939605712891</real>
+											<real>51.799999237060547</real>
 											<real>23.49290657043457</real>
 											<integer>0</integer>
 										</array>
@@ -2007,7 +2007,7 @@
 										<key>type</key>
 										<string>Text</string>
 										<key>value</key>
-										<string>2700</string>
+										<string>35000</string>
 									</dict>
 								</array>
 							</dict>
@@ -2454,7 +2454,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>40.102939605712891</real>
+											<real>57.102939605712891</real>
 											<real>23.49290657043457</real>
 											<integer>0</integer>
 										</array>
@@ -2556,7 +2556,7 @@
 										<key>type</key>
 										<string>Text</string>
 										<key>value</key>
-										<string>5200</string>
+										<string>130000</string>
 									</dict>
 								</array>
 							</dict>
@@ -3003,7 +3003,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>48.436271667480469</real>
+											<real>62.436271667480469</real>
 											<real>23.49290657043457</real>
 											<integer>0</integer>
 										</array>
@@ -3105,7 +3105,7 @@
 										<key>type</key>
 										<string>Text</string>
 										<key>value</key>
-										<string>17000</string>
+										<string>250000</string>
 									</dict>
 								</array>
 							</dict>

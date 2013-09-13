@@ -155,31 +155,31 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
 - (void)provideContentForProductIdentifier:(NSString *)productIdentifier {
     [_purchasedProductIdentifiers addObject:productIdentifier];
     
-    if ([productIdentifier compare:@"coins.500"] == NSOrderedSame)
+    if ([productIdentifier compare:@"coins.7000"] == NSOrderedSame)
     {
-        NSLog (@"Adding 500 coins into your coin bank");        
-        [GameInfoGlobal sharedGameInfoGlobal].coinsInBank += 500;
+        NSLog (@"Adding 7000 coins into your coin bank");        
+        [GameInfoGlobal sharedGameInfoGlobal].coinsInBank += 7000;
 
     }
 
-    if ([productIdentifier compare:@"coins.2700"] == NSOrderedSame)
+    if ([productIdentifier compare:@"coins.35000"] == NSOrderedSame)
     {
-        NSLog (@"Adding 2700 coins into your coin bank");
-        [GameInfoGlobal sharedGameInfoGlobal].coinsInBank += 2700;
+        NSLog (@"Adding 35000 coins into your coin bank");
+        [GameInfoGlobal sharedGameInfoGlobal].coinsInBank += 35000;
         
     }
     
-    if ([productIdentifier compare:@"coins.5200"] == NSOrderedSame)
+    if ([productIdentifier compare:@"coins.130000"] == NSOrderedSame)
     {
-        NSLog (@"Adding 5200 coins into your coin bank");
-        [GameInfoGlobal sharedGameInfoGlobal].coinsInBank += 5200;
+        NSLog (@"Adding 130000 coins into your coin bank");
+        [GameInfoGlobal sharedGameInfoGlobal].coinsInBank += 130000;
         
     }
     
-    if ([productIdentifier compare:@"coins.17000"] == NSOrderedSame)
+    if ([productIdentifier compare:@"coins.250000"] == NSOrderedSame)
     {
-        NSLog (@"Adding 17000 coins into your coin bank");
-        [GameInfoGlobal sharedGameInfoGlobal].coinsInBank += 17000;
+        NSLog (@"Adding 250000 coins into your coin bank");
+        [GameInfoGlobal sharedGameInfoGlobal].coinsInBank += 250000;
         
     }
 

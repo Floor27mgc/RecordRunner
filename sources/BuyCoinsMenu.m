@@ -68,10 +68,10 @@ static BuyCoinsMenu *shareBuyCoinsMenu;
     
     [self.coinCountLabel setString:[NSString stringWithFormat:@"%d",
                                          [GameInfoGlobal sharedGameInfoGlobal].coinsInBank]];
-    [self.price500 setString:[NSString stringWithFormat:@"$%@",((SKProduct*)[RotatoIAPHelper sharedInstance].productsIAP[2]).price.stringValue]];
-    [self.price2700 setString:[NSString stringWithFormat:@"$%@",((SKProduct*)[RotatoIAPHelper sharedInstance].productsIAP[1]).price.stringValue]];
-    [self.price5200 setString:[NSString stringWithFormat:@"$%@",((SKProduct*)[RotatoIAPHelper sharedInstance].productsIAP[3]).price.stringValue]];
-    [self.price17000 setString:[NSString stringWithFormat:@"$%@",((SKProduct*)[RotatoIAPHelper sharedInstance].productsIAP[0]).price.stringValue]];
+    [self.price500 setString:[NSString stringWithFormat:@"$%@",((SKProduct*)[RotatoIAPHelper sharedInstance].productsIAP[3]).price.stringValue]];
+    [self.price2700 setString:[NSString stringWithFormat:@"$%@",((SKProduct*)[RotatoIAPHelper sharedInstance].productsIAP[2]).price.stringValue]];
+    [self.price5200 setString:[NSString stringWithFormat:@"$%@",((SKProduct*)[RotatoIAPHelper sharedInstance].productsIAP[0]).price.stringValue]];
+    [self.price17000 setString:[NSString stringWithFormat:@"$%@",((SKProduct*)[RotatoIAPHelper sharedInstance].productsIAP[1]).price.stringValue]];
 }
 
 // -----------------------------------------------------------------------------------
@@ -141,26 +141,26 @@ static BuyCoinsMenu *shareBuyCoinsMenu;
 - (void) pressedButton2: (id) sender
 {
     NSLog(@"pressed pressedButton2!");
-    [[RotatoIAPHelper sharedInstance] buyProduct:[RotatoIAPHelper sharedInstance].productsIAP[2]];
+    [[RotatoIAPHelper sharedInstance] buyProduct:[RotatoIAPHelper sharedInstance].productsIAP[3]];
 }
 // -----------------------------------------------------------------------------------
 - (void) pressedButton3: (id) sender
 {
     NSLog(@"pressed pressedButton3!");
-    [[RotatoIAPHelper sharedInstance] buyProduct:[RotatoIAPHelper sharedInstance].productsIAP[1]];
+    [[RotatoIAPHelper sharedInstance] buyProduct:[RotatoIAPHelper sharedInstance].productsIAP[2]];
 }
 
 // -----------------------------------------------------------------------------------
 - (void) pressedButton4: (id) sender
 {
     NSLog(@"pressed pressedButton4!");
-    [[RotatoIAPHelper sharedInstance] buyProduct:[RotatoIAPHelper sharedInstance].productsIAP[3]];
+    [[RotatoIAPHelper sharedInstance] buyProduct:[RotatoIAPHelper sharedInstance].productsIAP[0]];
 }
 // -----------------------------------------------------------------------------------
 - (void) pressedButton5: (id) sender
 {
     NSLog(@"pressed pressedButton5!");
-    [[RotatoIAPHelper sharedInstance] buyProduct:[RotatoIAPHelper sharedInstance].productsIAP[0]];
+    [[RotatoIAPHelper sharedInstance] buyProduct:[RotatoIAPHelper sharedInstance].productsIAP[1]];
 }
 
 

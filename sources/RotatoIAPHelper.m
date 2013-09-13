@@ -15,10 +15,10 @@
     static RotatoIAPHelper * sharedInstance;
     dispatch_once(&once, ^{
         NSSet * productIdentifiers = [NSSet setWithObjects:
-                                      @"coins.500",
-                                      @"coins.2700",
-                                      @"coins.5200",
-                                      @"coins.17000",
+                                      @"coins.7000",
+                                      @"coins.35000",
+                                      @"coins.130000",
+                                      @"coins.250000",
                                       nil];
         sharedInstance = [[self alloc] initWithProductIdentifiers:productIdentifiers];
     });
