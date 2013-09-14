@@ -305,7 +305,7 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>132.60000610351562</real>
+									<real>145</real>
 									<real>400.08334350585938</real>
 									<integer>0</integer>
 								</array>
@@ -410,6 +410,8 @@
 								<string>C O I N S</string>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>baseClass</key>

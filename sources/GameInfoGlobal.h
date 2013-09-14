@@ -11,7 +11,7 @@
 #import "PowerUpEngine.h"
 
 #define NUM_ROUND_TRIGGER_LIKE_ME 12
-#define SCORE_TRIGGER_LIKE_ME     1000
+#define SCORE_TRIGGER_LIKE_ME     600
 #define MAX_NAME_LENGTH           128
 #define NUM_FRIENDS_TO_COUNT      3
 
@@ -77,7 +77,7 @@ typedef struct {
 @property (nonatomic, assign) BOOL clockwiseThenCounterclockwise;
 @property (nonatomic, assign) BOOL FacebookLikedAlready;
 @property (nonatomic, assign) BOOL isIAPProductListLoaded;
-
+@property (nonatomic, assign) int lifetimeGameLaunched;
 // for power up system
 @property (nonatomic, strong) PowerUpEngine * powerEngine;
 @property (nonatomic, assign) int closeCallMultiplier;

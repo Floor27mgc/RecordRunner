@@ -379,6 +379,11 @@
 		08A372A316C822B9006819E3 /* ZipUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A371D916C822B9006819E3 /* ZipUtils.m */; };
 		08C86DC11674552F0082DBE5 /* tuffy_bold_italic-charmap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DC01674552F0082DBE5 /* tuffy_bold_italic-charmap.plist */; };
 		08C86DF716745C3F0082DBE5 /* tuffy_bold_italic-charmap.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DF616745C3F0082DBE5 /* tuffy_bold_italic-charmap.png */; };
+		08EEECA417D0665000ABA079 /* NewsletterSubscription.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EEEC9717D0665000ABA079 /* NewsletterSubscription.m */; };
+		08EEECA517D0665000ABA079 /* ChimpKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EEEC9B17D0665000ABA079 /* ChimpKit.m */; };
+		08EEECA617D0665000ABA079 /* CKAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EEEC9D17D0665000ABA079 /* CKAuthViewController.m */; };
+		08EEECA717D0665000ABA079 /* SubscribeAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EEEC9F17D0665000ABA079 /* SubscribeAlertView.m */; };
+		08EEECA817D0665000ABA079 /* CKAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08EEECA117D0665000ABA079 /* CKAuthViewController.xib */; };
 		08F7A8EB174879CC00FB7923 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F7A8EA174879CC00FB7923 /* MessageUI.framework */; };
 		850300ED16A63FBA0035D7C1 /* PowerIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 850300EC16A63FBA0035D7C1 /* PowerIcon.m */; };
 		850300F116A640E50035D7C1 /* Power.m in Sources */ = {isa = PBXBuildFile; fileRef = 850300F016A640E50035D7C1 /* Power.m */; };
@@ -1094,6 +1099,15 @@
 		08C86E2A1674EA550082DBE5 /* tuffy_bold_italic-charmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tuffy_bold_italic-charmap.png"; path = "Resources/Fonts/tuffy_bold_italic-charmap.png"; sourceTree = SOURCE_ROOT; };
 		08C86E2B1674EA550082DBE5 /* west_england-64.fnt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "west_england-64.fnt"; path = "Resources/Fonts/west_england-64.fnt"; sourceTree = SOURCE_ROOT; };
 		08C86E2C1674EA550082DBE5 /* west_england-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "west_england-64.png"; path = "Resources/Fonts/west_england-64.png"; sourceTree = SOURCE_ROOT; };
+		08EEEC9617D0665000ABA079 /* NewsletterSubscription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsletterSubscription.h; sourceTree = "<group>"; };
+		08EEEC9717D0665000ABA079 /* NewsletterSubscription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsletterSubscription.m; sourceTree = "<group>"; };
+		08EEEC9A17D0665000ABA079 /* ChimpKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChimpKit.h; sourceTree = "<group>"; };
+		08EEEC9B17D0665000ABA079 /* ChimpKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChimpKit.m; sourceTree = "<group>"; };
+		08EEEC9C17D0665000ABA079 /* CKAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKAuthViewController.h; sourceTree = "<group>"; };
+		08EEEC9D17D0665000ABA079 /* CKAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKAuthViewController.m; sourceTree = "<group>"; };
+		08EEEC9E17D0665000ABA079 /* SubscribeAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeAlertView.h; sourceTree = "<group>"; };
+		08EEEC9F17D0665000ABA079 /* SubscribeAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeAlertView.m; sourceTree = "<group>"; };
+		08EEECA117D0665000ABA079 /* CKAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKAuthViewController.xib; sourceTree = "<group>"; };
 		08F7A8EA174879CC00FB7923 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		850300EB16A63FBA0035D7C1 /* PowerIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PowerIcon.h; path = sources/PowerIcon.h; sourceTree = SOURCE_ROOT; };
 		850300EC16A63FBA0035D7C1 /* PowerIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PowerIcon.m; path = sources/PowerIcon.m; sourceTree = SOURCE_ROOT; };
@@ -1783,6 +1797,7 @@
 		0840D5AA163F5078003D5FE6 /* sources */ = {
 			isa = PBXGroup;
 			children = (
+				08EEEC9017D0665000ABA079 /* chimpKit2 */,
 				0840D5AC163F50FF003D5FE6 /* game */,
 				0840D5AB163F50D4003D5FE6 /* standard */,
 			);
@@ -2353,6 +2368,55 @@
 			);
 			name = Fonts;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		08EEEC9017D0665000ABA079 /* chimpKit2 */ = {
+			isa = PBXGroup;
+			children = (
+				08EEEC9117D0665000ABA079 /* ChimpClasses */,
+				08EEEC9817D0665000ABA079 /* Core */,
+			);
+			name = chimpKit2;
+			path = sources/chimpKit2;
+			sourceTree = SOURCE_ROOT;
+		};
+		08EEEC9117D0665000ABA079 /* ChimpClasses */ = {
+			isa = PBXGroup;
+			children = (
+				08EEEC9617D0665000ABA079 /* NewsletterSubscription.h */,
+				08EEEC9717D0665000ABA079 /* NewsletterSubscription.m */,
+			);
+			path = ChimpClasses;
+			sourceTree = "<group>";
+		};
+		08EEEC9817D0665000ABA079 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				08EEEC9917D0665000ABA079 /* Classes */,
+				08EEECA017D0665000ABA079 /* Nibs */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		08EEEC9917D0665000ABA079 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				08EEEC9A17D0665000ABA079 /* ChimpKit.h */,
+				08EEEC9B17D0665000ABA079 /* ChimpKit.m */,
+				08EEEC9C17D0665000ABA079 /* CKAuthViewController.h */,
+				08EEEC9D17D0665000ABA079 /* CKAuthViewController.m */,
+				08EEEC9E17D0665000ABA079 /* SubscribeAlertView.h */,
+				08EEEC9F17D0665000ABA079 /* SubscribeAlertView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		08EEECA017D0665000ABA079 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				08EEECA117D0665000ABA079 /* CKAuthViewController.xib */,
+			);
+			path = Nibs;
 			sourceTree = "<group>";
 		};
 		850CF25D16ED974400B292DE /* Flurry iPhone SDK v4 */ = {
@@ -3319,6 +3383,10 @@
 				08331CB217C9CA47009AF30B /* IAPHelper.m in Sources */,
 				85F70FF917CA547D0031777B /* PowerUp.m in Sources */,
 				85F70FFC17CA54970031777B /* PowerUpEngine.m in Sources */,
+				08EEECA417D0665000ABA079 /* NewsletterSubscription.m in Sources */,
+				08EEECA517D0665000ABA079 /* ChimpKit.m in Sources */,
+				08EEECA617D0665000ABA079 /* CKAuthViewController.m in Sources */,
+				08EEECA717D0665000ABA079 /* SubscribeAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
