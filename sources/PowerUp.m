@@ -135,6 +135,11 @@
         return IS_AVAIL_ALREADY_CHOOSEN;
     }
     
+    if ([[GameInfoGlobal sharedGameInfoGlobal] NumPowersSelected] >= 3)
+    {
+        return IS_AVAIL_POWER_LIST_FULL;
+    }
+    
     if ([GameInfoGlobal sharedGameInfoGlobal].coinsInBank < cost)
     {
         return IS_AVAIL_NOT_ENOUGH_MONEY;

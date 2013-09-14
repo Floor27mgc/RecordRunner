@@ -209,19 +209,27 @@ ccColor3B blue_bottom;
     IS_AVAIL_REASON reason = [[GameInfoGlobal sharedGameInfoGlobal].powerEngine IsAvaiable:node.tag];
     self.WarningLabel.visible = false;
     
+    
     switch (reason)
     {
         case IS_AVAIL_OK:
+        {
             [[GameInfoGlobal sharedGameInfoGlobal].powerEngine Purchase:node.tag];
             [self addToPowerList:node.tag];
             break;
+        }
         case IS_AVAIL_NOT_ENOUGH_MONEY:
         {
             CCBAnimationManager* animationManager = self.userObject;
             
             [animationManager runAnimationsForSequenceNamed:@"Warning"];
-        }
             break;
+
+        }
+        case IS_AVAIL_POWER_LIST_FULL:
+        {
+            break;
+        }
         default:
             break;
     }

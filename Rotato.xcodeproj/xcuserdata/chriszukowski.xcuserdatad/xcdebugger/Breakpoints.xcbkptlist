@@ -459,11 +459,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/BuyPowerupMenu.m"
-         timestampString = "400515390.327253"
+         timestampString = "400820442.784027"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "329"
-         endingLineNumber = "329"
+         startingLineNumber = "337"
+         endingLineNumber = "337"
          landmarkName = "@implementation BuyPowerupMenu"
          landmarkType = "3">
       </FileBreakpoint>
@@ -472,11 +472,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/BuyPowerupMenu.m"
-         timestampString = "399782692.380765"
+         timestampString = "400820442.784027"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "257"
-         endingLineNumber = "257"
+         startingLineNumber = "265"
+         endingLineNumber = "265"
          landmarkName = "-pressedCircleMid:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -485,11 +485,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/BuyPowerupMenu.m"
-         timestampString = "400515390.327253"
+         timestampString = "400820442.784027"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "322"
-         endingLineNumber = "322"
+         startingLineNumber = "330"
+         endingLineNumber = "330"
          landmarkName = "-didLoadFromCCB"
          landmarkType = "5">
       </FileBreakpoint>
@@ -550,11 +550,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/BuyPowerupMenu.m"
-         timestampString = "400515390.327253"
+         timestampString = "400820442.784027"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "449"
-         endingLineNumber = "449"
+         startingLineNumber = "457"
+         endingLineNumber = "457"
          landmarkName = "-setDisplayColor:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -563,11 +563,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/BuyPowerupMenu.m"
-         timestampString = "400515390.327253"
+         timestampString = "400820442.784027"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "369"
-         endingLineNumber = "369"
+         startingLineNumber = "377"
+         endingLineNumber = "377"
          landmarkName = "-updateDisplay"
          landmarkType = "5">
       </FileBreakpoint>
@@ -654,11 +654,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/BuyPowerupMenu.m"
-         timestampString = "399782692.380765"
+         timestampString = "400820442.784027"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "274"
-         endingLineNumber = "274"
+         startingLineNumber = "282"
+         endingLineNumber = "282"
          landmarkName = "-pressedCircleRight:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -667,11 +667,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/BuyPowerupMenu.m"
-         timestampString = "400515390.327253"
+         timestampString = "400820442.784027"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "382"
-         endingLineNumber = "382"
+         startingLineNumber = "390"
+         endingLineNumber = "390"
          landmarkName = "-disablePowerButtons:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -680,11 +680,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/BuyPowerupMenu.m"
-         timestampString = "400515390.327253"
+         timestampString = "400820442.784027"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "291"
-         endingLineNumber = "291"
+         startingLineNumber = "299"
+         endingLineNumber = "299"
          landmarkName = "-openMenu"
          landmarkType = "5">
       </FileBreakpoint>
@@ -693,11 +693,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/BuyPowerupMenu.m"
-         timestampString = "400515390.327253"
+         timestampString = "400820442.784027"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "414"
-         endingLineNumber = "414"
+         startingLineNumber = "422"
+         endingLineNumber = "422"
          landmarkName = "-disablePowerButtons:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -706,11 +706,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sources/BuyPowerupMenu.m"
-         timestampString = "400515390.327253"
+         timestampString = "400820442.784027"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "388"
-         endingLineNumber = "388"
+         startingLineNumber = "396"
+         endingLineNumber = "396"
          landmarkName = "-disablePowerButtons:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -738,6 +738,19 @@
          startingLineNumber = "49"
          endingLineNumber = "49"
          landmarkName = "-showNextFrame"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "sources/PowerUp.m"
+         timestampString = "400822273.708249"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "140"
+         endingLineNumber = "140"
+         landmarkName = "-Available"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

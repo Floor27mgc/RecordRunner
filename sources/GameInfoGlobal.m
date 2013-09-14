@@ -262,6 +262,23 @@ static GameInfoGlobal *sharedGameInfoGlobal;
     return YES;
 }
 
+- (int) NumPowersSelected
+{
+    int numPowers = 0;
+    
+    
+    for (NSNumber * pNumber in [GameInfoGlobal sharedGameInfoGlobal].powerList) {
+       PowerUpType pType = (PowerUpType)[pNumber intValue];
+        
+       if (pType != BLANK_SPACE)
+       {
+           numPowers++;
+       }
+    }
+    
+    return numPowers;
+}
+
 
 // -----------------------------------------------------------------------------------
 - (BOOL) WithdrawCoinsFromBank:(int)numCoins

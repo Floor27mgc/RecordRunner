@@ -565,6 +565,18 @@
 									<string>parts_coin.png</string>
 								</array>
 							</dict>
+							<dict>
+								<key>name</key>
+								<string>color</string>
+								<key>type</key>
+								<string>Color3</string>
+								<key>value</key>
+								<array>
+									<integer>239</integer>
+									<integer>227</integer>
+									<integer>159</integer>
+								</array>
+							</dict>
 						</array>
 					</dict>
 					<dict>
@@ -1608,8 +1620,6 @@ increases the multiplier:</string>
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -1669,6 +1679,8 @@ increases the multiplier:</string>
 				<false/>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

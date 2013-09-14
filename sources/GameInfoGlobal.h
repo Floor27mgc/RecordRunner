@@ -41,6 +41,7 @@ typedef struct {
 - (BOOL) WithdrawCoinsFromBank: (int) numCoins;
 - (BOOL) AddCoinsToBank:(int)numCoins;
 - (void) ResetFriendsScores;
+- (int) NumPowersSelected;
 
 
 + (GameInfoGlobal *) sharedGameInfoGlobal;
