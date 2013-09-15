@@ -124,6 +124,8 @@
 		085E9740167597A800A50284 /* tuffy_bold_italic-charmap-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E281674EA550082DBE5 /* tuffy_bold_italic-charmap-hd.png */; };
 		085E9742167597A800A50284 /* west_england-64.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E2B1674EA550082DBE5 /* west_england-64.fnt */; };
 		085E9743167597A800A50284 /* west_england-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E2C1674EA550082DBE5 /* west_england-64.png */; };
+		089D311817E58CF900C4AD08 /* ios7_appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 089D311717E58CF900C4AD08 /* ios7_appIcon.png */; };
+		089D311A17E58D2F00C4AD08 /* ios7_spotlight_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 089D311917E58D2F00C4AD08 /* ios7_spotlight_icon.png */; };
 		08A370D616C821BD006819E3 /* CCBAnimationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 08A3709916C821BD006819E3 /* CCBAnimationManager.h */; };
 		08A370D716C821BD006819E3 /* CCBAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A3709A16C821BD006819E3 /* CCBAnimationManager.m */; };
 		08A370D816C821BD006819E3 /* CCBKeyframe.h in Headers */ = {isa = PBXBuildFile; fileRef = 08A3709B16C821BD006819E3 /* CCBKeyframe.h */; };
@@ -383,7 +385,6 @@
 		08EEECA517D0665000ABA079 /* ChimpKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EEEC9B17D0665000ABA079 /* ChimpKit.m */; };
 		08EEECA617D0665000ABA079 /* CKAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EEEC9D17D0665000ABA079 /* CKAuthViewController.m */; };
 		08EEECA717D0665000ABA079 /* SubscribeAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08EEEC9F17D0665000ABA079 /* SubscribeAlertView.m */; };
-		08EEECA817D0665000ABA079 /* CKAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08EEECA117D0665000ABA079 /* CKAuthViewController.xib */; };
 		08F7A8EB174879CC00FB7923 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F7A8EA174879CC00FB7923 /* MessageUI.framework */; };
 		850300ED16A63FBA0035D7C1 /* PowerIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 850300EC16A63FBA0035D7C1 /* PowerIcon.m */; };
 		850300F116A640E50035D7C1 /* Power.m in Sources */ = {isa = PBXBuildFile; fileRef = 850300F016A640E50035D7C1 /* Power.m */; };
@@ -786,6 +787,8 @@
 		085A7B2F17B1C8C900805022 /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iRate.h; path = sources/iRate.h; sourceTree = SOURCE_ROOT; };
 		085A7B3017B1C8C900805022 /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iRate.m; path = sources/iRate.m; sourceTree = SOURCE_ROOT; };
 		085A7B3217B1C92800805022 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		089D311717E58CF900C4AD08 /* ios7_appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ios7_appIcon.png; sourceTree = "<group>"; };
+		089D311917E58D2F00C4AD08 /* ios7_spotlight_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ios7_spotlight_icon.png; sourceTree = "<group>"; };
 		08A3709916C821BD006819E3 /* CCBAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBAnimationManager.h; sourceTree = "<group>"; };
 		08A3709A16C821BD006819E3 /* CCBAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBAnimationManager.m; sourceTree = "<group>"; };
 		08A3709B16C821BD006819E3 /* CCBKeyframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBKeyframe.h; sourceTree = "<group>"; };
@@ -2574,6 +2577,8 @@
 				E55D0B9A1796CEF100443724 /* small_home.png */,
 				E55D0B9817964C9300443724 /* retina_home.png */,
 				85A6714816546D4800499BF7 /* Default-568h@2x.png */,
+				089D311717E58CF900C4AD08 /* ios7_appIcon.png */,
+				089D311917E58D2F00C4AD08 /* ios7_spotlight_icon.png */,
 				DC0C4A07154AB4DD00B4B727 /* RecordRunnerARC */,
 				DC0C49F4154AB4DD00B4B727 /* Frameworks */,
 				DC0C49F2154AB4DD00B4B727 /* Products */,
@@ -3034,6 +3039,7 @@
 				085E972F167597A800A50284 /* helvetica-geneva-32.png in Resources */,
 				085E9730167597A800A50284 /* konqa32-hd.fnt in Resources */,
 				085E9731167597A800A50284 /* konqa32-hd.png in Resources */,
+				089D311817E58CF900C4AD08 /* ios7_appIcon.png in Resources */,
 				085E9732167597A800A50284 /* konqa32.fnt in Resources */,
 				085E9733167597A800A50284 /* konqa32.png in Resources */,
 				085E9734167597A800A50284 /* larabie-16-hd.plist in Resources */,
@@ -3200,6 +3206,7 @@
 				E54E158C172C7A2A0022DACE /* bannerRed-hd.png in Resources */,
 				E54C884117766B8200D546F2 /* parts_record_inner.png in Resources */,
 				E54C884217766B8200D546F2 /* parts_record_inner-hd.png in Resources */,
+				089D311A17E58D2F00C4AD08 /* ios7_spotlight_icon.png in Resources */,
 				E55D11BE17863D620072B6AC /* explosion.png in Resources */,
 				E55D11BF17863D620072B6AC /* explosion-hd.png in Resources */,
 				E55D11C61787489E0072B6AC /* parts_wedge.png in Resources */,
@@ -3539,8 +3546,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -3553,8 +3560,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PROVISIONING_PROFILE = "BF7A02AA-8BD8-46DF-84D3-28BF7AA80356";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				PROVISIONING_PROFILE = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3568,8 +3575,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -3580,8 +3587,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BF7A02AA-8BD8-46DF-84D3-28BF7AA80356";
+				PROVISIONING_PROFILE = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3592,8 +3599,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3612,8 +3619,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Rotato;
-				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				PROVISIONING_PROFILE = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -3624,8 +3631,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Zukowski (J39RH82AEG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2d-2.x-ARC-iOS/Prefix.pch";
@@ -3643,8 +3650,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Rotato;
-				PROVISIONING_PROFILE = "2DCB72B6-CF7B-441A-811C-871D021488BB";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2DCB72B6-CF7B-441A-811C-871D021488BB";
+				PROVISIONING_PROFILE = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

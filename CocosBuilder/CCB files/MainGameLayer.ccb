@@ -7,7 +7,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>6</integer>
+	<integer>5</integer>
 	<key>fileType</key>
 	<string>CocosBuilder</string>
 	<key>fileVersion</key>
@@ -161,7 +161,7 @@
 						<key>value</key>
 						<array>
 							<real>160</real>
-							<real>306</real>
+							<real>279</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -240,7 +240,7 @@
 						<key>value</key>
 						<array>
 							<real>48.480903625488281</real>
-							<real>97</real>
+							<real>92</real>
 							<integer>4</integer>
 						</array>
 					</dict>
@@ -344,6 +344,8 @@
 						<string>0</string>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -593,7 +595,7 @@
 						<key>value</key>
 						<array>
 							<real>160</real>
-							<real>306</real>
+							<real>279</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -925,7 +927,7 @@
 						<key>value</key>
 						<array>
 							<real>305</real>
-							<real>302</real>
+							<real>273</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -1159,7 +1161,7 @@
 									<key>value</key>
 									<array>
 										<real>305</real>
-										<real>307</real>
+										<real>280</real>
 									</array>
 								</dict>
 							</array>
@@ -1224,8 +1226,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>201</real>
-							<real>307</real>
+							<real>305</real>
+							<real>280</real>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -1288,7 +1290,7 @@
 						<key>type</key>
 						<string>Byte</string>
 						<key>value</key>
-						<integer>0</integer>
+						<integer>255</integer>
 					</dict>
 				</array>
 				<key>seqExpanded</key>
@@ -2116,7 +2118,7 @@
 						<key>value</key>
 						<array>
 							<real>18</real>
-							<real>97</real>
+							<real>92</real>
 							<integer>4</integer>
 						</array>
 					</dict>
@@ -2245,9 +2247,9 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>20</real>
-							<real>465</real>
-							<integer>0</integer>
+							<real>6.25</real>
+							<real>92</real>
+							<integer>4</integer>
 						</array>
 					</dict>
 					<dict>

@@ -60,7 +60,7 @@
         
         //Click start makes sure we dont keep running the start animation.
         clickedStart = NO;
-        
+        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];        
         GKLocalPlayer __unsafe_unretained *localPlayer = [GKLocalPlayer localPlayer];
         //[self loadAchievements];
         localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){

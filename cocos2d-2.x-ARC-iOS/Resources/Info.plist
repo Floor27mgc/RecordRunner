@@ -25,6 +25,8 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
+				<string>ios7_spotlight_icon</string>
+				<string>ios7_appIcon</string>
 				<string>small_home.png</string>
 				<string>retina_home.png</string>
 				<string>Icon-72.png</string>
