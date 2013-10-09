@@ -18,6 +18,7 @@
 #import "MainMenuSocialBox.h"
 #import "MainMenuSettingsBox.h"
 #import "MainMenuHelpBox.h"
+#import "GameLayer.h"
 #import "Score.h"
 #import "common.h"
 #import "RotatoIAPHelper.h"
@@ -66,6 +67,10 @@
         localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){
             if (viewController != nil)
             {
+                if ([GameLayer sharedGameLayer] != nil)
+                {
+                    [[GameLayer sharedGameLayer] pauseSchedulerAndActions];
+                }
                 gameCenterViewController = [[UIViewController alloc]init];
                 gameCenterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, COMMON_SCREEN_WIDTH, COMMON_SCREEN_HEIGHT)];
                 gameCenterViewController.view = gameCenterView;
@@ -75,11 +80,13 @@
             }
             else if (localPlayer.isAuthenticated)
             {
+                
                 NSLog (@"We are in ");
             }
             else
             {
             }
+            [[GameLayer sharedGameLayer] resumeSchedulerAndActions];
         };
         
         // Load up in-app purchase items
