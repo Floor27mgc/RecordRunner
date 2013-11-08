@@ -134,6 +134,24 @@
         case STATS_DOUBLE_COINS:
             return @"double_coin_value";
             break;
+        case POWERUP_RECORD_SPINS_SLOWER:
+            return @"powerup_record_spins_slower";
+            break;
+        case POWERUP_INCREASE_STAR_SPAWN_RATE:
+            return @"powerup_increase_start_spawn_rate";
+            break;
+        case POWERUP_CLOSE_CALL_TIMES_2:
+            return @"powerup_close_call_times_2";
+            break;
+        case POWERUP_MINIMUM_MULTIPLIER_OF_3:
+            return @"powerup_minimum_multiplier_of_3";
+            break;
+        case POWERUP_START_WITH_SHIELD:
+            return @"powerup_start_with_shield";
+            break;
+        case POWERUP_DOUBLE_COINS:
+            return @"powerup_double_coins";
+            break;
         case STATS_TYPE_MAX:
         default:
             return @"";

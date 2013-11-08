@@ -7,6 +7,7 @@
 //
 
 #import "PowerUpEngine.h"
+#import "GameInfoGlobal.h"
 
 @implementation PowerUpEngine
 
@@ -64,6 +65,27 @@
 {
     if (type >= numPowerUps) {
         return NO;
+    }
+    
+    switch (type) {
+        case RECORD_SPINS_SLOWER:
+            [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer at:POWERUP_RECORD_SPINS_SLOWER] tick];
+            break;
+        case CLOSE_CALL_TIMES_2:
+            [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer at:POWERUP_CLOSE_CALL_TIMES_2] tick];
+            break;
+        case START_WITH_SHIELD:
+            [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer at:POWERUP_START_WITH_SHIELD] tick];
+            break;
+        case INCREASE_STAR_SPAWN_RATE:
+            [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer at:POWERUP_INCREASE_STAR_SPAWN_RATE] tick];
+            break;
+        case MINIMUM_MULTIPLIER_OF_3:
+            [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer at:POWERUP_MINIMUM_MULTIPLIER_OF_3] tick];
+            break;
+        case DOUBLE_COINS:
+            [[[GameInfoGlobal sharedGameInfoGlobal].statsContainer at:POWERUP_DOUBLE_COINS] tick];
+            break;
     }
     
     return [[PowerUps objectAtIndex:type] Purchase];
