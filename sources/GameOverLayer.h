@@ -36,6 +36,7 @@
 
 @property (nonatomic, strong) CCLabelTTF * finalLapsLabel;
 @property (nonatomic, strong) CCLabelTTF * finalLapsRecordLabel;
+@property (nonatomic, strong) CCLabelTTF * coinsLabel;
 
 @property (nonatomic, strong) CCControlButton * yesButton;
 

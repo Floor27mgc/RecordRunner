@@ -115,12 +115,6 @@ ccColor3B blue_bottom;
     
     [animationManager runAnimationsForSequenceNamed:@"PowerupPopOut"];
     [[GameInfoGlobal sharedGameInfoGlobal].powerEngine setAllPowerUpUnchoosen];
-    [self removeFromPowerList:0];
-    [self.circle_icon_left setTexture:[[CCTextureCache sharedTextureCache] addImage:@"blank.png"]];
-    [self removeFromPowerList:1];
-    [self.circle_icon_center setTexture:[[CCTextureCache sharedTextureCache] addImage:@"blank.png"]];
-    [self removeFromPowerList:2];
-    [self.circle_icon_right setTexture:[[CCTextureCache sharedTextureCache] addImage:@"blank.png"]];
 }
 
 // -----------------------------------------------------------------------------------
@@ -342,6 +336,12 @@ ccColor3B blue_bottom;
         //Game is over, start the next round
         if (self.isQuitting)
         {
+            [self removeFromPowerList:0];
+            [self.circle_icon_left setTexture:[[CCTextureCache sharedTextureCache] addImage:@"blank.png"]];
+            [self removeFromPowerList:1];
+            [self.circle_icon_center setTexture:[[CCTextureCache sharedTextureCache] addImage:@"blank.png"]];
+            [self removeFromPowerList:2];
+            [self.circle_icon_right setTexture:[[CCTextureCache sharedTextureCache] addImage:@"blank.png"]];
                 [[GameLayer sharedGameLayer] startTheNextRound];
         }
         else

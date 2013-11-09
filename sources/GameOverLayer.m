@@ -28,6 +28,7 @@
 
 @synthesize finalLapsLabel;
 @synthesize finalLapsRecordLabel;
+@synthesize coinsLabel;
 
 @synthesize emailView;
 @synthesize emailViewController;
@@ -109,8 +110,6 @@ gotMaxRotations: (BOOL)mostRotations
     [GameInfoGlobal sharedGameInfoGlobal].lifetimeRoundsPlayed++;
     [[GameInfoGlobal sharedGameInfoGlobal] logLifeTimeAchievements];
     
-    // reset the per-life statistics
-    [[GameInfoGlobal sharedGameInfoGlobal] resetPerLifeStatistics];
     
     // reset the multiplier
     //[[GameLayer sharedGameLayer].multiplier reset];
@@ -135,6 +134,17 @@ gotMaxRotations: (BOOL)mostRotations
     //Set the maxrotations
     [self.finalLapsRecordLabel setString:[NSString stringWithFormat:@"%d",
                                     highRotations]];
+    
+    //Set the coins label:
+    
+    [self.coinsLabel setString:[NSString stringWithFormat:@"%d",
+                                          [GameInfoGlobal sharedGameInfoGlobal].numCoinsThisLife]];
+    
+    
+    // reset the per-life statistics
+    [[GameInfoGlobal sharedGameInfoGlobal] resetPerLifeStatistics];
+    
+
     
     
     
