@@ -54,6 +54,7 @@
 @synthesize topFriendsScores;
 @synthesize coinValue;
 @synthesize lifetimeGameLaunched;
+@synthesize lifetimeCoinsEarned;
 
 static GameInfoGlobal *sharedGameInfoGlobal;
 
@@ -159,6 +160,9 @@ static GameInfoGlobal *sharedGameInfoGlobal;
     // update the lifetime revolution
     [standardUserDefaults setInteger:lifetimeRoundsPlayed forKey:@"lifetimeRoundsPlayed"];
 
+    // update the lifetime revolution
+    [standardUserDefaults setInteger:lifetimeCoinsEarned forKey:@"lifetimeCoinsEarned"];
+    
     // update the max number of revolutions achieved in a life
     [standardUserDefaults setInteger:maxNumRevolutionsInALife forKey:@"maxRevolutionsInALife"];
     
@@ -190,6 +194,10 @@ static GameInfoGlobal *sharedGameInfoGlobal;
     // update the lifetime rounds played
     [GameInfoGlobal sharedGameInfoGlobal].lifetimeRoundsPlayed = 0;
     [standardUserDefaults setInteger:lifetimeRoundsPlayed forKey:@"lifetimeRoundsPlayed"];
+    
+    // update the lifetime rounds played
+    [GameInfoGlobal sharedGameInfoGlobal].lifetimeCoinsEarned = 0;
+    [standardUserDefaults setInteger:lifetimeCoinsEarned forKey:@"lifetimeCoinsEarned"];
     
     // update the lifetime max revolutions
     [GameInfoGlobal sharedGameInfoGlobal].maxNumRevolutionsInALife = 0;

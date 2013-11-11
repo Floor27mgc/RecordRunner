@@ -66,6 +66,7 @@ typedef struct {
 @property (nonatomic, assign) int coinsInBank;
 @property (nonatomic, assign) int lifetimeRevolutions;
 @property (nonatomic, assign) int lifetimeRoundsPlayed;
+@property (nonatomic, assign) int lifetimeCoinsEarned;
 @property (nonatomic, assign) BOOL hit40scratchesInSingleRevolution;
 @property (nonatomic, assign) BOOL isBackgroundMusicOn;
 @property (nonatomic, assign) BOOL isSoundEffectOn;

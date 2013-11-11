@@ -290,27 +290,27 @@
         case 25:
             partialAchievement = YES;
             currentPercentAchieved =
-                ((double)[GameInfoGlobal sharedGameInfoGlobal].lifetimeRevolutions / 1000.0)
+                ((double)[GameInfoGlobal sharedGameInfoGlobal].lifetimeCoinsEarned / 1000.0)
                     * 100.0;
-            achieved = ([GameInfoGlobal sharedGameInfoGlobal].coinsInBank >= 1000);
+            achieved = ([GameInfoGlobal sharedGameInfoGlobal].lifetimeCoinsEarned >= 1000);
             break;
             
             // Collect 5000 coins
         case 26:
             partialAchievement = YES;
             currentPercentAchieved =
-                ((double)[GameInfoGlobal sharedGameInfoGlobal].lifetimeRevolutions / 5000.0)
+                ((double)[GameInfoGlobal sharedGameInfoGlobal].lifetimeCoinsEarned / 5000.0)
                     * 100.0;
-            achieved = ([GameInfoGlobal sharedGameInfoGlobal].coinsInBank >= 5000);
+            achieved = ([GameInfoGlobal sharedGameInfoGlobal].lifetimeCoinsEarned >= 5000);
             break;
             
             // Collect 10000 coins
         case 27:
             partialAchievement = YES;
             currentPercentAchieved =
-                ((double)[GameInfoGlobal sharedGameInfoGlobal].lifetimeRevolutions / 10000.0)
+                ((double)[GameInfoGlobal sharedGameInfoGlobal].lifetimeCoinsEarned / 10000.0)
                     * 100.0;
-            achieved = ([GameInfoGlobal sharedGameInfoGlobal].coinsInBank >= 10000);
+            achieved = ([GameInfoGlobal sharedGameInfoGlobal].lifetimeCoinsEarned >= 10000);
             break;
             
             // Go 40 revolutions in a single life

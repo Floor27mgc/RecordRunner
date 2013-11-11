@@ -77,6 +77,10 @@
         // and update max accordingly
         [GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch ++;
 
+        
+        // increment lifetime coins counter
+        [GameInfoGlobal sharedGameInfoGlobal].lifetimeCoinsEarned++;
+        
         if ([GameInfoGlobal sharedGameInfoGlobal].coinsThisScratch >
             [GameInfoGlobal sharedGameInfoGlobal].maxCoinsPerScratch) {
 
