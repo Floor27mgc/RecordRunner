@@ -228,9 +228,9 @@ static GameInfoGlobal *sharedGameInfoGlobal;
     }
     else
     {
-        // Matt, please fix this.  Need to set it based on persistence area.
-        isSoundEffectOn = YES;
-        isBackgroundMusicOn = YES;
+        NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+        isSoundEffectOn = [standardUserDefaults boolForKey:@"isSoundEffectOn"];
+        isBackgroundMusicOn = [standardUserDefaults boolForKey:@"isBackgroundMusicOn"];
     }
 }
 
@@ -238,12 +238,19 @@ static GameInfoGlobal *sharedGameInfoGlobal;
 -(void) setMusic: (BOOL) musicSetting
 {
     isBackgroundMusicOn = musicSetting;
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    [standardUserDefaults setBool:musicSetting forKey:@"isBackgroundMusicOn"];
+    [standardUserDefaults synchronize];
+
 }
 
 // -----------------------------------------------------------------------------------
 - (void) setSound: (BOOL) soundSetting
 {
     isSoundEffectOn = soundSetting;
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    [standardUserDefaults setBool:soundSetting forKey:@"isSoundEffectOn"];
+    [standardUserDefaults synchronize];
 }
 
 // -----------------------------------------------------------------------------------

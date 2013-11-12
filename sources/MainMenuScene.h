@@ -17,7 +17,9 @@
 #import <GameKit/GameKit.h>
 #import "CCBAnimationManager.h"
 
+static bool isGameRunning = false;
 @interface MainMenuScene : CCLayer <CCBAnimationManagerDelegate, GKGameCenterControllerDelegate>
+
 
 - (void) loadAchievements;
 
