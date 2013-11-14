@@ -61,16 +61,17 @@
         
         //Click start makes sure we dont keep running the start animation.
         clickedStart = NO;
+        isGameRunning = NO;
         [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];        
         GKLocalPlayer __unsafe_unretained *localPlayer = [GKLocalPlayer localPlayer];
         //[self loadAchievements];
         localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error){
-            if (viewController != nil)
+            if ((isGameRunning == NO) && viewController != nil)
             {
-                if ([GameLayer sharedGameLayer] != nil)
+/*                if ([GameLayer sharedGameLayer] != nil)
                 {
                     [[GameLayer sharedGameLayer] pauseSchedulerAndActions];
-                }
+                } */
                 gameCenterViewController = [[UIViewController alloc]init];
                 gameCenterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, COMMON_SCREEN_WIDTH, COMMON_SCREEN_HEIGHT)];
                 gameCenterViewController.view = gameCenterView;
@@ -85,8 +86,9 @@
             }
             else
             {
+                NSLog(@"Failed Login condition");
             }
-            [[GameLayer sharedGameLayer] resumeSchedulerAndActions];
+            //[[GameLayer sharedGameLayer] resumeSchedulerAndActions];
         };
         
         // Load up in-app purchase items
@@ -150,7 +152,7 @@
         CCBAnimationManager* animationManager = self.userObject;
         clickedStart = YES;
         [animationManager runAnimationsForSequenceNamed:@"ClickedStart"];        
-       
+        isGameRunning = YES;
     }
 }
 

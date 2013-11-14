@@ -10,15 +10,20 @@
 #import "NewsletterSubscription.h"
 
 @implementation NewsletterSubscription
+static bool hasSubscriptionBoxShownThisRun = NO;
 -(void) showSubscriptionBox
 {
-    SubscribeAlertView *alert = [[SubscribeAlertView alloc] initWithTitle:@"Subscribe"
-                                                                  message:@"Like ROTATO? Want to know when our games go on sale? Sign up for the news letter"
-                                                                   apiKey:@"dac566acd8c13e49bf2170c3f29d8e6e-us7"
-                                                                   listId:@"ce39e6a368"
-                                                        cancelButtonTitle:@"Cancel"
-                                                     subscribeButtonTitle:@"Subscribe"];
-    [alert show];
+    if (hasSubscriptionBoxShownThisRun == NO)
+    {
+        SubscribeAlertView *alert = [[SubscribeAlertView alloc] initWithTitle:@"Subscribe"
+                                                                      message:@"Like ROTATO? Want to know when our games go on sale? Sign up for the news letter"
+                                                                       apiKey:@"dac566acd8c13e49bf2170c3f29d8e6e-us7"
+                                                                       listId:@"ce39e6a368"
+                                                            cancelButtonTitle:@"Cancel"
+                                                         subscribeButtonTitle:@"Subscribe"];
+        hasSubscriptionBoxShownThisRun = YES;
+        [alert show];
+    }
     
 } 
 
