@@ -148,7 +148,7 @@ gotMaxRotations: (BOOL)mostRotations
     
     
     
-    GKScore *myScoreValue = [[GKScore alloc] initWithCategory:@"RotatoLeaderBoard"];
+    GKScore *myScoreValue = [[GKScore alloc] initWithCategory:@"grp.RotatoLeaderBoard.common"];
     myScoreValue.value = myFinalScore;
     
     [myScoreValue reportScoreWithCompletionHandler:^(NSError *error){
