@@ -7,6 +7,7 @@
 //
 
 #import "cocos2d.h"
+#import "Chartboost.h"
 
 #import "AppDelegate.h"
 #import "GameLayer.h"
@@ -145,6 +146,26 @@
         }];*/
 		[director_ resume];
     }
+    
+    Chartboost *cb = [Chartboost sharedChartboost];
+    
+    cb.appId = @"5338420e2d42da752c2a1261";
+    cb.appSignature = @"129c720b1e25a9db347d7ac9bb07e59f635da9f5";
+    
+    // Required for use of delegate methods. See "Advanced Topics" section below.
+    cb.delegate = self;
+    
+    // Begin a user session. Must not be dependent on user actions or any prior network requests.
+    // Must be called every time your app becomes active.
+    [cb startSession];
+    
+    // Show an interstitial
+    [cb showInterstitial];
+}
+
+// prevent pre-game interstitials from chartboost
+- (BOOL)shouldRequestInterstitialsInFirstSession {
+    return NO;
 }
 
 -(void) applicationDidEnterBackground:(UIApplication*)application

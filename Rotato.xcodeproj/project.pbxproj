@@ -64,7 +64,7 @@
 		0840D5A3163F4C2A003D5FE6 /* GameObjectPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0840D5A2163F4C2A003D5FE6 /* GameObjectPlayer.m */; };
 		085A7B2E17AF859100805022 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 85A6714816546D4800499BF7 /* Default-568h@2x.png */; };
 		085A7B3117B1C8C900805022 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 085A7B3017B1C8C900805022 /* iRate.m */; };
-		085A7B3317B1C92800805022 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 085A7B3217B1C92800805022 /* StoreKit.framework */; };
+		085A7B3317B1C92800805022 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 085A7B3217B1C92800805022 /* StoreKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		085E9710167596E000A50284 /* bitmapFontTest.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E001674EA540082DBE5 /* bitmapFontTest.fnt */; };
 		085E9711167596E500A50284 /* bitmapFontTest.png in Resources */ = {isa = PBXBuildFile; fileRef = 08C86E011674EA540082DBE5 /* bitmapFontTest.png */; };
 		085E9712167597A800A50284 /* A Damn Mess.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08C86DF81674EA540082DBE5 /* A Damn Mess.ttf */; };
@@ -459,7 +459,7 @@
 		850CF30A16ED974400B292DE /* Flurry_Analytics.html in Resources */ = {isa = PBXBuildFile; fileRef = 850CF2AD16ED974400B292DE /* Flurry_Analytics.html */; };
 		850CF30B16ED974400B292DE /* Flurry_AppSpot.html in Resources */ = {isa = PBXBuildFile; fileRef = 850CF2AE16ED974400B292DE /* Flurry_AppSpot.html */; };
 		850CF30C16ED974400B292DE /* Flurry-iOS-ReleaseNotesv4.1.0.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 850CF2AF16ED974400B292DE /* Flurry-iOS-ReleaseNotesv4.1.0.pdf */; };
-		850CF30D16ED974400B292DE /* libFlurryAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 850CF2B316ED974400B292DE /* libFlurryAds.a */; };
+		850CF30D16ED974400B292DE /* libFlurryAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 850CF2B316ED974400B292DE /* libFlurryAds.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		850CF30E16ED974400B292DE /* FlurryAnalytics-READMEv4.x.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 850CF2B416ED974400B292DE /* FlurryAnalytics-READMEv4.x.pdf */; };
 		850CF30F16ED974400B292DE /* FlurryAppSpot-iOS-READMEv4.x.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 850CF2B516ED974400B292DE /* FlurryAppSpot-iOS-READMEv4.x.pdf */; };
 		850CF31016ED974400B292DE /* iOS-4.x-Upgrade-README.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 850CF2B616ED974400B292DE /* iOS-4.x-Upgrade-README.pdf */; };
@@ -486,10 +486,13 @@
 		853F15B5172C9C20004E33B6 /* parts_record_invincible-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15AB172C9C20004E33B6 /* parts_record_invincible-hd.png */; };
 		853F15B6172C9C20004E33B6 /* parts_shield_invincible.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15AC172C9C20004E33B6 /* parts_shield_invincible.png */; };
 		853F15B7172C9C20004E33B6 /* parts_shield_invincible-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15AD172C9C20004E33B6 /* parts_shield_invincible-hd.png */; };
-		8562E8D018FB13C200421FAA /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8562E88118FB13C200421FAA /* libGoogleAdMobAds.a */; };
 		8562E8D118FB13C200421FAA /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8562E88218FB13C200421FAA /* README.txt */; };
-		8562E8D918FB13F000421FAA /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8562E8D818FB13F000421FAA /* AdSupport.framework */; };
+		8562E8D918FB13F000421FAA /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8562E8D818FB13F000421FAA /* AdSupport.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		8562E8DB18FB145200421FAA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8562E8DA18FB145200421FAA /* CoreTelephony.framework */; };
+		856C09511910A2120023D6F9 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 856C093A1910A2120023D6F9 /* CHANGELOG.md */; };
+		856C09521910A2120023D6F9 /* libChartboost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 856C093C1910A2120023D6F9 /* libChartboost.a */; };
+		856C09531910A2120023D6F9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 856C093D1910A2120023D6F9 /* README.md */; };
+		856C09601910A5D10023D6F9 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 856C095F1910A5D10023D6F9 /* libGoogleAdMobAds.a */; };
 		8583C66A16802C9C003A3213 /* GameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8583C66916802C9C003A3213 /* GameOverLayer.m */; };
 		85A671361651D14000499BF7 /* Bomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671351651D14000499BF7 /* Bomb.m */; };
 		85A6713A1651D16000499BF7 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A671391651D16000499BF7 /* Coin.m */; };
@@ -1231,6 +1234,11 @@
 		8562E88218FB13C200421FAA /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.txt; path = "../../../build/Austin/rotato_master_release/RecordRunner/cocos2d-2.x-ARC-iOS/libs/GoogleAdMob/README.txt"; sourceTree = "<group>"; };
 		8562E8D818FB13F000421FAA /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		8562E8DA18FB145200421FAA /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		856C093A1910A2120023D6F9 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		856C093B1910A2120023D6F9 /* Chartboost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chartboost.h; sourceTree = "<group>"; };
+		856C093C1910A2120023D6F9 /* libChartboost.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libChartboost.a; sourceTree = "<group>"; };
+		856C093D1910A2120023D6F9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		856C095F1910A5D10023D6F9 /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAdMobAds.a; path = "cocos2d-2.x-ARC-iOS/libs/GoogleAdMob/libGoogleAdMobAds.a"; sourceTree = "<group>"; };
 		8583C66816802C9C003A3213 /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverLayer.h; path = sources/GameOverLayer.h; sourceTree = SOURCE_ROOT; };
 		8583C66916802C9C003A3213 /* GameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverLayer.m; path = sources/GameOverLayer.m; sourceTree = SOURCE_ROOT; };
 		85A671341651D13F00499BF7 /* Bomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bomb.h; path = sources/Bomb.h; sourceTree = SOURCE_ROOT; };
@@ -1482,6 +1490,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				856C09601910A5D10023D6F9 /* libGoogleAdMobAds.a in Frameworks */,
 				8562E8DB18FB145200421FAA /* CoreTelephony.framework in Frameworks */,
 				8562E8D918FB13F000421FAA /* AdSupport.framework in Frameworks */,
 				085A7B3317B1C92800805022 /* StoreKit.framework in Frameworks */,
@@ -1495,7 +1504,7 @@
 				DC0C49F8154AB4DD00B4B727 /* OpenGLES.framework in Frameworks */,
 				DC0C49FA154AB4DD00B4B727 /* OpenAL.framework in Frameworks */,
 				DC0C49FC154AB4DD00B4B727 /* AudioToolbox.framework in Frameworks */,
-				8562E8D018FB13C200421FAA /* libGoogleAdMobAds.a in Frameworks */,
+				856C09521910A2120023D6F9 /* libChartboost.a in Frameworks */,
 				DC0C49FE154AB4DD00B4B727 /* AVFoundation.framework in Frameworks */,
 				DC0C4A00154AB4DD00B4B727 /* UIKit.framework in Frameworks */,
 				DC0C4A02154AB4DD00B4B727 /* Foundation.framework in Frameworks */,
@@ -2500,9 +2509,29 @@
 			path = "../../../../Documents/Floor 27 Industries LLC/GoogleAdMobAdsSdkiOS-6.8.0";
 			sourceTree = "<group>";
 		};
+		856C09381910A2120023D6F9 /* Chartboost */ = {
+			isa = PBXGroup;
+			children = (
+				856C09391910A2120023D6F9 /* Chartboost */,
+			);
+			path = Chartboost;
+			sourceTree = "<group>";
+		};
+		856C09391910A2120023D6F9 /* Chartboost */ = {
+			isa = PBXGroup;
+			children = (
+				856C093A1910A2120023D6F9 /* CHANGELOG.md */,
+				856C093B1910A2120023D6F9 /* Chartboost.h */,
+				856C093C1910A2120023D6F9 /* libChartboost.a */,
+				856C093D1910A2120023D6F9 /* README.md */,
+			);
+			path = Chartboost;
+			sourceTree = "<group>";
+		};
 		DC0C49E6154AB4DD00B4B727 = {
 			isa = PBXGroup;
 			children = (
+				856C09381910A2120023D6F9 /* Chartboost */,
 				E593E57717AEFF8800858E06 /* Default.png */,
 				E593E57517AEFF6300858E06 /* Default@2x.png */,
 				E55D0B9A1796CEF100443724 /* small_home.png */,
@@ -2528,23 +2557,24 @@
 		DC0C49F4154AB4DD00B4B727 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8562E8DA18FB145200421FAA /* CoreTelephony.framework */,
-				8562E8D818FB13F000421FAA /* AdSupport.framework */,
+				856C095F1910A5D10023D6F9 /* libGoogleAdMobAds.a */,
 				8562E7EC18FB13C100421FAA /* AdMob */,
-				085A7B3217B1C92800805022 /* StoreKit.framework */,
-				0813D05317931D90002B3625 /* Social.framework */,
-				08F7A8EA174879CC00FB7923 /* MessageUI.framework */,
-				850CF25B16ED920D00B292DE /* MediaPlayer.framework */,
-				850CF25916ED8F6900B292DE /* SystemConfiguration.framework */,
-				DC0C49F5154AB4DD00B4B727 /* QuartzCore.framework */,
-				DC0C49F7154AB4DD00B4B727 /* OpenGLES.framework */,
-				DC0C49F9154AB4DD00B4B727 /* OpenAL.framework */,
+				8562E8D818FB13F000421FAA /* AdSupport.framework */,
 				DC0C49FB154AB4DD00B4B727 /* AudioToolbox.framework */,
 				DC0C49FD154AB4DD00B4B727 /* AVFoundation.framework */,
-				DC0C49FF154AB4DD00B4B727 /* UIKit.framework */,
-				DC0C4A01154AB4DD00B4B727 /* Foundation.framework */,
 				DC0C4A03154AB4DD00B4B727 /* CoreGraphics.framework */,
+				8562E8DA18FB145200421FAA /* CoreTelephony.framework */,
+				DC0C4A01154AB4DD00B4B727 /* Foundation.framework */,
 				DC0C4A05154AB4DD00B4B727 /* GameKit.framework */,
+				850CF25B16ED920D00B292DE /* MediaPlayer.framework */,
+				08F7A8EA174879CC00FB7923 /* MessageUI.framework */,
+				DC0C49F9154AB4DD00B4B727 /* OpenAL.framework */,
+				DC0C49F7154AB4DD00B4B727 /* OpenGLES.framework */,
+				DC0C49F5154AB4DD00B4B727 /* QuartzCore.framework */,
+				0813D05317931D90002B3625 /* Social.framework */,
+				085A7B3217B1C92800805022 /* StoreKit.framework */,
+				850CF25916ED8F6900B292DE /* SystemConfiguration.framework */,
+				DC0C49FF154AB4DD00B4B727 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2915,6 +2945,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = DC0C49E6154AB4DD00B4B727;
 			productRefGroup = DC0C49F2154AB4DD00B4B727 /* Products */;
@@ -3116,6 +3147,7 @@
 				083B094F170AB0EC00EF0DB0 /* parts_record.png in Resources */,
 				083B0950170AB0EC00EF0DB0 /* parts_shield-hd.png in Resources */,
 				083B0951170AB0EC00EF0DB0 /* parts_shield.png in Resources */,
+				856C09531910A2120023D6F9 /* README.md in Resources */,
 				083B0952170AB0EC00EF0DB0 /* player_with_shield.jpg in Resources */,
 				083B0953170AB0EC00EF0DB0 /* Unticked-hd.png in Resources */,
 				083B0954170AB0EC00EF0DB0 /* Unticked.png in Resources */,
@@ -3263,6 +3295,7 @@
 				E50C785C17D3D39900DEC22E /* gui_power_icon_coins.png in Resources */,
 				E50C785D17D3D39900DEC22E /* gui_power_icon_coins-hd.png in Resources */,
 				E50C785E17D3D39900DEC22E /* gui_power_icon_stars.png in Resources */,
+				856C09511910A2120023D6F9 /* CHANGELOG.md in Resources */,
 				E50C785F17D3D39900DEC22E /* gui_power_icon_stars-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3529,7 +3562,7 @@
 		DC0C4B81154AB4DF00B4B727 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
@@ -3543,10 +3576,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/mattcleveland/build/Austin/rotato_master_release/RecordRunner/cocos2d-2.x-ARC-iOS/libs/Flurry\\ iPhone\\ SDK\\ v4/Flurry",
-					"$(SRCROOT)/cocos2d-2.x-ARC-iOS/libs/Flurry\\ iPhone\\ SDK\\ v4/FlurryAds",
-					"/Users/mattcleveland/Documents/Floor\\ 27\\ Industries\\ LLC/GoogleAdMobAdsSdkiOS-6.8.0/Add-ons/GoogleAnalyticsServicesiOS_3.03",
-					"/Users/mattcleveland/Documents/Floor\\ 27\\ Industries\\ LLC/GoogleAdMobAdsSdkiOS-6.8.0",
+					"$(PROJECT_DIR)/cocos2d-2.x-ARC-iOS/libs/Flurry\\ iPhone\\ SDK\\ v4/**",
+					"$(PROJECT_DIR)/Chartboost/Chartboost",
+					"$(PROJECT_DIR)/cocos2d-2.x-ARC-iOS/libs/GoogleAdMob",
 				);
 				OTHER_LDFLAGS = (
 					"-lz",
@@ -3563,7 +3595,7 @@
 		DC0C4B82154AB4DF00B4B727 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
@@ -3576,10 +3608,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/mattcleveland/build/Austin/rotato_master_release/RecordRunner/cocos2d-2.x-ARC-iOS/libs/Flurry\\ iPhone\\ SDK\\ v4/Flurry",
-					"$(SRCROOT)/cocos2d-2.x-ARC-iOS/libs/Flurry\\ iPhone\\ SDK\\ v4/FlurryAds",
-					"/Users/mattcleveland/Documents/Floor\\ 27\\ Industries\\ LLC/GoogleAdMobAdsSdkiOS-6.8.0/Add-ons/GoogleAnalyticsServicesiOS_3.03",
-					"/Users/mattcleveland/Documents/Floor\\ 27\\ Industries\\ LLC/GoogleAdMobAdsSdkiOS-6.8.0",
+					"$(PROJECT_DIR)/cocos2d-2.x-ARC-iOS/libs/Flurry\\ iPhone\\ SDK\\ v4/**",
+					"$(PROJECT_DIR)/Chartboost/Chartboost",
+					"$(PROJECT_DIR)/cocos2d-2.x-ARC-iOS/libs/GoogleAdMob",
 				);
 				OTHER_LDFLAGS = (
 					"-lz",
