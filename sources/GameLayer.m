@@ -12,6 +12,7 @@
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
+#import "Chartboost.h"
 #import "GameObjectInjector.h"
 #import "GameOverLayer.h"
 #import "common.h"
@@ -567,6 +568,25 @@ static GameLayer *sharedGameLayer;
 - (void) gameOver
 {
     NSLog(@"Current Rank: %d", (achievementContainer.currentRank));
+
+    // Chartboost ads stuff
+    if ((arc4random() % 100) > ONE_THIRD_CHANCE) {
+        Chartboost *cb = [Chartboost sharedChartboost];
+    
+        cb.appId = @"5338420e2d42da752c2a1261";
+        cb.appSignature = @"129c720b1e25a9db347d7ac9bb07e59f635da9f5";
+    
+        // Required for use of delegate methods. See "Advanced Topics" section below.
+        cb.delegate = self;
+    
+        // Begin a user session. Must not be dependent on user actions or any prior network requests.
+        // Must be called every time your app becomes active.
+        [cb startSession];
+    
+        // Show an interstitial
+        [cb showInterstitial];
+    }
+
     
     [self.multiplier die];
     [player killYourself];

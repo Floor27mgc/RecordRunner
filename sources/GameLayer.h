@@ -34,6 +34,7 @@
 #define MAX_NUM_TRACK                 4
 #define MAX_NUM_BOUNCING_COINS        7
 #define INITIAL_COIN_BANK_VALUE    5000
+#define ONE_THIRD_CHANCE             66
 
 #define kBombSpawnRate 20
 #define kBombSpawnTimeInterval 5
