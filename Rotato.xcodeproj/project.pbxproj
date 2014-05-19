@@ -486,7 +486,6 @@
 		853F15B5172C9C20004E33B6 /* parts_record_invincible-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15AB172C9C20004E33B6 /* parts_record_invincible-hd.png */; };
 		853F15B6172C9C20004E33B6 /* parts_shield_invincible.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15AC172C9C20004E33B6 /* parts_shield_invincible.png */; };
 		853F15B7172C9C20004E33B6 /* parts_shield_invincible-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 853F15AD172C9C20004E33B6 /* parts_shield_invincible-hd.png */; };
-		8562E8D118FB13C200421FAA /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8562E88218FB13C200421FAA /* README.txt */; };
 		8562E8D918FB13F000421FAA /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8562E8D818FB13F000421FAA /* AdSupport.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		8562E8DB18FB145200421FAA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8562E8DA18FB145200421FAA /* CoreTelephony.framework */; };
 		856C09511910A2120023D6F9 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 856C093A1910A2120023D6F9 /* CHANGELOG.md */; };
@@ -1221,17 +1220,6 @@
 		853F15AB172C9C20004E33B6 /* parts_record_invincible-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_record_invincible-hd.png"; path = "Resources/Graphics/parts_record_invincible-hd.png"; sourceTree = SOURCE_ROOT; };
 		853F15AC172C9C20004E33B6 /* parts_shield_invincible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parts_shield_invincible.png; path = Resources/Graphics/parts_shield_invincible.png; sourceTree = SOURCE_ROOT; };
 		853F15AD172C9C20004E33B6 /* parts_shield_invincible-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "parts_shield_invincible-hd.png"; path = "Resources/Graphics/parts_shield_invincible-hd.png"; sourceTree = SOURCE_ROOT; };
-		8562E87818FB13C200421FAA /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADAdMobExtras.h; path = "cocos2d-2.x-ARC-iOS/libs/GoogleAdMob/GADAdMobExtras.h"; sourceTree = SOURCE_ROOT; };
-		8562E87918FB13C200421FAA /* GADAdNetworkExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADAdNetworkExtras.h; path = "../../../build/Austin/rotato_master_release/RecordRunner/cocos2d-2.x-ARC-iOS/libs/GoogleAdMob/GADAdNetworkExtras.h"; sourceTree = "<group>"; };
-		8562E87A18FB13C200421FAA /* GADAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADAdSize.h; path = "../../../build/Austin/rotato_master_release/RecordRunner/cocos2d-2.x-ARC-iOS/libs/GoogleAdMob/GADAdSize.h"; sourceTree = "<group>"; };
-		8562E87B18FB13C200421FAA /* GADBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADBannerView.h; path = "../../../build/Austin/rotato_master_release/RecordRunner/cocos2d-2.x-ARC-iOS/libs/GoogleAdMob/GADBannerView.h"; sourceTree = "<group>"; };
-		8562E87C18FB13C200421FAA /* GADBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADBannerViewDelegate.h; path = "../../../build/Austin/rotato_master_release/RecordRunner/cocos2d-2.x-ARC-iOS/libs/GoogleAdMob/GADBannerViewDelegate.h"; sourceTree = "<group>"; };
-		8562E87D18FB13C200421FAA /* GADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADInterstitial.h; path = "../../../build/Austin/rotato_master_release/RecordRunner/cocos2d-2.x-ARC-iOS/libs/GoogleAdMob/GADInterstitial.h"; sourceTree = "<group>"; };
-		8562E87E18FB13C200421FAA /* GADInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADInterstitialDelegate.h; path = "../../../build/Austin/rotato_master_release/RecordRunner/cocos2d-2.x-ARC-iOS/libs/GoogleAdMob/GADInterstitialDelegate.h"; sourceTree = "<group>"; };
-		8562E87F18FB13C200421FAA /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADRequest.h; path = "../../../build/Austin/rotato_master_release/RecordRunner/cocos2d-2.x-ARC-iOS/libs/GoogleAdMob/GADRequest.h"; sourceTree = "<group>"; };
-		8562E88018FB13C200421FAA /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADRequestError.h; path = "../../../build/Austin/rotato_master_release/RecordRunner/cocos2d-2.x-ARC-iOS/libs/GoogleAdMob/GADRequestError.h"; sourceTree = "<group>"; };
-		8562E88118FB13C200421FAA /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAdMobAds.a; path = "../../../build/Austin/rotato_master_release/RecordRunner/cocos2d-2.x-ARC-iOS/libs/GoogleAdMob/libGoogleAdMobAds.a"; sourceTree = "<group>"; };
-		8562E88218FB13C200421FAA /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.txt; path = "../../../build/Austin/rotato_master_release/RecordRunner/cocos2d-2.x-ARC-iOS/libs/GoogleAdMob/README.txt"; sourceTree = "<group>"; };
 		8562E8D818FB13F000421FAA /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		8562E8DA18FB145200421FAA /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		856C093A1910A2120023D6F9 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
@@ -2490,25 +2478,6 @@
 			path = Licenses;
 			sourceTree = "<group>";
 		};
-		8562E7EC18FB13C100421FAA /* AdMob */ = {
-			isa = PBXGroup;
-			children = (
-				8562E87818FB13C200421FAA /* GADAdMobExtras.h */,
-				8562E87918FB13C200421FAA /* GADAdNetworkExtras.h */,
-				8562E87A18FB13C200421FAA /* GADAdSize.h */,
-				8562E87B18FB13C200421FAA /* GADBannerView.h */,
-				8562E87C18FB13C200421FAA /* GADBannerViewDelegate.h */,
-				8562E87D18FB13C200421FAA /* GADInterstitial.h */,
-				8562E87E18FB13C200421FAA /* GADInterstitialDelegate.h */,
-				8562E87F18FB13C200421FAA /* GADRequest.h */,
-				8562E88018FB13C200421FAA /* GADRequestError.h */,
-				8562E88118FB13C200421FAA /* libGoogleAdMobAds.a */,
-				8562E88218FB13C200421FAA /* README.txt */,
-			);
-			name = AdMob;
-			path = "../../../../Documents/Floor 27 Industries LLC/GoogleAdMobAdsSdkiOS-6.8.0";
-			sourceTree = "<group>";
-		};
 		856C09381910A2120023D6F9 /* Chartboost */ = {
 			isa = PBXGroup;
 			children = (
@@ -2558,7 +2527,6 @@
 			isa = PBXGroup;
 			children = (
 				856C095F1910A5D10023D6F9 /* libGoogleAdMobAds.a */,
-				8562E7EC18FB13C100421FAA /* AdMob */,
 				8562E8D818FB13F000421FAA /* AdSupport.framework */,
 				DC0C49FB154AB4DD00B4B727 /* AudioToolbox.framework */,
 				DC0C49FD154AB4DD00B4B727 /* AVFoundation.framework */,
@@ -3177,7 +3145,6 @@
 				E5F1506C1788E4D6006923DD /* checkmark-hd.png in Resources */,
 				E582540F178BCB8D0092259A /* gui_whisp.png in Resources */,
 				E5825410178BCB8D0092259A /* gui_whisp-hd.png in Resources */,
-				8562E8D118FB13C200421FAA /* README.txt in Resources */,
 				E5825413178BCB930092259A /* gui_circle.png in Resources */,
 				E5825414178BCB930092259A /* gui_circle-hd.png in Resources */,
 				E582541B178C4C170092259A /* gui_rings_inner.png in Resources */,
@@ -3511,8 +3478,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -3525,8 +3492,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PROVISIONING_PROFILE = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
+				PROVISIONING_PROFILE = "E0279E6A-ED64-4F50-81C8-661C89123479";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E0279E6A-ED64-4F50-81C8-661C89123479";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3540,8 +3507,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -3552,8 +3519,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PROVISIONING_PROFILE = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
+				PROVISIONING_PROFILE = "E0279E6A-ED64-4F50-81C8-661C89123479";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E0279E6A-ED64-4F50-81C8-661C89123479";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3564,8 +3531,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3585,8 +3552,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Rotato;
-				PROVISIONING_PROFILE = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
+				PROVISIONING_PROFILE = "E0279E6A-ED64-4F50-81C8-661C89123479";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E0279E6A-ED64-4F50-81C8-661C89123479";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -3597,8 +3564,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cocos2d-2.x-ARC-iOS/Prefix.pch";
@@ -3617,8 +3584,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Rotato;
-				PROVISIONING_PROFILE = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
+				PROVISIONING_PROFILE = "E0279E6A-ED64-4F50-81C8-661C89123479";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E0279E6A-ED64-4F50-81C8-661C89123479";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -3629,8 +3596,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/cocos2d_library.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -3643,8 +3610,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
+				PROVISIONING_PROFILE = "E0279E6A-ED64-4F50-81C8-661C89123479";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E0279E6A-ED64-4F50-81C8-661C89123479";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -3653,8 +3620,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: FLOOR 27 INDUSTRIES LLC (56U2RVJLNX)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hin Lam (TXE5KFB3LQ)";
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/cocos2d_library.dst;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -3662,8 +3629,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "53F42A99-4621-4AC6-A5D1-67C3930D0B41";
+				PROVISIONING_PROFILE = "E0279E6A-ED64-4F50-81C8-661C89123479";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E0279E6A-ED64-4F50-81C8-661C89123479";
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;
 			};
